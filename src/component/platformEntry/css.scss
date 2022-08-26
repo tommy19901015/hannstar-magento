@@ -1,0 +1,43 @@
+.platformEntryBlock {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2px;
+    .item {
+        padding: 10px 20px;
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            img {
+                margin: 0 20px;
+            }
+            h2 {
+                font-weight: 500;
+                color: #fff;
+                font-size: 17px;
+            }
+        }
+        &.e-biz {
+            background-color: #96d5f3;
+        }
+        &.solution {
+            background-color: #81d4fa;
+        }
+        &.e-service {
+            background-color: #4fc3f7;
+        }
+        &.webflow2 {
+            background-color: #29b6f6;
+        }
+        &.partner {
+            background-color: #039be5;
+        }
+        &.msc {
+            background-color: #0277bd;
+        }
+        &:hover {
+            transition: background-color 500ms linear;
+            background-color: #222;
+        }
+    }
+}

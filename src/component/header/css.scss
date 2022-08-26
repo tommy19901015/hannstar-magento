@@ -1,0 +1,157 @@
+.hannstarHeader {
+    position: fixed;
+    top: 0;
+    background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
+    width: 100%;
+    height: 80px;
+    .header_pc {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        .logo {
+            margin: 0 80px;
+        }
+        .menuBlock {
+            display: flex;
+            .menuUl {
+                display: flex;
+                .menuLi {
+                    padding: 0 25px;
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 16px;
+                        font-weight: bold;
+                        &::after {
+                            content: '';
+                            display: block;
+                            border-bottom: solid 2px transparent;
+                        }
+                        &.active,
+                        &:hover {
+                            &::after {
+                                content: '';
+                                display: block;
+                                border-bottom: solid 2px #fff;
+                            }
+                        }
+                    }
+                }
+            }
+            .otherBlock {
+                margin: 0 80px;
+                .headerBtn {
+                    font-size: 16px;
+                    color: #ffffff;
+                    margin-right: 10px;
+                    font-weight: bolder;
+
+                    padding: 5px 10px;
+                    background-color: #097ac4;
+
+                    border-radius: 4px;
+                    cursor: pointer;
+                    &.login {
+                        &::before {
+                            content: url('https: //e-service-test.hannstar.com/Content/images/myicons/img/icon-login.png');
+                            display: inline-block;
+                            padding-right: 7px;
+                        }
+                    }
+                    &.i18n {
+                    }
+                }
+            }
+        }
+    }
+    .header_m {
+        display: none;
+    }
+}
+
+// @media screen and (max-width: $breakpoint) {
+//     .header {
+//         height: 70px;
+//         .header_pc {
+//             display: none;
+//         }
+//         .header_m {
+//             display: flex;
+//             align-items: center;
+//             justify-content: space-between;
+//             padding: 0 30px;
+//             height: 100%;
+//             background-color: $orange-color;
+//             .logoBlock {
+//                 max-width: 80%;
+//                 img {
+//                     height: 50px;
+//                 }
+//             }
+//             .hamburgerIcon {
+//                 img {
+//                     width: 30px;
+//                     height: 30px;
+//                 }
+//             }
+//             .menuBlock {
+//                 position: fixed;
+//                 display: block;
+//                 top: 0;
+//                 left: 100%;
+//                 height: 100%;
+//                 width: 100%;
+//                 background: $orange-color;
+//                 transition-duration: 0.3s;
+//                 padding: 5%;
+//                 box-sizing: border-box;
+//                 &.open {
+//                     left: 0;
+//                     width: 100%;
+//                     overflow-y: auto;
+//                 }
+//                 .menuHeader {
+//                     display: flex;
+//                     align-items: center;
+//                     justify-content: space-between;
+
+//                     .logoBlock {
+//                         display: flex;
+//                         align-items: center;
+//                         .logo {
+//                             padding-right: 15px;
+//                             img {
+//                                 width: 60px;
+//                                 width: 60px;
+//                                 border-radius: 60px;
+//                             }
+//                         }
+//                     }
+//                     .closeIcon {
+//                         img {
+//                             width: 30px;
+//                             height: 30px;
+//                         }
+//                     }
+//                 }
+//                 ul {
+//                     display: flex;
+//                     list-style: none;
+//                     flex-direction: column;
+//                     margin: 10px 50px;
+//                     li {
+//                         text-align: end;
+//                         padding: 15px 0px;
+//                         border-bottom: 1px solid #fff;
+//                         a {
+//                             display: block;
+//                             text-align: right;
+//                             color: #fff;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
