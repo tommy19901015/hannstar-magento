@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./css.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -66,6 +66,8 @@ const messageCenterData = [
 ];
 
 const MessageCenter = (porps) => {
+  const sliderRef = useRef();
+
   const settings = {
     dots: false,
     arrows: true,
@@ -78,23 +80,42 @@ const MessageCenter = (porps) => {
     // dotsClass: 'bannerDots',
   };
 
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
   return (
     <div className="messageCenter">
-      <Slider {...settings}>
-        {messageCenterData.map((item, idx) => (
-          <div className="messageBlock">
-            {item.data.map((data) => {
-              return (
-                <li>
-                  <div className="tag">{data.tag}</div>
-                  <div className="date">{data.date}</div>
-                  <div className="title">{data.title}</div>
-                </li>
-              );
-            })}
-          </div>
-        ))}
-      </Slider>
+      <div className="leftBlock">
+        <div className="title">訊息中心</div>
+        <div className="btnBlock">
+          <div className="sliderBtn next" onClick={next}></div>
+          <div className="sliderBtn previous" onClick={previous}></div>
+        </div>
+      </div>
+      <div className="rightBlock">
+        <Slider ref={sliderRef} {...settings}>
+          {messageCenterData.map((item, idx) => (
+            <div className="messageBlock">
+              {item.data.map((data) => {
+                return (
+                  <li>
+                    <div className="tag">{data.tag}</div>
+                    <div className="date">{data.date}</div>
+                    <div className="title">{data.title}</div>
+                  </li>
+                );
+              })}
+            </div>
+          ))}
+        </Slider>
+        <a className="moreBtn" href="">
+          MORE
+        </a>
+      </div>
     </div>
   );
 };

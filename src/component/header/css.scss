@@ -1,73 +1,74 @@
 .hannstarHeader {
-    position: fixed;
-    top: 0;
-    background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
-    width: 100%;
-    height: 80px;
-    .header_pc {
+  position: fixed;
+  top: 0;
+  background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
+  width: 100%;
+  height: 80px;
+  z-index: 99;
+  .header_pc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .logo {
+      margin: 0 80px;
+    }
+    .menuBlock {
+      display: flex;
+      .menuUl {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        .logo {
-            margin: 0 80px;
-        }
-        .menuBlock {
-            display: flex;
-            .menuUl {
-                display: flex;
-                .menuLi {
-                    padding: 0 25px;
-                    a {
-                        text-decoration: none;
-                        color: #fff;
-                        font-size: 16px;
-                        font-weight: bold;
-                        &::after {
-                            content: '';
-                            display: block;
-                            border-bottom: solid 2px transparent;
-                        }
-                        &.active,
-                        &:hover {
-                            &::after {
-                                content: '';
-                                display: block;
-                                border-bottom: solid 2px #fff;
-                            }
-                        }
-                    }
-                }
+        .menuLi {
+          padding: 0 25px;
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            &::after {
+              content: "";
+              display: block;
+              border-bottom: solid 2px transparent;
             }
-            .otherBlock {
-                margin: 0 80px;
-                .headerBtn {
-                    font-size: 16px;
-                    color: #ffffff;
-                    margin-right: 10px;
-                    font-weight: bolder;
-
-                    padding: 5px 10px;
-                    background-color: #097ac4;
-
-                    border-radius: 4px;
-                    cursor: pointer;
-                    &.login {
-                        &::before {
-                            content: url('https: //e-service-test.hannstar.com/Content/images/myicons/img/icon-login.png');
-                            display: inline-block;
-                            padding-right: 7px;
-                        }
-                    }
-                    &.i18n {
-                    }
-                }
+            &.active,
+            &:hover {
+              &::after {
+                content: "";
+                display: block;
+                border-bottom: solid 2px #fff;
+              }
             }
+          }
         }
+      }
+      .otherBlock {
+        margin: 0 80px;
+        .headerBtn {
+          font-size: 16px;
+          color: #ffffff;
+          margin-right: 10px;
+          font-weight: bolder;
+
+          padding: 5px 10px;
+          background-color: #097ac4;
+
+          border-radius: 4px;
+          cursor: pointer;
+          &.login {
+            &::before {
+              content: url("https: //e-service-test.hannstar.com/Content/images/myicons/img/icon-login.png");
+              display: inline-block;
+              padding-right: 7px;
+            }
+          }
+          &.i18n {
+          }
+        }
+      }
     }
-    .header_m {
-        display: none;
-    }
+  }
+  .header_m {
+    display: none;
+  }
 }
 
 // @media screen and (max-width: $breakpoint) {
