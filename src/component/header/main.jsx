@@ -58,7 +58,12 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="header_m"></div>
+            <div className="header_m">
+                <img className="logo" src={headerData.logoSrc} />
+                <div className="menuOpenBtn">
+                    <span></span>
+                </div>
+            </div>
         </div>
     )
 }

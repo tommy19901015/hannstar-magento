@@ -1,0 +1,19 @@
+@import '../../style/variable.scss';
+
+// .hannstarMain {
+//     margin-top: 80px;
+//     @media screen and (max-width: $breakpoint) {
+//         margin-top: 60px;
+//     }
+// }
+
+#root {
+    font-family: Microsoft JhengHei;
+    .hannstarMain {
+        margin: 0 auto;
+        font-size: 16px;
+        @media screen and (max-width: $breakpoint) {
+            margin-top: 60px;
+        }
+    }
+}

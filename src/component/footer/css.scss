@@ -1,9 +1,11 @@
 .footer {
+    background-color: #f8f8f8;
     .topBlock {
         display: flex;
         justify-content: space-between;
         padding: 70px 20px;
-        background-color: #f8f8f8;
+        max-width: 1400px;
+        margin: 0 auto;
         .linkBlock {
             font-size: 16px;
             font-weight: bolder;

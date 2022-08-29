@@ -1,8 +1,13 @@
+@import '../../style/variable.scss';
+
 .graphicsLineBlock {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    &.reverse {
+        flex-direction: row-reverse;
+    }
     .imgBlock {
         width: 50%;
     }
@@ -67,6 +72,18 @@
                     background-color: #0094da;
                 }
             }
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+        flex-direction: column;
+        &.reverse {
+            flex-direction: column;
+        }
+        .imgBlock {
+            width: 100%;
+        }
+        .contentBlock {
+            width: 100%;
         }
     }
 }
