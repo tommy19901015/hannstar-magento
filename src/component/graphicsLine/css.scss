@@ -1,89 +1,89 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
 .graphicsLineBlock {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+  .imgBlock {
+    width: 50%;
+  }
+  .contentBlock {
+    width: 50%;
+    padding: 20px 50px;
+    .borderStyle {
+      background-image: linear-gradient(to right, #0094da, #0094da);
+      background-position: 0 30px;
+      background-size: 10px calc(100% - 30px - 20px);
+      background-repeat: no-repeat;
+      .titleBlock {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-bottom: 30px;
+        .title {
+          font-weight: bolder;
+          font-size: 32px;
+        }
+        .line {
+          width: 30px;
+          height: 10px;
+          margin-top: 20px;
+          margin-right: 20px;
+          background-image: linear-gradient(to right, #0094da, #0094da);
+        }
+      }
+      .textBlock {
+        padding-left: 50px;
+        clear: both;
+        font-size: 18px;
+        color: #5d5d5d;
+        line-height: 1.8;
+      }
+      .bottomLineBox {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        margin-top: 30px;
+        .learnMore {
+          text-decoration: none;
+          color: #0094da;
+          position: relative;
+          padding: 5px 20px 5px 20px;
+          font: 700 12px "Noto Sans TC", sans-serif;
+          .plusLine {
+            position: absolute;
+            top: calc(50% - 4px);
+            right: 0;
+            z-index: 1;
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid;
+            border-right: 1px solid;
+            transform: rotate(45deg);
+          }
+        }
+        .line {
+          flex-grow: 1;
+          height: 10px;
+          background-color: #0094da;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
+    flex-direction: column;
     &.reverse {
-        flex-direction: row-reverse;
+      flex-direction: column;
     }
     .imgBlock {
-        width: 50%;
+      width: 100%;
     }
     .contentBlock {
-        width: 50%;
-        padding: 20px 50px;
-        .borderStyle {
-            background-image: linear-gradient(to right, #0094da, #0094da);
-            background-position: 0 30px;
-            background-size: 10px calc(100% - 30px - 20px);
-            background-repeat: no-repeat;
-            .titleBlock {
-                display: flex;
-                justify-content: flex-start;
-                align-items: baseline;
-                margin-bottom: 30px;
-                .title {
-                    font-weight: bolder;
-                    font-size: 32px;
-                }
-                .line {
-                    width: 30px;
-                    height: 10px;
-                    margin-top: 20px;
-                    margin-right: 20px;
-                    background-image: linear-gradient(to right, #0094da, #0094da);
-                }
-            }
-            .textBlock {
-                padding-left: 50px;
-                clear: both;
-                font-size: 18px;
-                color: #5d5d5d;
-                line-height: 1.8;
-            }
-            .bottomLineBox {
-                display: flex;
-                align-items: center;
-                height: 30px;
-                margin-top: 30px;
-                .learnMore {
-                    text-decoration: none;
-                    color: #0094da;
-                    position: relative;
-                    padding: 5px 20px 5px 20px;
-                    font: 700 12px 'Noto Sans TC', sans-serif;
-                    .plusLine {
-                        position: absolute;
-                        top: calc(50% - 4px);
-                        right: 0;
-                        z-index: 1;
-                        width: 8px;
-                        height: 8px;
-                        border-top: 1px solid;
-                        border-right: 1px solid;
-                        transform: rotate(45deg);
-                    }
-                }
-                .line {
-                    flex-grow: 1;
-                    height: 10px;
-                    background-color: #0094da;
-                }
-            }
-        }
+      width: 100%;
     }
-    @media screen and (max-width: $breakpoint) {
-        flex-direction: column;
-        &.reverse {
-            flex-direction: column;
-        }
-        .imgBlock {
-            width: 100%;
-        }
-        .contentBlock {
-            width: 100%;
-        }
-    }
+  }
 }

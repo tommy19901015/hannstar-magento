@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
-import Index from "./pages/index/main.jsx";
+import Index from "./pages/index/main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // ReactDOM.render(
@@ -14,7 +14,4 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //   document.getElementById("root")
 // );
 
-ReactDOM.render(
-  <Index />,
-  document.getElementById("root")
-);
+ReactDOM.render(<Index />, document.getElementById("root"));

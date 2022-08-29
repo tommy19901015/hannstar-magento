@@ -1,119 +1,118 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
 .hannstarHeader {
-    position: fixed;
-    top: 0;
-    background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
-    width: 100%;
-    height: 80px;
-    z-index: 99;
-    .header_pc {
+  position: fixed;
+  top: 0;
+  background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
+  width: 100%;
+  height: 80px;
+  z-index: 99;
+  .header_pc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .logo {
+      margin: 0 80px;
+    }
+    .menuBlock {
+      display: flex;
+      .menuUl {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        .logo {
-            margin: 0 80px;
-        }
-        .menuBlock {
-            display: flex;
-            .menuUl {
-                display: flex;
-                .menuLi {
-                    padding: 0 25px;
-                    a {
-                        text-decoration: none;
-                        color: #fff;
-                        font-size: 16px;
-                        font-weight: bold;
-                        word-break: keep-all;
-                        &::after {
-                            content: '';
-                            display: block;
-                            border-bottom: solid 2px transparent;
-                        }
-                        &.active,
-                        &:hover {
-                            &::after {
-                                content: '';
-                                display: block;
-                                border-bottom: solid 2px #fff;
-                            }
-                        }
-                    }
-                }
+        .menuLi {
+          padding: 0 25px;
+          a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            word-break: keep-all;
+            &::after {
+              content: "";
+              display: block;
+              border-bottom: solid 2px transparent;
             }
-            .otherBlock {
-                margin: 0 80px;
-                .headerBtn {
-                    font-size: 16px;
-                    color: #ffffff;
-                    margin-right: 10px;
-                    font-weight: bolder;
-                    word-break: keep-all;
-                    padding: 5px 10px;
-                    background-color: #097ac4;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    &.login {
-                        // &::before {
-                        //     content: url('https: //e-service-test.hannstar.com/Content/images/myicons/img/icon-login.png');
-                        //     display: inline-block;
-                        //     padding-right: 7px;
-                        // }
-                    }
-                    &.i18n {
-                    }
-                }
+            &.active,
+            &:hover {
+              &::after {
+                content: "";
+                display: block;
+                border-bottom: solid 2px #fff;
+              }
             }
+          }
         }
-    }
-    .header_m {
-        display: none;
-    }
-    @media screen and (max-width: $breakpoint) {
-        height: 60px;
-        .header_pc {
-            display: none;
+      }
+      .otherBlock {
+        margin: 0 80px;
+        .headerBtn {
+          font-size: 16px;
+          color: #ffffff;
+          margin-right: 10px;
+          font-weight: bolder;
+          word-break: keep-all;
+          padding: 5px 10px;
+          background-color: #097ac4;
+          border-radius: 4px;
+          cursor: pointer;
+          &.login {
+            // &::before {
+            //     content: url('https: //e-service-test.hannstar.com/Content/images/myicons/img/icon-login.png');
+            //     display: inline-block;
+            //     padding-right: 7px;
+            // }
+          }
+          &.i18n {
+          }
         }
+      }
+    }
+  }
+  .header_m {
+    display: none;
+  }
+  @media screen and (max-width: $breakpoint) {
+    height: 60px;
+    .header_pc {
+      display: none;
+    }
 
-        .header_m {
-            display: flex;
-            justify-content: space-between;
-            .logo {
-                padding-left: 20px;
-            }
-            .menuOpenBtn {
-                position: relative;
-                width: 60px;
-                height: 60px;
-                cursor: pointer;
-                span {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 24px;
-                    height: 1px;
-                    background-color: #dff2fa;
-                    transition: all 0.5s;
-                    &::before,
-                    &::after {
-                        content: '';
-                        top: -6px;
-                        position: absolute;
-                        left: 0;
-                        top: -6px;
-                        width: 100%;
-                        height: 1px;
-                        background-color: #dff2fa;
-                        transition: all 0.5s;
-                    }
-                    &::after {
-                        top: 6px;
-                    }
-                }
-            }
+    .header_m {
+      display: flex;
+      justify-content: space-between;
+      .logo {
+        padding-left: 20px;
+      }
+      .menuOpenBtn {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 24px;
+          height: 1px;
+          background-color: #dff2fa;
+          transition: all 0.5s;
+          &::before,
+          &::after {
+            content: "";
+            top: -6px;
+            position: absolute;
+            left: 0;
+            top: -6px;
+            width: 100%;
+            height: 1px;
+            background-color: #dff2fa;
+            transition: all 0.5s;
+          }
+          &::after {
+            top: 6px;
+          }
         }
+      }
     }
+  }
 }
