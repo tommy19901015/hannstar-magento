@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import CollapseLi from "../collapseLi/main";
+import { I_Porps } from "../collapseLi/interface";
+
 import "./css.scss";
 
 const footerData = [
@@ -80,7 +83,9 @@ const TopBlock: React.FC = () => {
         return (
           <ul className="linkBlock">
             <li className="title">
-              <a href={item.href}>{item.title}</a>
+              <h3>
+                <a href={item.href}>{item.title}</a>
+              </h3>
             </li>
             {item.content.map((data) => (
               <li className="text">
@@ -94,6 +99,20 @@ const TopBlock: React.FC = () => {
   );
 };
 
+
+const TopBlock_M: React.FC = () => {
+  const collapseLiData: any = footerData.map((item: any) => {
+    return {
+      title: <h3 className="footerH3">{item.title}</h3>,
+      content: item.content.map((obj: any) => <a className="footerLink" href={obj.href}>{obj.title}</a>)
+    }
+  })
+  return (
+    <div className="topBlock_m">
+      <CollapseLi data={collapseLiData} />
+    </div>
+  );
+}
 const BottomBlock: React.FC = () => {
   return (
     <div className="bottomBlock">
@@ -131,6 +150,7 @@ const Footer: React.FC = () => {
   return (
     <div className="footer">
       <TopBlock />
+      <TopBlock_M />
       <BottomBlock />
     </div>
   );

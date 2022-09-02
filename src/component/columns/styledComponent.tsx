@@ -3,10 +3,10 @@ import { I_Style } from "./interface";
 
 export const FullPageStyle: React.FC<I_Style> = styled.div`
   max-width: 1400px;
-  width: 100%;
   margin: 40px auto;
+  padding: 0 20px;
   @media (max-width: 980px) {
-    margin: 20px;
+    
   }
 `;
 
@@ -14,7 +14,7 @@ export const OneColStyle: React.FC<I_Style> = styled.div`
     max-width:1400px
     margin: 0 auto;
     @media (max-width: 980px) {
-    margin: 20px auto;
+    margin: 40px auto;
     }   
 `;
 
@@ -23,7 +23,7 @@ export const TwoColStyle: React.FC<I_Style> = styled.div`
   margin: 40px auto;
   @media (max-width: 980px) {
     flex-direction: column-reverse;
-    margin: 10px auto;
+    margin: 20px auto;
   }
 `;
 

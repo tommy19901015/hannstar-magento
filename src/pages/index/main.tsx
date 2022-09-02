@@ -10,43 +10,64 @@ import { ColType } from "../../component/columns/interface";
 import "./css.scss";
 
 const Index: React.FC = () => {
-  const colSetting1 = {
-    type: ColType.TwoCol,
-    widthL: 60,
-    widthR: 40,
-    contentL: <MessageCenter />,
-    contentR: <PlatformEntry />,
-  };
+	const colSetting1 = {
+		type: ColType.TwoCol,
+		widthL: 60,
+		widthR: 40,
+		contentL: <MessageCenter />,
+		contentR: <PlatformEntry />,
+	};
 
-  const colSetting2 = {
-    type: ColType.FullPage,
-    content: <Graphics2 />,
-  };
+	const colSetting2 = {
+		type: ColType.FullPage,
+		content: <Graphics2 />,
+	};
 
-  const colSetting3 = {
-    type: ColType.FullPage,
-    content: <GraphicsLine />,
-  };
-  const colSetting4 = {
-    type: ColType.FullPage,
-    content: <GraphicsLine {...{ type: "reverse" }} />,
-  };
+	const colSetting3 = {
+		type: ColType.FullPage,
+		content: <GraphicsLine />,
+	};
+	const colSetting4 = {
+		type: ColType.FullPage,
+		content: <GraphicsLine {...{ type: "reverse" }} />,
+	};
 
-  const colSetting5 = {
-    type: ColType.FullPage,
-    content: <GraphicsLine />,
-  };
+	const colSetting5 = {
+		type: ColType.FullPage,
+		content: <GraphicsLine />,
+	};
 
-  return (
-    <Layout>
-      <BannerSlider />
-      <Columns {...colSetting1} />
-      <Columns {...colSetting2} />
-      <Columns {...colSetting3} />
-      <Columns {...colSetting4} />
-      <Columns {...colSetting5} />
-    </Layout>
-  );
+	const collapseLiData = [
+		{
+			title: "<h1>h1h1h1h1h1h1h11h</h1>",
+			content: [
+				'<div>111111<div>', '<div>2222222222222<div>', '<div>33333333<div>'
+			]
+		},
+		{
+			title: "<h1>h1h1h1h1h1h1h11h</h1>",
+			content: [
+				'<div>111111<div>', '<div>2222222222222<div>', '<div>33333333<div>'
+			]
+		},
+		{
+			title: "<h1>h1h1h1h1h1h1h11h</h1>",
+			content: [
+				'<div>111111<div>', '<div>2222222222222<div>', '<div>33333333<div>'
+			]
+		},
+	]
+
+	return (
+		<Layout>
+			<BannerSlider />
+			<Columns {...colSetting1} />
+			<Columns {...colSetting2} />
+			<Columns {...colSetting3} />
+			<Columns {...colSetting4} />
+			<Columns {...colSetting5} />
+		</Layout>
+	);
 };
 
 export default Index;
