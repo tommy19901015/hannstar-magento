@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import BannerSlider from "../../component/bannerSlider/main";
 import MessageCenter from "../../component/messageCenter/main";
 import PlatformEntry from "../../component/platformEntry/main";
@@ -7,7 +8,11 @@ import Graphics2 from "../../component/graphics2/main";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import "./css.scss";
+import { Provider } from 'react-redux';
+import "./css.module.scss";
+import store from '../../store';
+import { fetchDataRequest } from "../../store/action";
+
 
 const Index: React.FC = () => {
 	const colSetting1 = {
@@ -57,9 +62,18 @@ const Index: React.FC = () => {
 			]
 		},
 	]
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchDataRequest());
+	  }, []);
+
+     // 拿 store 資料 
+	  const selectedData = useSelector((state) => state)
+
 
 	return (
-		<Layout>
+		<Layout >
 			<BannerSlider />
 			<Columns {...colSetting1} />
 			<Columns {...colSetting2} />
@@ -70,4 +84,12 @@ const Index: React.FC = () => {
 	);
 };
 
-export default Index;
+const AppWrapper = () => {
+	return (
+	  <Provider store={store}> // Set context
+		<Index /> 
+	  </Provider>
+	)
+  }
+
+export default AppWrapper;
