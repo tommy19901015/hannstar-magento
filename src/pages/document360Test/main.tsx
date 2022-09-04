@@ -2,7 +2,10 @@ import React, { Children, useState, useEffect, useRef } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
-import ReactHtmlParser, { processNodes, convertNodeToElement } from 'react-html-parser';
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+} from "react-html-parser";
 
 import "./css.scss";
 
@@ -71,26 +74,24 @@ const htmlTestData = `<table border="1" cellpadding="1" cellspacing="1" class="f
 		</tbody>
 	</table>
 </div>
-`
+`;
 
 const Document360Test: React.FC = () => {
-	const test = () => {
-		// const yy = <div dangerouslySetInnerHTML={{ __html: htmlTestData }} />
-		const yy = ReactHtmlParser(htmlTestData)
-		console.log(yy);
-		// const arrayChildren = Children.toArray(yy);
-		// console.log('arrayChildrenarrayChildren', arrayChildren);
-	}
+  const test = () => {
+    // const yy = <div dangerouslySetInnerHTML={{ __html: htmlTestData }} />
+    // const yy = ReactHtmlParser(htmlTestData);
+    // console.log(yy);
+    // const arrayChildren = Children.toArray(yy);
+    // console.log('arrayChildrenarrayChildren', arrayChildren);
+  };
 
-	return (
-		<Layout>
-			<>
-				{test()}
-			</>
+  return (
+    <Layout>
+      <>{/* {test()} */}</>
 
-			<div dangerouslySetInnerHTML={{ __html: htmlTestData }} />
-		</Layout>
-	);
+      <div dangerouslySetInnerHTML={{ __html: htmlTestData }} />
+    </Layout>
+  );
 };
 
 export default Document360Test;
