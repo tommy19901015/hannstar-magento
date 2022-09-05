@@ -12,7 +12,12 @@ const bannerTextData = {
 const BannerText: React.FC<any> = () => {
     return (
         <div className="bannerTextBlock">
-            <BGBannerStyle src={bannerTextData.src} />
+            <BGBannerStyle src={bannerTextData.src}>
+                <div className="textBlock">
+                    <h1 className="title">{bannerTextData.title}</h1>
+                    <div className="content">{bannerTextData.content}</div>
+                </div>
+            </BGBannerStyle>
         </div>
     )
 }
