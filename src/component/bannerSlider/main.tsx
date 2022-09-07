@@ -5,30 +5,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 interface I_bannerData {
-  src: string;
-  title: string;
-  content?: string;
+  data: {
+    src: string;
+    title: string;
+    content?: string;
+  }[];
 }
 
-const bannerData: I_bannerData[] = [
-  {
-    // src: 'https://webdev.hannstar.com/upload/banner_list/twL_banner_22A27_6erpvjpmxp.jpg',
-    src: "https://fakeimg.pl/1519x400/?text=1",
-    title: "創新技術、品質服務",
-  },
-  {
-    // src: 'https://webdev.hannstar.com/upload/banner_list/twL_banner_22A28_zi638kdkyz.jpg',
-    src: "https://fakeimg.pl/1519x400/?text=2",
-    title: "綠色顯示、全新視界",
-  },
-  {
-    // src: 'https://webdev.hannstar.com/upload/banner_list/twL_banner_22B08_8e38nb3hz6.jpg',
-    src: "https://fakeimg.pl/1519x400/?text=3",
-    title: "實踐 ESG、邁向永續經營",
-  },
-];
-
-const BannerSlider: React.FC = () => {
+const BannerSlider: React.FC<I_bannerData> = ({ data }) => {
   const settings = {
     dots: true,
     arrows: false,
@@ -42,7 +26,7 @@ const BannerSlider: React.FC = () => {
   return (
     <div className="bannerSlider">
       <Slider {...settings}>
-        {bannerData.map((item, idx) => (
+        {data.map((item, idx) => (
           <>
             <img src={item.src} alt={item.title} />
             <div className="textBlock">

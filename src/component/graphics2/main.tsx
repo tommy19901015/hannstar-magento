@@ -1,57 +1,20 @@
 import React from "react";
 import "./css.scss";
 
-const graphics2Data = [
-  {
-    src: "https://fakeimg.pl/360x350/?text=1",
-    title: "智能車載",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=2",
-    title: "工控",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=3",
-    title: "手機",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=4",
-    title: "穿戴",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=5",
-    title: "平板",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=6",
-    title: "觸控",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=7",
-    title: "科技資訊顯示器",
-    href: "",
-  },
-  {
-    src: "https://fakeimg.pl/360x350/?text=8",
-    title: "綠色顯示器",
-    href: "",
-  },
-];
+interface I_Porps {
+  data: {
+    src: string;
+    title: string;
+    href: string;
+  }[];
+}
 
-// interface I_Props {}
-
-const Graphics2: React.FC = () => {
+const Graphics2: React.FC<I_Porps> = ({ data }) => {
   return (
     <div className="graphics2Block">
-      {graphics2Data.map((item) => {
+      {data.map((item, idx) => {
         return (
-          <a className="item" href={item.href}>
+          <a className="item" href={item.href} key={idx}>
             <img src={item.src} alt={item.title} />
             <div className="titleBlock">
               <div className="leftBlock">
