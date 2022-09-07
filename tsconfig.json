@@ -4,7 +4,9 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "include": [
     "src"

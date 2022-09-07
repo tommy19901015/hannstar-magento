@@ -106,12 +106,6 @@
         }
         .rightBlock {
             width: 100%;
-            .moreBtn {
-                text-align: center;
-                &::after {
-                    right: inherit;
-                }
-            }
         }
     }
 }

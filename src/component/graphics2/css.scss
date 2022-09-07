@@ -33,6 +33,7 @@
                     font-weight: 500;
                     color: #fff;
                     margin-left: 20px;
+                    word-break: keep-all;
                 }
                 .line {
                     width: 0px;
@@ -70,5 +71,13 @@
     @media screen and (max-width: $breakpoint) {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px;
+        .item {
+            .titleBlock {
+                bottom: 20px;
+                .learnMore {
+                    display: none;
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,27 @@
+@import '../../style/variable.scss';
+
 .testHtml {
     line-height: 1.8;
     table {
         width: 100% !important;
+    }
+    .hannstarTableRWD {
+        display: none;
+    }
+}
+.testTableRWD {
+    display: none;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: $breakpoint) {
+    .testHtml {
+        line-height: 1.8;
+        table {
+            display: none;
+        }
+    }
+    .testTableRWD {
+        display: block;
     }
 }
