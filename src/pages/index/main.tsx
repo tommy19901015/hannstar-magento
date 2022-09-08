@@ -77,7 +77,39 @@ const messageCenterData = [
     title: '沒有人該成為孤島 為防疫英雄加油">沒有人該成為孤島 為防疫英雄加油',
   },
 ];
-//關係企業 ??
+//平台相關資料
+const platformEntryData = [
+  {
+    src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
+    title: "產品行銷服務",
+    href: "/"
+  },
+  {
+    src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
+    title: "方案系統及整合服務",
+    href: "/"
+  },
+  {
+    src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
+    title: "客戶服務",
+    href: "/"
+  },
+  {
+    src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_20F17_cfe6j6bk57.png",
+    title: "瀚斯寶麗",
+    href: "/"
+  },
+  {
+    src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+    title: "供應商協同合作",
+    href: "/"
+  },
+  {
+    src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+    title: "瀚宇會員服務",
+    href: "/"
+  },
+]
 
 //圖文
 const graphics2Data = [
@@ -152,6 +184,7 @@ const graphics1Data3 = {
 const allStore = {
   bannerData,
   messageCenterData,
+  platformEntryData,
   graphics2Data,
   graphics1Data1,
   graphics1Data2,
@@ -164,7 +197,7 @@ const Index: React.FC = () => {
     widthL: 60,
     widthR: 40,
     contentL: <MessageCenter data={allStore.messageCenterData} />,
-    contentR: <PlatformEntry />,
+    contentR: <PlatformEntry data={allStore.platformEntryData} />,
   };
 
   const colSetting2 = {
@@ -193,12 +226,6 @@ const Index: React.FC = () => {
   }, []);
 
   // 拿 store 資料
-
-  //   const selectedData: any = useSelector((state) => state);
-  //   const yy = () => {
-  //     console.log("yyy", selectedData.data.infoState);
-  //     // console.log("state", state);
-  //   };
 
   return (
     <Layout>
