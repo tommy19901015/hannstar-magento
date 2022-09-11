@@ -1,0 +1,38 @@
+.partnerTextBlock,
+.partnerTextBtnBlock {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 70px 0px;
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    padding-bottom: 40px;
+  }
+  .content {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .learnMoreBtn {
+    display: block;
+    color: #fff;
+    background-color: #039be5;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 50px auto;
+    text-align: center;
+    width: 150px;
+  }
+}
+
+.partnerServiceBlock {
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+}
+
+.partnerManagementStrategyBlock {
+  text-align: center;
+}
