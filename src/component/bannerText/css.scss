@@ -1,17 +1,17 @@
+@import '../../style/variable.scss';
+
 .bannerTextBlock {
     .textBlock {
         padding: 100px 20px;
         width: 430px;
         .title {
-            font-size: 32px;
-            font-weight: 500;
+            @include hannstarH2Title;
+            text-align: left;
             color: #fff;
             padding-bottom: 50px;
         }
         .content {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.8;
+            @include hannstarContentText;
             color: #fff;
         }
     }

@@ -1,8 +1,8 @@
 @import '../../style/variable.scss';
 
-.e-serviceTextBlock {
+.solutionSolutionIntegrationTextBlock {
     background-color: $hannstar-bg-color;
-    padding: 80px 0px;
+    padding: 80px;
     .title {
         @include hannstarH2Title;
     }
@@ -11,15 +11,14 @@
         text-align: center;
     }
 }
-
-.e-serviceServiceBlock {
+.solutionServiceBlock {
+    padding: 80px;
     .title {
         @include hannstarH2Title;
     }
-}
-
-.e-serviceArticleListBlock {
-    .title {
-        @include hannstarH2Title;
+    .solutionImgBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

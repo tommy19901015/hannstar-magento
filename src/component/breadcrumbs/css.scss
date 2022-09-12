@@ -1,3 +1,5 @@
+@import '../../style/variable.scss';
+
 .breadcrumbsBlock {
     display: flex;
     justify-content: space-between;
@@ -5,14 +7,11 @@
     padding: 30px 20px;
     border-bottom: 1px solid #e2e2e3;
     .mainTitle {
-        font-weight: 600;
-        font-size: 36px;
-        color: #000;
+        @include hannstarH1Title;
     }
     .rightBlock {
         .textLink {
-            font-weight: 300;
-            color: #b2b2b2;
+            @include hannstarContentText;
             &::after {
                 content: '/';
                 padding: 0 10px;

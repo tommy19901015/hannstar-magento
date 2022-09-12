@@ -1,6 +1,7 @@
 import React, { Children, useState, useEffect, useRef } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
+import { ColType } from "../../component/columns/interface";
 import Columns from "../../component/columns/main";
 import parse from 'html-react-parser';
 import CollapseLi from "../../component/collapseLi/main";
@@ -208,6 +209,48 @@ const htmlTestData = `<div classname="hannstarTableRWD" style="border: 1px solid
 </ul>
 `.replace("classname", 'class');
 
+
+const testPDFData = `<table style="width: 100%;">
+	<tbody>
+		<tr>
+			<td style="width: 33.3333%;"><span style='color: rgb(93, 93, 93); font-family: "Noto Sans TC", "Noto Sans SC", "Noto Sans", 微軟正黑體, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>2021/04/23</span>
+				<br>
+			</td>
+			<td style="width: 33.3333%;">2021年股東常會 議事手冊
+				<br>
+			</td>
+			<td style="width: 33.3333%;"><a href="https://webdev.hannstar.com/investors/messageFile/238__1/">https://webdev.hannstar.com/investors/messageFile/238__1/</a>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33.3333%;"><span style='color: rgb(93, 93, 93); font-family: "Noto Sans TC", "Noto Sans SC", "Noto Sans", 微軟正黑體, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>2021/05/13</span>
+				<br>
+			</td>
+			<td style="width: 33.3333%;">2021年股東常會 議事錄
+				<br>
+			</td>
+			<td style="width: 33.3333%;"><a href="https://webdev.hannstar.com/investors/messageFile/239__1/">https://webdev.hannstar.com/investors/messageFile/239__1/</a>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33.3333%;">2021/07/29</td>
+			<td style="width: 33.3333%;">2021年股東常會 議事錄
+				<br>
+			</td>
+			<td style="width: 33.3333%;"><a href="https://webdev.hannstar.com/investors/messageFile/317/">https://webdev.hannstar.com/investors/messageFile/317/</a>
+				<br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+	<br>
+</p>
+`
+
 const Document360Test: React.FC = () => {
 	const getRWDTable = () => {
 		const div: any = document.createElement('div');
@@ -223,13 +266,65 @@ const Document360Test: React.FC = () => {
 		return <CollapseLi data={rwdData} />
 	};
 
+	const getPDF: any = () => {
+		const div: any = document.createElement('div');
+		div.innerHTML = testPDFData.trim();
+		const table: any = div.getElementsByTagName('table')
+		const trLlist: any = table[0].getElementsByTagName("tr")
+		const trLlistArray = [...trLlist]
+		const rwdData = trLlistArray.map((tr: any, idx: any) => {
+			const td = tr.getElementsByTagName("td")
+			const tdArray = [...td]
+			const arr: any = []
+			tdArray.map(text => {
+				arr.push(text.innerText.trim())
+			})
+			return { td: arr }
+		})
+
+		return (
+			<table>
+				<thead>
+					<tr>
+						<td>日期</td>
+						<td>標題</td>
+						<td>檔案下載</td>
+					</tr>
+				</thead>
+				<tbody>
+					{rwdData.map(item => {
+						return <tr>{(item.td.map((obj: any) => <td>{obj}</td>))}</tr>
+					})}
+				</tbody>
+			</table>
+		)
+	}
+
+
+
+	// const colSetting1 = {
+	// 	type: ColType.OneCol,
+	// 	content: <div style={{ "background": "red", "width": "100%", "height": "200px" }}></div>,
+	// };
+
+	// const colSetting2 = {
+	// 	type: ColType.OneCol,
+	// 	content: <div style={{ "background": "blue", "width": "100%", "height": "200px" }}></div>,
+	// };
 
 	return (
 		<Layout>
-			<div className="testHtml" dangerouslySetInnerHTML={{ __html: htmlTestData }} />
+			{/* <Columns {...colSetting1} />
+			<Columns {...colSetting2} /> */}
+			{
+				<>
+					<div className="testPDFHtml">{getPDF()}</div>
+				</>
+			}
+			{/* <div className="testHtml" dangerouslySetInnerHTML={{ __html: htmlTestData }} />
 			<div className="testTableRWD">
 				{getRWDTable()}
-			</div>
+			</div> */}
 		</Layout>
 	);
 };

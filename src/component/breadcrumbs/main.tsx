@@ -2,30 +2,20 @@ import React from "react";
 import "./css.scss";
 
 
-const breadcrumbsData = {
-    title: "瀚宇彩晶簡介",
-    breadcrumbsLink: [
-        {
-            text: "首頁",
-            href: "",
-        },
-        {
-            text: "關於瀚宇彩晶",
-            href: "",
-        },
-        {
-            text: "瀚宇彩晶簡介",
-            href: "",
-        }
-    ]
+
+interface I_Breadcrumbs {
+    data: {
+        title: string;
+        breadcrumbsLink: { text: string, href: string }[]
+    }
 }
 
-const Breadcrumbs: React.FC<any> = () => {
+const Breadcrumbs: React.FC<I_Breadcrumbs> = ({ data }) => {
     return (
         <div className="breadcrumbsBlock">
-            <h1 className="mainTitle">{breadcrumbsData.title}</h1>
+            <h1 className="mainTitle">{data.title}</h1>
             <div className="rightBlock">
-                {breadcrumbsData.breadcrumbsLink.map(item =>
+                {data.breadcrumbsLink.map(item =>
                     <a className="textLink" href={item.href}>{item.text}</a>)}
             </div>
         </div>

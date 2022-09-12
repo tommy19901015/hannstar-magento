@@ -170,15 +170,8 @@ const Partner: React.FC = () => {
     graphicsCardData,
     articleList,
   };
-  const colSetting1 = {
-    type: ColType.TwoCol,
-    widthL: 60,
-    widthR: 40,
-    contentL: <MessageCenter data={allData.messageCenterData} />,
-    contentR: <PlatformEntry data={allData.platformEntryData} />,
-  };
 
-  const TextBlock = () => {
+  const AboutTextBlock = () => {
     return (
       <div className={`${pageName}TextBlock`}>
         <div className="title">關於供應商協同合作平台</div>
@@ -210,9 +203,11 @@ const Partner: React.FC = () => {
           Chain Management,
           SCM)。並在此基礎上協同合作，在品質、成本、交期、環保、安全與衛生等不同面向，讓雙方或多方獲得更有價值的信息和數據，跨域合作，提供更精准的商業决策分析與更高效的資源利用，打造串連世界的綠色供應鏈。
         </div>
-        <a className="learnMoreBtn" href="">
-          了解更多
-        </a>
+        <div className="btnBlock">
+          <a className="learnMoreBtn" href="">
+            了解更多
+          </a>
+        </div>
       </div>
     );
   };
@@ -228,34 +223,29 @@ const Partner: React.FC = () => {
     );
   };
 
-  const colSetting2 = {
-    type: ColType.OneCol,
-    content: <TextBlock />,
-  };
-
-  const colSetting3 = {
-    type: ColType.FullPage,
-    content: <ServiceBlock />,
-  };
-
-  const colSetting4 = {
-    type: ColType.OneCol,
-    content: <TextBtnBlock />,
-  };
-
-  const colSetting5 = {
-    type: ColType.OneCol,
-    content: <ManagementStrategyBlock />,
-  };
-
   return (
     <Layout>
-      <BannerSlider data={allData.bannerData} />
-      <Columns {...colSetting1} />
-      <Columns {...colSetting2} />
-      <Columns {...colSetting3} />
-      <Columns {...colSetting4} />
-      <Columns {...colSetting5} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<BannerSlider data={allData.bannerData} />} />
+      <Columns
+        type={ColType.TwoColFullPage}
+        widthL={60}
+        widthR={40}
+        contentL={<MessageCenter data={allData.messageCenterData} />}
+        contentR={<PlatformEntry data={allData.platformEntryData} />} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<AboutTextBlock />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<ServiceBlock />} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<TextBtnBlock />} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<ManagementStrategyBlock />} />
     </Layout>
   );
 };

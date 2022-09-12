@@ -1,5 +1,6 @@
 export enum ColType {
-  FullPage = "fullPage",
+  OneColFullPage = "oneColFullPage",
+  TwoColFullPage = "twoColFullPage",
   OneCol = "oneCol",
   TwoCol = "twoCol",
 }

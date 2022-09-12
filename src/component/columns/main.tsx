@@ -2,7 +2,8 @@ import React from "react";
 import "./css.scss";
 import { I_Col } from "./interface";
 import {
-  FullPageStyle,
+  OneColFullStyle,
+  TwoColFullStyle,
   OneColStyle,
   TwoColStyle,
   LeftColStyle,
@@ -17,7 +18,15 @@ const Main: React.FC<I_Col> = ({
   contentL,
   contentR,
 }) => {
-  const FullPage = () => <FullPageStyle>{content}</FullPageStyle>;
+  const OneColFullPage = () => <OneColFullStyle>{content}</OneColFullStyle>;
+
+  const TwoColFullPage = () => {
+    return (
+      <TwoColFullStyle>
+        <LeftColStyle widthL={widthL}>{contentL}</LeftColStyle>
+        <RightColStyle widthR={widthR}>{contentR}</RightColStyle>
+      </TwoColFullStyle>)
+  }
 
   const OneCol = () => <OneColStyle>{content}</OneColStyle>;
 
@@ -31,9 +40,10 @@ const Main: React.FC<I_Col> = ({
   };
 
   const columnsObj = {
-    fullPage: <FullPage />, //滿版
-    oneCol: <OneCol />, //最大寬度1400px
-    twoCol: <TwoCol />, //左右兩欄
+    oneColFullPage: <OneColFullPage />, //滿版
+    twoColFullPage: <TwoColFullPage />,
+    oneCol: <OneCol />, //一欄(左右有間具)
+    twoCol: <TwoCol />, //兩欄(左右有間具)
   };
 
   return columnsObj[type];

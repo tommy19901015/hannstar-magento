@@ -158,15 +158,8 @@ const E_Service: React.FC = () => {
     graphicsCardData,
     articleList,
   };
-  const colSetting1 = {
-    type: ColType.TwoCol,
-    widthL: 60,
-    widthR: 40,
-    contentL: <MessageCenter data={allData.messageCenterData} />,
-    contentR: <PlatformEntry data={allData.platformEntryData} />,
-  };
 
-  const TextBlock = () => {
+  const AboutServiceBlock = () => {
     return (
       <div className={`${pageName}TextBlock`}>
         <div className="title">關於客戶服務平台</div>
@@ -195,28 +188,26 @@ const E_Service: React.FC = () => {
     );
   };
 
-  const colSetting2 = {
-    type: ColType.OneCol,
-    content: <TextBlock />,
-  };
-
-  const colSetting3 = {
-    type: ColType.FullPage,
-    content: <ServiceBlock />,
-  };
-
-  const colSetting4 = {
-    type: ColType.FullPage,
-    content: <ArticleListBlock />,
-  };
-
   return (
     <Layout>
-      <BannerSlider data={allData.bannerData} />
-      <Columns {...colSetting1} />
-      <Columns {...colSetting2} />
-      <Columns {...colSetting3} />
-      <Columns {...colSetting4} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<BannerSlider data={allData.bannerData} />} />
+      <Columns
+        type={ColType.TwoColFullPage}
+        widthL={60}
+        widthR={40}
+        contentL={<MessageCenter data={allData.messageCenterData} />}
+        contentR={<PlatformEntry data={allData.platformEntryData} />} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<AboutServiceBlock />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<ServiceBlock />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<ArticleListBlock />} />
     </Layout>
   );
 };

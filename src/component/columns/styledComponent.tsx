@@ -1,26 +1,44 @@
 import styled from "styled-components";
 import { I_Style } from "./interface";
 
-export const FullPageStyle: React.FC<I_Style> = styled.div`
-  max-width: 1400px;
+export const OneColFullStyle: React.FC<I_Style> = styled.div`
   margin: 40px auto;
-  padding: 0 20px;
+  &:first-child{
+    margin-top: 0px; 
+  }
   @media (max-width: 980px) {
-    
+    margin: 24px auto
   }
 `;
 
-export const OneColStyle: React.FC<I_Style> = styled.div`
-    max-width:1400px
-    margin: 0 auto;
+export const TwoColFullStyle: React.FC<I_Style> = styled.div`
+  display: flex;
+  margin: 40px auto;
+  &:first-child{
+    margin-top: 0px; 
+  }
+  @media (max-width: 980px) {
+    flex-direction: column-reverse;
+    margin: 24px auto;
+  }
+`;
+
+export const OneColStyle: React.FC<I_Style> = styled.div`    
+    margin: 40px 10%;
+    &:first-child{
+      margin-top: 0px; 
+    }
     @media (max-width: 980px) {
-    margin: 40px auto;
+    margin: 40px 24px;
     }   
 `;
 
 export const TwoColStyle: React.FC<I_Style> = styled.div`
   display: flex;
   margin: 40px auto;
+  &:first-child{
+    margin-top: 0px; 
+  }
   @media (max-width: 980px) {
     flex-direction: column-reverse;
     margin: 20px auto;

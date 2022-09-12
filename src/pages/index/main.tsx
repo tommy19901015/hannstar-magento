@@ -192,32 +192,6 @@ const allStore = {
 };
 
 const Index: React.FC = () => {
-  const colSetting1 = {
-    type: ColType.TwoCol,
-    widthL: 60,
-    widthR: 40,
-    contentL: <MessageCenter data={allStore.messageCenterData} />,
-    contentR: <PlatformEntry data={allStore.platformEntryData} />,
-  };
-
-  const colSetting2 = {
-    type: ColType.FullPage,
-    content: <Graphics2 data={allStore.graphics2Data} />,
-  };
-
-  const colSetting3 = {
-    type: ColType.FullPage,
-    content: <GraphicsLine data={allStore.graphics1Data1} />,
-  };
-  const colSetting4 = {
-    type: ColType.FullPage,
-    content: <GraphicsLine data={allStore.graphics1Data2} />,
-  };
-
-  const colSetting5 = {
-    type: ColType.FullPage,
-    content: <GraphicsLine data={allStore.graphics1Data3} />,
-  };
 
   const dispatch = useDispatch();
 
@@ -229,12 +203,27 @@ const Index: React.FC = () => {
 
   return (
     <Layout>
-      <BannerSlider data={allStore.bannerData} />
-      <Columns {...colSetting1} />
-      <Columns {...colSetting2} />
-      <Columns {...colSetting3} />
-      <Columns {...colSetting4} />
-      <Columns {...colSetting5} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<BannerSlider data={allStore.bannerData} />} />
+      <Columns
+        type={ColType.TwoColFullPage}
+        widthL={60}
+        widthR={40}
+        contentL={<MessageCenter data={allStore.messageCenterData} />}
+        contentR={<PlatformEntry data={allStore.platformEntryData} />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<Graphics2 data={allStore.graphics2Data} />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<GraphicsLine data={allStore.graphics1Data1} />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<GraphicsLine data={allStore.graphics1Data2} />} />
+      <Columns
+        type={ColType.OneCol}
+        content={<GraphicsLine data={allStore.graphics1Data3} />} />
     </Layout>
   );
 };

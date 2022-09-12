@@ -1,3 +1,61 @@
 $max-width: 1400px;
 $breakpoint: 980px;
-$hannstar-blue: #0094da;
+$hannstar-blue1: #039be5;
+$hannstar-blue2: #0959a2;
+$hannstar-blue3: #082e74;
+$hannstar-orange: #ffa000;
+$hannstar-bg-color: #efefef;
+$hannstar-default-text-color: #363636;
+$hannstar-other-text-color: #666;
+$hannstar-border-color: #b9b9b9;
+
+@mixin hannstarH1Title {
+    color: $hannstar-default-text-color;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+@mixin hannstarH2Title {
+    color: $hannstar-default-text-color;
+    font-size: 32px;
+    font-weight: 700;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+@mixin hannstarH3Title {
+    color: $hannstar-default-text-color;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+@mixin hannstarH4Title {
+    color: $hannstar-default-text-color;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@mixin hannstarContentText {
+    color: #363636;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+@mixin hannstarNoteText {
+    color: #363636;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@mixin hannstarBtn {
+    background-color: $hannstar-blue1;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 16px;
+    cursor: pointer;
+    &:hover {
+        background-color: $hannstar-blue3;
+    }
+}
