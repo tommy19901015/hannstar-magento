@@ -1,34 +1,68 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
 .strongholdBlock {
-  display: flex;
-  .leftBlock {
-  }
-  .rightBlock {
-    .contentBlock {
-      .titleBlock {
-        @include hannstarH4Title;
-        font-weight: 700;
-      }
-      .addressBlock {
-        border-bottom: 1px solid $hannstar-other-text-color;
-        .title {
-          font-size: 16px;
-          font-weight: 600;
-          color: $hannstar-other-text-color;
+    display: flex;
+    .leftBlock {
+        img {
+            width: 100%;
         }
-        .content {
-        }
-      }
-      .phoneBlock {
-        .title {
-          font-size: 16px;
-          font-weight: 600;
-          color: $hannstar-other-text-color;
-        }
-        .content {
-        }
-      }
     }
-  }
+    .rightBlock {
+        padding-left: 55px;
+        .contentBlock {
+            position: relative;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                width: 100%;
+                border-bottom: solid 1px #ddd;
+                transform: scaleX(0);
+                transition: transform 300ms ease-in-out;
+                transform-origin: 0% 50%;
+            }
+            &:hover {
+                &::after {
+                    transform: scaleX(1);
+                    border-bottom: solid 1px $hannstar-blue1;
+                }
+                .titleBlock {
+                    color: $hannstar-blue1;
+                }
+            }
+            .titleBlock {
+                @include hannstarH4Title;
+                font-weight: 700;
+            }
+            .addressBlock {
+                padding: 15px 0;
+                .title {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $hannstar-other-text-color;
+                    padding-right: 10px;
+                }
+                .content {
+                }
+            }
+            .phoneBlock {
+                .title {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $hannstar-other-text-color;
+                    padding-right: 10px;
+                }
+                .content {
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+        flex-direction: column;
+        .rightBlock {
+            padding-left: 0;
+        }
+    }
 }

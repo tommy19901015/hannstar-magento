@@ -252,10 +252,41 @@ const testPDFData = `<table style="width: 100%;">
 `
 
 const Document360Test: React.FC = () => {
-	const getRWDTable = () => {
+	const [fetchData, setFetchData] = useState<any>()
+
+	useEffect(() => {
+		fetch("https://1dbc9a88-8135-419e-bf0a-ec894fac2a43.mock.pstmn.io/cms?domain=hannstar.com/test")
+			.then(res => res.json())
+			.then((data: any) => {
+				setFetchData(data)
+			})
+
+	}, []);
+
+	const getMultipleBlock = () => {
+		if (fetchData) {
+			// const htmlValue = fetchData.data.BLOCK1
+			const htmlValueArr = Object.values(fetchData.data)
+			return <>
+				{
+					htmlValueArr.map((item: any) => {
+						const pcBlock = item.split("<p>###PC</p>")[1]
+						const mBlock = item.split("<p>###M</p>")[1]
+						return (<>
+							<div dangerouslySetInnerHTML={{ __html: pcBlock }} />
+							<div className="mTable">{getRWDTable(mBlock)}</div>
+						</>)
+					})
+				}
+			</>
+		}
+	}
+
+
+	const getRWDTable = (document360Data: any) => {
 		const div: any = document.createElement('div');
-		div.innerHTML = htmlTestData.trim();
-		const table: any = div.getElementsByClassName('hannstarTableRWD')
+		div.innerHTML = document360Data.trim();
+		const table: any = div.getElementsByTagName('table')
 		const trLlist: any = table[0].getElementsByTagName("tr")
 		const trLlistArray = [...trLlist]
 		const rwdData = trLlistArray.map((tr: any, idx: any) => {
@@ -300,26 +331,17 @@ const Document360Test: React.FC = () => {
 		)
 	}
 
-
-
-	// const colSetting1 = {
-	// 	type: ColType.OneCol,
-	// 	content: <div style={{ "background": "red", "width": "100%", "height": "200px" }}></div>,
-	// };
-
-	// const colSetting2 = {
-	// 	type: ColType.OneCol,
-	// 	content: <div style={{ "background": "blue", "width": "100%", "height": "200px" }}></div>,
-	// };
-
 	return (
 		<Layout>
-			{/* <Columns {...colSetting1} />
-			<Columns {...colSetting2} /> */}
-			{
+			{/* {
 				<>
 					<div className="testPDFHtml">{getPDF()}</div>
 				</>
+			} */}
+			{
+				<div className="testMultipleBlock" >
+					{getMultipleBlock()}
+				</div>
 			}
 			{/* <div className="testHtml" dangerouslySetInnerHTML={{ __html: htmlTestData }} />
 			<div className="testTableRWD">

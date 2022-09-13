@@ -23,4 +23,13 @@
             }
         }
     }
+    @media screen and (max-width: $breakpoint) {
+        justify-content: center;
+        .mainTitle {
+            @include hannstarH1Title;
+        }
+        .rightBlock {
+            display: none;
+        }
+    }
 }

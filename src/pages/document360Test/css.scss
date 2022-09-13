@@ -34,6 +34,15 @@
         }
     }
 }
+.testMultipleBlock {
+    line-height: 1.8;
+    table {
+        width: 100% !important;
+    }
+    .mTable {
+        display: none;
+    }
+}
 
 @media screen and (max-width: $breakpoint) {
     .testHtml {
@@ -44,5 +53,13 @@
     }
     .testTableRWD {
         display: block;
+    }
+    .testMultipleBlock {
+        table {
+            display: none;
+        }
+        .mTable {
+            display: block;
+        }
     }
 }
