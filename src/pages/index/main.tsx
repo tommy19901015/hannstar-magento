@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BannerSlider from "../../component/bannerSlider/main";
@@ -82,34 +83,34 @@ const platformEntryData = [
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
     title: "產品行銷服務",
-    href: "/"
+    href: "/",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
     title: "方案系統及整合服務",
-    href: "/"
+    href: "/",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
     title: "客戶服務",
-    href: "/"
+    href: "/",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_20F17_cfe6j6bk57.png",
     title: "瀚斯寶麗",
-    href: "/"
+    href: "/",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
     title: "供應商協同合作",
-    href: "/"
+    href: "/",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
     title: "瀚宇會員服務",
-    href: "/"
+    href: "/",
   },
-]
+];
 
 //圖文
 const graphics2Data = [
@@ -192,7 +193,6 @@ const allStore = {
 };
 
 const Index: React.FC = () => {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -205,25 +205,31 @@ const Index: React.FC = () => {
     <Layout>
       <Columns
         type={ColType.OneColFullPage}
-        content={<BannerSlider data={allStore.bannerData} />} />
+        content={<BannerSlider data={allStore.bannerData} />}
+      />
       <Columns
         type={ColType.TwoColFullPage}
         widthL={60}
         widthR={40}
         contentL={<MessageCenter data={allStore.messageCenterData} />}
-        contentR={<PlatformEntry data={allStore.platformEntryData} />} />
+        contentR={<PlatformEntry data={allStore.platformEntryData} />}
+      />
       <Columns
         type={ColType.OneCol}
-        content={<Graphics2 data={allStore.graphics2Data} />} />
+        content={<Graphics2 data={allStore.graphics2Data} />}
+      />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={allStore.graphics1Data1} />} />
+        content={<GraphicsLine data={allStore.graphics1Data1} />}
+      />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={allStore.graphics1Data2} />} />
+        content={<GraphicsLine data={allStore.graphics1Data2} />}
+      />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={allStore.graphics1Data3} />} />
+        content={<GraphicsLine data={allStore.graphics1Data3} />}
+      />
     </Layout>
   );
 };
@@ -235,5 +241,7 @@ const AppWrapper = () => {
     </Provider>
   );
 };
+
+ReactDOM.render(<AppWrapper />, document.getElementById("root"));
 
 export default AppWrapper;

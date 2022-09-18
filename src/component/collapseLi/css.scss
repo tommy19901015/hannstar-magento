@@ -1,65 +1,65 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
 .collapseBlock {
-    .itemList {
-        padding: 0 20px;
-        .itemLi {
-            width: 100%;
-            border-bottom: 1px solid #ddd;
-            .liContent {
-                padding: 10px 0;
-                position: relative;
-                display: block;
-                font-weight: bolder;
-                font-size: 16px;
-                color: #000;
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    right: 8px;
-                    width: 12px;
-                    height: 2px;
-                    background-color: #ddd;
-                    transform: rotate(90deg);
-                    transition: all 0.3s ease-out;
-                }
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    right: 8px;
-                    width: 12px;
-                    height: 2px;
-                    background-color: #ddd;
-                    transition: 0.3s ease-out;
-                }
-            }
-            .secItemList {
-                visibility: hidden;
-                opacity: 0;
-                height: 0;
-                padding-left: 10px;
-                .htmlBlock {
-                    color: #929292;
-                    line-height: 1.8;
-                }
-            }
-            &.open {
-                transition: all 0.5s ease-out;
-                .liContent {
-                    &::after {
-                        transform: rotate(0);
-                    }
-                }
-                .secItemList {
-                    visibility: visible;
-                    opacity: 1;
-                    height: auto;
-                    padding: 0 25px 10px 0;
-                    transition: 0.3s ease-out;
-                }
-            }
+  .itemList {
+    padding: 0 20px;
+    .itemLi {
+      width: 100%;
+      border-bottom: 1px solid $hannstar-border-color;
+      .liContent {
+        padding: 10px 0;
+        position: relative;
+        display: block;
+        font-weight: bolder;
+        font-size: 16px;
+        color: #000;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          width: 12px;
+          height: 2px;
+          background-color: $hannstar-border-color;
+          transform: rotate(90deg);
+          transition: all 0.3s ease-out;
         }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          width: 12px;
+          height: 2px;
+          background-color: #ddd;
+          transition: 0.3s ease-out;
+        }
+      }
+      .secItemList {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        padding-left: 10px;
+        .htmlBlock {
+          color: #929292;
+          line-height: 1.8;
+        }
+      }
+      &.open {
+        transition: all 0.5s ease-out;
+        .liContent {
+          &::after {
+            transform: rotate(0);
+          }
+        }
+        .secItemList {
+          visibility: visible;
+          opacity: 1;
+          height: auto;
+          padding: 0 25px 10px 0;
+          transition: 0.3s ease-out;
+        }
+      }
     }
+  }
 }

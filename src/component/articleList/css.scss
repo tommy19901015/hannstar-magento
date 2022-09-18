@@ -4,7 +4,7 @@
   .categoryListBlock {
     padding-bottom: 50px;
     .category {
-      font-size: 24px;
+      @include hannstarH3Title;
       padding-bottom: 30px;
     }
     .contentBlock {
@@ -14,7 +14,6 @@
       .articleBlock {
         display: flex;
         justify-content: space-between;
-
         .imgBlock {
           width: 30%;
           img {
@@ -30,21 +29,21 @@
           .textBlock {
             padding-bottom: 50px;
             .title {
-              font-size: 24px;
+              @include hannstarH3Title;
+              text-align: left;
               padding-bottom: 30px;
             }
             .content {
-              font-size: 18px;
-              line-height: 1.8;
+              @include hannstarContentText;
             }
           }
           .articleDetailBlock {
-            font-size: 14px;
-            color: #999;
+            @include hannstarNoteText;
+            color: $hannstar-other-text-color;
             text-align: end;
             .date,
             .views {
-              color: #f9a610;
+              color: $hannstar-orange;
               padding: 0 5px;
             }
           }

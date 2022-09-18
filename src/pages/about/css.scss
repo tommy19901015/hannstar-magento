@@ -1,87 +1,86 @@
+@import "../../style/variable.scss";
+
 .milestoneBlock {
-    .title {
-        margin-bottom: 20px;
-        font-size: 32px;
-        font-weight: 500;
-        color: #060606;
-        text-align: center;
+  .title {
+    @include hannstarH2Title;
+    text-align: center;
+  }
+  .historyList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: linear-gradient(to bottom, #b1b1b1 2px, transparent 0) 50% 0/2px
+      8px repeat-y;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 6px;
+      height: 6px;
+      margin-left: -3px;
+      border-radius: 50%;
+      background-color: $hannstar-blue1;
     }
-    .historyList {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        max-width: 880px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 80px;
-        padding-bottom: 80px;
-        background: linear-gradient(to bottom, #b1b1b1 2px, transparent 0) 50% 0/2px 8px repeat-y;
+    li {
+      position: relative;
+      display: flex;
+      .leftBlock {
+        .historyDate {
+          @include hannstarH2Title;
+          padding-bottom: 10px;
+          color: $hannstar-blue1;
+        }
+        .imgBlock {
+          margin-bottom: 10px;
+          border: 6px solid #fff;
+          box-shadow: 0 0 29px rgb(0 0 0 / 10%);
+          img {
+            width: 100%;
+          }
+        }
+        h3 {
+          @include hannstarContentText;
+        }
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          border-radius: 50%;
+        }
         &::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 6px;
-            height: 6px;
-            margin-left: -3px;
-            border-radius: 50%;
-            background-color: #0094da;
+          top: 5px;
+          width: 30px;
+          height: 30px;
+          border: 1px solid $hannstar-blue1;
+          background-color: #fff;
+          left: calc(50% - 15px);
         }
-        li {
-            position: relative;
-            display: flex;
-            .leftBlock {
-                .historyDate {
-                    margin-bottom: 10px;
-                    font: 700 30px 'Lato', 'Noto Sans TC', sans-serif;
-                    color: #0094da;
-                }
-                .imgBlock {
-                    margin-bottom: 10px;
-                    border: 6px solid #fff;
-                    box-shadow: 0 0 29px rgb(0 0 0 / 10%);
-                    img {
-                        width: 100%;
-                    }
-                }
-                h3 {
-                    color: #5d5d5d;
-                    font-weight: 400;
-                }
-                &::before,
-                &::after {
-                    position: absolute;
-                    content: '';
-                    border-radius: 50%;
-                }
-                &::before {
-                    top: 5px;
-                    width: 30px;
-                    height: 30px;
-                    border: 1px solid #9adbfa;
-                    background-color: #fff;
-                    left: calc(50% - 15px);
-                }
-                &::after {
-                    top: 17px;
-                    width: 6px;
-                    height: 6px;
-                    background-color: #0094da;
-                    left: calc(50% - 3px);
-                }
-            }
-            .rightBlock {
-                width: 50%;
-            }
-            &:nth-child(odd) {
-                flex-direction: row-reverse;
-            }
-            &:nth-child(even) {
-                .historyDate,
-                h3 {
-                    text-align: right;
-                }
-            }
+        &::after {
+          top: 17px;
+          width: 6px;
+          height: 6px;
+          background-color: $hannstar-blue1;
+          left: calc(50% - 3px);
         }
+      }
+      .rightBlock {
+        width: 50%;
+      }
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+      &:nth-child(even) {
+        .historyDate,
+        h3 {
+          text-align: right;
+        }
+      }
     }
+  }
 }

@@ -15,7 +15,11 @@
     width: 50%;
     padding: 20px 50px;
     .borderStyle {
-      background-image: linear-gradient(to right, #0094da, #0094da);
+      background-image: linear-gradient(
+        to right,
+        $hannstar-blue1,
+        $hannstar-blue1
+      );
       background-position: 0 30px;
       background-size: 10px calc(100% - 30px - 20px);
       background-repeat: no-repeat;
@@ -25,23 +29,25 @@
         align-items: baseline;
         margin-bottom: 30px;
         .title {
-          font-weight: bolder;
-          font-size: 32px;
+          @include hannstarH2Title;
+          padding-bottom: 0;
         }
         .line {
           width: 30px;
           height: 10px;
           margin-top: 20px;
           margin-right: 20px;
-          background-image: linear-gradient(to right, #0094da, #0094da);
+          background-image: linear-gradient(
+            to right,
+            $hannstar-blue1,
+            $hannstar-blue1
+          );
         }
       }
       .textBlock {
         padding-left: 50px;
         clear: both;
-        font-size: 18px;
-        color: #5d5d5d;
-        line-height: 1.8;
+        @include hannstarContentText;
       }
       .bottomLineBox {
         display: flex;
@@ -50,10 +56,10 @@
         margin-top: 30px;
         .learnMore {
           text-decoration: none;
-          color: #0094da;
           position: relative;
           padding: 5px 20px 5px 20px;
-          font: 700 12px "Noto Sans TC", sans-serif;
+          @include hannstarNoteText;
+          color: $hannstar-blue1;
           .plusLine {
             position: absolute;
             top: calc(50% - 4px);
@@ -69,7 +75,7 @@
         .line {
           flex-grow: 1;
           height: 10px;
-          background-color: #0094da;
+          background-color: $hannstar-blue1;
         }
       }
     }

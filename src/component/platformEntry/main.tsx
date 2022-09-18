@@ -20,7 +20,7 @@ const PlatformEntry: React.FC<I_Props> = ({ data }) => {
         <div className={`item style${idx}`} key={idx}>
           <a href={item.href} target="_blank" rel="noreferrer">
             <img src={item.src} alt={item.title} />
-            <h2>{item.title}</h2>
+            <div className="platformTitle">{item.title}</div>
           </a>
         </div>
       ))}

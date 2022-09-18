@@ -1,35 +1,35 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
 .breadcrumbsBlock {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 30px 20px;
-    border-bottom: 1px solid #e2e2e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 30px 20px;
+  border-bottom: 1px solid $hannstar-border-color;
+  .mainTitle {
+    @include hannstarH1Title;
+  }
+  .rightBlock {
+    .textLink {
+      @include hannstarContentText;
+      &::after {
+        content: "/";
+        padding: 0 10px;
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
+    justify-content: center;
     .mainTitle {
-        @include hannstarH1Title;
+      @include hannstarH1Title;
     }
     .rightBlock {
-        .textLink {
-            @include hannstarContentText;
-            &::after {
-                content: '/';
-                padding: 0 10px;
-            }
-            &:last-child {
-                &::after {
-                    display: none;
-                }
-            }
-        }
+      display: none;
     }
-    @media screen and (max-width: $breakpoint) {
-        justify-content: center;
-        .mainTitle {
-            @include hannstarH1Title;
-        }
-        .rightBlock {
-            display: none;
-        }
-    }
+  }
 }
