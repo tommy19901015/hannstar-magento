@@ -1,102 +1,100 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
 .footer {
-    // background-color: #09529a;
-    // background-color: #929292;
-    .topBlock {
-        display: flex;
-        justify-content: space-between;
-        padding: 70px 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-        .linkBlock {
-            font-size: 16px;
-            font-weight: bolder;
-            .title {
-                padding-bottom: 15px;
-                a {
-                    color: #000;
-                    letter-spacing: 1px;
-                }
-            }
-            .text {
-                padding-bottom: 10px;
-                a {
-                    color: #929292;
-                    letter-spacing: 1px;
-                }
-            }
+  .topBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    .linkBlock {
+      font-size: 16px;
+      font-weight: bolder;
+      .title {
+        padding-bottom: 15px;
+        a {
+          color: #000;
+          letter-spacing: 1px;
         }
+      }
+      .text {
+        padding-bottom: 10px;
+        a {
+          color: #929292;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+  .topBlock_m {
+    display: none;
+  }
+  .bottomBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
+    height: 80px;
+    padding: 0 80px;
+    .logogBlock {
+      display: flex;
+      align-items: center;
+      .footerMenu {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        .text {
+          padding: 0 10px;
+          font-size: 13px;
+          color: #fff;
+          border-right: 1px solid #fff;
+          word-break: keep-all;
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+    .copyright {
+      font-size: 13px;
+      font-family: "Noto Sans TC", sans-serif;
+      color: #fff;
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
+    .topBlock {
+      display: none;
     }
     .topBlock_m {
+      display: block;
+      .footerH3 {
+      }
+      .footerLink {
+        display: block;
+        padding: 5px 0;
+        color: #929292;
+      }
+      .pageLinkList {
         display: none;
+        &.open {
+          display: block;
+        }
+      }
     }
     .bottomBlock {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: linear-gradient(280deg, #20a0e6 0%, #0b87d1 17%, #082e74 100%);
-        height: 80px;
-        padding: 0 80px;
-        .logogBlock {
-            display: flex;
-            align-items: center;
-            .footerMenu {
-                display: flex;
-                align-items: center;
-                margin-left: 50px;
-                .text {
-                    padding: 0 10px;
-                    font-size: 13px;
-                    color: #fff;
-                    border-right: 1px solid #fff;
-                    word-break: keep-all;
-                    &:last-child {
-                        border-right: none;
-                    }
-                }
-            }
+      flex-direction: column;
+      height: auto;
+      padding-bottom: 30px;
+      .logogBlock {
+        flex-direction: column;
+        padding: 30px 0;
+        .logo {
+          padding-bottom: 30px;
         }
-        .copyright {
-            font-size: 13px;
-            font-family: 'Noto Sans TC', sans-serif;
-            color: #fff;
+        .footerMenu {
+          margin: 0px;
         }
+      }
     }
-    @media screen and (max-width: $breakpoint) {
-        .topBlock {
-            display: none;
-        }
-        .topBlock_m {
-            display: block;
-            .footerH3 {
-            }
-            .footerLink {
-                display: block;
-                padding: 5px 0;
-                color: #929292;
-            }
-            .pageLinkList {
-                display: none;
-                &.open {
-                    display: block;
-                }
-            }
-        }
-        .bottomBlock {
-            flex-direction: column;
-            height: auto;
-            padding-bottom: 30px;
-            .logogBlock {
-                flex-direction: column;
-                padding: 30px 0;
-                .logo {
-                    padding-bottom: 30px;
-                }
-                .footerMenu {
-                    margin: 0px;
-                }
-            }
-        }
-    }
+  }
 }
