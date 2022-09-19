@@ -6,11 +6,7 @@ import Form from "../../component/form/main";
 import "./css.scss";
 
 const FormTest: React.FC = () => {
-  return (
-    // <Layout>
-    <Form />
-    // </Layout>
-  );
+  return <Layout>{/* <Form /> */}</Layout>;
 };
 
 export default FormTest;

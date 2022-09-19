@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, createRef } from "react";
+import { I_Props, FormType } from "./interface";
 import "./css.scss";
 
 const testObj: any = [
@@ -106,9 +107,8 @@ const testObj: any = [
   },
 ];
 
-const Form: React.FC<any> = () => {
+const Form: React.FC<I_Props> = ({ data }) => {
   const elementsRef: any = useRef(testObj.map(() => createRef()));
-
   const QuestionComponent: React.FC<any> = (data, ChildComponent) => {
     return (
       <div className="columnBlock" key={data.index}>
@@ -216,10 +216,10 @@ const Form: React.FC<any> = () => {
   const mappingType: any = (item: any, index: any) => {
     const data = { ...item, index };
     return {
-      input: <InputComponent {...data} />,
-      radio: <RaidoComponent {...data} />,
-      checkbox: <CheckBoxComponent {...data} />,
-      select: <SelectComponent {...data} />,
+      [FormType.Intput]: <InputComponent {...data} />,
+      [FormType.Radio]: <RaidoComponent {...data} />,
+      [FormType.CheckBox]: <CheckBoxComponent {...data} />,
+      [FormType.Select]: <SelectComponent {...data} />,
     };
   };
 
@@ -247,7 +247,7 @@ const Form: React.FC<any> = () => {
   return (
     <div>
       <form onSubmit={getAllData} noValidate>
-        {testObj.map((item: any, index: any) => {
+        {data.map((item: any, index: any) => {
           return mappingType(item, index)[item.type];
         })}
         <button type="submit">送出</button>
