@@ -11,6 +11,7 @@ import Solution from "./pages/solution/main";
 import Stronghold from "./pages/stronghold/main";
 import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
+import PartnerFcpProgFcpQuotation from "./pages/partner-fcp-prog_fcp_quotation/main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Route path="/stronghold" element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
+      <Route path="/FCP/PROG_FCP_QUOTATION" element={<PartnerFcpProgFcpQuotation />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
