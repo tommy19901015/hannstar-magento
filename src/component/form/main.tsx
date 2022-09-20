@@ -1,114 +1,126 @@
 import React, { useState, useEffect, useRef, createRef } from "react";
 import { I_Props, FormType } from "./interface";
+import { useForm } from "react-hook-form";
 import "./css.scss";
 
-const testObj: any = [
-  {
-    title: "標題input",
-    columnKey: "input1",
-    type: "input",
-    placeholder: "標題input",
-    required: true,
-    option: [
-      {
-        text: "",
-      },
-    ],
-  },
-  {
-    title: "標題radio",
-    type: "radio",
-    columnKey: "radio1",
-    placeholder: "",
-    required: true,
-    option: [
-      {
-        text: "選項1",
-      },
-      {
-        text: "選項2",
-      },
-      {
-        text: "選項3",
-      },
-    ],
-  },
-  {
-    title: "標題checkbox",
-    type: "checkbox",
-    columnKey: "checkbox1",
-    placeholder: "",
-    required: true,
-    option: [
-      {
-        text: "選項1",
-      },
-      {
-        text: "選項2",
-      },
-      {
-        text: "選項3",
-      },
-    ],
-  },
-  {
-    title: "標題select",
-    type: "select",
-    columnKey: "select1",
-    placeholder: "",
-    required: true,
-    option: [
-      {
-        text: "選項1",
-      },
-      {
-        text: "選項2",
-      },
-      {
-        text: "選項3",
-      },
-    ],
-  },
-  {
-    title: "標題radio2",
-    type: "radio",
-    columnKey: "radio2",
-    placeholder: "",
-    required: true,
-    option: [
-      {
-        text: "選項1",
-      },
-      {
-        text: "選項2",
-      },
-      {
-        text: "選項3",
-      },
-    ],
-  },
-  {
-    title: "標題checkbox2",
-    type: "checkbox",
-    columnKey: "checkbox2",
-    placeholder: "",
-    required: true,
-    option: [
-      {
-        text: "選項1",
-      },
-      {
-        text: "選項2",
-      },
-      {
-        text: "選項3",
-      },
-    ],
-  },
-];
+// const testObj: any = [
+//   {
+//     title: "標題input",
+//     columnKey: "input1",
+//     type: "input",
+//     placeholder: "標題input",
+//     required: true,
+//     option: [
+//       {
+//         text: "",
+//       },
+//     ],
+//   },
+//   {
+//     title: "標題radio",
+//     type: "radio",
+//     columnKey: "radio1",
+//     placeholder: "",
+//     required: true,
+//     option: [
+//       {
+//         text: "選項1",
+//       },
+//       {
+//         text: "選項2",
+//       },
+//       {
+//         text: "選項3",
+//       },
+//     ],
+//   },
+//   {
+//     title: "標題checkbox",
+//     type: "checkbox",
+//     columnKey: "checkbox1",
+//     placeholder: "",
+//     required: true,
+//     option: [
+//       {
+//         text: "選項1",
+//       },
+//       {
+//         text: "選項2",
+//       },
+//       {
+//         text: "選項3",
+//       },
+//     ],
+//   },
+//   {
+//     title: "標題select",
+//     type: "select",
+//     columnKey: "select1",
+//     placeholder: "",
+//     required: true,
+//     option: [
+//       {
+//         text: "選項1",
+//       },
+//       {
+//         text: "選項2",
+//       },
+//       {
+//         text: "選項3",
+//       },
+//     ],
+//   },
+//   {
+//     title: "標題radio2",
+//     type: "radio",
+//     columnKey: "radio2",
+//     placeholder: "",
+//     required: true,
+//     option: [
+//       {
+//         text: "選項1",
+//       },
+//       {
+//         text: "選項2",
+//       },
+//       {
+//         text: "選項3",
+//       },
+//     ],
+//   },
+//   {
+//     title: "標題checkbox2",
+//     type: "checkbox",
+//     columnKey: "checkbox2",
+//     placeholder: "",
+//     required: true,
+//     option: [
+//       {
+//         text: "選項1",
+//       },
+//       {
+//         text: "選項2",
+//       },
+//       {
+//         text: "選項3",
+//       },
+//     ],
+//   },
+// ];
 
 const Form: React.FC<I_Props> = ({ data }) => {
-  const elementsRef: any = useRef(testObj.map(() => createRef()));
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (dddd: any) => console.log(dddd);
+  const onError = (errors: any, e: any) => console.log(errors, e);
+
+
+  const formRef: any = useRef(null)
+  const elementsRef: any = useRef(data.formData.map(() => createRef()));
+
+  useEffect(() => {
+    data.getAllData.current = handleSubmit(onSubmit, onError)
+  }, [])
+
   const QuestionComponent: React.FC<any> = (data, ChildComponent) => {
     return (
       <div className="columnBlock" key={data.index}>
@@ -140,13 +152,13 @@ const Form: React.FC<I_Props> = ({ data }) => {
           placeholder={data.placeholder}
           type="text"
           name={data.columnKey}
-          // onChange={(e) =>
-          //   inputOnChangeVerify(
-          //     e.target.value,
-          //     elementsRef.current[props.refID].current,
-          //     props
-          //   )
-          // }
+        // onChange={(e) =>
+        //   inputOnChangeVerify(
+        //     e.target.value,
+        //     elementsRef.current[props.refID].current,
+        //     props
+        //   )
+        // }
         />
       );
     };
@@ -224,16 +236,18 @@ const Form: React.FC<I_Props> = ({ data }) => {
   };
 
   const getAllData = (e: any) => {
-    e.preventDefault();
-    const resss: any = {};
-    const targetDom = (index: any) => elementsRef.current[index].current;
-    testObj.map((item: any, index: any) => {
-      const dataKey = targetDom(index).getAttribute("data-title");
-      const type = targetDom(index).getAttribute("data-type");
-      const info = new FormData(e.target).getAll(dataKey);
-      resss[dataKey] = type === "input" || type === "select" ? info[0] : info;
-    });
-    console.log(resss);
+    console.log('formRef', formRef);
+    // e.preventDefault();
+    // const resss: any = {};
+    // const targetDom = (index: any) => elementsRef.current[index].current;
+    // data.formData.map((item: any, index: any) => {
+    //   const dataKey = targetDom(index).getAttribute("data-title");
+    //   const type = targetDom(index).getAttribute("data-type");
+    //   const info = new FormData(e.target).getAll(dataKey);
+    //   resss[dataKey] = type === "input" || type === "select" ? info[0] : info;
+    // });
+    // console.log(resss);
+    // return resss
   };
 
   // const checkSubmitError =(getFormData, targetDom)=>{
@@ -246,11 +260,20 @@ const Form: React.FC<I_Props> = ({ data }) => {
 
   return (
     <div>
-      <form onSubmit={getAllData} noValidate>
-        {data.map((item: any, index: any) => {
+      {/* <form ref={formRef} onSubmit={getAllData} noValidate>
+        {data.formData.map((item: any, index: any) => {
           return mappingType(item, index)[item.type];
         })}
         <button type="submit">送出</button>
+      </form> */}
+      <form ref={formRef} onSubmit={handleSubmit(onSubmit, onError)}>
+        <input {...register("firstName", { required: true, maxLength: 20 })} />
+        <select {...register("gender")}>
+          <option value="female">female</option>
+          <option value="male">male</option>
+          <option value="other">other</option>
+        </select>
+        {/* <input type="submit" /> */}
       </form>
     </div>
   );

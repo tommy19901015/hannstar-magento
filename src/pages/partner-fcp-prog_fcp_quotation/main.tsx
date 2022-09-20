@@ -2,119 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import Form from "../../component/form/main";
+import FormHook from "../../component/formHook/main";
 import { I_Props, FormType } from "../../component/form/interface";
 import "./css.scss";
 
 const PartnerFcpProgFcpQuotation: React.FC = () => {
-  // const testObj: any = [
-  //   {
-  //     title: "標題input",
-  //     columnKey: "input1",
-  //     type: "input",
-  //     placeholder: "標題input",
-  //     required: true,
-  //     option: [
-  //       {
-  //         text: "",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "標題radio",
-  //     type: "radio",
-  //     columnKey: "radio1",
-  //     placeholder: "",
-  //     required: true,
-  //     option: [
-  //       {
-  //         text: "選項1",
-  //       },
-  //       {
-  //         text: "選項2",
-  //       },
-  //       {
-  //         text: "選項3",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "標題checkbox",
-  //     type: "checkbox",
-  //     columnKey: "checkbox1",
-  //     placeholder: "",
-  //     required: true,
-  //     option: [
-  //       {
-  //         text: "選項1",
-  //       },
-  //       {
-  //         text: "選項2",
-  //       },
-  //       {
-  //         text: "選項3",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "標題select",
-  //     type: "select",
-  //     columnKey: "select1",
-  //     placeholder: "",
-  //     required: true,
-  //     option: [
-  //       {
-  //         text: "選項1",
-  //       },
-  //       {
-  //         text: "選項2",
-  //       },
-  //       {
-  //         text: "選項3",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "標題radio2",
-  //     type: "radio",
-  //     columnKey: "radio2",
-  //     placeholder: "",
-  //     required: true,
-  //     option: [
-  //       {
-  //         text: "選項1",
-  //       },
-  //       {
-  //         text: "選項2",
-  //       },
-  //       {
-  //         text: "選項3",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "標題checkbox2",
-  //     type: "checkbox",
-  //     columnKey: "checkbox2",
-  //     placeholder: "",
-  //     required: true,
-  //     option: [
-  //       {
-  //         text: "選項1",
-  //       },
-  //       {
-  //         text: "選項2",
-  //       },
-  //       {
-  //         text: "選項3",
-  //       },
-  //     ],
-  //   },
-  // ];
-
   const formData = [
     {
       title: "RFQ Number",
+      value: "eee",
       columnKey: "RFQNumber",
       type: FormType.Intput,
       placeholder: "",
@@ -122,6 +18,7 @@ const PartnerFcpProgFcpQuotation: React.FC = () => {
     },
     {
       title: "序號",
+      value: "",
       columnKey: "number",
       type: FormType.Intput,
       placeholder: "",
@@ -129,17 +26,35 @@ const PartnerFcpProgFcpQuotation: React.FC = () => {
     },
     {
       title: "PM 擔當",
+      value: "",
       columnKey: "PM",
       type: FormType.Intput,
       placeholder: "",
       required: true,
-    },
+    }
   ];
 
+
+
+  const childFunc: any = React.useRef(null)
+
+  const testClick = () => {
+    const yy = childFunc.current()
+    console.log('yy', yy);
+    yy.then((res: any) => console.log(res))
+  }
+
+  const testData = {
+    getAllData: childFunc,
+    formData
+  }
+
+
   return (
-    // <Layout>
-    <Form data={formData} />
-    // </Layout>
+    <Layout>
+      <FormHook data={testData} />
+      <button onClick={testClick}>我是按鈕</button>
+    </Layout>
   );
 };
 
