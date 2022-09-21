@@ -1,181 +1,53 @@
-import React, { useState, useEffect, useRef, createRef } from "react";
-import { I_Props, FormType } from "./interface";
-import { useForm } from "react-hook-form";
+import React, { useState, useEffect } from "react";
+import { I_Props, FormType, I_FormData, I_MappingForm } from "./interface";
+import { useForm, FormProvider, useFormContext } from "react-hook-form";
 import "./css.scss";
 
-// const testObj: any = [
-//   {
-//     title: "標題input",
-//     columnKey: "input1",
-//     type: "input",
-//     placeholder: "標題input",
-//     required: true,
-//     option: [
-//       {
-//         text: "",
-//       },
-//     ],
-//   },
-//   {
-//     title: "標題radio",
-//     type: "radio",
-//     columnKey: "radio1",
-//     placeholder: "",
-//     required: true,
-//     option: [
-//       {
-//         text: "選項1",
-//       },
-//       {
-//         text: "選項2",
-//       },
-//       {
-//         text: "選項3",
-//       },
-//     ],
-//   },
-//   {
-//     title: "標題checkbox",
-//     type: "checkbox",
-//     columnKey: "checkbox1",
-//     placeholder: "",
-//     required: true,
-//     option: [
-//       {
-//         text: "選項1",
-//       },
-//       {
-//         text: "選項2",
-//       },
-//       {
-//         text: "選項3",
-//       },
-//     ],
-//   },
-//   {
-//     title: "標題select",
-//     type: "select",
-//     columnKey: "select1",
-//     placeholder: "",
-//     required: true,
-//     option: [
-//       {
-//         text: "選項1",
-//       },
-//       {
-//         text: "選項2",
-//       },
-//       {
-//         text: "選項3",
-//       },
-//     ],
-//   },
-//   {
-//     title: "標題radio2",
-//     type: "radio",
-//     columnKey: "radio2",
-//     placeholder: "",
-//     required: true,
-//     option: [
-//       {
-//         text: "選項1",
-//       },
-//       {
-//         text: "選項2",
-//       },
-//       {
-//         text: "選項3",
-//       },
-//     ],
-//   },
-//   {
-//     title: "標題checkbox2",
-//     type: "checkbox",
-//     columnKey: "checkbox2",
-//     placeholder: "",
-//     required: true,
-//     option: [
-//       {
-//         text: "選項1",
-//       },
-//       {
-//         text: "選項2",
-//       },
-//       {
-//         text: "選項3",
-//       },
-//     ],
-//   },
-// ];
-
-const Form: React.FC<I_Props> = ({ data }) => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (dddd: any) => console.log(dddd);
-  const onError = (errors: any, e: any) => console.log(errors, e);
-
-
-  const formRef: any = useRef(null)
-  const elementsRef: any = useRef(data.formData.map(() => createRef()));
+const FormHook: React.FC<I_Props> = ({ data }) => {
+  const methods = useForm({ shouldFocusError: false });
 
   useEffect(() => {
-    data.getAllData.current = handleSubmit(onSubmit, onError)
+    data.formMethods.current = methods
   }, [])
 
-  const QuestionComponent: React.FC<any> = (data, ChildComponent) => {
+  const QuestionComponent: React.FC<I_FormData> = (data, ChildComponent) => {
     return (
       <div className="columnBlock" key={data.index}>
         <div className="title">{data.title}</div>
-        <div
-          data-title={data.columnKey}
-          data-type={data.type}
-          className="bodyBlock"
-          ref={elementsRef.current[data.index]}
-        >
+        <div className="bodyBlock">
           <ChildComponent {...data} />
-          {/* <ErrorMessage message={setErrorMessage(type, item.inputType)} /> */}
         </div>
       </div>
     );
   };
 
-  const InputComponent = (data: any) => {
-    const InputBlock = () => {
-      // props.type = data.type;
-      // const inputTypeObj = {
-      //   [InputType.Text]: "text",
-      //   [InputType.Textarea]: "text",
-      //   [InputType.Email]: "email",
-      //   [InputType.Phone]: "tel",
-      // };
-      return (
-        <input
-          placeholder={data.placeholder}
-          type="text"
-          name={data.columnKey}
-        // onChange={(e) =>
-        //   inputOnChangeVerify(
-        //     e.target.value,
-        //     elementsRef.current[props.refID].current,
-        //     props
-        //   )
-        // }
-        />
-      );
-    };
-    return QuestionComponent(data, InputBlock);
+  const InputComponent: React.FC<I_FormData> = (data) => {
+    methods.setValue(data.columnKey, data.value)
+    const IntputBlock = () => {
+      const { register } = useFormContext();
+      return (<input
+        type="text"
+        placeholder={data.placeholder}
+        {...register(data.columnKey, { required: data.required })}
+      />)
+    }
+
+    return QuestionComponent(data, IntputBlock);
   };
 
-  const RaidoComponent = (data: any) => {
+  const RaidoComponent: React.FC<I_FormData> = (data) => {
+    const { register } = useFormContext();
     const RaidoBlock = () => {
-      return data.option.map((item: any, index: any) => (
-        <div className="hannstarRadio">
+      return data.option && data.option.map((item, index) => (
+        <div className="hannstarRadio" key={index}>
           <input
+            {...register(data.columnKey, { required: data.required })}
             id={data.columnKey + index}
-            type="radio"
-            value={item.text}
+            type={FormType.Radio}
+            value={item.value}
             name={data.columnKey}
           />
-          <label htmlFor={`${data.columnKey + index}`} {...data}>
+          <label htmlFor={`${data.columnKey + index}`}>
             {item.text}
           </label>
         </div>
@@ -184,17 +56,19 @@ const Form: React.FC<I_Props> = ({ data }) => {
     return QuestionComponent(data, RaidoBlock);
   };
 
-  const CheckBoxComponent = (data: any) => {
-    const CheckBoxBlock = (props: any) => {
-      return props.option.map((item: any, index: any) => (
-        <div className="hannstarCheckBox">
+  const CheckBoxComponent: React.FC<I_FormData> = (data) => {
+    const { register } = useFormContext();
+    const CheckBoxBlock = () => {
+      return data.option && data.option.map((item, index) => (
+        <div className="hannstarCheckBox" key={index}>
           <input
+            {...register(data.columnKey, { required: data.required })}
             id={data.columnKey + index}
-            type="checkbox"
-            value={item.text}
+            type={FormType.CheckBox}
+            value={item.value}
             name={data.columnKey}
           />
-          <label htmlFor={`${data.columnKey + index}`} {...props}>
+          <label htmlFor={`${data.columnKey + index}`}>
             {item.text}
           </label>
         </div>
@@ -203,21 +77,22 @@ const Form: React.FC<I_Props> = ({ data }) => {
     return QuestionComponent(data, CheckBoxBlock);
   };
 
-  const SelectComponent = (data: any) => {
-    const SelectBlock = (props: any) => {
-      const [selectValue, setSelectValue] = useState("");
-      const handleOnChange = (e: any) => {
+  const SelectComponent: React.FC<I_FormData> = (data) => {
+    const { register } = useFormContext();
+    const SelectBlock = () => {
+      const [selectValue, setSelectValue] = useState<string>("");
+      const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectValue(e.target.value);
       };
 
       return (
         <select
-          name={`${data.columnKey}`}
+          {...register(data.columnKey, { required: data.required })}
           value={selectValue}
           onChange={handleOnChange}
         >
-          {props.option.map((item: any) => {
-            return <option value={item.text}>{item.text}</option>;
+          {data.option && data.option.map((item, index) => {
+            return <option key={index} value={item.value}>{item.text}</option>;
           })}
         </select>
       );
@@ -225,7 +100,7 @@ const Form: React.FC<I_Props> = ({ data }) => {
     return QuestionComponent(data, SelectBlock);
   };
 
-  const mappingType: any = (item: any, index: any) => {
+  const mappingType = (item: I_FormData, index: number): I_MappingForm => {
     const data = { ...item, index };
     return {
       [FormType.Intput]: <InputComponent {...data} />,
@@ -235,48 +110,17 @@ const Form: React.FC<I_Props> = ({ data }) => {
     };
   };
 
-  const getAllData = (e: any) => {
-    console.log('formRef', formRef);
-    // e.preventDefault();
-    // const resss: any = {};
-    // const targetDom = (index: any) => elementsRef.current[index].current;
-    // data.formData.map((item: any, index: any) => {
-    //   const dataKey = targetDom(index).getAttribute("data-title");
-    //   const type = targetDom(index).getAttribute("data-type");
-    //   const info = new FormData(e.target).getAll(dataKey);
-    //   resss[dataKey] = type === "input" || type === "select" ? info[0] : info;
-    // });
-    // console.log(resss);
-    // return resss
-  };
-
-  // const checkSubmitError =(getFormData, targetDom)=>{
-
-  // };
-
-  //用from是否能用外部call
-  //錯誤判斷
-  //錯誤顯示
-
   return (
     <div>
-      {/* <form ref={formRef} onSubmit={getAllData} noValidate>
-        {data.formData.map((item: any, index: any) => {
-          return mappingType(item, index)[item.type];
-        })}
-        <button type="submit">送出</button>
-      </form> */}
-      <form ref={formRef} onSubmit={handleSubmit(onSubmit, onError)}>
-        <input {...register("firstName", { required: true, maxLength: 20 })} />
-        <select {...register("gender")}>
-          <option value="female">female</option>
-          <option value="male">male</option>
-          <option value="other">other</option>
-        </select>
-        {/* <input type="submit" /> */}
-      </form>
+      <FormProvider {...methods} >
+        <form>
+          {data.formData.map((item, index) => {
+            return mappingType(item, index)[item.type]
+          })}
+        </form>
+      </FormProvider>
     </div>
   );
 };
 
-export default Form;
+export default FormHook;

@@ -7,15 +7,25 @@ export enum FormType {
 
 export interface I_Props {
   data: {
-    getAllData: any,
-    formData: {
-      title: string;
-      columnKey: string;
-      type: FormType;
-      value?: string;
-      placeholder: string;
-      required: boolean;
-      option?: { text: string }[];
-    }[];
+    formMethods?: any,
+    formData: I_FormData[];
   }
+}
+
+export interface I_FormData {
+  index?: number;
+  title: string;
+  columnKey: string;
+  type: FormType;
+  value?: string;
+  placeholder: string;
+  required: boolean;
+  option?: { text: string, value: string }[];
+}
+
+export interface I_MappingForm {
+  [FormType.Intput]: JSX.Element;
+  [FormType.Radio]: JSX.Element;
+  [FormType.CheckBox]: JSX.Element;
+  [FormType.Select]: JSX.Element;
 }

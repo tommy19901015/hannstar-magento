@@ -7,8 +7,8 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { I_Props, FormType } from "../../component/form/interface";
 import "./css.scss";
 
-const PartnerFcpProgFcpQuotation: React.FC = () => {
-  const pageName = "partner-fcp-prog_fcp_quotation";
+const PartnerFcpProgFcpQuotationReply: React.FC = () => {
+  const pageName = "partner-fcp-prog_fcp_quotation_reply";
 
   const initData = [
     {
@@ -28,13 +28,55 @@ const PartnerFcpProgFcpQuotation: React.FC = () => {
       required: true,
     },
     {
+      title: "狀態",
+      value: "",
+      columnKey: "state",
+      type: FormType.Select,
+      placeholder: "",
+      required: true,
+      option: [
+        { text: "ALL", value: "all" },
+        { text: "待報價", value: "no" },
+        { text: "已報價", value: "yes" },
+      ]
+    },
+    {
       title: "PM 擔當",
       value: "",
       columnKey: "PM",
       type: FormType.Intput,
       placeholder: "",
       required: true,
-    }
+    },
+    {
+      title: "尺寸",
+      value: "",
+      columnKey: "size",
+      type: FormType.Intput,
+      placeholder: "",
+      required: true,
+    },
+    {
+      title: "分辨率(Resolution)",
+      value: "",
+      columnKey: "Resolution",
+      type: FormType.Intput,
+      placeholder: "",
+      required: true,
+    },
+    {
+      title: "顯示技術(IPS/TN)",
+      value: "",
+      columnKey: "isp_tn",
+      type: FormType.Select,
+      placeholder: "",
+      required: true,
+      option: [
+        { text: "ALL", value: "all" },
+        { text: "IPS", value: "IPS" },
+        { text: "TN", value: "TN" },
+      ]
+    },
   ];
 
   const breadcrumbsData = {
@@ -57,7 +99,7 @@ const PartnerFcpProgFcpQuotation: React.FC = () => {
         href: "",
       },
       {
-        text: "報價清單",
+        text: "線上報價",
         href: "",
       }
     ]
@@ -66,7 +108,7 @@ const PartnerFcpProgFcpQuotation: React.FC = () => {
   const formMethods: any = React.useRef(null)
 
   const TitleBlock = () => {
-    return (<div className={`${pageName}title`}>報價清單</div>)
+    return (<div className={`${pageName}title`}>線上報價</div>)
   }
 
   const BtnBlock = () => {
@@ -111,4 +153,4 @@ const PartnerFcpProgFcpQuotation: React.FC = () => {
   );
 };
 
-export default PartnerFcpProgFcpQuotation;
+export default PartnerFcpProgFcpQuotationReply;
