@@ -1,0 +1,73 @@
+@import '../../style/variable.scss';
+
+$pageName: 'partner-fcp-product_fcp_product_list';
+
+.#{$pageName}ContentBlock {
+    .topBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $hannstar-border-color;
+        .userInfoBlock {
+            display: flex;
+            .imgBlock {
+            }
+            .infoBlock {
+                .name {
+                    @include hannstarH3Title;
+                    padding: 10px 0;
+                }
+                .email {
+                    @include hannstarContentText;
+                    color: $hannstar-border-color;
+                }
+            }
+        }
+        .productCountInfoBlock {
+            display: flex;
+            .block {
+                display: flex;
+                flex-direction: column;
+                .title {
+                    @include hannstarNoteText;
+                    padding: 20px;
+                }
+                .count {
+                    @include hannstarH3Title;
+                    width: 100%;
+                    text-align: center;
+                    padding: 15px 0;
+                    border-right: 1px solid $hannstar-border-color;
+                    &.total {
+                        color: $hannstar-blue1;
+                    }
+                    &.productOff {
+                        color: $hannstar-green;
+                    }
+                    &.productOn {
+                        color: $hannstar-red;
+                    }
+                }
+            }
+        }
+    }
+    .productToolBar {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 0;
+        .leftBlock {
+            display: flex;
+            .linkBtn {
+                @include hannstarBtn;
+                margin-right: 20px;
+            }
+        }
+        .rightBlock {
+            select {
+                @include hannstarSelect;
+                min-width: 150px;
+            }
+        }
+    }
+}

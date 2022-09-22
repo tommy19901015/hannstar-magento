@@ -8,7 +8,7 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
 
   useEffect(() => {
     data.formMethods.current = methods
-  }, [])
+  }, [data.formMethods, methods])
 
   const QuestionComponent: React.FC<I_FormData> = (data, ChildComponent) => {
     return (
@@ -113,7 +113,7 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
   return (
     <div>
       <FormProvider {...methods} >
-        <form>
+        <form className="formComponent">
           {data.formData.map((item, index) => {
             return mappingType(item, index)[item.type]
           })}

@@ -107,13 +107,13 @@ const PartnerFcpProgFcpQuotationReply: React.FC = () => {
 
   const formMethods: any = React.useRef(null)
 
-  const TitleBlock = () => {
-    return (<div className={`${pageName}title`}>線上報價</div>)
-  }
-
-  const BtnBlock = () => {
-    return (<div className={`${pageName}btnBlock`}>
-      <div className="btn" onClick={handlerBtnClick}>查詢</div>
+  const FormBlock = () => {
+    return (<div className={`${pageName}FormBlock`}>
+      <div className={`${pageName}title`}>線上報價</div>
+      <Form data={formData} />
+      <div className={`${pageName}btnBlock`}>
+        <div className="btn" onClick={handlerBtnClick}>查詢</div>
+      </div>
     </div>)
   }
 
@@ -138,16 +138,8 @@ const PartnerFcpProgFcpQuotationReply: React.FC = () => {
     <Layout>
       <Breadcrumbs data={breadcrumbsData} />
       <Columns
-        type={ColType.OneCol}
-        content={<TitleBlock />}
-      />
-      <Columns
-        type={ColType.OneCol}
-        content={<Form data={formData} />}
-      />
-      <Columns
-        type={ColType.OneCol}
-        content={<BtnBlock />}
+        type={ColType.OneColFullPage}
+        content={<FormBlock />}
       />
     </Layout>
   );
