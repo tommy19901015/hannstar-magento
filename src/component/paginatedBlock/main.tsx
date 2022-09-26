@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
-import ReactPaginate from 'react-paginate';
+import ReactPaginate from "react-paginate";
 import "./css.scss";
 
 interface I_Props {
   data: {
     totalData: any;
-    contentComponent: any
+    contentComponent: any;
   };
 }
 
 const PaginatedBlock: React.FC<I_Props> = ({ data }) => {
-  const itemsPerPage = 10 //預設顯示幾筆資料
-  const { totalData, contentComponent } = data
+  const itemsPerPage: number = 10; //預設顯示幾筆資料
+  const { totalData, contentComponent } = data;
   const [currentItems, setCurrentItems] = useState(null);
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
+  const [pageCount, setPageCount] = useState<number>(0);
+  const [itemOffset, setItemOffset] = useState<number>(0);
+  const [nowPage, setNowPage] = useState<number>(0);
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -25,17 +26,21 @@ const PaginatedBlock: React.FC<I_Props> = ({ data }) => {
   const handlePageClick = (e: any) => {
     const newOffset = (e.selected * itemsPerPage) % totalData.length;
     setItemOffset(newOffset);
+    setNowPage(e.selected);
   };
 
   const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    // handlePageClick()
-    setItemOffset(parseInt(e.target.value));
+    setNowPage(parseInt(e.target.value));
+    const newOffset =
+      (parseInt(e.target.value) * itemsPerPage) % totalData.length;
+    setItemOffset(newOffset);
   };
 
   return (
     <div className="paginatedBlock">
       {contentComponent(currentItems)}
       <ReactPaginate
+        forcePage={nowPage}
         nextLabel=""
         onPageChange={handlePageClick}
         pageCount={pageCount}
@@ -54,9 +59,12 @@ const PaginatedBlock: React.FC<I_Props> = ({ data }) => {
       />
       <div>
         <div>Go to Page</div>
-        <select onChange={handleOnChange}>
-          {new Array(pageCount).fill(0).map((item, index) =>
-            <option value={index + 1}>{index + 1}</option>)}
+        <select onChange={handleOnChange} value={nowPage}>
+          {new Array(pageCount).fill(0).map((item, index) => (
+            <option value={index} key={index}>
+              {index + 1}
+            </option>
+          ))}
         </select>
         <div>{pageCount}</div>
       </div>
