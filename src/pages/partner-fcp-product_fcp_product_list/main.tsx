@@ -2,17 +2,25 @@ import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import Form from "../../component/form/main";
+// import Form from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-import { I_Props, FormType } from "../../component/form/interface";
-import ReactPaginate from 'react-paginate';
+// import { I_Props, FormType } from "../../component/form/interface";
+// import ReactPaginate from 'react-paginate';
+import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json"
 import "./css.scss";
 
 const PartnerFcpProductFcpProductList: React.FC = () => {
   const pageName = "partner-fcp-product_fcp_product_list";
+  const [productListData, setProductListData] = useState<any>([])
+  const [productListStateTab, setProductListStateTab] = useState<number>(0)
 
-  const fakeData: any = testTableData
+  const fakeApiData: any = testTableData
+
+  useEffect(() => {
+    setProductListData(fakeApiData)
+  }, [])
+
 
   const breadcrumbsData = {
     title: "",
@@ -109,11 +117,53 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
   }
 
   const FilterStateBlock = () => {
+
+    // useEffect(() => {
+    //   setTab(0)
+    // }, [tab])
+
+    enum ProductState {
+      NotApproved = "notApproved",
+      Pending = "pending",
+      Draft = "draft",
+      All = ""
+    }
+
+    type I_tabStateInfo = {
+      text: string
+      state: ProductState
+    }[]
+
+    const tabStateInfo: I_tabStateInfo = [
+      {
+        text: "所有產品",
+        state: ProductState.All
+      },
+      {
+        text: "審核中",
+        state: ProductState.Pending
+      },
+      {
+        text: "未通過審核",
+        state: ProductState.NotApproved
+      },
+      {
+        text: "草稿區",
+        state: ProductState.Draft
+      },
+    ]
+
+    const changeState = (state: ProductState, index: number) => {
+      setProductListStateTab(index)
+      const filterData = state ? fakeApiData.filter((item: any) => item.state === state)
+        : fakeApiData
+      setProductListData(filterData)
+    }
+
     return (<div className="filterStateBlock">
-      <div>所有產品</div>
-      <div>審核中</div>
-      <div>未通過審核</div>
-      <div>草稿區</div>
+      {tabStateInfo.map((item, index) => <div
+        className={`stateTab ${productListStateTab === index ? "active" : ""}`}
+        onClick={() => changeState(item.state, index)}>{item.text}</div>)}
     </div>)
   }
 
@@ -144,26 +194,21 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     date: string
   }
 
-  const ContentBlock = () => {
-    return (
-      <div className={`${pageName}ContentBlock`}>
-        <div className="topBlock">
-          <UserInfoBlock {...userInfoData} />
-          <ProductCountInfoBlock {...productCountInfoData} />
-        </div>
-        <ProductToolBar />
-        <FormTopBlock />
-        <FilterStateBlock />
-        <PaginatedForm itemsPerPage={10} />
-      </div>
-    )
-  }
+
 
   //-------------------------------------------
 
-  const FormBlock = ({ currentItems }: any) => {
+  const productListBlock = (currentItems: any) => {
+    const SwitchBtn = ({ value }: any) => {
+      return (<label className="switchBtn">
+        <input type="checkbox" defaultChecked={value} />
+        <span className="slider round"></span>
+      </label>)
+    }
+
+
     return (
-      <table className="productListTable">
+      <table className="productListBlock">
         <thead>
           <tr>
             <td>外包型號</td>
@@ -181,15 +226,25 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
         <tbody>
           {currentItems && currentItems.map((item: any) => (
             <tr>
-              <td>{item.productNo}</td>
+              <td>
+                <a href={"/"}>{item.productNo}</a>
+              </td>
               <td>{item.HSDNo}</td>
               <td>{item.size}</td>
               <td>{item.resolution}</td>
               <td>{item.auditState}</td>
-              <td>{item.detailSpecs}</td>
-              <td>{item.productPhoto}</td>
-              <td>{item.productData}</td>
-              <td>{item.fontState}</td>
+              <td>
+                <a href={"/"}>修改</a>
+              </td>
+              <td>
+                <a href={"/"}>修改</a>
+              </td>
+              <td>
+                <a href={"/"}>修改</a>
+              </td>
+              <td>
+                <SwitchBtn value={item.fontState} />
+              </td>
               <td>{item.date}</td>
             </tr>
           ))}
@@ -198,48 +253,24 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     );
   }
 
-  const PaginatedForm = ({ itemsPerPage }: any) => {
-    const [currentItems, setCurrentItems] = useState(null);
-    const [pageCount, setPageCount] = useState(0);
-    const [itemOffset, setItemOffset] = useState(0);
+  const PaginatedBlockProp = {
+    totalData: productListData,
+    contentComponent: productListBlock
+  }
 
-    useEffect(() => {
-      const endOffset = itemOffset + itemsPerPage;
-      console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-      setCurrentItems(fakeData.slice(itemOffset, endOffset));
-      setPageCount(Math.ceil(fakeData.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage]);
-
-    const handlePageClick = (event: any) => {
-      const newOffset = (event.selected * itemsPerPage) % fakeData.length;
-      console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-      );
-      setItemOffset(newOffset);
-    };
-
+  const ContentBlock = () => {
     return (
-      <div className="paginatedForm">
-        <FormBlock currentItems={currentItems} />
-        <ReactPaginate
-          nextLabel=""
-          onPageChange={handlePageClick}
-          pageCount={pageCount}
-          previousLabel=""
-          pageClassName="page-item"
-          pageLinkClassName="page-link"
-          previousClassName="pagePrevious"
-          previousLinkClassName="page-link"
-          nextClassName="pageNext"
-          nextLinkClassName="page-link"
-          breakLabel="..."
-          breakClassName="page-item"
-          breakLinkClassName="page-link"
-          containerClassName="pagination"
-          activeClassName="active"
-        />
+      <div className={`${pageName}ContentBlock`}>
+        <div className="topBlock">
+          <UserInfoBlock {...userInfoData} />
+          <ProductCountInfoBlock {...productCountInfoData} />
+        </div>
+        <ProductToolBar />
+        <FormTopBlock />
+        <FilterStateBlock />
+        <PaginatedBlock data={PaginatedBlockProp} />
       </div>
-    );
+    )
   }
 
 

@@ -93,69 +93,45 @@ $pageName: 'partner-fcp-product_fcp_product_list';
         display: flex;
         @include hannstarContentText;
         border-bottom: 3px solid $hannstar-blue1;
-        margin-bottom: 10px;
-    }
-    .paginatedForm {
-        .productListTable {
-            @include hannstarContentText;
-            width: 100%;
-            td {
-                padding: 5px 10px;
-                border: 1px solid $hannstar-border-color1;
-                text-align: center;
-            }
-            thead {
-                tr {
-                    background-color: $hannstar-blue1;
-                    color: #fff;
-                }
+        margin-bottom: 15px;
+        .stateTab {
+            width: 130px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px 20px;
+            background-color: $hannstar-border-color1;
+            color: $hannstar-blue0;
+            margin-right: 10px;
+            &.active {
+                background-color: $hannstar-blue1;
+                color: #fff;
             }
         }
-        .pagination {
-            display: flex;
-            margin-top: 40px;
-            .page-item {
-                margin: 0 10px;
-                cursor: pointer;
-                border: 1px solid $hannstar-border-color1;
-                border-radius: 4px;
-                a {
-                    display: inline-block;
-                    padding: 10px;
-                }
-                &.active {
-                    color: #fff;
-                    background-color: $hannstar-blue2;
-                }
+    }
+    .productListBlock {
+        @include hannstarContentText;
+        width: 100%;
+        td {
+            padding: 10px;
+            border: 1px solid $hannstar-border-color1;
+            text-align: center;
+            line-height: 1;
+        }
+        thead {
+            tr {
+                background-color: $hannstar-blue1;
+                color: #fff;
             }
-            .pageNext,
-            .pagePrevious {
-                position: relative;
-                margin-left: 10px;
-                cursor: pointer;
-                border: 1px solid $hannstar-border-color1;
-                border-radius: 4px;
-                &::after {
-                    position: absolute;
-                    content: '';
-                    top: 50%;
-                    left: 13px;
-                    transform: translate(-50%, -50%) rotate(45deg);
-                    width: 8px;
-                    height: 8px;
-                    border-top: 2px solid $hannstar-blue2;
-                    border-right: 2px solid $hannstar-blue2;
-                }
-                a {
-                    display: inline-block;
-                    padding: 15px;
-                }
-            }
-            .pagePrevious {
-                margin: 0 10px 0 0;
-                &::after {
-                    transform: translate(-50%, -50%) rotate(225deg);
-                    left: 16px;
+        }
+        tbody {
+            tr {
+                td {
+                    a {
+                        color: $hannstar-blue1;
+                    }
+                    .switchBtn {
+                        @include hannstarSwitchBtn;
+                    }
                 }
             }
         }
