@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import Form from "../../component/form/main";
+import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { I_Props, FormType } from "../../component/form/interface";
 import "./css.scss";
@@ -38,7 +38,7 @@ const PartnerFcpProgFcpQuotationReply: React.FC = () => {
         { text: "ALL", value: "all" },
         { text: "待報價", value: "no" },
         { text: "已報價", value: "yes" },
-      ]
+      ],
     },
     {
       title: "PM 擔當",
@@ -75,7 +75,7 @@ const PartnerFcpProgFcpQuotationReply: React.FC = () => {
         { text: "ALL", value: "all" },
         { text: "IPS", value: "IPS" },
         { text: "TN", value: "TN" },
-      ]
+      ],
     },
   ];
 
@@ -101,46 +101,46 @@ const PartnerFcpProgFcpQuotationReply: React.FC = () => {
       {
         text: "線上報價",
         href: "",
-      }
-    ]
-  }
+      },
+    ],
+  };
 
-  const formMethods: any = React.useRef(null)
+  const formMethods: any = React.useRef(null);
 
   const FormBlock = () => {
-    return (<div className={`${pageName}FormBlock`}>
-      <div className={`${pageName}title`}>線上報價</div>
-      <Form data={formData} />
-      <div className={`${pageName}btnBlock`}>
-        <div className="btn" onClick={handlerBtnClick}>查詢</div>
+    return (
+      <div className={`${pageName}FormBlock`}>
+        <div className={`${pageName}title`}>線上報價</div>
+        <FormComponent data={formData} />
+        <div className={`${pageName}btnBlock`}>
+          <div className="btn" onClick={handlerBtnClick}>
+            查詢
+          </div>
+        </div>
       </div>
-    </div>)
-  }
+    );
+  };
 
   const handlerBtnClick = () => {
     //data.getAllData.current = getValues     get form 所有資料
     //       get form error
     //data.getAllData.current = reset         reset form
-    const values = formMethods.current.getValues()
-    console.log('values', values);
+    const values = formMethods.current.getValues();
+    console.log("values", values);
     //get form 所有資料
     //get form error
     //reset form
-
-  }
+  };
 
   const formData = {
     formMethods,
-    formData: initData
-  }
+    formData: initData,
+  };
 
   return (
     <Layout>
       <Breadcrumbs data={breadcrumbsData} />
-      <Columns
-        type={ColType.OneColFullPage}
-        content={<FormBlock />}
-      />
+      <Columns type={ColType.OneColFullPage} content={<FormBlock />} />
     </Layout>
   );
 };

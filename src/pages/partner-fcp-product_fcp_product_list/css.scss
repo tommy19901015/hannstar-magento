@@ -1,154 +1,81 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'partner-fcp-product_fcp_product_list';
+$pageName: "partner-fcp-product_fcp_product_list";
 
-.#{$pageName}ProductToolBar {
-    background-color: $hannstar-border-color1;
-    height: 100%;
-    ul {
-        .linkText {
-            cursor: pointer;
-            width: 100%;
-            padding: 10px 0;
-            a {
-                @include hannstarContentText;
-                display: flex;
-                align-items: center;
-                padding: 0 50px;
-                svg {
-                    padding-right: 15px;
-                }
-            }
-            &.active {
-                background-color: $hannstar-blue0;
-                a {
-                    color: $hannstar-blue2;
-                }
-            }
-        }
-    }
-}
 .#{$pageName}ContentBlock {
-    padding: 0 80px;
-    .topBlock {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 40px;
-        .userInfoBlock {
-            display: flex;
-            align-items: center;
-            .infoBlock {
-                .name {
-                    @include hannstarH3Title;
-                }
-                .email {
-                    @include hannstarContentText;
-                    color: $hannstar-border-color;
-                }
-            }
-        }
-        .productCountInfoBlock {
-            display: flex;
-            .block {
-                display: flex;
-                flex-direction: column;
-                .title {
-                    @include hannstarNoteText;
-                    padding: 0 20px;
-                }
-                .count {
-                    @include hannstarH3Title;
-                    width: 100%;
-                    text-align: center;
-                    padding: 15px 0;
-                    border-right: 1px solid $hannstar-border-color;
-                    &.total {
-                        color: $hannstar-blue1;
-                    }
-                    &.productOff {
-                        color: $hannstar-green;
-                    }
-                    &.productOn {
-                        color: $hannstar-red;
-                    }
-                }
-            }
-        }
+  .filterStateBlock {
+    display: flex;
+    @include hannstarContentText;
+    border-bottom: 3px solid $hannstar-blue1;
+    margin: 40px 0;
+    .stateTab {
+      width: 130px;
+      text-align: center;
+      cursor: pointer;
+      padding: 5px 20px;
+      background-color: $hannstar-border-color1;
+      color: $hannstar-blue1;
+      margin-right: 10px;
+      &.active,
+      &:hover {
+        background-color: $hannstar-blue1;
+        color: #fff;
+      }
     }
-    .filterStateBlock {
-        display: flex;
-        @include hannstarContentText;
-        border-bottom: 3px solid $hannstar-blue1;
-        margin: 40px 0;
-        .stateTab {
-            width: 130px;
-            text-align: center;
-            cursor: pointer;
-            padding: 5px 20px;
-            background-color: $hannstar-border-color1;
-            color: $hannstar-blue1;
-            margin-right: 10px;
-            &.active,
-            &:hover {
-                background-color: $hannstar-blue1;
-                color: #fff;
-            }
-        }
+  }
+  .searchBlock {
+    display: flex;
+    margin-bottom: 40px;
+    input {
+      @include hannstarInput;
+      border-radius: 4px 0 0 4px;
     }
-    .searchBlock {
-        display: flex;
-        margin-bottom: 40px;
-        input {
-            @include hannstarInput;
-            border-radius: 4px 0 0 4px;
-        }
-        .searchBtn {
-            padding: 8px 10px;
-            background-color: $hannstar-blue1;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
+    .searchBtn {
+      padding: 8px 10px;
+      background-color: $hannstar-blue1;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
     }
-    .deleteBlock {
-        margin-bottom: 40px;
-        .deleteBtn {
-            @include hannstarBtn;
-            width: 40px;
-        }
+  }
+  .deleteBlock {
+    margin-bottom: 40px;
+    .deleteBtn {
+      @include hannstarBtn;
+      width: 40px;
     }
-    .productListBlock {
-        @include hannstarContentText;
-        width: 100%;
+  }
+  .productListBlock {
+    @include hannstarContentText;
+    width: 100%;
+    td {
+      padding: 10px;
+      border: 1px solid $hannstar-border-color1;
+      text-align: start;
+      .hannstarCheckBox {
+        @include hannstarCheckBox;
+        justify-content: center;
+        align-items: inherit;
+        padding: 0;
+        min-height: 20px;
+      }
+    }
+    thead {
+      tr {
+        background-color: $hannstar-blue1;
+        color: #fff;
+      }
+    }
+    tbody {
+      tr {
         td {
-            padding: 10px;
-            border: 1px solid $hannstar-border-color1;
-            text-align: start;
-            .hannstarCheckBox {
-                @include hannstarCheckBox;
-                justify-content: center;
-                align-items: inherit;
-                padding: 0;
-                min-height: 20px;
-            }
+          a {
+            color: $hannstar-blue1;
+          }
+          .switchBtn {
+            @include hannstarSwitchBtn;
+          }
         }
-        thead {
-            tr {
-                background-color: $hannstar-blue1;
-                color: #fff;
-            }
-        }
-        tbody {
-            tr {
-                td {
-                    a {
-                        color: $hannstar-blue1;
-                    }
-                    .switchBtn {
-                        @include hannstarSwitchBtn;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }

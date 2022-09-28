@@ -1,22 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-// import Form from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-// import { I_Props, FormType } from "../../component/form/interface";
-// import ReactPaginate from 'react-paginate';
 import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
-import { SearchIcon } from './icon/searchIcon'
-import { FormIconActive } from "./icon/formIconActive";
-import { FormIcon } from "./icon/formIcon";
-import { HouseIconActive } from "./icon/houseIconActive";
-import { HouseIcon } from "./icon/houseIcon";
-import { ManualIconActive } from "./icon/manualIconActive";
-import { ManualIcon } from "./icon/manualIcon";
-import { SubtractIconActive } from "./icon/subtractIconActive";
-import { SubtractIcon } from "./icon/subtractIcon";
+import { SearchIcon } from "./icon/searchIcon";
+import PartnerFcpTemplate from "../../templates/partner-fcp/main";
 import "./css.scss";
 
 const PartnerFcpProductFcpProductList: React.FC = () => {
@@ -54,124 +44,6 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
         href: "",
       },
     ],
-  };
-
-  interface I_UserInfo {
-    name: string;
-    email: string;
-  }
-
-  const userInfoData = {
-    name: "pdmo01",
-    email: "pdmo01@hannstar.com",
-  };
-
-  const UserInfoBlock: React.FC<I_UserInfo> = ({ name, email }) => {
-    return (
-      <div className="userInfoBlock">
-        <div className="imgBlock">
-          <img
-            alt=""
-            src="https://partner-test.hannstar.com/images/fcp/vendor.png"
-          />
-        </div>
-        <div className="infoBlock">
-          <div className="name">{`${name}，您好!`}</div>
-          <div className="email">{`廠商帳戶: ${email}`}</div>
-        </div>
-      </div>
-    );
-  };
-
-  const productCountInfoData = {
-    total: "21",
-    productOn: "2",
-    productOff: "19",
-  };
-
-  interface I_ProductCountInfo {
-    total: string;
-    productOn: string;
-    productOff: string;
-  }
-
-  const ProductCountInfoBlock: React.FC<I_ProductCountInfo> = ({
-    total,
-    productOn,
-    productOff,
-  }) => {
-    return (
-      <div className="productCountInfoBlock">
-        <div className="block">
-          <div className="title">總產品數量</div>
-          <div className="count total">{total}</div>
-        </div>
-        <div className="block">
-          <div className="title">未上架數量</div>
-          <div className="count productOff">{productOff}</div>
-        </div>
-        <div className="block">
-          <div className="title">已上架數量</div>
-          <div className="count productOn">{productOn}</div>
-        </div>
-      </div>
-    );
-  };
-
-  const ProductToolBar = () => {
-    const productToolBarData = [
-      {
-        text: "產品清單",
-        active: true,
-        href: "",
-        icon: <FormIcon />,
-        activeIcon: <FormIconActive />
-      },
-      {
-        text: "價格及庫存管理",
-        active: false,
-        href: "",
-        icon: <HouseIcon />,
-        activeIcon: <HouseIconActive />
-      },
-      {
-        text: "新增產品",
-        active: false,
-        href: "",
-        icon: <SubtractIcon />,
-        activeIcon: <SubtractIconActive />
-      },
-      {
-        text: "平台操作手冊",
-        active: false,
-        href: "",
-        icon: <ManualIcon />,
-        activeIcon: <ManualIconActive />
-      },
-      {
-        text: "產品標籤手冊",
-        active: false,
-        href: "",
-        icon: <ManualIcon />,
-        activeIcon: <ManualIconActive />
-      },
-    ]
-
-    return (
-      <div className={`${pageName}ProductToolBar`}>
-        <ul>
-          {
-            productToolBarData.map((item, index) =>
-              <li className={`linkText ${item.active ? "active" : ""}`} key={index}>
-                <a href={item.href}>
-                  {item.active ? item.activeIcon : item.icon}
-                  {item.text}
-                </a>
-              </li>)
-          }
-        </ul>
-      </div>
-    );
   };
 
   const FilterStateBlock = () => {
@@ -218,8 +90,9 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
       <div className="filterStateBlock">
         {tabStateInfo.map((item, index) => (
           <div
-            className={`stateTab ${productListStateTab === index ? "active" : ""
-              }`}
+            className={`stateTab ${
+              productListStateTab === index ? "active" : ""
+            }`}
             onClick={() => changeState(item.state, index)}
           >
             {item.text}
@@ -271,8 +144,6 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     date: string;
   }
 
-  //-------------------------------------------
-
   const productListBlock = (currentItems: any) => {
     const SwitchBtn = ({ value }: any) => {
       return (
@@ -284,22 +155,28 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     };
 
     const DeleteCheckBox = ({ index }: any) => {
-      return (<div className="hannstarCheckBox" key={index}>
-        <input
-          id={"deleteCheckBox" + index}
-          type="checkBox"
-          value=""
-          name="deleteCheckBox"
-        />
-        <label htmlFor={"deleteCheckBox" + index}></label>
-      </div>)
-    }
+      return (
+        <div className="hannstarCheckBox" key={index}>
+          <input
+            id={"deleteCheckBox" + index}
+            type="checkBox"
+            value=""
+            name="deleteCheckBox"
+          />
+          <label htmlFor={"deleteCheckBox" + index}></label>
+        </div>
+      );
+    };
 
     return (
       <table className="productListBlock">
         <thead>
           <tr>
-            {productListStateTab === 3 && <td><DeleteCheckBox /></td>}
+            {productListStateTab === 3 && (
+              <td>
+                <DeleteCheckBox />
+              </td>
+            )}
             <td>外包型號</td>
             <td>HSD型號</td>
             <td>吋別</td>
@@ -316,7 +193,11 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
           {currentItems &&
             currentItems.map((item: any, index: number) => (
               <tr>
-                {productListStateTab === 3 && <td><DeleteCheckBox index={index} /></td>}
+                {productListStateTab === 3 && (
+                  <td>
+                    <DeleteCheckBox index={index} />
+                  </td>
+                )}
                 <td>
                   <a href={"/"}>{item.productNo}</a>
                 </td>
@@ -351,20 +232,23 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
 
   const DeleteBtnBlock = () => {
     const handleOnClick = () => {
-      console.log('delete')
-    }
+      console.log("delete");
+    };
 
-    return (<div className="deleteBlock">{productListStateTab === 3 ?
-      <div className="deleteBtn" onClick={handleOnClick}>刪除</div> : null}</div>)
-  }
+    return (
+      <div className="deleteBlock">
+        {productListStateTab === 3 ? (
+          <div className="deleteBtn" onClick={handleOnClick}>
+            刪除
+          </div>
+        ) : null}
+      </div>
+    );
+  };
 
   const ContentBlock = () => {
     return (
       <div className={`${pageName}ContentBlock`}>
-        <div className="topBlock">
-          <UserInfoBlock {...userInfoData} />
-          <ProductCountInfoBlock {...productCountInfoData} />
-        </div>
         <FilterStateBlock />
         <SearchBlock />
         <DeleteBtnBlock />
@@ -373,15 +257,15 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     );
   };
 
+  const partnerFcpTemplateProp = {
+    contentComponent: <ContentBlock />,
+    activeLink: 0,
+  };
+
   return (
     <Layout>
       <Breadcrumbs data={breadcrumbsData} />
-      <Columns
-        type={ColType.TwoColFullPage}
-        widthL={15}
-        widthR={85}
-        contentL={<ProductToolBar />}
-        contentR={<ContentBlock />} />
+      <PartnerFcpTemplate data={partnerFcpTemplateProp} />
     </Layout>
   );
 };

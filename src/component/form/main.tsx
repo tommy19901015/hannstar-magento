@@ -3,12 +3,12 @@ import { I_Props, FormType, I_FormData, I_MappingForm } from "./interface";
 import { useForm, FormProvider, useFormContext } from "react-hook-form";
 import "./css.scss";
 
-const FormHook: React.FC<I_Props> = ({ data }) => {
+const FormComponent: React.FC<I_Props> = ({ data }) => {
   const methods = useForm({ shouldFocusError: false });
 
   useEffect(() => {
-    data.formMethods.current = methods
-  }, [data.formMethods, methods])
+    data.formMethods.current = methods;
+  }, [data.formMethods, methods]);
 
   const QuestionComponent: React.FC<I_FormData> = (data, ChildComponent) => {
     return (
@@ -22,15 +22,17 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
   };
 
   const InputComponent: React.FC<I_FormData> = (data) => {
-    methods.setValue(data.columnKey, data.value)
+    methods.setValue(data.columnKey, data.value);
     const IntputBlock = () => {
       const { register } = useFormContext();
-      return (<input
-        type="text"
-        placeholder={data.placeholder}
-        {...register(data.columnKey, { required: data.required })}
-      />)
-    }
+      return (
+        <input
+          type="text"
+          placeholder={data.placeholder}
+          {...register(data.columnKey, { required: data.required })}
+        />
+      );
+    };
 
     return QuestionComponent(data, IntputBlock);
   };
@@ -38,20 +40,21 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
   const RaidoComponent: React.FC<I_FormData> = (data) => {
     const { register } = useFormContext();
     const RaidoBlock = () => {
-      return data.option && data.option.map((item, index) => (
-        <div className="hannstarRadio" key={index}>
-          <input
-            {...register(data.columnKey, { required: data.required })}
-            id={data.columnKey + index}
-            type={FormType.Radio}
-            value={item.value}
-            name={data.columnKey}
-          />
-          <label htmlFor={`${data.columnKey + index}`}>
-            {item.text}
-          </label>
-        </div>
-      ));
+      return (
+        data.option &&
+        data.option.map((item, index) => (
+          <div className="hannstarRadio" key={index}>
+            <input
+              {...register(data.columnKey, { required: data.required })}
+              id={data.columnKey + index}
+              type={FormType.Radio}
+              value={item.value}
+              name={data.columnKey}
+            />
+            <label htmlFor={`${data.columnKey + index}`}>{item.text}</label>
+          </div>
+        ))
+      );
     };
     return QuestionComponent(data, RaidoBlock);
   };
@@ -59,20 +62,21 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
   const CheckBoxComponent: React.FC<I_FormData> = (data) => {
     const { register } = useFormContext();
     const CheckBoxBlock = () => {
-      return data.option && data.option.map((item, index) => (
-        <div className="hannstarCheckBox" key={index}>
-          <input
-            {...register(data.columnKey, { required: data.required })}
-            id={data.columnKey + index}
-            type={FormType.CheckBox}
-            value={item.value}
-            name={data.columnKey}
-          />
-          <label htmlFor={`${data.columnKey + index}`}>
-            {item.text}
-          </label>
-        </div>
-      ));
+      return (
+        data.option &&
+        data.option.map((item, index) => (
+          <div className="hannstarCheckBox" key={index}>
+            <input
+              {...register(data.columnKey, { required: data.required })}
+              id={data.columnKey + index}
+              type={FormType.CheckBox}
+              value={item.value}
+              name={data.columnKey}
+            />
+            <label htmlFor={`${data.columnKey + index}`}>{item.text}</label>
+          </div>
+        ))
+      );
     };
     return QuestionComponent(data, CheckBoxBlock);
   };
@@ -91,9 +95,14 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
           value={selectValue}
           onChange={handleOnChange}
         >
-          {data.option && data.option.map((item, index) => {
-            return <option key={index} value={item.value}>{item.text}</option>;
-          })}
+          {data.option &&
+            data.option.map((item, index) => {
+              return (
+                <option key={index} value={item.value}>
+                  {item.text}
+                </option>
+              );
+            })}
         </select>
       );
     };
@@ -112,10 +121,10 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
 
   return (
     <div>
-      <FormProvider {...methods} >
+      <FormProvider {...methods}>
         <form className="formComponent">
           {data.formData.map((item, index) => {
-            return mappingType(item, index)[item.type]
+            return mappingType(item, index)[item.type];
           })}
         </form>
       </FormProvider>
@@ -123,4 +132,4 @@ const FormHook: React.FC<I_Props> = ({ data }) => {
   );
 };
 
-export default FormHook;
+export default FormComponent;

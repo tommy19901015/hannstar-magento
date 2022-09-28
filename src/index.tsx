@@ -15,6 +15,7 @@ import PartnerFcpProgFcpQuotation from "./pages/partner-fcp-prog_fcp_quotation/m
 import PartnerFcpProgFcpQuotationReply from "./pages/partner-fcp-prog_fcp_quotation_reply/main";
 import PartnerFcpProductFcpProductList from "./pages/partner-fcp-product_fcp_product_list/main";
 import PartnerFcpProductProgFcpProductCostInventory from "./pages/partner-fcp-product-prog-fcp-product-cost-inventory/main";
+import PartnerFcpProductProgFcpNewProduct from "./pages/partner-fcp-product-prog_fcp_new_product/main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
@@ -29,10 +30,26 @@ ReactDOM.render(
       <Route path="/stronghold" element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
-      <Route path="/FCP/PROG_FCP_QUOTATION" element={<PartnerFcpProgFcpQuotation />} />
-      <Route path="/FCP/PROG_FCP_QUOTATION_REPLY" element={<PartnerFcpProgFcpQuotationReply />} />
-      <Route path="/FCP/PRODUCT/PROG_FCP_PRODUCT_LIST" element={<PartnerFcpProductFcpProductList />} />
-      <Route path="/FCP/PRODUCT/PROG_FCP_PRODUCT_COST_INVENTORY" element={<PartnerFcpProductProgFcpProductCostInventory />} />
+      <Route
+        path="/FCP/PROG_FCP_QUOTATION"
+        element={<PartnerFcpProgFcpQuotation />}
+      />
+      <Route
+        path="/FCP/PROG_FCP_QUOTATION_REPLY"
+        element={<PartnerFcpProgFcpQuotationReply />}
+      />
+      <Route
+        path="/FCP/PRODUCT/PROG_FCP_PRODUCT_LIST"
+        element={<PartnerFcpProductFcpProductList />}
+      />
+      <Route
+        path="/FCP/PRODUCT/PROG_FCP_PRODUCT_COST_INVENTORY"
+        element={<PartnerFcpProductProgFcpProductCostInventory />}
+      />
+      <Route
+        path="/FCP/PRODUCT/PROG_FCP_NEW_PRODUCT"
+        element={<PartnerFcpProductProgFcpNewProduct />}
+      />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
