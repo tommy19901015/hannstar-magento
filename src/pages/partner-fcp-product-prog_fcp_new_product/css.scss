@@ -3,4 +3,39 @@
 $pageName: "partner-fcp-product-prog_fcp_new_product";
 
 .#{$pageName}ContentBlock {
+  .stepTapBlock {
+    display: flex;
+    @include hannstarContentText;
+    border-bottom: 3px solid $hannstar-blue1;
+    margin: 40px 0;
+    .stateTab {
+      width: 60px;
+      text-align: center;
+      cursor: pointer;
+      padding: 5px 20px;
+      background-color: $hannstar-border-color1;
+      color: $hannstar-blue1;
+      margin-right: 10px;
+      &.active,
+      &:hover {
+        background-color: $hannstar-blue1;
+        color: #fff;
+      }
+    }
+  }
+  .stepTabContent {
+    &.hide {
+      display: none;
+    }
+    // .stepOneContentBlock {
+    //   .formBlock {
+    //   }
+    //   .btnBlock {
+    //     .saveBtn,
+    //     .nextBtn {
+    //       @include hannstarBtn;
+    //     }
+    //   }
+    // }
+  }
 }

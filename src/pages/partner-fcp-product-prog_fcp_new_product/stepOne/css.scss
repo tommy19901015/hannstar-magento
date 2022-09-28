@@ -1,0 +1,22 @@
+@import "../../../style/variable.scss";
+
+$pageName: "StepOne";
+
+.#{$pageName}ContentBlock {
+  .#{$pageName}Title {
+    @include hannstarH3Title;
+    color: $hannstar-blue1;
+    margin-bottom: 40px;
+  }
+  .formBlock {
+  }
+  .btnBlock {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+    .formBtn {
+      @include hannstarBtn;
+      margin-right: 40px;
+    }
+  }
+}

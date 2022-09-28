@@ -122,7 +122,7 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
   return (
     <div>
       <FormProvider {...methods}>
-        <form className="formComponent">
+        <form className={`formComponent ${data.isOneRow ? "oneRow" : ""}`}>
           {data.formData.map((item, index) => {
             return mappingType(item, index)[item.type];
           })}

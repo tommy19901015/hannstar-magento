@@ -7,9 +7,10 @@ export enum FormType {
 
 export interface I_Props {
   data: {
-    formMethods?: any,
+    isOneRow?: boolean;
+    formMethods?: any;
     formData: I_FormData[];
-  }
+  };
 }
 
 export interface I_FormData {
@@ -20,7 +21,7 @@ export interface I_FormData {
   value?: string;
   placeholder: string;
   required: boolean;
-  option?: { text: string, value: string }[];
+  option?: { text: string; value: string }[];
 }
 
 export interface I_MappingForm {
