@@ -8,6 +8,15 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 // import ReactPaginate from 'react-paginate';
 import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
+import { SearchIcon } from './icon/searchIcon'
+import { FormIconActive } from "./icon/formIconActive";
+import { FormIcon } from "./icon/formIcon";
+import { HouseIconActive } from "./icon/houseIconActive";
+import { HouseIcon } from "./icon/houseIcon";
+import { ManualIconActive } from "./icon/manualIconActive";
+import { ManualIcon } from "./icon/manualIcon";
+import { SubtractIconActive } from "./icon/subtractIconActive";
+import { SubtractIcon } from "./icon/subtractIcon";
 import "./css.scss";
 
 const PartnerFcpProductFcpProductList: React.FC = () => {
@@ -110,20 +119,57 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
   };
 
   const ProductToolBar = () => {
+    const productToolBarData = [
+      {
+        text: "產品清單",
+        active: true,
+        href: "",
+        icon: <FormIcon />,
+        activeIcon: <FormIconActive />
+      },
+      {
+        text: "價格及庫存管理",
+        active: false,
+        href: "",
+        icon: <HouseIcon />,
+        activeIcon: <HouseIconActive />
+      },
+      {
+        text: "新增產品",
+        active: false,
+        href: "",
+        icon: <SubtractIcon />,
+        activeIcon: <SubtractIconActive />
+      },
+      {
+        text: "平台操作手冊",
+        active: false,
+        href: "",
+        icon: <ManualIcon />,
+        activeIcon: <ManualIconActive />
+      },
+      {
+        text: "產品標籤手冊",
+        active: false,
+        href: "",
+        icon: <ManualIcon />,
+        activeIcon: <ManualIconActive />
+      },
+    ]
+
     return (
-      <div className="productToolBar">
-        <div className="leftBlock">
-          <div className="linkBtn">產品清單</div>
-          <div className="linkBtn">價格及庫存管理</div>
-          <div className="linkBtn">新增產品</div>
-        </div>
-        <div className="rightBlock">
-          <select>
-            <option>下載使用手冊</option>
-            <option>平台操作手冊</option>
-            <option>產品標籤手冊</option>
-          </select>
-        </div>
+      <div className={`${pageName}ProductToolBar`}>
+        <ul>
+          {
+            productToolBarData.map((item, index) =>
+              <li className={`linkText ${item.active ? "active" : ""}`} key={index}>
+                <a href={item.href}>
+                  {item.active ? item.activeIcon : item.icon}
+                  {item.text}
+                </a>
+              </li>)
+          }
+        </ul>
       </div>
     );
   };
@@ -172,9 +218,8 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
       <div className="filterStateBlock">
         {tabStateInfo.map((item, index) => (
           <div
-            className={`stateTab ${
-              productListStateTab === index ? "active" : ""
-            }`}
+            className={`stateTab ${productListStateTab === index ? "active" : ""
+              }`}
             onClick={() => changeState(item.state, index)}
           >
             {item.text}
@@ -184,12 +229,10 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     );
   };
 
-  const FormTopBlock = () => {
-    //uxwing.com/license/
+  const SearchBlock = () => {
     const [searchText, setSearchText] = useState<string>("");
 
     const handleSearch = () => {
-      console.log("searchText", searchText);
       setProductListData(
         fakeApiData.filter(
           (item: any) =>
@@ -200,18 +243,15 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     };
 
     return (
-      <div className="formTopBlock">
-        <div className="title">產品清單</div>
-        <div className="searchBlock">
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          <div onClick={handleSearch} className="searchBtn">
-            查詢
-          </div>
+      <div className="searchBlock">
+        <input
+          type="text"
+          placeholder="請輸入HSD型號或外包型號"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <div onClick={handleSearch} className="searchBtn">
+          <SearchIcon />
         </div>
       </div>
     );
@@ -243,10 +283,23 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
       );
     };
 
+    const DeleteCheckBox = ({ index }: any) => {
+      return (<div className="hannstarCheckBox" key={index}>
+        <input
+          id={"deleteCheckBox" + index}
+          type="checkBox"
+          value=""
+          name="deleteCheckBox"
+        />
+        <label htmlFor={"deleteCheckBox" + index}></label>
+      </div>)
+    }
+
     return (
       <table className="productListBlock">
         <thead>
           <tr>
+            {productListStateTab === 3 && <td><DeleteCheckBox /></td>}
             <td>外包型號</td>
             <td>HSD型號</td>
             <td>吋別</td>
@@ -261,8 +314,9 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
         </thead>
         <tbody>
           {currentItems &&
-            currentItems.map((item: any) => (
+            currentItems.map((item: any, index: number) => (
               <tr>
+                {productListStateTab === 3 && <td><DeleteCheckBox index={index} /></td>}
                 <td>
                   <a href={"/"}>{item.productNo}</a>
                 </td>
@@ -295,6 +349,15 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
     contentComponent: productListBlock,
   };
 
+  const DeleteBtnBlock = () => {
+    const handleOnClick = () => {
+      console.log('delete')
+    }
+
+    return (<div className="deleteBlock">{productListStateTab === 3 ?
+      <div className="deleteBtn" onClick={handleOnClick}>刪除</div> : null}</div>)
+  }
+
   const ContentBlock = () => {
     return (
       <div className={`${pageName}ContentBlock`}>
@@ -302,9 +365,9 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
           <UserInfoBlock {...userInfoData} />
           <ProductCountInfoBlock {...productCountInfoData} />
         </div>
-        <ProductToolBar />
-        <FormTopBlock />
         <FilterStateBlock />
+        <SearchBlock />
+        <DeleteBtnBlock />
         <PaginatedBlock data={PaginatedBlockProp} />
       </div>
     );
@@ -313,7 +376,12 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
   return (
     <Layout>
       <Breadcrumbs data={breadcrumbsData} />
-      <Columns type={ColType.OneCol} content={<ContentBlock />} />
+      <Columns
+        type={ColType.TwoColFullPage}
+        widthL={15}
+        widthR={85}
+        contentL={<ProductToolBar />}
+        contentR={<ContentBlock />} />
     </Layout>
   );
 };

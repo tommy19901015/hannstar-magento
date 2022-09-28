@@ -39,34 +39,36 @@ const PaginatedBlock: React.FC<I_Props> = ({ data }) => {
   return (
     <div className="paginatedBlock">
       {contentComponent(currentItems)}
-      <ReactPaginate
-        forcePage={nowPage}
-        nextLabel=""
-        onPageChange={handlePageClick}
-        pageCount={pageCount}
-        previousLabel=""
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="pagePrevious"
-        previousLinkClassName="page-link"
-        nextClassName="pageNext"
-        nextLinkClassName="page-link"
-        breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
-        containerClassName="pagination"
-        activeClassName="active"
-      />
-      <div>
-        <div>Go to Page</div>
-        <select onChange={handleOnChange} value={nowPage}>
-          {new Array(pageCount).fill(0).map((item, index) => (
-            <option value={index} key={index}>
-              {index + 1}
-            </option>
-          ))}
-        </select>
-        <div>{pageCount}</div>
+      <div className="toolbarBlock">
+        <ReactPaginate
+          forcePage={nowPage}
+          nextLabel=""
+          onPageChange={handlePageClick}
+          pageCount={pageCount}
+          previousLabel=""
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="pagePrevious"
+          previousLinkClassName="page-link"
+          nextClassName="pageNext"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+        />
+        <div className="selectPageBlock">
+          <div className="text">Go to Page</div>
+          <select onChange={handleOnChange} value={nowPage}>
+            {new Array(pageCount).fill(0).map((item, index) => (
+              <option value={index} key={index}>
+                {index + 1}
+              </option>
+            ))}
+          </select>
+          <div className="text">{pageCount}</div>
+        </div>
       </div>
     </div>
   );

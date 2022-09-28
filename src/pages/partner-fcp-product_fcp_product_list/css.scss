@@ -2,21 +2,45 @@
 
 $pageName: 'partner-fcp-product_fcp_product_list';
 
+.#{$pageName}ProductToolBar {
+    background-color: $hannstar-border-color1;
+    height: 100%;
+    ul {
+        .linkText {
+            cursor: pointer;
+            width: 100%;
+            padding: 10px 0;
+            a {
+                @include hannstarContentText;
+                display: flex;
+                align-items: center;
+                padding: 0 50px;
+                svg {
+                    padding-right: 15px;
+                }
+            }
+            &.active {
+                background-color: $hannstar-blue0;
+                a {
+                    color: $hannstar-blue2;
+                }
+            }
+        }
+    }
+}
 .#{$pageName}ContentBlock {
+    padding: 0 80px;
     .topBlock {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        padding-bottom: 20px;
-        border-bottom: 1px solid $hannstar-border-color;
+        align-items: center;
+        padding-top: 40px;
         .userInfoBlock {
             display: flex;
-            .imgBlock {
-            }
+            align-items: center;
             .infoBlock {
                 .name {
                     @include hannstarH3Title;
-                    padding: 10px 0;
                 }
                 .email {
                     @include hannstarContentText;
@@ -31,7 +55,7 @@ $pageName: 'partner-fcp-product_fcp_product_list';
                 flex-direction: column;
                 .title {
                     @include hannstarNoteText;
-                    padding: 20px;
+                    padding: 0 20px;
                 }
                 .count {
                     @include hannstarH3Title;
@@ -52,60 +76,45 @@ $pageName: 'partner-fcp-product_fcp_product_list';
             }
         }
     }
-    .productToolBar {
-        display: flex;
-        justify-content: space-between;
-        padding: 40px 0;
-        .leftBlock {
-            display: flex;
-            .linkBtn {
-                @include hannstarBtn;
-                margin-right: 20px;
-            }
-        }
-        .rightBlock {
-            select {
-                @include hannstarSelect;
-                min-width: 150px;
-            }
-        }
-    }
-    .formTopBlock {
-        margin-bottom: 40px;
-        .title {
-            @include hannstarH3Title;
-            color: $hannstar-blue1;
-            margin-bottom: 40px;
-        }
-        .searchBlock {
-            display: flex;
-            width: 300px;
-            input {
-                @include hannstarInput;
-            }
-            .searchBtn {
-                @include hannstarBtn2;
-                margin-left: 20px;
-            }
-        }
-    }
     .filterStateBlock {
         display: flex;
         @include hannstarContentText;
         border-bottom: 3px solid $hannstar-blue1;
-        margin-bottom: 15px;
+        margin: 40px 0;
         .stateTab {
             width: 130px;
             text-align: center;
             cursor: pointer;
             padding: 5px 20px;
             background-color: $hannstar-border-color1;
-            color: $hannstar-blue0;
+            color: $hannstar-blue1;
             margin-right: 10px;
-            &.active {
+            &.active,
+            &:hover {
                 background-color: $hannstar-blue1;
                 color: #fff;
             }
+        }
+    }
+    .searchBlock {
+        display: flex;
+        margin-bottom: 40px;
+        input {
+            @include hannstarInput;
+            border-radius: 4px 0 0 4px;
+        }
+        .searchBtn {
+            padding: 8px 10px;
+            background-color: $hannstar-blue1;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+    }
+    .deleteBlock {
+        margin-bottom: 40px;
+        .deleteBtn {
+            @include hannstarBtn;
+            width: 40px;
         }
     }
     .productListBlock {
@@ -114,8 +123,14 @@ $pageName: 'partner-fcp-product_fcp_product_list';
         td {
             padding: 10px;
             border: 1px solid $hannstar-border-color1;
-            text-align: center;
-            line-height: 1;
+            text-align: start;
+            .hannstarCheckBox {
+                @include hannstarCheckBox;
+                justify-content: center;
+                align-items: inherit;
+                padding: 0;
+                min-height: 20px;
+            }
         }
         thead {
             tr {

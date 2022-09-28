@@ -13,7 +13,7 @@ export const OneColFullStyle: React.FC<I_Style> = styled.div`
 
 export const TwoColFullStyle: React.FC<I_Style> = styled.div`
   display: flex;
-  margin: 40px auto;
+  // margin-bottom: 40px;
   &:first-child{
     margin-top: 0px; 
   }
