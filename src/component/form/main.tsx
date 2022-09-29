@@ -14,7 +14,7 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
     return (
       <div className="columnBlock" key={data.index}>
         <div className="title">{data.title}</div>
-        <div className="bodyBlock">
+        <div className={`bodyBlock ${data.type}`}>
           <ChildComponent {...data} />
         </div>
       </div>
@@ -29,6 +29,7 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
         <input
           type="text"
           placeholder={data.placeholder}
+          disabled={data.disabled}
           {...register(data.columnKey, { required: data.required })}
         />
       );

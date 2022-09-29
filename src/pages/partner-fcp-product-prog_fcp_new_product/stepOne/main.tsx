@@ -36,7 +36,7 @@ const StepOne: React.FC = () => {
   const formData2 = [
     {
       title: "外包型號",
-      value: "",
+      value: "sss",
       columnKey: "4",
       type: FormType.Intput,
       placeholder: "",

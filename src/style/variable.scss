@@ -97,6 +97,9 @@ $hannstar-green: #28a745;
     outline: none;
     border: solid 1px $hannstar-default-text-color;
   }
+  &:disabled {
+    background-color: $hannstar-border-color;
+  }
 }
 
 @mixin hannstarRadio {
@@ -155,10 +158,6 @@ $hannstar-green: #28a745;
 }
 
 @mixin hannstarCheckBox {
-  display: flex;
-  padding-bottom: 8px;
-  align-items: center;
-  margin-right: 30px;
   input[type="checkbox"]:checked,
   input[type="checkbox"]:not(:checked) {
     position: absolute;

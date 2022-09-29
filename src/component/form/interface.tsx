@@ -22,6 +22,7 @@ export interface I_FormData {
   placeholder: string;
   required: boolean;
   option?: { text: string; value: string }[];
+  disabled?: boolean;
 }
 
 export interface I_MappingForm {
