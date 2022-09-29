@@ -12,11 +12,11 @@ import { PageType } from "../../templates/partner_product/interface";
 import "./css.scss";
 
 enum StepTap {
-  One = 0,
-  Two = 1,
-  Three = 2,
-  Four = 3,
-  Five = 4,
+  One,
+  Two,
+  Three,
+  Four,
+  Five,
 }
 
 const PartnerFcpProductProgFcpNewProduct: React.FC = () => {

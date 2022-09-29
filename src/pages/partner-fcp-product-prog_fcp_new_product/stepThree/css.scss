@@ -3,46 +3,89 @@
 $pageName: "StepThree";
 
 .#{$pageName}ContentBlock {
+  margin-bottom: 80px;
   .#{$pageName}Title {
     @include hannstarH3Title;
     color: $hannstar-blue1;
     margin-bottom: 40px;
   }
+  .title {
+    @include hannstarH3Title;
+    margin-bottom: 20px;
+  }
+  .noteText {
+    @include hannstarContentText;
+    margin-bottom: 40px;
+  }
   .uploadBlock {
+    width: 80%;
     .productImgBlock {
-      display: flex;
-      .leftBlock {
-        @include hannstarH4Title;
-        margin-right: 80px;
+      img {
+        width: 100%;
+        height: auto;
       }
-      .rightBlock {
-        .contentBlock {
-          display: flex;
-          margin-bottom: 40px;
-          .productBlock {
-            .btnBlock {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              margin-top: 20px;
-              .uploadBtn {
-                margin-top: 20px;
-                @include hannstarBtn;
-              }
+      .contentBlock {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+        margin-bottom: 40px;
+        .productBlock {
+          .btnBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            .uploadBtn {
+              @include hannstarBtn;
             }
           }
-          .exampleBlock {
-            // img {
-            //   width: 100%;
-            // }
-            .title {
-              @include hannstarH4Title;
-              text-align: center;
-              margin-top: 20px;
+        }
+        .exampleBlock {
+          // img {
+          //   width: 100%;
+          // }
+          .title {
+            @include hannstarH4Title;
+            text-align: center;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+  .uploadShapeBlock {
+    width: 80%;
+    .shapeImgBlock {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px;
+      margin-bottom: 40px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .contentBlock {
+        .shapeBlock {
+          .btnBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            .uploadBtn {
+              @include hannstarBtn;
             }
           }
         }
       }
+    }
+  }
+  .btnBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    .formBtn {
+      @include hannstarBtn;
+      margin-right: 40px;
     }
   }
 }
