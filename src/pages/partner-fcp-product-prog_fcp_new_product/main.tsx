@@ -8,6 +8,7 @@ import StepThree from "./stepThree/main";
 import StepFour from "./stepFour/main";
 import StepFive from "./stepFive/main";
 import { PageType } from "../../templates/partner_product/interface";
+import { IFormProps } from "../../component/form/interface";
 
 import "./css.scss";
 
@@ -18,6 +19,7 @@ enum StepTap {
   Four,
   Five,
 }
+
 
 const PartnerFcpProductProgFcpNewProduct: React.FC = () => {
   const pageName = "partner-fcp-product-prog_fcp_new_product";
@@ -83,10 +85,15 @@ const PartnerFcpProductProgFcpNewProduct: React.FC = () => {
       setStep(index);
     };
 
+    const handleSaveEvent = (form:IFormProps) =>{
+      console.log('form',form)
+      
+    }
+
     const mappingArray = [
       {
         step: StepTap.One,
-        stepComponent: useMemo(() => <StepOne />, []),
+        stepComponent:  <StepOne handleSaveAll={handleSaveEvent} />,
       },
       {
         step: StepTap.Two,

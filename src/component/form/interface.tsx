@@ -31,3 +31,7 @@ export interface I_MappingForm {
   [FormType.CheckBox]: JSX.Element;
   [FormType.Select]: JSX.Element;
 }
+
+export interface IFormProps {
+  [key: number]: string |[];
+}

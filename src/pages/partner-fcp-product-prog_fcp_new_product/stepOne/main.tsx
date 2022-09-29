@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import FormComponent from "../../../component/form/main";
-import { FormType } from "../../../component/form/interface";
+import { FormType, IFormProps } from "../../../component/form/interface";
 import "./css.scss";
 
-const StepOne: React.FC = () => {
+
+type IProps = { handleSaveAll: (v:any) => void; };
+
+const StepOne: React.FC<IProps> = ({handleSaveAll}) => {
   const pageName = "StepOne";
 
   const formData1 = [
@@ -289,7 +292,7 @@ const StepOne: React.FC = () => {
     const values6 = formMethods6.current.getValues();
     const values7 = formMethods7.current.getValues();
 
-    const stepOneData = {
+    const stepOneData : IFormProps = {
       ...values1,
       ...values2,
       ...values3,
@@ -299,6 +302,7 @@ const StepOne: React.FC = () => {
       ...values7,
     };
 
+    handleSaveAll(stepOneData)
     console.log("stepOneData", stepOneData);
   };
 
