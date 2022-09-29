@@ -1,7 +1,8 @@
 import React from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
-import PartnerFcpTemplate from "../../templates/partner-fcp/main";
+import PartnerFcpTemplate from "../../templates/partner_product/main";
+import { PageType } from "../../templates/partner_product/interface";
 import "./css.scss";
 
 const PartnerFcpProductProgFcpProductCostInventory: React.FC = () => {
@@ -90,6 +91,7 @@ const PartnerFcpProductProgFcpProductCostInventory: React.FC = () => {
   };
 
   const partnerFcpTemplateProp = {
+    pageType: PageType.Product,
     contentComponent: <ContentBlock />,
     activeLink: 1,
   };

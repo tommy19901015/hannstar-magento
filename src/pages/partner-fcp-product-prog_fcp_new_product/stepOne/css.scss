@@ -3,6 +3,7 @@
 $pageName: "StepOne";
 
 .#{$pageName}ContentBlock {
+  margin-bottom: 80px;
   .#{$pageName}Title {
     @include hannstarH3Title;
     color: $hannstar-blue1;
@@ -13,7 +14,7 @@ $pageName: "StepOne";
   .btnBlock {
     display: flex;
     justify-content: center;
-    margin: 80px 0;
+    margin-top: 80px;
     .formBtn {
       @include hannstarBtn;
       margin-right: 40px;

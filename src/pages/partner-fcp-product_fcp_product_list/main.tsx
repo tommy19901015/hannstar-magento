@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
-import Columns from "../../component/columns/main";
-import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
 import { SearchIcon } from "./icon/searchIcon";
-import PartnerFcpTemplate from "../../templates/partner-fcp/main";
+import PartnerFcpTemplate from "../../templates/partner_product/main";
+import { PageType } from "../../templates/partner_product/interface";
 import "./css.scss";
 
 const PartnerFcpProductFcpProductList: React.FC = () => {
@@ -15,6 +14,7 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
   const [productListStateTab, setProductListStateTab] = useState<number>(0);
 
   const fakeApiData: any = testTableData;
+  const productCountInfoData = {};
 
   useEffect(() => {
     setProductListData(fakeApiData);
@@ -258,6 +258,8 @@ const PartnerFcpProductFcpProductList: React.FC = () => {
   };
 
   const partnerFcpTemplateProp = {
+    pageType: PageType.Product,
+    productCountInfo: productCountInfoData,
     contentComponent: <ContentBlock />,
     activeLink: 0,
   };

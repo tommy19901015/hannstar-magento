@@ -1,15 +1,13 @@
 import React, { useRef, useState, useMemo } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
-import PartnerFcpTemplate from "../../templates/partner-fcp/main";
-import FormComponent from "../../component/form/main";
-import { FormType } from "../../component/form/interface";
+import PartnerFcpTemplate from "../../templates/partner_product/main";
 import StepOne from "./stepOne/main";
 import StepTwo from "./stepTwo/main";
 import StepThree from "./stepThree/main";
-import StepFour from "./stepFour";
-import StepFive from "./stepFive";
-// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import StepFour from "./stepFour/main";
+import StepFive from "./stepFive/main";
+import { PageType } from "../../templates/partner_product/interface";
 
 import "./css.scss";
 
@@ -133,6 +131,7 @@ const PartnerFcpProductProgFcpNewProduct: React.FC = () => {
   };
 
   const partnerFcpTemplateProp = {
+    pageType: PageType.Product,
     contentComponent: <StepTapBlock />,
     activeLink: 2,
   };

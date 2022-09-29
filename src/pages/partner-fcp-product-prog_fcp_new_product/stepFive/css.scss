@@ -1,6 +1,6 @@
 @import "../../../style/variable.scss";
 
-$pageName: "StepTwo";
+$pageName: "StepFive";
 
 .#{$pageName}ContentBlock {
   margin-bottom: 80px;
@@ -9,14 +9,11 @@ $pageName: "StepTwo";
     color: $hannstar-blue1;
     margin-bottom: 40px;
   }
-  .formBlock {
-  }
   .btnBlock {
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    .formBtn,
-    .nextBtn {
+    .formBtn {
       @include hannstarBtn;
       margin-right: 40px;
     }

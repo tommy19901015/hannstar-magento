@@ -8,16 +8,41 @@ $pageName: "StepThree";
     color: $hannstar-blue1;
     margin-bottom: 40px;
   }
-  .formBlock {
-  }
-  .btnBlock {
-    display: flex;
-    justify-content: center;
-    margin: 80px 0;
-    .formBtn,
-    .nextBtn {
-      @include hannstarBtn;
-      margin-right: 40px;
+  .uploadBlock {
+    .productImgBlock {
+      display: flex;
+      .leftBlock {
+        @include hannstarH4Title;
+        margin-right: 80px;
+      }
+      .rightBlock {
+        .contentBlock {
+          display: flex;
+          margin-bottom: 40px;
+          .productBlock {
+            .btnBlock {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              margin-top: 20px;
+              .uploadBtn {
+                margin-top: 20px;
+                @include hannstarBtn;
+              }
+            }
+          }
+          .exampleBlock {
+            // img {
+            //   width: 100%;
+            // }
+            .title {
+              @include hannstarH4Title;
+              text-align: center;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
     }
   }
 }

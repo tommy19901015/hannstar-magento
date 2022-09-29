@@ -9,27 +9,29 @@ import { ManualIconActive } from "./icon/manualIconActive";
 import { ManualIcon } from "./icon/manualIcon";
 import { SubtractIconActive } from "./icon/subtractIconActive";
 import { SubtractIcon } from "./icon/subtractIcon";
+import {
+  PageType,
+  I_UserInfo,
+  I_ProductCountInfo,
+  I_PartnerProductTemplate,
+} from "./interface";
 import "./css.scss";
 
-interface I_PartnerFcpTemplate {
-  data: {
-    contentComponent: JSX.Element;
-    activeLink: number;
-  };
-}
+const userInfoData = {
+  name: "pdmo01",
+  email: "pdmo01@hannstar.com",
+};
 
-const PartnerFcpTemplate: React.FC<I_PartnerFcpTemplate> = ({ data }) => {
-  const pageName = "partner-fcp-template";
+const productCountInfoData = {
+  total: "21",
+  productOn: "19",
+  productOff: "2",
+};
 
-  interface I_UserInfo {
-    name: string;
-    email: string;
-  }
-
-  const userInfoData = {
-    name: "pdmo01",
-    email: "pdmo01@hannstar.com",
-  };
+const PartnerProductTemplate: React.FC<I_PartnerProductTemplate> = ({
+  data,
+}) => {
+  const pageName = "PartnerProductTemplate";
 
   const UserInfoBlock: React.FC<I_UserInfo> = ({ name, email }) => {
     return (
@@ -47,18 +49,6 @@ const PartnerFcpTemplate: React.FC<I_PartnerFcpTemplate> = ({ data }) => {
       </div>
     );
   };
-
-  const productCountInfoData = {
-    total: "21",
-    productOn: "2",
-    productOff: "19",
-  };
-
-  interface I_ProductCountInfo {
-    total: string;
-    productOn: string;
-    productOff: string;
-  }
 
   const ProductCountInfoBlock: React.FC<I_ProductCountInfo> = ({
     total,
@@ -117,10 +107,36 @@ const PartnerFcpTemplate: React.FC<I_PartnerFcpTemplate> = ({ data }) => {
       },
     ];
 
+    const solutionToolBarData = [
+      {
+        text: "產品清單",
+        href: "/FCP/SOLUTION/PROG_FCP_PRODUCT_LIST",
+        icon: <FormIcon />,
+        activeIcon: <FormIconActive />,
+      },
+      {
+        text: "價格及庫存管理",
+        href: "/FCP/SOLUTION/PROG_FCP_PRODUCT_COST_INVENTORY",
+        icon: <HouseIcon />,
+        activeIcon: <HouseIconActive />,
+      },
+      {
+        text: "新增產品",
+        href: "/FCP/SOLUTION/PROG_FCP_NEW_PRODUCT",
+        icon: <SubtractIcon />,
+        activeIcon: <SubtractIconActive />,
+      },
+    ];
+
+    const randerData =
+      data.pageType === PageType.Product
+        ? productToolBarData
+        : solutionToolBarData;
+
     return (
       <div className={`${pageName}ProductToolBar`}>
         <ul>
-          {productToolBarData.map((item, index) => (
+          {randerData.map((item, index) => (
             <li
               className={`linkText ${
                 data.activeLink === index ? "active" : ""
@@ -161,4 +177,4 @@ const PartnerFcpTemplate: React.FC<I_PartnerFcpTemplate> = ({ data }) => {
   );
 };
 
-export default PartnerFcpTemplate;
+export default PartnerProductTemplate;
