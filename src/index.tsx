@@ -11,11 +11,14 @@ import Solution from "./pages/solution/main";
 import Stronghold from "./pages/stronghold/main";
 import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
-import PartnerFcpProgFcpQuotation from "./pages/partner-fcp-prog_fcp_quotation/main";
-import PartnerFcpProgFcpQuotationReply from "./pages/partner-fcp-prog_fcp_quotation_reply/main";
-import PartnerFcpProductFcpProductList from "./pages/partner-fcp-product_fcp_product_list/main";
-import PartnerFcpProductProgFcpProductCostInventory from "./pages/partner-fcp-product-prog-fcp-product-cost-inventory/main";
-import PartnerFcpProductProgFcpNewProduct from "./pages/partner-fcp-product-prog_fcp_new_product/main";
+import PartnerQuotationList from "./pages/partner-quotation-list/main";
+import PartnerOnlineQuotation from "./pages/partner-online-quotation/main";
+import PartnerProductList from "./pages/partner-product-list/main";
+import PartnerProductInventory from "./pages/partner-product-inventory/main";
+import PartnerProductProduct from "./pages/partner-product-product/main";
+import PartnerSolutionList from "./pages/partner-solution-list/main";
+import PartnerSolutionInventory from "./pages/partner-solution-inventory/main";
+import PartnerSolutionProduct from "./pages/partner-solution-product/main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
@@ -32,23 +35,35 @@ ReactDOM.render(
       <Route path="/formTest" element={<FormTest />} />
       <Route
         path="/FCP/PROG_FCP_QUOTATION"
-        element={<PartnerFcpProgFcpQuotation />}
+        element={<PartnerQuotationList />}
       />
       <Route
         path="/FCP/PROG_FCP_QUOTATION_REPLY"
-        element={<PartnerFcpProgFcpQuotationReply />}
+        element={<PartnerOnlineQuotation />}
       />
       <Route
         path="/FCP/PRODUCT/PROG_FCP_PRODUCT_LIST"
-        element={<PartnerFcpProductFcpProductList />}
+        element={<PartnerProductList />}
       />
       <Route
         path="/FCP/PRODUCT/PROG_FCP_PRODUCT_COST_INVENTORY"
-        element={<PartnerFcpProductProgFcpProductCostInventory />}
+        element={<PartnerProductInventory />}
       />
       <Route
         path="/FCP/PRODUCT/PROG_FCP_NEW_PRODUCT"
-        element={<PartnerFcpProductProgFcpNewProduct />}
+        element={<PartnerProductProduct />}
+      />
+      <Route
+        path="/FCP/SOLUTION/PROG_FCP_PRODUCT_LIST"
+        element={<PartnerSolutionList />}
+      />
+      <Route
+        path="/FCP/SOLUTION/PROG_FCP_PRODUCT_COST_INVENTORY"
+        element={<PartnerSolutionInventory />}
+      />
+      <Route
+        path="/FCP/SOLUTION/PROG_FCP_NEW_SOLUTION"
+        element={<PartnerSolutionProduct />}
       />
     </Routes>
   </BrowserRouter>,

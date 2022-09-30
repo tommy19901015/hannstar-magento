@@ -122,7 +122,7 @@ const PartnerProductTemplate: React.FC<I_PartnerProductTemplate> = ({
       },
       {
         text: "新增產品",
-        href: "/FCP/SOLUTION/PROG_FCP_NEW_PRODUCT",
+        href: "/FCP/SOLUTION/PROG_FCP_NEW_SOLUTION",
         icon: <SubtractIcon />,
         activeIcon: <SubtractIconActive />,
       },
