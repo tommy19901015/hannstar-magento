@@ -221,7 +221,7 @@ $hannstar-green: #28a745;
     no-repeat center transparent;
   background-position-x: calc(100% - 10px);
   @include hannstarContentText;
-  line-height: 1;
+  line-height: 1.8;
   &:hover {
     border: solid 1px $hannstar-default-text-color;
   }
@@ -229,6 +229,30 @@ $hannstar-green: #28a745;
   &:focus-visible {
     outline: none;
     border: solid 1px $hannstar-default-text-color;
+  }
+}
+
+@mixin hannstarTextarea {
+  width: calc(100% - 20px);
+  min-height: 150px;
+  padding: 10px;
+  border-radius: 3px;
+  border: solid 1px $hannstar-border-color;
+  background-color: #fff;
+  color: $hannstar-default-text-color;
+  &::placeholder {
+    color: $hannstar-border-color;
+  }
+  &:hover {
+    border: solid 1px $hannstar-default-text-color;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border: solid 1px $hannstar-default-text-color;
+  }
+  &:disabled {
+    background-color: $hannstar-border-color;
   }
 }
 

@@ -3,6 +3,7 @@ export enum FormType {
   Radio = "radio",
   CheckBox = "checkbox",
   Select = "select",
+  Textarea = "textarea",
 }
 
 export interface I_Props {
@@ -30,4 +31,5 @@ export interface I_MappingForm {
   [FormType.Radio]: JSX.Element;
   [FormType.CheckBox]: JSX.Element;
   [FormType.Select]: JSX.Element;
+  [FormType.Textarea]: JSX.Element;
 }

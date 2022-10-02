@@ -19,6 +19,8 @@ import PartnerProductProduct from "./pages/partner-product-product/main";
 import PartnerSolutionList from "./pages/partner-solution-list/main";
 import PartnerSolutionInventory from "./pages/partner-solution-inventory/main";
 import PartnerSolutionProduct from "./pages/partner-solution-product/main";
+import PartnerPurchaseRequest from "./pages/partner-purchase-request/main";
+import PartnerTechnicalCooperation from "./pages/partner-technical-cooperation/main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
@@ -64,6 +66,14 @@ ReactDOM.render(
       <Route
         path="/FCP/SOLUTION/PROG_FCP_NEW_SOLUTION"
         element={<PartnerSolutionProduct />}
+      />
+      <Route
+        path="/PCP/PROG_PCP_QUOTATION"
+        element={<PartnerPurchaseRequest />}
+      />
+      <Route
+        path="/PCP/TECHNICAL_COOPERATION"
+        element={<PartnerTechnicalCooperation />}
       />
     </Routes>
   </BrowserRouter>,

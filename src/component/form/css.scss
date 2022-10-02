@@ -25,7 +25,12 @@
         @include hannstarSelect;
       }
 
+      textarea {
+        @include hannstarTextarea;
+      }
+
       .hannstarRadio {
+        margin-right: 20px;
         @include hannstarRadio;
       }
 

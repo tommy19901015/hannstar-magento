@@ -154,17 +154,6 @@ const StepTwo: React.FC<any> = forwardRef((props, ref) => {
       <div className="formBlock">
         <FormComponent data={formProp} />
       </div>
-      {/* <div className="btnBlock">
-        <div className="formBtn" onClick={handleSave}>
-          儲存
-        </div>
-        <div className="formBtn" onClick={goNextStep}>
-          上一步
-        </div>
-        <div className="formBtn" onClick={goPreStep}>
-          下一步
-        </div>
-      </div> */}
     </div>
   );
 });

@@ -1,170 +1,50 @@
-import React, { useRef, forwardRef, useImperativeHandle } from "react";
-import FormComponent from "../../../component/form/main";
-import { FormType } from "../../../component/form/interface";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import "./css.scss";
 
 const StepTwo: React.FC<any> = forwardRef((props, ref) => {
   const pageName = "StepTwo";
+  const [image, setImage] = useState({ preview: "", raw: "" });
 
-  const formData = [
-    {
-      title: "對比",
-      value: "",
-      columnKey: "1",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "1000:1", value: "1000:1" },
-        { text: "1100:1", value: "1100:1" },
-        { text: "1200:1", value: "1200:1" },
-      ],
-    },
-    {
-      title: "反應時間(ms)",
-      value: "",
-      columnKey: "2",
-      type: FormType.Intput,
-      placeholder: "請輸入 例如: :40",
-      required: true,
-    },
-    {
-      title: "亮度(nits)",
-      value: "",
-      columnKey: "3",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "NA", value: "1000:1" },
-        { text: "150", value: "150" },
-        { text: "180", value: "180" },
-      ],
-    },
-    {
-      title: "視角(H/V)",
-      value: "",
-      columnKey: "4",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "110/110", value: "110/110" },
-        { text: "120/120", value: "120/120" },
-        { text: "130/130", value: "130/130" },
-      ],
-    },
-    {
-      title: "最佳視角",
-      value: "",
-      columnKey: "5",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "2 o'clock", value: "2 o'clock" },
-        { text: "3 o'clock", value: "3 o'clock" },
-        { text: "4 o'clock", value: "4 o'clock" },
-      ],
-    },
-    {
-      title: "I/F Pin數",
-      value: "",
-      columnKey: "6",
-      type: FormType.Intput,
-      placeholder: "請輸入 例如: :10",
-      required: true,
-    },
-    {
-      title: "電器架構",
-      value: "",
-      columnKey: "7",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "PCBa", value: "PCBa" },
-        { text: "架橋式FPCa", value: "架橋式FPCa" },
-        { text: "豬尾巴", value: "豬尾巴" },
-      ],
-    },
-    {
-      title: "操作溫度/保存溫度(°C)",
-      value: "",
-      columnKey: "8",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "A=>0~50/-20~60", value: "A=>0~50/-20~60" },
-        { text: "B=>10~50/-20~60", value: "B=>10~50/-20~60" },
-        { text: "C=>20~70/-30~80", value: "C=>20~70/-30~80" },
-      ],
-    },
-    {
-      title: "信賴測試時間(hr)",
-      value: "",
-      columnKey: "9",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "48hrs", value: "48hrs" },
-        { text: "96hrs", value: "96hrs" },
-        { text: "120hrs", value: "120hrs" },
-      ],
-    },
-    {
-      title: "四邊邊框尺寸(L/R/U/D)",
-      value: "",
-      columnKey: "10",
-      type: FormType.Intput,
-      placeholder: "請輸入 例如: :1.9/1.9/1.67/4.33",
-      required: true,
-    },
-    {
-      title: "與同基板第一隻機種差異",
-      value: "",
-      columnKey: "11",
-      type: FormType.Intput,
-      placeholder: "請輸入 例如: :亮度、外型等差異",
-      required: true,
-    },
-  ];
-
-  const formMethods: any = useRef(null);
-
-  const formProp = {
-    formMethods: formMethods,
-    formData: formData,
-  };
-
-  const handleSaveStepTwo = () => {
-    const values1 = formMethods.current.getValues();
-    console.log("stepTwoData", values1);
+  const handleSaveStepThree = () => {
+    console.log("handleSaveStepThree");
   };
 
   useImperativeHandle(ref, () => ({
-    handleSaveStepTwo,
+    handleSaveStepThree,
   }));
+
+  const handleChange = (e: any) => {
+    if (e.target.files.length) {
+      setImage({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0],
+      });
+    }
+  };
 
   return (
     <div className={`${pageName}ContentBlock`}>
-      <div className={`${pageName}Title`}>產品資訊</div>
-      <div className="formBlock">
-        <FormComponent data={formProp} />
+      <div className={`${pageName}Title`}>產品圖片管理</div>
+      <div className="title">產品圖片</div>
+      <ul className="noteText">
+        <li>上傳注意事項 :</li>
+        <li>
+          1. 正面圖檔案命名規則: 原廠料號 + _ + front Ex. 01839PX_front.jpg
+        </li>
+        <li>2. 背面圖檔案命名規則: 原廠料號 + _ + back Ex. 01839PX_back.jpg</li>
+        <li>
+          3. 規格書檔案命名規則: 原廠料號 + _ + specification Ex.
+          01839PX_specification.doc
+        </li>
+        <li>4. 正面圖/背面圖可接受格式檔: JPG/PNG</li>
+        <li>5. 產品規格書可接受格式檔: WORD/PDF</li>
+      </ul>
+      <div className="uploadBlock">
+        <div className="productImgBlock">
+          <input type="file" onChange={handleChange} />
+          <img src={image.preview} alt="dummy" width="300" height="300" />
+        </div>
       </div>
-      {/* <div className="btnBlock">
-        <div className="formBtn" onClick={handleSave}>
-          儲存
-        </div>
-        <div className="formBtn" onClick={goNextStep}>
-          上一步
-        </div>
-        <div className="formBtn" onClick={goPreStep}>
-          下一步
-        </div>
-      </div> */}
     </div>
   );
 });

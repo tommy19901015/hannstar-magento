@@ -110,6 +110,22 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
     return QuestionComponent(data, SelectBlock);
   };
 
+  const TextareaComponent: React.FC<I_FormData> = (data) => {
+    methods.setValue(data.columnKey, data.value);
+    const TextareaBlock = () => {
+      const { register } = useFormContext();
+      return (
+        <textarea
+          placeholder={data.placeholder}
+          disabled={data.disabled}
+          {...register(data.columnKey, { required: data.required })}
+        />
+      );
+    };
+
+    return QuestionComponent(data, TextareaBlock);
+  };
+
   const mappingType = (item: I_FormData, index: number): I_MappingForm => {
     const data = { ...item, index };
     return {
@@ -117,6 +133,7 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
       [FormType.Radio]: <RaidoComponent {...data} />,
       [FormType.CheckBox]: <CheckBoxComponent {...data} />,
       [FormType.Select]: <SelectComponent {...data} />,
+      [FormType.Textarea]: <TextareaComponent {...data} />,
     };
   };
 
