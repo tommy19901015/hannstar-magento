@@ -6,18 +6,14 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  // entry: {
-  //   index: "./src/entry/index.js",
-  // },
-  entry: glob.sync("./src/pages/**/main.tsx").reduce((acc, path) => {
-    const entry = path.replace("/index.js", "");
-    console.log("path", path);
-    acc[entry] = path;
-    return acc;
+  entry: glob.sync("./src/pages/**/main.tsx").reduce((config, page) => {
+    const entry = page.split("/")[3];
+    config[entry] = page;
+    return config;
   }, {}),
   output: {
     path: path.join(__dirname, "dist/"),
-    filename: "js/[name].js",
+    filename: "js/[name]/main.js",
     assetModuleFilename: "images/[hash][ext]",
   },
   module: {
@@ -61,7 +57,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx", "css", "scss"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", "css", "scss", ".json"],
   },
   optimization: {
     minimizer: [
@@ -73,7 +69,7 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "css/[name].css",
+      filename: "css/[name]/main.css",
     }),
     new HtmlWebpackPlugin({
       template: "./src/main.html",
