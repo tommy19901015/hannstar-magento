@@ -17,7 +17,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "1",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
       disabled: true,
     },
     {
@@ -26,7 +25,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "2",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
     },
     {
       title: "單號",
@@ -34,7 +32,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "3",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
       disabled: true,
     },
     {
@@ -43,7 +40,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "4",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
       disabled: true,
     },
     {
@@ -60,7 +56,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "6",
       type: FormType.Select,
       placeholder: "",
-      required: true,
       option: [
         { text: "中板(1/4版,1/6版)", value: "中板(1/4版,1/6版)" },
         { text: "Full cell", value: "Full cell" },
@@ -129,7 +124,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "11",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
     },
     {
       title: "Invoice",
@@ -137,7 +131,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "11",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
     },
     {
       title: "保良(%)",
@@ -145,7 +138,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "12",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
     },
     {
       title: "箱號",
@@ -153,7 +145,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "13",
       type: FormType.Intput,
       placeholder: "",
-      required: true,
     },
     {
       title: "快速覆判",
@@ -161,7 +152,6 @@ const EServerRMAApply: React.FC = () => {
       columnKey: "14",
       type: FormType.Radio,
       placeholder: "",
-      required: true,
       option: [
         { text: "是", value: "yes" },
         { text: "否", value: "no" },
@@ -198,9 +188,7 @@ const EServerRMAApply: React.FC = () => {
           <div className={`${pageName}ContentBlock`}>
             <FormComponent data={formData} />
           </div>
-          <div className={`${pageName}UploadBlock`}>
-            
-          </div>
+          <div className={`${pageName}UploadBlock`}></div>
           <div className={`${pageName}BtnBlock`}>
             <div className="btn" onClick={handlerSave}>
               儲存

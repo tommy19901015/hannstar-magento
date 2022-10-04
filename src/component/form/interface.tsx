@@ -21,7 +21,7 @@ export interface I_FormData {
   type: FormType;
   value?: string;
   placeholder: string;
-  required: boolean;
+  required?: boolean;
   option?: { text: string; value: string }[];
   disabled?: boolean;
 }

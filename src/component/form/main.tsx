@@ -13,7 +13,9 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
   const QuestionComponent: React.FC<I_FormData> = (data, ChildComponent) => {
     return (
       <div className="columnBlock" key={data.index}>
-        <div className="title">{data.title}</div>
+        <div className={`title ${data.required ? "required" : ""}`}>
+          {data.title}
+        </div>
         <div className={`bodyBlock ${data.type}`}>
           <ChildComponent {...data} />
         </div>
