@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
@@ -272,7 +271,5 @@ const PartnerProductList: React.FC = () => {
     </Layout>
   );
 };
-
-ReactDOM.render(<PartnerProductList />, document.getElementById("root"));
 
 export default PartnerProductList;

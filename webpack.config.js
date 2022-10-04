@@ -6,11 +6,12 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  entry: glob.sync("./src/pages/**/main.tsx").reduce((config, page) => {
-    const entry = page.split("/")[3];
-    config[entry] = page;
-    return config;
-  }, {}),
+  // entry: glob.sync("./src/pages/**/main.tsx").reduce((config, page) => {
+  //   const entry = page.split("/")[3];
+  //   config[entry] = page;
+  //   return config;
+  // }, {}),
+  entry: "./src/entry/index.js",
   output: {
     path: path.join(__dirname, "dist/"),
     filename: "js/[name]/main.js",
@@ -66,7 +67,6 @@ module.exports = {
       }),
     ],
   },
-
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/[name]/main.css",

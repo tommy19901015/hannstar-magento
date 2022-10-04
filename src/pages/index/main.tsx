@@ -242,6 +242,4 @@ const AppWrapper = () => {
   );
 };
 
-ReactDOM.render(<AppWrapper />, document.getElementById("root"));
-
 export default AppWrapper;
