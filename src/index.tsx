@@ -21,60 +21,62 @@ import PartnerSolutionInventory from "./pages/partner-solution-inventory/main";
 import PartnerSolutionProduct from "./pages/partner-solution-product/main";
 import PartnerPurchaseRequest from "./pages/partner-purchase-request/main";
 import PartnerTechnicalCooperation from "./pages/partner-technical-cooperation/main";
+import EServerRMAApply from "./pages/e-server-rma-apply/main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/e-service" element={<Eservice />} />
-      <Route path="/partner" element={<Partner />} />
-      <Route path="/e-biz" element={<EBiz />} />
-      <Route path="/solution" element={<Solution />} />
-      <Route path="/stronghold" element={<Stronghold />} />
+      <Route path="/zh-tw/about" element={<About />} />
+      <Route path="/zh-tw/e-service" element={<Eservice />} />
+      <Route path="/zh-tw/partner" element={<Partner />} />
+      <Route path="/zh-tw/e-biz" element={<EBiz />} />
+      <Route path="/zh-tw/solution" element={<Solution />} />
+      <Route path="/zh-tw/stronghold" element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
       <Route
-        path="/FCP/PROG_FCP_QUOTATION"
+        path="/zh-tw/partner/quotation"
         element={<PartnerQuotationList />}
       />
       <Route
-        path="/FCP/PROG_FCP_QUOTATION_REPLY"
+        path="/zh-tw/partner/FCP/reply"
         element={<PartnerOnlineQuotation />}
       />
       <Route
-        path="/FCP/PRODUCT/PROG_FCP_PRODUCT_LIST"
+        path="/zh-tw/partner/productlist"
         element={<PartnerProductList />}
       />
       <Route
-        path="/FCP/PRODUCT/PROG_FCP_PRODUCT_COST_INVENTORY"
+        path="/zh-tw/partner/inventory"
         element={<PartnerProductInventory />}
       />
       <Route
-        path="/FCP/PRODUCT/PROG_FCP_NEW_PRODUCT"
+        path="/zh-tw/partner/product"
         element={<PartnerProductProduct />}
       />
       <Route
-        path="/FCP/SOLUTION/PROG_FCP_PRODUCT_LIST"
+        path="/zh-tw/partner/solution/productlist"
         element={<PartnerSolutionList />}
       />
       <Route
-        path="/FCP/SOLUTION/PROG_FCP_PRODUCT_COST_INVENTORY"
+        path="/zh-tw/partner/solution/inventory"
         element={<PartnerSolutionInventory />}
       />
       <Route
-        path="/FCP/SOLUTION/PROG_FCP_NEW_SOLUTION"
+        path="/zh-tw/partner/solution/product"
         element={<PartnerSolutionProduct />}
       />
       <Route
-        path="/PCP/PROG_PCP_QUOTATION"
+        path="/zh-tw/partner/purchase"
         element={<PartnerPurchaseRequest />}
       />
       <Route
-        path="/PCP/TECHNICAL_COOPERATION"
+        path="/zh-tw/partner/technical"
         element={<PartnerTechnicalCooperation />}
       />
+      <Route path="/zh-tw/e-server/rma-apply" element={<EServerRMAApply />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

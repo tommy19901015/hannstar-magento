@@ -3,17 +3,19 @@
 $pageName: "partner-online-quotation";
 
 .#{$pageName}FormBlock {
-  max-width: 1200px;
   border: 1px solid #e9e9e9;
-  margin: 0 auto;
-  .#{$pageName}title {
+  margin: 0 80px;
+  .#{$pageName}Title {
     @include hannstarH3Title;
     text-align: center;
     background-color: $hannstar-blue1;
     color: #fff;
-    padding: 15px 0;
+    padding: 10px 0;
+    margin-bottom: 40px;
   }
-
+  .#{$pageName}ContentBlock {
+    padding: 0 80px;
+  }
   .#{$pageName}btnBlock {
     display: flex;
     justify-content: center;

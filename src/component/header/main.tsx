@@ -1,84 +1,84 @@
 import React, { useState, useEffect } from "react";
-import menuData from "../../common/menuData.json"
+import menuDataJson from "../../common/menuData.json";
 import CollapseLi from "../collapseLi/main";
 import "./css.scss";
 
-const headerData = {
-  logoSrc: "https://www.hannstar.com/images/logo.png",
-  menu: [
-    {
-      text: "關於瀚宇彩晶",
-      href: "",
-    },
-    {
-      text: "產品應用",
-      href: "",
-    },
-    {
-      text: "企業永續",
-      href: "",
-    },
-    {
-      text: "投資人關係",
-      href: "",
-    },
-    {
-      text: "人力資源",
-      href: "",
-    },
-    {
-      text: "訊息中心",
-      href: "",
-    },
-  ],
-};
+interface I_Menu {
+  title: string;
+  href: string;
+  content: { title: string; href: string }[];
+}
 
-const MenuBlock: React.FC = () => {
-  console.log('menuData', menuData);
-  return (
-    <ul className="menuUl">
-      {menuData.map((item: any, idx: any) => (
-        <li className="menuLi" key={idx}>
-          <div className="menuText">
-            <a href={item.href}>{item.title}
-            </a>
-            <div className="arrow"></div>
-          </div>
-          <ul className="secMenuUl">
-            {item.content.map((subMenu: any) =>
-              <li><a href={subMenu.href}>{subMenu.title}</a></li>)}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  );
-};
+type I_ServiceType = "hannstar" | "partner";
+
+type I_MenuProp = Record<I_ServiceType, I_Menu>;
 
 const Header: React.FC = () => {
-  const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false)
+  const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
+  const [serviceType, setServiceType] = useState<string>("hannstar");
+
+  useEffect(() => {
+    const type = window.location.pathname.split("/")[2];
+    const mappingArr = ["hannstar", "partner"];
+    mappingArr.includes(type) && setServiceType(type);
+  }, []);
 
   const handleOpenPhoneMenu = () => {
-    setOpenPhoneMenu(!openPhoneMenu)
-  }
+    setOpenPhoneMenu(!openPhoneMenu);
+  };
 
-  const menuMData: any = () => menuData.map((item: any) => {
-    return {
-      title: <div className="menuTitle">{item.title}</div>,
-      content: item.content.map((obj: any) =>
-        <li>
-          <a className="menuContrnt" href={obj.href}>{obj.title}</a>
-        </li>)
-    }
-  })
+  const menuData: any = menuDataJson;
+
+  const menuMData: any = () =>
+    menuData[serviceType].map((item: any) => {
+      return {
+        title: <div className="menuTitle">{item.title}</div>,
+        content: item.content.map((obj: any) => (
+          <li>
+            <a className="menuContrnt" href={obj.href}>
+              {obj.title}
+            </a>
+          </li>
+        )),
+      };
+    });
+
+  const MenuBlock: React.FC = () => {
+    return (
+      <ul className="menuUl">
+        {menuData[serviceType].map((item: any, index: number) => (
+          <li className="menuLi" key={index}>
+            <div className="menuText">
+              <a href={item.href}>{item.title}</a>
+              <div className="arrow"></div>
+            </div>
+            <ul className="secMenuUl">
+              {item.content.map((subMenu: any, index: number) => (
+                <li key={index}>
+                  <a href={subMenu.href}>{subMenu.title}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <div className="hannstarHeader">
       <div className="header_pc">
-        <img className="logo" src={headerData.logoSrc} />
+        <img
+          className="logo"
+          alt="logo"
+          src="https://www.hannstar.com/images/logo.png"
+        />
         <div className="menuBlock">
           <MenuBlock />
           <div className="otherBlock">
-            <a className="headerBtn login">登入</a>
+            <a className="headerBtn login" href="/">
+              登入
+            </a>
             <select className="headerBtn i18n">
               <option>繁中</option>
               <option>EN</option>
@@ -88,11 +88,18 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className="header_m">
-        <img className="logo" src={headerData.logoSrc} />
-        <div className={`menuOpenBtn ${openPhoneMenu ? 'open' : 'close'}`} onClick={handleOpenPhoneMenu}>
+        <img
+          className="logo"
+          alt="logo"
+          src="https://www.hannstar.com/images/logo.png"
+        />
+        <div
+          className={`menuOpenBtn ${openPhoneMenu ? "open" : "close"}`}
+          onClick={handleOpenPhoneMenu}
+        >
           <span></span>
         </div>
-        <div className={`phoneMenuBlock ${openPhoneMenu ? 'open' : 'close'}`}>
+        <div className={`phoneMenuBlock ${openPhoneMenu ? "open" : "close"}`}>
           <CollapseLi data={menuMData()} />
         </div>
       </div>

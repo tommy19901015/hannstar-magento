@@ -83,17 +83,17 @@ const platformEntryData = [
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
     title: "產品行銷服務",
-    href: "/",
+    href: "/zh-tw/e-biz",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
     title: "方案系統及整合服務",
-    href: "/",
+    href: "/zh-tw/solution",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
     title: "客戶服務",
-    href: "/",
+    href: "/zh-tw/e-service",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_20F17_cfe6j6bk57.png",
@@ -103,7 +103,7 @@ const platformEntryData = [
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
     title: "供應商協同合作",
-    href: "/",
+    href: "/zh-tw/partner",
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",

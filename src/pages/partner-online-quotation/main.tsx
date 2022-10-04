@@ -110,8 +110,10 @@ const PartnerOnlineQuotation: React.FC = () => {
   const FormBlock = () => {
     return (
       <div className={`${pageName}FormBlock`}>
-        <div className={`${pageName}title`}>線上報價</div>
-        <FormComponent data={formData} />
+        <div className={`${pageName}Title`}>線上報價</div>
+        <div className={`${pageName}ContentBlock`}>
+          <FormComponent data={formData} />
+        </div>
         <div className={`${pageName}btnBlock`}>
           <div className="btn" onClick={handlerBtnClick}>
             查詢
