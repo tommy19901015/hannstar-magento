@@ -73,17 +73,17 @@
   "partner": [
     {
       "title": "新技術合作",
-      "href": "/zh-tw/partner/technical",
+      "href": "/partner/technical",
       "content": []
     },
     {
       "title": "供應商服務",
       "href": "",
       "content": [
-        { "title": "產品管理", "href": "/zh-tw/partner/productlist" },
-        { "title": "RFQ線上報價", "href": "/zh-tw/partner/quotation" },
-        { "title": "協同採購", "href": "" },
-        { "title": "模組生產資訊", "href": "" }
+        { "title": "產品管理", "href": "/partner/productlist" },
+        { "title": "方案產品管理", "href": "/partner/solution/productlist" },
+        { "title": "RFQ線上報價", "href": "/partner/quotation" },
+        { "title": "協同採購", "href": "" }
       ]
     },
     {

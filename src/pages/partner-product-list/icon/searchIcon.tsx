@@ -10,7 +10,7 @@ export const SearchIcon = () => {
             width="20px"
             height="23px"
             viewBox="0 0 119.828 122.88"
-            enable-background="new 0 0 119.828 122.88"
+            enableBackground="new 0 0 119.828 122.88"
             xmlSpace="preserve"
             fill="#fff"
         >

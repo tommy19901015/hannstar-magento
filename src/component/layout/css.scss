@@ -1,13 +1,13 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-#root {
-  font-family: Microsoft JhengHei;
-  .hannstarMain {
-    margin: 0 auto;
-    font-size: 16px;
-    margin-top: 80px;
-    @media screen and (max-width: $breakpoint) {
-      margin-top: 60px;
+.hannstarRoot {
+    font-family: Microsoft JhengHei;
+    .hannstarMain {
+        margin: 0 auto;
+        font-size: 16px;
+        margin-top: 80px;
+        @media screen and (max-width: $breakpoint) {
+            margin-top: 60px;
+        }
     }
-  }
 }

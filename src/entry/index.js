@@ -45,11 +45,11 @@ const arr = {
   root_PartnerTechnicalCooperation: <PartnerTechnicalCooperation />,
   root_EServerRMAApply: <EServerRMAApply />,
 };
-
+let dom;
 Object.keys(arr).map((key) => {
-  console.log("fff");
   if (document.getElementById(key)) {
-    console.log("qq");
-    ReactDOM.render(arr[key], document.getElementById(key));
+    dom = key    
   }
 });
+
+ReactDOM.render(arr[dom], document.getElementById(dom));
