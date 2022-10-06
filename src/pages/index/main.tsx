@@ -14,7 +14,9 @@ import "./css.module.scss";
 import store from "../../store";
 import { fetchDataRequest } from "../../store/action";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
+import urlConfig from "../../config/urlSetting.json"
 
+const { hannstar, partner } = urlConfig
 //header
 //footer
 //共用??
@@ -103,7 +105,7 @@ const platformEntryData = [
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
     title: "供應商協同合作",
-    href: "/zh-tw/partner",
+    href: `${partner.index.href}`,
   },
   {
     src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",

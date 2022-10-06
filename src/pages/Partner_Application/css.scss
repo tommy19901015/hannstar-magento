@@ -1,0 +1,36 @@
+@import '../../style/variable.scss';
+
+$pageName: 'PartnerApplication';
+
+.#{$pageName}FormBlock {
+    padding: 0 80px;
+    margin-bottom: 80px;
+    .#{$pageName}ContentBlock {
+        margin-bottom: 80px;
+        .#{$pageName}Title {
+            @include hannstarH3Title;
+            color: $hannstar-blue1;
+            margin-bottom: 20px;
+        }
+        .#{$pageName}UploadBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .uploadBtn {
+                @include hannstarBtn;
+                width: 48px;
+                text-align: center;
+            }
+        }
+    }
+    .#{$pageName}BtnBlock {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0;
+        .formBtn {
+            @include hannstarBtn;
+            width: 48px;
+            text-align: center;
+        }
+    }
+}

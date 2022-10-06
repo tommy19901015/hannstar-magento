@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import menuDataJson from "../../common/menuData.json";
+// import menuDataJson from "../../common/menuData.json";
+import { menuInfoData } from "../../common/menuInfoFn"
 import CollapseLi from "../collapseLi/main";
 import "./css.scss";
 
@@ -18,7 +19,7 @@ const Header: React.FC = () => {
   const [serviceType, setServiceType] = useState<string>("hannstar");
 
   useEffect(() => {
-    const type = window.location.pathname.split("/")[2];
+    const type = window.location.pathname.split("/")[1];
     const mappingArr = ["hannstar", "partner"];
     mappingArr.includes(type) && setServiceType(type);
   }, []);
@@ -27,7 +28,7 @@ const Header: React.FC = () => {
     setOpenPhoneMenu(!openPhoneMenu);
   };
 
-  const menuData: any = menuDataJson;
+  const menuData: any = menuInfoData();
 
   const menuMData: any = () =>
     menuData[serviceType].map((item: any) => {

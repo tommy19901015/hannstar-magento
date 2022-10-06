@@ -15,7 +15,10 @@ import {
   I_ProductCountInfo,
   I_PartnerProductTemplate,
 } from "./interface";
+import urlConfig from "../../config/urlSetting.json"
 import "./css.scss";
+
+const { partner } = urlConfig;
 
 const userInfoData = {
   name: "pdmo01",
@@ -77,19 +80,19 @@ const PartnerProductTemplate: React.FC<I_PartnerProductTemplate> = ({
     const productToolBarData = [
       {
         text: "產品清單",
-        href: "/FCP/PRODUCT/PROG_FCP_PRODUCT_LIST",
+        href: partner.productList.href,
         icon: <FormIcon />,
         activeIcon: <FormIconActive />,
       },
       {
         text: "價格及庫存管理",
-        href: "/FCP/PRODUCT/PROG_FCP_PRODUCT_COST_INVENTORY",
+        href: partner.productInventory.href,
         icon: <HouseIcon />,
         activeIcon: <HouseIconActive />,
       },
       {
         text: "新增產品",
-        href: "/FCP/PRODUCT/PROG_FCP_NEW_PRODUCT",
+        href: partner.addProduct.href,
         icon: <SubtractIcon />,
         activeIcon: <SubtractIconActive />,
       },
@@ -110,19 +113,19 @@ const PartnerProductTemplate: React.FC<I_PartnerProductTemplate> = ({
     const solutionToolBarData = [
       {
         text: "產品清單",
-        href: "/FCP/SOLUTION/PROG_FCP_PRODUCT_LIST",
+        href: partner.solutionList.href,
         icon: <FormIcon />,
         activeIcon: <FormIconActive />,
       },
       {
         text: "價格及庫存管理",
-        href: "/FCP/SOLUTION/PROG_FCP_PRODUCT_COST_INVENTORY",
+        href: partner.solutionInventory.href,
         icon: <HouseIcon />,
         activeIcon: <HouseIconActive />,
       },
       {
         text: "新增產品",
-        href: "/FCP/SOLUTION/PROG_FCP_NEW_SOLUTION",
+        href: partner.addSolution.href,
         icon: <SubtractIcon />,
         activeIcon: <SubtractIconActive />,
       },
@@ -138,9 +141,8 @@ const PartnerProductTemplate: React.FC<I_PartnerProductTemplate> = ({
         <ul>
           {randerData.map((item, index) => (
             <li
-              className={`linkText ${
-                data.activeLink === index ? "active" : ""
-              }`}
+              className={`linkText ${data.activeLink === index ? "active" : ""
+                }`}
               key={index}
             >
               <a href={item.href}>

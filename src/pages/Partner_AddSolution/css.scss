@@ -1,0 +1,45 @@
+@import '../../style/variable.scss';
+
+$pageName: 'Partner_AddSolution';
+
+.#{$pageName}ContentBlock {
+    .stepTapBlock {
+        display: flex;
+        @include hannstarContentText;
+        border-bottom: 4px solid $hannstar-blue1;
+        margin: 40px 0;
+        .stateTab {
+            width: 60px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px 20px;
+            background-color: $hannstar-border-color1;
+            color: $hannstar-blue1;
+            margin-right: 10px;
+            &.active,
+            &:hover {
+                background-color: $hannstar-blue1;
+                color: #fff;
+            }
+        }
+    }
+    .stepTabContent {
+        &.hide {
+            display: none;
+        }
+    }
+    .btnBlock {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0;
+        &.hide {
+            display: none;
+        }
+        .formBtn {
+            @include hannstarBtn;
+            width: 48px;
+            text-align: center;
+            margin-right: 40px;
+        }
+    }
+}

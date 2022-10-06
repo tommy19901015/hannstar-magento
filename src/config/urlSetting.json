@@ -1,5 +1,9 @@
 {
   "hannstar":{
+    "index":{
+        "title":"官網首頁",
+        "href":"/"
+    }, 
     "about":{
         "title":"瀚宇彩晶簡介",
         "href":"/about"
@@ -22,53 +26,61 @@
     }
   },
   "partner":{
-     "technical":{
+    "index":{
+        "title":"供應商平台",
+        "href":"/partner/index/view"
+    }, 
+    "technical":{
         "title":"新技術合作",
-        "href":"/partner/technical"
+        "href":"/partner/technical/view"
     },
      "manufacturingPartner":{
         "title":"協同製造夥伴平台",
-        "href":"/partner/manufacturingpartner"
+        "href":"/partner/manufacturingpartner/view"
+    },
+    "quotationList":{
+        "title":"RFQ報價清單",
+        "href":"/partner/quotationlist/view"
     },
     "quotation":{
         "title":"RFQ線上報價",
-        "href":"/partner/quotation"
+        "href":"/partner/quotation/view"
     },
     "productList":{
         "title":"產品管理",
-        "href":"/partner/productlist"
+        "href":"/partner/productlist/view"
     },
-    "inventory":{
+    "productInventory":{
         "title":"價格庫存管理",
-        "href":"/partner/inventory"
+        "href":"/partner/productinventory/view"
     },
     "addProduct":{
         "title":"新增產品",
-        "href":"/partner/addproduct"
+        "href":"/partner/addproduct/view"
     },
     "solutionList":{
         "title":"方案產品管理",
-        "href":"/partner/solution/productlist"
+        "href":"/partner/solutionlist/view"
     },
      "solutionInventory":{
         "title":"方案價格庫存管理",
-        "href":"/partner/solution/inventory"
+        "href":"/partner/solutioninventory/view"
     },
-    "solutionAddProduct":{
+    "addSolution":{
         "title":"方案新增產品",
-        "href":"/partner/solution/addproduct"
+        "href":"/partner/addsolution/view"
     },
-    "apply":{
+    "application":{
         "title":"需求申請",
-        "href":"/partner/apply"
+        "href":"/partner/application/view"
     },
     "message":{
         "title":"訊息中心",
-        "href":"/partner/message"
+        "href":"/partner/message/view"
     },
     "qa":{
         "title":"常見問題",
-        "href":"/partner/qa"
+        "href":"/partner/qa/view"
     }
   }
 }

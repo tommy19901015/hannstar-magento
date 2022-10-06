@@ -1,85 +1,86 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
 import Index from "./pages/index/main";
 import About from "./pages/about/main";
 import Eservice from "./pages/e-service/main";
-import Partner from "./pages/partner/main";
 import EBiz from "./pages/e-biz/main";
 import Solution from "./pages/solution/main";
 import Stronghold from "./pages/stronghold/main";
 import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
-import PartnerQuotationList from "./pages/partner-quotation-list/main";
-import PartnerOnlineQuotation from "./pages/partner-online-quotation/main";
-import PartnerProductList from "./pages/partner-product-list/main";
-import PartnerProductInventory from "./pages/partner-product-inventory/main";
-import PartnerProductProduct from "./pages/partner-product-product/main";
-import PartnerSolutionList from "./pages/partner-solution-list/main";
-import PartnerSolutionInventory from "./pages/partner-solution-inventory/main";
-import PartnerSolutionProduct from "./pages/partner-solution-product/main";
-import PartnerPurchaseRequest from "./pages/partner-purchase-request/main";
-import PartnerTechnicalCooperation from "./pages/partner-technical-cooperation/main";
+import PartnerIndex from "./pages/Partner_Index/main";
+import PartnerQuotationList from "./pages/Partner_QuotationList/main";
+import PartnerQuotation from "./pages/Partner_Quotation/main";
+import PartnerProductList from "./pages/Partner_ProductList/main";
+import PartnerProductInventory from "./pages/Partner_ProductInventory/main";
+import PartnerAddProduct from "./pages/Partner_AddProduct/main";
+import PartnerSolutionList from "./pages/Partner_SolutionList/main";
+import PartnerSolutionInventory from "./pages/Partner_SolutionInventory/main";
+import PartnerAddSolution from "./pages/Partner_AddSolution/main";
+import PartnerApplication from "./pages/Partner_Application/main";
+import PartnerTechnical from "./pages/Partner_Technical/main";
 import EServerRMAApply from "./pages/e-server-rma-apply/main";
+import urlConfig from "./config/urlSetting.json"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
+const { hannstar, partner } = urlConfig
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/zh-tw/about" element={<About />} />
+      <Route path={hannstar.index.href} element={<Index />} />
+      <Route path={hannstar.about.href} element={<About />} />
       <Route path="/zh-tw/e-service" element={<Eservice />} />
-      <Route path="/zh-tw/partner" element={<Partner />} />
+      <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/zh-tw/e-biz" element={<EBiz />} />
       <Route path="/zh-tw/solution" element={<Solution />} />
       <Route path="/zh-tw/stronghold" element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
       <Route
-        path="/zh-tw/partner/quotation"
+        path={partner.quotationList.href}
         element={<PartnerQuotationList />}
       />
       <Route
-        path="/zh-tw/partner/FCP/reply"
-        element={<PartnerOnlineQuotation />}
+        path={partner.quotation.href}
+        element={<PartnerQuotation />}
       />
       <Route
-        path="/zh-tw/partner/productlist"
+        path={partner.productList.href}
         element={<PartnerProductList />}
       />
       <Route
-        path="/zh-tw/partner/inventory"
+        path={partner.productInventory.href}
         element={<PartnerProductInventory />}
       />
       <Route
-        path="/zh-tw/partner/product"
-        element={<PartnerProductProduct />}
+        path={partner.addProduct.href}
+        element={<PartnerAddProduct />}
       />
       <Route
-        path="/zh-tw/partner/solution/productlist"
+        path={partner.solutionList.href}
         element={<PartnerSolutionList />}
       />
       <Route
-        path="/zh-tw/partner/solution/inventory"
+        path={partner.solutionInventory.href}
         element={<PartnerSolutionInventory />}
       />
       <Route
-        path="/zh-tw/partner/solution/product"
-        element={<PartnerSolutionProduct />}
+        path={partner.addSolution.href}
+        element={<PartnerAddSolution />}
       />
       <Route
-        path="/zh-tw/partner/purchase"
-        element={<PartnerPurchaseRequest />}
+        path={partner.application.href}
+        element={<PartnerApplication />}
       />
       <Route
-        path="/zh-tw/partner/technical"
-        element={<PartnerTechnicalCooperation />}
+        path={partner.technical.href}
+        element={<PartnerTechnical />}
       />
       <Route path="/zh-tw/e-server/rma-apply" element={<EServerRMAApply />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
 );
-
-// ReactDOM.render(<Index />, document.getElementById("root"));
