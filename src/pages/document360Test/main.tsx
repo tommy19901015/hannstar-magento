@@ -252,6 +252,13 @@ const testPDFData = `<table style="width: 100%;">
 </p>
 `
 
+const uu = `<p><img src="https://files.document360.io/1c8853d9-9bbe-4ed4-b415-b64b907b4019/Images/Documentation/twL_marqueepic_20H26_sfsggchm67.jpg" class="fr-rounded fr-dii fr-fil">55445t45t45</p>
+
+<p>
+	<br>
+</p>
+`
+
 const Document360Test: React.FC = () => {
 	const [fetchData, setFetchData] = useState<any>()
 

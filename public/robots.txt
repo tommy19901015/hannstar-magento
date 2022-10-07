@@ -1,3 +1,25 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+供應商
+表單V
+綠色供應鏈 
+管理與諮詢
+技術文件 串360
+供應商服務
+
+
+
+
+客戶服務
+表單5
+首頁
+客戶通
+綠色環保申請
+技術諮詢
+技術諮詢內文
+
+Figma
+tommylee@hannstar.com
+tommy30026414
