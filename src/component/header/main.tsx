@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import menuDataJson from "../../common/menuData.json";
 import { menuInfoData } from "../../common/menuInfoFn"
 import CollapseLi from "../collapseLi/main";
+import { useTranslation } from "react-i18next";
 import "./css.scss";
 
 interface I_Menu {
@@ -17,6 +18,9 @@ type I_MenuProp = Record<I_ServiceType, I_Menu>;
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
+
+  const { t, i18n } = useTranslation();
+  const language = useRef(i18n.language);
 
   useEffect(() => {
     const type = window.location.pathname.split("/")[1];
@@ -66,6 +70,13 @@ const Header: React.FC = () => {
     );
   };
 
+  const handleChangeLanguage = () => {
+    const newLanguage = language.current === "tw" ? "en" : "tw";
+    language.current = newLanguage;
+    console.log('newLanguage',newLanguage)
+    i18n.changeLanguage(language.current);
+  };
+
   return (
     <div className="hannstarHeader">
       <div className="header_pc">
@@ -78,12 +89,12 @@ const Header: React.FC = () => {
           <MenuBlock />
           <div className="otherBlock">
             <a className="headerBtn login" href="/">
-              登入
+              {t('common.login')}
             </a>
-            <select className="headerBtn i18n">
-              <option>繁中</option>
-              <option>EN</option>
-              <option>简中</option>
+            <select className="headerBtn i18n" onChange={lang => i18n.changeLanguage(lang.target.value)}> 
+              <option value="tw">繁中</option>
+              <option value="en">EN</option>
+              <option value="cn">简中</option>
             </select>
           </div>
         </div>
