@@ -21,11 +21,11 @@ import PartnerAddSolution from "./pages/Partner_AddSolution/main";
 import PartnerApplication from "./pages/Partner_Application/main";
 import PartnerTechnical from "./pages/Partner_Technical/main";
 import EServerRMAApply from "./pages/e-server-rma-apply/main";
-import urlConfig from "./config/urlSetting.json"
+import EServiceRMAList from "./pages/EService_RMAList/main";
+import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-const { hannstar, partner } = urlConfig
+const { hannstar, partner } = urlConfig;
 
 ReactDOM.render(
   <BrowserRouter>
@@ -43,22 +43,13 @@ ReactDOM.render(
         path={partner.quotationList.href}
         element={<PartnerQuotationList />}
       />
-      <Route
-        path={partner.quotation.href}
-        element={<PartnerQuotation />}
-      />
-      <Route
-        path={partner.productList.href}
-        element={<PartnerProductList />}
-      />
+      <Route path={partner.quotation.href} element={<PartnerQuotation />} />
+      <Route path={partner.productList.href} element={<PartnerProductList />} />
       <Route
         path={partner.productInventory.href}
         element={<PartnerProductInventory />}
       />
-      <Route
-        path={partner.addProduct.href}
-        element={<PartnerAddProduct />}
-      />
+      <Route path={partner.addProduct.href} element={<PartnerAddProduct />} />
       <Route
         path={partner.solutionList.href}
         element={<PartnerSolutionList />}
@@ -67,19 +58,11 @@ ReactDOM.render(
         path={partner.solutionInventory.href}
         element={<PartnerSolutionInventory />}
       />
-      <Route
-        path={partner.addSolution.href}
-        element={<PartnerAddSolution />}
-      />
-      <Route
-        path={partner.application.href}
-        element={<PartnerApplication />}
-      />
-      <Route
-        path={partner.technical.href}
-        element={<PartnerTechnical />}
-      />
+      <Route path={partner.addSolution.href} element={<PartnerAddSolution />} />
+      <Route path={partner.application.href} element={<PartnerApplication />} />
+      <Route path={partner.technical.href} element={<PartnerTechnical />} />
       <Route path="/zh-tw/e-server/rma-apply" element={<EServerRMAApply />} />
+      <Route path="/zh-tw/e-service/rma-list" element={<EServiceRMAList />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
