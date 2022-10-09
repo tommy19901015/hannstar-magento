@@ -3,8 +3,6 @@ import Layout from "../../component/layout/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
-import PartnerFcpTemplate from "../../templates/partner_product/main";
-import { PageType } from "../../templates/partner_product/interface";
 import "./css.scss";
 
 const EServiceRMAList: React.FC = () => {
@@ -13,7 +11,6 @@ const EServiceRMAList: React.FC = () => {
   const [RMAListStateTab, setRMAListStateTab] = useState<number>(0);
 
   const fakeApiData: any = testTableData;
-  const productCountInfoData = {};
 
   useEffect(() => {
     setRMAListData(fakeApiData);
@@ -94,31 +91,6 @@ const EServiceRMAList: React.FC = () => {
     );
   };
 
-  const SearchBlock = () => {
-    const [searchText, setSearchText] = useState<string>("");
-
-    const handleSearch = () => {
-      setRMAListData(
-        fakeApiData.filter(
-          (item: any) =>
-            item.productNo.includes(searchText) ||
-            item.HSDNo.includes(searchText)
-        )
-      );
-    };
-
-    return (
-      <div className="searchBlock">
-        <input
-          type="text"
-          placeholder="請輸入HSD型號或外包型號"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-        />
-      </div>
-    );
-  };
-
   interface I_Table {
     requisitionNo: string;
     RMANo: string;
@@ -135,39 +107,28 @@ const EServiceRMAList: React.FC = () => {
     caseResult: string;
   }
 
-  const productListBlock = (currentItems: I_Table[]) => {
-    const SwitchBtn = ({ value }: any) => {
-      return (
-        <label className="switchBtn">
-          <input type="checkbox" defaultChecked={value} />
-          <span className="slider round"></span>
-        </label>
-      );
-    };
-
-    const DeleteCheckBox = ({ index }: any) => {
-      return (
-        <div className="hannstarCheckBox" key={index}>
-          <input
-            id={"deleteCheckBox" + index}
-            type="checkBox"
-            value=""
-            name="deleteCheckBox"
-          />
-          <label htmlFor={"deleteCheckBox" + index}></label>
-        </div>
-      );
+  const FilterYearBlock = () => {
+    const handlerOnChange = () => {
+      console.log("handlerOnChange");
     };
 
     return (
-      <table className="productListBlock">
+      <div className="filterYearBlock">
+        <div className="title">年度</div>
+        <select onChange={handlerOnChange}>
+          <option>2022</option>
+          <option>2021</option>
+          <option>2020</option>
+        </select>
+      </div>
+    );
+  };
+
+  const RMAListBlock = (currentItems: I_Table[]) => {
+    return (
+      <table className="RMAListBlock">
         <thead>
           <tr>
-            {RMAListStateTab === 3 && (
-              <td>
-                <DeleteCheckBox />
-              </td>
-            )}
             <td>Action</td>
             <td>申請單號</td>
             <td>RMA單號</td>
@@ -188,11 +149,7 @@ const EServiceRMAList: React.FC = () => {
           {currentItems &&
             currentItems.map((item, index: number) => (
               <tr>
-                {RMAListStateTab === 3 && (
-                  <td>
-                    <DeleteCheckBox index={index} />
-                  </td>
-                )}
+                <td></td>
                 <td>{item.requisitionNo}</td>
                 <td>{item.RMANo}</td>
                 <td>{item.agent}</td>
@@ -215,47 +172,23 @@ const EServiceRMAList: React.FC = () => {
 
   const PaginatedBlockProp = {
     totalData: RMAListData,
-    contentComponent: productListBlock,
-  };
-
-  const DeleteBtnBlock = () => {
-    const handleOnClick = () => {
-      console.log("delete");
-    };
-
-    return (
-      <div className="deleteBlock">
-        {RMAListStateTab === 3 ? (
-          <div className="deleteBtn" onClick={handleOnClick}>
-            刪除
-          </div>
-        ) : null}
-      </div>
-    );
+    contentComponent: RMAListBlock,
   };
 
   const ContentBlock = () => {
     return (
       <div className={`${pageName}ContentBlock`}>
+        <FilterYearBlock />
         <FilterStateBlock />
-        <SearchBlock />
-        <DeleteBtnBlock />
         <PaginatedBlock data={PaginatedBlockProp} />
       </div>
     );
   };
 
-  const partnerFcpTemplateProp = {
-    pageType: PageType.Solution,
-    productCountInfo: productCountInfoData,
-    contentComponent: <ContentBlock />,
-    activeLink: 0,
-  };
-
   return (
     <Layout>
       <Breadcrumbs data={breadcrumbsData} />
-      <PartnerFcpTemplate data={partnerFcpTemplateProp} />
+      <ContentBlock />
     </Layout>
   );
 };

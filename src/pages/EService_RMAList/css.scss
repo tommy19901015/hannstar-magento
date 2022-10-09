@@ -3,4 +3,65 @@
 $pageName: "EServiceRMAList";
 
 .#{$pageName}ContentBlock {
+  .filterYearBlock {
+    .title {
+    }
+    select {
+      @include hannstarSelect;
+    }
+  }
+  .filterStateBlock {
+    display: flex;
+    @include hannstarContentText;
+    border-bottom: 4px solid $hannstar-blue1;
+    margin: 40px 0;
+    .stateTab {
+      width: 130px;
+      text-align: center;
+      cursor: pointer;
+      padding: 5px 20px;
+      background-color: $hannstar-border-color1;
+      color: $hannstar-blue1;
+      margin-right: 10px;
+      &.active,
+      &:hover {
+        background-color: $hannstar-blue1;
+        color: #fff;
+      }
+    }
+  }
+  .RMAListBlock {
+    @include hannstarContentText;
+    width: 100%;
+    td {
+      padding: 10px;
+      border: 1px solid $hannstar-border-color1;
+      text-align: start;
+      .hannstarCheckBox {
+        @include hannstarCheckBox;
+        justify-content: center;
+        align-items: inherit;
+        padding: 0;
+        min-height: 20px;
+      }
+    }
+    thead {
+      tr {
+        background-color: $hannstar-blue1;
+        color: #fff;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          a {
+            color: $hannstar-blue1;
+          }
+          .switchBtn {
+            @include hannstarSwitchBtn;
+          }
+        }
+      }
+    }
+  }
 }
