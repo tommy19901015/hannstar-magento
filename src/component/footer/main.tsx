@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CollapseLi from "../collapseLi/main";
 import { I_Porps } from "../collapseLi/interface";
+import { useTranslation } from "react-i18next";
 
 import "./css.scss";
 
@@ -147,8 +148,10 @@ const BottomBlock: React.FC = () => {
 };
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="footer">
+      {t('common.cancel')}
       <TopBlock />
       <TopBlock_M />
       <BottomBlock />

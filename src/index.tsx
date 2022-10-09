@@ -24,8 +24,9 @@ import EServerRMAApply from "./pages/e-server-rma-apply/main";
 import EServiceRMAList from "./pages/EService_RMAList/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import "./i18n";
 const { hannstar, partner } = urlConfig;
+
 
 ReactDOM.render(
   <BrowserRouter>
