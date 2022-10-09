@@ -1,6 +1,6 @@
 @import "../../style/variable.scss";
 
-$pageName: "EServiceRMAList";
+$pageName: "EServiceParseList";
 
 .#{$pageName}ContentBlock {
   .filterYearBlock {
@@ -55,9 +55,11 @@ $pageName: "EServiceRMAList";
         text-align: center;
         margin: 0 5px;
       }
+      .text {
+      }
     }
   }
-  .RMAListBlock {
+  .parseListBlock {
     @include hannstarContentText;
     width: 100%;
     td {

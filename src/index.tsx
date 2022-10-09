@@ -22,11 +22,11 @@ import PartnerApplication from "./pages/Partner_Application/main";
 import PartnerTechnical from "./pages/Partner_Technical/main";
 import EServerRMAApply from "./pages/e-server-rma-apply/main";
 import EServiceRMAList from "./pages/EService_RMAList/main";
+import EServiceParseList from "./pages/EService_parseList/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
 const { hannstar, partner } = urlConfig;
-
 
 ReactDOM.render(
   <BrowserRouter>
@@ -64,6 +64,10 @@ ReactDOM.render(
       <Route path={partner.technical.href} element={<PartnerTechnical />} />
       <Route path="/zh-tw/e-server/rma-apply" element={<EServerRMAApply />} />
       <Route path="/zh-tw/e-service/rma-list" element={<EServiceRMAList />} />
+      <Route
+        path="/zh-tw/e-service/parse-list"
+        element={<EServiceParseList />}
+      />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

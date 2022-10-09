@@ -5,15 +5,15 @@ import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
 import "./css.scss";
 
-const EServiceRMAList: React.FC = () => {
-  const pageName = "EServiceRMAList";
-  const [RMAListData, setRMAListData] = useState<any>([]);
+const EServiceParseList: React.FC = () => {
+  const pageName = "EServiceParseList";
+  const [parseListData, setParseListData] = useState<any>([]);
   const [RMAListStateTab, setRMAListStateTab] = useState<number>(0);
 
   const fakeApiData: any = testTableData;
 
   useEffect(() => {
-    setRMAListData(fakeApiData);
+    setParseListData(fakeApiData);
   }, [fakeApiData]);
 
   const breadcrumbsData = {
@@ -24,19 +24,11 @@ const EServiceRMAList: React.FC = () => {
         href: "",
       },
       {
-        text: "供應商協同合作",
+        text: "客戶通",
         href: "",
       },
       {
-        text: "協同製造夥伴",
-        href: "",
-      },
-      {
-        text: "製造夥伴資料",
-        href: "",
-      },
-      {
-        text: "方案產品清單",
+        text: "解析列表",
         href: "",
       },
     ],
@@ -74,7 +66,7 @@ const EServiceRMAList: React.FC = () => {
       const filterData = state
         ? fakeApiData.filter((item: any) => item.state === state)
         : fakeApiData;
-      setRMAListData(filterData);
+      setParseListData(filterData);
     };
 
     return (
@@ -93,18 +85,12 @@ const EServiceRMAList: React.FC = () => {
 
   interface I_Table {
     requisitionNo: string;
-    RMANo: string;
-    agent: string;
+    paresNo: string;
     modelNo: string;
-    requisitionCount: string;
-    overturn: string;
-    signOffResult: string;
+    badType: string;
+    badRate: string;
     applicationProgress: string;
-    shipDate: string;
-    shipDNNO: string;
-    returnNo: string;
-    sellOffNo: string;
-    caseResult: string;
+    reportDownload: string;
   }
 
   const FilterYearBlock = () => {
@@ -127,32 +113,28 @@ const EServiceRMAList: React.FC = () => {
   const StateNoteBlock = () => {
     return (
       <div className="stateNoteBlock">
-        <div className="title">進度說明:</div>
+        <div className="title">解析進度說明:</div>
         <div className="state">
           <div className="icon">1</div>
-          <div className="text">立案</div>
+          <div className="text">申請中</div>
         </div>
         <div className="state">
           <div className="icon">2</div>
-          <div className="text">覆判審核</div>
+          <div className="text">寄送</div>
         </div>
         <div className="state">
           <div className="icon">3</div>
-          <div className="text">覆判完成</div>
+          <div className="text">解析中</div>
         </div>
         <div className="state">
           <div className="icon">4</div>
-          <div className="text">退補處裡</div>
-        </div>
-        <div className="state">
-          <div className="icon">5</div>
-          <div className="text">已退補/結案</div>
+          <div className="text">結案</div>
         </div>
       </div>
     );
   };
 
-  const RMAListBlock = (currentItems: I_Table[]) => {
+  const ParseListBlock = (currentItems: I_Table[]) => {
     const ProgressBlock = ({ activeProgress }: any) => {
       const progressArr = ["1", "2", "3", "4"];
 
@@ -173,23 +155,17 @@ const EServiceRMAList: React.FC = () => {
     };
 
     return (
-      <table className="RMAListBlock">
+      <table className="parseListBlock">
         <thead>
           <tr>
             <td>Action</td>
             <td>申請單號</td>
-            <td>RMA單號</td>
-            <td>代理商</td>
+            <td>解析單號</td>
             <td>機種料號</td>
-            <td>申請數量</td>
-            <td>快束覆判</td>
-            <td>簽核結果</td>
+            <td>不良現象</td>
+            <td>不良率</td>
             <td>申請進度</td>
-            <td>出貨日期</td>
-            <td>出貨DNNo</td>
-            <td>已還貨數量</td>
-            <td>銷退數量</td>
-            <td>結案方式</td>
+            <td>報告下載</td>
           </tr>
         </thead>
         <tbody>
@@ -198,20 +174,14 @@ const EServiceRMAList: React.FC = () => {
               <tr>
                 <td></td>
                 <td>{item.requisitionNo}</td>
-                <td>{item.RMANo}</td>
-                <td>{item.agent}</td>
+                <td>{item.paresNo}</td>
                 <td>{item.modelNo}</td>
-                <td>{item.requisitionCount}</td>
-                <td>{item.overturn}</td>
-                <td>{item.signOffResult}</td>
+                <td>{item.badType}</td>
+                <td>{item.badRate}</td>
                 <td>
                   <ProgressBlock activeProgress={item.applicationProgress} />
                 </td>
-                <td>{item.shipDate}</td>
-                <td>{item.shipDNNO}</td>
-                <td>{item.returnNo}</td>
-                <td>{item.sellOffNo}</td>
-                <td>{item.caseResult}</td>
+                <td>{item.reportDownload}</td>
               </tr>
             ))}
         </tbody>
@@ -220,8 +190,8 @@ const EServiceRMAList: React.FC = () => {
   };
 
   const PaginatedBlockProp = {
-    totalData: RMAListData,
-    contentComponent: RMAListBlock,
+    totalData: parseListData,
+    contentComponent: ParseListBlock,
   };
 
   const ContentBlock = () => {
@@ -243,4 +213,4 @@ const EServiceRMAList: React.FC = () => {
   );
 };
 
-export default EServiceRMAList;
+export default EServiceParseList;
