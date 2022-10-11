@@ -1,0 +1,76 @@
+@import "../../style/variable.scss";
+
+$componentName: "ArticleList2";
+
+.#{$componentName}Content {
+  padding-bottom: 60px;
+  .title {
+    @include hannstarH1Title;
+    padding-bottom: 32px;
+    text-align: center;
+  }
+  .articleContent {
+    .catalogBlock {
+      padding-bottom: 32px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid $hannstar-border-color;
+      .catalogTitle {
+        @include hannstarH3Title;
+        text-align: center;
+      }
+      .catalogContent {
+        display: grid;
+        grid-gap: 80px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 32px 0;
+        &:last-child {
+          padding-bottom: 0;
+        }
+        .articleBlock {
+          background-color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .imgBlock {
+            position: relative;
+            padding-bottom: 56.2%;
+            img {
+              position: absolute;
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .contentWrap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            .articleTitle {
+              @include hannstarH3Title;
+              padding-top: 10px;
+            }
+            .date {
+              @include hannstarContent3;
+              color: $hannstar-orange1;
+              padding: 10px 0;
+            }
+            .description {
+              @include hannstarContent0;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              display: -webkit-box;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    .title {
+    }
+    .content {
+    }
+  }
+}
