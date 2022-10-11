@@ -1,0 +1,23 @@
+@import '../../style/variable.scss';
+
+$componentName: 'TitleContent';
+
+.#{$componentName}Content {
+    padding-bottom: 60px;
+    .title {
+        @include hannstarH1Title;
+        padding-bottom: 32px;
+        text-align: center;
+    }
+    .content {
+        @include hannstarContent0;
+        text-align: center;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        .title {
+        }
+        .content {
+        }
+    }
+}

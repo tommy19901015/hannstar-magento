@@ -165,7 +165,7 @@ const EBiz: React.FC = () => {
     {
       src: "https://e-biz.hannstar.com/slider_img/smart_sport_mobile3.jpg",
       title: "產品查詢",
-      content:
+      text:
         "結合平台大數據運行，提供多元化產品，以符合客戶需求",
       href: "",
       btnText: "了解更多",
@@ -173,14 +173,14 @@ const EBiz: React.FC = () => {
     {
       src: "https://e-biz.hannstar.com/slider_img/special-material-s.jpg",
       title: "特殊材料",
-      content: "提供客戶線上專案報價服務",
+      text: "提供客戶線上專案報價服務",
       href: "",
       btnText: "了解更多",
     },
     {
       src: "https://e-biz.hannstar.com/slider_img/smart_retail_mobile4.jpg",
       title: "智慧方案整合",
-      content:
+      text:
         "一站式方案整合服務，提供嵌入式主板、顯示器與UI設計服務",
       href: "",
       btnText: "了解更多",
@@ -188,7 +188,7 @@ const EBiz: React.FC = () => {
     {
       src: "https://e-biz.hannstar.com/slider_img/Quotation-s.jpg",
       title: "報價",
-      content:
+      text:
         "提供客戶線上專案報價服務",
       href: "",
       btnText: "了解更多",
@@ -226,7 +226,7 @@ const EBiz: React.FC = () => {
     return (
       <div className={`${pageName}RequestTexBlock`}>
         <div className="title">提出需求</div>
-        <GraphicsCard data={allData.graphicsCardData} />
+        <GraphicsCard data={allData.graphicsCardData} rowCount={3} />
       </div>
     );
   };

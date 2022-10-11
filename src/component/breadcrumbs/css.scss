@@ -1,35 +1,36 @@
 @import '../../style/variable.scss';
 
-.breadcrumbsBlock {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 30px 80px;
-    border-bottom: 1px solid $hannstar-border-color;
-    .mainTitle {
-        @include hannstarH1Title;
-    }
-    .rightBlock {
-        .textLink {
-            @include hannstarContentText;
+$componentName: 'Breadcrumbs';
+
+.#{$componentName}Content {
+    max-width: 1440px;
+    margin: 0 auto;
+    .linkBlock {
+        padding: 40px 40px 80px;
+        .link {
+            @include hannstarContent0;
             &::after {
                 content: '/';
                 padding: 0 10px;
             }
             &:last-child {
+                color: $hannstar-blue2;
                 &::after {
                     display: none;
                 }
             }
         }
     }
+    .mainTitle {
+        @include hannstarH1Title;
+        font-weight: $font-weighr-bold;
+        padding: 0 40px;
+    }
+
     @media screen and (max-width: $breakpoint) {
-        justify-content: center;
-        .mainTitle {
-            @include hannstarH1Title;
+        .linkBlock {
         }
-        .rightBlock {
-            display: none;
+        .mainTitle {
         }
     }
 }

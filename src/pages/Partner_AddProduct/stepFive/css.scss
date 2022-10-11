@@ -1,12 +1,12 @@
-@import "../../../style/variable.scss";
+@import '../../../style/variable.scss';
 
-$pageName: "StepFive";
+$pageName: 'StepFive';
 
 .#{$pageName}ContentBlock {
-  margin-bottom: 80px;
-  .#{$pageName}Title {
-    @include hannstarH3Title;
-    color: $hannstar-blue1;
-    margin-bottom: 40px;
-  }
+    margin-bottom: 80px;
+    .#{$pageName}Title {
+        @include hannstarH3Title;
+        color: $hannstar-blue2;
+        margin-bottom: 40px;
+    }
 }

@@ -173,9 +173,9 @@ const EServerRMAApply: React.FC = () => {
     ],
   };
 
-  const handlerSave = () => {};
-  const handlerReset = () => {};
-  const handlerSubmit = () => {};
+  const handlerSave = () => { };
+  const handlerReset = () => { };
+  const handlerSubmit = () => { };
 
   const formMethods: any = React.useRef(null);
 
@@ -212,7 +212,7 @@ const EServerRMAApply: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs data={breadcrumbsData} />
+      <Breadcrumbs {...breadcrumbsData} />
       <Columns type={ColType.OneColFullPage} content={<FormBlock />} />
     </Layout>
   );

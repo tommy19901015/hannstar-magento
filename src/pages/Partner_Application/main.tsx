@@ -357,7 +357,7 @@ const PartnerApplication: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs data={breadcrumbsData} />
+      <Breadcrumbs {...breadcrumbsData} />
       <Columns type={ColType.OneColFullPage} content={<FormBlock />} />
     </Layout>
   );

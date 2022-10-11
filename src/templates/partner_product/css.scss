@@ -1,79 +1,79 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$pageName: "PartnerProductTemplate";
+$pageName: 'PartnerProductTemplate';
 
 .#{$pageName}ProductToolBar {
-  background-color: $hannstar-border-color1;
-  height: 100%;
-  ul {
-    .linkText {
-      cursor: pointer;
-      width: 100%;
-      padding: 10px 0;
-      a {
-        @include hannstarContentText;
-        display: flex;
-        align-items: center;
-        padding: 0 50px;
-        svg {
-          padding-right: 15px;
+    background-color: $hannstar-border-color;
+    height: 100%;
+    ul {
+        .linkText {
+            cursor: pointer;
+            width: 100%;
+            padding: 10px 0;
+            a {
+                @include hannstarContentText;
+                display: flex;
+                align-items: center;
+                padding: 0 50px;
+                svg {
+                    padding-right: 15px;
+                }
+            }
+            &.active {
+                background-color: $hannstar-blue0;
+                a {
+                    color: $hannstar-blue2;
+                }
+            }
         }
-      }
-      &.active {
-        background-color: $hannstar-blue0;
-        a {
-          color: $hannstar-blue2;
-        }
-      }
     }
-  }
 }
 .#{$pageName}ContentBlock {
-  padding: 0 80px;
-  .#{$pageName}TopBlock {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-    .#{$pageName}UserInfoBlock {
-      display: flex;
-      align-items: center;
-      .infoBlock {
-        .name {
-          @include hannstarH3Title;
-        }
-        .email {
-          @include hannstarContentText;
-          color: $hannstar-border-color;
-        }
-      }
-    }
-    .#{$pageName}ProductCountInfoBlock {
-      display: flex;
-      .block {
+    padding: 0 80px;
+    .#{$pageName}TopBlock {
         display: flex;
-        flex-direction: column;
-        .title {
-          @include hannstarNoteText;
-          padding: 0 20px;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40px;
+        .#{$pageName}UserInfoBlock {
+            display: flex;
+            align-items: center;
+            .infoBlock {
+                .name {
+                    @include hannstarH3Title;
+                }
+                .email {
+                    @include hannstarContentText;
+                    color: $hannstar-border-color;
+                }
+            }
         }
-        .count {
-          @include hannstarH3Title;
-          width: 100%;
-          text-align: center;
-          padding: 15px 0;
-          border-right: 1px solid $hannstar-border-color;
-          &.total {
-            color: $hannstar-blue1;
-          }
-          &.productOff {
-            color: $hannstar-green;
-          }
-          &.productOn {
-            color: $hannstar-red;
-          }
+        .#{$pageName}ProductCountInfoBlock {
+            display: flex;
+            .block {
+                display: flex;
+                flex-direction: column;
+                .title {
+                    @include hannstarNoteText;
+                    padding: 0 20px;
+                }
+                .count {
+                    @include hannstarH3Title;
+                    width: 100%;
+                    text-align: center;
+                    padding: 15px 0;
+                    border-right: 1px solid $hannstar-border-color;
+                    &.total {
+                        color: $hannstar-blue2;
+                    }
+                    &.productOff {
+                        color: $hannstar-green0;
+                    }
+                    &.productOn {
+                        color: $hannstar-orange1;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

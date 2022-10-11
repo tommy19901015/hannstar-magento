@@ -90,7 +90,7 @@ const E_Service: React.FC = () => {
     {
       src: "https://e-service.hannstar.com/Content/images/img/home1.jpg",
       title: "客戶通",
-      content:
+      text:
         "透過平台簡易、便利的服務，讓客戶享受更快速的各項專業諮詢交流，由全方位的售後服務團隊為您效勞。",
       href: "",
       btnText: "了解更多",
@@ -98,7 +98,7 @@ const E_Service: React.FC = () => {
     {
       src: "https://e-service.hannstar.com/Content/images/img/home3.jpg",
       title: "綠色環保申請",
-      content:
+      text:
         "「可回收、低污染、省資源」致力推動綠色產品發展，並取得環保標章，符合永續發展。",
       href: "",
       btnText: "了解更多",
@@ -106,7 +106,7 @@ const E_Service: React.FC = () => {
     {
       src: "https://e-service.hannstar.com/Content/images/img/home2.jpg",
       title: "技術諮詢",
-      content: "多年的技術經驗及教育訓練透過雲端共享，",
+      text: "多年的技術經驗及教育訓練透過雲端共享，",
       href: "",
       btnText: "了解更多",
     },
@@ -174,7 +174,7 @@ const E_Service: React.FC = () => {
     return (
       <div className={`${pageName}ServiceBlock`}>
         <div className="title">服務項目</div>
-        <GraphicsCard data={graphicsCardData} />
+        <GraphicsCard data={graphicsCardData} rowCount={3} />
       </div>
     );
   };

@@ -1,49 +1,55 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-.graphicsCard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
-  .cardBlock {
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .imgBlock {
-      position: relative;
-      padding-bottom: 56.2%;
-      img {
-        position: absolute;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
+$componentName: 'GraphicsCard';
+
+.#{$componentName}Content {
+    display: grid;
+    grid-gap: 40px;
+    &.row3 {
+        grid-template-columns: repeat(3, 1fr);
     }
-    .contentWrap {
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-      .textBlock {
-        text-align: center;
-        .title {
-          @include hannstarH3Title;
-          color: $hannstar-blue1;
-        }
-        .content {
-          @include hannstarContentText;
-          text-align: center;
-          padding: 20px 0;
-        }
-      }
-      .btnBlock {
-        @include hannstarBtn;
-      }
+    &.row4 {
+        grid-template-columns: repeat(4, 1fr);
     }
-  }
-  @media screen and (max-width: $breakpoint) {
-  }
+    .cardBlock {
+        box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .imgBlock {
+            position: relative;
+            padding-bottom: 56.2%;
+            img {
+                position: absolute;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .contentWrap {
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            .textBlock {
+                text-align: center;
+                .title {
+                    @include hannstarH3Title;
+                    color: $hannstar-blue2;
+                }
+                .content {
+                    @include hannstarContent0;
+                    padding: 20px 0;
+                }
+            }
+            .btnBlock {
+                @include hannstarBtn;
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+    }
 }

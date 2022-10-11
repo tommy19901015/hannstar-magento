@@ -1,31 +1,31 @@
-@import "../../../style/variable.scss";
+@import '../../../style/variable.scss';
 
-$pageName: "StepOne";
+$pageName: 'StepOne';
 
 .#{$pageName}FormBlock {
-  margin-bottom: 80px;
-  .#{$pageName}ContentBlock {
-    .#{$pageName}Title {
-      @include hannstarH3Title;
-      color: $hannstar-blue1;
-      margin-bottom: 40px;
+    margin-bottom: 80px;
+    .#{$pageName}ContentBlock {
+        .#{$pageName}Title {
+            @include hannstarH3Title;
+            color: $hannstar-blue2;
+            margin-bottom: 40px;
+        }
+        .#{$pageName}DownloadBlock {
+            .downloadBtn {
+                @include hannstarBtn;
+                width: 100px;
+                text-align: center;
+            }
+        }
+        .#{$pageName}UploadBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .uploadBtn {
+                @include hannstarBtn;
+                width: 48px;
+                text-align: center;
+            }
+        }
     }
-    .#{$pageName}DownloadBlock {
-      .downloadBtn {
-        @include hannstarBtn;
-        width: 100px;
-        text-align: center;
-      }
-    }
-    .#{$pageName}UploadBlock {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .uploadBtn {
-        @include hannstarBtn;
-        width: 48px;
-        text-align: center;
-      }
-    }
-  }
 }

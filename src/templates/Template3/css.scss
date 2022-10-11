@@ -1,0 +1,9 @@
+@import '../../style/variable.scss';
+
+$pageName: 'Template3';
+
+.#{$pageName}MainContainer {
+    .#{$pageName}ModuleBlock {
+        padding-bottom: 120px;
+    }
+}

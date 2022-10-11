@@ -6,19 +6,19 @@ $pageName: 'Partner_AddSolution';
     .stepTapBlock {
         display: flex;
         @include hannstarContentText;
-        border-bottom: 4px solid $hannstar-blue1;
+        border-bottom: 4px solid $hannstar-blue2;
         margin: 40px 0;
         .stateTab {
             width: 60px;
             text-align: center;
             cursor: pointer;
             padding: 5px 20px;
-            background-color: $hannstar-border-color1;
-            color: $hannstar-blue1;
+            background-color: $hannstar-border-color;
+            color: $hannstar-blue2;
             margin-right: 10px;
             &.active,
             &:hover {
-                background-color: $hannstar-blue1;
+                background-color: $hannstar-blue2;
                 color: #fff;
             }
         }

@@ -1,95 +1,87 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
 .graphicsLineBlock {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &.reverse {
-    flex-direction: row-reverse;
-  }
-  .imgBlock {
-    width: 50%;
-  }
-  .contentBlock {
-    width: 50%;
-    padding: 20px 50px;
-    .borderStyle {
-      background-image: linear-gradient(
-        to right,
-        $hannstar-blue1,
-        $hannstar-blue1
-      );
-      background-position: 0 30px;
-      background-size: 10px calc(100% - 30px - 20px);
-      background-repeat: no-repeat;
-      .titleBlock {
-        display: flex;
-        justify-content: flex-start;
-        align-items: baseline;
-        margin-bottom: 30px;
-        .title {
-          @include hannstarH2Title;
-          padding-bottom: 0;
-        }
-        .line {
-          width: 30px;
-          height: 10px;
-          margin-top: 20px;
-          margin-right: 20px;
-          background-image: linear-gradient(
-            to right,
-            $hannstar-blue1,
-            $hannstar-blue1
-          );
-        }
-      }
-      .textBlock {
-        padding-left: 50px;
-        clear: both;
-        @include hannstarContentText;
-      }
-      .bottomLineBox {
-        display: flex;
-        align-items: center;
-        height: 30px;
-        margin-top: 30px;
-        .learnMore {
-          text-decoration: none;
-          position: relative;
-          padding: 5px 20px 5px 20px;
-          @include hannstarNoteText;
-          color: $hannstar-blue1;
-          .plusLine {
-            position: absolute;
-            top: calc(50% - 4px);
-            right: 0;
-            z-index: 1;
-            width: 8px;
-            height: 8px;
-            border-top: 1px solid;
-            border-right: 1px solid;
-            transform: rotate(45deg);
-          }
-        }
-        .line {
-          flex-grow: 1;
-          height: 10px;
-          background-color: $hannstar-blue1;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: $breakpoint) {
-    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &.reverse {
-      flex-direction: column;
+        flex-direction: row-reverse;
     }
     .imgBlock {
-      width: 100%;
+        width: 50%;
     }
     .contentBlock {
-      width: 100%;
+        width: 50%;
+        padding: 20px 50px;
+        .borderStyle {
+            background-image: linear-gradient(to right, $hannstar-blue2, $hannstar-blue2);
+            background-position: 0 30px;
+            background-size: 10px calc(100% - 30px - 20px);
+            background-repeat: no-repeat;
+            .titleBlock {
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;
+                margin-bottom: 30px;
+                .title {
+                    @include hannstarH2Title;
+                    padding-bottom: 0;
+                }
+                .line {
+                    width: 30px;
+                    height: 10px;
+                    margin-top: 20px;
+                    margin-right: 20px;
+                    background-image: linear-gradient(to right, $hannstar-blue2, $hannstar-blue2);
+                }
+            }
+            .textBlock {
+                padding-left: 50px;
+                clear: both;
+                @include hannstarContentText;
+            }
+            .bottomLineBox {
+                display: flex;
+                align-items: center;
+                height: 30px;
+                margin-top: 30px;
+                .learnMore {
+                    text-decoration: none;
+                    position: relative;
+                    padding: 5px 20px 5px 20px;
+                    @include hannstarNoteText;
+                    color: $hannstar-blue2;
+                    .plusLine {
+                        position: absolute;
+                        top: calc(50% - 4px);
+                        right: 0;
+                        z-index: 1;
+                        width: 8px;
+                        height: 8px;
+                        border-top: 1px solid;
+                        border-right: 1px solid;
+                        transform: rotate(45deg);
+                    }
+                }
+                .line {
+                    flex-grow: 1;
+                    height: 10px;
+                    background-color: $hannstar-blue2;
+                }
+            }
+        }
     }
-  }
+    @media screen and (max-width: $breakpoint) {
+        flex-direction: column;
+        &.reverse {
+            flex-direction: column;
+        }
+        .imgBlock {
+            width: 100%;
+        }
+        .contentBlock {
+            width: 100%;
+        }
+    }
 }

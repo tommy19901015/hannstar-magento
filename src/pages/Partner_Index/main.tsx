@@ -94,7 +94,7 @@ const PartnerIndex: React.FC = () => {
     {
       src: "https://partner.hannstar.com/images/supplier/home2.jpg",
       title: "材料供應商",
-      content:
+      text:
         "運用材料創新，創造面板無限可能性，攜手合作，推動顯示科技新世界。。",
       href: "",
       btnText: "了解更多",
@@ -102,14 +102,14 @@ const PartnerIndex: React.FC = () => {
     {
       src: "https://partner.hannstar.com/images/supplier/home3.jpg",
       title: "設備供應商",
-      content: "運用技術創新，攜手合作，共創綠色顯示科技新世界。",
+      text: "運用技術創新，攜手合作，共創綠色顯示科技新世界。",
       href: "",
       btnText: "了解更多",
     },
     {
       src: "https://partner.hannstar.com/images/supplier/home1.jpg",
       title: "協同製造夥伴",
-      content:
+      text:
         "以客戶服務為核心，提供線上報價、生產流程、標準品資料上傳及協同採購等即時服務。",
       href: "",
       btnText: "了解更多",
@@ -117,7 +117,7 @@ const PartnerIndex: React.FC = () => {
     {
       src: "https://partner.hannstar.com/images/supplier/home4.jpg",
       title: "管理諮詢",
-      content:
+      text:
         "不定期評鑑與稽核來提升供應鏈管理，提供產品解析指南，協助綠色供應商服務。",
       href: "",
       btnText: "了解更多",
@@ -186,7 +186,7 @@ const PartnerIndex: React.FC = () => {
     return (
       <div className={`${pageName}ServiceBlock`}>
         <div className="title">服務項目</div>
-        <GraphicsCard data={graphicsCardData} />
+        <GraphicsCard data={graphicsCardData} rowCount={3} />
       </div>
     );
   };

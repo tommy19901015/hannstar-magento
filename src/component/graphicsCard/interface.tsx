@@ -3,11 +3,12 @@ export enum GraphicsLineType {
 }
 
 export interface I_Props {
+  rowCount: number;
   data: {
     src: string;
     title: string;
-    content: string;
-    href: string;
-    btnText: string;
+    text: string;
+    href?: string;
+    btnText?: string;
   }[];
 }

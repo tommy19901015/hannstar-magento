@@ -9,7 +9,7 @@ $pageName: 'PartnerApplication';
         margin-bottom: 80px;
         .#{$pageName}Title {
             @include hannstarH3Title;
-            color: $hannstar-blue1;
+            color: $hannstar-blue2;
             margin-bottom: 20px;
         }
         .#{$pageName}UploadBlock {

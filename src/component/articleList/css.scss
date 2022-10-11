@@ -1,56 +1,56 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
 .articleList {
-  .categoryListBlock {
-    padding-bottom: 50px;
-    .category {
-      @include hannstarH3Title;
-      padding-bottom: 30px;
-    }
-    .contentBlock {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 30px;
-      .articleBlock {
-        display: flex;
-        justify-content: space-between;
-        .imgBlock {
-          width: 30%;
-          img {
-            width: 100%;
-          }
+    .categoryListBlock {
+        padding-bottom: 50px;
+        .category {
+            @include hannstarH3Title;
+            padding-bottom: 30px;
         }
-        .rightBlock {
-          width: 70%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding: 0 15px;
-          .textBlock {
-            padding-bottom: 50px;
-            .title {
-              @include hannstarH3Title;
-              text-align: left;
-              padding-bottom: 30px;
+        .contentBlock {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            .articleBlock {
+                display: flex;
+                justify-content: space-between;
+                .imgBlock {
+                    width: 30%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .rightBlock {
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 0 15px;
+                    .textBlock {
+                        padding-bottom: 50px;
+                        .title {
+                            @include hannstarH3Title;
+                            text-align: left;
+                            padding-bottom: 30px;
+                        }
+                        .content {
+                            @include hannstarContentText;
+                        }
+                    }
+                    .articleDetailBlock {
+                        @include hannstarNoteText;
+                        color: $hannstar-other-text-color;
+                        text-align: end;
+                        .date,
+                        .views {
+                            color: $hannstar-orange0;
+                            padding: 0 5px;
+                        }
+                    }
+                }
             }
-            .content {
-              @include hannstarContentText;
-            }
-          }
-          .articleDetailBlock {
-            @include hannstarNoteText;
-            color: $hannstar-other-text-color;
-            text-align: end;
-            .date,
-            .views {
-              color: $hannstar-orange;
-              padding: 0 5px;
-            }
-          }
         }
-      }
     }
-  }
-  @media screen and (max-width: $breakpoint) {
-  }
+    @media screen and (max-width: $breakpoint) {
+    }
 }

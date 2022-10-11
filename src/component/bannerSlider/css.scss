@@ -1,61 +1,61 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
 .bannerSlider {
-  position: relative;
-  width: 100%;
-  img {
+    position: relative;
     width: 100%;
-  }
-  .textBlock {
-    position: absolute;
-    bottom: 100px;
-    width: 500px;
-    margin: 60px;
-    .title {
-      @include hannstarH2Title;
-      color: #fff;
-      text-shadow: 1px 1px 10px black, 0px 0px 15px #ccc;
-      opacity: 0;
-      transition: width 500ms ease-in-out;
-    }
-
-    .text {
-      @include hannstarH3Title;
-      color: #fff;
-      text-shadow: 1px 1px 10px black, 0px 0px 15px #ccc;
-    }
-  }
-  .slick-dots {
-    position: absolute;
-    bottom: 25px;
-    li {
-      button {
-        &::before {
-          color: #fff;
-          opacity: 0.5;
-        }
-      }
-      &.slick-active {
-        button {
-          &::before {
-            color: $hannstar-blue1;
-          }
-        }
-      }
-    }
-  }
-  .slick-active {
-    .textBlock {
-      .title {
-        margin-bottom: 15px;
-        opacity: 1;
-        transition: width 500ms ease-in-out;
-      }
-    }
-  }
-  @media screen and (max-width: $breakpoint) {
     img {
-      height: 400px;
+        width: 100%;
     }
-  }
+    .textBlock {
+        position: absolute;
+        bottom: 100px;
+        width: 500px;
+        margin: 60px;
+        .title {
+            @include hannstarH2Title;
+            color: #fff;
+            text-shadow: 1px 1px 10px black, 0px 0px 15px #ccc;
+            opacity: 0;
+            transition: width 500ms ease-in-out;
+        }
+
+        .text {
+            @include hannstarH3Title;
+            color: #fff;
+            text-shadow: 1px 1px 10px black, 0px 0px 15px #ccc;
+        }
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 25px;
+        li {
+            button {
+                &::before {
+                    color: #fff;
+                    opacity: 0.5;
+                }
+            }
+            &.slick-active {
+                button {
+                    &::before {
+                        color: $hannstar-blue2;
+                    }
+                }
+            }
+        }
+    }
+    .slick-active {
+        .textBlock {
+            .title {
+                margin-bottom: 15px;
+                opacity: 1;
+                transition: width 500ms ease-in-out;
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+        img {
+            height: 400px;
+        }
+    }
 }

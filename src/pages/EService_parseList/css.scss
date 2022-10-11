@@ -1,120 +1,120 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$pageName: "EServiceParseList";
+$pageName: 'EServiceParseList';
 
 .#{$pageName}ContentBlock {
-  .filterYearBlock {
-    .title {
-      @include hannstarH4Title;
-      margin-bottom: 20px;
+    .filterYearBlock {
+        .title {
+            @include hannstarH4Title;
+            margin-bottom: 20px;
+        }
+        select {
+            @include hannstarSelect;
+            width: 100px;
+        }
     }
-    select {
-      @include hannstarSelect;
-      width: 100px;
+    .filterStateBlock {
+        display: flex;
+        @include hannstarContentText;
+        border-bottom: 4px solid $hannstar-blue2;
+        margin: 40px 0;
+        .stateTab {
+            width: 130px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px 20px;
+            background-color: $hannstar-border-color;
+            color: $hannstar-blue2;
+            margin-right: 10px;
+            &.active,
+            &:hover {
+                background-color: $hannstar-blue2;
+                color: #fff;
+            }
+        }
     }
-  }
-  .filterStateBlock {
-    display: flex;
-    @include hannstarContentText;
-    border-bottom: 4px solid $hannstar-blue1;
-    margin: 40px 0;
-    .stateTab {
-      width: 130px;
-      text-align: center;
-      cursor: pointer;
-      padding: 5px 20px;
-      background-color: $hannstar-border-color1;
-      color: $hannstar-blue1;
-      margin-right: 10px;
-      &.active,
-      &:hover {
-        background-color: $hannstar-blue1;
-        color: #fff;
-      }
-    }
-  }
-  .stateNoteBlock {
-    display: inline-flex;
-    align-items: center;
-    float: right;
-    padding: 10px;
-    margin-bottom: 20px;
-    .title {
-      margin-right: 10px;
-    }
-    .state {
-      display: flex;
-      align-items: center;
-      .icon {
-        background-color: $hannstar-blue1;
-        color: #fff;
-        border-radius: 100%;
-        width: 28px;
-        height: 28px;
-        line-height: 28px;
-        text-align: center;
-        margin: 0 5px;
-      }
-    }
-  }
-  .parseListBlock {
-    @include hannstarContentText;
-    width: 100%;
-    td {
-      padding: 10px;
-      border: 1px solid $hannstar-border-color1;
-      text-align: start;
-      .hannstarCheckBox {
-        @include hannstarCheckBox;
-        justify-content: center;
-        align-items: inherit;
-        padding: 0;
-        min-height: 20px;
-      }
-    }
-    thead {
-      tr {
-        background-color: $hannstar-blue1;
-        color: #fff;
-      }
-    }
-    tbody {
-      tr {
-        td {
-          a {
-            color: $hannstar-blue1;
-          }
-          .switchBtn {
-            @include hannstarSwitchBtn;
-          }
-          .progressBlock {
+    .stateNoteBlock {
+        display: inline-flex;
+        align-items: center;
+        float: right;
+        padding: 10px;
+        margin-bottom: 20px;
+        .title {
+            margin-right: 10px;
+        }
+        .state {
             display: flex;
             align-items: center;
             .icon {
-              border: 2px solid $hannstar-blue1;
-              color: $hannstar-blue1;
-              border-radius: 100%;
-              width: 28px;
-              height: 28px;
-              line-height: 29px;
-              text-align: center;
-              &.active {
-                background-color: $hannstar-blue1;
+                background-color: $hannstar-blue2;
                 color: #fff;
-                line-height: 27px;
-              }
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                text-align: center;
+                margin: 0 5px;
             }
-            .line {
-              width: 7px;
-              height: 2px;
-              background-color: $hannstar-blue1;
-              &:last-child {
-                display: none;
-              }
-            }
-          }
         }
-      }
     }
-  }
+    .parseListBlock {
+        @include hannstarContentText;
+        width: 100%;
+        td {
+            padding: 10px;
+            border: 1px solid $hannstar-border-color;
+            text-align: start;
+            .hannstarCheckBox {
+                @include hannstarCheckBox;
+                justify-content: center;
+                align-items: inherit;
+                padding: 0;
+                min-height: 20px;
+            }
+        }
+        thead {
+            tr {
+                background-color: $hannstar-blue2;
+                color: #fff;
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    a {
+                        color: $hannstar-blue2;
+                    }
+                    .switchBtn {
+                        @include hannstarSwitchBtn;
+                    }
+                    .progressBlock {
+                        display: flex;
+                        align-items: center;
+                        .icon {
+                            border: 2px solid $hannstar-blue2;
+                            color: $hannstar-blue2;
+                            border-radius: 100%;
+                            width: 28px;
+                            height: 28px;
+                            line-height: 29px;
+                            text-align: center;
+                            &.active {
+                                background-color: $hannstar-blue2;
+                                color: #fff;
+                                line-height: 27px;
+                            }
+                        }
+                        .line {
+                            width: 7px;
+                            height: 2px;
+                            background-color: $hannstar-blue2;
+                            &:last-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

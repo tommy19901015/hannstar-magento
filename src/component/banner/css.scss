@@ -1,0 +1,35 @@
+@import '../../style/variable.scss';
+
+$componentName: 'Banner';
+
+.#{$componentName}Content {
+    position: relative;
+    .textBlock {
+        position: absolute;
+        width: 500px;
+        padding: 40px 60px;
+        .title {
+            @include hannstarH2Title;
+            color: #fff;
+            padding-bottom: 32px;
+        }
+        .text {
+            @include hannstarContent0;
+            color: #fff;
+        }
+        &.topRight {
+            top: 0;
+            right: 0;
+        }
+        &.topLeft {
+            top: 0;
+        }
+        &.bottomLeft {
+            bottom: 0;
+        }
+        &.bottomRight {
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

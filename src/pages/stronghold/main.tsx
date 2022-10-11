@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
-import BannerText from "../../component/bannerText/main";
+import Banner from "../../component/banner/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import GraphicsLine from "../../component/graphicsLine/main";
@@ -96,7 +96,7 @@ const Stronghold: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs data={allData.breadcrumbsData} />
+      <Breadcrumbs {...allData.breadcrumbsData} />
       <Columns type={ColType.OneCol} content={<TextBlock />} />
     </Layout>
   );

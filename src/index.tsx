@@ -23,6 +23,7 @@ import PartnerTechnical from "./pages/Partner_Technical/main";
 import EServerRMAApply from "./pages/e-server-rma-apply/main";
 import EServiceRMAList from "./pages/EService_RMAList/main";
 import EServiceParseList from "./pages/EService_parseList/main";
+import Template3Page from "./pages/Template3/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
@@ -67,6 +68,10 @@ ReactDOM.render(
       <Route
         path="/zh-tw/e-service/parse-list"
         element={<EServiceParseList />}
+      />
+      <Route
+        path="/template3"
+        element={<Template3Page />}
       />
     </Routes>
   </BrowserRouter>,

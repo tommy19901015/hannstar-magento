@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
-import BannerText from "../../component/bannerText/main";
+import Banner from "../../component/banner/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import GraphicsLine from "../../component/graphicsLine/main";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
+import { TextAlign } from "../../component/banner/interface"
 import "./css.scss";
 
 const breadcrumbsData = {
@@ -29,7 +30,8 @@ const breadcrumbsData = {
 const bannerTextData = {
   src: "https://webdev.hannstar.com/upload/package_b/ALL_package_20F12_5iycmervqs.jpg",
   title: "瀚宇彩晶願景",
-  content: "讓我們的下一代都能享受新彩麗世界的新希望透過不斷創新的顯示技術，讓視覺可以穿越綠野、越過高山，到達世界的彼端，打開一扇使人類生命更豐富，讓生活更精采的視窗"
+  text: "讓我們的下一代都能享受新彩麗世界的新希望透過不斷創新的顯示技術，讓視覺可以穿越綠野、越過高山，到達世界的彼端，打開一扇使人類生命更豐富，讓生活更精采的視窗",
+  textAlign: TextAlign.BottomLeft
 }
 
 const milestoneData = [
@@ -290,8 +292,8 @@ const About: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs data={allData.breadcrumbsData} />
-      <BannerText data={allData.bannerTextData} />
+      <Breadcrumbs {...allData.breadcrumbsData} />
+      <Banner {...allData.bannerTextData} />
       <Columns
         type={ColType.OneCol}
         content={<GraphicsLine data={allData.graphics1Data1} />} />

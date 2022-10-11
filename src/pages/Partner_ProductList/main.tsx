@@ -265,7 +265,7 @@ const PartnerProductList: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs data={breadcrumbsData} />
+      <Breadcrumbs {...breadcrumbsData} />
       <PartnerFcpTemplate data={partnerFcpTemplateProp} />
     </Layout>
   );

@@ -2,9 +2,11 @@ import React from "react";
 import "./css.scss";
 import { I_Props } from "./interface";
 
-const GraphicsCard: React.FC<I_Props> = ({ data }) => {
+const GraphicsCard: React.FC<I_Props> = ({ data, rowCount }) => {
+  const componentName = "GraphicsCard";
+
   return (
-    <div className="graphicsCard">
+    <div className={`${componentName}Content row${rowCount}`}>
       {data.map((item, idx) => (
         <a className="cardBlock" href={item.href} key={idx}>
           <div className="imgBlock">
@@ -13,9 +15,10 @@ const GraphicsCard: React.FC<I_Props> = ({ data }) => {
           <div className="contentWrap">
             <div className="textBlock">
               <div className="title">{item.title}</div>
-              <div className="content">{item.content}</div>
+              <div className="content">{item.text}</div>
             </div>
-            <div className="btnBlock">{item.btnText}</div>
+            {item.href &&
+              <a className="btnBlock" href={item.href}>{item.btnText}</a>}
           </div>
         </a>
       ))}
