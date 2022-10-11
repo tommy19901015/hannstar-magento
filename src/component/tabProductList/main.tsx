@@ -158,7 +158,7 @@ const TabProductList: React.FC<any> = () => {
     };
 
     return (
-      <div>
+      <div className="tabContent">
         {fakeApiData.map((item, index) => (
           <div
             className={`tab ${tab === index ? "active" : ""}`}
