@@ -112,6 +112,7 @@ $font-weighr-bold: 700;
 }
 
 @mixin hannstarBtn {
+    display: inline-block;
     background-color: $hannstar-blue2;
     border-radius: 4px;
     color: #fff;
@@ -126,6 +127,7 @@ $font-weighr-bold: 700;
 }
 
 @mixin hannstarBtn2 {
+    display: inline-block;
     background-color: #fff;
     border-radius: 4px;
     border: 1px solid $hannstar-blue2;

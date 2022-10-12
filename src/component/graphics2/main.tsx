@@ -1,15 +1,9 @@
 import React from "react";
+import { I_Graphics2 } from "./interface"
 import "./css.scss";
 
-interface I_Porps {
-  data: {
-    src: string;
-    title: string;
-    href: string;
-  }[];
-}
 
-const Graphics2: React.FC<I_Porps> = ({ data }) => {
+const Graphics2: React.FC<I_Graphics2> = ({ data }) => {
   return (
     <div className="graphics2Block">
       {data.map((item, idx) => {

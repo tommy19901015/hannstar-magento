@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { I_Style } from "./interface";
 
 export const OneColFullStyle: React.FC<I_Style> = styled.div`
-  margin: 40px auto;
+  margin: 0 auto;
   &:first-child{
     margin-top: 0px; 
   }
@@ -13,7 +13,6 @@ export const OneColFullStyle: React.FC<I_Style> = styled.div`
 
 export const TwoColFullStyle: React.FC<I_Style> = styled.div`
   display: flex;
-  // margin-bottom: 40px;
   &:first-child{
     margin-top: 0px; 
   }
@@ -24,7 +23,7 @@ export const TwoColFullStyle: React.FC<I_Style> = styled.div`
 `;
 
 export const OneColStyle: React.FC<I_Style> = styled.div`    
-    margin: 40px auto;
+    margin: 0 auto;
     max-width:1400px;
     &:first-child{
       margin-top: 0px; 

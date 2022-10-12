@@ -1,9 +1,11 @@
-export enum GraphicsLineType {
-  Reverse = "reverse",
+export enum GraphicsTheme {
+  Theme1 = "Theme1",
+  Theme2 = "Theme2"
 }
 
-export interface I_Props {
+export interface I_GraphicsCard {
   rowCount: number;
+  theme?: GraphicsTheme;
   data: {
     src: string;
     title: string;

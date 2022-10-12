@@ -1,80 +1,75 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$componentName: "TabProductList";
-
-.TabProductListContent{
-
-}
-
-.tabContent {
-  display: flex;
-  @include hannstarContentText;
-  border-bottom: 4px solid $hannstar-blue3;
-  margin: 40px 0;
-  .tab {
-      width: 130px;
-      text-align: center;
-      cursor: pointer;
-      padding: 5px 20px;
-      background-color: $hannstar-border-color;
-      color: $hannstar-blue3;
-      margin-right: 10px;
-      &.active,
-      &:hover {
-          background-color: $hannstar-blue3;
-          color: #fff;
-      }
-  }
-}
-
-.productListBlock{
-  display: flex;
-  justify-content: space-between;
-  .productBlock{
-    display: inline-block;
-    width: 20%;
-    border-bottom: 2px solid $hannstar-border-color;
-    padding-bottom: 20px;
-    .imgBlock {
-      margin-bottom: 10px;
-      border: 6px solid #fff;
-      box-shadow: 0 0 29px rgb(0 0 0 / 10%);
-      img {
-        width: 100%;
-      }
-    
-    }
-    .contentWrap{
-      .productTitle{
-        font-weight: bold;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-      .productContent{
-        font-size: 16px;
-        word-wrap: break-word;
-        list-style: circle;
-      }
-      .btnBlock{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-        font-size: 16px;
-        .btn1{
-          @include hannstarBtn2;
-        }
-          .btn2 {
-            @include hannstarBtn;
-        }
-      }
-    }
-  }
-}
-
-
+$componentName: 'TabProductList';
 
 .#{$componentName}Content {
-  @media screen and (max-width: $breakpoint) {
-  }
+    .tabContent {
+        display: flex;
+        @include hannstarContentText;
+        border-bottom: 4px solid $hannstar-blue3;
+        margin: 40px 0;
+        .tab {
+            width: 130px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px 20px;
+            background-color: $hannstar-border-color;
+            color: $hannstar-blue3;
+            margin-right: 10px;
+            &.active,
+            &:hover {
+                background-color: $hannstar-blue3;
+                color: #fff;
+            }
+        }
+    }
+
+    .productListBlock {
+        display: flex;
+        justify-content: space-between;
+        .productBlock {
+            display: inline-block;
+            width: 20%;
+            border-bottom: 2px solid $hannstar-border-color;
+            padding-bottom: 20px;
+            .imgBlock {
+                margin-bottom: 10px;
+                border: 6px solid #fff;
+                box-shadow: 0 0 29px rgb(0 0 0 / 10%);
+                img {
+                    width: 100%;
+                }
+            }
+            .contentWrap {
+                .productTitle {
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                .productContent {
+                    font-size: 16px;
+                    word-wrap: break-word;
+                    list-style: circle;
+                }
+                .btnBlock {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 20px;
+                    font-size: 16px;
+                    .btn1 {
+                        @include hannstarBtn2;
+                    }
+                    .btn2 {
+                        @include hannstarBtn;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.#{$componentName}Content {
+    @media screen and (max-width: $breakpoint) {
+    }
 }

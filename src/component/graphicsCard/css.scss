@@ -12,11 +12,14 @@ $componentName: 'GraphicsCard';
         grid-template-columns: repeat(4, 1fr);
     }
     .cardBlock {
-        box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
         background-color: #fff;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+        &.Theme2 {
+            box-shadow: none;
+        }
         .imgBlock {
             position: relative;
             padding-bottom: 56.2%;
@@ -34,11 +37,20 @@ $componentName: 'GraphicsCard';
             justify-content: space-between;
             align-items: center;
             height: 100%;
+            &.Theme2 {
+                padding: 40px 0;
+                .textBlock {
+                    text-align: left;
+                }
+            }
             .textBlock {
                 text-align: center;
                 .title {
                     @include hannstarH3Title;
                     color: $hannstar-blue2;
+                    &.Theme2 {
+                        color: $hannstar-green1;
+                    }
                 }
                 .content {
                     @include hannstarContent0;

@@ -9,11 +9,12 @@ import GraphicsCard from "../../component/graphicsCard/main";
 import ArticleList2 from "../../component/articleList2/main";
 import TabProductList from "../../component/tabProductList/main";
 import Graphics3 from "../../component/graphics3/main";
-import { I_Template3 } from "./interface";
+import Graphics2 from "../../component/graphics2/main";
+import { I_Template4 } from "./interface";
 import "./css.scss";
 
-const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module2, module3, module4, module5, module6 }) => {
-  const pageName = "Template3"
+const Template4: React.FC<I_Template4> = ({ banner, breadcrumbs, module1, module2, module3, module4, module5 }) => {
+  const pageName = "Template4"
 
   const pageBuilder = () => {
     const pageContentArr: JSX.Element[] = []
@@ -32,7 +33,7 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module1.titleContent} />
-          <Banner {...module1.banner} />
+          <Graphics2 {...module1.graphics2} />
         </div>} />)
     }
 
@@ -40,7 +41,7 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module2.titleContent} />
-          <Graphics3 data={[...module2.graphics3]} />
+          <div>人資</div>
         </div>} />)
     }
 
@@ -48,35 +49,28 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module3.titleContent} />
-          <GraphicsCard {...module3.graphicsCard} />
+          <Banner {...module3.banner} />
         </div>} />)
     }
 
     if (module4) {
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
-          <ArticleList2 {...module4.articleList2} />
+          <TitleContent {...module4.titleContent} />
+          <GraphicsCard {...module4.graphicsCard} />
         </div>} />)
     }
 
     if (module5) {
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
-          <TitleContent {...module5.tabProductList} />
-          <TabProductList />
+          <TitleContent {...module5.titleContent} />
+          <GraphicsCard {...module5.graphicsCard} />
         </div>} />)
     }
 
-    if (module6) {
-      pageContentArr.push(<Columns type={ColType.OneCol}
-        content={<div className={`${pageName}ModuleBlock`}>
-          <div>module6</div>
-        </div>} />)
-    }
     return pageContentArr
   }
-
-
 
   const MainContainer = () => {
     return (
@@ -88,4 +82,4 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
   return <MainContainer />;
 };
 
-export default Template3;
+export default Template4;

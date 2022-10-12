@@ -11,7 +11,7 @@
             margin-right: 80px;
             .page-item {
                 cursor: pointer;
-                border: 1px solid $hannstar-border-color;
+                border: 1px solid $hannstar-bg-color;
                 a {
                     display: inline-block;
                     padding: 15px;
@@ -24,9 +24,9 @@
             .pageNext,
             .pagePrevious {
                 position: relative;
-                background-color: $hannstar-border-color;
+                background-color: $hannstar-bg-color;
                 cursor: pointer;
-                border: 1px solid $hannstar-border-color;
+                border: 1px solid $hannstar-bg-color;
                 border-radius: 4px;
                 width: 38px;
                 &::after {

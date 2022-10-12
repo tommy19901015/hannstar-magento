@@ -24,6 +24,9 @@ import EServerRMAApply from "./pages/e-server-rma-apply/main";
 import EServiceRMAList from "./pages/EService_RMAList/main";
 import EServiceParseList from "./pages/EService_parseList/main";
 import Template3Page from "./pages/Template3/main";
+import ServiceGreenService from "./pages/Service_GreenService/main";
+import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
+import PartnerGreenSupplyChain from "./pages/Partner_GreenSupplyChain/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
@@ -65,6 +68,7 @@ ReactDOM.render(
       <Route path={partner.technical.href} element={<PartnerTechnical />} />
       <Route path="/zh-tw/e-server/rma-apply" element={<EServerRMAApply />} />
       <Route path="/zh-tw/e-service/rma-list" element={<EServiceRMAList />} />
+      <Route path="/partner/greensupplychain" element={<PartnerGreenSupplyChain />} />
       <Route
         path="/zh-tw/e-service/parse-list"
         element={<EServiceParseList />}
@@ -72,6 +76,14 @@ ReactDOM.render(
       <Route
         path="/template3"
         element={<Template3Page />}
+      />
+      <Route
+        path="/service/greenservice"
+        element={<ServiceGreenService />}
+      />
+      <Route
+        path="/service/customersupport"
+        element={<ServiceCustomerSupport />}
       />
     </Routes>
   </BrowserRouter>,

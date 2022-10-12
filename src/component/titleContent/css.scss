@@ -3,17 +3,21 @@
 $componentName: 'TitleContent';
 
 .#{$componentName}Content {
-    padding-bottom: 60px;
     .title {
         @include hannstarH1Title;
-        padding-bottom: 32px;
+        padding: 32px 0;
         text-align: center;
     }
-    .content {
-        @include hannstarContent0;
+    .textBlock {
         text-align: center;
+        .content {
+            @include hannstarContent0;
+            padding-bottom: 60px;
+        }
+        .linkBtn {
+            @include hannstarBtn;
+        }
     }
-
     @media screen and (max-width: $breakpoint) {
         .title {
         }

@@ -6,6 +6,7 @@ import PlatformEntry from "../../component/platformEntry/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import GraphicsCard from "../../component/graphicsCard/main";
+import TitleContent from "../../component/titleContent/main";
 import "./css.scss";
 
 const PartnerIndex: React.FC = () => {
@@ -163,6 +164,21 @@ const PartnerIndex: React.FC = () => {
       views: "9",
     },
   ];
+
+  const titleContentData1 = {
+    title: "關於供應商協同合作平台",
+    content: "提供該平台給全球材料及設備供應商、製造商，於平台上協同合作資訊交流與專案商務等開創新的商業機會。",
+    bgColor: "#e6e6e6"
+  }
+
+  const titleContentData2 = {
+    title: "綠色供應鏈管理",
+    content: "瀚宇彩晶以智能及大數據為平台基礎，以企業資源(Enterprise Resource Planning, ERP)、客戶關係(Customer Relationship Management, CRM)、供應商關係(Supplier Relationship Management, SRM)三大管理系統，將供應商、製造商、服務商、客戶等所有合作夥伴整合到其中，串起客戶、供應商、生產、庫存的資料流與更大功能規模的自動化生產供貨模組體系，系統化完整的建構瀚宇彩晶的永續供應鏈管理體系(Supply Chain Management, SCM)。並在此基礎上協同合作，在品質、成本、交期、環保、安全與衛生等不同面向，讓雙方或多方獲得更有價值的信息和數據，跨域合作，提供更精准的商業决策分析與更高效的資源利用，打造串連世界的綠色供應鏈。",
+    bgColor: "#e6e6e6",
+    btnText: "了解更多",
+    btnHref: "/",
+  }
+
   const allData = {
     bannerData,
     messageCenterData,
@@ -171,43 +187,11 @@ const PartnerIndex: React.FC = () => {
     articleList,
   };
 
-  const AboutTextBlock = () => {
-    return (
-      <div className={`${pageName}TextBlock`}>
-        <div className="title">關於供應商協同合作平台</div>
-        <div className="content">
-          提供該平台給全球材料及設備供應商、製造商，於平台上協同合作資訊交流與專案商務等開創新的商業機會。
-        </div>
-      </div>
-    );
-  };
-
   const ServiceBlock = () => {
     return (
       <div className={`${pageName}ServiceBlock`}>
         <div className="title">服務項目</div>
         <GraphicsCard data={graphicsCardData} rowCount={3} />
-      </div>
-    );
-  };
-
-  const TextBtnBlock = () => {
-    return (
-      <div className={`${pageName}TextBtnBlock`}>
-        <div className="title">綠色供應鏈管理</div>
-        <div className="content">
-          瀚宇彩晶以智能及大數據為平台基礎，以企業資源(Enterprise Resource
-          Planning, ERP)、客戶關係(Customer Relationship Management,
-          CRM)、供應商關係(Supplier Relationship Management,
-          SRM)三大管理系統，將供應商、製造商、服務商、客戶等所有合作夥伴整合到其中，串起客戶、供應商、生產、庫存的資料流與更大功能規模的自動化生產供貨模組體系，系統化完整的建構瀚宇彩晶的永續供應鏈管理體系(Supply
-          Chain Management,
-          SCM)。並在此基礎上協同合作，在品質、成本、交期、環保、安全與衛生等不同面向，讓雙方或多方獲得更有價值的信息和數據，跨域合作，提供更精准的商業决策分析與更高效的資源利用，打造串連世界的綠色供應鏈。
-        </div>
-        <div className="btnBlock">
-          <a className="learnMoreBtn" href="">
-            了解更多
-          </a>
-        </div>
       </div>
     );
   };
@@ -236,13 +220,13 @@ const PartnerIndex: React.FC = () => {
         contentR={<PlatformEntry data={allData.platformEntryData} />} />
       <Columns
         type={ColType.OneColFullPage}
-        content={<AboutTextBlock />} />
+        content={<TitleContent {...titleContentData1} />} />
       <Columns
         type={ColType.OneCol}
         content={<ServiceBlock />} />
       <Columns
         type={ColType.OneColFullPage}
-        content={<TextBtnBlock />} />
+        content={<TitleContent {...titleContentData2} />} />
       <Columns
         type={ColType.OneColFullPage}
         content={<ManagementStrategyBlock />} />
