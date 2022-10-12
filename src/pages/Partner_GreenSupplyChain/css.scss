@@ -1,98 +1,245 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'PartnerGreenSupplyChain';
+$pageName: "PartnerGreenSupplyChain";
 
 .#{$pageName}ContentBlock {
-    .achievementBlock {
+  .achievementBlock {
+    text-align: center;
+    margin-bottom: 120px;
+    .title {
+      @include hannstarH1Title;
+      padding: 32px 0;
+      text-align: center;
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      padding: 32px 0;
+      img {
+        padding: 32px;
+      }
+    }
+    .reportBtn {
+      @include hannstarBtn2;
+      color: $hannstar-green1;
+      border-color: $hannstar-green1;
+    }
+  }
+  .tabContent {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    border-bottom: 5px solid $hannstar-green2;
+    .tab {
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+      &.active,
+      &:hover {
+        background-color: $hannstar-green2;
+      }
+    }
+  }
+  .#{$pageName}TabContent {
+    padding-bottom: 32px;
+    border-bottom: 5px solid $hannstar-green2;
+    .TitleContentContent {
+      padding-bottom: 32px;
+      border-bottom: 5px solid $hannstar-green2;
+    }
+    .RBA {
+      text-align: center;
+      padding-bottom: 32px;
+      border-bottom: 5px solid $hannstar-green2;
+      .title {
+        @include hannstarH1Title;
+        padding: 32px 0;
         text-align: center;
-        margin-bottom: 120px;
-        .title {
-            @include hannstarH1Title;
-            padding: 32px 0;
-            text-align: center;
-        }
-        .content {
-            display: flex;
-            justify-content: space-between;
-            padding: 32px 0;
-            img {
-                padding: 32px;
-            }
-        }
-        .reportBtn {
-            @include hannstarBtn2;
-            color: $hannstar-green1;
-            border-color: $hannstar-green1;
-        }
+      }
+      img {
+        padding: 32px 0;
+      }
+      .text {
+        @include hannstarContent0;
+        padding-bottom: 60px;
+      }
     }
-    .tabContent {
+    .ISO {
+      .title {
+        @include hannstarH1Title;
+        color: $hannstar-green1;
+        padding: 32px 0;
+        text-align: center;
+      }
+      .contentBlock {
+        @include hannstarContent0;
+        padding-bottom: 60px;
+        display: grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        .leftBlock,
+        .rightBlock {
+          .title {
+            @include hannstarH3Title;
+            color: $hannstar-blue2;
+          }
+          .text {
+            background-color: $hannstar-green2;
+            border-radius: 10px;
+            padding: 32px;
+          }
+        }
+      }
+    }
+    .eight {
+      .title {
+        @include hannstarH1Title;
+        color: $hannstar-green1;
+        padding: 32px 0;
+        text-align: center;
+      }
+      .contentBlock {
+        @include hannstarContent0;
+        padding-bottom: 60px;
+        display: grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        .text {
+          background-color: $hannstar-green1;
+          color: #fff;
+          padding: 10px 15px;
+          border-radius: 50px;
+        }
+      }
+    }
+    .greenProduct {
+      .contentBlock {
         display: flex;
-        justify-content: space-between;
-        padding-bottom: 32px;
-        border-bottom: 5px solid #e8f5e5;
-        .tab {
-            img {
-                width: 100%;
-            }
-            &.active,
-            &:hover {
-                background-color: #e8f5e5;
-            }
+        border-bottom: 5px solid $hannstar-green2;
+        padding: 32px 0;
+        img {
+          width: 20%;
         }
-    }
-    .#{$pageName}TabContent {
-        padding-bottom: 32px;
-        border-bottom: 5px solid #e8f5e5;
-        .TitleContentContent {
-            padding-bottom: 32px;
-            border-bottom: 5px solid #e8f5e5;
-        }
-        .RBA {
-            text-align: center;
-            padding-bottom: 32px;
-            border-bottom: 5px solid #e8f5e5;
-            .title {
-                @include hannstarH1Title;
-                padding: 32px 0;
-                text-align: center;
-            }
-            img {
-                padding: 32px 0;
-            }
-            .text {
-                @include hannstarContent0;
-                padding-bottom: 60px;
-            }
-        }
-    }
-    .#{$pageName}DownloadBlock {
-        .title {
-            @include hannstarH1Title;
-            padding: 32px 0;
-            text-align: center;
-        }
-        table {
-            width: 100%;
+        .textBlock {
+          width: 80%;
+          padding: 0 32px;
+          .title {
+            @include hannstarH3Title;
+            color: $hannstar-green1;
+          }
+          .text {
             @include hannstarContent0;
-            border: 1px solid $hannstar-border-color;
-            text-align: center;
-            thead {
-                background-color: $hannstar-green1;
-                color: #fff;
-                tr {
-                    td {
-                        padding: 20px;
-                    }
-                }
-            }
-            tbody {
-                tr {
-                    td {
-                        padding: 20px;
-                        border: 1px solid $hannstar-border-color;
-                    }
-                }
-            }
+          }
         }
+      }
     }
+    .must {
+      .title {
+        @include hannstarH1Title;
+        color: $hannstar-green1;
+        padding: 32px 0;
+        text-align: center;
+      }
+      .contentBlock {
+        @include hannstarContent0;
+        padding-bottom: 60px;
+        display: grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        .leftBlock,
+        .rightBlock {
+          text-align: center;
+          .title {
+            @include hannstarH3Title;
+            color: $hannstar-blue2;
+          }
+          .text {
+            background-color: $hannstar-green2;
+            border-radius: 10px;
+            padding: 32px;
+          }
+        }
+      }
+    }
+  }
+  .step {
+    padding: 60px 0;
+    .contentBlock {
+      display: grid;
+      grid-gap: 32px;
+      grid-template-columns: repeat(4, 1fr);
+      .stepBlock {
+        .stepTitle {
+          @include hannstarContent0;
+          background-color: $hannstar-green1;
+          color: #fff;
+          border-radius: 50px;
+          padding: 5px 15px;
+          display: inline-block;
+        }
+        .title {
+          @include hannstarH4Title;
+          padding: 32px 0;
+        }
+        .text {
+          @include hannstarContent0;
+        }
+      }
+    }
+  }
+  .cardBlock {
+    padding: 60px 0;
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    .card {
+      .title {
+        @include hannstarContent0;
+        color: $hannstar-green1;
+        background-color: $hannstar-green2;
+        padding: 5px 10px;
+        margin-bottom: 32px;
+      }
+      .subTitle {
+        @include hannstarContent0;
+        font-weight: bolder;
+      }
+      .text {
+        @include hannstarContent0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .#{$pageName}DownloadBlock {
+    .title {
+      @include hannstarH1Title;
+      padding: 32px 0;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      @include hannstarContent0;
+      border: 1px solid $hannstar-border-color;
+      border-collapse: collapse;
+      text-align: center;
+      thead {
+        background-color: $hannstar-green1;
+        color: #fff;
+        tr {
+          td {
+            padding: 20px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 20px;
+            border: 1px solid $hannstar-border-color;
+          }
+        }
+      }
+    }
+  }
 }

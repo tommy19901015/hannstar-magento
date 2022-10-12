@@ -1,27 +1,27 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$componentName: 'TitleContent';
+$componentName: "TitleContent";
 
 .#{$componentName}Content {
+  .title {
+    @include hannstarH1Title;
+    padding: 32px 0;
+    text-align: center;
+  }
+  .textBlock {
+    text-align: center;
+    .content {
+      @include hannstarContent0;
+      padding-bottom: 60px;
+    }
+    .linkBtn {
+      @include hannstarBtn;
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
     .title {
-        @include hannstarH1Title;
-        padding: 32px 0;
-        text-align: center;
     }
-    .textBlock {
-        text-align: center;
-        .content {
-            @include hannstarContent0;
-            padding-bottom: 60px;
-        }
-        .linkBtn {
-            @include hannstarBtn;
-        }
+    .content {
     }
-    @media screen and (max-width: $breakpoint) {
-        .title {
-        }
-        .content {
-        }
-    }
+  }
 }
