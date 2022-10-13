@@ -1,12 +1,14 @@
 @import '../../style/variable.scss';
 
 $pageName: 'e-server-rma-apply';
-.#{$pageName}MainTitle {
-    @include hannstarH2Title;
+.#{$pageName}H1Title {
+    @include hannstarH1Title;
+    text-align: center;
+    padding-bottom: 60px;
 }
 .#{$pageName}FormBlock {
     border: 1px solid #e9e9e9;
-    margin: 0 80px;
+    margin: 0 80px 60px 80px;
     .#{$pageName}Title {
         @include hannstarH3Title;
         text-align: center;
@@ -17,6 +19,86 @@ $pageName: 'e-server-rma-apply';
     }
     .#{$pageName}ContentBlock {
         padding: 0 80px;
+    }
+    .badDetailsTitle {
+        @include hannstarH3Title;
+        color: $hannstar-blue2;
+    }
+    .#{$pageName}TabBlock {
+        display: flex;
+        width: 100%;
+        @include hannstarContentText;
+        border-bottom: 4px solid $hannstar-blue2;
+        margin: 32px 0 20px;
+        .tab {
+            width: 130px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px 20px;
+            background-color: $hannstar-bg-color;
+            color: $hannstar-blue2;
+            margin-right: 10px;
+            &.active,
+            &:hover {
+                background-color: $hannstar-blue2;
+                color: #fff;
+            }
+        }
+    }
+    .#{$pageName}SingleImportBlock {
+        .toolBar {
+            display: flex;
+            margin-bottom: 32px;
+            select {
+                @include hannstarSelect;
+                width: 80px;
+                margin-right: 20px;
+            }
+            .addBtn {
+                @include hannstarBtn;
+            }
+        }
+        table {
+            @include hannstarContentText;
+            width: 100%;
+            td {
+                padding: 10px;
+                border: 1px solid $hannstar-border-color;
+                text-align: start;
+                select {
+                    @include hannstarSelect;
+                }
+                input[type='text'] {
+                    @include hannstarInput;
+                }
+            }
+            thead {
+                tr {
+                    background-color: $hannstar-blue2;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .#{$pageName}BatchImportBlock {
+        .stepTitle {
+            @include hannstarH4Title;
+            padding-bottom: 32px;
+        }
+        .text {
+            @include hannstarContent0;
+            display: block;
+            color: $hannstar-blue2;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+        .noteText {
+            @include hannstarContent2;
+        }
+        input[type='file'] {
+            @include hannstarContent0;
+            margin-bottom: 32px;
+        }
     }
     .#{$pageName}BtnBlock {
         display: flex;

@@ -56,37 +56,37 @@ const tab2_titleContentProps = {
 
 const tab2_greenProductBlock = [
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/011.png",
     title: "REACH",
     text: "REACH是為保護人類與環境，對人類健康或環境有嚴重危害或影響之物質，建立的安全屏障，如限制物質用途及濃度",
   },
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/012.png",
     title: "RoHS2.0+HF",
     text: "RoHS及HF分別是由歐盟立法制定的一項強制性標準，用於規範電子電器產品的材料及技術標準及規範無鹵阻燃劑的要求",
   },
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/013.png",
     title: "不使用衝突礦產",
     text: "衝突礦產主要為鎢 、錫、鉭、金、鈷及雲母，對電子業製造為極重要的原物料，經常使用在電器產品零組件當中",
   },
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/014.png",
     title: "IMDS / CAMDS",
     text: "全球汽車廠商以生產件符合程序 (PPAP) / 產品承認書 (PSW) 中要求車廠供應商提交物質資料監控管理整體供應鏈全物質狀態",
   },
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/015.png",
     title: "chem SHERPA",
     text: "chemSHERPA提供了可應用與整條供應鏈的資訊傳遞機制，正確管理產品中含有的化學物質，持續應對日益嚴格的法規",
   },
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/016.png",
     title: "環保規範盤查",
     text: "透過供應商對環保規範資料調查，進行審核及承認，確認符合國際法規要求及客戶規範",
   },
   {
-    src: "https://fakeimg.pl/200x200/?text=Hello",
+    src: "https://partner.hannstar.com/images/supplier/supplychain/017.png",
     title: "不使用宣告書/承諾書",
     text: "依各客戶要求環境管理物質不使用宣告書/承諾書，包括產品本身、製成相關零部件、輔助材料及包裝材料",
   },
@@ -187,6 +187,7 @@ const graphics3Props = [
       "瀚宇彩晶供應商協同合作平台探索無限商機可能，致力於提供高品質且符合國際綠色法規之產品給客戶，堅守永續經營價值，加入彩晶，我們的用心您看的見!",
     btnText: "聯絡我們",
     btnHref: "/",
+    imgSizePercent: 50
   },
 ];
 
@@ -232,7 +233,7 @@ const PartnerGreenSupplyChain: React.FC = () => {
     ];
 
     return (
-      <div className="tabContent">
+      <div className={`${pageName}TabBlock`}>
         {tabImgArr.map((src, index) => (
           <div
             className={`tab ${tab === index ? "active" : ""}`}
@@ -245,64 +246,68 @@ const PartnerGreenSupplyChain: React.FC = () => {
     );
   };
 
+
   const TabContent0 = () => {
     return (
-      <Columns
-        type={ColType.OneCol}
-        content={
-          <div className={`${pageName}TabContent`}>
-            <TitleContent {...tab0_titleContentProps} />
-            <div className="RBA">
-              <div className="title">RBA行為準則</div>
-              <img
-                alt="RBA行為準則"
-                src="https://partner.hannstar.com/images/supplier/supplychain/chart01.png"
-              />
-              <div className="text">
-                RBA行為準則專為電子行業或電子為主要組成部份的行業和其供應鏈訂定規範，確保工作環境的安全、工人受到尊重並富有尊嚴、商業營運合乎環保性質並遵守道德操守，準則由五個部分組成:
-                勞工、健康與安全、環境、管理體系及商業道德，參與者必須在整個供應鏈中倡議採用本準則，並完全遵守其經營所在國家的法律、法例及法規。
+      <div className={`${pageName}TabContent`}>
+        <Columns
+          type={ColType.OneCol}
+          content={
+            <>
+              <div className={`${pageName}TitleContent`}>
+                <TitleContent {...tab0_titleContentProps} />
               </div>
-            </div>
-            <div className={`${pageName}DownloadBlock`}>
-              <div className="title">文件下載專區</div>
-              <table>
-                <thead>
-                  <tr>
-                    <td>文件</td>
-                    <td>內文簡述</td>
-                    <td>下載</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>RBA供應商承諾書</td>
-                    <td>簽訂合格供應商企業社會責任承諾書</td>
-                    <td>
-                      <img
-                        alt="download"
-                        src="https://partner.hannstar.com/images/supplier/supplychain/icon-download.png"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>供應商勞工與道德風險評估表</td>
-                    <td>
-                      評估表準則分為勞工、健康安全、環境、道德規範及管理系統
-                    </td>
-                    <td>
-                      <img
-                        alt="download"
-                        src="https://partner.hannstar.com/images/supplier/supplychain/icon-download.png"
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <Graphics3 data={graphics3Props} />
-          </div>
-        }
-      />
+              <div className="RBA">
+                <div className="title">RBA行為準則</div>
+                <img
+                  alt="RBA行為準則"
+                  src="https://partner.hannstar.com/images/supplier/supplychain/chart01.png"
+                />
+                <div className="text">
+                  RBA行為準則專為電子行業或電子為主要組成部份的行業和其供應鏈訂定規範，確保工作環境的安全、工人受到尊重並富有尊嚴、商業營運合乎環保性質並遵守道德操守，準則由五個部分組成:
+                  勞工、健康與安全、環境、管理體系及商業道德，參與者必須在整個供應鏈中倡議採用本準則，並完全遵守其經營所在國家的法律、法例及法規。
+                </div>
+              </div>
+              <div className={`${pageName}DownloadBlock`}>
+                <div className="title">文件下載專區</div>
+                <table>
+                  <thead>
+                    <tr>
+                      <td>文件</td>
+                      <td>內文簡述</td>
+                      <td>下載</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>RBA供應商承諾書</td>
+                      <td>簽訂合格供應商企業社會責任承諾書</td>
+                      <td>
+                        <img
+                          alt="download"
+                          src="https://partner.hannstar.com/images/supplier/supplychain/icon-download.png"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>供應商勞工與道德風險評估表</td>
+                      <td>
+                        評估表準則分為勞工、健康安全、環境、道德規範及管理系統
+                      </td>
+                      <td>
+                        <img
+                          alt="download"
+                          src="https://partner.hannstar.com/images/supplier/supplychain/icon-download.png"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          }
+        />
+      </div>
     );
   };
 
@@ -312,7 +317,9 @@ const PartnerGreenSupplyChain: React.FC = () => {
         type={ColType.OneCol}
         content={
           <div className={`${pageName}TabContent`}>
-            <TitleContent {...tab1_titleContentProps} />
+            <div className={`${pageName}TitleContent`}>
+              <TitleContent {...tab1_titleContentProps} />
+            </div>
             <div className="ISO">
               <div className="title">瀚宇彩晶倡導供應商取得</div>
               <div className="contentBlock">
@@ -355,7 +362,9 @@ const PartnerGreenSupplyChain: React.FC = () => {
         type={ColType.OneCol}
         content={
           <div className={`${pageName}TabContent`}>
-            <TitleContent {...tab2_titleContentProps} />
+            <div className={`${pageName}TitleContent`}>
+              <TitleContent {...tab2_titleContentProps} />
+            </div>
             <div className="greenProduct">
               {tab2_greenProductBlock.map((item, index) => (
                 <div className="contentBlock" key={index}>
@@ -415,24 +424,20 @@ const PartnerGreenSupplyChain: React.FC = () => {
         type={ColType.OneCol}
         content={
           <div className={`${pageName}TabContent`}>
-            <TitleContent {...tab3_titleContentProps} />
+            <div className={`${pageName}TitleContent`}>
+              <TitleContent {...tab3_titleContentProps} />
+            </div>
             <div className="must">
               <div className="title">認證供應商必須取得</div>
-              <div className="contentBlock">
-                <div className="leftBlock">
-                  <div className="title">ISO9001</div>
-                  <img
-                    src="https://fakeimg.pl/200x200/?text=Hello"
-                    alt="ISO9001"
-                  />
-                </div>
-                <div className="rightBlock">
-                  <div className="title">IATF16949</div>
-                  <img
-                    src="https://fakeimg.pl/200x200/?text=Hello"
-                    alt="IATF16949"
-                  />
-                </div>
+              <div className="mustContentBlock">
+                <img
+                  src="https://partner.hannstar.com/images/supplier/supplychain/iso9001.png"
+                  alt="ISO9001"
+                />
+                <img
+                  src="https://partner.hannstar.com/images/supplier/supplychain/iatf16949.png"
+                  alt="IATF16949"
+                />
               </div>
             </div>
             <div className={`${pageName}DownloadBlock`}>
@@ -495,7 +500,9 @@ const PartnerGreenSupplyChain: React.FC = () => {
         type={ColType.OneCol}
         content={
           <div className={`${pageName}TabContent`}>
-            <TitleContent {...tab4_titleContentProps} />
+            <div className={`${pageName}TitleContent`}>
+              <TitleContent {...tab4_titleContentProps} />
+            </div>
             <div className="step">
               <div className="contentBlock">
                 {tab4_stepProps.map((item, index) => (
@@ -555,7 +562,9 @@ const PartnerGreenSupplyChain: React.FC = () => {
         type={ColType.OneCol}
         content={
           <div className={`${pageName}TabContent`}>
-            <TitleContent {...tab5_titleContentProps} />
+            <div className={`${pageName}TitleContent`}>
+              <TitleContent {...tab5_titleContentProps} />
+            </div>
             <div className="cardBlock">
               {tab5_cardProps.map((item, index) => (
                 <div className="card" key={index}>
@@ -572,6 +581,16 @@ const PartnerGreenSupplyChain: React.FC = () => {
       />
     );
   };
+
+  const BecomePartnerBlock = () => {
+    return (
+      <Columns
+        type={ColType.OneCol}
+        bgColor={"#e6e6e6"}
+        content={<div className={`${pageName}Graphics3`}>
+          <Graphics3 data={graphics3Props} />
+        </div>} />)
+  }
 
   const handleTabContentObj: any = {
     "0": <TabContent0 />,
@@ -595,12 +614,20 @@ const PartnerGreenSupplyChain: React.FC = () => {
             <>
               <Breadcrumbs {...breadcrumbProps} />
               <TitleContent {...titleContentProps} />
-              <AchievementBlock />
-              <TabBlock />
-              {handleTabContentObj[tab]}
             </>
           }
         />
+        <Columns
+          bgColor={"#e6e6e6"}
+          type={ColType.OneCol}
+          content={<AchievementBlock />}
+        />
+        <Columns
+          type={ColType.OneCol}
+          content={<TabBlock />}
+        />
+        {handleTabContentObj[tab]}
+        <BecomePartnerBlock />
       </div>
     </Layout>
   );

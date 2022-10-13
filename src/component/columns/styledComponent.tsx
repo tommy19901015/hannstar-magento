@@ -58,3 +58,7 @@ export const RightColStyle: React.FC<I_Style> = styled.div`
     width: 100%;
   }
 `;
+
+export const ColBGStyle: React.FC<I_Style> = styled.div`    
+    background-color: ${(props: { bgColor: string }) => props.bgColor ? props.bgColor : "#fff"};
+`;

@@ -6,6 +6,7 @@ export enum ColType {
 }
 
 export interface I_Style {
+  bgColor?: string;
   widthL?: number;
   widthR?: number;
   content?: React.ReactNode;

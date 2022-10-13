@@ -19,6 +19,7 @@ import PartnerSolutionList from "./pages/Partner_SolutionList/main";
 import PartnerSolutionInventory from "./pages/Partner_SolutionInventory/main";
 import PartnerAddSolution from "./pages/Partner_AddSolution/main";
 import PartnerApplication from "./pages/Partner_Application/main";
+import PartnerManageandadvisory from "./pages/Partner_Manageandadvisory/main";
 import PartnerTechnical from "./pages/Partner_Technical/main";
 import EServerRMAApply from "./pages/e-server-rma-apply/main";
 import EServiceRMAList from "./pages/EService_RMAList/main";
@@ -27,23 +28,30 @@ import Template3Page from "./pages/Template3/main";
 import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import PartnerGreenSupplyChain from "./pages/Partner_GreenSupplyChain/main";
+import PartnerManufacturing from "./pages/Partner_Manufacturing/main";
+import ServiceAnalysisRequest from "./pages/Service_AnalysisRequest/main";
+import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
-const { hannstar, partner } = urlConfig;
+const { hannstar, partner, service } = urlConfig;
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
-      <Route path="/zh-tw/e-service" element={<Eservice />} />
+      <Route path={service.index.href} element={<Eservice />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/zh-tw/e-biz" element={<EBiz />} />
       <Route path="/zh-tw/solution" element={<Solution />} />
       <Route path="/zh-tw/stronghold" element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
+      <Route
+        path="/template3"
+        element={<Template3Page />}
+      />
       <Route
         path={partner.quotationList.href}
         element={<PartnerQuotationList />}
@@ -66,25 +74,17 @@ ReactDOM.render(
       <Route path={partner.addSolution.href} element={<PartnerAddSolution />} />
       <Route path={partner.application.href} element={<PartnerApplication />} />
       <Route path={partner.technical.href} element={<PartnerTechnical />} />
-      <Route path="/zh-tw/e-server/rma-apply" element={<EServerRMAApply />} />
-      <Route path="/zh-tw/e-service/rma-list" element={<EServiceRMAList />} />
-      <Route path="/partner/greensupplychain" element={<PartnerGreenSupplyChain />} />
-      <Route
-        path="/zh-tw/e-service/parse-list"
-        element={<EServiceParseList />}
-      />
-      <Route
-        path="/template3"
-        element={<Template3Page />}
-      />
-      <Route
-        path="/service/greenservice"
-        element={<ServiceGreenService />}
-      />
-      <Route
-        path="/service/customersupport"
-        element={<ServiceCustomerSupport />}
-      />
+      <Route path={partner.manageandadvisory.href} element={<PartnerManageandadvisory />} />
+      <Route path={partner.manufacturing.href} element={<PartnerManufacturing />} />
+      <Route path={partner.greensupplychain.href} element={<PartnerGreenSupplyChain />} />
+
+      <Route path={service.RMAApply.href} element={<EServerRMAApply />} />
+      <Route path={service.RMAList.href} element={<EServiceRMAList />} />
+      <Route path={service.parseList.href} element={<EServiceParseList />} />
+      <Route path={service.greenLawApply.href} element={<ServiceGreenService />} />
+      <Route path={service.customer.href} element={<ServiceCustomerSupport />} />
+      <Route path={service.parseApply.href} element={<ServiceAnalysisRequest />} />
+      <Route path={service.lawApply.href} element={<ServiceGreenServiceApply />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

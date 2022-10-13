@@ -29,12 +29,16 @@
     "index":{
         "title":"供應商平台",
         "href":"/partner/index/view"
-    }, 
+    },
+    "manageandadvisory":{
+        "title":"管理與諮詢",
+        "href":"/partner/manageandadvisory/view"
+    },
     "technical":{
         "title":"新技術合作",
         "href":"/partner/technical/view"
     },
-     "manufacturingPartner":{
+     "manufacturing":{
         "title":"協同製造夥伴平台",
         "href":"/partner/manufacturingpartner/view"
     },
@@ -66,6 +70,10 @@
         "title":"方案價格庫存管理",
         "href":"/partner/solutioninventory/view"
     },
+    "greensupplychain":{
+        "title":"綠色供應鏈",
+        "href":"/partner/greensupplychain/view"
+    },
     "addSolution":{
         "title":"方案新增產品",
         "href":"/partner/addsolution/view"
@@ -81,6 +89,40 @@
     "qa":{
         "title":"常見問題",
         "href":"/partner/qa/view"
+    }
+  },
+  "service":{
+    "index":{
+        "title":"首頁",
+        "href":"/service/index/view"
+    },
+    "RMAApply":{
+        "title":"RMA申請",
+        "href":"/service/rmaapply/view"
+    },
+    "RMAList":{
+        "title":"RMA列表",
+        "href":"/service/rmalist/view"
+    },
+    "parseApply":{
+        "title":"解析申請",
+        "href":"/service/parseapply/view"
+    },
+    "parseList":{
+        "title":"解析列表",
+        "href":"/service/parselist/view"
+    },
+    "customer":{
+        "title":"客戶通",
+        "href":"/service/customer/view"
+    },
+    "lawApply":{
+        "title":"法規申請",
+        "href":"/service/lawapply/view"
+    },
+    "greenLawApply":{
+        "title":"綠色環保申請",
+        "href":"/service/greenlawapply/view"
     }
   }
 }

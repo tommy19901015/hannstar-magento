@@ -1,7 +1,7 @@
 import urlConfig from "../config/urlSetting.json"
 
 export const menuInfoData = () => {
-    const { hannstar, partner } = urlConfig
+    const { hannstar, partner, service } = urlConfig
     return {
         "hannstar": [
             {
@@ -81,6 +81,14 @@ export const menuInfoData = () => {
                 "content": []
             },
             {
+                "title": "協同製造夥伴",
+                "href": "",
+                "content": [
+                    { "title": partner.manageandadvisory.title, "href": partner.manageandadvisory.href },
+                    { "title": partner.manufacturing.title, "href": partner.manufacturing.href },
+                ]
+            },
+            {
                 "title": "供應商服務",
                 "href": "",
                 "content": [
@@ -91,10 +99,10 @@ export const menuInfoData = () => {
                 ]
             },
             {
-                "title": "管理與諮詢",
-                "href": "",
+                "title": partner.manageandadvisory.title,
+                "href": partner.manageandadvisory.href,
                 "content": [
-                    { "title": "綠色供應鏈", "href": "" },
+                    { "title": partner.greensupplychain.title, "href": partner.greensupplychain.href },
                     { "title": "技術文件", "href": "" }
                 ]
             },
@@ -108,6 +116,43 @@ export const menuInfoData = () => {
                 "href": "",
                 "content": []
             }
-        ]
+        ],
+        "service": [
+            {
+                "title": service.customer.title,
+                "href": service.customer.href,
+                "content": [
+                    { "title": service.RMAApply.title, "href": service.RMAApply.href },
+                    { "title": service.RMAList.title, "href": service.RMAList.href },
+                    { "title": service.parseApply.title, "href": service.parseApply.href },
+                    { "title": service.parseList.title, "href": service.parseList.href },
+                ]
+            },
+            {
+                "title": service.greenLawApply.title,
+                "href": service.greenLawApply.href,
+                "content": [
+                    { "title": service.lawApply.title, "href": service.lawApply.href },
+                ]
+            },
+            {
+                "title": "技術諮詢",
+                "href": "",
+                "content": [
+                    { "title": "技術文件", "href": "" },
+                    { "title": "教育訓練", "href": "" }
+                ]
+            },
+            {
+                "title": "訊息中心",
+                "href": "",
+                "content": []
+            },
+            {
+                "title": "Q&A",
+                "href": "",
+                "content": []
+            }
+        ],
     }
 }

@@ -1,0 +1,44 @@
+@import '../../style/variable.scss';
+
+$pageName: 'ServiceAnalysisRequest';
+.#{$pageName}H1Title {
+    @include hannstarH1Title;
+    text-align: center;
+    padding-bottom: 60px;
+}
+.#{$pageName}FormBlock {
+    border: 1px solid #e9e9e9;
+    margin: 0 80px 60px 80px;
+    .#{$pageName}Title {
+        @include hannstarH3Title;
+        text-align: center;
+        background-color: $hannstar-blue2;
+        color: #fff;
+        padding: 10px 0;
+        margin-bottom: 40px;
+    }
+    .#{$pageName}ContentBlock {
+        padding: 0 80px;
+        .fileBlock {
+            .title {
+                @include hannstarContentText;
+                word-break: keep-all;
+                padding-bottom: 10px;
+            }
+            input {
+                @include hannstarContentText;
+            }
+        }
+    }
+
+    .#{$pageName}BtnBlock {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+        .btn {
+            @include hannstarBtn;
+            font-size: 16px;
+            margin-right: 40px;
+        }
+    }
+}

@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import PaginatedBlock from "../../component/paginatedBlock/main";
+import Columns from "../../component/columns/main";
+import { ColType } from "../../component/columns/interface";
+import { ParseState, I_Table, I_tabStateInfo } from "./interface"
 import testTableData from "./testTableData.json";
 import "./css.scss";
 
 const EServiceParseList: React.FC = () => {
   const pageName = "EServiceParseList";
   const [parseListData, setParseListData] = useState<any>([]);
-  const [RMAListStateTab, setRMAListStateTab] = useState<number>(0);
+  const [parseListStateTab, setParseListStateTab] = useState<number>(0);
 
   const fakeApiData: any = testTableData;
 
@@ -35,34 +38,31 @@ const EServiceParseList: React.FC = () => {
   };
 
   const FilterStateBlock = () => {
-    enum ProductState {
-      NotApproved = "notApproved",
-      Pending = "pending",
-      All = "",
-    }
-
-    type I_tabStateInfo = {
-      text: string;
-      state: ProductState;
-    }[];
-
     const tabStateInfo: I_tabStateInfo = [
       {
-        text: "所有產品",
-        state: ProductState.All,
+        text: "所有狀態",
+        state: ParseState.All,
       },
       {
-        text: "審核中",
-        state: ProductState.Pending,
+        text: "申請中",
+        state: ParseState.Applying,
       },
       {
-        text: "未通過審核",
-        state: ProductState.NotApproved,
+        text: "寄送",
+        state: ParseState.Send,
+      },
+      {
+        text: "解析中",
+        state: ParseState.Parsing,
+      },
+      {
+        text: "結案",
+        state: ParseState.Closed,
       },
     ];
 
-    const changeState = (state: ProductState, index: number) => {
-      setRMAListStateTab(index);
+    const changeState = (state: ParseState, index: number) => {
+      setParseListStateTab(index);
       const filterData = state
         ? fakeApiData.filter((item: any) => item.state === state)
         : fakeApiData;
@@ -73,7 +73,7 @@ const EServiceParseList: React.FC = () => {
       <div className="filterStateBlock">
         {tabStateInfo.map((item, index) => (
           <div
-            className={`stateTab ${RMAListStateTab === index ? "active" : ""}`}
+            className={`stateTab ${parseListStateTab === index ? "active" : ""}`}
             onClick={() => changeState(item.state, index)}
           >
             {item.text}
@@ -83,15 +83,7 @@ const EServiceParseList: React.FC = () => {
     );
   };
 
-  interface I_Table {
-    requisitionNo: string;
-    paresNo: string;
-    modelNo: string;
-    badType: string;
-    badRate: string;
-    applicationProgress: string;
-    reportDownload: string;
-  }
+
 
   const FilterYearBlock = () => {
     const handlerOnChange = () => {
@@ -196,19 +188,29 @@ const EServiceParseList: React.FC = () => {
 
   const ContentBlock = () => {
     return (
-      <div className={`${pageName}ContentBlock`}>
-        <FilterYearBlock />
-        <FilterStateBlock />
-        <StateNoteBlock />
-        <PaginatedBlock data={PaginatedBlockProp} />
-      </div>
+      <Columns
+        type={ColType.OneCol}
+        content={<div className={`${pageName}ContentBlock`}>
+          <h1 className="h1Title">解析列表</h1>
+          <div className={`${pageName}ToolBarBlack`}>
+            <FilterYearBlock />
+            <StateNoteBlock />
+          </div>
+          <FilterStateBlock />
+          <PaginatedBlock data={PaginatedBlockProp} />
+        </div>} />
     );
   };
 
   return (
     <Layout>
-      <Breadcrumbs {...breadcrumbsData} />
-      <ContentBlock />
+      <Columns
+        type={ColType.OneCol}
+        content={<>
+          <Breadcrumbs {...breadcrumbsData} />
+          <ContentBlock />
+        </>}
+      />
     </Layout>
   );
 };

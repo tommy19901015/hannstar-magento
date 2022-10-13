@@ -14,8 +14,9 @@ $componentName: 'Graphics3';
         &:last-child {
             margin-bottom: 0;
         }
-        img {
+        .imgBlock {
             width: 50%;
+            text-align: center;
         }
         .textBlock {
             width: 50%;

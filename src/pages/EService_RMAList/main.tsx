@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
+import Columns from "../../component/columns/main";
+import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
+import { RMAState, I_Table, I_tabStateInfo } from "./interface"
 import "./css.scss";
 
 const EServiceRMAList: React.FC = () => {
@@ -43,33 +46,34 @@ const EServiceRMAList: React.FC = () => {
   };
 
   const FilterStateBlock = () => {
-    enum ProductState {
-      NotApproved = "notApproved",
-      Pending = "pending",
-      All = "",
-    }
-
-    type I_tabStateInfo = {
-      text: string;
-      state: ProductState;
-    }[];
-
     const tabStateInfo: I_tabStateInfo = [
       {
-        text: "所有產品",
-        state: ProductState.All,
+        text: "所有狀態",
+        state: RMAState.All,
       },
       {
-        text: "審核中",
-        state: ProductState.Pending,
+        text: "立案",
+        state: RMAState.Register,
       },
       {
-        text: "未通過審核",
-        state: ProductState.NotApproved,
+        text: "覆判審核",
+        state: RMAState.OverturnReview,
+      },
+      {
+        text: "覆判完成",
+        state: RMAState.OverturnFinish,
+      },
+      {
+        text: "退補處理",
+        state: RMAState.RefundProcessing,
+      },
+      {
+        text: "已退補/結案",
+        state: RMAState.Closed,
       },
     ];
 
-    const changeState = (state: ProductState, index: number) => {
+    const changeState = (state: RMAState, index: number) => {
       setRMAListStateTab(index);
       const filterData = state
         ? fakeApiData.filter((item: any) => item.state === state)
@@ -106,6 +110,9 @@ const EServiceRMAList: React.FC = () => {
     sellOffNo: string;
     caseResult: string;
   }
+
+
+
 
   const FilterYearBlock = () => {
     const handlerOnChange = () => {
@@ -226,19 +233,29 @@ const EServiceRMAList: React.FC = () => {
 
   const ContentBlock = () => {
     return (
-      <div className={`${pageName}ContentBlock`}>
-        <FilterYearBlock />
-        <FilterStateBlock />
-        <StateNoteBlock />
-        <PaginatedBlock data={PaginatedBlockProp} />
-      </div>
+      <Columns
+        type={ColType.OneCol}
+        content={<div className={`${pageName}ContentBlock`}>
+          <h1 className="h1Title">RMA列表</h1>
+          <div className={`${pageName}ToolBarBlack`}>
+            <FilterYearBlock />
+            <StateNoteBlock />
+          </div>
+          <FilterStateBlock />
+          <PaginatedBlock data={PaginatedBlockProp} />
+        </div>} />
     );
   };
 
   return (
     <Layout>
-      <Breadcrumbs {...breadcrumbsData} />
-      <ContentBlock />
+      <Columns
+        type={ColType.OneCol}
+        content={<>
+          <Breadcrumbs {...breadcrumbsData} />
+          <ContentBlock />
+        </>}
+      />
     </Layout>
   );
 };

@@ -5,5 +5,6 @@ export interface I_Graphics3 {
         content: string;
         btnText?: string;
         btnHref?: string;
+        imgSizePercent?: number;
     }[]
 }

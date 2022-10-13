@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const type = window.location.pathname.split("/")[1];
-    const mappingArr = ["hannstar", "partner"];
+    const mappingArr = ["hannstar", "partner", "service"];
     mappingArr.includes(type) && setServiceType(type);
   }, []);
 
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
   const handleChangeLanguage = () => {
     const newLanguage = language.current === "tw" ? "en" : "tw";
     language.current = newLanguage;
-    console.log('newLanguage',newLanguage)
+    console.log('newLanguage', newLanguage)
     i18n.changeLanguage(language.current);
   };
 
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
             <a className="headerBtn login" href="/">
               {t('common.login')}
             </a>
-            <select className="headerBtn i18n" onChange={lang => i18n.changeLanguage(lang.target.value)}> 
+            <select className="headerBtn i18n" onChange={lang => i18n.changeLanguage(lang.target.value)}>
               <option value="tw">繁中</option>
               <option value="en">EN</option>
               <option value="cn">简中</option>

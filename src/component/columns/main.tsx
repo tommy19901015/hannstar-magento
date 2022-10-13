@@ -2,6 +2,7 @@ import React from "react";
 import "./css.scss";
 import { I_Col } from "./interface";
 import {
+  ColBGStyle,
   OneColFullStyle,
   TwoColFullStyle,
   OneColStyle,
@@ -12,6 +13,7 @@ import {
 
 const Main: React.FC<I_Col> = ({
   type,
+  bgColor,
   widthL,
   widthR,
   content,
@@ -28,14 +30,19 @@ const Main: React.FC<I_Col> = ({
       </TwoColFullStyle>)
   }
 
-  const OneCol = () => <OneColStyle>{content}</OneColStyle>;
+  const OneCol = () =>
+    <ColBGStyle bgColor={bgColor}>
+      <OneColStyle>{content}</OneColStyle>
+    </ColBGStyle>;
 
   const TwoCol = () => {
     return (
-      <TwoColStyle>
-        <LeftColStyle widthL={widthL}>{contentL}</LeftColStyle>
-        <RightColStyle widthR={widthR}>{contentR}</RightColStyle>
-      </TwoColStyle>
+      <ColBGStyle bgColor={bgColor}>
+        <TwoColStyle>
+          <LeftColStyle widthL={widthL}>{contentL}</LeftColStyle>
+          <RightColStyle widthR={widthR}>{contentR}</RightColStyle>
+        </TwoColStyle>
+      </ColBGStyle>
     );
   };
 

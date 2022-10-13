@@ -5,6 +5,9 @@ $componentName: 'GraphicsCard';
 .#{$componentName}Content {
     display: grid;
     grid-gap: 40px;
+    &.row2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
     &.row3 {
         grid-template-columns: repeat(3, 1fr);
     }
