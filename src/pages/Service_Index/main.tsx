@@ -9,8 +9,8 @@ import ArticleList from "../../component/articleList/main";
 import GraphicsCard from "../../component/graphicsCard/main";
 import "./css.scss";
 
-const E_Service: React.FC = () => {
-  const pageName = "e-service";
+const ServiceIndex: React.FC = () => {
+  const pageName = "ServiceIndex";
 
   const bannerData = [
     {
@@ -212,4 +212,4 @@ const E_Service: React.FC = () => {
   );
 };
 
-export default E_Service;
+export default ServiceIndex;

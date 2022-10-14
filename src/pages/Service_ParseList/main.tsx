@@ -7,9 +7,10 @@ import { ColType } from "../../component/columns/interface";
 import { ParseState, I_Table, I_tabStateInfo } from "./interface"
 import testTableData from "./testTableData.json";
 import "./css.scss";
+import { pageData } from "./pageData";
 
-const EServiceParseList: React.FC = () => {
-  const pageName = "EServiceParseList";
+const ServiceParseList: React.FC = () => {
+  const pageName = "ServiceParseList";
   const [parseListData, setParseListData] = useState<any>([]);
   const [parseListStateTab, setParseListStateTab] = useState<number>(0);
 
@@ -19,44 +20,26 @@ const EServiceParseList: React.FC = () => {
     setParseListData(fakeApiData);
   }, [fakeApiData]);
 
-  const breadcrumbsData = {
-    title: "",
-    breadcrumbsLink: [
-      {
-        text: "首頁",
-        href: "",
-      },
-      {
-        text: "客戶通",
-        href: "",
-      },
-      {
-        text: "解析列表",
-        href: "",
-      },
-    ],
-  };
-
   const FilterStateBlock = () => {
     const tabStateInfo: I_tabStateInfo = [
       {
-        text: "所有狀態",
+        text: pageData().filterState.all,
         state: ParseState.All,
       },
       {
-        text: "申請中",
+        text: pageData().filterState.applying,
         state: ParseState.Applying,
       },
       {
-        text: "寄送",
+        text: pageData().filterState.send,
         state: ParseState.Send,
       },
       {
-        text: "解析中",
+        text: pageData().filterState.parsing,
         state: ParseState.Parsing,
       },
       {
-        text: "結案",
+        text: pageData().filterState.closed,
         state: ParseState.Closed,
       },
     ];
@@ -92,7 +75,7 @@ const EServiceParseList: React.FC = () => {
 
     return (
       <div className="filterYearBlock">
-        <div className="title">年度</div>
+        <div className="title">{pageData().filterYearTitle}</div>
         <select onChange={handlerOnChange}>
           <option>2022</option>
           <option>2021</option>
@@ -105,22 +88,22 @@ const EServiceParseList: React.FC = () => {
   const StateNoteBlock = () => {
     return (
       <div className="stateNoteBlock">
-        <div className="title">解析進度說明:</div>
+        <div className="title">{pageData().filterStateTitle}</div>
         <div className="state">
           <div className="icon">1</div>
-          <div className="text">申請中</div>
+          <div className="text">{pageData().filterState.applying}</div>
         </div>
         <div className="state">
           <div className="icon">2</div>
-          <div className="text">寄送</div>
+          <div className="text">{pageData().filterState.send}</div>
         </div>
         <div className="state">
           <div className="icon">3</div>
-          <div className="text">解析中</div>
+          <div className="text">{pageData().filterState.parsing}</div>
         </div>
         <div className="state">
           <div className="icon">4</div>
-          <div className="text">結案</div>
+          <div className="text">{pageData().filterState.closed}</div>
         </div>
       </div>
     );
@@ -150,20 +133,20 @@ const EServiceParseList: React.FC = () => {
       <table className="parseListBlock">
         <thead>
           <tr>
-            <td>Action</td>
-            <td>申請單號</td>
-            <td>解析單號</td>
-            <td>機種料號</td>
-            <td>不良現象</td>
-            <td>不良率</td>
-            <td>申請進度</td>
-            <td>報告下載</td>
+            <td>{pageData().parseListThead.action}</td>
+            <td>{pageData().parseListThead.requisitionNo}</td>
+            <td>{pageData().parseListThead.paresNo}</td>
+            <td>{pageData().parseListThead.modelNo}</td>
+            <td>{pageData().parseListThead.badType}</td>
+            <td>{pageData().parseListThead.badRate}</td>
+            <td>{pageData().parseListThead.applicationProgress}</td>
+            <td>{pageData().parseListThead.reportDownload}</td>
           </tr>
         </thead>
         <tbody>
           {currentItems &&
-            currentItems.map((item, index: number) => (
-              <tr>
+            currentItems.map((item, index) => (
+              <tr key={index}>
                 <td></td>
                 <td>{item.requisitionNo}</td>
                 <td>{item.paresNo}</td>
@@ -191,7 +174,7 @@ const EServiceParseList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<div className={`${pageName}ContentBlock`}>
-          <h1 className="h1Title">解析列表</h1>
+          <h1 className="h1Title">{pageData().pageTitle}</h1>
           <div className={`${pageName}ToolBarBlack`}>
             <FilterYearBlock />
             <StateNoteBlock />
@@ -207,7 +190,7 @@ const EServiceParseList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<>
-          <Breadcrumbs {...breadcrumbsData} />
+          <Breadcrumbs {...pageData().breadcrumbs} />
           <ContentBlock />
         </>}
       />
@@ -215,4 +198,4 @@ const EServiceParseList: React.FC = () => {
   );
 };
 
-export default EServiceParseList;
+export default ServiceParseList;

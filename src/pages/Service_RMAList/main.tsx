@@ -7,9 +7,12 @@ import PaginatedBlock from "../../component/paginatedBlock/main";
 import testTableData from "./testTableData.json";
 import { RMAState, I_Table, I_tabStateInfo } from "./interface"
 import "./css.scss";
+import { useTranslation } from "react-i18next";
+import { pageData } from "./pageData";
 
-const EServiceRMAList: React.FC = () => {
-  const pageName = "EServiceRMAList";
+const ServiceRMAList: React.FC = () => {
+  const pageName = "ServiceRMAList";
+  const { t, i18n } = useTranslation();
   const [RMAListData, setRMAListData] = useState<any>([]);
   const [RMAListStateTab, setRMAListStateTab] = useState<number>(0);
 
@@ -19,56 +22,30 @@ const EServiceRMAList: React.FC = () => {
     setRMAListData(fakeApiData);
   }, [fakeApiData]);
 
-  const breadcrumbsData = {
-    title: "",
-    breadcrumbsLink: [
-      {
-        text: "首頁",
-        href: "",
-      },
-      {
-        text: "供應商協同合作",
-        href: "",
-      },
-      {
-        text: "協同製造夥伴",
-        href: "",
-      },
-      {
-        text: "製造夥伴資料",
-        href: "",
-      },
-      {
-        text: "方案產品清單",
-        href: "",
-      },
-    ],
-  };
-
   const FilterStateBlock = () => {
     const tabStateInfo: I_tabStateInfo = [
       {
-        text: "所有狀態",
+        text: pageData(t).filterState.all,
         state: RMAState.All,
       },
       {
-        text: "立案",
+        text: pageData().filterState.register,
         state: RMAState.Register,
       },
       {
-        text: "覆判審核",
+        text: pageData().filterState.overturnReview,
         state: RMAState.OverturnReview,
       },
       {
-        text: "覆判完成",
+        text: pageData().filterState.overturnFinish,
         state: RMAState.OverturnFinish,
       },
       {
-        text: "退補處理",
+        text: pageData().filterState.refundProcessing,
         state: RMAState.RefundProcessing,
       },
       {
-        text: "已退補/結案",
+        text: pageData().filterState.closed,
         state: RMAState.Closed,
       },
     ];
@@ -95,25 +72,6 @@ const EServiceRMAList: React.FC = () => {
     );
   };
 
-  interface I_Table {
-    requisitionNo: string;
-    RMANo: string;
-    agent: string;
-    modelNo: string;
-    requisitionCount: string;
-    overturn: string;
-    signOffResult: string;
-    applicationProgress: string;
-    shipDate: string;
-    shipDNNO: string;
-    returnNo: string;
-    sellOffNo: string;
-    caseResult: string;
-  }
-
-
-
-
   const FilterYearBlock = () => {
     const handlerOnChange = () => {
       console.log("handlerOnChange");
@@ -121,7 +79,7 @@ const EServiceRMAList: React.FC = () => {
 
     return (
       <div className="filterYearBlock">
-        <div className="title">年度</div>
+        <div className="title">{pageData().filterYearTitle}</div>
         <select onChange={handlerOnChange}>
           <option>2022</option>
           <option>2021</option>
@@ -134,26 +92,26 @@ const EServiceRMAList: React.FC = () => {
   const StateNoteBlock = () => {
     return (
       <div className="stateNoteBlock">
-        <div className="title">進度說明:</div>
+        <div className="title">{pageData().filterStateTitle}</div>
         <div className="state">
           <div className="icon">1</div>
-          <div className="text">立案</div>
+          <div className="text">{pageData().filterState.register}</div>
         </div>
         <div className="state">
           <div className="icon">2</div>
-          <div className="text">覆判審核</div>
+          <div className="text">{pageData().filterState.overturnReview}</div>
         </div>
         <div className="state">
           <div className="icon">3</div>
-          <div className="text">覆判完成</div>
+          <div className="text">{pageData().filterState.overturnFinish}</div>
         </div>
         <div className="state">
           <div className="icon">4</div>
-          <div className="text">退補處裡</div>
+          <div className="text">{pageData().filterState.refundProcessing}</div>
         </div>
         <div className="state">
           <div className="icon">5</div>
-          <div className="text">已退補/結案</div>
+          <div className="text">{pageData().filterState.closed}</div>
         </div>
       </div>
     );
@@ -183,20 +141,20 @@ const EServiceRMAList: React.FC = () => {
       <table className="RMAListBlock">
         <thead>
           <tr>
-            <td>Action</td>
-            <td>申請單號</td>
-            <td>RMA單號</td>
-            <td>代理商</td>
-            <td>機種料號</td>
-            <td>申請數量</td>
-            <td>快束覆判</td>
-            <td>簽核結果</td>
-            <td>申請進度</td>
-            <td>出貨日期</td>
-            <td>出貨DNNo</td>
-            <td>已還貨數量</td>
-            <td>銷退數量</td>
-            <td>結案方式</td>
+            <td>{pageData().RMAListThead.action}</td>
+            <td>{pageData().RMAListThead.requisitionNo}</td>
+            <td>{pageData().RMAListThead.RMANo}</td>
+            <td>{pageData().RMAListThead.agent}</td>
+            <td>{pageData().RMAListThead.modelNo}</td>
+            <td>{pageData().RMAListThead.requisitionCount}</td>
+            <td>{pageData().RMAListThead.overturn}</td>
+            <td>{pageData().RMAListThead.signOffResult}</td>
+            <td>{pageData().RMAListThead.applicationProgress}</td>
+            <td>{pageData().RMAListThead.shipDate}</td>
+            <td>{pageData().RMAListThead.shipDNNO}</td>
+            <td>{pageData().RMAListThead.returnNo}</td>
+            <td>{pageData().RMAListThead.sellOffNo}</td>
+            <td>{pageData().RMAListThead.caseResult}</td>
           </tr>
         </thead>
         <tbody>
@@ -236,7 +194,7 @@ const EServiceRMAList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<div className={`${pageName}ContentBlock`}>
-          <h1 className="h1Title">RMA列表</h1>
+          <h1 className="h1Title">{pageData().pageTitle}</h1>
           <div className={`${pageName}ToolBarBlack`}>
             <FilterYearBlock />
             <StateNoteBlock />
@@ -252,7 +210,7 @@ const EServiceRMAList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<>
-          <Breadcrumbs {...breadcrumbsData} />
+          <Breadcrumbs {...pageData().breadcrumbs} />
           <ContentBlock />
         </>}
       />
@@ -260,4 +218,4 @@ const EServiceRMAList: React.FC = () => {
   );
 };
 
-export default EServiceRMAList;
+export default ServiceRMAList;

@@ -28,12 +28,19 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
     const IntputBlock = () => {
       const { register } = useFormContext();
       return (
-        <input
-          type="text"
-          placeholder={data.placeholder}
-          disabled={data.disabled}
-          {...register(data.columnKey, { required: data.required })}
-        />
+        <>
+          <input
+            type="text"
+            placeholder={data.placeholder}
+            disabled={data.disabled}
+            {...register(data.columnKey, {
+              required: {
+                value: true,
+                message: "You must specify your first name before moving forward"
+              }
+            })}
+          />
+        </>
       );
     };
 
