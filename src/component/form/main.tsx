@@ -8,7 +8,22 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
 
   useEffect(() => {
     data.formMethods.current = methods;
+    data.formMethods.current.getErrorsData = getErrorsData
   }, [data.formMethods, methods]);
+
+
+  const getErrorsData = (sourceData: any, formValuesObj: any) => {
+    const errorArr: I_FormData[] = []
+    Object.keys(formValuesObj).forEach(formkey => {
+      const error = sourceData.filter((data: any) => {
+        return data.columnKey === formkey
+          && data.required
+          && formValuesObj[formkey] === ""
+      })[0]
+      if (error) errorArr.push(error)
+    })
+    return errorArr
+  }
 
   const QuestionComponent: React.FC<I_FormData> = (data, ChildComponent) => {
     return (
