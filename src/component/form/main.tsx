@@ -26,20 +26,16 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
   const InputComponent: React.FC<I_FormData> = (data) => {
     methods.setValue(data.columnKey, data.value);
     const IntputBlock = () => {
-      const { register } = useFormContext();
+      const { register, getFieldState } = useFormContext();
       return (
         <>
           <input
             type="text"
             placeholder={data.placeholder}
             disabled={data.disabled}
-            {...register(data.columnKey, {
-              required: {
-                value: true,
-                message: "You must specify your first name before moving forward"
-              }
-            })}
+            {...register(data.columnKey, { required: data.required })}
           />
+          <p>{getFieldState("fff").isDirty && "dirty"}</p>
         </>
       );
     };

@@ -34,9 +34,10 @@ export const pageData = (): I_PageData => {
             {
                 title: "代理商",
                 value: "",
-                columnKey: "2",
+                columnKey: "fff",
                 type: FormType.Intput,
                 placeholder: "",
+                required: true,
             },
             {
                 title: "單號",

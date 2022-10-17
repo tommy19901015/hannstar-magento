@@ -13,9 +13,11 @@ const ServiceParseApply: React.FC = () => {
 
   const handlerSave = () => {
     // const test = formMethods.current.getValues();
-    const test = formMethods.current.formState
 
-    console.log('test', test);
+    console.log(formMethods.current.getFieldState('fff'));
+    // const test = formMethods.current
+
+    // console.log('test', test);
   };
   const handlerReset = () => { };
   const handlerSubmit = () => {
