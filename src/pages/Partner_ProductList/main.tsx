@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import PaginatedBlock from "../../component/paginatedBlock/main";
+import Columns from "../../component/columns/main"
+import { ColType } from "../../component/columns/interface"
 import testTableData from "./testTableData.json";
 import { SearchIcon } from "./icon/searchIcon";
 import PartnerFcpTemplate from "../../templates/partner_product/main";
@@ -265,7 +267,10 @@ const PartnerProductList: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs {...breadcrumbsData} />
+      <Columns
+        type={ColType.OneCol}
+        content={<Breadcrumbs {...breadcrumbsData} />}
+      />
       <PartnerFcpTemplate data={partnerFcpTemplateProp} />
     </Layout>
   );

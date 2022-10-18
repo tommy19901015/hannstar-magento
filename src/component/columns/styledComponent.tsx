@@ -46,7 +46,9 @@ export const TwoColStyle: React.FC<I_Style> = styled.div`
 `;
 
 export const LeftColStyle: React.FC<I_Style> = styled.div`
-  width: ${(props: { widthL: number }) => props.widthL}%;
+  width: ${(props: { widthL: number, minWidthL: string }) => props.widthL}%;
+  min-width: ${(props: { widthL: number, minWidthL: string }) =>
+    props.minWidthL ? props.minWidthL + "px" : "initial"};
   @media (max-width: 980px) {
     width: 100%;
   }
