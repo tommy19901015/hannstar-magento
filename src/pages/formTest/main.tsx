@@ -3,7 +3,7 @@ import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import Form from "../../component/form/main";
-import { I_Props, FormType } from "../../component/form/interface";
+import { I_FormProps, FormType } from "../../component/form/interface";
 
 import "./css.scss";
 
@@ -89,7 +89,7 @@ const formData: any = [
 
 const FormTest: React.FC = () => {
   return <Layout>
-    <Form data={formData} />
+    <Form {...formData} />
   </Layout>;
 };
 

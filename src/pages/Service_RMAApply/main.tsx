@@ -131,7 +131,7 @@ const ServiceRMAApply: React.FC = () => {
         <div className={`${pageName}FormBlock`}>
           <div className={`${pageName}Title`}>{pageData().formTitle}</div>
           <div className={`${pageName}ContentBlock`}>
-            <FormComponent data={formData} />
+            <FormComponent {...formData} />
             <div className="badDetailsTitle">{pageData().badDetailsTitle}</div>
             <BadDetailsTabBlock />
             {handleTabContentObj[tab]}

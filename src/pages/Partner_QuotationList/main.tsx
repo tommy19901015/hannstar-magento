@@ -70,7 +70,7 @@ const PartnerQuotationList: React.FC = () => {
       <div className={`${pageName}FormBlock`}>
         <div className={`${pageName}Title`}>報價清單</div>
         <div className={`${pageName}ContentBlock`}>
-          <FormComponent data={formData} />
+          <FormComponent {...formData} />
         </div>
         <div className={`${pageName}btnBlock`}>
           <div className="btn" onClick={handlerBtnClick}>

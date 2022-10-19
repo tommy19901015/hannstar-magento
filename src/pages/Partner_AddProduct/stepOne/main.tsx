@@ -318,13 +318,13 @@ const StepOne: React.FC<any> = forwardRef((props, ref) => {
     <div className={`${pageName}ContentBlock`}>
       <div className={`${pageName}Title`}>產品資訊</div>
       <div className="formBlock">
-        <FormComponent data={formProp1} />
-        <FormComponent data={formProp2} />
+        <FormComponent {...formProp1} />
+        <FormComponent {...formProp2} />
         <div className="productNameBlock">
-          <FormComponent data={formProp3} />
+          <FormComponent {...formProp3} />
           <div className="getNameBtn">取得基板資訊</div>
         </div>
-        <FormComponent data={formProp4} />
+        <FormComponent {...formProp4} />
         <div className="textBlock">
           <div className="text">※請確認上列規格是否為正確基板型名模式。</div>
           <div className="hannstarCheckBox">
@@ -337,9 +337,9 @@ const StepOne: React.FC<any> = forwardRef((props, ref) => {
             <label htmlFor="checkProduct">確認無誤</label>
           </div>
         </div>
-        <FormComponent data={formProp5} />
-        <FormComponent data={formProp6} />
-        <FormComponent data={formProp7} />
+        <FormComponent {...formProp5} />
+        <FormComponent {...formProp6} />
+        <FormComponent {...formProp7} />
       </div>
     </div>
   );

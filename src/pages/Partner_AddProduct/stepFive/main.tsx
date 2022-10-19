@@ -85,8 +85,8 @@ const StepFive: React.FC<any> = forwardRef((props, ref) => {
     <div className={`${pageName}ContentBlock`}>
       <div className={`${pageName}Title`}>{`價格&庫存管理`}</div>
       <div className="formBlock">
-        <FormComponent data={formProp1} />
-        <FormComponent data={formProp2} />
+        <FormComponent {...formProp1} />
+        <FormComponent {...formProp2} />
       </div>
     </div>
   );

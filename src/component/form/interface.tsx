@@ -6,12 +6,10 @@ export enum FormType {
   Textarea = "textarea",
 }
 
-export interface I_Props {
-  data: {
-    isOneRow?: boolean;
-    formMethods?: any;
-    formData: I_FormData[];
-  };
+export interface I_FormProps {
+  isOneRow?: boolean;
+  formMethods?: any;
+  formData: I_FormData[];
 }
 
 export interface I_FormData {

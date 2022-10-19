@@ -21,25 +21,23 @@ $componentName: 'Popup';
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #fff;
-        min-width: 600px;
-        min-height: 300px;
+        min-width: 200px;
         .#{$componentName}Header {
             display: flex;
             background-color: $hannstar-blue2;
-            padding: 10px 15px;
+            padding: 10px;
             justify-content: end;
             .#{$componentName}CloseBtn {
                 position: relative;
-                width: 32px;
-                height: 32px;
+                width: 16px;
+                height: 16px;
                 cursor: pointer;
                 &::after,
                 &::before {
                     content: '';
                     position: absolute;
-                    left: 15px;
-                    height: 33px;
-                    width: 4px;
+                    height: 20px;
+                    width: 2px;
                     background-color: #fff;
                     transform: rotate(45deg);
                 }
@@ -49,7 +47,8 @@ $componentName: 'Popup';
             }
         }
         .#{$componentName}Content {
-            padding: 10px 15px;
+            @include hannstarContentText;
+            @include hannstarBlockPadding;
         }
     }
     @media screen and (max-width: $breakpoint) {

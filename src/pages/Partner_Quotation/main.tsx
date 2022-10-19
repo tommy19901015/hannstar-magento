@@ -4,7 +4,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-import { I_Props, FormType } from "../../component/form/interface";
+import { I_FormProps, FormType } from "../../component/form/interface";
 import "./css.scss";
 
 const PartnerQuotation: React.FC = () => {
@@ -112,7 +112,7 @@ const PartnerQuotation: React.FC = () => {
       <div className={`${pageName}FormBlock`}>
         <div className={`${pageName}Title`}>線上報價</div>
         <div className={`${pageName}ContentBlock`}>
-          <FormComponent data={formData} />
+          <FormComponent {...formData} />
         </div>
         <div className={`${pageName}btnBlock`}>
           <div className="btn" onClick={handlerBtnClick}>

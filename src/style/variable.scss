@@ -20,19 +20,6 @@ $hannstar-bg-color: #f6f6f6;
 $font-weighr-normal: 400; //regular
 $font-weighr-medium: 500;
 $font-weighr-bold: 700;
-//-----------------------------------------------------------
-// $hannstar-blue0: #a0ddff;
-// $hannstar-blue1: #039be5;
-// $hannstar-blue2: #0959a2;
-// $hannstar-blue3: #082e74;
-// $hannstar-orange: #ffa000;
-// $hannstar-bg-color: #efefef;
-// $hannstar-default-text-color: #363636;
-// $hannstar-other-text-color: #929292;
-// $hannstar-border-color: #b9b9b9;
-// $hannstar-border-color1: #e9e9e9;
-// $hannstar-red: #ff6b00;
-// $hannstar-green: #28a745;
 
 @mixin hannstarH1Title {
     color: $hannstar-default-text-color;
@@ -147,7 +134,7 @@ $font-weighr-bold: 700;
     border-radius: 3px;
     border: solid 1px $hannstar-border-color;
     background-color: #fff;
-    color: $hannstar-default-text-color;
+    @include hannstarContentText;
     &::placeholder {
         color: $hannstar-border-color;
     }
@@ -362,4 +349,24 @@ $font-weighr-bold: 700;
             }
         }
     }
+}
+
+@mixin hannstarBlockPadding {
+    padding: 40px;
+}
+
+@mixin hannstarTextPadding1 {
+    padding-bottom: 24px;
+}
+
+@mixin hannstarTextPadding2 {
+    padding-bottom: 32px;
+}
+
+@mixin hannstarModulePadding1 {
+    padding-bottom: 60px;
+}
+
+@mixin hannstarModulePadding2 {
+    padding-bottom: 120px;
 }

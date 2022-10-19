@@ -177,8 +177,8 @@ const PartnerTechnical: React.FC = () => {
           </div>
         </div>
         <div className={`${pageName}FormBlock`}>
-          <FormComponent data={formProp1} />
-          <FormComponent data={formProp2} />
+          <FormComponent {...formProp1} />
+          <FormComponent {...formProp2} />
         </div>
         <div className={`${pageName}UploadBlock`}>
           <input

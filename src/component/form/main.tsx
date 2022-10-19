@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { I_Props, FormType, I_FormData, I_MappingForm } from "./interface";
+import { I_FormProps, FormType, I_FormData, I_MappingForm } from "./interface";
 import { useForm, FormProvider, useFormContext } from "react-hook-form";
 import "./css.scss";
 
-const FormComponent: React.FC<I_Props> = ({ data }) => {
+const FormComponent: React.FC<I_FormProps> = ({ isOneRow, formMethods, formData }) => {
   const methods = useForm({ shouldFocusError: false });
 
   useEffect(() => {
-    data.formMethods.current = methods;
-    data.formMethods.current.getErrorsData = getErrorsData
-  }, [data.formMethods, methods]);
+    formMethods.current = methods;
+    formMethods.current.getFormErrorInfo = getFormErrorInfo
+  }, [formMethods, methods]);
 
+  interface I_FormErrorInfo {
+    isError: boolean
+    errorFilds: I_FormData[]
+  }
 
-  const getErrorsData = (sourceData: any, formValuesObj: any) => {
+  const getFormErrorInfo = (initData: I_FormData[], formData: { [key: string]: string }): I_FormErrorInfo => {
     const errorArr: I_FormData[] = []
-    Object.keys(formValuesObj).forEach(formkey => {
-      const error = sourceData.filter((data: any) => {
+    Object.keys(formData).forEach(formkey => {
+      const error = initData.filter((data) => {
         return data.columnKey === formkey
           && data.required
-          && formValuesObj[formkey] === ""
+          && formData[formkey] === ""
       })[0]
       if (error) errorArr.push(error)
     })
-    return errorArr
+    return {
+      isError: errorArr.length !== 0,
+      errorFilds: errorArr
+    }
   }
 
   const QuestionComponent: React.FC<I_FormData> = (data, ChildComponent) => {
@@ -159,8 +166,8 @@ const FormComponent: React.FC<I_Props> = ({ data }) => {
 
   return (
     <FormProvider {...methods}>
-      <form className={`formComponent ${data.isOneRow ? "oneRow" : ""}`}>
-        {data.formData.map((item, index) => {
+      <form className={`formComponent ${isOneRow ? "oneRow" : ""}`}>
+        {formData.map((item, index) => {
           return mappingType(item, index)[item.type];
         })}
       </form>

@@ -325,14 +325,14 @@ const PartnerApplication: React.FC = () => {
       <div className={`${pageName}FormBlock`}>
         <div className={`${pageName}ContentBlock`}>
           <div className={`${pageName}Title`}>需求申請</div>
-          <FormComponent data={formProp1} />
-          <FormComponent data={formProp2} />
-          <FormComponent data={formProp3} />
+          <FormComponent {...formProp1} />
+          <FormComponent {...formProp2} />
+          <FormComponent {...formProp3} />
         </div>
         <div className={`${pageName}ContentBlock`}>
           <div className={`${pageName}Title`}>需求項目規格</div>
-          <FormComponent data={formProp4} />
-          <FormComponent data={formProp5} />
+          <FormComponent {...formProp4} />
+          <FormComponent {...formProp5} />
         </div>
         <div className={`${pageName}ContentBlock`}>
           <div className={`${pageName}Title`}>附件</div>

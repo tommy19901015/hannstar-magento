@@ -173,7 +173,7 @@ const PartnerProductTemplate: React.FC<I_PartnerProductTemplate> = ({
       type={ColType.TwoColFullPage}
       widthL={15}
       widthR={85}
-      minWidthL={"250"}
+      minWidthL={"250px"}
       contentL={<ProductToolBar />}
       contentR={<ContentBlock />}
     />

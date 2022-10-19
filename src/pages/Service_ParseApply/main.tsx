@@ -7,60 +7,117 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { pageData } from "./pageData";
 import "./css.scss";
 import Popup from "../../component/popup/main";
+import { I_FormData, I_FormProps } from "@component/form/interface";
 
 const ServiceParseApply: React.FC = () => {
   const pageName = "ServiceParseApply";
-  const [formErrorObj, setFormErrorObj] = useState([])
   const formMethods: any = React.useRef(null);
-  const popUpRef: any = useRef();
+  const savePopUpRef: any = useRef();
+  const submitPopUpRef: any = useRef();
+  const resetPopUpRef: any = useRef();
 
-
-  const handlerSave = () => {
-    handlerFormError()
-  };
-
-  const handlerFormError = () => {
-    const formValuesObj = formMethods.current.getValues();
-    const errorObj = formMethods.current.getErrorsData(pageData().formData, formValuesObj);
-    console.log('errorObj', errorObj);
-    if (errorObj.length === 0) {
-      return <></>
-    } else {
-      setFormErrorObj(errorObj)
-      // formErrorMessage(errorObj)
-      popUpRef.current.classList.add("show");
-    }
-  }
-
-
-  const formErrorMessage = (errorObj: any) => {
-    return (<div>
-      {errorObj.map((item: any, index: number) => <div>{item.title}為必填</div>)}
+  const FormErrorMessage = ({ errorMessage }: { errorMessage: I_FormData[] }) => {
+    return (<div className={`${pageName}FormErrorMessageBlock`}>
+      {errorMessage.map((item, index) =>
+        <div className={`${pageName}ErrorList`} key={index}>{item.title}為必填</div>)}
     </div>)
   }
 
+  const SubmitBtn = () => {
+    const [errorMessage, setErrorMessage] = useState([])
 
+    const popupProps = {
+      content: <FormErrorMessage errorMessage={errorMessage} />,
+      openFc: submitPopUpRef,
+    }
 
-  const popupProps = {
-    content: formErrorMessage(formErrorObj),
-    openFc: popUpRef,
+    const handlerSubmit = () => {
+      const formErrorInfo = formMethods.current
+        .getFormErrorInfo(pageData().formData,
+          formMethods.current.getValues());
+
+      if (formErrorInfo.isError) {
+        setErrorMessage(formErrorInfo.errorFilds)
+        submitPopUpRef.current.classList.add("show");
+      }
+    };
+
+    return (<>
+      <div className="btn" onClick={handlerSubmit}>
+        {pageData().sendBtn}
+      </div>
+      <Popup {...popupProps} />
+    </>)
   }
 
-  const handlerReset = () => { };
-  const handlerSubmit = () => {
-    // const test = formMethods.current.getValues();
-    // console.log('test', test);
-    // console.log('errors', errors);
-  };
+  const SaveBtn = () => {
+    const popupProps = {
+      content: <div className={`${pageName}SavePop`}>儲存成功</div>,
+      openFc: savePopUpRef,
+    }
+
+    const handlerSave = () => {
+      savePopUpRef.current.classList.add("show");
+    };
+
+    return (<>
+      <div className="btn" onClick={handlerSave}>
+        {pageData().saveBtn}
+      </div>
+      <Popup {...popupProps} />
+    </>)
+  }
+
 
   const FormBlock = () => {
+    const formData = {
+      formMethods,
+      formData: pageData().formData,
+    };
+
+    const [formProps, setFormProps] = useState<I_FormProps>(formData)
+
+    const handlerPopConfirm = () => {
+      setFormProps({
+        formMethods,
+        formData: pageData().formData,
+      })
+      resetPopUpRef.current.classList.remove("show");
+    }
+
+    const handlerPopCancel = () => {
+      resetPopUpRef.current.classList.remove("show");
+    }
+
+    const ResetBtn = () => {
+      const popupProps = {
+        content: <div className={`${pageName}SavePop`}>
+          <div>是否確定?</div>
+          <div onClick={handlerPopConfirm}>確定</div>
+          <div onClick={handlerPopCancel}>取消</div>
+        </div>,
+        openFc: resetPopUpRef,
+      }
+
+      const handlerReset = () => {
+        resetPopUpRef.current.classList.add("show");
+      };
+
+      return (<>
+        <div className="btn" onClick={handlerReset}>
+          {pageData().resetBtn}
+        </div>
+        <Popup {...popupProps} />
+      </>)
+    }
+
     return (
       <>
         <h1 className={`${pageName}H1Title`}>{pageData().pageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
           <div className={`${pageName}Title`}>{pageData().formTitle}</div>
           <div className={`${pageName}ContentBlock`}>
-            <FormComponent data={formData} />
+            <FormComponent {...formProps} />
             <div className="fileBlock">
               <div className="title">{pageData().uploadTitle}</div>
               <input type="file" />
@@ -68,24 +125,13 @@ const ServiceParseApply: React.FC = () => {
           </div>
           <div className={`${pageName}UploadBlock`}></div>
           <div className={`${pageName}BtnBlock`}>
-            <div className="btn" onClick={handlerSave}>
-              {pageData().saveBtn}
-            </div>
-            <div className="btn" onClick={handlerReset}>
-              {pageData().resetBtn}
-            </div>
-            <div className="btn" onClick={handlerSubmit}>
-              {pageData().sendBtn}
-            </div>
+            <SaveBtn />
+            <ResetBtn />
+            <SubmitBtn />
           </div>
         </div>
       </>
     );
-  };
-
-  const formData = {
-    formMethods,
-    formData: pageData().formData,
   };
 
   return (
@@ -96,7 +142,6 @@ const ServiceParseApply: React.FC = () => {
           <FormBlock />
         </>
       } />
-      <Popup {...popupProps} />
     </Layout>
   );
 };

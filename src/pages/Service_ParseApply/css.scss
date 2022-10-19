@@ -40,5 +40,8 @@ $pageName: 'ServiceParseApply';
             font-size: 16px;
             margin-right: 40px;
         }
+        .#{$pageName}SavePop {
+            text-align: center;
+        }
     }
 }

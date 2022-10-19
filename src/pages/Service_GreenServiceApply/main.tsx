@@ -4,7 +4,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-import { I_Props, FormType } from "../../component/form/interface";
+import { I_FormProps, FormType } from "../../component/form/interface";
 import "./css.scss";
 
 const ServiceGreenServiceApply: React.FC = () => {
@@ -135,9 +135,9 @@ const ServiceGreenServiceApply: React.FC = () => {
         <div className={`${pageName}FormBlock`}>
           <div className={`${pageName}Title`}>基本資料</div>
           <div className={`${pageName}ContentBlock`}>
-            <FormComponent data={formProp1} />
-            <FormComponent data={formProp2} />
-            <FormComponent data={formProp3} />
+            <FormComponent {...formProp1} />
+            <FormComponent {...formProp2} />
+            <FormComponent {...formProp3} />
             <div className="fileBlock">
               <div className="title">檔案附件</div>
               <input type="file" />

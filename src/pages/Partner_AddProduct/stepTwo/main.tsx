@@ -152,7 +152,7 @@ const StepTwo: React.FC<any> = forwardRef((props, ref) => {
     <div className={`${pageName}ContentBlock`}>
       <div className={`${pageName}Title`}>產品資訊</div>
       <div className="formBlock">
-        <FormComponent data={formProp} />
+        <FormComponent {...formProp} />
       </div>
     </div>
   );
