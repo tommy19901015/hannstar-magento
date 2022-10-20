@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../style/reset.css";
 import "../style/common.scss";
+import Login from "pages/Login/main";
 import Index from "../pages/index/main";
 import About from "../pages/about/main";
 import EBiz from "../pages/e-biz/main";
@@ -33,6 +34,7 @@ import ServiceParseApply from "../pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
 
 const pageMappingObj = {
+    root_Login:<Login/>,
     root_Index : <Index />,
     root_About : <About />,
     root_EBiz : <EBiz />,

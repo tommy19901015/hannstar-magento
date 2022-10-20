@@ -8,6 +8,7 @@ import Solution from "./pages/solution/main";
 import Stronghold from "./pages/stronghold/main";
 import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
+import Login from "pages/Login/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -42,6 +43,7 @@ const { hannstar, partner, service } = urlConfig;
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
+      <Route path={"/login"} element={<Login />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

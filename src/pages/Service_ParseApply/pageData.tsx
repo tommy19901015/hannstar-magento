@@ -146,7 +146,7 @@ export const pageData = (): I_PageData => {
         ],
         uploadTitle: "檔案附件",
         saveBtn: "儲存",
-        resetBtn: "重製",
+        resetBtn: "重置",
         sendBtn: "送件"
     }
 }

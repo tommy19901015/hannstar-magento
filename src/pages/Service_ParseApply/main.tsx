@@ -7,11 +7,11 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { pageData } from "./pageData";
 import "./css.scss";
 import Popup from "../../component/popup/main";
-import { I_FormData, I_FormProps } from "@component/form/interface";
+import { I_FormData, I_FormProps } from "../../component/form/interface";
 
 const ServiceParseApply: React.FC = () => {
   const pageName = "ServiceParseApply";
-  const formMethods: any = React.useRef(null);
+  const formMethods: any = useRef(null);
   const savePopUpRef: any = useRef();
   const submitPopUpRef: any = useRef();
   const resetPopUpRef: any = useRef();
@@ -91,10 +91,12 @@ const ServiceParseApply: React.FC = () => {
 
     const ResetBtn = () => {
       const popupProps = {
-        content: <div className={`${pageName}SavePop`}>
-          <div>是否確定?</div>
-          <div onClick={handlerPopConfirm}>確定</div>
-          <div onClick={handlerPopCancel}>取消</div>
+        content: <div className={`${pageName}ResetPop`}>
+          <div className="text">確定重置?</div>
+          <div className="btnBlock">
+            <div className="btn" onClick={handlerPopCancel}>取消</div>
+            <div className="btn" onClick={handlerPopConfirm}>確定</div>
+          </div>
         </div>,
         openFc: resetPopUpRef,
       }

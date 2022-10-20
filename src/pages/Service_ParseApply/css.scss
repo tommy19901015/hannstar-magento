@@ -43,5 +43,20 @@ $pageName: 'ServiceParseApply';
         .#{$pageName}SavePop {
             text-align: center;
         }
+        .#{$pageName}ResetPop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .btnBlock {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+                margin-top: 20px;
+                .btn {
+                    margin-right: 0;
+                }
+            }
+        }
     }
 }
