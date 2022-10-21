@@ -1,3 +1,9 @@
 @import '../../style/variable.scss';
 
-$pageName: 'Login';
+$pageName: 'HannstarLogin';
+
+.#{$pageName} {
+    .magentoLoginBlock {
+        display: none;
+    }
+}

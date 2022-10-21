@@ -8,32 +8,48 @@ import { I_TabContentObj } from "./interface"
 import "./css.scss";
 import { pageData } from "./pageData";
 
-const Login: React.FC = () => {
-  const pageName = "Login";
+const HannstarLogin: React.FC = () => {
+  const pageName = "HannstarLogin";
   const [account, setAccount] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<any>("");
   const loginBlock: any = useRef()
-
+  const errorMessageBlock: any = useRef()
 
   useEffect(() => {
-    const magentoDom: any = document.getElementById("magentoBlock")
-    loginBlock.current.appendChild(magentoDom);
+    const magentoDom: any = document.getElementById("hannstar-magento-login")
+    if (magentoDom) loginBlock.current.appendChild(magentoDom);
+
+    const magentoErrorMessageDom: any = document.getElementsByClassName("page messages")[0]
+    if (magentoErrorMessageDom) errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+
+    setAccount(getMagentoAccount().value)
+    setPassword(getMagentoPassword().value)
   }, [])
 
-  const handleAccout = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const getMagentoAccount = () => {
     const emailDom: any = document.getElementById("email")
-    if (emailDom) {
-      emailDom.value = e.target.value
+    return emailDom ? emailDom : ""
+  }
+
+  const getMagentoPassword = () => {
+    const passwordDom: any = document.getElementById("pass")
+    return passwordDom ? passwordDom : ""
+  }
+
+  const handleAccout = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (getMagentoAccount()) {
+      getMagentoAccount().value = e.target.value
     }
 
     setAccount(e.target.value);
   }
 
   const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const passwordDom: any = document.getElementById("pass")
-    if (passwordDom) {
-      passwordDom.value = e.target.value
+    if (getMagentoPassword()) {
+      getMagentoPassword().value = e.target.value
     }
+
     setPassword(e.target.value);
   }
 
@@ -41,19 +57,22 @@ const Login: React.FC = () => {
     console.log({ account, password });
     const send2: any = document.getElementById("send2")
     if (send2) {
-      send2.onclick()
+      send2.click()
     }
   }
 
   return (
     <Layout>
-      <div ref={loginBlock} className="login">
+      <div className={`${pageName}`}>
+        <div ref={errorMessageBlock}></div>
+        <div>登入</div>
         <input onChange={handleAccout} type="text" value={account} />
         <input onChange={handlePassword} type="text" value={password} />
         <div onClick={handleLogin}>送出</div>
+        <div ref={loginBlock} className="magentoLoginBlock"></div>
       </div>
     </Layout>
   );
 };
 
-export default Login;
+export default HannstarLogin;

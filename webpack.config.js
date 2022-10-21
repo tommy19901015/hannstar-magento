@@ -10,11 +10,8 @@ module.exports = {
   //   const entry = page.split("/")[3];
   //   config[entry] = page;
   //   return config;
-  // }, {}),
+  // }, {}), 
   entry: "./src/entry/index.js",
-  path:{
-    "@/*":["./src/*"]
-  },
   output: {
     path: path.join(__dirname, "dist/"),
     filename: "js/[name]/main.js",
