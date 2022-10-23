@@ -72,24 +72,30 @@ const HannstarLogin: React.FC = () => {
           <div ref={errorMessageBlock}></div>
           <h2>登入</h2>
 
-            <label>
-              <span>帳號</span>
-              <input onChange={handleAccout} type="text" value={account} placeholder="請填入您的Email"/>
-            </label>
-            <label>
-              <span>密碼</span>
+          <div className="columnBlock">
+            <div className="title required">帳號</div>
+            <div className="bodyBlock input">
+              <input type="text" onChange={handleAccout} value={account} placeholder="請填入您的Email" />
+            </div>
+          </div>
+
+          <div className="columnBlock">
+            <div className="title required">密碼</div>
+            <div className="bodyBlock input">
               <input onChange={handlePassword} type="text" value={password} />
-            </label>
-            <div className="password">
+            </div>
+          </div>
+
+           
+          <div className="password">
             <label>
               <input onChange={handlePassword} type="checkbox" />記住帳號
             </label>
             <a href="">忘記密碼</a>
-            </div>
+          </div>
           
-            <div className="loginBtn" onClick={handleLogin}>登入</div>
-            <p className="create">還沒有HannStar帳號? <a href="">建立帳號</a>
-            </p>
+          <div className="loginBtn" onClick={handleLogin}>登入</div>
+          <p className="create">還沒有HannStar帳號? <a href="">建立帳號</a></p>
 
          
           <div ref={loginBlock} className="magentoLoginBlock"></div>
