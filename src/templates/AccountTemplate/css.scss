@@ -3,4 +3,61 @@
 $pageName: "AccountTemplate";
 
 .#{$pageName}ContentBlock {
+    
+    .serviceBlock{
+        width: 50%;
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
+        h3{
+            @include hannstarH3Title;
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 4px 0;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            @include hannstarTextPadding2;
+            h4{
+                background-color: $hannstar-bg-color;
+                border-radius: 20px;
+                @include hannstarH4Title;
+                color: $hannstar-blue2;
+                text-align: center;
+                margin-bottom: 25px;
+                padding: 4px 0;
+            }
+            .items{
+                display: flex;
+                align-content: flex-start;
+                text-align: center;
+                justify-content: space-between;
+            }
+            .item{
+                display: inline-flex;
+                width: 30%;
+                flex-direction: column;
+                text-align: center;
+                justify-content: flex-start;
+                margin: 0 auto;
+
+                img{
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                }
+                span{
+                    @include hannstarContent2;
+                    color: $hannstar-blue3;
+                    margin-bottom: ㄓpx;
+                }
+                p{
+                    @include hannstarContent3;
+                }
+            }
+        }
+    }
 }

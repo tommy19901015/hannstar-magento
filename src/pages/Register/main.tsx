@@ -7,6 +7,7 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { I_TabContentObj } from "./interface";
 import "./css.scss";
 import { pageData } from "./pageData";
+import AccountTemplate from "../../templates/AccountTemplate/main"
 
 const HannstarRegister: React.FC = () => {
   const pageName = "HannstarRegister";
@@ -105,8 +106,9 @@ const HannstarRegister: React.FC = () => {
     if (registerBtn) registerBtn.click();
   };
 
-  return (
-    <Layout>
+  const LayoutContent = () => {
+    return(
+      <>
       <div className={`${pageName}`}>
         <div ref={registerBlock}></div>
         <div>註冊</div>
@@ -208,7 +210,14 @@ const HannstarRegister: React.FC = () => {
         <div onClick={handleRegister}>申請註冊</div>
         <div ref={registerBlock} className="magentoRegisteBlock"></div>
       </div>
-    </Layout>
+    </>
+    )
+  }
+  const partnerFcpTemplateProp = {
+    content: <LayoutContent />,
+  };
+  return (
+    <AccountTemplate {...partnerFcpTemplateProp}/>
   );
 };
 

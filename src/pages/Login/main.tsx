@@ -1,20 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import Layout from "../../component/layout/main";
-import Columns from "../../component/columns/main";
-import { ColType } from "../../component/columns/interface";
-import FormComponent from "../../component/form/main";
-import Breadcrumbs from "../../component/breadcrumbs/main";
-import { serviceType } from "./interface";
+import AccountTemplate from "../../templates/AccountTemplate/main"
 import "./css.scss";
-import { initialServiceData } from "./pageData";
 
 const HannstarLogin: React.FC = () => {
   const pageName = "HannstarLogin";
   const [account, setAccount] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<any>("");
-  const [serviceData, setServiceData] =
-    useState<serviceType[]>(initialServiceData);
 
   const loginBlock: any = useRef();
   const errorMessageBlock: any = useRef();
@@ -66,8 +58,9 @@ const HannstarLogin: React.FC = () => {
     }
   };
 
-  return (
-    <Layout>
+  const LayoutContent = () => {
+    return(
+      <>
       <div className={`${pageName}`}>
         <div className="loginBlock">
           <div ref={errorMessageBlock}></div>
@@ -92,17 +85,21 @@ const HannstarLogin: React.FC = () => {
             </div>
           </div>
 
-          <div className="columnBlock spaceBetween">
-            <div className="input alignCenter">
-              <input
-                onChange={handlePassword}
-                className="hannstarCheckBox"
-                type="checkbox"
-              />
-              記住帳號
+          <div className="columnBlock">
+              <div className="bodyBlock select">
+                <div className="hannstarCheckBox spaceBetween alignCenter">
+                  <input
+                    id="checkBox1"
+                    type="checkBox"
+                    value="yes"
+                    name="yes"
+                  />
+                  <label htmlFor="checkBox1">
+                  記住帳號<a href="/">忘記密碼</a>
+                  </label>
+                </div>
+              </div>
             </div>
-            <a href="">忘記密碼</a>
-          </div>
 
           <div className="loginBtn" onClick={handleLogin}>
             登入
@@ -113,28 +110,17 @@ const HannstarLogin: React.FC = () => {
 
           <div ref={loginBlock} className="magentoLoginBlock"></div>
         </div>
-
-        <div className="serviceBlock">
-          <h3>立即註冊翰宇彩晶會員</h3>
-          <>
-            {serviceData.map((category) => (
-              <div className="content">
-                <h4 className="title">{category.categoryTitle}</h4>
-                <div className="items">
-                  {category.serviceItems.map((item) => (
-                    <div className="item">
-                      <img className="" src={item.icon} alt={item.icon} />
-                      <span className="">{item.title}</span>
-                      <p className="">{item.directions}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </>
-        </div>
       </div>
-    </Layout>
+    </>
+    )
+  }
+  const partnerFcpTemplateProp = {
+    content: <LayoutContent />,
+  };
+  
+
+  return (
+    <AccountTemplate {...partnerFcpTemplateProp}/>
   );
 };
 
