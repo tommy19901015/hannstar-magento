@@ -109,7 +109,7 @@ const HannstarRegister: React.FC = () => {
     <Layout>
       <div className={`${pageName}`}>
         <div ref={registerBlock}></div>
-        <div>註冊</div>
+        <div className="mainTitle">會員註冊</div>
         <div className={`${pageName}Content`}>
           <div className="row">
             <div className="columnBlock">
@@ -162,7 +162,7 @@ const HannstarRegister: React.FC = () => {
             </div>
           </div>
           <div className="columnBlock">
-            <div className="title">公司所在地</div>
+            <div className="title">公司所在地(國家)</div>
             <div className="bodyBlock select">
               <select>
                 <option>台灣</option>
@@ -203,9 +203,10 @@ const HannstarRegister: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="hannstarRegisterBtn" onClick={handleRegister}>
+            申請註冊
+          </div>
         </div>
-
-        <div onClick={handleRegister}>申請註冊</div>
         <div ref={registerBlock} className="magentoRegisteBlock"></div>
       </div>
     </Layout>
