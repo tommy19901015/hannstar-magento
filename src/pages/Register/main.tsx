@@ -171,7 +171,38 @@ const HannstarRegister: React.FC = () => {
               </select>
             </div>
           </div>
-          <div className="checkBlock"></div>
+          <div className="checkBlock">
+            <div className="columnBlock">
+              <div className="bodyBlock select">
+                <div className="hannstarCheckBox">
+                  <input
+                    id="checkBox1"
+                    type="checkBox"
+                    value="yes"
+                    name="yes"
+                  />
+                  <label htmlFor="checkBox1">
+                    我已詳閱並同意<a href="/">瀚宇彩晶隱私申明</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="columnBlock">
+              <div className="bodyBlock select">
+                <div className="hannstarCheckBox">
+                  <input
+                    id="checkBox2"
+                    type="checkBox"
+                    value="yes"
+                    name="yes"
+                  />
+                  <label htmlFor="checkBox2">
+                    我同意收到Hannstar信件與產品資訊
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div onClick={handleRegister}>申請註冊</div>
