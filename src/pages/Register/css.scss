@@ -2,7 +2,12 @@
 
 $pageName: "HannstarRegister";
 
-.#{$pageName} {
+.#{$pageName}Content {
+  .row {
+    .columnBlock {
+      width: 50%;
+    }
+  }
   .columnBlock {
     width: 100%;
     .title {
