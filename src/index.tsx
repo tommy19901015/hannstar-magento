@@ -9,6 +9,7 @@ import Stronghold from "./pages/stronghold/main";
 import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
 import HannstarLogin from "./pages/Login/main";
+import HannstarRegister from "./pages/Register/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -44,6 +45,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path={"/login"} element={<HannstarLogin />} />
+      <Route path={"/register"} element={<HannstarRegister />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
@@ -54,27 +56,56 @@ ReactDOM.render(
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
       <Route path="/template3" element={<Template3Page />} />
-      <Route path={partner.quotationList.href} element={<PartnerQuotationList />} />
+      <Route
+        path={partner.quotationList.href}
+        element={<PartnerQuotationList />}
+      />
       <Route path={partner.quotation.href} element={<PartnerQuotation />} />
       <Route path={partner.productList.href} element={<PartnerProductList />} />
-      <Route path={partner.productInventory.href} element={<PartnerProductInventory />} />
+      <Route
+        path={partner.productInventory.href}
+        element={<PartnerProductInventory />}
+      />
       <Route path={partner.addProduct.href} element={<PartnerAddProduct />} />
-      <Route path={partner.solutionList.href} element={<PartnerSolutionList />} />
-      <Route path={partner.solutionInventory.href} element={<PartnerSolutionInventory />} />
+      <Route
+        path={partner.solutionList.href}
+        element={<PartnerSolutionList />}
+      />
+      <Route
+        path={partner.solutionInventory.href}
+        element={<PartnerSolutionInventory />}
+      />
       <Route path={partner.addSolution.href} element={<PartnerAddSolution />} />
       <Route path={partner.application.href} element={<PartnerApplication />} />
       <Route path={partner.technical.href} element={<PartnerTechnical />} />
-      <Route path={partner.manageandadvisory.href} element={<PartnerManageandadvisory />} />
-      <Route path={partner.manufacturing.href} element={<PartnerManufacturing />} />
-      <Route path={partner.greensupplychain.href} element={<PartnerGreenSupplyChain />} />
-
+      <Route
+        path={partner.manageandadvisory.href}
+        element={<PartnerManageandadvisory />}
+      />
+      <Route
+        path={partner.manufacturing.href}
+        element={<PartnerManufacturing />}
+      />
+      <Route
+        path={partner.greensupplychain.href}
+        element={<PartnerGreenSupplyChain />}
+      />
       <Route path={service.RMAApply.href} element={<ServiceRMAApply />} />
       <Route path={service.RMAList.href} element={<ServiceRMAList />} />
       <Route path={service.parseList.href} element={<ServiceParseList />} />
-      <Route path={service.greenLawApply.href} element={<ServiceGreenService />} />
-      <Route path={service.customer.href} element={<ServiceCustomerSupport />} />
+      <Route
+        path={service.greenLawApply.href}
+        element={<ServiceGreenService />}
+      />
+      <Route
+        path={service.customer.href}
+        element={<ServiceCustomerSupport />}
+      />
       <Route path={service.parseApply.href} element={<ServiceParseApply />} />
-      <Route path={service.lawApply.href} element={<ServiceGreenServiceApply />} />
+      <Route
+        path={service.lawApply.href}
+        element={<ServiceGreenServiceApply />}
+      />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
