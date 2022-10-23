@@ -92,11 +92,15 @@ const HannstarLogin: React.FC = () => {
             </div>
           </div>
 
-          <div className="password">
-            <label>
-              <input onChange={handlePassword} type="checkbox" />
+          <div className="columnBlock spaceBetween">
+            <div className="input alignCenter">
+              <input
+                onChange={handlePassword}
+                className="hannstarCheckBox"
+                type="checkbox"
+              />
               記住帳號
-            </label>
+            </div>
             <a href="">忘記密碼</a>
           </div>
 
