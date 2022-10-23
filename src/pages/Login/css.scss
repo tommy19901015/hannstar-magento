@@ -3,7 +3,122 @@
 $pageName: 'HannstarLogin';
 
 .#{$pageName} {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     .magentoLoginBlock {
         display: none;
+    }
+    .loginBlock{
+        display: inline-flex;
+        width: 30%;
+        flex-direction: column;
+        @include hannstarBlockPadding;
+        @include hannstarContent3;
+        h2{
+            @include hannstarH2Title;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        label{
+            display: flex;
+            flex-direction: column;
+            @include hannstarTextPadding2;
+            @include hannstarContent3;
+            input[type='text']{
+                @include hannstarInput;
+                @include hannstarContent3;
+                background: url('https://picsum.photos/seed/picsum/20/20') no-repeat scroll 7px 7px;
+                padding-left: 30px;
+                box-sizing: border-box;
+                width: 100%;
+                margin-top: 5px;
+
+            }
+            input[type='checkbox']{
+                @include hannstarCheckBox;
+            }
+        }
+        .password{
+            display: flex;
+            justify-content: space-between;
+            label{
+                flex-direction: row;
+            }
+            a{
+                color: $hannstar-blue2;
+            }
+        }
+        .loginBtn{
+            @include hannstarBtn;
+            width: 30%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .create{
+            text-align: center;
+            a{
+                color: $hannstar-blue2;
+            }
+        }
+    }
+    .serviceBlock{
+        width: 30%;
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
+        @include hannstarBlockPadding;
+        h3{
+            @include hannstarH3Title;
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 4px 0;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            @include hannstarTextPadding2;
+            h4{
+                background-color: $hannstar-bg-color;
+                border-radius: 20px;
+                @include hannstarH4Title;
+                color: $hannstar-blue2;
+                text-align: center;
+                margin-bottom: 25px;
+                padding: 4px 0;
+            }
+            .items{
+                display: flex;
+                align-content: flex-start;
+                text-align: center;
+                justify-content: space-between;
+            }
+            .item{
+                display: inline-flex;
+                width: 30%;
+                flex-direction: column;
+                text-align: center;
+                justify-content: flex-start;
+                margin: 0 auto;
+
+                img{
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                }
+                span{
+                    @include hannstarContent2;
+                    color: $hannstar-blue3;
+                    margin-bottom: ㄓpx;
+                }
+                p{
+                    @include hannstarContent3;
+                }
+            }
+        }
     }
 }

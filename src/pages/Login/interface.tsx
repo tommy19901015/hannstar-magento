@@ -38,3 +38,17 @@ export interface I_PageData {
     resetBtn: string
     sendBtn: string
 }
+
+export type serviceItem = {
+    id:number,
+    icon:string,
+    title:string,
+    directions:string
+};
+
+export type serviceType = {
+    categoryId: number,
+    categoryTitle:string
+    serviceItems:serviceItem[]
+};
+
