@@ -149,9 +149,9 @@ function useParseApply() {
             },
         ],
         uploadTitle: t('ParseApply.fileAtt'),
-        saveBtn: t('ParseApply.save'),
-        resetBtn: t('ParseApply.reset'),
-        sendBtn: t('ParseApply.send')
+        saveBtn: t('ParseApply.common.save'),
+        resetBtn: t('ParseApply.common.reset'),
+        sendBtn: t('ParseApply.common.send')
     }
   
     return tableList;
