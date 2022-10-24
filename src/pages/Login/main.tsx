@@ -9,8 +9,8 @@ const HannstarLogin: React.FC = () => {
   const LoginContent = () => {
     const [account, setAccount] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [isAccountError, setIsAccountError] = useState<boolean>(false);
-    const [isPasswordError, setIsPasswordError] = useState<boolean>(false);
+    const [isAccountError, setIsAccountError] = useState<boolean | string>("");
+    const [isPasswordError, setIsPasswordError] = useState<boolean | string>("");
     const [errorMessage, setErrorMessage] = useState<any>("");
 
     const loginBlock: any = useRef();
@@ -55,33 +55,28 @@ const HannstarLogin: React.FC = () => {
       setPassword(e.target.value);
     };
 
-    const validateEmail = (email: string | null) => {
-      return email ? email.toLowerCase()
-        .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        ) : false
+    const validateEmail = (email: string): any => {
+      return email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) : false
     };
 
-    const validatePassword = (password: string) => {
-      return password.length >= 8
+    const validatePassword = (password: string): any => {
+      return password ? password.length >= 8 : false
     }
 
     const handleLogin = () => {
       console.log({ account, password });
       const send2: any = document.getElementById("send2");
-      // setIsAccountError(validateEmail(account))
-      // setIsAccountError()
-
-
-
-      if (send2) {
-        send2.click();
+      setIsAccountError(validateEmail(account))
+      setIsPasswordError(validatePassword(password))
+      if (isAccountError && isPasswordError) {
+        send2 && send2.click();
       }
     };
+
     return (
       <div className="hannstarLoginBlock">
         <h2>登入</h2>
-        <div ref={errorMessageBlock}>errorMessageBlock</div>
+        <div ref={errorMessageBlock} className="magentoErrorBlock">errorMessageBlock</div>
         <div className="columnBlock">
           <div className="title required">帳號</div>
           <div className="bodyBlock input">
@@ -92,6 +87,7 @@ const HannstarLogin: React.FC = () => {
               placeholder="請填入您的Email"
             />
           </div>
+          {isAccountError === false && <div className="errorMessage">請輸入正確的email格式</div>}
         </div>
 
         <div className="columnBlock">
@@ -99,6 +95,7 @@ const HannstarLogin: React.FC = () => {
           <div className="bodyBlock input">
             <input onChange={handlePassword} type="text" value={password} />
           </div>
+          {isPasswordError === false && <div className="errorMessage">請輸入至少8個字元，並包括一個字母大小寫或特殊字元</div>}
         </div>
 
         <div className="columnBlock">

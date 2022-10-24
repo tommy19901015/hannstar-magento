@@ -9,6 +9,10 @@ $pageName: 'HannstarLogin';
     .magentoLoginBlock {
         display: none;
     }
+    .magentoErrorBlock {
+        background-color: $hannstar-green1;
+        color: #fff;
+    }
     .hannstarLoginBlock {
         display: flex;
         flex-direction: column;
