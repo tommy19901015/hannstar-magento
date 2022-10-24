@@ -1,5 +1,6 @@
 import { RAMapply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
+
 export const cn = {
     common: {
       cancel: "取消",

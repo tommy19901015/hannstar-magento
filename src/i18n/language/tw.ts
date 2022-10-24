@@ -1,4 +1,5 @@
 import { RAMapply } from "./zh-tw/Service_RMA_Apply";
+import { ParseApply } from "./zh-tw/Service_Parse_Apply";
 
 export const tw = {
     common: {
@@ -10,4 +11,5 @@ export const tw = {
     lang: "繁中",
     changeLanguage: "切換語系",
     RAMapply,
+    ParseApply,
   };
