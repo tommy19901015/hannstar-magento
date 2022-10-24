@@ -5,7 +5,6 @@ import { ColType } from "../../component/columns/interface";
 import { I_AccountTemplate } from "./interface";
 import { initialServiceData } from "./pageData";
 import { serviceType } from "./interface";
-// import earth from "./icon/earth"
 import "./css.scss";
 const AccountTemplate: React.FC<I_AccountTemplate> = ({ content }) => {
   const templateName = "AccountTemplate";

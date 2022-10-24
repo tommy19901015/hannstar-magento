@@ -62,9 +62,8 @@ const HannstarLogin: React.FC = () => {
     };
     return (
       <div className="hannstarLoginBlock">
-        <div ref={errorMessageBlock}></div>
         <h2>登入</h2>
-
+        <div ref={errorMessageBlock}>errorMessageBlock</div>
         <div className="columnBlock">
           <div className="title required">帳號</div>
           <div className="bodyBlock input">
