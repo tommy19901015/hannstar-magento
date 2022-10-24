@@ -59,7 +59,7 @@ const Header: React.FC = () => {
               <a href={item.href}>{item.title}</a>
               <div className="arrow"></div>
             </div>
-            <ul className="secMenuUl">
+            <ul className={`secMenuUl ${item.type === 'member'&&'base-box-shadow'}`}>
               { isLogin && item.type === 'member'?
               <div className="member-content">
                 <h4>Tyler</h4>

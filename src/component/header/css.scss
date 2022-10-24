@@ -44,7 +44,7 @@
                         align-items: center;
                         a {
                             color: #fff;
-                            font-size: 16px;
+                            font-size: $font-base;
                             font-weight: bold;
                             word-break: keep-all;
                             padding-right: 5px;
@@ -72,6 +72,7 @@
                             padding: 15px 0;
                             a {
                                 width: 100%;
+                                font-size: $font-base;
                                 display: block;
                                 height: 100%;
                                 color: #000;
@@ -94,27 +95,31 @@
                             max-height: 1000px;
                         }
                     }
+                    .base-box-shadow{
+                        box-shadow: 0 0 15px $hannstar-default-text-color;
+                    }
                     .member-content{
                         position: relative;
                         padding: 20px;
                         background-color: $hannstar-bg-color;
                         width: 300px;
+                        
                         h4{
                             border-bottom: 1px solid $hannstar-border-color;
                             flex-direction: column;
                             padding-bottom: 15px;
                         }
                         ul{
-                            width: 45%;
+                            width:150px;
                             display: inline-flex;
                             flex-direction: column;
-                            padding: 5px;
                             justify-content: space-around;
+                            box-sizing: border-box;
                             @include hannstarContent3;
                             li{
                                 width: 100%;
                                 text-align: left;
-                                padding: 5px 0;
+                                padding: 5px;
                                 cursor:pointer;
                                 background-color: $hannstar-bg-color;
                                 &:hover {
@@ -122,8 +127,12 @@
                                     background: $hannstar-bg-color;
                                 }
                             }
-                            &:first-child{
-                                border: 1px solid $hannstar-border-color !important;
+                            &:first-of-type{
+                                border-right: 1px solid $hannstar-border-color ;
+                                padding: 20px 20px 20px 0;
+                            }
+                            &:last-of-type{
+                                padding: 20px 0px 20px 20px;
                             }
                         }
                         
@@ -142,7 +151,7 @@
                 display: flex;
                 margin: 0 80px;
                 .headerBtn {
-                    font-size: 16px;
+                    font-size: $font-base;
                     color: #ffffff;
                     margin-right: 10px;
                     font-weight: bolder;

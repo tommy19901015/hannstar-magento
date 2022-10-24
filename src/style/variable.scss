@@ -21,6 +21,8 @@ $font-weighr-normal: 400; //regular
 $font-weighr-medium: 500;
 $font-weighr-bold: 700;
 
+$font-base: 16px;
+
 @mixin hannstarH1Title {
     color: $hannstar-default-text-color;
     font-size: 40px;
