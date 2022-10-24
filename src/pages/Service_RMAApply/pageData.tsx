@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { I_PageData } from "./interface"
 import { FormType } from "../../component/form/interface";
 import { useTranslation } from "react-i18next";
@@ -6,12 +5,8 @@ import { useTranslation } from "react-i18next";
 
 function useApplyList() {
     const { t } = useTranslation();
-
-    useEffect(()=>{
-    
-    },[])
   
-    const productTabList: I_PageData =  {
+    const tableList: I_PageData =  {
         breadcrumbs: {
             title: "",
             breadcrumbsLink: [
@@ -208,7 +203,7 @@ function useApplyList() {
         sendBtn: t('RAMapply.common.send')
     }
   
-    return productTabList;
+    return tableList;
   }
   
   export default useApplyList;

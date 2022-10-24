@@ -5,7 +5,6 @@ import { ColType } from "../../component/columns/interface";
 import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import useApplyList  from "./pageData";
-import { useTranslation } from "react-i18next";
 import "./css.scss";
 
 const ServiceRMAApply: React.FC = () => {
@@ -14,7 +13,7 @@ const ServiceRMAApply: React.FC = () => {
   const [trDetailArr, setTrDetailArr] = useState<number[]>([0]);
   const [trDetailCount, setTrDetailCount] = useState<number>(1);
   const [selectCount, setSelectCount] = useState<number>(1);
-
+  const applyList = useApplyList();
   const handlerSave = () => { };
   const handlerReset = () => { };
   const handlerSubmit = () => { };
@@ -26,7 +25,7 @@ const ServiceRMAApply: React.FC = () => {
 
     return (
       <div className={`${pageName}TabBlock`}>
-        {useApplyList().tabNames.map((text, index) => (
+        {applyList.tabNames.map((text, index) => (
           <div
             className={`tab ${tab === index ? "active" : ""}`}
             onClick={() => changeTab(index)}
@@ -50,7 +49,7 @@ const ServiceRMAApply: React.FC = () => {
       <td>
         <select>
           {
-            useApplyList().tableSelectOption.map((item, index) =>
+            applyList.tableSelectOption.map((item, index) =>
               <option value={item.value}>{item.text}</option>)
           }
         </select>
@@ -80,17 +79,17 @@ const ServiceRMAApply: React.FC = () => {
             <option value="5">5</option>
             <option value="10">10</option>
           </select>
-          <div className="addBtn" onClick={handlerAdd}>{useApplyList().addTrBtnText}</div>
+          <div className="addBtn" onClick={handlerAdd}>{applyList.addTrBtnText}</div>
         </div>
         <table>
           <thead>
             <tr>
-              <td>{useApplyList().tableHead.action}</td>
-              <td>{useApplyList().tableHead.index}</td>
-              <td>{useApplyList().tableHead.hannstarNo}</td>
-              <td>{useApplyList().tableHead.warranty}</td>
-              <td>{useApplyList().tableHead.badType}</td>
-              <td>{useApplyList().tableHead.img}</td>
+              <td>{applyList.tableHead.action}</td>
+              <td>{applyList.tableHead.index}</td>
+              <td>{applyList.tableHead.hannstarNo}</td>
+              <td>{applyList.tableHead.warranty}</td>
+              <td>{applyList.tableHead.badType}</td>
+              <td>{applyList.tableHead.img}</td>
             </tr>
           </thead>
           <tbody>
@@ -108,12 +107,12 @@ const ServiceRMAApply: React.FC = () => {
   const BatchImportBlock = () => {
     return (
       <div className={`${pageName}BatchImportBlock`}>
-        <div className="stepTitle">{useApplyList().batchImportText.title1}</div>
-        <a href="/" className="text">{useApplyList().batchImportText.text1}</a>
+        <div className="stepTitle">{applyList.batchImportText.title1}</div>
+        <a href="/" className="text">{applyList.batchImportText.text1}</a>
         <input type="file" />
-        <div className="stepTitle">{useApplyList().batchImportText.title2}</div>
-        <div className="noteText">{useApplyList().batchImportText.noteText2}</div>
-        <a href="/" className="text">{useApplyList().batchImportText.text2}</a>
+        <div className="stepTitle">{applyList.batchImportText.title2}</div>
+        <div className="noteText">{applyList.batchImportText.noteText2}</div>
+        <a href="/" className="text">{applyList.batchImportText.text2}</a>
         <input type="file" />
       </div>
     )
@@ -127,25 +126,25 @@ const ServiceRMAApply: React.FC = () => {
   const FormBlock = () => {
     return (
       <>
-        <h1 className={`${pageName}H1Title`}>{useApplyList().pageTitle}</h1>
+        <h1 className={`${pageName}H1Title`}>{applyList.pageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
-          <div className={`${pageName}Title`}>{useApplyList().formTitle}</div>
+          <div className={`${pageName}Title`}>{applyList.formTitle}</div>
           <div className={`${pageName}ContentBlock`}>
             <FormComponent {...formData} />
-            <div className="badDetailsTitle">{useApplyList().badDetailsTitle}</div>
+            <div className="badDetailsTitle">{applyList.badDetailsTitle}</div>
             <BadDetailsTabBlock />
             {handleTabContentObj[tab]}
           </div>
           <div className={`${pageName}UploadBlock`}></div>
           <div className={`${pageName}BtnBlock`}>
             <div className="btn" onClick={handlerSave}>
-              {useApplyList().saveBtn}
+              {applyList.saveBtn}
             </div>
             <div className="btn" onClick={handlerReset}>
-              {useApplyList().resetBtn}
+              {applyList.resetBtn}
             </div>
             <div className="btn" onClick={handlerSubmit}>
-              {useApplyList().sendBtn}
+              {applyList.sendBtn}
             </div>
           </div>
         </div>
@@ -155,14 +154,14 @@ const ServiceRMAApply: React.FC = () => {
 
   const formData = {
     formMethods,
-    formData: useApplyList().formData,
+    formData: applyList.formData,
   };
 
   return (
     <Layout>
       <Columns type={ColType.OneCol} content={
         <>
-          <Breadcrumbs {...useApplyList().breadcrumbs} />
+          <Breadcrumbs {...applyList.breadcrumbs} />
           <FormBlock />
         </>
       } />

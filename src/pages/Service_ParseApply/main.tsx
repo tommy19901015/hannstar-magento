@@ -4,7 +4,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-import { pageData } from "./pageData";
+import useParseApply from "./pageData";
 import "./css.scss";
 import Popup from "../../component/popup/main";
 import { I_FormData, I_FormProps } from "../../component/form/interface";
@@ -15,7 +15,7 @@ const ServiceParseApply: React.FC = () => {
   const savePopUpRef: any = useRef();
   const submitPopUpRef: any = useRef();
   const resetPopUpRef: any = useRef();
-
+  const parseApply = useParseApply();
   const FormErrorMessage = ({ errorMessage }: { errorMessage: I_FormData[] }) => {
     return (<div className={`${pageName}FormErrorMessageBlock`}>
       {errorMessage.map((item, index) =>
@@ -33,7 +33,7 @@ const ServiceParseApply: React.FC = () => {
 
     const handlerSubmit = () => {
       const formErrorInfo = formMethods.current
-        .getFormErrorInfo(pageData().formData,
+        .getFormErrorInfo(parseApply.formData,
           formMethods.current.getValues());
 
       if (formErrorInfo.isError) {
@@ -44,7 +44,7 @@ const ServiceParseApply: React.FC = () => {
 
     return (<>
       <div className="btn" onClick={handlerSubmit}>
-        {pageData().sendBtn}
+        {parseApply.sendBtn}
       </div>
       <Popup {...popupProps} />
     </>)
@@ -62,7 +62,7 @@ const ServiceParseApply: React.FC = () => {
 
     return (<>
       <div className="btn" onClick={handlerSave}>
-        {pageData().saveBtn}
+        {parseApply.saveBtn}
       </div>
       <Popup {...popupProps} />
     </>)
@@ -72,7 +72,7 @@ const ServiceParseApply: React.FC = () => {
   const FormBlock = () => {
     const formData = {
       formMethods,
-      formData: pageData().formData,
+      formData: parseApply.formData,
     };
 
     const [formProps, setFormProps] = useState<I_FormProps>(formData)
@@ -80,7 +80,7 @@ const ServiceParseApply: React.FC = () => {
     const handlerPopConfirm = () => {
       setFormProps({
         formMethods,
-        formData: pageData().formData,
+        formData: parseApply.formData,
       })
       resetPopUpRef.current.classList.remove("show");
     }
@@ -107,7 +107,7 @@ const ServiceParseApply: React.FC = () => {
 
       return (<>
         <div className="btn" onClick={handlerReset}>
-          {pageData().resetBtn}
+          {parseApply.resetBtn}
         </div>
         <Popup {...popupProps} />
       </>)
@@ -115,13 +115,13 @@ const ServiceParseApply: React.FC = () => {
 
     return (
       <>
-        <h1 className={`${pageName}H1Title`}>{pageData().pageTitle}</h1>
+        <h1 className={`${pageName}H1Title`}>{parseApply.pageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
-          <div className={`${pageName}Title`}>{pageData().formTitle}</div>
+          <div className={`${pageName}Title`}>{parseApply.formTitle}</div>
           <div className={`${pageName}ContentBlock`}>
             <FormComponent {...formProps} />
             <div className="fileBlock">
-              <div className="title">{pageData().uploadTitle}</div>
+              <div className="title">{parseApply.uploadTitle}</div>
               <input type="file" />
             </div>
           </div>
@@ -140,7 +140,7 @@ const ServiceParseApply: React.FC = () => {
     <Layout>
       <Columns type={ColType.OneCol} content={
         <>
-          <Breadcrumbs {...pageData().breadcrumbs} />
+          <Breadcrumbs {...parseApply.breadcrumbs} />
           <FormBlock />
         </>
       } />

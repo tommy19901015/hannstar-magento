@@ -1,8 +1,12 @@
 import { I_PageData } from "./interface"
 import { FormType } from "../../component/form/interface";
+import { useTranslation } from "react-i18next";
 
-export const pageData = (): I_PageData => {
-    return {
+
+function useParseApply() {
+    const { t } = useTranslation();
+
+    const tableList: I_PageData =  {
         breadcrumbs: {
             title: "",
             breadcrumbsLink: [
@@ -20,11 +24,11 @@ export const pageData = (): I_PageData => {
                 },
             ],
         },
-        pageTitle: "解析申請",
-        formTitle: "基本資料",
+        pageTitle: t('ParseApply.application'),
+        formTitle: t('ParseApply.basicInfo'),
         formData: [
             {
-                title: "客戶",
+                title: t('ParseApply.customer'),
                 value: "",
                 columnKey: "1",
                 type: FormType.Intput,
@@ -32,7 +36,7 @@ export const pageData = (): I_PageData => {
                 disabled: true,
             },
             {
-                title: "代理商",
+                title: t('ParseApply.agent'),
                 value: "",
                 columnKey: "fff",
                 type: FormType.Intput,
@@ -40,7 +44,7 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "單號",
+                title: t('ParseApply.singleNumber'),
                 value: "",
                 columnKey: "3",
                 type: FormType.Intput,
@@ -48,7 +52,7 @@ export const pageData = (): I_PageData => {
                 disabled: true,
             },
             {
-                title: "CQS窗口",
+                title: t('ParseApply.cqs'),
                 value: "",
                 columnKey: "4",
                 type: FormType.Intput,
@@ -56,17 +60,17 @@ export const pageData = (): I_PageData => {
                 disabled: true,
             },
             {
-                title: "領域分類",
+                title: t('ParseApply.fieldClass'),
                 value: "",
                 columnKey: "5",
                 type: FormType.Select,
                 placeholder: "",
                 option: [
-                    { text: "量產階段", value: "量產階段" }
+                    { text: t('ParseApply.productionStage'), value: t('ParseApply.productionStage') }
                 ],
             },
             {
-                title: "模組料號",
+                title: t('ParseApply.module'),
                 value: "",
                 columnKey: "6",
                 type: FormType.Intput,
@@ -74,7 +78,7 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "投入量(片)",
+                title: t('ParseApply.amount')+t('ParseApply.slice'),
                 value: "",
                 columnKey: "7",
                 type: FormType.Intput,
@@ -82,7 +86,7 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "不良數(片)",
+                title: t('ParseApply.defective')+t('ParseApply.slice'),
                 value: "",
                 columnKey: "8",
                 type: FormType.Intput,
@@ -90,14 +94,14 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "不良率(%)",
+                title: t('ParseApply.nonPerforming')+t('ParseApply.per'),
                 value: "",
                 columnKey: "9",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "發生站別",
+                title: t('ParseApply.stand'),
                 value: "",
                 columnKey: "10",
                 type: FormType.Intput,
@@ -105,38 +109,38 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "Issue類別",
+                title: t('ParseApply.issueCategory'),
                 value: "",
                 columnKey: "11",
                 type: FormType.Select,
                 placeholder: "",
                 required: true,
                 option: [
-                    { text: "外觀異常類", value: "外觀異常類" },
-                    { text: "凹凸點類", value: "凹凸點類" },
+                    { text: t('ParseApply.exceptionClass'), value: t('ParseApply.exceptionClass') },
+                    { text: t('ParseApply.bumpClass'), value: t('ParseApply.bumpClass') },
                 ],
             },
             {
-                title: "Issue代碼",
+                title: t('ParseApply.issueCode'),
                 value: "",
                 columnKey: "12",
                 type: FormType.Select,
                 placeholder: "",
                 required: true,
                 option: [
-                    { text: "外觀異常類", value: "外觀異常類" },
-                    { text: "凹凸點類", value: "凹凸點類" },
+                    { text: t('ParseApply.exceptionClass'), value: t('ParseApply.exceptionClass') },
+                    { text: t('ParseApply.bumpClass'), value: t('ParseApply.bumpClass')},
                 ],
             },
             {
-                title: "Invoice",
+                title: t('ParseApply.invoice'),
                 value: "",
                 columnKey: "13",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "備註(須提供不良品序號或箱號)",
+                title: t('ParseApply.note')+t('ParseApply.providDefectiveProduct'),
                 value: "",
                 columnKey: "14",
                 type: FormType.Intput,
@@ -144,9 +148,13 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
         ],
-        uploadTitle: "檔案附件",
-        saveBtn: "儲存",
-        resetBtn: "重置",
-        sendBtn: "送件"
+        uploadTitle: t('ParseApply.fileAtt'),
+        saveBtn: t('ParseApply.save'),
+        resetBtn: t('ParseApply.reset'),
+        sendBtn: t('ParseApply.send')
     }
-}
+  
+    return tableList;
+  }
+  
+  export default useParseApply;

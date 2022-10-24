@@ -17,10 +17,11 @@ export const ParseApply = {
   note:"備註",
   slice:"(片)",
   per:"(%)",
+  invoice:"發票",
   providDefectiveProduct:"(須提供不良品序號或箱號)",
   common: {
     send: "送件",
     save: "儲存",
-    重置:"重置",
+    reset:"重置",
   },
 };
