@@ -1,8 +1,12 @@
 import { I_PageData } from "./interface"
 import { FormType } from "../../component/form/interface";
+import { useTranslation } from "react-i18next";
 
-export const pageData = (): I_PageData => {
-    return {
+
+function useApplyList() {
+    const { t } = useTranslation();
+  
+    const tableList: I_PageData =  {
         breadcrumbs: {
             title: "",
             breadcrumbsLink: [
@@ -16,11 +20,11 @@ export const pageData = (): I_PageData => {
                 },
             ],
         },
-        pageTitle: "RMA申請",
-        formTitle: "基本資料",
+        pageTitle: t('RAMapply.RMAapply'),
+        formTitle: t('RAMapply.basicInfo'),
         formData: [
             {
-                title: "客戶",
+                title: t('RAMapply.customer'),
                 value: "",
                 columnKey: "1",
                 type: FormType.Intput,
@@ -28,14 +32,14 @@ export const pageData = (): I_PageData => {
                 disabled: true,
             },
             {
-                title: "代理商",
+                title: t('RAMapply.agent'),
                 value: "",
                 columnKey: "2",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "單號",
+                title: t('RAMapply.singleNumber'),
                 value: "",
                 columnKey: "3",
                 type: FormType.Intput,
@@ -43,7 +47,7 @@ export const pageData = (): I_PageData => {
                 disabled: true,
             },
             {
-                title: "CQS窗口",
+                title: t('RAMapply.cqs'),
                 value: "",
                 columnKey: "4",
                 type: FormType.Intput,
@@ -51,7 +55,7 @@ export const pageData = (): I_PageData => {
                 disabled: true,
             },
             {
-                title: "機種料號",
+                title: t('RAMapply.modelNo'),
                 value: "",
                 columnKey: "5",
                 type: FormType.Intput,
@@ -59,13 +63,13 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "出貨類別",
+                title: t('RAMapply.shipment'),
                 value: "",
                 columnKey: "6",
                 type: FormType.Select,
                 placeholder: "",
                 option: [
-                    { text: "中板(1/4版,1/6版)", value: "中板(1/4版,1/6版)" },
+                    { text: t('RAMapply.mediumPlate')+(1/4+t('RAMapply.plate'),1/6+t('RAMapply.plate')), value: t('RAMapply.mediumPlate')+(1/4+t('RAMapply.plate'),1/6+t('RAMapply.plate')) },
                     { text: "Full cell", value: "Full cell" },
                     { text: "COG", value: "COG" },
                     { text: "FOG", value: "FOG" },
@@ -77,7 +81,7 @@ export const pageData = (): I_PageData => {
                 ],
             },
             {
-                title: "月結年份",
+                title: t('RAMapply.monthEndYear'),
                 value: "",
                 columnKey: "7",
                 type: FormType.Select,
@@ -89,7 +93,7 @@ export const pageData = (): I_PageData => {
                 ],
             },
             {
-                title: "月結月份",
+                title: t('RAMapply.monthEndMonth'),
                 value: "",
                 columnKey: "8",
                 type: FormType.Select,
@@ -111,7 +115,7 @@ export const pageData = (): I_PageData => {
                 ],
             },
             {
-                title: "投入數(片)",
+                title: t('RAMapply.input')+t('RAMapply.slice'),
                 value: "",
                 columnKey: "9",
                 type: FormType.Intput,
@@ -119,7 +123,7 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "不良數(片)",
+                title: t('RAMapply.defective')+t('RAMapply.slice'),
                 value: "",
                 columnKey: "10",
                 type: FormType.Intput,
@@ -127,75 +131,79 @@ export const pageData = (): I_PageData => {
                 required: true,
             },
             {
-                title: "不良率(%)",
+                title: t('RAMapply.nonPerforming')+t('RAMapply.per'),
                 value: "",
                 columnKey: "11",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "Invoice",
+                title: t('RAMapply.invoice'),
                 value: "",
                 columnKey: "11",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "保良(%)",
+                title: t('RAMapply.paula')+t('RAMapply.per'),
                 value: "",
                 columnKey: "12",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "箱號",
+                title: t('RAMapply.caseNumber'),
                 value: "",
                 columnKey: "13",
                 type: FormType.Intput,
                 placeholder: "",
             },
             {
-                title: "快速覆判",
+                title: t('RAMapply.quickReview'),
                 value: "",
                 columnKey: "14",
                 type: FormType.Radio,
                 placeholder: "",
                 option: [
-                    { text: "是", value: "yes" },
-                    { text: "否", value: "no" },
+                    { text: t('RAMapply.yes'), value: "yes" },
+                    { text: t('RAMapply.no'), value: "no" },
                 ],
             },
         ],
-        badDetailsTitle: "不良明細載入",
-        tabNames: ["單筆填寫", "批次匯入"],
+        badDetailsTitle: t('RAMapply.badDetail'),
+        tabNames: [t('RAMapply.single'), t('RAMapply.batchImport')],
         tableSelectOption: [
             {
-                text: "是",
+                text: t('RAMapply.yes'),
                 value: "yes"
             },
             {
-                text: "否",
+                text: t('RAMapply.no'),
                 value: "no"
             },
         ],
-        addTrBtnText: "新增",
+        addTrBtnText: t('RAMapply.add'),
         tableHead: {
-            action: "Action",
-            index: "項次",
-            hannstarNo: "Hannstar序號",
-            warranty: "保固",
-            badType: "不良名稱",
-            img: "圖片",
+            action: t('RAMapply.action'),
+            index: t('RAMapply.index'),
+            hannstarNo: t('RAMapply.hannstarNo'),
+            warranty: t('RAMapply.warranty'),
+            badType: t('RAMapply.badType'),
+            img: t('RAMapply.img'),
         },
         batchImportText: {
-            title1: "Step1:載入批次資料",
-            text1: "下載範本",
-            title2: "Step2:批次圖片上傳",
-            noteText2: "檔名需以數字命名,由1,2,3 ...依序對應至不良項次,可選擇多張照片同時上傳",
-            text2: "下載範本",
+            title1: t('RAMapply.title1'),
+            text1: t('RAMapply.text1'),
+            title2: t('RAMapply.title2'),
+            noteText2: t('RAMapply.noteText2'),
+            text2: t('RAMapply.text2'),
         },
-        saveBtn: "儲存",
-        resetBtn: "重製",
-        sendBtn: "送件"
+        saveBtn: t('RAMapply.common.save'),
+        resetBtn: t('RAMapply.common.reset'),
+        sendBtn: t('RAMapply.common.send')
     }
-}
+  
+    return tableList;
+  }
+  
+  export default useApplyList;
