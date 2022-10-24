@@ -9,6 +9,8 @@ const HannstarLogin: React.FC = () => {
   const LoginContent = () => {
     const [account, setAccount] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [isAccountError, setIsAccountError] = useState<boolean>(false);
+    const [isPasswordError, setIsPasswordError] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<any>("");
 
     const loginBlock: any = useRef();
@@ -53,9 +55,25 @@ const HannstarLogin: React.FC = () => {
       setPassword(e.target.value);
     };
 
+    const validateEmail = (email: string | null) => {
+      return email ? email.toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        ) : false
+    };
+
+    const validatePassword = (password: string) => {
+      return password.length >= 8
+    }
+
     const handleLogin = () => {
       console.log({ account, password });
       const send2: any = document.getElementById("send2");
+      // setIsAccountError(validateEmail(account))
+      // setIsAccountError()
+
+
+
       if (send2) {
         send2.click();
       }
