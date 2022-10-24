@@ -22,6 +22,8 @@ const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
   const language = useRef(i18n.language);
 
+  const [isLogin, setIsLogin] = useState<boolean>(true);
+
   useEffect(() => {
     const type = window.location.pathname.split("/")[1];
     const mappingArr = ["hannstar", "partner", "service"];
@@ -58,12 +60,29 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul className="secMenuUl">
-              {item.content.map((subMenu: any, index: number) => (
+              { isLogin && item.type === 'member'?
+              <div className="member-content">
+                <h4>Tyler</h4>
+                {
+                  menuData["member"].map((item: any) =>(
+                    <ul>{item.content.map((i: any) =>(
+                      <li>{i.title}</li>
+                    ))}</ul>
+                  ))
+                }
+                <div className="loginBtn">
+                  登入
+                </div>
+              </div>
+              :
+              <>
+               {item.content.length >0 && item.content.map((subMenu: any, index: number) => (
                 <li key={index}>
                   <a href={subMenu.href}>{subMenu.title}</a>
                 </li>
-              ))}
-            </ul>
+              ))}</>
+            }
+            </ul>            
           </li>
         ))}
       </ul>

@@ -6,6 +6,7 @@ export const menuInfoData = () => {
         "hannstar": [
             {
                 "title": "關於瀚宇彩晶",
+                "type":"about",
                 "href": "",
                 "content": [
                     { "title": hannstar.about.title, "href": hannstar.about.href },
@@ -17,6 +18,7 @@ export const menuInfoData = () => {
             },
             {
                 "title": "產品應用",
+                "type":"product",
                 "href": "",
                 "content": [
                     { "title": "智能車載", "href": "" },
@@ -31,6 +33,7 @@ export const menuInfoData = () => {
             },
             {
                 "title": "企業永續",
+                "type":"company",
                 "href": "",
                 "content": [
                     { "title": "永續焦點", "href": "" },
@@ -44,6 +47,7 @@ export const menuInfoData = () => {
             },
             {
                 "title": "投資人關係",
+                "type":"invest",
                 "href": "",
                 "content": [
                     { "title": "公司概況", "href": "" },
@@ -58,6 +62,7 @@ export const menuInfoData = () => {
             },
             {
                 "title": "人力資源",
+                "type":"resources",
                 "href": "",
                 "content": [
                     { "title": "工作在彩晶", "href": "" },
@@ -67,11 +72,19 @@ export const menuInfoData = () => {
             },
             {
                 "title": "訊息中心",
+                "type":"message",
                 "href": "",
                 "content": [
                     { "title": "投資人關係", "href": "" },
                     { "title": "企業永續", "href": "" }
                 ]
+            },
+            {
+                "title": "會員中心",
+                "icon":"",
+                "type":"member",
+                "href": "",
+                "content": []
             }
         ],
         "partner": [
@@ -154,5 +167,44 @@ export const menuInfoData = () => {
                 "content": []
             }
         ],
+        "member": [
+            {
+                "content": [
+                    {
+                        "title": "產品行銷服務",
+                        "href": ""
+                    },
+                    {
+                        "title": "方案整合及系統服務",
+                        "href": ""
+                    },
+                    {
+                        "title": "客戶服務",
+                        "href": ""
+                    },
+                    {
+                        "title": "供應商協同合作",
+                        "href": ""
+                    },
+                    {
+                        "title": "Hannspree",
+                        "href": ""
+                    }
+
+                ]
+            },
+            {
+                "content": [
+                    {
+                        "title": "會員中心",
+                        "href": ""
+                    },
+                    {
+                        "title": "其他",
+                        "href": ""
+                    }
+                ]
+            },
+        ]
     }
 }
