@@ -10,6 +10,8 @@ import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
 import HannstarLogin from "./pages/Login/main";
 import HannstarRegister from "./pages/Register/main";
+import ForgotPassword from "./pages/ForgotPassword/main";
+import ResetPassword from "./pages/ResetPassword/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -46,6 +48,8 @@ ReactDOM.render(
     <Routes>
       <Route path={"/login"} element={<HannstarLogin />} />
       <Route path={"/register"} element={<HannstarRegister />} />
+      <Route path={"/forgotPassword"} element={<ForgotPassword />} />
+      <Route path={"/resetPassword"} element={<ResetPassword />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

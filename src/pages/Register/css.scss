@@ -2,21 +2,29 @@
 
 $pageName: "HannstarRegister";
 
-.#{$pageName} {
-  width: 400px;
-  .mainTitle {
-    @include hannstarH2Title;
-    text-align: center;
+.#{$pageName}Container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 80px 0;
+  .magentoLoginBlock {
+    display: none;
   }
-  .#{$pageName}Content {
-    .row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 20px;
+  .magentoErrorBlock {
+    background-color: $hannstar-green1;
+    color: #fff;
+  }
+  .hannstarRegisterBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+    @include hannstarContent0;
+    h2 {
+      @include hannstarH2Title;
+      text-align: center;
+      margin-bottom: 25px;
     }
     .columnBlock {
       width: 100%;
-      margin-bottom: 20px;
       .title {
         @include hannstarContentText;
         word-break: keep-all;
@@ -59,19 +67,20 @@ $pageName: "HannstarRegister";
         }
       }
     }
-    .checkBlock {
-      margin-top: 40px;
+
+    .loginBtn {
+      @include hannstarBtn;
+      width: 30%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .create {
+      @include hannstarContent2;
+      text-align: center;
       a {
         color: $hannstar-blue2;
       }
-    }
-    .hannstarRegisterBtn {
-      @include hannstarBtn;
-      width: 100%;
-      text-align: center;
-    }
-    .magentoHannstarRegisterBlock {
-      display: none;
     }
   }
 }

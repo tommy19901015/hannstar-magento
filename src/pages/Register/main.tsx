@@ -7,111 +7,113 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { I_TabContentObj } from "./interface";
 import "./css.scss";
 import { pageData } from "./pageData";
-import AccountTemplate from "../../templates/AccountTemplate/main"
+import AccountTemplate from "../../templates/AccountTemplate/main";
 
 const HannstarRegister: React.FC = () => {
   const pageName = "HannstarRegister";
-  const [firstName, setFirstName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
 
-  const [errorMessage, setErrorMessage] = useState<any>("");
+  const RegisterContent = () => {
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [confirmPassword, setConfirmPassword] = useState<string>("");
 
-  const registerBlock: any = useRef();
-  const errorMessageBlock: any = useRef();
+    const [errorMessage, setErrorMessage] = useState<any>("");
 
-  useEffect(() => {
-    const magentoDom: any = document.getElementById(
-      "hannstar-magento-register"
-    );
-    if (magentoDom) registerBlock.current.appendChild(magentoDom);
+    const registerBlock: any = useRef();
+    const errorMessageBlock: any = useRef();
 
-    const magentoErrorMessageDom: any =
-      document.getElementsByClassName("page messages")[0];
-    if (magentoErrorMessageDom)
-      errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+    useEffect(() => {
+      const magentoDom: any = document.getElementById(
+        "hannstar-magento-register"
+      );
+      if (magentoDom) registerBlock.current.appendChild(magentoDom);
 
-    // setFirstName(getMagentoFirstNameDom().value);
-    // setLastName(getMagentoLastNameDom().value);
-    // setEmail(getMagentoEmailDom().value);
-    // setPassword(getMagentoPasswordDom().value);
-    // setConfirmPassword(getMagentoConfirmPasswordDom().value);
-  }, []);
+      const magentoErrorMessageDom: any =
+        document.getElementsByClassName("page messages")[0];
+      if (magentoErrorMessageDom)
+        errorMessageBlock.current.appendChild(magentoErrorMessageDom);
 
-  const getMagentoFirstNameDom = (): any => {
-    const firstNameDom = document.getElementById("firstname");
-    return firstNameDom ? firstNameDom : null;
-  };
+      // setFirstName(getMagentoFirstNameDom().value);
+      // setLastName(getMagentoLastNameDom().value);
+      // setEmail(getMagentoEmailDom().value);
+      // setPassword(getMagentoPasswordDom().value);
+      // setConfirmPassword(getMagentoConfirmPasswordDom().value);
+    }, []);
 
-  const getMagentoLastNameDom = (): any => {
-    const lastNameDom = document.getElementById("lastname");
-    return lastNameDom ? lastNameDom : "";
-  };
+    const getMagentoFirstNameDom = (): any => {
+      const firstNameDom = document.getElementById("firstname");
+      return firstNameDom ? firstNameDom : null;
+    };
 
-  const getMagentoEmailDom = (): any => {
-    const emailDom = document.getElementById("email_address");
-    return emailDom ? emailDom : "";
-  };
+    const getMagentoLastNameDom = (): any => {
+      const lastNameDom = document.getElementById("lastname");
+      return lastNameDom ? lastNameDom : "";
+    };
 
-  const getMagentoPasswordDom = (): any => {
-    const passwordDom = document.getElementById("password");
-    return passwordDom ? passwordDom : "";
-  };
+    const getMagentoEmailDom = (): any => {
+      const emailDom = document.getElementById("email_address");
+      return emailDom ? emailDom : "";
+    };
 
-  const getMagentoConfirmPasswordDom = (): any => {
-    const confirmPasswordDom = document.getElementById("password-confirmation");
-    return confirmPasswordDom ? confirmPasswordDom : "";
-  };
+    const getMagentoPasswordDom = (): any => {
+      const passwordDom = document.getElementById("password");
+      return passwordDom ? passwordDom : "";
+    };
 
-  const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (getMagentoFirstNameDom()) {
-      getMagentoFirstNameDom().value = e.target.value;
-    }
-    setFirstName(e.target.value);
-  };
+    const getMagentoConfirmPasswordDom = (): any => {
+      const confirmPasswordDom = document.getElementById(
+        "password-confirmation"
+      );
+      return confirmPasswordDom ? confirmPasswordDom : "";
+    };
 
-  const handleLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (getMagentoLastNameDom()) {
-      getMagentoLastNameDom().value = e.target.value;
-    }
-    setLastName(e.target.value);
-  };
+    const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoFirstNameDom()) {
+        getMagentoFirstNameDom().value = e.target.value;
+      }
+      setFirstName(e.target.value);
+    };
 
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (getMagentoEmailDom()) {
-      getMagentoEmailDom().value = e.target.value;
-    }
-    setEmail(e.target.value);
-  };
+    const handleLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoLastNameDom()) {
+        getMagentoLastNameDom().value = e.target.value;
+      }
+      setLastName(e.target.value);
+    };
 
-  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (getMagentoPasswordDom()) {
-      getMagentoPasswordDom().value = e.target.value;
-    }
-    setPassword(e.target.value);
-  };
+    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoEmailDom()) {
+        getMagentoEmailDom().value = e.target.value;
+      }
+      setEmail(e.target.value);
+    };
 
-  const handleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (getMagentoConfirmPasswordDom()) {
-      getMagentoConfirmPasswordDom().value = e.target.value;
-    }
-    setConfirmPassword(e.target.value);
-  };
+    const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoPasswordDom()) {
+        getMagentoPasswordDom().value = e.target.value;
+      }
+      setPassword(e.target.value);
+    };
 
-  const handleRegister = () => {
-    console.log({ firstName, lastName, email, password, confirmPassword });
-    const registerBtn: any = document.getElementById("hannstar-register-btn");
-    if (registerBtn) registerBtn.click();
-  };
+    const handleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoConfirmPasswordDom()) {
+        getMagentoConfirmPasswordDom().value = e.target.value;
+      }
+      setConfirmPassword(e.target.value);
+    };
 
-  const LayoutContent = () => {
-    return(
-      <>
-      <div className={`${pageName}`}>
+    const handleRegister = () => {
+      console.log({ firstName, lastName, email, password, confirmPassword });
+      const registerBtn: any = document.getElementById("hannstar-register-btn");
+      if (registerBtn) registerBtn.click();
+    };
+
+    return (
+      <div className="hannstarRegisterBlock">
         <div ref={registerBlock}></div>
-        <div className="mainTitle">會員註冊</div>
+        <h2>會員註冊</h2>
         <div className={`${pageName}Content`}>
           <div className="row">
             <div className="columnBlock">
@@ -211,14 +213,19 @@ const HannstarRegister: React.FC = () => {
         </div>
         <div ref={registerBlock} className="magentoRegisteBlock"></div>
       </div>
-    </>
-    )
-  }
-  const partnerFcpTemplateProp = {
-    content: <LayoutContent />,
+    );
   };
+
+  const accountTemplateProp = {
+    content: <RegisterContent />,
+  };
+
   return (
-    <AccountTemplate {...partnerFcpTemplateProp}/>
+    <Layout>
+      <div className={`${pageName}Container`}>
+        <AccountTemplate {...accountTemplateProp} />
+      </div>
+    </Layout>
   );
 };
 
