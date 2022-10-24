@@ -70,12 +70,12 @@ const Header: React.FC = () => {
     );
   };
 
-  const handleChangeLanguage = () => {
-    const newLanguage = language.current === "tw" ? "en" : "tw";
-    language.current = newLanguage;
-    console.log('newLanguage', newLanguage)
-    i18n.changeLanguage(language.current);
-  };
+  // const handleChangeLanguage = () => {
+  //   const newLanguage = language.current === "tw" ? "en" : "tw";
+  //   language.current = newLanguage;
+  //   console.log('newLanguage', newLanguage)
+  //   i18n.changeLanguage(language.current);
+  // };
 
   return (
     <div className="hannstarHeader">

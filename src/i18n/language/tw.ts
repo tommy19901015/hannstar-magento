@@ -1,3 +1,5 @@
+import { RAMapply } from "./zh-tw/Service_RMA_Apply";
+
 export const tw = {
     common: {
       cancel: "取消",
@@ -6,5 +8,6 @@ export const tw = {
       humanResource:"人力資源"
     },
     lang: "繁中",
-    changeLanguage: "切換語系"
+    changeLanguage: "切換語系",
+    RAMapply,
   };
