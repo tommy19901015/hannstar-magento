@@ -10,8 +10,10 @@ $pageName: 'HannstarLogin';
         display: none;
     }
     .magentoErrorBlock {
-        background-color: $hannstar-green1;
+        background-color: $hannstar-green0;
+        @include hannstarContent1;
         color: #fff;
+        padding: 5px 20px;
     }
     .hannstarLoginBlock {
         display: flex;
@@ -22,6 +24,16 @@ $pageName: 'HannstarLogin';
             @include hannstarH2Title;
             text-align: center;
             margin-bottom: 25px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            a {
+                @include hannstarContent2;
+                word-break: keep-all;
+                color: $hannstar-blue2;
+            }
         }
         .columnBlock {
             width: 100%;
@@ -37,14 +49,34 @@ $pageName: 'HannstarLogin';
                     }
                 }
             }
+            .errorMessage {
+                margin-top: 10px;
+                @include hannstarContent2;
+                color: $hannstar-orange1;
+            }
+            .remind {
+                margin-top: 10px;
+                @include hannstarContent2;
+                color: $hannstar-blue3;
+                &.errorMessage {
+                    color: $hannstar-orange1;
+                }
+            }
         }
         .bodyBlock {
             display: flex;
             flex-wrap: wrap;
-            input[type='text'] {
+            input[type='text'],
+            input[type='password'] {
                 @include hannstarInput;
-                background: url('https://picsum.photos/seed/picsum/20/20') no-repeat scroll 7px 7px;
+                background: url('https://dvqruze971ijv.cloudfront.net/image/2.png') no-repeat scroll 10px 13px;
                 padding-left: 30px;
+                &.error {
+                    border-color: $hannstar-orange1;
+                }
+            }
+            input[type='password'] {
+                background: url('https://dvqruze971ijv.cloudfront.net/image/1.png') no-repeat scroll 10px 13px;
             }
 
             select {
@@ -62,6 +94,7 @@ $pageName: 'HannstarLogin';
 
             .hannstarCheckBox {
                 @include hannstarCheckBox;
+                @include hannstarContent2;
             }
             &.checkbox {
                 display: grid;

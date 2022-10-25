@@ -85,35 +85,40 @@ const HannstarLogin: React.FC = () => {
               onChange={handleAccout}
               value={account}
               placeholder="請填入您的Email"
+              className={`${isAccountError === false ? "error" : ""}`}
             />
           </div>
-          {isAccountError === false && <div className="errorMessage">請輸入正確的email格式</div>}
+          {isAccountError === false && <div className="errorMessage">必填欄位；輸入格式有誤，請重新輸入</div>}
         </div>
 
         <div className="columnBlock">
           <div className="title required">密碼</div>
           <div className="bodyBlock input">
-            <input onChange={handlePassword} type="text" value={password} />
+            <input
+              onChange={handlePassword}
+              type="password"
+              value={password}
+              className={`${isPasswordError === false ? "error" : ""}`}
+            />
           </div>
-          {isPasswordError === false && <div className="errorMessage">請輸入至少8個字元，並包括一個字母大小寫或特殊字元</div>}
+          <div className={`remind ${isPasswordError === false ? "errorMessage" : ""}`}>必填欄位；請輸入至少8個資源，並包含至少一個大寫、一個小寫和一個特殊字元</div>
         </div>
-
-        <div className="columnBlock">
-          <div className="bodyBlock select">
-            <div className="hannstarCheckBox spaceBetween alignCenter">
-              <input
-                id="checkBox1"
-                type="checkBox"
-                value="yes"
-                name="yes"
-              />
-              <label htmlFor="checkBox1">
-                記住帳號<a href="/">忘記密碼</a>
-              </label>
+        <div className="row">
+          <div className="columnBlock">
+            <div className="bodyBlock select">
+              <div className="hannstarCheckBox spaceBetween alignCenter">
+                <input
+                  id="checkBox1"
+                  type="checkBox"
+                  value="yes"
+                  name="yes"
+                />
+                <label htmlFor="checkBox1">記住帳號</label>
+              </div>
             </div>
           </div>
+          <a href="/">忘記密碼</a>
         </div>
-
         <div className="loginBtn" onClick={handleLogin}>
           登入
         </div>
