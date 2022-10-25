@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
+import { patterns, validate, compare } from "../../common/validateUtils";
 import "./css.scss";
 import usePageData from "./pageData";
 
@@ -48,17 +49,11 @@ const ResetPassword: React.FC = () => {
     setConfirmPassword(passwordValue);
   };
 
-  const validatePassword = (password:string) => {
-    let regex = /^[a-zA-Z\d]{8,}$/i;
-    let value = password.replace(/\s*/g,"");
-    return regex.test(value) 
-  }
-
   const handleSend = () => {
     const sendBtn: any = document.getElementById("hannstar-register-btn");
-    const getNewPassVal = validatePassword(newPassword);
-    const getConfirmPassVal = validatePassword(confirmPassword);
-   const isDiffVal = getNewPassVal && getConfirmPassVal && newPassword === confirmPassword;
+    const getNewPassVal = validate(newPassword, patterns.password);
+    const getConfirmPassVal = validate(confirmPassword, patterns.password);
+    const isDiffVal = getNewPassVal && getConfirmPassVal && compare(newPassword,confirmPassword);
     setInputError(isDiffVal);
     
     if (sendBtn) sendBtn.click();

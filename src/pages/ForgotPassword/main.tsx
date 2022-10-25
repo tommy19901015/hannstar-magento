@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
+import { patterns, validate } from "../../common/validateUtils";
 import "./css.scss";
 import usePageData from "./pageData";
 
@@ -44,9 +45,7 @@ const ForgotPassword: React.FC = () => {
 
   const handleSend = () => {
     const sendBtn: any = document.getElementById("hannstar-register-btn");
-    let regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
-    let getEmailVal = email.replace(/\s*/g,"");
-    const isTypeError = regex.test(getEmailVal) ;
+    const isTypeError = validate(email, patterns.email);
     setIsEmptyError(isTypeError);
     if (sendBtn) sendBtn.click();
   };
