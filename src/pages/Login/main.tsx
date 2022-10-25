@@ -11,7 +11,7 @@ const HannstarLogin: React.FC = () => {
     const [password, setPassword] = useState<string>("");
     const [isAccountError, setIsAccountError] = useState<boolean | string>("");
     const [isPasswordError, setIsPasswordError] = useState<boolean | string>("");
-    const [errorMessage, setErrorMessage] = useState<any>("");
+    const [hasMagentoErrorMessage, setHasMagentoErrorMessage] = useState<boolean>(false);
 
     const loginBlock: any = useRef();
     const errorMessageBlock: any = useRef();
@@ -22,8 +22,10 @@ const HannstarLogin: React.FC = () => {
 
       const magentoErrorMessageDom: any =
         document.getElementsByClassName("page messages")[0];
-      if (magentoErrorMessageDom)
+      if (magentoErrorMessageDom) {
+        setHasMagentoErrorMessage(true)
         errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+      }
 
       setAccount(getMagentoAccount().value);
       setPassword(getMagentoPassword().value);
@@ -76,7 +78,10 @@ const HannstarLogin: React.FC = () => {
     return (
       <div className="hannstarLoginBlock">
         <h2>登入</h2>
-        <div ref={errorMessageBlock} className="magentoErrorBlock">errorMessageBlock</div>
+        {hasMagentoErrorMessage && <div className="magentoMessageBlock error">
+          <img src="https://dvqruze971ijv.cloudfront.net/image/account/error.png" alt="error" />
+          <div className="magentoMessageText" ref={errorMessageBlock}></div>
+        </div>}
         <div className="columnBlock">
           <div className="title required">帳號</div>
           <div className="bodyBlock input">

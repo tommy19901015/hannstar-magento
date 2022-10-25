@@ -9,11 +9,28 @@ $pageName: 'HannstarLogin';
     .magentoLoginBlock {
         display: none;
     }
-    .magentoErrorBlock {
+    .magentoMessageBlock {
         background-color: $hannstar-green0;
-        @include hannstarContent1;
-        color: #fff;
-        padding: 5px 20px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &.error {
+            background-color: $hannstar-orange2;
+            .magentoMessageText {
+                color: $hannstar-orange1;
+            }
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+        }
+        .magentoMessageText {
+            @include hannstarContent1;
+            color: #fff;
+            margin-left: 10px;
+        }
     }
     .hannstarLoginBlock {
         display: flex;
@@ -69,14 +86,16 @@ $pageName: 'HannstarLogin';
             input[type='text'],
             input[type='password'] {
                 @include hannstarInput;
-                background: url('https://dvqruze971ijv.cloudfront.net/image/2.png') no-repeat scroll 10px 13px;
+                background: url('https://dvqruze971ijv.cloudfront.net/image/account/accountInputIcon.png') no-repeat
+                    scroll 10px 13px;
                 padding-left: 30px;
                 &.error {
                     border-color: $hannstar-orange1;
                 }
             }
             input[type='password'] {
-                background: url('https://dvqruze971ijv.cloudfront.net/image/1.png') no-repeat scroll 10px 13px;
+                background: url('https://dvqruze971ijv.cloudfront.net/image/account/passwordInputIcon.png') no-repeat
+                    scroll 10px 13px;
             }
 
             select {

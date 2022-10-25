@@ -4,6 +4,7 @@ import "../style/reset.css";
 import "../style/common.scss";
 import Login from "../pages/Login/main";
 import Index from "../pages/index/main";
+import HannstarRegister from "../pages/Register/main";
 import About from "../pages/about/main";
 import EBiz from "../pages/e-biz/main";
 import Solution from "../pages/solution/main";
@@ -35,6 +36,7 @@ import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
 
 const pageMappingObj = {
     root_Login:<Login/>,
+    root_Register:<HannstarRegister />,
     root_Index : <Index />,
     root_About : <About />,
     root_EBiz : <EBiz />,

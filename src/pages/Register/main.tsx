@@ -23,17 +23,31 @@ const HannstarRegister: React.FC = () => {
 
     const registerBlock: any = useRef();
     const errorMessageBlock: any = useRef();
+    const passwordErrorRef: any = useRef();
+    const passwordStrengthRef: any = useRef();
 
     useEffect(() => {
-      const magentoDom: any = document.getElementById(
-        "hannstar-magento-register"
-      );
+      const magentoDom: any = document.getElementById("form-validate");
+      console.log("magentoDom", magentoDom);
       if (magentoDom) registerBlock.current.appendChild(magentoDom);
 
-      const magentoErrorMessageDom: any =
-        document.getElementsByClassName("page messages")[0];
-      if (magentoErrorMessageDom)
-        errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+      const testPassword: any = document.getElementById("testPassword");
+      if (magentoDom) passwordErrorRef.current.appendChild(testPassword);
+
+
+      // const passwordError: any = document.getElementById("password-error");
+      // const passwordStrength: any = document.getElementById("password-strength-meter-container");
+      // const clonePasswordError = passwordError.cloneNode(true);
+      // const clonePasswordStrength = passwordStrength.cloneNode(true);
+
+      // passwordErrorRef.current.appendChild(clonePasswordError);
+      // passwordStrengthRef.current.appendChild(passwordStrength);
+
+
+      // const magentoErrorMessageDom: any =
+      //   document.getElementsByClassName("page messages")[0];
+      // if (magentoErrorMessageDom)
+      //   errorMessageBlock.current.appendChild(magentoErrorMessageDom);
 
       // setFirstName(getMagentoFirstNameDom().value);
       // setLastName(getMagentoLastNameDom().value);
@@ -93,6 +107,13 @@ const HannstarRegister: React.FC = () => {
     const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (getMagentoPasswordDom()) {
         getMagentoPasswordDom().value = e.target.value;
+        // const passwordError: any = document.getElementById("password-error");
+        // const passwordStrength: any = document.getElementById("password-strength-meter-container");
+        // const clonePasswordError = passwordError.cloneNode(true);
+        // const clonePasswordStrength = passwordStrength.cloneNode(true);
+
+        // passwordErrorRef.current.replaceChildren(clonePasswordError);
+        // passwordStrengthRef.current.replaceChildren(clonePasswordStrength);
       }
       setPassword(e.target.value);
     };
@@ -104,9 +125,13 @@ const HannstarRegister: React.FC = () => {
       setConfirmPassword(e.target.value);
     };
 
+    const validateEmpty = (inputValue: string): any => {
+      return inputValue ? inputValue.length >= 8 : false
+    }
+
     const handleRegister = () => {
       console.log({ firstName, lastName, email, password, confirmPassword });
-      const registerBtn: any = document.getElementById("hannstar-register-btn");
+      const registerBtn: any = document.getElementById("hannstarRegisterBtn");
       if (registerBtn) registerBtn.click();
     };
 
@@ -143,6 +168,8 @@ const HannstarRegister: React.FC = () => {
             <div className="title required">密碼</div>
             <div className="bodyBlock input">
               <input type="text" onChange={handlePassword} value={password} />
+              <div ref={passwordErrorRef}></div>
+              <div ref={passwordStrengthRef}></div>
             </div>
           </div>
           <div className="columnBlock">
