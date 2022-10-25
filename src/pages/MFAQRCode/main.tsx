@@ -6,10 +6,11 @@ import usePageData from "./pageData";
 const MFAQRCode: React.FC = () => {
   const pageName = "MFAQRCode";
 
-  const [email, setEmail] = useState<string>("");
-  const [isEmailError, setIsEmptyError] = useState<boolean>(true);
+  const [code, setEmail] = useState<string>("");
+  const [isCodeError, setIsEmptyError] = useState<boolean>(true);
   const emailBlock: any = useRef();
   const errorMessageBlock: any = useRef();
+  const tableData =usePageData();
 
   useEffect(() => {
     const magentoDom: any = document.getElementById(
@@ -34,7 +35,7 @@ const MFAQRCode: React.FC = () => {
     return emailDom ? emailDom : null;
   };
 
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCodeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (getMagentoEmailDom()) {
       getMagentoEmailDom().value = e.target.value;
     }
@@ -44,9 +45,9 @@ const MFAQRCode: React.FC = () => {
 
   const handleSend = () => {
     const sendBtn: any = document.getElementById("hannstar-register-btn");
-    let regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
-    let getEmailVal = email.replace(/\s*/g, "");
-    const isTypeError = regex.test(getEmailVal);
+    //let regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+    let getCodeVal = code.replace(/\s*/g, "");
+    const isTypeError = getCodeVal.length === 0;
     setIsEmptyError(isTypeError);
     if (sendBtn) sendBtn.click();
   };
@@ -54,32 +55,28 @@ const MFAQRCode: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}`}>
-        <div className="mainTitle">忘記密碼</div>
+        <div className="mainTitle">{tableData.formTitle}</div>
         <div className={`${pageName}Content`}>
           <div className="columnBlock">
-            <div className="title required">
-              請輸入您的帳號Email，
-              <br />
-              系統會將您的密碼發送到您的信箱。
-            </div>
             <div className="bodyBlock input">
               <input
                 type="text"
-                onChange={handleEmail}
-                value={email}
-                placeholder="請填入您的Email"
-                className={`${!!isEmailError ? "" : "error"}`}
+                onChange={handleCodeInput}
+                value={code}
+                placeholder={tableData.placeholder}
+                className={`${!!isCodeError ? "" : "error"}`}
               />
-              {!isEmailError && (
+              {!isCodeError && (
                 <div className="errorMessage">
-                  <i className="">*</i>必填欄位；輸入格式有誤，請重新輸入
+                  <i className="">*</i>{tableData.errorMessage}
                 </div>
               )}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
-            請求重設
+            {tableData.sendBtn}
           </div>
+          <span>{tableData.otherMessage}</span>
         </div>
         <div ref={emailBlock} className="magentoRegisteBlock"></div>
       </div>
