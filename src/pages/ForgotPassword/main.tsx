@@ -7,7 +7,7 @@ const ForgotPassword: React.FC = () => {
   const pageName = "ForgotPassword";
 
   const [email, setEmail] = useState<string>("");
-
+  const [isEmailError, setIsEmptyError] = useState<boolean>(true);
   const emailBlock: any = useRef();
   const errorMessageBlock: any = useRef();
 
@@ -38,11 +38,16 @@ const ForgotPassword: React.FC = () => {
     if (getMagentoEmailDom()) {
       getMagentoEmailDom().value = e.target.value;
     }
-    setEmail(e.target.value);
+    const emailValue = e.target.value.trim();
+    setEmail(emailValue);
   };
 
   const handleSend = () => {
     const sendBtn: any = document.getElementById("hannstar-register-btn");
+    let regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+    let getEmailVal = email.replace(/\s*/g,"");
+    const isTypeError = regex.test(getEmailVal) ;
+    setIsEmptyError(isTypeError);
     if (sendBtn) sendBtn.click();
   };
 
@@ -52,9 +57,16 @@ const ForgotPassword: React.FC = () => {
         <div className="mainTitle">忘記密碼</div>
         <div className={`${pageName}Content`}>
           <div className="columnBlock">
-            <div className="title required">請輸入...</div>
+            <div className="title required">請輸入您的帳號Email，<br/>系統會將您的密碼發送到您的信箱。</div>
             <div className="bodyBlock input">
-              <input type="text" onChange={handleEmail} value={email} />
+              <input
+              type="text"
+              onChange={handleEmail}
+              value={email}
+              placeholder="請填入您的Email"
+              className={`${!!isEmailError ? "" : "error"}`}
+              />
+               {!isEmailError && <div className="errorMessage"><i className="">*</i>必填欄位；輸入格式有誤，請重新輸入</div>}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
