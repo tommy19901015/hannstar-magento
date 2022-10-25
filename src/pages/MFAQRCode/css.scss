@@ -1,0 +1,59 @@
+@import "../../style/variable.scss";
+
+$pageName: "MFAQRCode";
+
+.#{$pageName} {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include hannstarBlockPadding;
+  .mainTitle {
+    @include hannstarH2Title;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .ForgotPasswordContent {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .columnBlock {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      @include hannstarTextPadding1;
+      .title {
+        width: 100%;
+        @include hannstarContent2;
+        word-break: keep-all;
+        @include hannstarTextPadding1;
+      }
+      .errorMessage {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-orange1;
+      }
+    }
+    .bodyBlock {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      input[type="text"] {
+        @include hannstarInput;
+        &.error {
+          border-color: $hannstar-orange1;
+        }
+      }
+    }
+  }
+
+  .hannstarRegisterBtn {
+    @include hannstarBtn;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
