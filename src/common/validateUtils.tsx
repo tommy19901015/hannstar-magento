@@ -6,16 +6,16 @@ export const patterns = {
 
 export function validate(val: number | string, regex:RegExp) {
     const valid = val.toString().replace(/\s*/g,"");
-    return regex.test(valid);;
+    return regex.test(valid);
 }
 
-export function isEmpty(val: number | string) :boolean{
+export function isNotEmpty(val: number | string) :boolean{
     const valid = val.toString().replace(/\s*/g,"");
-    return valid.length === 0 ;
+    return valid.length !== 0 ;
 }
 
 export function compare(prev: number | string, curr: number | string) :boolean{
     const prevVal = prev.toString().replace(/\s*/g,"");
     const currVal= curr.toString().replace(/\s*/g,"");
-    return !isEmpty(prevVal) && !isEmpty(currVal) && prevVal === currVal;
+    return isNotEmpty(prevVal) && isNotEmpty(currVal) && prevVal === currVal;
 }

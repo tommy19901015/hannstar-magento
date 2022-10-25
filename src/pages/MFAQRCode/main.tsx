@@ -6,8 +6,8 @@ import usePageData from "./pageData";
 const MFAQRCode: React.FC = () => {
   const pageName = "MFAQRCode";
 
-  const [code, setEmail] = useState<string>("");
-  const [isCodeError, setIsEmptyError] = useState<boolean>(true);
+  const [code, setCode] = useState<string>("");
+  const [isCodeError, setIsCodeError] = useState<boolean>(true);
   const emailBlock: any = useRef();
   const errorMessageBlock: any = useRef();
   const tableData =usePageData();
@@ -25,7 +25,7 @@ const MFAQRCode: React.FC = () => {
 
     // setFirstName(getMagentoFirstNameDom().value);
     // setLastName(getMagentoLastNameDom().value);
-    // setEmail(getMagentoEmailDom().value);
+    // setCode(getMagentoEmailDom().value);
     // setPassword(getMagentoPasswordDom().value);
     // setConfirmPassword(getMagentoConfirmPasswordDom().value);
   }, []);
@@ -40,7 +40,7 @@ const MFAQRCode: React.FC = () => {
       getMagentoEmailDom().value = e.target.value;
     }
     const emailValue = e.target.value.trim();
-    setEmail(emailValue);
+    setCode(emailValue);
   };
 
   const handleSend = () => {
@@ -48,7 +48,7 @@ const MFAQRCode: React.FC = () => {
     //let regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
     let getCodeVal = code.replace(/\s*/g, "");
     const isTypeError = getCodeVal.length === 0;
-    setIsEmptyError(isTypeError);
+    setIsCodeError(isTypeError);
     if (sendBtn) sendBtn.click();
   };
 
