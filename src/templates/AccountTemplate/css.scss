@@ -1,62 +1,62 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'AccountTemplate';
+$pageName: "AccountTemplate";
 
 .#{$pageName}ServiceBlock {
-    padding: 0 80px;
-    display: inline-flex;
-    flex-direction: column;
+  padding: 0 40px;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  h3 {
+    @include hannstarH2Title;
     text-align: center;
-    h3 {
-        @include hannstarH2Title;
-        text-align: center;
-        margin-bottom: 25px;
-        padding: 4px 0;
+    margin-bottom: 25px;
+    padding: 4px 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    @include hannstarTextPadding2;
+    h4 {
+      background-color: $hannstar-bg-color;
+      border-radius: 20px;
+      @include hannstarH4Title;
+      color: $hannstar-blue2;
+      text-align: center;
+      margin-bottom: 25px;
+      padding: 4px 0;
     }
-    .content {
-        display: flex;
-        flex-direction: column;
-        @include hannstarTextPadding2;
-        h4 {
-            background-color: $hannstar-bg-color;
-            border-radius: 20px;
-            @include hannstarH4Title;
-            color: $hannstar-blue2;
-            text-align: center;
-            margin-bottom: 25px;
-            padding: 4px 0;
-        }
-        .items {
-            display: flex;
-            align-content: flex-start;
-            text-align: center;
-            justify-content: space-between;
-        }
-        .item {
-            display: inline-flex;
-            width: 30%;
-            flex-direction: column;
-            text-align: center;
-            justify-content: flex-start;
-            margin: 0 auto;
-            &.block1 {
-                width: 100%;
-            }
-            img {
-                width: 30px;
-                height: 30px;
-                display: inline-block;
-                margin: 0 auto;
-                margin-bottom: 15px;
-            }
-            span {
-                @include hannstarContent0;
-                color: $hannstar-blue3;
-                margin-bottom: 10px;
-            }
-            p {
-                @include hannstarContent1;
-            }
-        }
+    .items {
+      display: flex;
+      align-content: flex-start;
+      text-align: center;
+      justify-content: space-between;
     }
+    .item {
+      display: inline-flex;
+      width: 30%;
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-start;
+      margin: 0 auto;
+      &.block1 {
+        width: 100%;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin: 0 auto;
+        margin-bottom: 15px;
+      }
+      span {
+        @include hannstarContent0;
+        color: $hannstar-blue3;
+        margin-bottom: 10px;
+      }
+      p {
+        @include hannstarContent1;
+      }
+    }
+  }
 }

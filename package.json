@@ -15,6 +15,7 @@
     "@types/react-paginate": "^7.1.1",
     "@types/react-redux": "^7.1.24",
     "@types/redux-saga": "^0.10.5",
+    "@types/zxcvbn": "^4.4.1",
     "awesome-typescript-loader": "^5.2.1",
     "axios": "^0.27.2",
     "clean-webpack-plugin": "^4.0.0",
@@ -46,7 +47,8 @@
     "styled-components": "^5.3.3",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.3.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zxcvbn": "^4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
-import Columns from "../../component/columns/main";
-import { ColType } from "../../component/columns/interface";
-import FormComponent from "../../component/form/main";
-import Breadcrumbs from "../../component/breadcrumbs/main";
-import { I_TabContentObj } from "./interface";
+import zxcvbn from "zxcvbn";
+import {
+  validate,
+  isNotEmpty,
+  patterns,
+  compare,
+} from "../../common/validateUtils";
 import "./css.scss";
 import { pageData } from "./pageData";
 import AccountTemplate from "../../templates/AccountTemplate/main";
@@ -18,31 +20,31 @@ const HannstarRegister: React.FC = () => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
+    const [company, setCompany] = useState<string>("");
+    const [country, setCountry] = useState<string>("");
+    const [agreeEmail, setAgreeEmail] = useState<boolean>(false);
+    const [agreePrivacy, setAgreePrivacy] = useState<boolean>(false);
+
+    const [passwordStrengthMeter, setPasswordStrengthMeter] = useState<
+      number | string
+    >("");
+
+    const [firstNameError, setFirstNameError] = useState<boolean | string>("");
+    const [lastNameError, setLastNameError] = useState<boolean | string>("");
+    const [emailError, setEmailError] = useState<boolean | string>("");
+    const [passwordError, setPasswordError] = useState<boolean | string>("");
+    const [confirmPasswordError, setConfirmPasswordError] = useState<
+      boolean | string
+    >("");
 
     const [errorMessage, setErrorMessage] = useState<any>("");
 
     const registerBlock: any = useRef();
-    const errorMessageBlock: any = useRef();
-    const passwordErrorRef: any = useRef();
-    const passwordStrengthRef: any = useRef();
 
     useEffect(() => {
       const magentoDom: any = document.getElementById("form-validate");
       console.log("magentoDom", magentoDom);
       if (magentoDom) registerBlock.current.appendChild(magentoDom);
-
-      const testPassword: any = document.getElementById("testPassword");
-      if (magentoDom) passwordErrorRef.current.appendChild(testPassword);
-
-
-      // const passwordError: any = document.getElementById("password-error");
-      // const passwordStrength: any = document.getElementById("password-strength-meter-container");
-      // const clonePasswordError = passwordError.cloneNode(true);
-      // const clonePasswordStrength = passwordStrength.cloneNode(true);
-
-      // passwordErrorRef.current.appendChild(clonePasswordError);
-      // passwordStrengthRef.current.appendChild(passwordStrength);
-
 
       // const magentoErrorMessageDom: any =
       //   document.getElementsByClassName("page messages")[0];
@@ -107,14 +109,9 @@ const HannstarRegister: React.FC = () => {
     const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (getMagentoPasswordDom()) {
         getMagentoPasswordDom().value = e.target.value;
-        // const passwordError: any = document.getElementById("password-error");
-        // const passwordStrength: any = document.getElementById("password-strength-meter-container");
-        // const clonePasswordError = passwordError.cloneNode(true);
-        // const clonePasswordStrength = passwordStrength.cloneNode(true);
-
-        // passwordErrorRef.current.replaceChildren(clonePasswordError);
-        // passwordStrengthRef.current.replaceChildren(clonePasswordStrength);
       }
+      console.log(zxcvbn(e.target.value).score);
+      setPasswordStrengthMeter(zxcvbn(e.target.value).score);
       setPassword(e.target.value);
     };
 
@@ -125,14 +122,54 @@ const HannstarRegister: React.FC = () => {
       setConfirmPassword(e.target.value);
     };
 
-    const validateEmpty = (inputValue: string): any => {
-      return inputValue ? inputValue.length >= 8 : false
-    }
+    const handleCompany = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setCompany(e.target.value);
+    };
+
+    const handleCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setCountry(e.target.value);
+    };
+
+    const handleAgreePrivacy = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setAgreePrivacy(e.target.checked);
+    };
+
+    const handleAgreeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setAgreeEmail(e.target.checked);
+    };
 
     const handleRegister = () => {
-      console.log({ firstName, lastName, email, password, confirmPassword });
-      const registerBtn: any = document.getElementById("hannstarRegisterBtn");
-      if (registerBtn) registerBtn.click();
+      setFirstNameError(isNotEmpty(firstName));
+      setLastNameError(isNotEmpty(lastName));
+      setEmailError(validate(email, patterns.email));
+      setPasswordError(validate(password, patterns.password));
+      setConfirmPasswordError(compare(confirmPassword, password));
+
+      console.log({
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+        company,
+        country,
+        agreeEmail,
+        agreePrivacy,
+      });
+
+      const allValidateColumn = [
+        firstNameError,
+        lastNameError,
+        emailError,
+        passwordError,
+        confirmPasswordError,
+        agreePrivacy,
+      ];
+
+      if (allValidateColumn.every((v) => v === false)) {
+        const registerBtn: any = document.getElementById("hannstarRegisterBtn");
+        if (registerBtn) registerBtn.click();
+      }
     };
 
     return (
@@ -148,29 +185,71 @@ const HannstarRegister: React.FC = () => {
                   type="text"
                   onChange={handleFirstName}
                   value={firstName}
+                  className={`${firstNameError === false ? "error" : ""}`}
                 />
               </div>
+              {firstNameError === false && (
+                <div className="errorMessage">
+                  必填欄位；輸入格式有誤，請重新輸入
+                </div>
+              )}
             </div>
             <div className="columnBlock">
               <div className="title required">名</div>
               <div className="bodyBlock input">
-                <input type="text" onChange={handleLastName} value={lastName} />
+                <input
+                  type="text"
+                  onChange={handleLastName}
+                  value={lastName}
+                  className={`${lastNameError === false ? "error" : ""}`}
+                />
               </div>
+              {lastNameError === false && (
+                <div className="errorMessage">
+                  必填欄位；輸入格式有誤，請重新輸入
+                </div>
+              )}
             </div>
           </div>
           <div className="columnBlock">
             <div className="title required">電子郵箱(即帳號)</div>
             <div className="bodyBlock input">
-              <input type="text" onChange={handleEmail} value={email} />
+              <input
+                type="text"
+                onChange={handleEmail}
+                value={email}
+                className={`${emailError === false ? "error" : ""}`}
+              />
             </div>
+            {emailError === false && (
+              <div className="errorMessage">
+                必填欄位；輸入格式有誤，請重新輸入
+              </div>
+            )}
           </div>
           <div className="columnBlock">
             <div className="title required">密碼</div>
             <div className="bodyBlock input">
-              <input type="text" onChange={handlePassword} value={password} />
-              <div ref={passwordErrorRef}></div>
-              <div ref={passwordStrengthRef}></div>
+              <input
+                type="text"
+                onChange={handlePassword}
+                value={password}
+                className={`${passwordError === false ? "error" : ""}`}
+              />
             </div>
+            {(passwordStrengthMeter === 1 || passwordStrengthMeter === 0) && (
+              <div className="meter1">弱</div>
+            )}
+            {passwordStrengthMeter === 2 && <div className="meter2">中</div>}
+            {passwordStrengthMeter === 3 && <div className="meter3">強</div>}
+            {passwordStrengthMeter === 4 && (
+              <div className="meter4">非常強</div>
+            )}
+            {passwordError === false && (
+              <div className="errorMessage">
+                必填欄位；輸入格式有誤，請重新輸入
+              </div>
+            )}
           </div>
           <div className="columnBlock">
             <div className="title required">密碼(再次確認)</div>
@@ -179,55 +258,55 @@ const HannstarRegister: React.FC = () => {
                 type="text"
                 onChange={handleConfirmPassword}
                 value={confirmPassword}
+                className={`${confirmPasswordError === false ? "error" : ""}`}
               />
             </div>
+            {confirmPasswordError === false && (
+              <div className="errorMessage">
+                必填欄位；輸入格式有誤，請重新輸入
+              </div>
+            )}
           </div>
           <div className="columnBlock">
             <div className="title">公司名稱</div>
             <div className="bodyBlock input">
-              <input
-                type="text"
-                onChange={handleConfirmPassword}
-                value={confirmPassword}
-              />
+              <input type="text" onChange={handleCompany} value={company} />
             </div>
           </div>
           <div className="columnBlock">
             <div className="title">公司所在地(國家)</div>
             <div className="bodyBlock select">
-              <select>
-                <option>台灣</option>
-                <option>中國</option>
-                <option>日本</option>
+              <select onChange={handleCountry} value={country}>
+                <option value="台灣">台灣</option>
+                <option value="中國">中國</option>
+                <option value="日本">日本</option>
               </select>
             </div>
           </div>
           <div className="checkBlock">
             <div className="columnBlock">
-              <div className="bodyBlock select">
+              <div className="bodyBlock checkBox">
                 <div className="hannstarCheckBox">
                   <input
-                    id="checkBox1"
+                    id="agreePrivacy"
                     type="checkBox"
-                    value="yes"
-                    name="yes"
+                    onChange={handleAgreePrivacy}
                   />
-                  <label htmlFor="checkBox1">
+                  <label htmlFor="agreePrivacy">
                     我已詳閱並同意<a href="/">瀚宇彩晶隱私申明</a>
                   </label>
                 </div>
               </div>
             </div>
             <div className="columnBlock">
-              <div className="bodyBlock select">
+              <div className="bodyBlock checkbox">
                 <div className="hannstarCheckBox">
                   <input
-                    id="checkBox2"
+                    id="agreeEmail"
                     type="checkBox"
-                    value="yes"
-                    name="yes"
+                    onChange={handleAgreeEmail}
                   />
-                  <label htmlFor="checkBox2">
+                  <label htmlFor="agreeEmail">
                     我同意收到Hannstar信件與產品資訊
                   </label>
                 </div>

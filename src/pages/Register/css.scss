@@ -6,25 +6,50 @@ $pageName: "HannstarRegister";
   max-width: $max-width;
   margin: 0 auto;
   padding: 80px 0;
-  .magentoLoginBlock {
+  .magentoRegisterBlock {
     display: none;
   }
-  .magentoErrorBlock {
-    background-color: $hannstar-green1;
-    color: #fff;
+  .magentoMessageBlock {
+    background-color: $hannstar-green0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    &.error {
+      background-color: $hannstar-orange2;
+      .magentoMessageText {
+        color: $hannstar-orange1;
+      }
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+    }
+    .magentoMessageText {
+      @include hannstarContent1;
+      color: #fff;
+      margin-left: 10px;
+    }
   }
   .hannstarRegisterBlock {
     display: flex;
     flex-direction: column;
-    padding: 0 80px;
+    padding: 0 40px;
     @include hannstarContent0;
     h2 {
       @include hannstarH2Title;
       text-align: center;
       margin-bottom: 25px;
     }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
     .columnBlock {
       width: 100%;
+      @include hannstarTextPadding2;
       .title {
         @include hannstarContentText;
         word-break: keep-all;
@@ -36,42 +61,77 @@ $pageName: "HannstarRegister";
           }
         }
       }
-      .bodyBlock {
-        display: flex;
-        flex-wrap: wrap;
-        input[type="text"] {
-          @include hannstarInput;
-        }
-
-        select {
-          @include hannstarSelect;
-        }
-
-        textarea {
-          @include hannstarTextarea;
-        }
-
-        .hannstarRadio {
-          margin-right: 20px;
-          @include hannstarRadio;
-        }
-
-        .hannstarCheckBox {
-          @include hannstarCheckBox;
-        }
-        &.checkbox {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          grid-auto-rows: 20px;
-          grid-gap: 20px;
+      .errorMessage {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-orange1;
+      }
+      .remind {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-blue3;
+        &.errorMessage {
+          color: $hannstar-orange1;
         }
       }
     }
+    .bodyBlock {
+      display: flex;
+      flex-wrap: wrap;
+      input[type="text"],
+      input[type="password"] {
+        @include hannstarInput;
+        &.error {
+          border-color: $hannstar-orange1;
+        }
+      }
 
-    .loginBtn {
+      select {
+        @include hannstarSelect;
+      }
+
+      textarea {
+        @include hannstarTextarea;
+      }
+
+      .hannstarRadio {
+        margin-right: 20px;
+        @include hannstarRadio;
+      }
+
+      .hannstarCheckBox {
+        @include hannstarCheckBox;
+        @include hannstarContent2;
+        a {
+          padding-left: 5px;
+          color: $hannstar-blue2;
+        }
+      }
+      &.checkbox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-auto-rows: 20px;
+        grid-gap: 20px;
+      }
+    }
+
+    .spaceBetween {
+      display: flex;
+      justify-content: space-between;
+      @include hannstarTextPadding2;
+      a {
+        color: $hannstar-blue2;
+      }
+    }
+    .alignCenter {
+      display: flex;
+      align-items: center;
+      @include hannstarContent2;
+    }
+    .hannstarRegisterBtn {
       @include hannstarBtn;
-      width: 30%;
-      margin: 0 auto;
+      width: 100%;
+      padding: 12px 0;
       margin-bottom: 20px;
       text-align: center;
     }
