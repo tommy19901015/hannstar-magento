@@ -14,6 +14,7 @@ import ForgotPassword from "./pages/ForgotPassword/main";
 import ResetPassword from "./pages/ResetPassword/main";
 import MFA from "./pages/MFA/main";
 import MFAQRCode from "./pages/MFAQRCode/main";
+import AccountPersonal from "./pages/Account_Personal/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -54,6 +55,7 @@ ReactDOM.render(
       <Route path={"/resetPassword"} element={<ResetPassword />} />
       <Route path={"/mfa"} element={<MFA />} />
       <Route path={account.MFAQRcode.href} element={<MFAQRCode />} />
+      <Route path={"/accountPersonal"} element={<AccountPersonal />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

@@ -1,0 +1,44 @@
+@import '../../../style/variable.scss';
+
+$pageName: 'StepOne';
+
+.#{$pageName}ContentBlock {
+    margin-bottom: 80px;
+    .#{$pageName}Title {
+        @include hannstarH3Title;
+        color: $hannstar-blue2;
+        margin-bottom: 40px;
+    }
+    .productNameBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 20px;
+        .formComponent {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        .getNameBtn {
+            margin-left: 20px;
+            @include hannstarBtn;
+        }
+    }
+    .textBlock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        @include hannstarNoteText;
+        color: $hannstar-orange1;
+        .text {
+            margin-right: 20px;
+        }
+        .hannstarCheckBox {
+            @include hannstarCheckBox;
+            input[type='checkbox']:checked + label,
+            input[type='checkbox']:not(:checked) + label {
+                color: $hannstar-orange1;
+            }
+        }
+    }
+}
