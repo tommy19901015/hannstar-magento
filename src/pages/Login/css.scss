@@ -10,28 +10,32 @@ $pageName: 'HannstarLogin';
         display: none;
     }
     .magentoMessageBlock {
-        background-color: $hannstar-green0;
-        padding: 6px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        display: none;
-        &.error {
-            display: flex;
-            background-color: $hannstar-orange2;
-            .magentoMessageText {
-                color: $hannstar-orange1;
+        .page {
+            margin-bottom: 20px;
+            &.messages {
+                .message-error {
+                    &.error {
+                        background-color: $hannstar-orange2;
+                        padding: 6px;
+                        &.message {
+                            @include hannstarContent1;
+                            color: #fff;
+                            position: relative;
+                            &::before {
+                                content: url('https://dvqruze971ijv.cloudfront.net/image/account/error.png');
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                top: 8px;
+                            }
+                            div {
+                                color: $hannstar-orange1;
+                                margin-left: 30px;
+                            }
+                        }
+                    }
+                }
             }
-        }
-        img {
-            width: 20px;
-            height: 20px;
-            margin: 0 10px;
-        }
-        .magentoMessageText {
-            @include hannstarContent1;
-            color: #fff;
-            margin-left: 10px;
         }
     }
     .hannstarLoginBlock {

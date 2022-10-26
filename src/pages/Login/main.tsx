@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
 import AccountTemplate from "../../templates/AccountTemplate/main"
+import urlConfig from "../../config/urlSetting.json";
 import "./css.scss";
 
 const HannstarLogin: React.FC = () => {
@@ -11,7 +12,6 @@ const HannstarLogin: React.FC = () => {
     const [password, setPassword] = useState<string>("");
     const [isAccountError, setIsAccountError] = useState<boolean | string>("");
     const [isPasswordError, setIsPasswordError] = useState<boolean | string>("");
-    const [hasMagentoErrorMessage, setHasMagentoErrorMessage] = useState<boolean>(false);
 
     const loginBlock: any = useRef();
     const errorMessageBlock: any = useRef();
@@ -22,11 +22,8 @@ const HannstarLogin: React.FC = () => {
 
       const magentoDefultMessageDom: any =
         document.getElementsByClassName("page messages")[0];
-      console.log('magentoDefultMessageDom', magentoDefultMessageDom);
-      if (magentoDefultMessageDom) {
-        setHasMagentoErrorMessage(true)
-        errorMessageBlock.current.appendChild(magentoDefultMessageDom);
-      }
+
+      if (magentoDefultMessageDom) errorMessageBlock.current.appendChild(magentoDefultMessageDom);
 
       setAccount(getMagentoAccount().value);
       setPassword(getMagentoPassword().value);
@@ -79,11 +76,7 @@ const HannstarLogin: React.FC = () => {
     return (
       <div className="hannstarLoginBlock">
         <h2>登入</h2>
-        <div></div>
-        <div className={`magentoMessageBlock ${hasMagentoErrorMessage ? "error" : ""}`}>
-          <img src="https://dvqruze971ijv.cloudfront.net/image/account/error.png" alt="error" />
-          <div className="magentoMessageText" ref={errorMessageBlock}></div>
-        </div>
+        <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className="columnBlock">
           <div className="title required">帳號</div>
           <div className="bodyBlock input">
@@ -124,13 +117,13 @@ const HannstarLogin: React.FC = () => {
               </div>
             </div>
           </div>
-          <a href="/">忘記密碼</a>
+          <a href={urlConfig.account.forgotPassword.href}>忘記密碼</a>
         </div>
         <div className="loginBtn" onClick={handleLogin}>
           登入
         </div>
         <p className="create">
-          還沒有HannStar帳號? <a href="">建立帳號</a>
+          還沒有HannStar帳號? <a href={urlConfig.account.register.href}>建立帳號</a>
         </p>
 
         <div ref={loginBlock} className="magentoLoginBlock"></div>

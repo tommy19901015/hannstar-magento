@@ -43,17 +43,17 @@ import Template3Page from "./pages/Template3/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
-const { hannstar, partner, service } = urlConfig;
+const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path={"/login"} element={<HannstarLogin />} />
-      <Route path={"/register"} element={<HannstarRegister />} />
+      <Route path={account.login.href} element={<HannstarLogin />} />
+      <Route path={account.register.href} element={<HannstarRegister />} />
       <Route path={"/forgotPassword"} element={<ForgotPassword />} />
       <Route path={"/resetPassword"} element={<ResetPassword />} />
       <Route path={"/mfa"} element={<MFA />} />
-      <Route path={"/mfaqrcode"} element={<MFAQRCode />} />
+      <Route path={account.MFAQRcode.href} element={<MFAQRCode />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

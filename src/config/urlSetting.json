@@ -1,4 +1,22 @@
 {
+  "account":{
+    "login":{
+        "title":"登入",
+        "href":"/customer/account/login"
+    },
+    "register":{
+        "title":"註冊",
+        "href":"/customer/account/create/"
+    },
+    "forgotPassword":{
+        "title":"忘記密碼",
+        "href":"/customer/account/forgotpassword/"
+    },
+    "MFAQRcode":{
+        "title":"MFAQRcode",
+        "href":"/Cognito/Account/RegisterMFA"
+    }
+  }, 
   "hannstar":{
     "index":{
         "title":"官網首頁",
