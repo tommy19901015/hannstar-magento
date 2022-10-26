@@ -57,7 +57,7 @@ const MFAQRCode: React.FC = () => {
               <p>{tableData.subTitle}</p>
               <span>{tableData.noteTitle}</span>
               <div className="stepBtn">
-                {tableData.verifyBtn}
+                {tableData.pageBtn}
               </div>
             </div>
             <img alt="demo" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_demo.png" />
@@ -69,7 +69,7 @@ const MFAQRCode: React.FC = () => {
             <div className="subTitle">{tableData.formTitle}</div>
             <div className="content">
               <div className="step">
-                <span className="description">{tableData.install}</span>
+                <span className="description">{tableData.installText1}<br/>{tableData.installText2}</span>
                 <div className="stepExample">
                   <img alt="android" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_android.png" />
                   <img alt="ios" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_ios.png" />
@@ -84,7 +84,7 @@ const MFAQRCode: React.FC = () => {
                 </div>
               </div>
               <div className="step">
-                <span className="description">{tableData.verify}</span>
+                <span className="description">{tableData.verifylText1}<br/>{tableData.verifylText2}</span>
                 <div className="bodyBlock input">
                   <input
                     type="text"

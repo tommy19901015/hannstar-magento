@@ -6,12 +6,15 @@ export interface I_PageData {
     subTitle: string
     noteTitle: string
     formTitle: string
-    install: string
+    installText1:string
+    installText2:string
     bind: string
-    verify: string
+    verifylText1: string
+    verifylText2: string
     bindSubTitle: string
     bindNote: string
     verifyBtn: string
     errorMessage:string
     placeholder: string
+    pageBtn:string
 }
