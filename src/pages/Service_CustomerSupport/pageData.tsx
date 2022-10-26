@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface"
+import { I_PageType } from "./interface";
 
-export const pageData = () => {
-    return {
+
+function usePageData() {
+    const { t } = useTranslation();
+    const PageType: I_PageType =  {
         banner: {
             src: "https://e-service.hannstar.com/Content/images/img/banner/customer-support.jpg",
             title: "客戶通",
@@ -81,4 +85,8 @@ export const pageData = () => {
             }
         },
     }
+  
+    return PageType;
 }
+  
+export default usePageData;
