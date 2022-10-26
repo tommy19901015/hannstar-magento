@@ -33,7 +33,8 @@ export interface I_Table {
 }
 
 
-export interface I_PageData {
+
+export interface I_PageType {
     breadcrumbs: I_Breadcrumbs
     pageTitle: string
     filterStateTitle: string

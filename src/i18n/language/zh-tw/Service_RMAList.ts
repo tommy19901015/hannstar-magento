@@ -1,6 +1,6 @@
-import { I_PageData } from "../../../pages/Service_RMAList/interface";
+import { I_PageType } from "../../../pages/Service_RMAList/interface";
 
-export const pageData = (): I_PageData => {
+export const pageData = (): I_PageType => {
   return {
     breadcrumbs: {
       title: "",

@@ -8,7 +8,7 @@ import testTableData from "./testTableData.json";
 import { RMAState, I_Table, I_tabStateInfo } from "./interface"
 import "./css.scss";
 import { useTranslation } from "react-i18next";
-import { pageData } from "./pageData";
+import usePageData from "./pageData";
 
 const ServiceRMAList: React.FC = () => {
   const pageName = "ServiceRMAList";
@@ -17,6 +17,7 @@ const ServiceRMAList: React.FC = () => {
   const [RMAListStateTab, setRMAListStateTab] = useState<number>(0);
 
   const fakeApiData: any = testTableData;
+  const pageData = usePageData();
 
   useEffect(() => {
     setRMAListData(fakeApiData);
@@ -25,27 +26,27 @@ const ServiceRMAList: React.FC = () => {
   const FilterStateBlock = () => {
     const tabStateInfo: I_tabStateInfo = [
       {
-        text: pageData(t).filterState.all,
+        text: pageData.filterState.all,
         state: RMAState.All,
       },
       {
-        text: pageData().filterState.register,
+        text: pageData.filterState.register,
         state: RMAState.Register,
       },
       {
-        text: pageData().filterState.overturnReview,
+        text: pageData.filterState.overturnReview,
         state: RMAState.OverturnReview,
       },
       {
-        text: pageData().filterState.overturnFinish,
+        text: pageData.filterState.overturnFinish,
         state: RMAState.OverturnFinish,
       },
       {
-        text: pageData().filterState.refundProcessing,
+        text: pageData.filterState.refundProcessing,
         state: RMAState.RefundProcessing,
       },
       {
-        text: pageData().filterState.closed,
+        text: pageData.filterState.closed,
         state: RMAState.Closed,
       },
     ];
@@ -79,7 +80,7 @@ const ServiceRMAList: React.FC = () => {
 
     return (
       <div className="filterYearBlock">
-        <div className="title">{pageData().filterYearTitle}</div>
+        <div className="title">{pageData.filterYearTitle}</div>
         <select onChange={handlerOnChange}>
           <option>2022</option>
           <option>2021</option>
@@ -92,26 +93,26 @@ const ServiceRMAList: React.FC = () => {
   const StateNoteBlock = () => {
     return (
       <div className="stateNoteBlock">
-        <div className="title">{pageData().filterStateTitle}</div>
+        <div className="title">{pageData.filterStateTitle}</div>
         <div className="state">
           <div className="icon">1</div>
-          <div className="text">{pageData().filterState.register}</div>
+          <div className="text">{pageData.filterState.register}</div>
         </div>
         <div className="state">
           <div className="icon">2</div>
-          <div className="text">{pageData().filterState.overturnReview}</div>
+          <div className="text">{pageData.filterState.overturnReview}</div>
         </div>
         <div className="state">
           <div className="icon">3</div>
-          <div className="text">{pageData().filterState.overturnFinish}</div>
+          <div className="text">{pageData.filterState.overturnFinish}</div>
         </div>
         <div className="state">
           <div className="icon">4</div>
-          <div className="text">{pageData().filterState.refundProcessing}</div>
+          <div className="text">{pageData.filterState.refundProcessing}</div>
         </div>
         <div className="state">
           <div className="icon">5</div>
-          <div className="text">{pageData().filterState.closed}</div>
+          <div className="text">{pageData.filterState.closed}</div>
         </div>
       </div>
     );
@@ -141,20 +142,20 @@ const ServiceRMAList: React.FC = () => {
       <table className="RMAListBlock">
         <thead>
           <tr>
-            <td>{pageData().RMAListThead.action}</td>
-            <td>{pageData().RMAListThead.requisitionNo}</td>
-            <td>{pageData().RMAListThead.RMANo}</td>
-            <td>{pageData().RMAListThead.agent}</td>
-            <td>{pageData().RMAListThead.modelNo}</td>
-            <td>{pageData().RMAListThead.requisitionCount}</td>
-            <td>{pageData().RMAListThead.overturn}</td>
-            <td>{pageData().RMAListThead.signOffResult}</td>
-            <td>{pageData().RMAListThead.applicationProgress}</td>
-            <td>{pageData().RMAListThead.shipDate}</td>
-            <td>{pageData().RMAListThead.shipDNNO}</td>
-            <td>{pageData().RMAListThead.returnNo}</td>
-            <td>{pageData().RMAListThead.sellOffNo}</td>
-            <td>{pageData().RMAListThead.caseResult}</td>
+            <td>{pageData.RMAListThead.action}</td>
+            <td>{pageData.RMAListThead.requisitionNo}</td>
+            <td>{pageData.RMAListThead.RMANo}</td>
+            <td>{pageData.RMAListThead.agent}</td>
+            <td>{pageData.RMAListThead.modelNo}</td>
+            <td>{pageData.RMAListThead.requisitionCount}</td>
+            <td>{pageData.RMAListThead.overturn}</td>
+            <td>{pageData.RMAListThead.signOffResult}</td>
+            <td>{pageData.RMAListThead.applicationProgress}</td>
+            <td>{pageData.RMAListThead.shipDate}</td>
+            <td>{pageData.RMAListThead.shipDNNO}</td>
+            <td>{pageData.RMAListThead.returnNo}</td>
+            <td>{pageData.RMAListThead.sellOffNo}</td>
+            <td>{pageData.RMAListThead.caseResult}</td>
           </tr>
         </thead>
         <tbody>
@@ -194,7 +195,7 @@ const ServiceRMAList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<div className={`${pageName}ContentBlock`}>
-          <h1 className="h1Title">{pageData().pageTitle}</h1>
+          <h1 className="h1Title">{pageData.pageTitle}</h1>
           <div className={`${pageName}ToolBarBlack`}>
             <FilterYearBlock />
             <StateNoteBlock />
@@ -210,7 +211,7 @@ const ServiceRMAList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<>
-          <Breadcrumbs {...pageData().breadcrumbs} />
+          <Breadcrumbs {...pageData.breadcrumbs} />
           <ContentBlock />
         </>}
       />

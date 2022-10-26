@@ -7,7 +7,7 @@ import { ColType } from "../../component/columns/interface";
 import { ParseState, I_Table, I_tabStateInfo } from "./interface"
 import testTableData from "./testTableData.json";
 import "./css.scss";
-import { pageData } from "./pageData";
+import useParseList from "./pageData";
 
 const ServiceParseList: React.FC = () => {
   const pageName = "ServiceParseList";
@@ -15,7 +15,7 @@ const ServiceParseList: React.FC = () => {
   const [parseListStateTab, setParseListStateTab] = useState<number>(0);
 
   const fakeApiData: any = testTableData;
-
+  const pageData = useParseList();
   useEffect(() => {
     setParseListData(fakeApiData);
   }, [fakeApiData]);
@@ -23,23 +23,23 @@ const ServiceParseList: React.FC = () => {
   const FilterStateBlock = () => {
     const tabStateInfo: I_tabStateInfo = [
       {
-        text: pageData().filterState.all,
+        text: pageData.filterState.all,
         state: ParseState.All,
       },
       {
-        text: pageData().filterState.applying,
+        text: pageData.filterState.applying,
         state: ParseState.Applying,
       },
       {
-        text: pageData().filterState.send,
+        text: pageData.filterState.send,
         state: ParseState.Send,
       },
       {
-        text: pageData().filterState.parsing,
+        text: pageData.filterState.parsing,
         state: ParseState.Parsing,
       },
       {
-        text: pageData().filterState.closed,
+        text: pageData.filterState.closed,
         state: ParseState.Closed,
       },
     ];
@@ -75,7 +75,7 @@ const ServiceParseList: React.FC = () => {
 
     return (
       <div className="filterYearBlock">
-        <div className="title">{pageData().filterYearTitle}</div>
+        <div className="title">{pageData.filterYearTitle}</div>
         <select onChange={handlerOnChange}>
           <option>2022</option>
           <option>2021</option>
@@ -88,22 +88,22 @@ const ServiceParseList: React.FC = () => {
   const StateNoteBlock = () => {
     return (
       <div className="stateNoteBlock">
-        <div className="title">{pageData().filterStateTitle}</div>
+        <div className="title">{pageData.filterStateTitle}</div>
         <div className="state">
           <div className="icon">1</div>
-          <div className="text">{pageData().filterState.applying}</div>
+          <div className="text">{pageData.filterState.applying}</div>
         </div>
         <div className="state">
           <div className="icon">2</div>
-          <div className="text">{pageData().filterState.send}</div>
+          <div className="text">{pageData.filterState.send}</div>
         </div>
         <div className="state">
           <div className="icon">3</div>
-          <div className="text">{pageData().filterState.parsing}</div>
+          <div className="text">{pageData.filterState.parsing}</div>
         </div>
         <div className="state">
           <div className="icon">4</div>
-          <div className="text">{pageData().filterState.closed}</div>
+          <div className="text">{pageData.filterState.closed}</div>
         </div>
       </div>
     );
@@ -133,14 +133,14 @@ const ServiceParseList: React.FC = () => {
       <table className="parseListBlock">
         <thead>
           <tr>
-            <td>{pageData().parseListThead.action}</td>
-            <td>{pageData().parseListThead.requisitionNo}</td>
-            <td>{pageData().parseListThead.paresNo}</td>
-            <td>{pageData().parseListThead.modelNo}</td>
-            <td>{pageData().parseListThead.badType}</td>
-            <td>{pageData().parseListThead.badRate}</td>
-            <td>{pageData().parseListThead.applicationProgress}</td>
-            <td>{pageData().parseListThead.reportDownload}</td>
+            <td>{pageData.parseListThead.action}</td>
+            <td>{pageData.parseListThead.requisitionNo}</td>
+            <td>{pageData.parseListThead.paresNo}</td>
+            <td>{pageData.parseListThead.modelNo}</td>
+            <td>{pageData.parseListThead.badType}</td>
+            <td>{pageData.parseListThead.badRate}</td>
+            <td>{pageData.parseListThead.applicationProgress}</td>
+            <td>{pageData.parseListThead.reportDownload}</td>
           </tr>
         </thead>
         <tbody>
@@ -174,7 +174,7 @@ const ServiceParseList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<div className={`${pageName}ContentBlock`}>
-          <h1 className="h1Title">{pageData().pageTitle}</h1>
+          <h1 className="h1Title">{pageData.pageTitle}</h1>
           <div className={`${pageName}ToolBarBlack`}>
             <FilterYearBlock />
             <StateNoteBlock />
@@ -190,7 +190,7 @@ const ServiceParseList: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<>
-          <Breadcrumbs {...pageData().breadcrumbs} />
+          <Breadcrumbs {...pageData.breadcrumbs} />
           <ContentBlock />
         </>}
       />
