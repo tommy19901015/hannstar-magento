@@ -1,8 +1,9 @@
-import { I_PageData } from "./interface"
+import { useTranslation } from "react-i18next";
+import { I_PageType } from "./interface"
 
-
-export const pageData = (t?: any): I_PageData => {
-    return {
+function usePageData() {
+    const { t } = useTranslation();
+    const PageType: I_PageType =  {
         breadcrumbs: {
             title: "",
             breadcrumbsLink: [
@@ -48,4 +49,8 @@ export const pageData = (t?: any): I_PageData => {
             caseResult: "結案方式",
         }
     }
+  
+    return PageType;
 }
+  
+export default usePageData;

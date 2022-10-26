@@ -1,8 +1,10 @@
-import { I_PageData } from "./interface"
+import { useTranslation } from "react-i18next";
+import { I_PageType } from "./interface"
 
-
-export const pageData = (t?: any): I_PageData => {
-    return {
+function useParseList() {
+    const { t } = useTranslation();
+  
+    const tableList: I_PageType =  {
         breadcrumbs: {
             title: "",
             breadcrumbsLink: [
@@ -41,4 +43,9 @@ export const pageData = (t?: any): I_PageData => {
             reportDownload: "報告下載",
         }
     }
-}
+  
+    return tableList;
+  }
+  
+export default useParseList;
+
