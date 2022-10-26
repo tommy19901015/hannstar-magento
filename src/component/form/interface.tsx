@@ -18,7 +18,7 @@ export interface I_FormData {
   columnKey: string;
   type: FormType;
   value?: string;
-  placeholder: string;
+  placeholder?: string;
   required?: boolean;
   option?: { text: string; value: string }[];
   disabled?: boolean;

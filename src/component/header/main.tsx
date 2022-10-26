@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 // import menuDataJson from "../../common/menuData.json";
-import { menuInfoData } from "../../common/menuInfoFn"
+import { menuInfoData } from "../../common/menuInfoFn";
 import CollapseLi from "../collapseLi/main";
+import urlConfig from "../../config/urlSetting.json";
 import { useTranslation } from "react-i18next";
 import "./css.scss";
 
@@ -18,6 +19,8 @@ type I_MenuProp = Record<I_ServiceType, I_Menu>;
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
+
+  const { account } = urlConfig;
 
   const { t, i18n } = useTranslation();
   const language = useRef(i18n.language);
@@ -59,30 +62,36 @@ const Header: React.FC = () => {
               <a href={item.href}>{item.title}</a>
               <div className="arrow"></div>
             </div>
-            <ul className={`secMenuUl ${item.type === 'member'&&'base-box-shadow'}`}>
-              { isLogin && item.type === 'member'?
-              <div className="member-content">
-                <h4>Tyler</h4>
-                {
-                  menuData["member"].map((item: any) =>(
-                    <ul>{item.content.map((i: any) =>(
-                      <li>{i.title}</li>
-                    ))}</ul>
-                  ))
-                }
-                <div className="loginBtn">
-                  登入
+            <ul
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
+            >
+              {isLogin && item.type === "member" ? (
+                <div className="member-content">
+                  <h4>Tyler</h4>
+                  {menuData["member"].map((item: any) => (
+                    <ul>
+                      {item.content.map((i: any) => (
+                        <li>{i.title}</li>
+                      ))}
+                    </ul>
+                  ))}
+                  <a className="hannstarLoginBtn" href={account.login.href}>
+                    {account.login.title}
+                  </a>
                 </div>
-              </div>
-              :
-              <>
-               {item.content.length >0 && item.content.map((subMenu: any, index: number) => (
-                <li key={index}>
-                  <a href={subMenu.href}>{subMenu.title}</a>
-                </li>
-              ))}</>
-            }
-            </ul>            
+              ) : (
+                <>
+                  {item.content.length > 0 &&
+                    item.content.map((subMenu: any, index: number) => (
+                      <li key={index}>
+                        <a href={subMenu.href}>{subMenu.title}</a>
+                      </li>
+                    ))}
+                </>
+              )}
+            </ul>
           </li>
         ))}
       </ul>
@@ -107,10 +116,13 @@ const Header: React.FC = () => {
         <div className="menuBlock">
           <MenuBlock />
           <div className="otherBlock">
-            <a className="headerBtn login" href="/">
-              {t('common.login')}
+            <a className="headerBtn login" href={account.login.href}>
+              {account.login.title}
             </a>
-            <select className="headerBtn i18n" onChange={lang => i18n.changeLanguage(lang.target.value)}>
+            <select
+              className="headerBtn i18n"
+              onChange={(lang) => i18n.changeLanguage(lang.target.value)}
+            >
               <option value="tw">繁中</option>
               <option value="en">EN</option>
               <option value="cn">简中</option>

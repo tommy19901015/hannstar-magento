@@ -13,7 +13,7 @@ import { I_AccountPersonalTemplate } from "./interface";
 import urlConfig from "../../config/urlSetting.json";
 import "./css.scss";
 
-const { partner } = urlConfig;
+const { account } = urlConfig;
 
 const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
   contentComponent,
@@ -21,30 +21,30 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
   const pageName = "AccountPersonalTemplate";
 
   const AccountToolBar = () => {
-    const personalInfoData = {
-      title: "個人專區",
-      data: [
-        {
-          title: "管理我的資訊",
-          href: "",
-        },
-        {
-          title: "管理我的權限",
-          href: "",
-        },
-        {
-          title: "修改密碼",
-          href: "",
-        },
-      ],
-    };
+    const personalInfoData = [
+      {
+        title: "個人專區",
+        href: "",
+      },
+      {
+        title: "管理我的資訊",
+        href: "",
+      },
+      {
+        title: "管理我的權限",
+        href: "",
+      },
+      {
+        title: "修改密碼",
+        href: "",
+      },
+    ];
 
     return (
       <div className={`${pageName}AccountToolBar`}>
-        <div>{personalInfoData.title}</div>
-        <ul>
-          {personalInfoData.data.map((item, index) => (
-            <li key={index}>
+        <ul className="linkBlock">
+          {personalInfoData.map((item, index) => (
+            <li className="linkText" key={index}>
               <a href={item.href}>{item.title}</a>
             </li>
           ))}
