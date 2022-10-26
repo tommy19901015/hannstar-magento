@@ -22,10 +22,11 @@ const HannstarLogin: React.FC = () => {
 
       const magentoErrorMessageDom: any =
         document.getElementsByClassName("page messages")[0];
-      if (magentoErrorMessageDom) {
-        setHasMagentoErrorMessage(true)
-        errorMessageBlock.current.appendChild(magentoErrorMessageDom);
-      }
+      console.log('magentoErrorMessageDom', magentoErrorMessageDom);
+      // if (magentoErrorMessageDom) {
+      //   setHasMagentoErrorMessage(true)
+      //   errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+      // }
 
       setAccount(getMagentoAccount().value);
       setPassword(getMagentoPassword().value);

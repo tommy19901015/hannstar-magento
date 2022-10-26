@@ -5,80 +5,110 @@ import usePageData from "./pageData";
 
 const MFAQRCode: React.FC = () => {
   const pageName = "MFAQRCode";
-
+  const tableData = usePageData();
   const [code, setCode] = useState<string>("");
   const [isCodeError, setIsCodeError] = useState<boolean>(true);
-  const emailBlock: any = useRef();
+  const MFAQRCodeBlockRef: any = useRef();
+  const QRCodeBlockRef: any = useRef();
   const errorMessageBlock: any = useRef();
-  const tableData =usePageData();
 
   useEffect(() => {
     const magentoDom: any = document.getElementById(
-      "hannstar-magento-forgotPassword"
+      "hannstar-magento-MFAQRcode"
     );
-    if (magentoDom) emailBlock.current.appendChild(magentoDom);
+    if (magentoDom) MFAQRCodeBlockRef.current.appendChild(magentoDom);
 
-    const magentoErrorMessageDom: any =
-      document.getElementsByClassName("page messages")[0];
-    if (magentoErrorMessageDom)
-      errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+    const QRCodeDom: any = document.getElementById("QRcode");
+    if (QRCodeDom) QRCodeBlockRef.current.appendChild(QRCodeDom);
 
-    // setFirstName(getMagentoFirstNameDom().value);
-    // setLastName(getMagentoLastNameDom().value);
-    // setCode(getMagentoEmailDom().value);
-    // setPassword(getMagentoPasswordDom().value);
-    // setConfirmPassword(getMagentoConfirmPasswordDom().value);
+
+
+    // const magentoErrorMessageDom: any =
+    //   document.getElementsByClassName("page messages")[0];
+    // if (magentoErrorMessageDom)
+    //   errorMessageBlock.current.appendChild(magentoErrorMessageDom);
   }, []);
 
-  const getMagentoEmailDom = (): any => {
-    const emailDom = document.getElementById("email");
-    return emailDom ? emailDom : null;
+  const getMagentoInputDom = (): any => {
+    const inputDom = document.getElementById("passcode");
+    return inputDom ? inputDom : null;
   };
 
   const handleCodeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (getMagentoEmailDom()) {
-      getMagentoEmailDom().value = e.target.value;
+    if (getMagentoInputDom()) {
+      getMagentoInputDom().value = e.target.value;
     }
-    const emailValue = e.target.value.trim();
-    setCode(emailValue);
+    setCode(e.target.value.trim());
   };
 
   const handleSend = () => {
-    const sendBtn: any = document.getElementById("hannstar-register-btn");
-    //let regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
-    let getCodeVal = code.replace(/\s*/g, "");
-    const isTypeError = getCodeVal.length === 0;
-    setIsCodeError(isTypeError);
+    const sendBtn: any = document.getElementById("send2");
     if (sendBtn) sendBtn.click();
   };
 
   return (
     <Layout>
       <div className={`${pageName}`}>
-        <div className="mainTitle">{tableData.formTitle}</div>
+
         <div className={`${pageName}Content`}>
-          <div className="columnBlock">
-            <div className="bodyBlock input">
-              <input
-                type="text"
-                onChange={handleCodeInput}
-                value={code}
-                placeholder={tableData.placeholder}
-                className={`${!!isCodeError ? "" : "error"}`}
-              />
-              {!isCodeError && (
-                <div className="errorMessage">
-                  <i className="">*</i>{tableData.errorMessage}
+          <div className="contentBlock">
+            <div className="titleContent">
+              <div className="mainTitle">{tableData.formTitle}</div>
+              <p>{tableData.subTitle}</p>
+              <span>{tableData.noteTitle}</span>
+              <div className="stepBtn">
+                {tableData.verifyBtn}
+              </div>
+            </div>
+            <img alt="demo" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_demo.png" />
+          </div>
+
+        </div>
+        <div className={`${pageName}StepContent`}>
+          <div className="contentBlock">
+            <div className="subTitle">{tableData.formTitle}</div>
+            <div className="content">
+              <div className="step">
+                <span className="description">{tableData.install}</span>
+                <div className="stepExample">
+                  <img alt="android" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_android.png" />
+                  <img alt="ios" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_ios.png" />
                 </div>
-              )}
+              </div>
+              <div className="step">
+                <span className="description">{tableData.bind}</span>
+                <div className="stepExample">
+                  <span>{tableData.bindSubTitle}</span>
+                  <div ref={QRCodeBlockRef}></div>
+                  <span className="note">{tableData.bindNote}</span>
+                </div>
+              </div>
+              <div className="step">
+                <span className="description">{tableData.verify}</span>
+                <div className="bodyBlock input">
+                  <input
+                    type="text"
+                    onChange={handleCodeInput}
+                    value={code}
+                    placeholder={tableData.placeholder}
+                    className={`${!!isCodeError ? "" : "error"}`}
+                  />
+                  {!isCodeError && (
+                    <div className="errorMessage">
+                      <i className="">*</i>{tableData.errorMessage}
+                    </div>
+                  )}
+                  <div
+                    className="hannstarVerifyBtn"
+                    onClick={handleSend}
+                  >{tableData.verifyBtn}</div>
+                </div>
+              </div>
+
             </div>
           </div>
-          <div className="hannstarRegisterBtn" onClick={handleSend}>
-            {tableData.sendBtn}
-          </div>
-          <span>{tableData.otherMessage}</span>
         </div>
-        <div ref={emailBlock} className="magentoRegisteBlock"></div>
+        <div ref={MFAQRCodeBlockRef} className="magentoBlock"></div>
       </div>
     </Layout>
   );

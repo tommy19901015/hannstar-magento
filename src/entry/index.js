@@ -5,6 +5,10 @@ import "../style/common.scss";
 import Login from "../pages/Login/main";
 import Index from "../pages/index/main";
 import HannstarRegister from "../pages/Register/main";
+import MFAQRCode from "../pages/MFAQRCode/main";
+import MFA from "../pages/MFA/main";
+import ForgotPassword from "../pages/ForgotPassword/main";
+import ResetPassword from "../pages/ResetPassword/main";
 import About from "../pages/about/main";
 import EBiz from "../pages/e-biz/main";
 import Solution from "../pages/solution/main";
@@ -37,6 +41,10 @@ import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
 const pageMappingObj = {
     root_Login:<Login/>,
     root_Register:<HannstarRegister />,
+    root_MFAQRCode:<MFAQRCode/>,
+    root_MFA:<MFA/>,
+    root_ForgotPassword:<ForgotPassword/>,
+    root_ResetPassword:<ResetPassword/>,
     root_Index : <Index />,
     root_About : <About />,
     root_EBiz : <EBiz />,

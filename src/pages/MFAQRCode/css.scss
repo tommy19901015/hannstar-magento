@@ -1,65 +1,122 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$pageName: "MFAQRCode";
+$pageName: 'MFAQRCode';
 
 .#{$pageName} {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  @include hannstarBlockPadding;
-  .mainTitle{
-      @include hannstarH2Title;
-      text-align: center;
-      margin-bottom: 25px;
-  }
-  .MFAQRCodeContent{
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      .columnBlock {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          align-items: center;
-          @include hannstarTextPadding1;
-          .title {
-              width: 100%;
-              @include hannstarContent2;
-              word-break: keep-all;
-              @include hannstarTextPadding1;
-          }
-          .errorMessage {
-              margin-top: 10px;
-              @include hannstarContent2;
-              color: $hannstar-orange1;
-          }
-      }
-      .bodyBlock {
-          display: flex;
-          flex-wrap: wrap;
-          width: 100%;
-          input[type='text'] {
-              @include hannstarInput;
-              &.error {
-                  border-color: $hannstar-orange1;
-              }
-          }
-      }
-  }
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-  .hannstarRegisterBtn{
-      @include hannstarBtn;
-      width: 20%;
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      margin-bottom: 20px;
-  }
-  span{
-    @include hannstarContent3;
-    color: $hannstar-blue2;
-    text-align: center;
-  }
+    .#{$pageName}Content {
+        @include hannstarBlockPadding;
+        display: flex;
+        width: 100%;
+        background-color: #fff;
+        .contentBlock {
+            display: inline-flex;
+            width: 70%;
+            flex-direction: row;
+            margin: 0 auto;
+            .titleContent {
+                width: 50%;
+                display: inline-flex;
+                flex-direction: column;
+                align-items: start;
+                .mainTitle {
+                    @include hannstarH2Title;
+                    text-align: center;
+                    margin-bottom: 25px;
+                }
+                p {
+                    @include hannstarContent2;
+                    color: $hannstar-blue2;
+                }
+                span {
+                    @include hannstarContent3;
+                }
+                .stepBtn {
+                    @include hannstarBtn;
+                    margin-top: 20px;
+                    background-color: $hannstar-blue3;
+                }
+            }
+            .imgContent {
+                width: 50%;
+                display: inline-flex;
+            }
+        }
+    }
+    .#{$pageName}StepContent {
+        @include hannstarBlockPadding;
+        display: flex;
+        width: 100%;
+        background-color: $hannstar-bg-color;
+        .contentBlock {
+            display: inline-flex;
+            width: 70%;
+            flex-direction: column;
+            align-items: start;
+            margin: 0 auto;
+            .subTitle {
+                @include hannstarH3Title;
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 25px;
+            }
+            .content {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                .step {
+                    display: inline-flex;
+                    align-items: center;
+                    flex-direction: column;
+                    width: 25%;
+                    height: auto;
+                    padding: 20px;
+                    box-shadow: 0 0 15px #363636;
+                    min-height: 260px;
+                    box-shadow: 0 0 15px $hannstar-default-text-color;
+                    .description {
+                        @include hannstarContent2;
+                        width: 100%;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid #ddd;
+                    }
+                    .stepExample {
+                        @include hannstarContent3;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        padding-top: 20px;
+                        img {
+                            margin-bottom: 20px;
+                        }
+                        .note {
+                            color: $hannstar-blue2;
+                        }
+                    }
+                    .bodyBlock {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        padding-top: 20px;
+                        input[type='text'] {
+                            @include hannstarInput;
+                            &.error {
+                                border-color: $hannstar-orange1;
+                            }
+                        }
+                        .hannstarVerifyBtn {
+                            @include hannstarBtn;
+                            margin: 0 auto;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
