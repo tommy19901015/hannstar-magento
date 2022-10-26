@@ -63,7 +63,10 @@ const MFAQRCode: React.FC = () => {
                 {tableData.stepGuide}<i className=""></i>
               </div>
             </div>
+            <div className="imgContent">
             <img alt="demo" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_demo.png" />
+            </div>
+           
           </div>
 
         </div>

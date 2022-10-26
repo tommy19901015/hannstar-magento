@@ -32,15 +32,25 @@ $pageName: 'MFAQRCode';
                     color: $hannstar-blue2;
                 }
                 .stepGuide {
-                    @include hannstarBtn;
+                    display: inline-block;
+                    background-color: $hannstar-blue3;
+                    border-radius: 4px;
+                    color: #fff;
+                    font-size: 16px;
+                    line-height: 1;
+                    padding: 12px 16px;
+                    word-break: keep-all;
                     margin-top: 20px;
                     border-radius: 0;
-                    background-color: $hannstar-blue3;
                 }
             }
             .imgContent {
                 width: 50%;
                 display: inline-flex;
+                justify-content: end;
+                img{
+                    width: 60%;
+                }
             }
         }
     }
