@@ -18,7 +18,7 @@ function usePageData() {
     verifyBtn: "完成雙重身份綁定",
     errorMessage:"必填欄位；輸入格式有誤，請重新輸入",
     placeholder: "請輸入代碼",
-    pageBtn: "綁定雙重身份驗證3步驟",
+    stepGuide: "綁定雙重身份驗證3步驟",
   }
 
   return tableList;

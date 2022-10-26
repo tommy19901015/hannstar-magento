@@ -16,5 +16,5 @@ export interface I_PageData {
     verifyBtn: string
     errorMessage:string
     placeholder: string
-    pageBtn:string
+    stepGuide:string
 }
