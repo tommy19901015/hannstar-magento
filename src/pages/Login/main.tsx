@@ -20,13 +20,13 @@ const HannstarLogin: React.FC = () => {
       const magentoDom: any = document.getElementById("hannstar-magento-login");
       if (magentoDom) loginBlock.current.appendChild(magentoDom);
 
-      const magentoErrorMessageDom: any =
+      const magentoDefultMessageDom: any =
         document.getElementsByClassName("page messages")[0];
-      console.log('magentoErrorMessageDom', magentoErrorMessageDom);
-      // if (magentoErrorMessageDom) {
-      //   setHasMagentoErrorMessage(true)
-      //   errorMessageBlock.current.appendChild(magentoErrorMessageDom);
-      // }
+      console.log('magentoDefultMessageDom', magentoDefultMessageDom);
+      if (magentoDefultMessageDom) {
+        setHasMagentoErrorMessage(true)
+        errorMessageBlock.current.appendChild(magentoDefultMessageDom);
+      }
 
       setAccount(getMagentoAccount().value);
       setPassword(getMagentoPassword().value);
@@ -67,11 +67,11 @@ const HannstarLogin: React.FC = () => {
     }
 
     const handleLogin = () => {
-      console.log({ account, password });
-      const send2: any = document.getElementById("send2");
       setIsAccountError(validateEmail(account))
       setIsPasswordError(validatePassword(password))
       if (isAccountError && isPasswordError) {
+        const send2: any = document.getElementById("send2");
+        console.log('send2', send2);
         send2 && send2.click();
       }
     };
@@ -79,10 +79,11 @@ const HannstarLogin: React.FC = () => {
     return (
       <div className="hannstarLoginBlock">
         <h2>登入</h2>
-        {hasMagentoErrorMessage && <div className="magentoMessageBlock error">
+        <div></div>
+        <div className={`magentoMessageBlock ${hasMagentoErrorMessage ? "error" : ""}`}>
           <img src="https://dvqruze971ijv.cloudfront.net/image/account/error.png" alt="error" />
           <div className="magentoMessageText" ref={errorMessageBlock}></div>
-        </div>}
+        </div>
         <div className="columnBlock">
           <div className="title required">帳號</div>
           <div className="bodyBlock input">

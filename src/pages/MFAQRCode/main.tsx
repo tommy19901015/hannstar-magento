@@ -64,11 +64,9 @@ const MFAQRCode: React.FC = () => {
               </div>
             </div>
             <div className="imgContent">
-            <img alt="demo" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_demo.png" />
+              <img alt="demo" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_demo.png" />
             </div>
-           
           </div>
-
         </div>
         <div className={`${pageName}StepContent`}>
           <div className="contentBlock">
@@ -76,33 +74,33 @@ const MFAQRCode: React.FC = () => {
             <div className="content">
               <div className="step">
                 <div className="stepDescription">
-                <span className="stepNum">1</span>
-                <span className="description">{tableData.installText1}<br/>{tableData.installText2}</span>
+                  <span className="stepNum">1</span>
+                  <span className="description">{tableData.installText1}<br />{tableData.installText2}</span>
                 </div>
-              
+
                 <div className="stepExample">
                   <img alt="android" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_android.png" />
                   <img alt="ios" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_ios.png" />
                 </div>
               </div>
               <div className="step">
-              <div className="stepDescription">
-              <span className="stepNum">2</span>
-                <span className="description">{tableData.bind}</span>
-              </div>
-              
+                <div className="stepDescription">
+                  <span className="stepNum">2</span>
+                  <span className="description">{tableData.bind}</span>
+                </div>
+
                 <div className="stepExample">
                   <span>{tableData.bindSubTitle}</span>
-                  <div ref={QRCodeBlockRef}></div>
+                  <div className="QRCodeBlockRef" ref={QRCodeBlockRef}></div>
                   <span className="note">{tableData.bindNote}</span>
                 </div>
               </div>
               <div className="step">
-              <div className="stepDescription">
-              <span className="stepNum">3</span>
-                <span className="description">{tableData.verifylText1}<br/>{tableData.verifylText2}</span>
-              </div>
-              
+                <div className="stepDescription">
+                  <span className="stepNum">3</span>
+                  <span className="description">{tableData.verifylText1}<br />{tableData.verifylText2}</span>
+                </div>
+
                 <div className="bodyBlock input">
                   <input
                     type="text"

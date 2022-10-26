@@ -28,7 +28,7 @@ $pageName: 'MFAQRCode';
                     text-align: center;
                     margin-bottom: 25px;
                 }
-                span{
+                span {
                     color: $hannstar-blue2;
                 }
                 .stepGuide {
@@ -48,7 +48,7 @@ $pageName: 'MFAQRCode';
                 width: 50%;
                 display: inline-flex;
                 justify-content: end;
-                img{
+                img {
                     width: 60%;
                 }
             }
@@ -86,7 +86,7 @@ $pageName: 'MFAQRCode';
                     padding: 20px;
                     box-shadow: 0 0 15px $hannstar-border-color;
                     min-height: 260px;
-                    .stepDescription{
+                    .stepDescription {
                         width: 100%;
                         height: 70px;
                         display: flex;
@@ -94,7 +94,7 @@ $pageName: 'MFAQRCode';
                         align-items: center;
                         border-bottom: 1px solid $hannstar-border-color;
                         justify-content: center;
-                        .stepNum{
+                        .stepNum {
                             width: 30px;
                             height: 30px;
                             display: inline-flex;
@@ -118,9 +118,15 @@ $pageName: 'MFAQRCode';
                         flex-direction: column;
                         padding-top: 20px;
                         text-align: center;
-                        img {
+                        .QRCodeBlockRef {
                             margin-bottom: 20px;
+                            width: 200px;
+                            height: 200px;
+                            img {
+                                width: 100%;
+                            }
                         }
+
                         .note {
                             color: $hannstar-blue2;
                         }
