@@ -7,7 +7,7 @@ const MFAQRCode: React.FC = () => {
   const pageName = "MFAQRCode";
   const tableData = usePageData();
   const [code, setCode] = useState<string>("");
-  const [isCodeError, setIsCodeError] = useState<boolean>(true);
+  const [isCodeError, setIsCodeError] = useState<boolean>(false);
   const MFAQRCodeBlockRef: any = useRef();
   const QRCodeBlockRef: any = useRef();
   const errorMessageBlock: any = useRef();
@@ -44,7 +44,7 @@ const MFAQRCode: React.FC = () => {
   const handleSend = () => {
     const sendBtn: any = document.getElementById("send2");
     let getCodeVal = code.replace(/\s*/g, "");
-    const isTypeError = getCodeVal.length === 0 || typeof getCodeVal !== 'number';
+    const isTypeError = getCodeVal.length === 0 || isNaN(+getCodeVal);
     setIsCodeError(isTypeError);
     if (sendBtn) sendBtn.click();
   };
@@ -107,9 +107,9 @@ const MFAQRCode: React.FC = () => {
                     onChange={handleCodeInput}
                     value={code}
                     placeholder={tableData.placeholder}
-                    className={`${!!isCodeError ? "" : "error"}`}
+                    className={`${!!isCodeError ? "error" : ""}`}
                   />
-                  {!isCodeError && (
+                  {!!isCodeError && (
                     <div className="errorMessage">
                       <i className="">*</i>{tableData.errorMessage}
                     </div>

@@ -73,7 +73,7 @@ $pageName: 'MFAQRCode';
             }
             .content {
                 display: flex;
-                align-items: center;
+                align-items: start;
                 flex-direction: row;
                 justify-content: space-between;
                 width: 100%;
@@ -120,8 +120,8 @@ $pageName: 'MFAQRCode';
                         text-align: center;
                         .QRCodeBlockRef {
                             margin-bottom: 20px;
-                            width: 200px;
-                            height: 200px;
+                            width: 20px;
+                            height: 20px;
                             img {
                                 width: 100%;
                             }
