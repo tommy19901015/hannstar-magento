@@ -64,7 +64,7 @@ const MFAQRCode: React.FC = () => {
               </div>
             </div>
             <div className="imgContent">
-              <img alt="demo" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_demo.png" />
+              <img alt="demo" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
             </div>
           </div>
         </div>
@@ -79,8 +79,8 @@ const MFAQRCode: React.FC = () => {
                 </div>
 
                 <div className="stepExample">
-                  <img alt="android" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_android.png" />
-                  <img alt="ios" src="https://dvqruze971ijv.cloudfront.net/image/account/img_2fa_app_ios.png" />
+                  <img className="appImg" alt="android" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_app_android.png" />
+                  <img className="appImg" alt="ios" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_app_ios.png" />
                 </div>
               </div>
               <div className="step">

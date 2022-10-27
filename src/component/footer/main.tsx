@@ -151,7 +151,6 @@ const Footer: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className="footer">
-      {t('common.cancel')}
       <TopBlock />
       <TopBlock_M />
       <BottomBlock />

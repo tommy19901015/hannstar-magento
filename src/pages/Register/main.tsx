@@ -6,6 +6,7 @@ import {
   isNotEmpty,
   patterns,
   compare,
+  validatePassword
 } from "../../common/validateUtils";
 import "./css.scss";
 import { pageData } from "./pageData";
@@ -85,6 +86,13 @@ const HannstarRegister: React.FC = () => {
       return confirmPasswordDom ? confirmPasswordDom : "";
     };
 
+    const getMagentoisSubscribedDom = (): any => {
+      const isSubscribed = document.getElementById(
+        "is_subscribed"
+      );
+      return isSubscribed ? isSubscribed : "";
+    };
+
     const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (getMagentoFirstNameDom()) {
         getMagentoFirstNameDom().value = e.target.value;
@@ -135,6 +143,9 @@ const HannstarRegister: React.FC = () => {
     };
 
     const handleAgreeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoisSubscribedDom()) {
+        getMagentoisSubscribedDom().checked = e.target.checked
+      }
       setAgreeEmail(e.target.checked);
     };
 
@@ -142,8 +153,11 @@ const HannstarRegister: React.FC = () => {
       setFirstNameError(isNotEmpty(firstName));
       setLastNameError(isNotEmpty(lastName));
       setEmailError(validate(email, patterns.email));
-      setPasswordError(validate(password, patterns.password));
+      setPasswordError(validatePassword(password));
       setConfirmPasswordError(compare(confirmPassword, password));
+
+      console.log('sss', isNotEmpty(firstName));
+
 
       console.log({
         firstName,
@@ -158,16 +172,17 @@ const HannstarRegister: React.FC = () => {
       });
 
       const allValidateColumn = [
-        firstNameError,
-        lastNameError,
-        emailError,
-        passwordError,
-        confirmPasswordError,
-        agreePrivacy,
+        isNotEmpty(firstName),
+        isNotEmpty(lastName),
+        validate(email, patterns.email),
+        validatePassword(password),
+        compare(confirmPassword, password)
       ];
+      console.log('allValidateColumn', allValidateColumn);
 
-      if (allValidateColumn.every((v) => v === false)) {
+      if (allValidateColumn.every((v) => v === true)) {
         const registerBtn: any = document.getElementById("hannstarRegisterBtn");
+        console.log('registerBtn', registerBtn);
         if (registerBtn) registerBtn.click();
       }
     };
@@ -231,23 +246,23 @@ const HannstarRegister: React.FC = () => {
             <div className="title required">密碼</div>
             <div className="bodyBlock input">
               <input
-                type="text"
+                type="password"
                 onChange={handlePassword}
                 value={password}
                 className={`${passwordError === false ? "error" : ""}`}
               />
             </div>
-            {(passwordStrengthMeter === 1 || passwordStrengthMeter === 0) && (
+            {/* {(passwordStrengthMeter === 1 || passwordStrengthMeter === 0) && (
               <div className="meter1">弱</div>
             )}
             {passwordStrengthMeter === 2 && <div className="meter2">中</div>}
             {passwordStrengthMeter === 3 && <div className="meter3">強</div>}
             {passwordStrengthMeter === 4 && (
               <div className="meter4">非常強</div>
-            )}
+            )} */}
             {passwordError === false && (
               <div className="errorMessage">
-                必填欄位；輸入格式有誤，請重新輸入
+                必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
               </div>
             )}
           </div>
@@ -255,7 +270,7 @@ const HannstarRegister: React.FC = () => {
             <div className="title required">密碼(再次確認)</div>
             <div className="bodyBlock input">
               <input
-                type="text"
+                type="password"
                 onChange={handleConfirmPassword}
                 value={confirmPassword}
                 className={`${confirmPasswordError === false ? "error" : ""}`}
@@ -263,7 +278,7 @@ const HannstarRegister: React.FC = () => {
             </div>
             {confirmPasswordError === false && (
               <div className="errorMessage">
-                必填欄位；輸入格式有誤，請重新輸入
+                必填欄位；需與密碼相同
               </div>
             )}
           </div>

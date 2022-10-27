@@ -1,45 +1,38 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$pageName: "AccountPersonal";
+$pageName: 'AccountPersonal';
 
-.#{$pageName}ContentBlock {
-  .stepTapBlock {
-    display: flex;
-    @include hannstarContentText;
-    border-bottom: 4px solid $hannstar-blue2;
-    margin: 40px 0;
-    .stateTab {
-      width: 60px;
-      text-align: center;
-      cursor: pointer;
-      padding: 5px 20px;
-      background-color: $hannstar-bg-color;
-      color: $hannstar-blue2;
-      margin-right: 10px;
-      &.active,
-      &:hover {
-        background-color: $hannstar-blue2;
-        color: #fff;
-      }
+.#{$pageName}ApplyTitle {
+    @include hannstarH2Title;
+    padding: 0 80px;
+}
+
+.#{$pageName}FormBlock {
+    padding: 0 80px;
+
+    .formTitle {
+        @include hannstarH2Title;
     }
-  }
-  .stepTabContent {
-    &.hide {
-      display: none;
+    .classificationBlock {
+        display: flex;
+        margin-bottom: 60px;
+        div {
+            margin-right: 20px;
+        }
     }
-  }
-  .btnBlock {
-    display: flex;
-    justify-content: center;
-    margin: 80px 0;
-    &.hide {
-      display: none;
+    .stepTitle {
+        @include hannstarH4Title;
+        margin-bottom: 20px;
     }
-    .formBtn {
-      @include hannstarBtn;
-      width: 48px;
-      text-align: center;
-      margin-right: 40px;
+    .btnBlock {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0;
+        .goBack,
+        .confirm {
+            @include hannstarBtn;
+            text-align: center;
+            margin-right: 40px;
+        }
     }
-  }
 }

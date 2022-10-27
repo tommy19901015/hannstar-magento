@@ -27,16 +27,12 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
         href: "",
       },
       {
-        title: "管理我的資訊",
+        title: "我的帳號/修改密碼",
         href: "",
       },
       {
-        title: "管理我的權限",
-        href: "",
-      },
-      {
-        title: "修改密碼",
-        href: "",
+        title: "我的權限",
+        href: "/Cognito/account/custom/",
       },
     ];
 
@@ -44,7 +40,7 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
       <div className={`${pageName}AccountToolBar`}>
         <ul className="linkBlock">
           {personalInfoData.map((item, index) => (
-            <li className="linkText" key={index}>
+            <li className={`linkText ${index === 0 && "first"}`} key={index}>
               <a href={item.href}>{item.title}</a>
             </li>
           ))}
