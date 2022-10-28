@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
+import { validate, patterns } from "../../common/validateUtils"
 import "./css.scss";
 import usePageData from "./pageData";
 
@@ -7,21 +8,21 @@ const MFA: React.FC = () => {
   const pageName = "MFA";
 
   const [code, setCode] = useState<string>("");
-  const [isCodeError, setIsCodeError] = useState<boolean>(true);
+  const [isCodeError, setIsCodeError] = useState<boolean | "">(true);
   const MFAQRCodeBlockRef: any = useRef();
   const errorMessageBlock: any = useRef();
   const tableData = usePageData();
 
   useEffect(() => {
     const magentoDom: any = document.getElementById(
-      "hannstar-magento-mfaQRcode"
+      "hannstar-magento-mfa"
     );
     if (magentoDom) MFAQRCodeBlockRef.current.appendChild(magentoDom);
 
-    const magentoErrorMessageDom: any =
-      document.getElementsByClassName("page messages")[0];
-    if (magentoErrorMessageDom)
-      errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+    // const magentoErrorMessageDom: any =
+    //   document.getElementsByClassName("page messages")[0];
+    // if (magentoErrorMessageDom)
+    //   errorMessageBlock.current.appendChild(magentoErrorMessageDom);
 
   }, []);
 
@@ -38,11 +39,11 @@ const MFA: React.FC = () => {
     setCode(e.target.value.trim());
   };
   const handleSend = () => {
-    const sendBtn: any = document.getElementById("send2");
-    let getCodeVal = code.replace(/\s*/g, "");
-    const isTypeError = getCodeVal.length === 0;
-    setIsCodeError(isTypeError);
-    if (sendBtn) sendBtn.click();
+    const sendBtn: any = document.getElementById("sendcode");
+    setIsCodeError(validate(code, patterns.number));
+    if (isCodeError) {
+      sendBtn && sendBtn.click();
+    }
   };
 
   return (
@@ -57,13 +58,9 @@ const MFA: React.FC = () => {
                 onChange={handleCodeInput}
                 value={code}
                 placeholder={tableData.placeholder}
-                className={`${!!isCodeError ? "" : "error"}`}
+                className={`${isCodeError === false ? "error" : ""}`}
               />
-              {!isCodeError && (
-                <div className="errorMessage">
-                  <i className="">*</i>{tableData.errorMessage}
-                </div>
-              )}
+              {isCodeError === false && <div className="errorMessage">必填欄位；輸入格式有誤，請重新輸入</div>}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>

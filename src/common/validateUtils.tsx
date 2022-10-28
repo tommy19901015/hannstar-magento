@@ -1,7 +1,7 @@
 export const patterns = {
     username: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/,
     email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
-    password: /^[a-zA-Z\d]{8,}$/i,
+    number: /^\d+$/
 };
 
 export function validatePassword(val: string) {

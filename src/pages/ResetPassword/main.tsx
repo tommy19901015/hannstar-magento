@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
-import { patterns, validate, compare } from "../../common/validateUtils";
+import { patterns, validate, compare, validatePassword } from "../../common/validateUtils";
 import "./css.scss";
 import usePageData from "./pageData";
 
@@ -51,11 +51,11 @@ const ResetPassword: React.FC = () => {
 
   const handleSend = () => {
     const sendBtn: any = document.getElementById("hannstar-register-btn");
-    const getNewPassVal = validate(newPassword, patterns.password);
-    const getConfirmPassVal = validate(confirmPassword, patterns.password);
-    const isDiffVal = getNewPassVal && getConfirmPassVal && compare(newPassword,confirmPassword);
+    const getNewPassVal = validatePassword(newPassword);
+    const getConfirmPassVal = compare(confirmPassword, newPassword)
+    const isDiffVal = getNewPassVal && getConfirmPassVal && compare(newPassword, confirmPassword);
     setInputError(isDiffVal);
-    
+
     if (sendBtn) sendBtn.click();
   };
 
@@ -63,37 +63,37 @@ const ResetPassword: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}`}>
-      <div className="mainTitle">重置密碼</div>
-      <div className={`${pageName}Content`}>
+        <div className="mainTitle">重置密碼</div>
+        <div className={`${pageName}Content`}>
           <div className="columnBlock">
             <div className="title required">新密碼</div>
             <div className="bodyBlock input">
               <input
-              type="text"
-              onChange={handleNewPass}
-              value={newPassword}
-              placeholder="新密碼"
-              className={`${!!isInputSame ? "" : "error"}`}
+                type="text"
+                onChange={handleNewPass}
+                value={newPassword}
+                placeholder="新密碼"
+                className={`${!!isInputSame ? "" : "error"}`}
               />
-               {!isInputSame && <div className="errorMessage"><i className="">*</i>必填欄位；輸入格式有誤，請重新輸入</div>}
+              {!isInputSame && <div className="errorMessage"><i className="">*</i>必填欄位；輸入格式有誤，請重新輸入</div>}
             </div>
             <div className="title required">新密碼確認</div>
             <div className="bodyBlock input">
               <input
-              type="text"
-              onChange={handleConfirmPass}
-              value={confirmPassword}
-              placeholder="確認密碼"
-              className={`${!!isInputSame ? "" : "error"}`}
+                type="text"
+                onChange={handleConfirmPass}
+                value={confirmPassword}
+                placeholder="確認密碼"
+                className={`${!!isInputSame ? "" : "error"}`}
               />
-               {!isInputSame && <div className="errorMessage"><i className="">*</i>必填欄位；輸入格式有誤，請重新輸入</div>}
+              {!isInputSame && <div className="errorMessage"><i className="">*</i>必填欄位；輸入格式有誤，請重新輸入</div>}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
             送出
           </div>
-        <div ref={emailBlock} className="magentoRegisteBlock"></div>
-      </div>
+          <div ref={emailBlock} className="magentoRegisteBlock"></div>
+        </div>
       </div>
     </Layout>
   );

@@ -21,7 +21,7 @@ const AccountTemplate: React.FC<I_AccountTemplate> = ({ content }) => {
         contentL={content}
         contentR={
           <div className={`${templateName}ServiceBlock`}>
-            <h3>立即註冊翰宇彩晶會員</h3>
+            <h3>立即註冊瀚宇彩晶會員</h3>
             <>
               {serviceData.map((category) => (
                 <div className="content">

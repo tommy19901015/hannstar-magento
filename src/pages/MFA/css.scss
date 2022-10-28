@@ -6,7 +6,7 @@ $pageName: 'MFA';
     display: flex;
     align-items: center;
     flex-direction: column;
-    @include hannstarBlockPadding;
+    padding: 80px;
     .mainTitle {
         @include hannstarH2Title;
         text-align: center;
@@ -40,7 +40,7 @@ $pageName: 'MFA';
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            input[type='text'] {
+            input {
                 @include hannstarInput;
                 &.error {
                     border-color: $hannstar-orange1;
