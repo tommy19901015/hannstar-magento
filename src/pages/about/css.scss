@@ -139,7 +139,7 @@
         }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: $breakpoint) {
         .historyList{
             background-position-x: 1.5px;
             &::before {
