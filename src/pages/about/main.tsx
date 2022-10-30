@@ -300,6 +300,8 @@ const About: React.FC = () => {
     );
   };
 
+  
+
   return (
     <Layout>
       <Breadcrumbs {...breadcrumbs} />

@@ -33,61 +33,21 @@
             display: flex;
             width: 50%;
             box-sizing: border-box;
-            // .leftBlock {
-            //     .historyDate {
-            //         @include hannstarH2Title;
-            //         padding-bottom: 10px;
-            //         color: $hannstar-blue2;
-            //     }
-            //     .imgBlock {
-            //         margin-bottom: 10px;
-            //         border: 6px solid #fff;
-            //         box-shadow: 0 0 29px rgb(0 0 0 / 10%);
-            //         img {
-            //             width: 100%;
-            //         }
-            //     }
-            //     h3 {
-            //         @include hannstarContentText;
-            //     }
-            //     &::before,
-            //     &::after {
-            //         position: absolute;
-            //         content: '';
-            //         border-radius: 50%;
-            //     }
-            //     &::before {
-            //         top: 5px;
-            //         width: 30px;
-            //         height: 30px;
-            //         border: 1px solid $hannstar-blue2;
-            //         background-color: #fff;
-            //         left: calc(50% - 15px);
-            //     }
-            //     &::after {
-            //         top: 17px;
-            //         width: 6px;
-            //         height: 6px;
-            //         background-color: $hannstar-blue2;
-            //         left: calc(50% - 3px);
-            //     }
-            // }
-            // .rightBlock {
-            //     width: 50%;
-            // }
+
             .item {
                 width: 100%;
                 .historyDate{
                     display: flex;
                     align-items: center;
-                    margin-bottom: 10px;
-                    color: #0094da;            
+                    justify-content:initial;
+                    margin-bottom: 10px;           
                 }
                 .imgBlock{
                     margin-bottom: 10px;
                     border: 6px solid #fff;
                     box-shadow: 0 0 29px rgb(0 0 0 / 10%);
                     transition: all 0.5s ease-out;
+                    width: fit-content;
                     img{
                         display: block;
                         max-width: 100%;
@@ -167,22 +127,11 @@
                 box-sizing: border-box;
             }
     
-            // &:nth-child(odd) {
-            //     margin-left: auto;
-            //     padding-left: 60px;
-            //     flex-direction: row-reverse;
-            // }
-            // &:nth-child(even) {
-            //     h3 {
-            //         text-align: right;
-            //     }
-            // }
             .item {
                 .historyDate{
                     display: flex;
                     align-items: center;
                     @include hannstarH2Title;
-                    padding-bottom: 10px;
                     color: $hannstar-blue2;
                  }
             }
@@ -192,7 +141,65 @@
 
     @media (max-width: 980px) {
         .historyList{
+            background-position-x: 1.5px;
+            &::before {
+                left: 0;
+                margin-left: 0;
+            }
+            li {
+                width: 100%;
+                margin-top: 30px;
+                &:nth-child(odd){
+                    padding-left: 25px;
+                    &::before {
+                        left: -12px;
+                    }
+                    &::after {
+                        left: 0px;
+                    }
+                }
+                &:nth-child(even) {
+                    padding-left: 25px;
+                    padding-right: 0px;
+    
+                    &::before {
+                        left: -12px;
+                    }
+                    &::after {
+                        left: 0;
+                    }
+                    .item{
+                        .historyDate{
+                            &::before{
+                                content: ">";
+                                font-size: 20px;
+                                margin-right: 10px;
+                            }
+                            &::after{
+                                content: "";
+                                font-size: 20px;
+                                margin-right: 10px;
+                            }
 
+                        }
+                    }
+                }
+                .item{
+                    .historyDate{
+                        justify-content: left;
+                    }
+                    h3{
+                        text-align: left;
+                        line-height: 1.4;
+                    }
+                }
+                &::before {
+                    top:10px;
+                }
+                &::after{
+                    top:22px;
+                }
+            }
         }
     }
 }
