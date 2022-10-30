@@ -6,7 +6,7 @@ import {
   isNotEmpty,
   patterns,
   compare,
-  validatePassword
+  validatePassword,
 } from "../../common/validateUtils";
 import "./css.scss";
 import { pageData } from "./pageData";
@@ -25,43 +25,41 @@ const HannstarRegister: React.FC = () => {
     const [country, setCountry] = useState<string>("");
     const [agreeEmail, setAgreeEmail] = useState<boolean>(false);
     const [agreePrivacy, setAgreePrivacy] = useState<boolean>(false);
-
     const [passwordStrengthMeter, setPasswordStrengthMeter] = useState<
       number | string
     >("");
-
-    const [firstNameError, setFirstNameError] = useState<boolean | string>("");
-    const [lastNameError, setLastNameError] = useState<boolean | string>("");
-    const [emailError, setEmailError] = useState<boolean | string>("");
-    const [passwordError, setPasswordError] = useState<boolean | string>("");
-    const [confirmPasswordError, setConfirmPasswordError] = useState<
-      boolean | string
-    >("");
-
-    const [errorMessage, setErrorMessage] = useState<any>("");
+    const [firstNamePass, setFirstNamePass] = useState<boolean>(true);
+    const [lastNamePass, setLastNamePass] = useState<boolean>(true);
+    const [emailPass, setEmailPass] = useState<boolean>(true);
+    const [passwordPass, setPasswordPass] = useState<boolean>(true);
+    const [confirmPasswordPass, setConfirmPasswordPass] =
+      useState<boolean>(true);
+    const [agreePrivacyPass, setAgreePrivacyPass] = useState<boolean>(true);
 
     const registerBlock: any = useRef();
+    const errorMessageBlock: any = useRef();
 
     useEffect(() => {
       const magentoDom: any = document.getElementById("form-validate");
       console.log("magentoDom", magentoDom);
       if (magentoDom) registerBlock.current.appendChild(magentoDom);
 
-      // const magentoErrorMessageDom: any =
-      //   document.getElementsByClassName("page messages")[0];
-      // if (magentoErrorMessageDom)
-      //   errorMessageBlock.current.appendChild(magentoErrorMessageDom);
+      const magentoDefultMessageDom: any =
+        document.getElementsByClassName("page messages")[0];
 
-      // setFirstName(getMagentoFirstNameDom().value);
-      // setLastName(getMagentoLastNameDom().value);
-      // setEmail(getMagentoEmailDom().value);
-      // setPassword(getMagentoPasswordDom().value);
-      // setConfirmPassword(getMagentoConfirmPasswordDom().value);
+      if (magentoDefultMessageDom)
+        errorMessageBlock.current.appendChild(magentoDefultMessageDom);
+
+      setFirstName(getMagentoFirstNameDom().value);
+      setLastName(getMagentoLastNameDom().value);
+      setEmail(getMagentoEmailDom().value);
+      setPassword(getMagentoPasswordDom().value);
+      setConfirmPassword(getMagentoConfirmPasswordDom().value);
     }, []);
 
     const getMagentoFirstNameDom = (): any => {
       const firstNameDom = document.getElementById("firstname");
-      return firstNameDom ? firstNameDom : null;
+      return firstNameDom ? firstNameDom : "";
     };
 
     const getMagentoLastNameDom = (): any => {
@@ -87,9 +85,7 @@ const HannstarRegister: React.FC = () => {
     };
 
     const getMagentoisSubscribedDom = (): any => {
-      const isSubscribed = document.getElementById(
-        "is_subscribed"
-      );
+      const isSubscribed = document.getElementById("is_subscribed");
       return isSubscribed ? isSubscribed : "";
     };
 
@@ -144,20 +140,18 @@ const HannstarRegister: React.FC = () => {
 
     const handleAgreeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (getMagentoisSubscribedDom()) {
-        getMagentoisSubscribedDom().checked = e.target.checked
+        getMagentoisSubscribedDom().checked = e.target.checked;
       }
       setAgreeEmail(e.target.checked);
     };
 
     const handleRegister = () => {
-      setFirstNameError(isNotEmpty(firstName));
-      setLastNameError(isNotEmpty(lastName));
-      setEmailError(validate(email, patterns.email));
-      setPasswordError(validatePassword(password));
-      setConfirmPasswordError(compare(confirmPassword, password));
-
-      console.log('sss', isNotEmpty(firstName));
-
+      setFirstNamePass(isNotEmpty(firstName));
+      setLastNamePass(isNotEmpty(lastName));
+      setEmailPass(validate(email, patterns.email));
+      setPasswordPass(validatePassword(password));
+      setConfirmPasswordPass(compare(confirmPassword, password));
+      setAgreePrivacyPass(agreePrivacy);
 
       console.log({
         firstName,
@@ -176,13 +170,12 @@ const HannstarRegister: React.FC = () => {
         isNotEmpty(lastName),
         validate(email, patterns.email),
         validatePassword(password),
-        compare(confirmPassword, password)
+        compare(confirmPassword, password),
+        agreePrivacy,
       ];
-      console.log('allValidateColumn', allValidateColumn);
 
       if (allValidateColumn.every((v) => v === true)) {
         const registerBtn: any = document.getElementById("hannstarRegisterBtn");
-        console.log('registerBtn', registerBtn);
         if (registerBtn) registerBtn.click();
       }
     };
@@ -191,6 +184,7 @@ const HannstarRegister: React.FC = () => {
       <div className="hannstarRegisterBlock">
         <div ref={registerBlock}></div>
         <h2>會員註冊</h2>
+        <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className={`${pageName}Content`}>
           <div className="row">
             <div className="columnBlock">
@@ -200,13 +194,11 @@ const HannstarRegister: React.FC = () => {
                   type="text"
                   onChange={handleFirstName}
                   value={firstName}
-                  className={`${firstNameError === false ? "error" : ""}`}
+                  className={`${!firstNamePass ? "error" : ""}`}
                 />
               </div>
-              {firstNameError === false && (
-                <div className="errorMessage">
-                  必填欄位；輸入格式有誤，請重新輸入
-                </div>
+              {!firstNamePass && (
+                <div className="errorMessage">必填欄位，請重新輸入</div>
               )}
             </div>
             <div className="columnBlock">
@@ -216,13 +208,11 @@ const HannstarRegister: React.FC = () => {
                   type="text"
                   onChange={handleLastName}
                   value={lastName}
-                  className={`${lastNameError === false ? "error" : ""}`}
+                  className={`${!lastNamePass ? "error" : ""}`}
                 />
               </div>
-              {lastNameError === false && (
-                <div className="errorMessage">
-                  必填欄位；輸入格式有誤，請重新輸入
-                </div>
+              {!lastNamePass && (
+                <div className="errorMessage">必填欄位，請重新輸入</div>
               )}
             </div>
           </div>
@@ -233,10 +223,10 @@ const HannstarRegister: React.FC = () => {
                 type="text"
                 onChange={handleEmail}
                 value={email}
-                className={`${emailError === false ? "error" : ""}`}
+                className={`${!emailPass ? "error" : ""}`}
               />
             </div>
-            {emailError === false && (
+            {!emailPass && (
               <div className="errorMessage">
                 必填欄位；輸入格式有誤，請重新輸入
               </div>
@@ -249,7 +239,7 @@ const HannstarRegister: React.FC = () => {
                 type="password"
                 onChange={handlePassword}
                 value={password}
-                className={`${passwordError === false ? "error" : ""}`}
+                className={`${!passwordPass ? "error" : ""}`}
               />
             </div>
             {/* {(passwordStrengthMeter === 1 || passwordStrengthMeter === 0) && (
@@ -260,7 +250,7 @@ const HannstarRegister: React.FC = () => {
             {passwordStrengthMeter === 4 && (
               <div className="meter4">非常強</div>
             )} */}
-            {passwordError === false && (
+            {!passwordPass && (
               <div className="errorMessage">
                 必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
               </div>
@@ -273,13 +263,11 @@ const HannstarRegister: React.FC = () => {
                 type="password"
                 onChange={handleConfirmPassword}
                 value={confirmPassword}
-                className={`${confirmPasswordError === false ? "error" : ""}`}
+                className={`${!confirmPasswordPass ? "error" : ""}`}
               />
             </div>
-            {confirmPasswordError === false && (
-              <div className="errorMessage">
-                必填欄位；需與密碼相同
-              </div>
+            {!confirmPasswordPass && (
+              <div className="errorMessage">必填欄位；需與密碼相同</div>
             )}
           </div>
           <div className="columnBlock">
@@ -310,6 +298,9 @@ const HannstarRegister: React.FC = () => {
                   <label htmlFor="agreePrivacy">
                     我已詳閱並同意<a href="/">瀚宇彩晶隱私申明</a>
                   </label>
+                  {!agreePrivacyPass && (
+                    <div className="errorMessage">必填欄位 </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
-import AccountTemplate from "../../templates/AccountTemplate/main"
+import AccountTemplate from "../../templates/AccountTemplate/main";
+import {
+  patterns,
+  validate,
+  validatePassword,
+} from "../../common/validateUtils";
 import urlConfig from "../../config/urlSetting.json";
 import "./css.scss";
 
@@ -10,8 +15,8 @@ const HannstarLogin: React.FC = () => {
   const LoginContent = () => {
     const [account, setAccount] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [isAccountError, setIsAccountError] = useState<boolean | string>("");
-    const [isPasswordError, setIsPasswordError] = useState<boolean | string>("");
+    const [isAccountPass, setIsAccountPass] = useState<Boolean>(true);
+    const [isPasswordPass, setIsPasswordPass] = useState<boolean>(true);
 
     const loginBlock: any = useRef();
     const errorMessageBlock: any = useRef();
@@ -23,7 +28,8 @@ const HannstarLogin: React.FC = () => {
       const magentoDefultMessageDom: any =
         document.getElementsByClassName("page messages")[0];
 
-      if (magentoDefultMessageDom) errorMessageBlock.current.appendChild(magentoDefultMessageDom);
+      if (magentoDefultMessageDom)
+        errorMessageBlock.current.appendChild(magentoDefultMessageDom);
 
       setAccount(getMagentoAccount().value);
       setPassword(getMagentoPassword().value);
@@ -55,20 +61,13 @@ const HannstarLogin: React.FC = () => {
       setPassword(e.target.value);
     };
 
-    const validateEmail = (email: string): any => {
-      return email ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) : false
-    };
-
-    const validatePassword = (password: string): any => {
-      return password ? password.length >= 8 : false
-    }
-
     const handleLogin = () => {
-      setIsAccountError(validateEmail(account))
-      setIsPasswordError(validatePassword(password))
-      if (isAccountError && isPasswordError) {
+      const accountValidate = validate(account, patterns.email);
+      const passwordValidate = validatePassword(password);
+      setIsAccountPass(accountValidate);
+      setIsPasswordPass(passwordValidate);
+      if (accountValidate && passwordValidate) {
         const send2: any = document.getElementById("send2");
-        console.log('send2', send2);
         send2 && send2.click();
       }
     };
@@ -85,10 +84,14 @@ const HannstarLogin: React.FC = () => {
               onChange={handleAccout}
               value={account}
               placeholder="請填入您的Email"
-              className={`${isAccountError === false ? "error" : ""}`}
+              className={`${!isAccountPass ? "error" : ""}`}
             />
           </div>
-          {isAccountError === false && <div className="errorMessage">必填欄位；輸入格式有誤，請重新輸入</div>}
+          {!isAccountPass && (
+            <div className="errorMessage">
+              必填欄位；輸入格式有誤，請重新輸入
+            </div>
+          )}
         </div>
 
         <div className="columnBlock">
@@ -98,21 +101,18 @@ const HannstarLogin: React.FC = () => {
               onChange={handlePassword}
               type="password"
               value={password}
-              className={`${isPasswordError === false ? "error" : ""}`}
+              className={`${!isPasswordPass ? "error" : ""}`}
             />
           </div>
-          <div className={`remind ${isPasswordError === false ? "errorMessage" : ""}`}>必填欄位；請輸入至少8個資源，並包含至少一個大寫、一個小寫和一個特殊字元</div>
+          <div className={`remind ${!isPasswordPass ? "errorMessage" : ""}`}>
+            必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+          </div>
         </div>
         <div className="row">
           <div className="columnBlock">
             <div className="bodyBlock select">
               <div className="hannstarCheckBox spaceBetween alignCenter">
-                <input
-                  id="checkBox1"
-                  type="checkBox"
-                  value="yes"
-                  name="yes"
-                />
+                <input id="checkBox1" type="checkBox" value="yes" name="yes" />
                 <label htmlFor="checkBox1">記住帳號</label>
               </div>
             </div>
@@ -123,17 +123,17 @@ const HannstarLogin: React.FC = () => {
           登入
         </div>
         <p className="create">
-          還沒有HannStar帳號? <a href={urlConfig.account.register.href}>建立帳號</a>
+          還沒有HannStar帳號?
+          <a href={urlConfig.account.register.href}>建立帳號</a>
         </p>
 
         <div ref={loginBlock} className="magentoLoginBlock"></div>
       </div>
-    )
-  }
+    );
+  };
   const accountTemplateProp = {
     content: <LoginContent />,
   };
-
 
   return (
     <Layout>

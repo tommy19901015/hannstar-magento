@@ -10,27 +10,7 @@ $pageName: "HannstarRegister";
     display: none;
   }
   .magentoMessageBlock {
-    background-color: $hannstar-green0;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    &.error {
-      background-color: $hannstar-orange2;
-      .magentoMessageText {
-        color: $hannstar-orange1;
-      }
-    }
-    img {
-      width: 30px;
-      height: 30px;
-      margin: 0 10px;
-    }
-    .magentoMessageText {
-      @include hannstarContent1;
-      color: #fff;
-      margin-left: 10px;
-    }
+    @include magentoMessage;
   }
   .hannstarRegisterBlock {
     display: flex;

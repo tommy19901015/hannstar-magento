@@ -1,56 +1,41 @@
 export const patterns = {
-    username: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/,
-    email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
-    number: /^\d+$/
+  email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+  number: /^\d+$/,
 };
 
+export function isNotEmpty(val: number | string): boolean {
+  return val ? val.toString().length !== 0 : false;
+}
+
 export function validatePassword(val: string) {
-    var
-        counter = 0,
-        passwordMinLength = 8,
-        passwordMinCharacterSets = 4,
-        pass = val.trim(),
-        result = pass.length >= passwordMinLength;
-
-    if (result === false) {
-        return result;
-    }
-
-    if (pass.match(/\d+/)) {
-        counter++;
-    }
-
-    if (pass.match(/[a-z]+/)) {
-        counter++;
-    }
-
-    if (pass.match(/[A-Z]+/)) {
-        counter++;
-    }
-
-    if (pass.match(/[^a-zA-Z0-9]+/)) {
-        counter++;
-    }
-
-    if (counter < passwordMinCharacterSets) {
-        result = false;
-    }
-
-    return result;
+  let counter = 0;
+  const passwordMinLength = 8;
+  const passwordMinCharacterSets = 4;
+  let result = false;
+  if (isNotEmpty(val)) {
+    const pass = val.trim();
+    result = pass.length >= passwordMinLength;
+    if (result === false) return result;
+    if (pass.match(/\d+/)) counter++;
+    if (pass.match(/[a-z]+/)) counter++;
+    if (pass.match(/[A-Z]+/)) counter++;
+    if (pass.match(/[^a-zA-Z0-9]+/)) counter++;
+    if (counter < passwordMinCharacterSets) result = false;
+  }
+  return result;
 }
 
 export function validate(val: number | string, regex: RegExp) {
-    const valid = val.toString().replace(/\s*/g, "");
-    return regex.test(valid);
-}
-
-export function isNotEmpty(val: number | string): boolean {
-    const valid = val.toString().replace(/\s*/g, "");
-    return valid.length !== 0;
+  return isNotEmpty(val)
+    ? regex.test(val.toString().replace(/\s*/g, ""))
+    : false;
 }
 
 export function compare(prev: number | string, curr: number | string): boolean {
+  if (prev || curr) {
     const prevVal = prev.toString().replace(/\s*/g, "");
     const currVal = curr.toString().replace(/\s*/g, "");
     return isNotEmpty(prevVal) && isNotEmpty(currVal) && prevVal === currVal;
+  }
+  return false;
 }

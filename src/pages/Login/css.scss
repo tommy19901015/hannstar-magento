@@ -1,160 +1,134 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'HannstarLogin';
+$pageName: "HannstarLogin";
 
 .#{$pageName}Container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 40px 0;
-    .magentoLoginBlock {
-        display: none;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 40px 0;
+  .magentoLoginBlock {
+    display: none;
+  }
+  .magentoMessageBlock {
+    @include magentoMessage;
+  }
+  .hannstarLoginBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+    @include hannstarContent0;
+    h2 {
+      @include hannstarH2Title;
+      text-align: center;
+      margin-bottom: 25px;
     }
-    .magentoMessageBlock {
-        .page {
-            margin-bottom: 20px;
-            &.messages {
-                .message-error {
-                    &.error {
-                        background-color: $hannstar-orange2;
-                        padding: 6px;
-                        &.message {
-                            @include hannstarContent1;
-                            color: #fff;
-                            position: relative;
-                            &::before {
-                                content: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/error.png');
-                                position: absolute;
-                                width: 20px;
-                                height: 20px;
-                                top: 8px;
-                            }
-                            div {
-                                color: $hannstar-orange1;
-                                margin-left: 30px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      a {
+        @include hannstarContent2;
+        word-break: keep-all;
+        color: $hannstar-blue2;
+      }
     }
-    .hannstarLoginBlock {
-        display: flex;
-        flex-direction: column;
-        padding: 0 80px;
-        @include hannstarContent0;
-        h2 {
-            @include hannstarH2Title;
-            text-align: center;
-            margin-bottom: 25px;
+    .columnBlock {
+      width: 100%;
+      @include hannstarTextPadding2;
+      .title {
+        @include hannstarContentText;
+        word-break: keep-all;
+        &.required {
+          &::after {
+            content: "*";
+            color: $hannstar-orange1;
+            padding-left: 5px;
+          }
         }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            a {
-                @include hannstarContent2;
-                word-break: keep-all;
-                color: $hannstar-blue2;
-            }
+      }
+      .errorMessage {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-orange1;
+      }
+      .remind {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-blue3;
+        &.errorMessage {
+          color: $hannstar-orange1;
         }
-        .columnBlock {
-            width: 100%;
-            @include hannstarTextPadding2;
-            .title {
-                @include hannstarContentText;
-                word-break: keep-all;
-                &.required {
-                    &::after {
-                        content: '*';
-                        color: $hannstar-orange1;
-                        padding-left: 5px;
-                    }
-                }
-            }
-            .errorMessage {
-                margin-top: 10px;
-                @include hannstarContent2;
-                color: $hannstar-orange1;
-            }
-            .remind {
-                margin-top: 10px;
-                @include hannstarContent2;
-                color: $hannstar-blue3;
-                &.errorMessage {
-                    color: $hannstar-orange1;
-                }
-            }
-        }
-        .bodyBlock {
-            display: flex;
-            flex-wrap: wrap;
-            input[type='text'],
-            input[type='password'] {
-                @include hannstarInput;
-                background: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/accountInputIcon.png')
-                    no-repeat scroll 10px 13px;
-                padding-left: 30px;
-                &.error {
-                    border-color: $hannstar-orange1;
-                }
-            }
-            input[type='password'] {
-                background: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/passwordInputIcon.png')
-                    no-repeat scroll 10px 13px;
-            }
-
-            select {
-                @include hannstarSelect;
-            }
-
-            textarea {
-                @include hannstarTextarea;
-            }
-
-            .hannstarRadio {
-                margin-right: 20px;
-                @include hannstarRadio;
-            }
-
-            .hannstarCheckBox {
-                @include hannstarCheckBox;
-                @include hannstarContent2;
-            }
-            &.checkbox {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                grid-auto-rows: 20px;
-                grid-gap: 20px;
-            }
-        }
-
-        .spaceBetween {
-            display: flex;
-            justify-content: space-between;
-            @include hannstarTextPadding2;
-            a {
-                color: $hannstar-blue2;
-            }
-        }
-        .alignCenter {
-            display: flex;
-            align-items: center;
-            @include hannstarContent2;
-        }
-        .loginBtn {
-            @include hannstarBtn;
-            width: 30%;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .create {
-            @include hannstarContent2;
-            text-align: center;
-            a {
-                color: $hannstar-blue2;
-            }
-        }
+      }
     }
+    .bodyBlock {
+      display: flex;
+      flex-wrap: wrap;
+      input[type="text"],
+      input[type="password"] {
+        @include hannstarInput;
+        background: url("https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/accountInputIcon.png")
+          no-repeat scroll 10px 13px;
+        padding-left: 30px;
+        &.error {
+          border-color: $hannstar-orange1;
+        }
+      }
+      input[type="password"] {
+        background: url("https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/passwordInputIcon.png")
+          no-repeat scroll 10px 13px;
+      }
+
+      select {
+        @include hannstarSelect;
+      }
+
+      textarea {
+        @include hannstarTextarea;
+      }
+
+      .hannstarRadio {
+        margin-right: 20px;
+        @include hannstarRadio;
+      }
+
+      .hannstarCheckBox {
+        @include hannstarCheckBox;
+        @include hannstarContent2;
+      }
+      &.checkbox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-auto-rows: 20px;
+        grid-gap: 20px;
+      }
+    }
+
+    .spaceBetween {
+      display: flex;
+      justify-content: space-between;
+      @include hannstarTextPadding2;
+      a {
+        color: $hannstar-blue2;
+      }
+    }
+    .alignCenter {
+      display: flex;
+      align-items: center;
+      @include hannstarContent2;
+    }
+    .loginBtn {
+      @include hannstarBtn;
+      width: 30%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .create {
+      @include hannstarContent2;
+      text-align: center;
+      a {
+        color: $hannstar-blue2;
+      }
+    }
+  }
 }
