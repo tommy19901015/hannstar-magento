@@ -285,14 +285,13 @@ const About: React.FC = () => {
         <ul className="historyList">
           {milestoneData.map((item) => {
             return (
-              <li>
-                <div className="leftBlock">
+              <li className="">
+                <div className="item">
                   <div className="historyDate">{item.date}</div>
                   {item.imgSrc === "" ||
                     <div className="imgBlock"><img src={item.imgSrc} alt={item.title} /></div>}
                   <h3>{item.title}</h3>
                 </div>
-                <div className="rightBlock"></div>
               </li>
             );
           })}

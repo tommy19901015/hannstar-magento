@@ -1,6 +1,8 @@
 @import '../../style/variable.scss';
 
 .milestoneBlock {
+    width: 100%;
+
     .title {
         @include hannstarH2Title;
         text-align: center;
@@ -29,57 +31,171 @@
         li {
             position: relative;
             display: flex;
-            .leftBlock {
-                .historyDate {
-                    @include hannstarH2Title;
-                    padding-bottom: 10px;
-                    color: $hannstar-blue2;
+            width: 50%;
+            box-sizing: border-box;
+            // .leftBlock {
+            //     .historyDate {
+            //         @include hannstarH2Title;
+            //         padding-bottom: 10px;
+            //         color: $hannstar-blue2;
+            //     }
+            //     .imgBlock {
+            //         margin-bottom: 10px;
+            //         border: 6px solid #fff;
+            //         box-shadow: 0 0 29px rgb(0 0 0 / 10%);
+            //         img {
+            //             width: 100%;
+            //         }
+            //     }
+            //     h3 {
+            //         @include hannstarContentText;
+            //     }
+            //     &::before,
+            //     &::after {
+            //         position: absolute;
+            //         content: '';
+            //         border-radius: 50%;
+            //     }
+            //     &::before {
+            //         top: 5px;
+            //         width: 30px;
+            //         height: 30px;
+            //         border: 1px solid $hannstar-blue2;
+            //         background-color: #fff;
+            //         left: calc(50% - 15px);
+            //     }
+            //     &::after {
+            //         top: 17px;
+            //         width: 6px;
+            //         height: 6px;
+            //         background-color: $hannstar-blue2;
+            //         left: calc(50% - 3px);
+            //     }
+            // }
+            // .rightBlock {
+            //     width: 50%;
+            // }
+            .item {
+                width: 100%;
+                .historyDate{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    color: #0094da;            
                 }
-                .imgBlock {
+                .imgBlock{
                     margin-bottom: 10px;
                     border: 6px solid #fff;
                     box-shadow: 0 0 29px rgb(0 0 0 / 10%);
-                    img {
-                        width: 100%;
+                    transition: all 0.5s ease-out;
+                    img{
+                        display: block;
+                        max-width: 100%;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                    }
+                }
+
+                h3{
+                    @include hannstarContentText;
+                }
+            }
+
+            &:nth-child(odd){
+                margin-left: auto;
+                padding-left: 60px; 
+                &::before {
+                    left: -15px;
+                }
+                &::after {
+                    left: -3px;
+                }
+                .historyDate{
+                    &::before {
+                        content: ">";
+                        font-size: 20px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                margin-right: auto;
+                padding-right: 60px;
+                text-align: right;
+                .historyDate{
+                    justify-content: flex-end;
+                    &::after {
+                        content: "<";
+                        font-size: 20px;
+                        margin-right: 10px;
                     }
                 }
                 h3 {
-                    @include hannstarContentText;
-                }
-                &::before,
-                &::after {
-                    position: absolute;
-                    content: '';
-                    border-radius: 50%;
-                }
-                &::before {
-                    top: 5px;
-                    width: 30px;
-                    height: 30px;
-                    border: 1px solid $hannstar-blue2;
-                    background-color: #fff;
-                    left: calc(50% - 15px);
-                }
-                &::after {
-                    top: 17px;
-                    width: 6px;
-                    height: 6px;
-                    background-color: $hannstar-blue2;
-                    left: calc(50% - 3px);
-                }
-            }
-            .rightBlock {
-                width: 50%;
-            }
-            &:nth-child(odd) {
-                flex-direction: row-reverse;
-            }
-            &:nth-child(even) {
-                .historyDate,
-                h3 {
                     text-align: right;
                 }
+
+                &::before {
+                    right: -15px;
+                }
+                &::after {
+                    right: -3px;
+                }
             }
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                border-radius: 50%;
+                top: 5px;
+                width: 30px;
+                height: 30px;
+                border: 1px solid #9adbfa;
+                background-color: #fff;
+                box-sizing: border-box;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                border-radius: 50%;
+                top: 17px;
+                width: 6px;
+                height: 6px;
+                background-color: #0094da;
+                box-sizing: border-box;
+            }
+    
+            // &:nth-child(odd) {
+            //     margin-left: auto;
+            //     padding-left: 60px;
+            //     flex-direction: row-reverse;
+            // }
+            // &:nth-child(even) {
+            //     h3 {
+            //         text-align: right;
+            //     }
+            // }
+            .item {
+                .historyDate{
+                    display: flex;
+                    align-items: center;
+                    @include hannstarH2Title;
+                    padding-bottom: 10px;
+                    color: $hannstar-blue2;
+                 }
+            }
+            
+        }
+    }
+
+    @media (max-width: 980px) {
+        .historyList{
+
         }
     }
 }
+
+
+// breakpoint
