@@ -8,6 +8,7 @@ import GraphicsLine from "../../component/graphicsLine/main";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
 import { TextAlign } from "../../component/banner/interface";
 import usePageData from "./pageData";
+import { getTodoData } from "../../services/api.service";
 import "./css.scss";
 
 // const breadcrumbsData = {
@@ -300,6 +301,10 @@ const About: React.FC = () => {
     );
   };
 
+  useEffect(()=>{
+    const post = getTodoData(2);
+    console.log('post:',post)
+  },[])
   
 
   return (
