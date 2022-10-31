@@ -309,6 +309,7 @@ const About: React.FC = () => {
 
   return (
     <Layout>
+
       <Breadcrumbs {...breadcrumbs} />
       <Banner {...bannerTextData} />
       <Columns
@@ -320,6 +321,7 @@ const About: React.FC = () => {
       <Columns
         type={ColType.OneCol}
         content={<Milestone />} />
+
     </Layout>
   );
 };

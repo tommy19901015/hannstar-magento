@@ -1,7 +1,7 @@
 import { ResponseType } from '../types/base';
-import instance from './api.interceptors'
+import service from './api.interceptors'
 export const apiMethods = {
     fetchTodoData: (id:number) => (`/todos/${id}`),
 }
 
-export const getTodoData = (id:number) => instance.get(apiMethods.fetchTodoData(id));
+export const getTodoData = (id:number) => service.get<ResponseType>(apiMethods.fetchTodoData(id));

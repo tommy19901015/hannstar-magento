@@ -1,43 +1,40 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse} from "axios";
-import { useEffect } from "react";
+import axios, { AxiosError } from "axios";
 
-const instance = axios.create({
+const service = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/",
+  headers: {
+    "Content-Type": "application/json;charset=UTF-8",
+    "Access-Control-Allow-Origin": "*",
+    }
 });
 
-//export const url = (api: string) => location.origin + '/' + api;
-
-// axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-
-const AxiosInterceptor = (children: AxiosRequestConfig) => {
-  useEffect(() => {
-
-    const resInterceptor = (response:AxiosResponse) => {
-      console.log("resInterceptor");
-      return response;
-    };
-
-    const errInterceptor = (error:AxiosError)=> {
-      console.log("errInterceptor");
-      if (error.response?.status === 401 || error.response?.status === 403) {
-        // 處理error
+service.interceptors.request.use(
+    (config) => {
+      if (process.env.USE_FAKE_ENV) {}
+      return config;
+    },
+    (error) => {
+      console.log('Axios interceptors', error);
+      return Promise.reject(error);
+    }
+);
+  
+service.interceptors.response.use(
+    (response) => {
+      if (response.data.isSuccess === false) {
       }
+  
+      if (response.status === 401 || response.status === 403) {
+      }
+      console.log('api isSuccess')
+      return response.data;
+    },
+    (error: AxiosError) => {
+      console.log(`[error] --> ${error}`, error);
+      if (error.response?.status === 401 || error.response?.status === 403) {
+      }
+      throw error;
+    }
+);
 
-      return Promise.reject();
-    };
-
-    const interceptor = instance.interceptors.response.use(
-      resInterceptor,
-      errInterceptor
-    );
-
-    return () => instance.interceptors.response.eject(interceptor);
-  }, []);
-
-  return children;
-};
-
-export default instance;
-export { AxiosInterceptor };
+export default service;
