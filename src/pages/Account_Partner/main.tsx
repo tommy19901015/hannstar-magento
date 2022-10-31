@@ -131,28 +131,40 @@ const formData5 = [
     required: true,
   },
   {
-    title: "商業類型",
-    value: "",
-    columnKey: "BusinessType",
-    type: FormType.Select,
-    placeholder: "",
-    option: [
-      { text: "代理商", value: "代理商" },
-      { text: "經銷商", value: "經銷商" },
-      { text: "模組廠", value: "模組廠" },
-      { text: "方案商", value: "方案商" },
-      { text: "系統整合廠", value: "系統整合廠" },
-      { text: "品牌廠", value: "品牌廠" },
-      { text: "其他", value: "其他" },
-    ],
-  },
-  {
     title: "企業編號(統編/稅號)",
     value: "",
     columnKey: "TaxNo",
     type: FormType.Intput,
     placeholder: "",
     required: true,
+  },
+  {
+    title: "商業類型",
+    value: "",
+    columnKey: "BusinessType",
+    type: FormType.Select,
+    placeholder: "",
+    required: true,
+    option: [
+      { text: "材料供應商", value: "材料供應商" },
+      { text: "設備供應商", value: "設備供應商" },
+      { text: "基礎供應商", value: "基礎供應商" },
+    ],
+  },
+  {
+    title: "適用區域",
+    value: "",
+    columnKey: "ApplicableArea",
+    type: FormType.Select,
+    required: true,
+    option: [
+      { text: "Array 廠", value: "Array 廠" },
+      { text: "Cell 廠", value: "Cell 廠" },
+      { text: "Color Filter 廠", value: "Color Filter 廠" },
+      { text: "Touch 廠", value: "Touch 廠" },
+      { text: "Module 廠", value: "Module 廠" },
+      { text: "廠務", value: "廠務" },
+    ],
   },
 ];
 
@@ -209,6 +221,19 @@ const formData8 = [
     ],
   },
   {
+    title: "技術人員",
+    value: "",
+    columnKey: "TechnicalStaff",
+    type: FormType.Select,
+    required: true,
+    option: [
+      { text: "<10", value: "<10" },
+      { text: "10-30", value: "10-30" },
+      { text: "30-100", value: "30-100" },
+      { text: ">100", value: ">100" },
+    ],
+  },
+  {
     title: "年營業額(USD)",
     value: "",
     columnKey: "AnnualRevenue",
@@ -237,24 +262,6 @@ const formData8 = [
 
 const formData9 = [
   {
-    title: "公司產品主要銷售分類(可複選)",
-    value: "",
-    columnKey: "CompanyMA1",
-    type: FormType.CheckBox,
-    required: true,
-    option: [
-      { text: "車載", value: "車載" },
-      { text: "穿戴", value: "穿戴" },
-      { text: "工控", value: "工控" },
-      { text: "手機", value: "手機" },
-      { text: "消費類", value: "消費類" },
-      { text: "其他", value: "其他" },
-    ],
-  },
-];
-
-const formData10 = [
-  {
     title: "公司產品主要銷售國家/地區-1",
     value: "",
     columnKey: "CompanyMA2",
@@ -275,7 +282,7 @@ const formData10 = [
   },
 ];
 
-const formData11 = [
+const formData10 = [
   {
     title: "主要出貨客戶-1",
     value: "",
@@ -296,7 +303,7 @@ const formData11 = [
   },
 ];
 
-const formData12 = [
+const formData11 = [
   {
     title: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
     value: "",
@@ -309,7 +316,7 @@ const formData12 = [
   },
 ];
 
-const formData13 = [
+const formData12 = [
   {
     title: "購買渠道-1",
     value: "",
@@ -365,7 +372,7 @@ const formData13 = [
   },
 ];
 
-const formData14 = [
+const formData13 = [
   {
     title: "備註說明",
     value: "",
@@ -374,8 +381,8 @@ const formData14 = [
   },
 ];
 
-const AccountPersonal: React.FC = () => {
-  const pageName = "AccountPersonal";
+const AccountPartner: React.FC = () => {
+  const pageName = "AccountPartner";
   const [isSubmit, setIsSubmit] = useState<boolean>(false)
 
   const formMethods1: any = useRef(null);
@@ -391,7 +398,6 @@ const AccountPersonal: React.FC = () => {
   const formMethods11: any = useRef(null);
   const formMethods12: any = useRef(null);
   const formMethods13: any = useRef(null);
-  const formMethods14: any = useRef(null);
 
   const formProp1 = {
     formMethods: formMethods1,
@@ -457,20 +463,14 @@ const AccountPersonal: React.FC = () => {
   };
 
   const formProp12 = {
-    isOneRow: true,
     formMethods: formMethods12,
     formData: formData12,
   };
 
   const formProp13 = {
+    isOneRow: true,
     formMethods: formMethods13,
     formData: formData13,
-  };
-
-  const formProp14 = {
-    isOneRow: true,
-    formMethods: formMethods14,
-    formData: formData14,
   };
 
   const breadcrumbsData = {
@@ -505,7 +505,6 @@ const AccountPersonal: React.FC = () => {
     const values11 = formMethods11.current.getValues();
     const values12 = formMethods12.current.getValues();
     const values13 = formMethods13.current.getValues();
-    const values14 = formMethods14.current.getValues();
 
     const formData = {
       "UserName": "UserName",
@@ -523,7 +522,6 @@ const AccountPersonal: React.FC = () => {
       ...values11,
       ...values12,
       ...values13,
-      ...values14,
     };
     console.log("formData", formData);
 
@@ -545,7 +543,7 @@ const AccountPersonal: React.FC = () => {
     window.history.back()
   }
 
-  const PersonalFormContent = () => {
+  const PartnerFormContent = () => {
     return <>
       {isSubmit ? <div className={`${pageName}ApplyTitle`}>已收到您的申請，謝謝。</div> : <div className={`${pageName}FormBlock`}>
         <div className="formTitle">申請企業會員</div>
@@ -553,11 +551,11 @@ const AccountPersonal: React.FC = () => {
         <div className="classificationBlock">
           <a className="changTab" href={urlConfig.account.AccountPersonal.href}>
             <img alt={urlConfig.account.AccountPersonal.title}
-              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_hnp.png`} />
+              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_normal.png`} />
           </a>
           <a className="changTab" href={urlConfig.account.AccountPartner.href}>
             <img alt={urlConfig.account.AccountPartner.title}
-              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_normal.png`} />
+              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`} />
           </a>
         </div>
         <div className="stepTitle">步驟 2. 申請人資訊</div>
@@ -575,7 +573,6 @@ const AccountPersonal: React.FC = () => {
         <FormComponent {...formProp11} />
         <FormComponent {...formProp12} />
         <FormComponent {...formProp13} />
-        <FormComponent {...formProp14} />
         <div className="btnBlock">
           <div onClick={handlerGoBack} className="goBack">回上一頁</div>
           <div onClick={handlerSubmit} className="confirm">確認申請</div>
@@ -590,9 +587,9 @@ const AccountPersonal: React.FC = () => {
         type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbsData} />}
       />
-      <AccountPersonalTemplate contentComponent={<PersonalFormContent />} />
+      <AccountPersonalTemplate contentComponent={<PartnerFormContent />} />
     </Layout>
   );
 };
 
-export default AccountPersonal;
+export default AccountPartner;
