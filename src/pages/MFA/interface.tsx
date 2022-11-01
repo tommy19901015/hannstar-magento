@@ -6,5 +6,6 @@ export interface I_PageData {
     errorMessage: string
     placeholder: string
     sendBtn: string
-    otherMessage:string
+    otherMessage: string
+    linkText: string
 }

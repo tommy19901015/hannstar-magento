@@ -8,7 +8,7 @@ const MFA: React.FC = () => {
   const pageName = "MFA";
 
   const [code, setCode] = useState<string>("");
-  const [isCodeError, setIsCodeError] = useState<boolean | "">(true);
+  const [isCodeError, setIsCodeError] = useState<boolean>(true);
   const MFAQRCodeBlockRef: any = useRef();
   const errorMessageBlock: any = useRef();
   const tableData = usePageData();
@@ -40,8 +40,9 @@ const MFA: React.FC = () => {
   };
   const handleSend = () => {
     const sendBtn: any = document.getElementById("sendcode");
-    setIsCodeError(validate(code, patterns.number));
-    if (isCodeError) {
+    const codeValidate = validate(code, patterns.number);
+    setIsCodeError(codeValidate);
+    if (codeValidate) {
       sendBtn && sendBtn.click();
     }
   };
@@ -58,15 +59,19 @@ const MFA: React.FC = () => {
                 onChange={handleCodeInput}
                 value={code}
                 placeholder={tableData.placeholder}
-                className={`${isCodeError === false ? "error" : ""}`}
+                className={`${!isCodeError ? "error" : ""}`}
               />
-              {isCodeError === false && <div className="errorMessage">必填欄位；輸入格式有誤，請重新輸入</div>}
+              {!isCodeError && (
+                <div className="errorMessage">
+                  必填欄位；輸入格式有誤，請重新輸入
+                </div>
+              )}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
             {tableData.sendBtn}
           </div>
-          <span>{tableData.otherMessage}</span>
+          <span>{tableData.otherMessage}<a href="/">{tableData.linkText}</a></span>
         </div>
         <div ref={MFAQRCodeBlockRef} className="magentoBlock"></div>
       </div>

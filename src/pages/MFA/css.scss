@@ -58,8 +58,13 @@ $pageName: 'MFA';
         margin-bottom: 20px;
     }
     span {
-        @include hannstarContent3;
+        @include hannstarContent2;
         color: $hannstar-blue2;
         text-align: center;
+        a {
+            @include hannstarContent2;
+            color: $hannstar-blue3;
+            font-weight: $font-weighr-bold;
+        }
     }
 }

@@ -8,30 +8,28 @@ const ForgotPassword: React.FC = () => {
   const pageName = "ForgotPassword";
 
   const [email, setEmail] = useState<string>("");
-  const [isEmailError, setIsEmptyError] = useState<boolean>(true);
+  const [isEmailPass, setIsEmailPass] = useState<boolean>(true);
   const emailBlock: any = useRef();
   const errorMessageBlock: any = useRef();
 
   useEffect(() => {
     const magentoDom: any = document.getElementById(
-      "hannstar-magento-forgotPassword"
+      "form-validate"
     );
     if (magentoDom) emailBlock.current.appendChild(magentoDom);
 
-    const magentoErrorMessageDom: any =
+    const magentoDefultMessageDom: any =
       document.getElementsByClassName("page messages")[0];
-    if (magentoErrorMessageDom)
-      errorMessageBlock.current.appendChild(magentoErrorMessageDom);
 
-    // setFirstName(getMagentoFirstNameDom().value);
-    // setLastName(getMagentoLastNameDom().value);
-    // setEmail(getMagentoEmailDom().value);
-    // setPassword(getMagentoPasswordDom().value);
-    // setConfirmPassword(getMagentoConfirmPasswordDom().value);
+    if (magentoDefultMessageDom)
+      errorMessageBlock.current.appendChild(magentoDefultMessageDom);
+
+    setEmail(getMagentoEmailDom().value);
+
   }, []);
 
   const getMagentoEmailDom = (): any => {
-    const emailDom = document.getElementById("email");
+    const emailDom = document.getElementById("email_address");
     return emailDom ? emailDom : null;
   };
 
@@ -44,28 +42,32 @@ const ForgotPassword: React.FC = () => {
   };
 
   const handleSend = () => {
-    const sendBtn: any = document.getElementById("hannstar-register-btn");
-    const isTypeError = validate(email, patterns.email);
-    setIsEmptyError(isTypeError);
-    if (sendBtn) sendBtn.click();
+    const emailValidate = validate(email, patterns.email);
+    setIsEmailPass(emailValidate);
+    if (emailValidate) {
+      const sendBtn: any = document.getElementById("hannstar-send-btn");
+      if (sendBtn) sendBtn.click();
+    }
+
   };
 
   return (
     <Layout>
       <div className={`${pageName}`}>
         <div className="mainTitle">忘記密碼</div>
+        <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className={`${pageName}Content`}>
           <div className="columnBlock">
-            <div className="title required">請輸入您的帳號Email，<br/>系統會將您的密碼發送到您的信箱。</div>
+            <div className="title required">請輸入您的帳號(Email)，<br />系統會將您的密碼發送到您的信箱。</div>
             <div className="bodyBlock input">
               <input
-              type="text"
-              onChange={handleEmail}
-              value={email}
-              placeholder="請填入您的Email"
-              className={`${!!isEmailError ? "" : "error"}`}
+                type="text"
+                onChange={handleEmail}
+                value={email}
+                placeholder="請填入您的Email"
+                className={`${!isEmailPass ? "error" : ""}`}
               />
-               {!isEmailError && <div className="errorMessage"><i className="">*</i>必填欄位；輸入格式有誤，請重新輸入</div>}
+              {!isEmailPass && <div className="errorMessage">必填欄位；輸入格式有誤，請重新輸入</div>}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
