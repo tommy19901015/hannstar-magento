@@ -399,6 +399,28 @@ $font-base: 16px;
           }
         }
       }
+      .message-success {
+        &.success {
+          background-color: $hannstar-blue0;
+          padding: 6px;
+          &.message {
+            @include hannstarContent1;
+            color: #fff;
+            position: relative;
+            &::before {
+              content: url("https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/error.png");
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              top: 8px;
+            }
+            div {
+              color: $hannstar-blue1;
+              margin-left: 30px;
+            }
+          }
+        }
+      }
     }
   }
 }

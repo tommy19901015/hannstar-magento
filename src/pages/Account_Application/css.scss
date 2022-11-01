@@ -1,71 +1,102 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'AccountApplication';
+$pageName: "AccountApplication";
 
 .#{$pageName}Content {
-    .mainTitle {
-        @include hannstarH2Title;
+  .mainTitle {
+    @include hannstarH2Title;
+  }
+  .rankTypeContent {
+    .subTitle {
+      @include hannstarH4Title;
     }
-    .rankTypeContent {
-        .subTitle {
-            @include hannstarH4Title;
+    .rankContent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .rankCard {
+        border: 1px solid $hannstar-border-color;
+        padding: 20px 30px;
+        text-align: center;
+        .rankImg {
+          margin-bottom: 20px;
         }
-        .rankContent {
-            display: flex;
-            align-items: center;
-            .rankCard {
-                border: 1px solid $hannstar-border-color;
-                padding: 20px 30px;
+        .rankText {
+          margin-bottom: 20px;
+        }
+        .rankName {
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+      .arrowBlock {
+        margin: 0 20px;
+      }
+    }
+  }
+  .captionContent {
+    .subTitle {
+      @include hannstarH4Title;
+    }
+    .listBlock {
+      display: flex;
+      justify-content: space-between;
+      .leftBlock,
+      .rightBlock {
+        .captionIcon {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .titleText {
+            @include hannstarH4Title;
+            color: $hannstar-blue1;
+          }
+          img {
+            margin: 20px 0;
+          }
+        }
+        .textListBlock {
+          border: 1px solid $hannstar-border-color;
+          padding: 20px;
+          .topBlock,
+          .bottomBlock {
+            .textTitle {
+              @include hannstarH4Title;
+              text-align: center;
+            }
+            .captionList {
+              border-bottom: 1px solid $hannstar-border-color;
+              margin-bottom: 20px;
+              li {
+                display: flex;
+                align-items: center;
+                padding: 15px 20px;
+                img {
+                  width: 12px;
+                  height: 9px;
+                  margin-right: 10px;
+                }
+              }
+            }
+            .btnBlock {
+              text-align: center;
+              .applicationBtn {
+                @include hannstarBtn;
                 text-align: center;
-                .rankImg {
-                    margin-bottom: 20px;
-                }
-                .rankText {
-                    margin-bottom: 20px;
-                }
-                .rankName {
-                    display: inline-flex;
-                    align-items: center;
-                }
+              }
             }
-            .arrowBlock {
-                margin: 0 20px;
+          }
+          .bottomBlock {
+            .captionList {
+              li {
+                &:last-child {
+                  color: $hannstar-blue2;
+                }
+              }
             }
+          }
         }
+      }
     }
-    .captionContent {
-        .subTitle {
-            @include hannstarH4Title;
-        }
-        .listBlock {
-            display: flex;
-            .leftBlock,
-            .rightBlock {
-                .captionIcon {
-                    text-align: centers;
-                    .titleText {
-                        @include hannstarH4Title;
-                        color: $hannstar-blue1;
-                    }
-                    img {
-                    }
-                }
-                .textListBlock {
-                    .topBlock {
-                        .textTitle {
-                            @include hannstarH4Title;
-                        }
-                        .captionList {
-                            li {
-                                display: flex;
-                                img {
-                                    width: 15px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+  }
 }
