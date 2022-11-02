@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import Template4 from "../../templates/Template4/main";
-import usePageData from "./pageData"
+import usePageData from "./pageData";
 import "./css.scss";
 
 const ServiceCustomerSupport: React.FC = () => {
