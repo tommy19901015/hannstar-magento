@@ -11,7 +11,7 @@ const ServiceCustomerSupport: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}MainContainer`}>
-        <Template4 {...pageData} />
+        {/* <Template4 {...pageData} /> */}
       </div>
     </Layout>
   );

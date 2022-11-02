@@ -182,6 +182,28 @@ const graphics1Data3 = {
   content:
     "彩晶於南科以獨特規格的5.3代LCD廠，運用先進IPS面板製程技術，生產各式中小尺寸之LCD面板，同時於中國南京設立後端模組及觸控組裝廠，垂直整合產業資源。彩晶於2020年調整產能結構，整合部分和鑫光電南科廠房，預計提升先進面板技術製程。公司設有彩晶文教基金會，倡導企業社會責任，協助文化創意的發展， 期許建立充滿信心愛心及自由公平的和諧社會。",
   href: "",
+  imgList:[
+    {
+      src:"https://www.hannstar.com/upload/home_template_b/ALL_home_template_20F24_2wehd73mfy.png",
+      title:"",
+      hasborder:false
+    },
+    {
+      src:"https://www.hannstar.com/upload/home_template_b/twL_home_template_22A26_at8qyewt9q.png",
+      title:"",
+      hasborder:false
+    },
+    {
+      src:"https://www.hannstar.com/upload/home_template_b/ALL_home_template_22A26_bgeanqm647.png",
+      title:"",
+      hasborder:false
+    },
+    {
+      src:"https://www.hannstar.com/upload/home_template_b/ALL_home_template_22A26_6jczg7jthi.jpg",
+      title:"",
+      hasborder:false
+    }
+  ]
 };
 
 const allStore = {

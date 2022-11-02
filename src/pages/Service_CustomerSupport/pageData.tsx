@@ -84,6 +84,32 @@ function usePageData() {
                 ]
             }
         },
+        module6: {
+            titleContent: {
+                title: "服務內容",
+                content: "依各類客戶群提供不同的服務，滿足更多樣化的需求。"
+            },
+            graphicsImage:{
+                straight:{
+                    src:"https://fakeimg.pl/300/"
+                  },
+                  horizontal:{
+                    src:"https://fakeimg.pl/300/"
+                  },
+                  columns:[
+                    {
+                      src:"https://fakeimg.pl/300/"
+                    },
+                    {
+                      src:"https://fakeimg.pl/300/"
+                    },
+                    {
+                      src:"https://fakeimg.pl/300/"
+                    },
+                  ]
+            }
+
+        }
     }
   
     return PageType;

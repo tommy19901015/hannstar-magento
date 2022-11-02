@@ -29,6 +29,7 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
     }
 
     if (module1) {
+      // 只會有第一個有title content banner可以增加
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module1.titleContent} />
@@ -45,6 +46,7 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
     }
 
     if (module3) {
+      // array 會新增最多3-4個
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module3.titleContent} />

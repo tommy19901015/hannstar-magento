@@ -2,6 +2,7 @@ import { I_Banner } from "../../component/banner/interface"
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface"
 import { I_TitleContent } from "../../component/titleContent/interface"
 import { I_GraphicsCard } from "../../component/graphicsCard/interface"
+import { I_GraphicsImage } from "../../component/graphics4/interface"
 import { I_Graphics2 } from "../../component/graphics2/interface"
 
 
@@ -27,6 +28,10 @@ export interface I_Template4 {
   module5?: {
     titleContent: I_TitleContent
     graphicsCard: I_GraphicsCard
+  },
+  module6?: {
+    titleContent: I_TitleContent
+    graphicsImage: I_GraphicsImage
   },
 }
 

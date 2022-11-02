@@ -10,10 +10,11 @@ import ArticleList2 from "../../component/articleList2/main";
 import TabProductList from "../../component/tabProductList/main";
 import Graphics3 from "../../component/graphics3/main";
 import Graphics2 from "../../component/graphics2/main";
+import Graphics4 from "../../component/graphics4/main"
 import { I_Template4 } from "./interface";
 import "./css.scss";
 
-const Template4: React.FC<I_Template4> = ({ banner, breadcrumbs, module1, module2, module3, module4, module5 }) => {
+const Template4: React.FC<I_Template4> = ({ banner, breadcrumbs, module1, module2, module3, module4, module5, module6 }) => {
   const pageName = "Template4"
 
   const pageBuilder = () => {
@@ -66,6 +67,14 @@ const Template4: React.FC<I_Template4> = ({ banner, breadcrumbs, module1, module
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module5.titleContent} />
           <GraphicsCard {...module5.graphicsCard} />
+        </div>} />)
+    }
+
+    if (module6) {
+      pageContentArr.push(<Columns type={ColType.OneCol}
+        content={<div className={`${pageName}ModuleBlock`}>
+          <TitleContent {...module6.titleContent} />
+          <Graphics4 {...module6.graphicsImage} />
         </div>} />)
     }
 

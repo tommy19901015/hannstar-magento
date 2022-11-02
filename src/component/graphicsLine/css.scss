@@ -41,6 +41,28 @@
                 clear: both;
                 @include hannstarContentText;
             }
+
+            .imgList {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 50px;
+                padding-top: 20px;
+                .imgItem{
+                    display: flex;
+                    width: 100%;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    &.whiteBorder{
+                        border-right: 1px solid #FFF;
+                    }
+                    img{
+                        width: 80%;
+                    }
+                }
+            }
             .bottomLineBox {
                 display: flex;
                 align-items: center;

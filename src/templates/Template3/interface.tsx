@@ -8,7 +8,7 @@ import { I_GraphicsCard } from "../../component/graphicsCard/interface"
 
 export interface I_Template3 {
   banner?: I_Banner
-  breadcrumbs?: I_Breadcrumbs
+  breadcrumbs?: I_Breadcrumbs //banner
   module1?: {
     titleContent: I_TitleContent
     banner: I_Banner

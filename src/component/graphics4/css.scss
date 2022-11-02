@@ -1,0 +1,19 @@
+@import '../../style/variable.scss';
+
+
+.graphics4Block {
+    display: flex;
+    flex-direction: row;
+    .straightBlock{
+        flex: 1 1 auto;
+        .horizontalBlock{
+            display: flex;
+            flex-direction: column;
+            .colBlock{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+}
