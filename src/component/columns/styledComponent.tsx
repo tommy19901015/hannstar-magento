@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { I_Style } from "./interface";
+import { I_Style, TopMType } from "./interface";
 
 export const OneColFullStyle: React.FC<I_Style> = styled.div`
   margin: 0 auto;
@@ -17,7 +17,8 @@ export const TwoColFullStyle: React.FC<I_Style> = styled.div`
     margin-top: 0px; 
   }
   @media (max-width: 980px) {
-    flex-direction: column-reverse;
+    flex-direction: ${(props: { topMContent: TopMType }) =>
+    props.topMContent === TopMType.Left ? "column" : "column-reverse"};
     margin: 24px auto;
   }
 `;
@@ -40,7 +41,8 @@ export const TwoColStyle: React.FC<I_Style> = styled.div`
     margin-top: 0px; 
   }
   @media (max-width: 980px) {
-    flex-direction: column-reverse;
+    flex-direction: ${(props: { topMContent: TopMType }) =>
+    props.topMContent === TopMType.Left ? "column" : "column-reverse"};
     margin: 20px auto;
   }
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Columns from "../../component/columns/main";
 import Layout from "../../component/layout/main";
-import { ColType } from "../../component/columns/interface";
+import { ColType, TopMType } from "../../component/columns/interface";
 import { I_AccountTemplate } from "./interface";
 import { initialServiceData } from "./pageData";
 import { serviceType } from "./interface";
@@ -18,6 +18,7 @@ const AccountTemplate: React.FC<I_AccountTemplate> = ({ content }) => {
         type={ColType.TwoColFullPage}
         widthL={50}
         widthR={50}
+        topMContent={TopMType.Left}
         contentL={content}
         contentR={
           <div className={`${templateName}ServiceBlock`}>

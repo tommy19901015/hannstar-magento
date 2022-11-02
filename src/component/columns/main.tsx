@@ -20,13 +20,14 @@ const Main: React.FC<I_Col> = ({
   contentL,
   contentR,
   minWidthL,
-  minWidthR
+  minWidthR,
+  topMContent
 }) => {
   const OneColFullPage = () => <OneColFullStyle>{content}</OneColFullStyle>;
 
   const TwoColFullPage = () => {
     return (
-      <TwoColFullStyle>
+      <TwoColFullStyle topMContent={topMContent}>
         <LeftColStyle widthL={widthL} minWidthL={minWidthL}>{contentL}</LeftColStyle>
         <RightColStyle widthR={widthR} minWidthR={minWidthR}>{contentR}</RightColStyle>
       </TwoColFullStyle>)
@@ -40,7 +41,7 @@ const Main: React.FC<I_Col> = ({
   const TwoCol = () => {
     return (
       <ColBGStyle bgColor={bgColor}>
-        <TwoColStyle>
+        <TwoColStyle topMContent={topMContent}>
           <LeftColStyle widthL={widthL} minWidthL={minWidthL}>{contentL}</LeftColStyle>
           <RightColStyle widthR={widthR} minWidthR={minWidthR}>{contentR}</RightColStyle>
         </TwoColStyle>

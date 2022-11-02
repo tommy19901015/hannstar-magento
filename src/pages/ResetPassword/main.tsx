@@ -50,13 +50,16 @@ const ResetPassword: React.FC = () => {
   };
 
   const handleSend = () => {
-    const sendBtn: any = document.getElementById("hannstar-register-btn");
     const getNewPassVal = validatePassword(newPassword);
     const getConfirmPassVal = compare(confirmPassword, newPassword)
     const isDiffVal = getNewPassVal && getConfirmPassVal && compare(newPassword, confirmPassword);
     setInputError(isDiffVal);
 
-    if (sendBtn) sendBtn.click();
+    if (isDiffVal) {
+      const sendBtn: any = document.getElementById("hannstar-register-btn");
+      if (sendBtn) sendBtn.click();
+    }
+
   };
 
 

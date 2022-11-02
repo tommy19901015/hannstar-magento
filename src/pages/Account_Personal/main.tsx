@@ -7,6 +7,8 @@ import { FormType } from "../../component/form/interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json"
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 import "./css.scss";
 
@@ -45,33 +47,6 @@ const formData1 = [
   },
 ];
 
-const formData2 = [
-  {
-    title: "電話號碼",
-    value: "",
-    columnKey: "PhoneNumber0",
-    type: FormType.Select,
-    option: [
-      { text: "123", value: "123" },
-      { text: "456", value: "456" },
-    ]
-  },
-  {
-    title: "",
-    value: "",
-    columnKey: "PhoneNumber1",
-    type: FormType.Intput,
-    placeholder: "",
-  },
-  {
-    title: "分機",
-    value: "",
-    columnKey: "PhoneNumber2",
-    type: FormType.Intput,
-    placeholder: "",
-  },
-]
-
 const formData3 = [
   {
     title: "手機號碼",
@@ -91,7 +66,6 @@ const formData3 = [
     placeholder: "",
   }
 ]
-
 
 
 const formData4 = [
@@ -377,9 +351,10 @@ const formData14 = [
 const AccountPersonal: React.FC = () => {
   const pageName = "AccountPersonal";
   const [isSubmit, setIsSubmit] = useState<boolean>(false)
+  const [esxtension, setExtension] = useState<boolean>(false)
 
   const formMethods1: any = useRef(null);
-  const formMethods2: any = useRef(null);
+  // const formMethods2: any = useRef(null);
   const formMethods3: any = useRef(null);
   const formMethods4: any = useRef(null);
   const formMethods5: any = useRef(null);
@@ -393,16 +368,18 @@ const AccountPersonal: React.FC = () => {
   const formMethods13: any = useRef(null);
   const formMethods14: any = useRef(null);
 
+  const testRef: any = useRef(null);
+
   const formProp1 = {
     formMethods: formMethods1,
     formData: formData1,
   };
 
-  const formProp2 = {
-    isOneRow: true,
-    formMethods: formMethods2,
-    formData: formData2,
-  };
+  // const formProp2 = {
+  //   isOneRow: true,
+  //   formMethods: formMethods2,
+  //   formData: formData2,
+  // };
 
   const formProp3 = {
     isOneRow: true,
@@ -491,61 +468,84 @@ const AccountPersonal: React.FC = () => {
     ],
   };
 
-  const handlerSubmit = () => {
-    const values1 = formMethods1.current.getValues();
-    const values2 = formMethods2.current.getValues();
-    const values3 = formMethods3.current.getValues();
-    const values4 = formMethods4.current.getValues();
-    const values5 = formMethods5.current.getValues();
-    const values6 = formMethods6.current.getValues();
-    const values7 = formMethods7.current.getValues();
-    const values8 = formMethods8.current.getValues();
-    const values9 = formMethods9.current.getValues();
-    const values10 = formMethods10.current.getValues();
-    const values11 = formMethods11.current.getValues();
-    const values12 = formMethods12.current.getValues();
-    const values13 = formMethods13.current.getValues();
-    const values14 = formMethods14.current.getValues();
 
-    const formData = {
-      "UserName": "UserName",
-      "Email": "Email",
-      ...values1,
-      ...values2,
-      ...values3,
-      ...values4,
-      ...values5,
-      ...values6,
-      ...values7,
-      ...values8,
-      ...values9,
-      ...values10,
-      ...values11,
-      ...values12,
-      ...values13,
-      ...values14,
-    };
-    console.log("formData", formData);
-
-    fetch('/rest/V1/AppEnterPrice', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=UTF-8'
-      },
-      body: JSON.stringify(formData)
-    }).then(response => response.json())
-      .then((data) => {
-        console.log('data', data);
-      }).catch(() => {
-        setIsSubmit(true)
-      })
-  };
 
   const handlerGoBack = () => {
     window.history.back()
   }
 
   const PersonalFormContent = () => {
+    const [phoneCountryCode, setPhoneCountryCode] = useState<any>()
+    const [phoneCode, setPhoneCode] = useState<string>("")
+    const [country, setCountry] = useState<string>("")
+    const [extension, setExtension] = useState<string>("")
+
+
+    const handlerSubmit = () => {
+      const values1 = formMethods1.current.getValues();
+      // const values2 = formMethods2.current.getValues();
+      const values3 = formMethods3.current.getValues();
+      const values4 = formMethods4.current.getValues();
+      const values5 = formMethods5.current.getValues();
+      const values6 = formMethods6.current.getValues();
+      const values7 = formMethods7.current.getValues();
+      const values8 = formMethods8.current.getValues();
+      const values9 = formMethods9.current.getValues();
+      const values10 = formMethods10.current.getValues();
+      const values11 = formMethods11.current.getValues();
+      const values12 = formMethods12.current.getValues();
+      const values13 = formMethods13.current.getValues();
+      const values14 = formMethods14.current.getValues();
+
+      const formData = {
+        "UserName": "UserName",
+        "Email": "Email",
+        "phoneCountryCode": phoneCountryCode,
+        "country": country,
+        "phoneCode": phoneCode
+        // ...values1,
+        // ...values2,
+        // ...values3,
+        // ...values4,
+        // ...values5,
+        // ...values6,
+        // ...values7,
+        // ...values8,
+        // ...values9,
+        // ...values10,
+        // ...values11,
+        // ...values12,
+        // ...values13,
+        // ...values14,
+      };
+      console.log("formData", formData);
+
+      fetch('/rest/V1/AppEnterPrice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8'
+        },
+        body: JSON.stringify(formData)
+      }).then(response => response.json())
+        .then((data) => {
+          console.log('data', data);
+        }).catch(() => {
+          setIsSubmit(true)
+        })
+    };
+
+    const handleExtension = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setExtension(e.target.value)
+    }
+
+    const handlePhoneCall = (value: string, data: any) => {
+      console.log('data', data);
+      setPhoneCountryCode(data.dialCode)
+      setCountry(data.name)
+      setPhoneCode(value)
+    }
+
+
     return <>
       {isSubmit ? <div className={`${pageName}ApplyTitle`}>已收到您的申請，謝謝。</div> : <div className={`${pageName}FormBlock`}>
         <div className="formTitle">申請企業會員</div>
@@ -562,7 +562,28 @@ const AccountPersonal: React.FC = () => {
         </div>
         <div className="stepTitle">步驟 2. 申請人資訊</div>
         <FormComponent {...formProp1} />
-        <FormComponent {...formProp2} />
+        <div>
+          <div className="columnBlock">
+            <div className="title required">電話號碼</div>
+            <div className="bodyBlock input">
+              <PhoneInput
+                country={'tw'}
+                value={phoneCode}
+                onChange={(value, data) => handlePhoneCall(value, data)}
+              />
+            </div>
+          </div>
+          <div className="columnBlock">
+            <div className="title required">分機</div>
+            <div className="bodyBlock input">
+              <input
+                type="text"
+                onChange={handleExtension}
+                value={extension}
+              />
+            </div>
+          </div>
+        </div>
         <div className="stepTitle">步驟 3. 企業資料</div>
         <FormComponent {...formProp3} />
         <FormComponent {...formProp4} />

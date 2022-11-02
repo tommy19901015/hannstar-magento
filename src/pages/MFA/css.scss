@@ -67,4 +67,10 @@ $pageName: 'MFA';
             font-weight: $font-weighr-bold;
         }
     }
+    @media screen and (max-width: $breakpoint) {
+        padding: 30px;
+        .#{$pageName}Content {
+            width: 100%;
+        }
+    }
 }
