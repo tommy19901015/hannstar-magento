@@ -106,6 +106,9 @@ $pageName: "AccountApplication";
               height: 9px;
               margin-right: 10px;
             }
+            &:last-of-type{
+              color:$hannstar-blue2;
+            }
           }
         }
         .btnBlock {

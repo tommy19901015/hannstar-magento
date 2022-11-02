@@ -58,6 +58,7 @@ const MFAQRCode: React.FC = () => {
             <div className="titleContent">
               <div className="mainTitle">{tableData.pageTitle}</div>
               <p>{tableData.subTitle}</p>
+              <img alt="demo" className="mobileImgContent" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
               <span>{tableData.noteTitle}</span>
               <div className="stepGuide">
                 {tableData.stepGuide}<i className=""></i>
@@ -67,9 +68,21 @@ const MFAQRCode: React.FC = () => {
               <img alt="demo" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
             </div>
           </div>
+          {/* <div className="mobileContentBlock">
+            <div className="titleContent">
+              <div className="mainTitle">{tableData.pageTitle}</div>
+              <span>{tableData.noteTitle}</span>
+              <img alt="demo" className="imgContent" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
+              <p>{tableData.subTitle}</p>
+              <div className="stepGuide">
+                {tableData.stepGuide}<i className=""></i>
+              </div>
+            </div>
+          </div>      */}
         </div>
         <div className={`${pageName}StepContent`}>
           <div className="contentBlock">
+            
             <div className="subTitle">{tableData.formTitle}</div>
             <div className="content">
               <div className="step">
