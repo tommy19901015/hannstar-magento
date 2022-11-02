@@ -3,20 +3,26 @@
 $pageName: "AccountApplication";
 
 .#{$pageName}Content {
+  padding: 0 60px;
+  margin-bottom: 100px;
   .mainTitle {
     @include hannstarH2Title;
   }
   .rankTypeContent {
+    margin-bottom: 100px;
     .subTitle {
       @include hannstarH4Title;
     }
     .rankContent {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    align-items: center;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-auto-rows: 1fr;
+    grid-column-gap: 0px;
       .rankCard {
         border: 1px solid $hannstar-border-color;
-        padding: 20px 30px;
+        padding: 20px 0px;
         text-align: center;
         .rankImg {
           margin-bottom: 20px;
@@ -30,71 +36,228 @@ $pageName: "AccountApplication";
         }
       }
       .arrowBlock {
-        margin: 0 20px;
+        display: flex;
+        justify-content: center;
       }
     }
   }
+
   .captionContent {
-    .subTitle {
+    width: 100%;
+    margin: 0 auto;
+    .subTitle{
       @include hannstarH4Title;
+      margin-bottom: 20px;
     }
-    .listBlock {
-      display: flex;
-      justify-content: space-between;
-      .leftBlock,
-      .rightBlock {
-        .captionIcon {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          .titleText {
-            @include hannstarH4Title;
-            color: $hannstar-blue1;
-          }
-          img {
-            margin: 20px 0;
+    .tabs {
+      display: grid;
+      overflow: hidden;
+      grid-template-columns: 3fr 1fr 3fr;
+      grid-auto-rows: 1fr;
+      grid-column-gap: 0px;
+      .tab{
+        .titleText{
+        }
+        .captionIcon{
+          margin: 10px auto;
+          display: block;
+        }
+      }
+    }    
+    .tab-switch {
+      display: none;
+    }
+    
+    .tab-label {
+      position: relative;
+      display: block;
+      @include hannstarContent0;
+      color: $hannstar-blue2;
+      top: 0;
+      text-align: center;
+    }
+    
+    .tab-content {
+      height: auto;
+      z-index: 1;
+      padding: 1.618rem;
+      background: #FFF;
+      border: 1px solid $hannstar-border-color;
+      transition: all 0.35s;
+      @include hannstarContent2;
+      .topBlock,
+      .bottomBlock {
+        .textTitle {
+          @include hannstarH4Title;
+          text-align: center;
+        }
+      }
+      .bottomBlock{
+        .captionList {
+          border-bottom: 1px solid $hannstar-border-color;
+          margin-bottom: 20px;
+          min-height: 280px;
+          li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0px;
+            img {
+              width: 12px;
+              height: 9px;
+              margin-right: 10px;
+            }
           }
         }
-        .textListBlock {
-          border: 1px solid $hannstar-border-color;
-          padding: 20px;
-          .topBlock,
-          .bottomBlock {
-            .textTitle {
-              @include hannstarH4Title;
-              text-align: center;
-            }
-            .captionList {
-              border-bottom: 1px solid $hannstar-border-color;
-              margin-bottom: 20px;
-              li {
-                display: flex;
-                align-items: center;
-                padding: 15px 20px;
-                img {
-                  width: 12px;
-                  height: 9px;
-                  margin-right: 10px;
-                }
-              }
-            }
-            .btnBlock {
-              text-align: center;
-              .applicationBtn {
-                @include hannstarBtn;
-                text-align: center;
-              }
+        .btnBlock {
+          text-align: center;
+          .applicationBtn {
+            @include hannstarBtn;
+            text-align: center;
+          }
+        }
+      }
+      .captionList {
+        border-bottom: 1px solid $hannstar-border-color;
+        margin-bottom: 20px;
+        li {
+          display: flex;
+          align-items: center;
+          padding: 10px 0px;
+          img {
+            width: 12px;
+            height: 9px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .captionIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .titleText {
+          @include hannstarH4Title;
+          color: $hannstar-blue1;
+        }
+        img {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  .#{$pageName}Content {
+    padding: 0 ;
+    margin-bottom: 50px;
+    .rankTypeContent {
+      .rankContent{
+        display: flex;
+        flex-direction: column;
+        grid-template-columns:0cm;
+        grid-auto-rows: 0cm;
+        grid-column-gap: 0px;
+        .rankCard{
+          padding: 20px 30px;
+        }
+        .arrowBlock {
+          margin: 20px 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    .captionContent {
+      min-height: 600px;
+      .tabs {
+        position: relative;
+        margin: 3rem 0;
+        display: flex;
+        justify-content: space-between;
+        overflow: initial;
+        grid-template-columns: 0cm;
+        grid-auto-rows: 0cm;
+        grid-auto-columns: 0cm;
+        grid-column-gap: 0cm;
+        .tab {
+          width: 49%;
+          min-height: 680px;
+          height: auto;
+          &:nth-child(2){
+            display: none;
+          }
+          .captionIcon{
+            display: none;
+          }
+        }
+      }
+      
+      .tab-switch {
+        display: none;
+      }
+      
+      .tab-label {
+        position: relative;
+        display: block;
+        padding: 10px;
+        background: $hannstar-border-color;
+        color: #fff;
+        cursor: pointer;
+        top: 0;
+        transition: all 0.25s;
+        border-radius: 5px 5px 0 0;
+        text-align: center;
+      }
+      
+      .tab-content {
+        height: auto;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        padding: 1.618rem;
+        background: #FFF;
+        opacity: 0;
+        border: 1px solid $hannstar-border-color;
+        border-top: 0.25rem solid $hannstar-blue3;
+        transition: all 0.35s;
+        @include hannstarContent2;
+        width: 100%;
+        box-sizing: border-box;
+        .captionList {
+          border-bottom: 1px solid $hannstar-border-color;
+          margin-bottom: 20px;
+          li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0px;
+            img {
+              width: 12px;
+              height: 9px;
+              margin-right: 10px;
             }
           }
-          .bottomBlock {
-            .captionList {
-              li {
-                &:last-child {
-                  color: $hannstar-blue2;
-                }
-              }
-            }
+        }
+        .btnBlock {
+          text-align: center;
+          .applicationBtn {
+            @include hannstarBtn;
+            text-align: center;
           }
+        }
+      }
+      
+      .tab-switch:checked ~ {
+        .tab-label {
+          background: $hannstar-blue3;
+          color: #FFF;
+          border-bottom: 0;
+          transition: all 0.35s;
+          z-index: 1;
+        }
+      
+        label ~ .tab-content {
+          z-index: 2;
+          opacity: 1;
+          transition: all 0.35s;
         }
       }
     }
