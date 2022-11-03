@@ -24,6 +24,35 @@ $pageName: 'AccountPersonal';
         @include hannstarH4Title;
         margin-bottom: 20px;
     }
+    .columnRow {
+        .columnBlock {
+            width: 50%;
+            display: inline-block;
+            .title {
+                @include hannstarContentText;
+                word-break: keep-all;
+                min-height: 28.8px;
+                &.required {
+                    &::after {
+                        content: '*';
+                        color: $hannstar-orange1;
+                        padding-left: 5px;
+                    }
+                }
+            }
+            .bodyBlock {
+                display: flex;
+                flex-wrap: wrap;
+                input[type='text'] {
+                    @include hannstarInput;
+                }
+
+                select {
+                    @include hannstarSelect;
+                }
+            }
+        }
+    }
     .btnBlock {
         display: flex;
         justify-content: center;

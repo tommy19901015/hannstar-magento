@@ -562,7 +562,7 @@ const AccountPersonal: React.FC = () => {
         </div>
         <div className="stepTitle">步驟 2. 申請人資訊</div>
         <FormComponent {...formProp1} />
-        <div>
+        <div className="columnRow">
           <div className="columnBlock">
             <div className="title required">電話號碼</div>
             <div className="bodyBlock input">
