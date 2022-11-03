@@ -13,7 +13,7 @@ import "./css.scss";
 const AccountApplication: React.FC = () => {
   const pageName = "AccountApplication";
   const pageData = usePageData();
-  const { breadcrumbs, captionData, content} = pageData;
+  const { breadcrumbs, captionData, content } = pageData;
   // const breadcrumbsData = {
   //   title: "",
   //   breadcrumbsLink: [
@@ -33,8 +33,6 @@ const AccountApplication: React.FC = () => {
   // };
 
   const ApplicationContent = () => {
-
-
     // const captionData = {
     //   customerNormal: [
     //     "行業應用文章",
@@ -108,16 +106,24 @@ const AccountApplication: React.FC = () => {
         </div>
 
         <div className="captionContent">
-        <div className="subTitle">{content.rank}</div>
+          <div className="subTitle">{content.rank}</div>
           <div className="tabs">
             <div className="tab">
-              <input type="radio" name="css-tabs" id="tab-1" checked className="tab-switch"/>
-              <label htmlFor="tab-1" className="tab-label titleText">{content.customerpermission}</label>
+              <input
+                type="radio"
+                name="css-tabs"
+                id="tab-1"
+                checked
+                className="tab-switch"
+              />
+              <label htmlFor="tab-1" className="tab-label titleText">
+                {content.customerpermission}
+              </label>
               <img
-                  alt="captionIcon"
-                  className="captionIcon"
-                  src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_client_directions_blue.png`}
-                />
+                alt="captionIcon"
+                className="captionIcon"
+                src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_client_directions_blue.png`}
+              />
               <div className="tab-content">
                 <div className="topBlock">
                   <div className="textTitle">{content.member}</div>
@@ -147,7 +153,10 @@ const AccountApplication: React.FC = () => {
                     ))}
                   </ul>
                   <div className="btnBlock">
-                    <a className="applicationBtn" href="/">
+                    <a
+                      className="applicationBtn"
+                      href={urlConfig.account.AccountPersonal.href}
+                    >
                       {content.applymembership}
                     </a>
                   </div>
@@ -156,15 +165,22 @@ const AccountApplication: React.FC = () => {
             </div>
             <div className="tab"></div>
             <div className="tab">
-              <input type="radio" name="css-tabs" id="tab-2" className="tab-switch"/>
-              <label htmlFor="tab-2" className="tab-label titleText">{content.supplierlimit}</label>
+              <input
+                type="radio"
+                name="css-tabs"
+                id="tab-2"
+                className="tab-switch"
+              />
+              <label htmlFor="tab-2" className="tab-label titleText">
+                {content.supplierlimit}
+              </label>
               <img
-                  alt="captionIcon"
-                  className="captionIcon"
-                  src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_supplier_directions_blue.png`}
-                />
+                alt="captionIcon"
+                className="captionIcon"
+                src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_supplier_directions_blue.png`}
+              />
               <div className="tab-content">
-              <div className="topBlock">
+                <div className="topBlock">
                   <div className="textTitle">{content.member}</div>
                   <ul className="captionList">
                     {captionData.partnerNormal.map((item) => (
@@ -192,7 +208,10 @@ const AccountApplication: React.FC = () => {
                     ))}
                   </ul>
                   <div className="btnBlock">
-                    <a className="applicationBtn" href="/">
+                    <a
+                      className="applicationBtn"
+                      href={urlConfig.account.AccountPartner.href}
+                    >
                       {content.applymembership}
                     </a>
                   </div>
@@ -200,7 +219,7 @@ const AccountApplication: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>    
+        </div>
       </div>
     );
   };

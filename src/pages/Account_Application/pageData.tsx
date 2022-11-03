@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
-import { GraphicsTheme } from "../../component/graphicsCard/interface"
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_PageType } from "./interface";
-
 
 // {
 //     "id": "1",
@@ -110,9 +109,9 @@ function usePageData() {
       companymember: "企業會員",
       customerpermission: "客戶權限說明",
       applymembership: "申請企業會員",
-      supplierlimit: "供應商限說明"
-    }
-  }
+      supplierlimit: "供應商限說明",
+    },
+  };
 
   return PageType;
 }
