@@ -66,19 +66,21 @@ const AccountApplication: React.FC = () => {
         <div className="rankTypeContent">
           <div className="subTitle">{content.subTitle}</div>
           <div className="rankContent">
-            <div className="rankCard">
-              <img
-                className="rankImg"
-                alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
-              />
-              <div className="rankText">{content.text}</div>
-              <div className="rankName">
+            <div className="rankBlock">
+              <div className="rankCard">
                 <img
-                  alt="rankText"
-                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                  className="rankImg"
+                  alt="rankImg"
+                  src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
                 />
-                <div className="text">{content.member}</div>
+                <div className="rankText">{content.text}</div>
+                <div className="rankName">
+                  <img
+                    alt="rankText"
+                    src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                  />
+                  <div className="text">{content.member}</div>
+                </div>
               </div>
             </div>
             <div className="arrowBlock">
@@ -87,19 +89,40 @@ const AccountApplication: React.FC = () => {
                 src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
               />
             </div>
-            <div className="rankCard">
-              <img
-                className="rankImg"
-                alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
-              />
-              <div className="rankText">{content.become}</div>
-              <div className="rankName">
+            <div className="rankBlock">
+              <div className="rankCard">
                 <img
-                  alt="rankText"
-                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                  className="rankImg"
+                  alt="rankImg"
+                  src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
                 />
-                <div className="text">{content.companymember}</div>
+                <div className="rankText">{content.become}</div>
+                <div className="rankName">
+                  <img
+                    alt="rankText"
+                    src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                  />
+                  <div className="text">{content.companymember}</div>
+                </div>
+              </div>
+
+              <div className="btnBlocks">
+                <div className="btnBlock">
+                  <a
+                    className="applicationBtn"
+                    href={urlConfig.account.AccountPersonal.href}
+                  >
+                    {content.applymembership}
+                  </a>
+                </div>
+                <div className="btnBlock">
+                        <a
+                          className="applicationBtn"
+                          href={urlConfig.account.AccountPartner.href}
+                        >
+                          {content.applymembership}
+                        </a>
+              </div>
               </div>
             </div>
           </div>
@@ -152,14 +175,6 @@ const AccountApplication: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="btnBlock">
-                    <a
-                      className="applicationBtn"
-                      href={urlConfig.account.AccountPersonal.href}
-                    >
-                      {content.applymembership}
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -207,14 +222,6 @@ const AccountApplication: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="btnBlock">
-                    <a
-                      className="applicationBtn"
-                      href={urlConfig.account.AccountPartner.href}
-                    >
-                      {content.applymembership}
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
