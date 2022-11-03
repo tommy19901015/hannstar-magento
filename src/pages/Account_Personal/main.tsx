@@ -251,10 +251,11 @@ const formData11 = [
 
 const formData12 = [
   {
-    title: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
+    title: "是否已使用HannStar產品",
     value: "",
     columnKey: "HannstarYN",
     type: FormType.Radio,
+    required: true,
     option: [
       { text: "是(請在協助以下資訊)", value: "Y" },
       { text: "否/不確定", value: "N" },
@@ -581,6 +582,9 @@ const AccountPersonal: React.FC = () => {
         <FormComponent {...formProp9} />
         <FormComponent {...formProp10} />
         <FormComponent {...formProp11} />
+        <div className="stepTitle">
+          為能提供更完整的服務，請問貴司是否已使用HannStar產品
+        </div>
         <FormComponent {...formProp12} />
         <FormComponent {...formProp13} />
         <FormComponent {...formProp14} />

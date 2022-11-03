@@ -54,14 +54,23 @@ ReactDOM.render(
     <Routes>
       <Route path={account.login.href} element={<HannstarLogin />} />
       <Route path={account.register.href} element={<HannstarRegister />} />
-      <Route path={"/forgotPassword"} element={<ForgotPassword />} />
+      <Route path={account.forgotPassword.href} element={<ForgotPassword />} />
       <Route path={"/resetPassword"} element={<ResetPassword />} />
       <Route path={"/mfa"} element={<MFA />} />
-      <Route path={"/AccountSendVerifyEmail"} element={<AccountSendVerifyEmail />} />
+      <Route
+        path={"/AccountSendVerifyEmail"}
+        element={<AccountSendVerifyEmail />}
+      />
       <Route path={account.MFAQRcode.href} element={<MFAQRCode />} />
-      <Route path={account.AccountPersonal.href} element={<AccountPersonal />} />
+      <Route
+        path={account.AccountPersonal.href}
+        element={<AccountPersonal />}
+      />
       <Route path={account.AccountPartner.href} element={<AccountPartner />} />
-      <Route path={account.AccountApplication.href} element={<AccountApplication />} />
+      <Route
+        path={account.AccountApplication.href}
+        element={<AccountApplication />}
+      />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

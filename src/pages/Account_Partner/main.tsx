@@ -6,8 +6,9 @@ import FormComponent from "../../component/form/main";
 import { FormType } from "../../component/form/interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import urlConfig from "../../config/urlSetting.json"
-
+import urlConfig from "../../config/urlSetting.json";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import "./css.scss";
 
 const formData1 = [
@@ -25,7 +26,7 @@ const formData1 = [
       { text: "項目管理", value: "項目管理" },
       { text: "經營管理", value: "經營管理" },
       { text: "其他", value: "其他" },
-    ]
+    ],
   },
   {
     title: "職稱",
@@ -44,55 +45,6 @@ const formData1 = [
     ],
   },
 ];
-
-const formData2 = [
-  {
-    title: "電話號碼",
-    value: "",
-    columnKey: "PhoneNumber0",
-    type: FormType.Select,
-    option: [
-      { text: "123", value: "123" },
-      { text: "456", value: "456" },
-    ]
-  },
-  {
-    title: "",
-    value: "",
-    columnKey: "PhoneNumber1",
-    type: FormType.Intput,
-    placeholder: "",
-  },
-  {
-    title: "分機",
-    value: "",
-    columnKey: "PhoneNumber2",
-    type: FormType.Intput,
-    placeholder: "",
-  },
-]
-
-const formData3 = [
-  {
-    title: "手機號碼",
-    value: "",
-    columnKey: "CellPhoneNumber0",
-    type: FormType.Select,
-    option: [
-      { text: "123", value: "123" },
-      { text: "456", value: "456" },
-    ]
-  },
-  {
-    title: "",
-    value: "",
-    columnKey: "CellPhoneNumber1",
-    type: FormType.Intput,
-    placeholder: "",
-  }
-]
-
-
 
 const formData4 = [
   {
@@ -188,7 +140,7 @@ const formData7 = [
     option: [
       { text: "台灣", value: "台灣" },
       { text: "日本", value: "日本" },
-    ]
+    ],
   },
   {
     title: "城市",
@@ -257,7 +209,7 @@ const formData8 = [
       { text: "是", value: "是" },
       { text: "否", value: "否" },
     ],
-  }
+  },
 ];
 
 const formData9 = [
@@ -305,14 +257,21 @@ const formData10 = [
 
 const formData11 = [
   {
-    title: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
+    title: "是否已使用HannStar產品",
     value: "",
-    columnKey: "HaveHannstar",
+    columnKey: "HannstarYN",
     type: FormType.Radio,
+    required: true,
     option: [
-      { text: "是(請在協助以下資訊)", value: "yes" },
-      { text: "否/不確定", value: "no" },
+      { text: "是(請在協助以下資訊)", value: "Y" },
+      { text: "否/不確定", value: "N" },
     ],
+  },
+  {
+    title: "請在提供HannStar供應商代碼(6碼)",
+    value: "",
+    columnKey: "hannstarCode",
+    type: FormType.Intput,
   },
 ];
 
@@ -383,11 +342,8 @@ const formData13 = [
 
 const AccountPartner: React.FC = () => {
   const pageName = "AccountPartner";
-  const [isSubmit, setIsSubmit] = useState<boolean>(false)
 
   const formMethods1: any = useRef(null);
-  const formMethods2: any = useRef(null);
-  const formMethods3: any = useRef(null);
   const formMethods4: any = useRef(null);
   const formMethods5: any = useRef(null);
   const formMethods6: any = useRef(null);
@@ -402,18 +358,6 @@ const AccountPartner: React.FC = () => {
   const formProp1 = {
     formMethods: formMethods1,
     formData: formData1,
-  };
-
-  const formProp2 = {
-    isOneRow: true,
-    formMethods: formMethods2,
-    formData: formData2,
-  };
-
-  const formProp3 = {
-    isOneRow: true,
-    formMethods: formMethods3,
-    formData: formData3,
   };
 
   const formProp4 = {
@@ -487,82 +431,152 @@ const AccountPartner: React.FC = () => {
       {
         text: "我的權限",
         href: "",
-      }
+      },
     ],
   };
 
-  const handlerSubmit = () => {
-    const values1 = formMethods1.current.getValues();
-    const values2 = formMethods2.current.getValues();
-    const values3 = formMethods3.current.getValues();
-    const values4 = formMethods4.current.getValues();
-    const values5 = formMethods5.current.getValues();
-    const values6 = formMethods6.current.getValues();
-    const values7 = formMethods7.current.getValues();
-    const values8 = formMethods8.current.getValues();
-    const values9 = formMethods9.current.getValues();
-    const values10 = formMethods10.current.getValues();
-    const values11 = formMethods11.current.getValues();
-    const values12 = formMethods12.current.getValues();
-    const values13 = formMethods13.current.getValues();
-
-    const formData = {
-      "UserName": "UserName",
-      "Email": "Email",
-      ...values1,
-      ...values2,
-      ...values3,
-      ...values4,
-      ...values5,
-      ...values6,
-      ...values7,
-      ...values8,
-      ...values9,
-      ...values10,
-      ...values11,
-      ...values12,
-      ...values13,
-    };
-    console.log("formData", formData);
-
-    fetch('/rest/V1/AppEnterPrice', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=UTF-8'
-      },
-      body: JSON.stringify(formData)
-    }).then(response => response.json())
-      .then((data) => {
-        console.log('data', data);
-      }).catch(() => {
-        setIsSubmit(true)
-      })
-  };
-
-  const handlerGoBack = () => {
-    window.history.back()
-  }
-
   const PartnerFormContent = () => {
-    return <>
-      {isSubmit ? <div className={`${pageName}ApplyTitle`}>已收到您的申請，謝謝。</div> : <div className={`${pageName}FormBlock`}>
+    const [phoneCountryCode, setPhoneCountryCode] = useState<any>();
+    const [phoneCode, setPhoneCode] = useState<string>("");
+    const [country, setCountry] = useState<string>("");
+    const [extension, setExtension] = useState<string>("");
+
+    const [cellPhoneCountryCode, setCellPhoneCountryCode] = useState<any>();
+    const [cellPhoneCode, setCellPhoneCode] = useState<string>("");
+    const [cellPhoneCountry, setCellPhoneCountry] = useState<string>("");
+
+    const handlerSubmit = () => {
+      const values1 = formMethods1.current.getValues();
+      const values4 = formMethods4.current.getValues();
+      const values5 = formMethods5.current.getValues();
+      const values6 = formMethods6.current.getValues();
+      const values7 = formMethods7.current.getValues();
+      const values8 = formMethods8.current.getValues();
+      const values9 = formMethods9.current.getValues();
+      const values10 = formMethods10.current.getValues();
+      const values11 = formMethods11.current.getValues();
+      const values12 = formMethods12.current.getValues();
+      const values13 = formMethods13.current.getValues();
+
+      const PhoneNumber1 = phoneCode.split(phoneCountryCode)[1];
+      const CellPhoneNumber1 = cellPhoneCode.split(cellPhoneCountryCode)[1];
+
+      const formData = {
+        UserName: "ronfu",
+        Email: "rfchen@hannstar.com",
+        Lang: "en",
+        GroupName: "權限群組名稱",
+        PhoneNumber0: phoneCountryCode,
+        PhoneNumber1: PhoneNumber1,
+        PhoneNumber2: extension,
+        CellPhoneNumber0: cellPhoneCountryCode,
+        CellPhoneNumber1: CellPhoneNumber1,
+        CountryCode: "國家代碼",
+        ...values1,
+        ...values4,
+        ...values5,
+        ...values6,
+        ...values7,
+        ...values8,
+        ...values9,
+        ...values10,
+        ...values11,
+        ...values12,
+        ...values13,
+      };
+      console.log("formData", formData);
+
+      fetch("/rest/V1/AppEnterPrice", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("data", data);
+          //{result: 'success', resultMsg: ''}
+        })
+        .catch(() => {});
+    };
+
+    const handlerGoBack = () => {
+      window.history.back();
+    };
+
+    const handleExtension = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setExtension(e.target.value);
+    };
+
+    const handlePhoneCall = (value: string, data: any) => {
+      setPhoneCountryCode(data.dialCode);
+      setCountry(data.name);
+      setPhoneCode(value);
+    };
+
+    const handleCellPhoneCall = (value: string, data: any) => {
+      setCellPhoneCountryCode(data.dialCode);
+      setCellPhoneCountry(data.name);
+      setCellPhoneCode(value);
+    };
+
+    return (
+      <div className={`${pageName}FormBlock`}>
         <div className="formTitle">申請企業會員</div>
         <div className="stepTitle">步驟 1. 請選擇您的身份</div>
         <div className="classificationBlock">
           <a className="changTab" href={urlConfig.account.AccountPersonal.href}>
-            <img alt={urlConfig.account.AccountPersonal.title}
-              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_normal.png`} />
+            <img
+              alt={urlConfig.account.AccountPersonal.title}
+              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_normal.png`}
+            />
           </a>
           <a className="changTab" href={urlConfig.account.AccountPartner.href}>
-            <img alt={urlConfig.account.AccountPartner.title}
-              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`} />
+            <img
+              alt={urlConfig.account.AccountPartner.title}
+              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`}
+            />
           </a>
         </div>
         <div className="stepTitle">步驟 2. 申請人資訊</div>
         <FormComponent {...formProp1} />
-        <FormComponent {...formProp2} />
+        <div className="columnRow">
+          <div className="columnBlock">
+            <div className="title required">電話號碼</div>
+            <div className="bodyBlock input">
+              <PhoneInput
+                country={"tw"}
+                value={phoneCode}
+                onChange={(value, data) => handlePhoneCall(value, data)}
+              />
+            </div>
+          </div>
+          <div className="columnBlock">
+            <div className="title required">分機</div>
+            <div className="bodyBlock input">
+              <input
+                className="extensionInput"
+                type="text"
+                onChange={handleExtension}
+                value={extension}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="columnRow">
+          <div className="columnBlock">
+            <div className="title required">手機號碼</div>
+            <div className="bodyBlock input">
+              <PhoneInput
+                country={"tw"}
+                value={cellPhoneCode}
+                onChange={(value, data) => handleCellPhoneCall(value, data)}
+              />
+            </div>
+          </div>
+        </div>
         <div className="stepTitle">步驟 3. 企業資料</div>
-        <FormComponent {...formProp3} />
         <FormComponent {...formProp4} />
         <FormComponent {...formProp5} />
         <FormComponent {...formProp6} />
@@ -570,15 +584,22 @@ const AccountPartner: React.FC = () => {
         <FormComponent {...formProp8} />
         <FormComponent {...formProp9} />
         <FormComponent {...formProp10} />
+        <div className="stepTitle">
+          為能提供更完整的服務，請問貴司是否已使用HannStar產品
+        </div>
         <FormComponent {...formProp11} />
         <FormComponent {...formProp12} />
         <FormComponent {...formProp13} />
         <div className="btnBlock">
-          <div onClick={handlerGoBack} className="goBack">回上一頁</div>
-          <div onClick={handlerSubmit} className="confirm">確認申請</div>
+          <div onClick={handlerGoBack} className="goBack">
+            回上一頁
+          </div>
+          <div onClick={handlerSubmit} className="confirm">
+            確認申請
+          </div>
         </div>
-      </div>}
-    </>;
+      </div>
+    );
   };
 
   return (

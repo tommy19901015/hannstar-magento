@@ -100,5 +100,36 @@ $pageName: "AccountPersonal";
         margin: 0;
       }
     }
+    .stepTitle {
+      @include hannstarH4Title;
+      margin: 20px 0 20px;
+    }
+    .columnRow {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 0 20px;
+      margin-bottom: 0;
+      .columnBlock {
+        .bodyBlock {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 20px;
+          input[type="text"] {
+            @include hannstarInput;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .btnBlock {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px 0;
+      .goBack,
+      .confirm {
+        @include hannstarBtn;
+        margin: 0;
+      }
+    }
   }
 }
