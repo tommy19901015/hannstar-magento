@@ -5,11 +5,23 @@ $pageName: 'AccountPersonalTemplate';
 .#{$pageName}AccountToolBar {
     background-color: $hannstar-bg-color;
     height: 100%;
+    input{
+        &#menu {
+            display: none;
+        }
+        &:checked ~ .menu-content {
+            max-height: 100%;
+        }
+        
+    }
+    label{
+        display: none;
+    }
     .linkBlock {
         .linkText {
             cursor: pointer;
             width: 100%;
-            padding: 10px 0;
+            padding-top: 5px;
             &.first {
                 a {
                     @include hannstarH3Title;
@@ -32,4 +44,41 @@ $pageName: 'AccountPersonalTemplate';
             }
         }
     }
+}
+
+@media screen and (max-width: $breakpoint) {
+    .#{$pageName}AccountToolBar {
+        padding: 10px;
+        border: 1px solid $hannstar-border-color;
+        margin-bottom: 30px;
+        label {
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            @include hannstarContent1;
+        }
+        input{
+            &#menu {
+                display: none;
+            }
+            &:checked ~ .menu-content {
+                max-height: 100%;
+            }
+            
+        }
+        .menu-content {
+            max-height: 0;
+            overflow: hidden;
+        }
+        .linkBlock{
+            .linkText{
+                a {
+                    display:block;
+                    padding: 0 10px;
+                    text-decoration: none;
+                }
+            }
+        } 
+    }
+      
 }
