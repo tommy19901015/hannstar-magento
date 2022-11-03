@@ -28,7 +28,7 @@ $pageName: 'MFAQRCode';
                     text-align: center;
                     margin-bottom: 25px;
                 }
-                p{
+                p {
                     color: $hannstar-default-text-color;
                 }
                 span {
@@ -47,7 +47,7 @@ $pageName: 'MFAQRCode';
                     margin-top: 20px;
                     border-radius: 0;
                 }
-                .mobileImgContent{
+                .mobileImgContent {
                     display: none;
                 }
             }
@@ -79,7 +79,7 @@ $pageName: 'MFAQRCode';
                 margin-bottom: 25px;
             }
             .content {
-                display:grid;
+                display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-auto-rows: 1fr;
                 grid-column-gap: 30px;
@@ -150,6 +150,11 @@ $pageName: 'MFAQRCode';
                                 border-color: $hannstar-orange1;
                             }
                         }
+                        .errorMessage {
+                            margin-top: 10px;
+                            @include hannstarContent2;
+                            color: $hannstar-orange1;
+                        }
                         .hannstarVerifyBtn {
                             @include hannstarBtn;
                             margin: 0 auto;
@@ -166,25 +171,25 @@ $pageName: 'MFAQRCode';
 @media screen and (max-width: $breakpoint) {
     .#{$pageName} {
         .#{$pageName}Content {
-            .contentBlock{
+            .contentBlock {
                 display: flex;
                 width: 100%;
                 flex-direction: column;
                 align-items: center;
-                .titleContent{
+                .titleContent {
                     width: 100%;
-                    .mainTitle{
+                    .mainTitle {
                         width: 100%;
                         text-align: center;
                     }
-                    .mobileImgContent{
+                    .mobileImgContent {
                         display: block;
                         width: 70%;
                         display: block;
                         margin: 20px auto;
                         max-width: 300px;
                     }
-                    p{
+                    p {
                         color: $hannstar-blue2;
                     }
                     span {
@@ -205,32 +210,31 @@ $pageName: 'MFAQRCode';
                         text-align: center;
                     }
                 }
-                .imgContent{
+                .imgContent {
                     display: none;
-                }  
+                }
             }
         }
         .#{$pageName}StepContent {
-            .contentBlock{
-                display: flex;;
+            .contentBlock {
+                display: flex;
                 width: 100%;
-                .content{
+                .content {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     grid-template-columns: initial;
                     grid-auto-rows: initial;
                     grid-column-gap: initial;
-                    .step{
+                    .step {
                         min-height: auto;
                         margin-bottom: 20px;
-                        .bodyBlock{
-                            .hannstarVerifyBtn{
+                        .bodyBlock {
+                            .hannstarVerifyBtn {
                                 max-width: 200px;
                                 width: 70%;
-                                
                             }
-                        } 
+                        }
                     }
                 }
             }

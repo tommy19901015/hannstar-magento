@@ -274,11 +274,11 @@ const formData12 = [
   {
     title: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
     value: "",
-    columnKey: "HaveHannstar",
+    columnKey: "HannstarYN",
     type: FormType.Radio,
     option: [
-      { text: "是(請在協助以下資訊)", value: "yes" },
-      { text: "否/不確定", value: "no" },
+      { text: "是(請在協助以下資訊)", value: "Y" },
+      { text: "否/不確定", value: "N" },
     ],
   },
 ];
@@ -351,7 +351,6 @@ const formData14 = [
 const AccountPersonal: React.FC = () => {
   const pageName = "AccountPersonal";
   const [isSubmit, setIsSubmit] = useState<boolean>(false)
-  const [esxtension, setExtension] = useState<boolean>(false)
 
   const formMethods1: any = useRef(null);
   // const formMethods2: any = useRef(null);
@@ -368,8 +367,6 @@ const AccountPersonal: React.FC = () => {
   const formMethods13: any = useRef(null);
   const formMethods14: any = useRef(null);
 
-  const testRef: any = useRef(null);
-
   const formProp1 = {
     formMethods: formMethods1,
     formData: formData1,
@@ -381,11 +378,11 @@ const AccountPersonal: React.FC = () => {
   //   formData: formData2,
   // };
 
-  const formProp3 = {
-    isOneRow: true,
-    formMethods: formMethods3,
-    formData: formData3,
-  };
+  // const formProp3 = {
+  //   isOneRow: true,
+  //   formMethods: formMethods3,
+  //   formData: formData3,
+  // };
 
   const formProp4 = {
     isOneRow: true,
@@ -480,11 +477,14 @@ const AccountPersonal: React.FC = () => {
     const [country, setCountry] = useState<string>("")
     const [extension, setExtension] = useState<string>("")
 
+    const [cellPhoneCountryCode, setCellPhoneCountryCode] = useState<any>()
+    const [cellPhoneCode, setCellPhoneCode] = useState<string>("")
+    const [cellPhoneCountry, setCellPhoneCountry] = useState<string>("")
 
     const handlerSubmit = () => {
       const values1 = formMethods1.current.getValues();
       // const values2 = formMethods2.current.getValues();
-      const values3 = formMethods3.current.getValues();
+      // const values3 = formMethods3.current.getValues();
       const values4 = formMethods4.current.getValues();
       const values5 = formMethods5.current.getValues();
       const values6 = formMethods6.current.getValues();
@@ -497,28 +497,36 @@ const AccountPersonal: React.FC = () => {
       const values13 = formMethods13.current.getValues();
       const values14 = formMethods14.current.getValues();
 
+      const PhoneNumber1 = phoneCode.split(phoneCountryCode)[1]
+      const CellPhoneNumber1 = cellPhoneCode.split(cellPhoneCountryCode)[1]
+
       const formData = {
-        "UserName": "UserName",
-        "Email": "Email",
-        "phoneCountryCode": phoneCountryCode,
-        "country": country,
-        "phoneCode": phoneCode
-        // ...values1,
-        // ...values2,
-        // ...values3,
-        // ...values4,
-        // ...values5,
-        // ...values6,
-        // ...values7,
-        // ...values8,
-        // ...values9,
-        // ...values10,
-        // ...values11,
-        // ...values12,
-        // ...values13,
-        // ...values14,
+        "UserName": "ronfu",
+        "Email": "rfchen@hannstar.com",
+        "Lang": "en",
+        "GroupName": "權限群組名稱",
+        "PhoneNumber0": phoneCountryCode,
+        "PhoneNumber1": PhoneNumber1,
+        "PhoneNumber2": extension,
+        "CellPhoneNumber0": cellPhoneCountryCode,
+        "CellPhoneNumber1": CellPhoneNumber1,
+        "CountryCode": "國家代碼",
+        ...values1,
+        ...values4,
+        ...values5,
+        ...values6,
+        ...values7,
+        ...values8,
+        ...values9,
+        ...values10,
+        ...values11,
+        ...values12,
+        ...values13,
+        ...values14,
       };
       console.log("formData", formData);
+
+
 
       fetch('/rest/V1/AppEnterPrice', {
         method: 'POST',
@@ -529,6 +537,7 @@ const AccountPersonal: React.FC = () => {
       }).then(response => response.json())
         .then((data) => {
           console.log('data', data);
+          //{result: 'success', resultMsg: ''}
         }).catch(() => {
           setIsSubmit(true)
         })
@@ -539,12 +548,16 @@ const AccountPersonal: React.FC = () => {
     }
 
     const handlePhoneCall = (value: string, data: any) => {
-      console.log('data', data);
       setPhoneCountryCode(data.dialCode)
       setCountry(data.name)
       setPhoneCode(value)
     }
 
+    const handleCellPhoneCall = (value: string, data: any) => {
+      setCellPhoneCountryCode(data.dialCode)
+      setCellPhoneCountry(data.name)
+      setCellPhoneCode(value)
+    }
 
     return <>
       {isSubmit ? <div className={`${pageName}ApplyTitle`}>已收到您的申請，謝謝。</div> : <div className={`${pageName}FormBlock`}>
@@ -584,9 +597,20 @@ const AccountPersonal: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="stepTitle">步驟 3. 企業資料</div>
-        <FormComponent {...formProp3} />
+        <div className="columnRow">
+          <div className="columnBlock">
+            <div className="title required">手機號碼</div>
+            <div className="bodyBlock input">
+              <PhoneInput
+                country={'tw'}
+                value={cellPhoneCode}
+                onChange={(value, data) => handleCellPhoneCall(value, data)}
+              />
+            </div>
+          </div>
+        </div>
         <FormComponent {...formProp4} />
+        <div className="stepTitle">步驟 3. 企業資料</div>
         <FormComponent {...formProp5} />
         <FormComponent {...formProp6} />
         <FormComponent {...formProp7} />

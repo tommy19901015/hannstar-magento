@@ -124,9 +124,9 @@ $pageName: 'HannstarRegister';
         }
     }
     @media screen and (max-width: $breakpoint) {
-        padding: 40px 0;
+        padding-top: 30px;
         .hannstarRegisterBlock {
-            padding: 0 30px;
+            padding: 0;
         }
     }
 }

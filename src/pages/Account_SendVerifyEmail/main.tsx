@@ -4,8 +4,8 @@ import { patterns, validate } from "../../common/validateUtils";
 import "./css.scss";
 import usePageData from "./pageData";
 
-const ForgotPassword: React.FC = () => {
-  const pageName = "ForgotPassword";
+const AccountSendVerifyEmail: React.FC = () => {
+  const pageName = "AccountSendVerifyEmail";
 
   const [email, setEmail] = useState<string>("");
   const [isEmailPass, setIsEmailPass] = useState<boolean>(true);
@@ -54,11 +54,11 @@ const ForgotPassword: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}`}>
-        <div className="mainTitle">忘記密碼</div>
+        <div className="mainTitle">寄送驗證信</div>
         <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className={`${pageName}Content`}>
           <div className="columnBlock">
-            <div className="title required">請輸入您的帳號(Email)，<br />系統會將您的密碼發送到您的信箱。</div>
+            <div className="title required">請在下方欄位輸入郵箱收取驗證信。</div>
             <div className="bodyBlock input">
               <input
                 type="text"
@@ -71,7 +71,7 @@ const ForgotPassword: React.FC = () => {
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
-            請求重設
+            發送驗證信
           </div>
         </div>
         <div ref={emailBlock} className="magentoRegisteBlock"></div>
@@ -80,4 +80,4 @@ const ForgotPassword: React.FC = () => {
   );
 };
 
-export default ForgotPassword;
+export default AccountSendVerifyEmail;

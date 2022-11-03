@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "../../component/layout/main";
 import usePageData from "./pageData";
+import {
+  patterns,
+  validate,
+  validatePassword,
+} from "../../common/validateUtils";
 import "./css.scss";
+import urlConfig from "../../config/urlSetting.json";
 
 const MFAQRCode: React.FC = () => {
   const pageName = "MFAQRCode";
   const tableData = usePageData();
   const [code, setCode] = useState<string>("");
-  const [isCodeError, setIsCodeError] = useState<boolean>(false);
+  const [isCodePass, setIsCodePass] = useState<boolean>(true);
   const MFAQRCodeBlockRef: any = useRef();
   const QRCodeBlockRef: any = useRef();
   const errorMessageBlock: any = useRef();
@@ -42,17 +48,19 @@ const MFAQRCode: React.FC = () => {
   };
 
   const handleSend = () => {
-    const sendBtn: any = document.getElementById("send2");
-    let getCodeVal = code.replace(/\s*/g, "");
-    const isTypeError = getCodeVal.length === 0 || isNaN(+getCodeVal);
-    setIsCodeError(isTypeError);
-    if (sendBtn) sendBtn.click();
+    const codeValidate = validate(code, patterns.number);
+    setIsCodePass(codeValidate);
+
+    if (codeValidate) {
+      const sendBtn: any = document.getElementById("send2");
+      sendBtn && sendBtn.click();
+    }
+
   };
 
   return (
     <Layout>
       <div className={`${pageName}`}>
-
         <div className={`${pageName}Content`}>
           <div className="contentBlock">
             <div className="titleContent">
@@ -65,24 +73,13 @@ const MFAQRCode: React.FC = () => {
               </div>
             </div>
             <div className="imgContent">
-              <img alt="demo" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
+              <img alt="demo" src={`${urlConfig.s3Url}/Image/account/img_2fa_demo.png`} />
             </div>
           </div>
-          {/* <div className="mobileContentBlock">
-            <div className="titleContent">
-              <div className="mainTitle">{tableData.pageTitle}</div>
-              <span>{tableData.noteTitle}</span>
-              <img alt="demo" className="imgContent" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
-              <p>{tableData.subTitle}</p>
-              <div className="stepGuide">
-                {tableData.stepGuide}<i className=""></i>
-              </div>
-            </div>
-          </div>      */}
         </div>
         <div className={`${pageName}StepContent`}>
           <div className="contentBlock">
-            
+
             <div className="subTitle">{tableData.formTitle}</div>
             <div className="content">
               <div className="step">
@@ -92,8 +89,12 @@ const MFAQRCode: React.FC = () => {
                 </div>
 
                 <div className="stepExample">
-                  <img className="appImg" alt="android" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_app_android.png" />
-                  <img className="appImg" alt="ios" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_app_ios.png" />
+                  <a rel="noreferrer" target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=zh_TW&gl=US">
+                    <img className="appImg" alt="android" src={`${urlConfig.s3Url}/Image/account/img_2fa_app_android.png`} />
+                  </a>
+                  <a rel="noreferrer" target="_blank" href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458">
+                    <img className="appImg" alt="ios" src={`${urlConfig.s3Url}/Image/account/img_2fa_app_ios.png`} />
+                  </a>
                 </div>
               </div>
               <div className="step">
@@ -120,11 +121,11 @@ const MFAQRCode: React.FC = () => {
                     onChange={handleCodeInput}
                     value={code}
                     placeholder={tableData.placeholder}
-                    className={`${!!isCodeError ? "error" : ""}`}
+                    className={`${!isCodePass ? "error" : ""}`}
                   />
-                  {!!isCodeError && (
+                  {!isCodePass && (
                     <div className="errorMessage">
-                      <i className="">*</i>{tableData.errorMessage}
+                      必填欄位；輸入格式有誤，請重新輸入
                     </div>
                   )}
                   <div

@@ -17,6 +17,7 @@ import MFAQRCode from "./pages/MFAQRCode/main";
 import AccountPersonal from "./pages/Account_Personal/main";
 import AccountPartner from "./pages/Account_Partner/main";
 import AccountApplication from "./pages/Account_Application/main";
+import AccountSendVerifyEmail from "./pages/Account_SendVerifyEmail/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -56,6 +57,7 @@ ReactDOM.render(
       <Route path={"/forgotPassword"} element={<ForgotPassword />} />
       <Route path={"/resetPassword"} element={<ResetPassword />} />
       <Route path={"/mfa"} element={<MFA />} />
+      <Route path={"/AccountSendVerifyEmail"} element={<AccountSendVerifyEmail />} />
       <Route path={account.MFAQRcode.href} element={<MFAQRCode />} />
       <Route path={account.AccountPersonal.href} element={<AccountPersonal />} />
       <Route path={account.AccountPartner.href} element={<AccountPartner />} />
