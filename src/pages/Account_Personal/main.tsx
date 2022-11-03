@@ -329,7 +329,6 @@ const formData14 = [
 
 const AccountPersonal: React.FC = () => {
   const pageName = "AccountPersonal";
-  const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
   const formMethods1: any = useRef(null);
   const formMethods4: any = useRef(null);
@@ -499,9 +498,7 @@ const AccountPersonal: React.FC = () => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
-        .catch(() => {
-          setIsSubmit(true);
-        });
+        .catch(() => {});
     };
 
     const handleExtension = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -521,93 +518,81 @@ const AccountPersonal: React.FC = () => {
     };
 
     return (
-      <>
-        {isSubmit ? (
-          <div className={`${pageName}ApplyTitle`}>已收到您的申請，謝謝。</div>
-        ) : (
-          <div className={`${pageName}FormBlock`}>
-            <div className="formTitle">申請企業會員</div>
-            <div className="stepTitle">步驟 1. 請選擇您的身份</div>
-            <div className="classificationBlock">
-              <a
-                className="changTab"
-                href={urlConfig.account.AccountPersonal.href}
-              >
-                <img
-                  alt={urlConfig.account.AccountPersonal.title}
-                  src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_hnp.png`}
-                />
-              </a>
-              <a
-                className="changTab"
-                href={urlConfig.account.AccountPartner.href}
-              >
-                <img
-                  alt={urlConfig.account.AccountPartner.title}
-                  src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_normal.png`}
-                />
-              </a>
-            </div>
-            <div className="stepTitle">步驟 2. 申請人資訊</div>
-            <FormComponent {...formProp1} />
-            <div className="columnRow">
-              <div className="columnBlock">
-                <div className="title required">電話號碼</div>
-                <div className="bodyBlock input">
-                  <PhoneInput
-                    // country={"tw"}
-                    value={phoneCode}
-                    onChange={(value, data) => handlePhoneCall(value, data)}
-                  />
-                </div>
-              </div>
-              <div className="columnBlock">
-                <div className="title required">分機</div>
-                <div className="bodyBlock input">
-                  <input
-                    className="extensionInput"
-                    type="text"
-                    onChange={handleExtension}
-                    value={extension}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="columnRow">
-              <div className="columnBlock">
-                <div className="title required">手機號碼</div>
-                <div className="bodyBlock input">
-                  <PhoneInput
-                    country={"tw"}
-                    value={cellPhoneCode}
-                    onChange={(value, data) => handleCellPhoneCall(value, data)}
-                  />
-                </div>
-              </div>
-            </div>
-            <FormComponent {...formProp4} />
-            <div className="stepTitle">步驟 3. 企業資料</div>
-            <FormComponent {...formProp5} />
-            <FormComponent {...formProp6} />
-            <FormComponent {...formProp7} />
-            <FormComponent {...formProp8} />
-            <FormComponent {...formProp9} />
-            <FormComponent {...formProp10} />
-            <FormComponent {...formProp11} />
-            <FormComponent {...formProp12} />
-            <FormComponent {...formProp13} />
-            <FormComponent {...formProp14} />
-            <div className="btnBlock">
-              <div onClick={handlerGoBack} className="goBack">
-                回上一頁
-              </div>
-              <div onClick={handlerSubmit} className="confirm">
-                確認申請
-              </div>
+      <div className={`${pageName}FormBlock`}>
+        <div className="formTitle">申請企業會員</div>
+        <div className="stepTitle">步驟 1. 請選擇您的身份</div>
+        <div className="classificationBlock">
+          <a className="changTab" href={urlConfig.account.AccountPersonal.href}>
+            <img
+              alt={urlConfig.account.AccountPersonal.title}
+              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_hnp.png`}
+            />
+          </a>
+          <a className="changTab" href={urlConfig.account.AccountPartner.href}>
+            <img
+              alt={urlConfig.account.AccountPartner.title}
+              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_normal.png`}
+            />
+          </a>
+        </div>
+        <div className="stepTitle">步驟 2. 申請人資訊</div>
+        <FormComponent {...formProp1} />
+        <div className="columnRow">
+          <div className="columnBlock">
+            <div className="title required">電話號碼</div>
+            <div className="bodyBlock input">
+              <PhoneInput
+                country={"tw"}
+                value={phoneCode}
+                onChange={(value, data) => handlePhoneCall(value, data)}
+              />
             </div>
           </div>
-        )}
-      </>
+          <div className="columnBlock">
+            <div className="title required">分機</div>
+            <div className="bodyBlock input">
+              <input
+                className="extensionInput"
+                type="text"
+                onChange={handleExtension}
+                value={extension}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="columnRow">
+          <div className="columnBlock">
+            <div className="title required">手機號碼</div>
+            <div className="bodyBlock input">
+              <PhoneInput
+                country={"tw"}
+                value={cellPhoneCode}
+                onChange={(value, data) => handleCellPhoneCall(value, data)}
+              />
+            </div>
+          </div>
+        </div>
+        <FormComponent {...formProp4} />
+        <div className="stepTitle">步驟 3. 企業資料</div>
+        <FormComponent {...formProp5} />
+        <FormComponent {...formProp6} />
+        <FormComponent {...formProp7} />
+        <FormComponent {...formProp8} />
+        <FormComponent {...formProp9} />
+        <FormComponent {...formProp10} />
+        <FormComponent {...formProp11} />
+        <FormComponent {...formProp12} />
+        <FormComponent {...formProp13} />
+        <FormComponent {...formProp14} />
+        <div className="btnBlock">
+          <div onClick={handlerGoBack} className="goBack">
+            回上一頁
+          </div>
+          <div onClick={handlerSubmit} className="confirm">
+            確認申請
+          </div>
+        </div>
+      </div>
     );
   };
 
