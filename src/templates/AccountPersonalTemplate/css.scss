@@ -5,8 +5,9 @@ $pageName: 'AccountPersonalTemplate';
 .#{$pageName}AccountToolBar {
     background-color: $hannstar-bg-color;
     height: 100%;
+    padding: 10px;
     input{
-        &#menu {
+        &#menu, &#menu1{
             display: none;
         }
         &:checked ~ .menu-content {
@@ -15,7 +16,11 @@ $pageName: 'AccountPersonalTemplate';
         
     }
     label{
-        display: none;
+        // display: none;
+        @include hannstarH4Title 
+    }
+    .menu-content{
+        margin-bottom: 30px;
     }
     .linkBlock {
         .linkText {
@@ -31,7 +36,6 @@ $pageName: 'AccountPersonalTemplate';
                 @include hannstarContentText;
                 display: flex;
                 align-items: center;
-                padding: 0 50px;
                 svg {
                     padding-right: 15px;
                 }
@@ -56,19 +60,26 @@ $pageName: 'AccountPersonalTemplate';
             cursor: pointer;
             text-align: center;
             @include hannstarContent1;
+            &:last-of-type{
+                display: none;
+            }
         }
         input{
-            &#menu {
+            &#menu, &#menu1 {
                 display: none;
             }
             &:checked ~ .menu-content {
                 max-height: 100%;
+            }
+            &:checked ~ label {
+                display: block;
             }
             
         }
         .menu-content {
             max-height: 0;
             overflow: hidden;
+            margin-bottom: 0;
         }
         .linkBlock{
             .linkText{

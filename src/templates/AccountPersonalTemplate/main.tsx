@@ -40,7 +40,18 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
         <div className="menu-content">
           <ul className="linkBlock">
             {personalInfoData[0].items.map((item, index) => (
-              <li className={`linkText ${(index === 0 && !isMobile )&& "first"}`} key={index}>
+              <li className="linkText" key={index}>
+                <a href={item.href}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <input type="checkbox" id="menu1"/>
+        <label htmlFor="menu1">{personalInfoData[1].categoryTitle}</label>
+        <div className="menu-content">
+          <ul className="linkBlock">
+            {personalInfoData[1].items.map((item, index) => (
+              <li className="linkText" key={index}>
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}
@@ -64,3 +75,19 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
 };
 
 export default AccountPersonalTemplate;
+
+// return (
+//   <div className={`${pageName}AccountToolBar`}>
+//     <input type="checkbox" id="menu"/>
+//     <label htmlFor="menu">{personalInfoData[0].categoryTitle}</label>
+//     <div className="menu-content">
+//       <ul className="linkBlock">
+//         {personalInfoData[0].items.map((item, index) => (
+//           <li className="linkText" key={index}>
+//             <a href={item.href}>{item.title}</a>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   </div>
+// );
