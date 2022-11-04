@@ -108,7 +108,8 @@ function usePageData() {
       become: "您可以進一步成為",
       companymember: "企業會員",
       customerpermission: "客戶權限說明",
-      applymembership: "申請企業會員",
+      applymembership: "申請客戶企業會員",
+      applypartnership: "申請供應商企業會員",
       supplierlimit: "供應商限說明",
     },
   };

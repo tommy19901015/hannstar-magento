@@ -14,51 +14,8 @@ const AccountApplication: React.FC = () => {
   const pageName = "AccountApplication";
   const pageData = usePageData();
   const { breadcrumbs, captionData, content } = pageData;
-  // const breadcrumbsData = {
-  //   title: "",
-  //   breadcrumbsLink: [
-  //     {
-  //       text: "首頁",
-  //       href: "",
-  //     },
-  //     {
-  //       text: "會員中心",
-  //       href: "",
-  //     },
-  //     {
-  //       text: "申請權限",
-  //       href: "",
-  //     },
-  //   ],
-  // };
 
   const ApplicationContent = () => {
-    // const captionData = {
-    //   customerNormal: [
-    //     "行業應用文章",
-    //     "產品查詢",
-    //     "新技術合作",
-    //     "線上客服聊天室",
-    //   ],
-    //   customerEnterprise: [
-    //     "優選產品報價含零組件、方案與整機",
-    //     "客製化服務專案報價含零組件、方案與整機",
-    //     "RMA 申請",
-    //     "解析申請",
-    //     "綠色法規申請",
-    //     "+ 以及所有HannStar 客戶一般會員的服務",
-    //   ],
-    //   partnerNormal: [
-    //     "新技術合作",
-    //     "行業應用文章",
-    //     "產品查詢",
-    //     "線上客服聊天室",
-    //   ],
-    //   partnerEnterprise: [
-    //     "供應商資訊交流平台",
-    //     "+ 以及所有HannStar 供應商一般會員的服務",
-    //   ],
-    // };
 
     return (
       <div className={`${pageName}Content`}>
@@ -116,13 +73,13 @@ const AccountApplication: React.FC = () => {
                   </a>
                 </div>
                 <div className="btnBlock">
-                        <a
-                          className="applicationBtn"
-                          href={urlConfig.account.AccountPartner.href}
-                        >
-                          {content.applymembership}
-                        </a>
-              </div>
+                  <a
+                    className="applicationBtn"
+                    href={urlConfig.account.AccountPartner.href}
+                  >
+                    {content.applypartnership}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

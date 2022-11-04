@@ -25,402 +25,407 @@ $font-weighr-bold: 800;
 $font-base: 16px;
 
 @mixin hannstarH1Title {
-  color: $hannstar-default-text-color;
-  font-size: 40px;
-  font-weight: $font-weighr-medium;
-  line-height: 60px;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 40px;
+    font-weight: $font-weighr-medium;
+    line-height: 60px;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarH2Title {
-  color: $hannstar-default-text-color;
-  font-size: 32px;
-  font-weight: $font-weighr-medium;
-  line-height: 48px;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 32px;
+    font-weight: $font-weighr-medium;
+    line-height: 48px;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarH3Title {
-  color: $hannstar-default-text-color;
-  font-size: 24px;
-  font-weight: $font-weighr-medium;
-  line-height: 36px;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 24px;
+    font-weight: $font-weighr-medium;
+    line-height: 36px;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarH4Title {
-  color: $hannstar-default-text-color;
-  font-size: 20px;
-  font-weight: $font-weighr-medium;
-  line-height: 30px;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 20px;
+    font-weight: $font-weighr-medium;
+    line-height: 30px;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarContent0 {
-  color: $hannstar-default-text-color;
-  font-size: 18px;
-  line-height: 32px;
-  font-weight: $font-weighr-normal;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: $font-weighr-normal;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarContent1 {
-  color: $hannstar-default-text-color;
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: $font-weighr-normal;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: $font-weighr-normal;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarContent2 {
-  color: $hannstar-default-text-color;
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: $font-weighr-normal;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: $font-weighr-normal;
+    letter-spacing: 1px;
 }
 
 @mixin hannstarContent3 {
-  color: $hannstar-default-text-color;
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: $font-weighr-normal;
-  letter-spacing: 1px;
+    color: $hannstar-default-text-color;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: $font-weighr-normal;
+    letter-spacing: 1px;
 }
 //-------------------
 
 @mixin hannstarContentText {
-  color: #363636;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.8;
+    color: #363636;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
 }
 
 @mixin hannstarNoteText {
-  color: #363636;
-  font-size: 14px;
-  font-weight: 400;
+    color: #363636;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 @mixin hannstarBtn {
-  display: inline-block;
-  background-color: $hannstar-blue2;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1;
-  padding: 12px 16px;
-  word-break: keep-all;
-  cursor: pointer;
-  &:hover {
-    background-color: $hannstar-blue3;
-  }
+    display: inline-block;
+    background-color: $hannstar-blue2;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    padding: 12px 16px;
+    word-break: keep-all;
+    cursor: pointer;
+    &:hover {
+        background-color: $hannstar-blue3;
+    }
 }
 
 @mixin hannstarBtn2 {
-  display: inline-block;
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid $hannstar-blue2;
-  color: $hannstar-blue2;
-  font-size: 16px;
-  line-height: 1.6;
-  padding: 8px 16px;
-  word-break: keep-all;
-  cursor: pointer;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid $hannstar-blue2;
+    color: $hannstar-blue2;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 8px 16px;
+    word-break: keep-all;
+    cursor: pointer;
 }
 
 @mixin hannstarInput {
-  width: calc(100% - 20px);
-  height: 38px;
-  padding: 0 10px;
-  border-radius: 3px;
-  border: solid 1px $hannstar-border-color;
-  background-color: #fff;
-  @include hannstarContentText;
-  &::placeholder {
-    color: $hannstar-border-color;
-  }
-  &:hover {
-    border: solid 1px $hannstar-default-text-color;
-  }
-  &:focus,
-  &:focus-visible {
-    outline: none;
-    border: solid 1px $hannstar-default-text-color;
-  }
-  &:disabled {
-    background-color: $hannstar-border-color;
-  }
+    width: calc(100% - 20px);
+    height: 38px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: solid 1px $hannstar-border-color;
+    background-color: #fff;
+    @include hannstarContentText;
+    &::placeholder {
+        color: $hannstar-border-color;
+    }
+    &:hover {
+        border: solid 1px $hannstar-default-text-color;
+    }
+    &:focus,
+    &:focus-visible {
+        outline: none;
+        border: solid 1px $hannstar-default-text-color;
+    }
+    &:disabled {
+        background-color: $hannstar-border-color;
+    }
 }
 
 @mixin hannstarRadio {
-  display: flex;
-  padding-bottom: 8px;
-  align-items: center;
-  input[type="radio"]:checked,
-  input[type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-  input[type="radio"]:checked + label,
-  input[type="radio"]:not(:checked) + label {
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
-    display: inline-block;
-    color: $hannstar-default-text-color;
-  }
-  input[type="radio"]:checked + label:before,
-  input[type="radio"]:not(:checked) + label:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $hannstar-border-color;
-    border-radius: 100%;
-  }
-  input[type="radio"]:checked + label:after,
-  input[type="radio"]:not(:checked) + label:after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: $hannstar-default-text-color;
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-  input[type="radio"]:not(:checked) + label:after {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  input[type="radio"]:checked + label:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+    display: flex;
+    padding-bottom: 8px;
+    align-items: center;
+    input[type='radio']:checked,
+    input[type='radio']:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    input[type='radio']:checked + label,
+    input[type='radio']:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: $hannstar-default-text-color;
+    }
+    input[type='radio']:checked + label:before,
+    input[type='radio']:not(:checked) + label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $hannstar-border-color;
+        border-radius: 100%;
+    }
+    input[type='radio']:checked + label:after,
+    input[type='radio']:not(:checked) + label:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: $hannstar-default-text-color;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        border-radius: 100%;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    input[type='radio']:not(:checked) + label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    input[type='radio']:checked + label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
 
 @mixin hannstarCheckBox {
-  input[type="checkbox"]:checked,
-  input[type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-  input[type="checkbox"]:checked + label,
-  input[type="checkbox"]:not(:checked) + label {
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
-    color: $hannstar-default-text-color;
-  }
-  input[type="checkbox"]:checked + label:before,
-  input[type="checkbox"]:not(:checked) + label:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $hannstar-border-color;
-    border-radius: 3px;
-  }
-  input[type="checkbox"]:checked + label:after,
-  input[type="checkbox"]:not(:checked) + label:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 2px;
-    left: 8px;
-    width: 5px;
-    height: 11px;
-    border: solid $hannstar-default-text-color;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-  input[type="checkbox"]:not(:checked) + label:after {
-    opacity: 0;
-  }
-  input[type="checkbox"]:checked + label:after {
-    opacity: 1;
-  }
+    input[type='checkbox']:checked,
+    input[type='checkbox']:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    input[type='checkbox']:checked + label,
+    input[type='checkbox']:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        color: $hannstar-default-text-color;
+    }
+    input[type='checkbox']:checked + label:before,
+    input[type='checkbox']:not(:checked) + label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $hannstar-border-color;
+        border-radius: 3px;
+    }
+    input[type='checkbox']:checked + label:after,
+    input[type='checkbox']:not(:checked) + label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 8px;
+        width: 5px;
+        height: 11px;
+        border: solid $hannstar-default-text-color;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    input[type='checkbox']:not(:checked) + label:after {
+        opacity: 0;
+    }
+    input[type='checkbox']:checked + label:after {
+        opacity: 1;
+    }
 }
 
 @mixin hannstarSelect {
-  overflow: hidden;
-  width: 100%;
-  min-height: 40px;
-  padding: 0 10px;
-  border-radius: 3px;
-  border: solid 1px $hannstar-border-color;
-  background-color: #fff;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTCIiIigoKCIiIiYmJiIiIi0tLSIiIiQkJCIiIt46NpcAAAAJdFJOUwDZJpVE7hG7aqeRgzAAAAAtSURBVAjXY2AgCTDPBAIDEKty5szpYKHEmTPFwAymyKkKEFWeU6DKORoYSAQAySII+PoRspAAAAAASUVORK5CYII=)
-    no-repeat center transparent;
-  background-position-x: calc(100% - 10px);
-  @include hannstarContentText;
-  line-height: 1.8;
-  &:hover {
-    border: solid 1px $hannstar-default-text-color;
-  }
-  &:focus,
-  &:focus-visible {
-    outline: none;
-    border: solid 1px $hannstar-default-text-color;
-  }
+    overflow: hidden;
+    width: 100%;
+    min-height: 40px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: solid 1px $hannstar-border-color;
+    background-color: #fff;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTCIiIigoKCIiIiYmJiIiIi0tLSIiIiQkJCIiIt46NpcAAAAJdFJOUwDZJpVE7hG7aqeRgzAAAAAtSURBVAjXY2AgCTDPBAIDEKty5szpYKHEmTPFwAymyKkKEFWeU6DKORoYSAQAySII+PoRspAAAAAASUVORK5CYII=)
+        no-repeat center transparent;
+    background-position-x: calc(100% - 10px);
+    @include hannstarContentText;
+    line-height: 1.8;
+    &:hover {
+        border: solid 1px $hannstar-default-text-color;
+    }
+    &:focus,
+    &:focus-visible {
+        outline: none;
+        border: solid 1px $hannstar-default-text-color;
+    }
 }
 
 @mixin hannstarTextarea {
-  width: calc(100% - 20px);
-  min-height: 150px;
-  padding: 10px;
-  border-radius: 3px;
-  border: solid 1px $hannstar-border-color;
-  background-color: #fff;
-  color: $hannstar-default-text-color;
-  &::placeholder {
-    color: $hannstar-border-color;
-  }
-  &:hover {
-    border: solid 1px $hannstar-default-text-color;
-  }
-  &:focus,
-  &:focus-visible {
-    outline: none;
-    border: solid 1px $hannstar-default-text-color;
-  }
-  &:disabled {
-    background-color: $hannstar-border-color;
-  }
+    width: calc(100% - 20px);
+    min-height: 150px;
+    padding: 10px;
+    border-radius: 3px;
+    border: solid 1px $hannstar-border-color;
+    background-color: #fff;
+    color: $hannstar-default-text-color;
+    &::placeholder {
+        color: $hannstar-border-color;
+    }
+    &:hover {
+        border: solid 1px $hannstar-default-text-color;
+    }
+    &:focus,
+    &:focus-visible {
+        outline: none;
+        border: solid 1px $hannstar-default-text-color;
+    }
+    &:disabled {
+        background-color: $hannstar-border-color;
+    }
 }
 
 @mixin hannstarSwitchBtn {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    &:checked + .slider {
-      background-color: $hannstar-blue2;
-      &::before {
-        transform: translateX(26px);
-      }
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked + .slider {
+            background-color: $hannstar-blue2;
+            &::before {
+                transform: translateX(26px);
+            }
+        }
+        &:focus + .slider {
+            box-shadow: 0 0 1px $hannstar-blue2;
+        }
     }
-    &:focus + .slider {
-      box-shadow: 0 0 1px $hannstar-blue2;
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $hannstar-border-color;
+        transition: 0.4s;
+        &::before {
+            position: absolute;
+            content: '';
+            height: 17px;
+            width: 17px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #fff;
+            transition: 0.4s;
+        }
+        &.round {
+            border-radius: 34px;
+            &::before {
+                border-radius: 50%;
+            }
+        }
     }
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $hannstar-border-color;
-    transition: 0.4s;
-    &::before {
-      position: absolute;
-      content: "";
-      height: 17px;
-      width: 17px;
-      left: 4px;
-      bottom: 4px;
-      background-color: #fff;
-      transition: 0.4s;
-    }
-    &.round {
-      border-radius: 34px;
-      &::before {
-        border-radius: 50%;
-      }
-    }
-  }
 }
 
 @mixin hannstarBlockPadding {
-  padding: 40px;
+    padding: 40px;
 }
 
 @mixin hannstarTextPadding1 {
-  padding-bottom: 24px;
+    padding-bottom: 24px;
 }
 
 @mixin hannstarTextPadding2 {
-  padding-bottom: 32px;
+    padding-bottom: 32px;
 }
 
 @mixin hannstarModulePadding1 {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 
 @mixin hannstarModulePadding2 {
-  padding-bottom: 120px;
+    padding-bottom: 120px;
 }
 
 @mixin magentoMessage {
-  .page {
-    margin-bottom: 20px;
-    &.messages {
-      .message-error {
-        &.error {
-          background-color: $hannstar-orange2;
-          padding: 6px;
-          &.message {
-            @include hannstarContent1;
-            color: #fff;
-            position: relative;
-            &::before {
-              content: url("https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/error.png");
-              position: absolute;
-              width: 20px;
-              height: 20px;
-              top: 8px;
+    .page {
+        margin-bottom: 20px;
+        &.messages {
+            .message-error {
+                &.error {
+                    background-color: $hannstar-orange2;
+                    padding: 6px;
+                    &.message {
+                        @include hannstarContent1;
+                        color: #fff;
+                        position: relative;
+                        &::before {
+                            content: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/error.png');
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 8px;
+                        }
+                        div {
+                            color: $hannstar-orange1;
+                            margin-left: 30px;
+                        }
+                    }
+                }
             }
-            div {
-              color: $hannstar-orange1;
-              margin-left: 30px;
+            .message-success {
+                &.success {
+                    background-color: $hannstar-blue2;
+                    padding: 6px;
+                    &.message {
+                        @include hannstarContent1;
+                        color: #fff;
+                        position: relative;
+                        &::before {
+                            content: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/correct.png');
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            top: 8px;
+                        }
+                        div {
+                            color: $hannstar-blue4;
+                            margin-left: 30px;
+                            a {
+                                font-weight: $font-weighr-medium;
+                                color: $hannstar-blue4;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-      .message-success {
-        &.success {
-          background-color: $hannstar-blue0;
-          padding: 6px;
-          &.message {
-            @include hannstarContent1;
-            color: #fff;
-            position: relative;
-            &::before {
-              content: url("https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/error.png");
-              position: absolute;
-              width: 20px;
-              height: 20px;
-              top: 8px;
-            }
-            div {
-              color: $hannstar-blue1;
-              margin-left: 30px;
-            }
-          }
-        }
-      }
     }
-  }
 }

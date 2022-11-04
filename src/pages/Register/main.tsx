@@ -37,12 +37,15 @@ const HannstarRegister: React.FC = () => {
     const [agreePrivacyPass, setAgreePrivacyPass] = useState<boolean>(true);
 
     const registerBlock: any = useRef();
+    const countrySelectBlock: any = useRef();
     const errorMessageBlock: any = useRef();
 
     useEffect(() => {
       const magentoDom: any = document.getElementById("form-validate");
-      console.log("magentoDom", magentoDom);
       if (magentoDom) registerBlock.current.appendChild(magentoDom);
+
+      const magentoCountrySelectDom: any = document.getElementById("country");
+      if (magentoCountrySelectDom) countrySelectBlock.current.appendChild(magentoCountrySelectDom);
 
       const magentoDefultMessageDom: any =
         document.getElementsByClassName("page messages")[0];
@@ -89,6 +92,16 @@ const HannstarRegister: React.FC = () => {
       return isSubscribed ? isSubscribed : "";
     };
 
+    // const getMagentoCountryDom = (): any => {
+    //   const country = document.getElementById("country");
+    //   return country ? country : "";
+    // };
+
+    const getMagentoCompanyDom = (): any => {
+      const company = document.getElementById("company");
+      return company ? company : "";
+    };
+
     const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (getMagentoFirstNameDom()) {
         getMagentoFirstNameDom().value = e.target.value;
@@ -127,11 +140,10 @@ const HannstarRegister: React.FC = () => {
     };
 
     const handleCompany = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (getMagentoCompanyDom()) {
+        getMagentoCompanyDom().value = e.target.value;
+      }
       setCompany(e.target.value);
-    };
-
-    const handleCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      setCountry(e.target.value);
     };
 
     const handleAgreePrivacy = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -278,13 +290,7 @@ const HannstarRegister: React.FC = () => {
           </div>
           <div className="columnBlock">
             <div className="title">公司所在地(國家)</div>
-            <div className="bodyBlock select">
-              <select onChange={handleCountry} value={country}>
-                <option value="台灣">台灣</option>
-                <option value="中國">中國</option>
-                <option value="日本">日本</option>
-              </select>
-            </div>
+            <div className="bodyBlock select" ref={countrySelectBlock}></div>
           </div>
           <div className="checkBlock">
             <div className="columnBlock">

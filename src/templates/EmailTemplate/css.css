@@ -1,0 +1,77 @@
+body{
+    font-family: Microsoft JhengHei;
+    color:#363636;
+}
+
+.emailHeader{
+    background-color: #0959a2;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+
+.title{
+    color:#fff;
+    font-size: 24px;
+    font-weight: 800;
+    padding-left: 10px;
+}
+
+.titleBlock{
+    display: flex;
+    align-items: center;
+}
+
+.titleBlock h3{
+    color: #0959a2;
+    padding-right: 10px;
+}
+
+.titleBlock .copyright{
+    font-size: 14px;
+}
+
+.emailFeader .topBlock{
+    padding: 0 40px;
+    background-color: #efefef;
+}
+
+.linkBlock{
+    padding-bottom: 20px;
+}
+
+.linkBlock a {
+    color:#363636;
+    text-decoration: none;
+    padding: 0 10px;
+    border-right: 1px solid #363636;    
+}
+
+.linkBlock a:first-child {
+    padding-left: 0;
+}
+
+.linkBlock a:last-child {
+    border-right:none;
+}
+
+.emailFeader .bottomBlock{
+    padding: 20px 40px;
+    background-color: #0959a2;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hannstarBtn{
+    display: inline-block;
+    background-color: #039be5;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    padding: 12px 16px;
+    word-break: keep-all;
+    cursor: pointer;
+}

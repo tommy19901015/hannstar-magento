@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 module.exports = {
   // entry: glob.sync("./src/pages/**/main.tsx").reduce((config, page) => {
@@ -76,6 +77,7 @@ module.exports = {
       filename: "index.html",
       chunks: ["index"],
     }),
+    new NodePolyfillPlugin(),
     new CleanWebpackPlugin(),
   ],
 };

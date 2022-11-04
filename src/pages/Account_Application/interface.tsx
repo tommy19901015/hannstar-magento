@@ -8,16 +8,17 @@ type I_Module = {
 };
 
 type I_Content = {
-    title:string,
-    subTitle:string,
-    rank:string,
-    text:string,
-    member:string,
-    become:string,
-    companymember:string,
-    customerpermission:string,
-    applymembership:string,
-    supplierlimit:string
+    title: string,
+    subTitle: string,
+    rank: string,
+    text: string,
+    member: string,
+    become: string,
+    companymember: string,
+    customerpermission: string,
+    applymembership: string,
+    applypartnership: string
+    supplierlimit: string
 }
 export interface I_PageType {
     breadcrumbs: I_Breadcrumbs,
