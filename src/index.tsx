@@ -18,6 +18,9 @@ import AccountPersonal from "./pages/Account_Personal/main";
 import AccountPartner from "./pages/Account_Partner/main";
 import AccountApplication from "./pages/Account_Application/main";
 import AccountSendVerifyEmail from "./pages/Account_SendVerifyEmail/main";
+import AccountMyAccount from "./pages/Account_MyAccount/main";
+import AccountEditAccount from "./pages/Account_EditAccount/main";
+import AccountMemberInfo from "./pages/Account_MemberInfo/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -71,6 +74,9 @@ ReactDOM.render(
         path={account.AccountApplication.href}
         element={<AccountApplication />}
       />
+      <Route path={account.MemberInfo.href} element={<AccountMemberInfo />} />
+      <Route path={account.EditAccount.href} element={<AccountEditAccount />} />
+      <Route path={account.MyAccount.href} element={<AccountMyAccount />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

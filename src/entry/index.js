@@ -9,6 +9,8 @@ import AccountPersonal from "../pages/Account_Personal/main";
 import AccountPartner from "../pages/Account_Partner/main";
 import AccountApplication from "../pages/Account_Application/main";
 import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
+import AccountMyAccount from "../pages/Account_MyAccount/main";
+import AccountEditAccount from "../pages/Account_EditAccount/main";
 import MFAQRCode from "../pages/MFAQRCode/main";
 import MFA from "../pages/MFA/main";
 import ForgotPassword from "../pages/ForgotPassword/main";
@@ -43,46 +45,50 @@ import ServiceParseApply from "../pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
 
 const pageMappingObj = {
-    root_Login:<Login/>,
-    root_AccountPersonal:<AccountPersonal />,
-    root_AccountPartner : <AccountPartner />,
-    root_AccountApplication : <AccountApplication />,
-    root_AccountSendVerifyEmail : <AccountSendVerifyEmail />,
-    root_Register:<HannstarRegister />,
-    root_MFAQRCode:<MFAQRCode/>,
-    root_MFA:<MFA/>,
-    root_ForgotPassword:<ForgotPassword/>,
-    root_ResetPassword:<ResetPassword/>,
-    root_Index : <Index />,
-    root_About : <About />,
-    root_EBiz : <EBiz />,
-    root_Solution : <Solution />,
-    root_Stronghold : <Stronghold />,
-    root_Document360Test : <Document360Test />,
-    root_FormTest : <FormTest />,
-    root_PartnerIndex : <PartnerIndex />,
-    root_PartnerQuotationList : <PartnerQuotationList />,
-    root_PartnerQuotation : <PartnerQuotation />,
-    root_PartnerProductList : <PartnerProductList />,
-    root_PartnerProductInventory : <PartnerProductInventory />,
-    root_PartnerAddProduct : <PartnerAddProduct />,
-    root_PartnerSolutionList : <PartnerSolutionList />,
-    root_PartnerSolutionInventory : <PartnerSolutionInventory />,
-    root_PartnerAddSolution : <PartnerAddSolution />,
-    root_PartnerApplication : <PartnerApplication />,
-    root_PartnerManageandadvisory : <PartnerManageandadvisory />,
-    root_PartnerTechnical : <PartnerTechnical />,
-    root_PartnerGreenSupplyChain : <PartnerGreenSupplyChain />,
-    root_PartnerManufacturing : <PartnerManufacturing />,
-    root_ServiceIndex : <ServiceIndex />,
-    root_ServiceRMAApply : <ServiceRMAApply />,
-    root_ServiceRMAList : <ServiceRMAList />,
-    root_ServiceParseList : <ServiceParseList />,
-    root_ServiceGreenService : <ServiceGreenService />,
-    root_ServiceCustomerSupport : <ServiceCustomerSupport />,
-    root_ServiceParseApply : <ServiceParseApply />,
-    root_ServiceGreenServiceApply : <ServiceGreenServiceApply />
+  root_Login: <Login />,
+  root_AccountMyAccount: <AccountMyAccount />,
+  root_AccountEditAccount: <AccountEditAccount />,
+  root_AccountPersonal: <AccountPersonal />,
+  root_AccountPartner: <AccountPartner />,
+  root_AccountApplication: <AccountApplication />,
+  root_AccountSendVerifyEmail: <AccountSendVerifyEmail />,
+  root_Register: <HannstarRegister />,
+  root_MFAQRCode: <MFAQRCode />,
+  root_MFA: <MFA />,
+  root_ForgotPassword: <ForgotPassword />,
+  root_ResetPassword: <ResetPassword />,
+  root_Index: <Index />,
+  root_About: <About />,
+  root_EBiz: <EBiz />,
+  root_Solution: <Solution />,
+  root_Stronghold: <Stronghold />,
+  root_Document360Test: <Document360Test />,
+  root_FormTest: <FormTest />,
+  root_PartnerIndex: <PartnerIndex />,
+  root_PartnerQuotationList: <PartnerQuotationList />,
+  root_PartnerQuotation: <PartnerQuotation />,
+  root_PartnerProductList: <PartnerProductList />,
+  root_PartnerProductInventory: <PartnerProductInventory />,
+  root_PartnerAddProduct: <PartnerAddProduct />,
+  root_PartnerSolutionList: <PartnerSolutionList />,
+  root_PartnerSolutionInventory: <PartnerSolutionInventory />,
+  root_PartnerAddSolution: <PartnerAddSolution />,
+  root_PartnerApplication: <PartnerApplication />,
+  root_PartnerManageandadvisory: <PartnerManageandadvisory />,
+  root_PartnerTechnical: <PartnerTechnical />,
+  root_PartnerGreenSupplyChain: <PartnerGreenSupplyChain />,
+  root_PartnerManufacturing: <PartnerManufacturing />,
+  root_ServiceIndex: <ServiceIndex />,
+  root_ServiceRMAApply: <ServiceRMAApply />,
+  root_ServiceRMAList: <ServiceRMAList />,
+  root_ServiceParseList: <ServiceParseList />,
+  root_ServiceGreenService: <ServiceGreenService />,
+  root_ServiceCustomerSupport: <ServiceCustomerSupport />,
+  root_ServiceParseApply: <ServiceParseApply />,
+  root_ServiceGreenServiceApply: <ServiceGreenServiceApply />,
 };
 
-const targetDom = Object.keys(pageMappingObj).filter((key) => document.getElementById(key) && key)[0];
+const targetDom = Object.keys(pageMappingObj).filter(
+  (key) => document.getElementById(key) && key
+)[0];
 ReactDOM.render(pageMappingObj[targetDom], document.getElementById(targetDom));

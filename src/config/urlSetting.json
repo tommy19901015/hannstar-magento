@@ -1,160 +1,171 @@
 {
-  "s3Url":"https://s3magentodev.s3.us-west-2.amazonaws.com", 
-  "account":{
-    "login":{
-        "title":"登入",
-        "href":"/customer/account/login"
+  "s3Url": "https://s3magentodev.s3.us-west-2.amazonaws.com",
+  "account": {
+    "login": {
+      "title": "登入",
+      "href": "/customer/account/login"
     },
-    "register":{
-        "title":"註冊",
-        "href":"/customer/account/create/"
+    "register": {
+      "title": "註冊",
+      "href": "/customer/account/create/"
     },
-    "forgotPassword":{
-        "title":"忘記密碼",
-        "href":"/customer/account/forgotpassword/"
+    "forgotPassword": {
+      "title": "忘記密碼",
+      "href": "/customer/account/forgotpassword/"
     },
-    "MFAQRcode":{
-        "title":"MFAQRcode",
-        "href":"/Cognito/Account/RegisterMFA"
+    "MFAQRcode": {
+      "title": "MFAQRcode",
+      "href": "/Cognito/Account/RegisterMFA"
     },
-    "AccountPersonal":{
-        "title":"客戶",
-        "href":"/AccountPersonal"
+    "AccountPersonal": {
+      "title": "客戶",
+      "href": "/AccountPersonal"
     },
-    "AccountPartner":{
-        "title":"供應商",
-        "href":"/AccountPartner"
+    "AccountPartner": {
+      "title": "供應商",
+      "href": "/AccountPartner"
     },
-    "AccountApplication":{
-        "title":"申請權限",
-        "href":"/AccountApplication"
-    }
-    
-  }, 
-  "hannstar":{
-    "index":{
-        "title":"官網首頁",
-        "href":"/"
-    }, 
-    "about":{
-        "title":"瀚宇彩晶簡介",
-        "href":"/about"
+    "AccountApplication": {
+      "title": "申請權限",
+      "href": "/AccountApplication"
     },
-    "team":{
-        "title":"瀚宇彩晶團隊",
-        "href":"/about/team"
+    "MyAccount": {
+      "title": "個人專區",
+      "href": "/customer/account/"
     },
-    "family":{
-        "title":"瀚宇關係企業",
-        "href":"/about/family"
+    "EditAccount": {
+      "title": "編輯個人專區",
+      "href": "/customer/account/edit/"
     },
-    "certification":{
-        "title":"認證與肯定",
-        "href":"/about/certification"
-    },
-    "stronghold":{
-        "title":"全球據點",
-        "href":"/about/stronghold"
+    "MemberInfo": {
+      "title": "成員資訊",
+      "href": "/MemberInfo"
     }
   },
-  "partner":{
-    "index":{
-        "title":"供應商平台",
-        "href":"/partner/index/view"
+  "hannstar": {
+    "index": {
+      "title": "官網首頁",
+      "href": "/"
     },
-    "manageandadvisory":{
-        "title":"管理與諮詢",
-        "href":"/partner/manageandadvisory/view"
+    "about": {
+      "title": "瀚宇彩晶簡介",
+      "href": "/about"
     },
-    "technical":{
-        "title":"新技術合作",
-        "href":"/partner/technical/view"
+    "team": {
+      "title": "瀚宇彩晶團隊",
+      "href": "/about/team"
     },
-     "manufacturing":{
-        "title":"協同製造夥伴平台",
-        "href":"/partner/manufacturingpartner/view"
+    "family": {
+      "title": "瀚宇關係企業",
+      "href": "/about/family"
     },
-    "quotationList":{
-        "title":"RFQ報價清單",
-        "href":"/partner/quotationlist/view"
+    "certification": {
+      "title": "認證與肯定",
+      "href": "/about/certification"
     },
-    "quotation":{
-        "title":"RFQ線上報價",
-        "href":"/partner/quotation/view"
-    },
-    "productList":{
-        "title":"產品管理",
-        "href":"/partner/productlist/view"
-    },
-    "productInventory":{
-        "title":"價格庫存管理",
-        "href":"/partner/productinventory/view"
-    },
-    "addProduct":{
-        "title":"新增產品",
-        "href":"/partner/addproduct/view"
-    },
-    "solutionList":{
-        "title":"方案產品管理",
-        "href":"/partner/solutionlist/view"
-    },
-     "solutionInventory":{
-        "title":"方案價格庫存管理",
-        "href":"/partner/solutioninventory/view"
-    },
-    "greensupplychain":{
-        "title":"綠色供應鏈",
-        "href":"/partner/greensupplychain/view"
-    },
-    "addSolution":{
-        "title":"方案新增產品",
-        "href":"/partner/addsolution/view"
-    },
-    "application":{
-        "title":"需求申請",
-        "href":"/partner/application/view"
-    },
-    "message":{
-        "title":"訊息中心",
-        "href":"/partner/message/view"
-    },
-    "qa":{
-        "title":"常見問題",
-        "href":"/partner/qa/view"
+    "stronghold": {
+      "title": "全球據點",
+      "href": "/about/stronghold"
     }
   },
-  "service":{
-    "index":{
-        "title":"首頁",
-        "href":"/service/index/view"
+  "partner": {
+    "index": {
+      "title": "供應商平台",
+      "href": "/partner/index/view"
     },
-    "RMAApply":{
-        "title":"RMA申請",
-        "href":"/service/rmaapply/view"
+    "manageandadvisory": {
+      "title": "管理與諮詢",
+      "href": "/partner/manageandadvisory/view"
     },
-    "RMAList":{
-        "title":"RMA列表",
-        "href":"/service/rmalist/view"
+    "technical": {
+      "title": "新技術合作",
+      "href": "/partner/technical/view"
     },
-    "parseApply":{
-        "title":"解析申請",
-        "href":"/service/parseapply/view"
+    "manufacturing": {
+      "title": "協同製造夥伴平台",
+      "href": "/partner/manufacturingpartner/view"
     },
-    "parseList":{
-        "title":"解析列表",
-        "href":"/service/parselist/view"
+    "quotationList": {
+      "title": "RFQ報價清單",
+      "href": "/partner/quotationlist/view"
     },
-    "customer":{
-        "title":"客戶通",
-        "href":"/service/customer/view"
+    "quotation": {
+      "title": "RFQ線上報價",
+      "href": "/partner/quotation/view"
     },
-    "lawApply":{
-        "title":"法規申請",
-        "href":"/service/lawapply/view"
+    "productList": {
+      "title": "產品管理",
+      "href": "/partner/productlist/view"
     },
-    "greenLawApply":{
-        "title":"綠色環保申請",
-        "href":"/service/greenlawapply/view"
+    "productInventory": {
+      "title": "價格庫存管理",
+      "href": "/partner/productinventory/view"
+    },
+    "addProduct": {
+      "title": "新增產品",
+      "href": "/partner/addproduct/view"
+    },
+    "solutionList": {
+      "title": "方案產品管理",
+      "href": "/partner/solutionlist/view"
+    },
+    "solutionInventory": {
+      "title": "方案價格庫存管理",
+      "href": "/partner/solutioninventory/view"
+    },
+    "greensupplychain": {
+      "title": "綠色供應鏈",
+      "href": "/partner/greensupplychain/view"
+    },
+    "addSolution": {
+      "title": "方案新增產品",
+      "href": "/partner/addsolution/view"
+    },
+    "application": {
+      "title": "需求申請",
+      "href": "/partner/application/view"
+    },
+    "message": {
+      "title": "訊息中心",
+      "href": "/partner/message/view"
+    },
+    "qa": {
+      "title": "常見問題",
+      "href": "/partner/qa/view"
+    }
+  },
+  "service": {
+    "index": {
+      "title": "首頁",
+      "href": "/service/index/view"
+    },
+    "RMAApply": {
+      "title": "RMA申請",
+      "href": "/service/rmaapply/view"
+    },
+    "RMAList": {
+      "title": "RMA列表",
+      "href": "/service/rmalist/view"
+    },
+    "parseApply": {
+      "title": "解析申請",
+      "href": "/service/parseapply/view"
+    },
+    "parseList": {
+      "title": "解析列表",
+      "href": "/service/parselist/view"
+    },
+    "customer": {
+      "title": "客戶通",
+      "href": "/service/customer/view"
+    },
+    "lawApply": {
+      "title": "法規申請",
+      "href": "/service/lawapply/view"
+    },
+    "greenLawApply": {
+      "title": "綠色環保申請",
+      "href": "/service/greenlawapply/view"
     }
   }
 }
