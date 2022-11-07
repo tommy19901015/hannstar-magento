@@ -154,9 +154,9 @@ const AccountEditAccount: React.FC = () => {
     return <div className={`${pageName}Content`}>
       <div className="magentoMessageBlock" ref={errorMessageBlockRef}></div>
       <h1 className="mainTitle">個人專區</h1>
-      <div className="accountTitle">帳戶資訊</div>
       <div className="infoBlock">
         <div className="leftBlock">
+        <div className="accountTitle">帳戶資訊</div>
           <div className="columnBlock">
             <div className="title required">姓</div>
             <div className="bodyBlock input">
@@ -187,6 +187,7 @@ const AccountEditAccount: React.FC = () => {
           </div>
         </div>
         <div className="rightBlock">
+        <div className="accountTitle">變更密碼</div>
           <div className="columnBlock">
             <div className="title required">舊密碼</div>
             <div className="bodyBlock input">
