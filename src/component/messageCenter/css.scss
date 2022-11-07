@@ -85,7 +85,7 @@
     }
     @media screen and (max-width: $breakpoint) {
         flex-direction: column;
-        padding: 20px;
+        padding: 20px 0;
         .leftBlock {
             flex-direction: row;
             margin-right: 0;

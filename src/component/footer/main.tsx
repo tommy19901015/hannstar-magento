@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import CollapseLi from "../collapseLi/main";
 import { I_Porps } from "../collapseLi/interface";
 import { useTranslation } from "react-i18next";
-
+import urlConfig from "../../config/urlSetting.json";
 import "./css.scss";
-
+const { hannstar, partner, service, footerlinks } = urlConfig;
 const footerData = [
   {
     title: "關於瀚宇彩晶",
     href: "",
     content: [
-      { title: "瀚宇彩晶簡介", href: "" },
-      { title: "瀚宇彩晶團隊", href: "" },
-      { title: "瀚宇關係企業", href: "" },
-      { title: "認證與肯定", href: "" },
-      { title: "全球據點", href: "" },
-    ],
+      { title: hannstar.about.title, href: hannstar.about.href },
+      { title: hannstar.team.title, href: hannstar.team.href },
+      { title: hannstar.family.title, href: hannstar.family.href },
+      { title: hannstar.certification.title, href: hannstar.certification.href },
+      { title: hannstar.stronghold.title, href: hannstar.stronghold.href }
+    ]
   },
   {
     title: "產品應用",
@@ -78,10 +78,12 @@ const footerData = [
 ];
 
 const TopBlock: React.FC = () => {
+
   return (
     <div className="topBlock">
       {footerData.map((item) => {
         return (
+          <div className="content">
           <ul className="linkBlock">
             <li className="title">
               <h3>
@@ -94,6 +96,8 @@ const TopBlock: React.FC = () => {
               </li>
             ))}
           </ul>
+          </div>
+
         );
       })}
     </div>
