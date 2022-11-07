@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
@@ -9,6 +9,7 @@ import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { postEnterPrice, postUserData } from "../../services/api.service";
 
 import "./css.scss";
 
@@ -435,12 +436,13 @@ const AccountPersonal: React.FC = () => {
   };
 
   const PersonalFormContent = () => {
-    const [phoneCountryCode, setPhoneCountryCode] = useState<any>();
+    const [phoneCountryCode, setPhoneCountryCode] = useState<string>("");
     const [phoneCode, setPhoneCode] = useState<string>("");
     const [country, setCountry] = useState<string>("");
     const [extension, setExtension] = useState<string>("");
+    const [userId, setID] = useState<number>(1);
 
-    const [cellPhoneCountryCode, setCellPhoneCountryCode] = useState<any>();
+    const [cellPhoneCountryCode, setCellPhoneCountryCode] = useState<string>("");
     const [cellPhoneCode, setCellPhoneCode] = useState<string>("");
     const [cellPhoneCountry, setCellPhoneCountry] = useState<string>("");
 
@@ -457,7 +459,7 @@ const AccountPersonal: React.FC = () => {
       const values12 = formMethods12.current.getValues();
       const values13 = formMethods13.current.getValues();
       const values14 = formMethods14.current.getValues();
-
+     
       const PhoneNumber1 = phoneCode.split(phoneCountryCode)[1];
       const CellPhoneNumber1 = cellPhoneCode.split(cellPhoneCountryCode)[1];
 
@@ -487,20 +489,43 @@ const AccountPersonal: React.FC = () => {
       };
       console.log("formData", formData);
 
-      fetch("/rest/V1/AppEnterPrice", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => response.json())
+      
+      postEnterPrice(formData)
+        .then((response) => response)
         .then((data) => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
         .catch(() => {});
-    };
+      }
+  
+      
+      // fetch("/rest/V1/AppEnterPrice", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json;charset=UTF-8",
+      //   },
+      //   body: JSON.stringify(formData),
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log("data", data);
+      //     //{result: 'success', resultMsg: ''}
+      //   })
+      //   .catch(() => {});
+    
+      // 示範 ＡＰＩ
+    useEffect(()=>{
+      // userId 假資料之後要移除
+      postUserData({
+        userId: userId,
+        name: 'Amy',
+        email: 'amu@gmail.com',
+      })
+      .then((response) => {
+        console.log('response:',response)
+     });
+    },[])
 
     const handleExtension = (e: React.ChangeEvent<HTMLInputElement>) => {
       setExtension(e.target.value);
