@@ -442,7 +442,8 @@ const AccountPersonal: React.FC = () => {
     const [extension, setExtension] = useState<string>("");
     const [userId, setID] = useState<number>(1);
 
-    const [cellPhoneCountryCode, setCellPhoneCountryCode] = useState<string>("");
+    const [cellPhoneCountryCode, setCellPhoneCountryCode] =
+      useState<string>("");
     const [cellPhoneCode, setCellPhoneCode] = useState<string>("");
     const [cellPhoneCountry, setCellPhoneCountry] = useState<string>("");
 
@@ -459,7 +460,7 @@ const AccountPersonal: React.FC = () => {
       const values12 = formMethods12.current.getValues();
       const values13 = formMethods13.current.getValues();
       const values14 = formMethods14.current.getValues();
-     
+
       const PhoneNumber1 = phoneCode.split(phoneCountryCode)[1];
       const CellPhoneNumber1 = cellPhoneCode.split(cellPhoneCountryCode)[1];
 
@@ -489,43 +490,40 @@ const AccountPersonal: React.FC = () => {
       };
       console.log("formData", formData);
 
-      
       postEnterPrice(formData)
-        .then((response) => response)
-        .then((data) => {
+        .then((response: any) => response)
+        .then((data: any) => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
         .catch(() => {});
-      }
-  
-      
-      // fetch("/rest/V1/AppEnterPrice", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json;charset=UTF-8",
-      //   },
-      //   body: JSON.stringify(formData),
-      // })
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     console.log("data", data);
-      //     //{result: 'success', resultMsg: ''}
-      //   })
-      //   .catch(() => {});
-    
-      // 示範 ＡＰＩ
-    useEffect(()=>{
+    };
+
+    // fetch("/rest/V1/AppEnterPrice", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json;charset=UTF-8",
+    //   },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("data", data);
+    //     //{result: 'success', resultMsg: ''}
+    //   })
+    //   .catch(() => {});
+
+    // 示範 ＡＰＩ
+    useEffect(() => {
       // userId 假資料之後要移除
       postUserData({
         userId: userId,
-        name: 'Amy',
-        email: 'amu@gmail.com',
-      })
-      .then((response) => {
-        console.log('response:',response)
-     });
-    },[])
+        name: "Amy",
+        email: "amu@gmail.com",
+      }).then((response: any) => {
+        console.log("response:", response);
+      });
+    }, []);
 
     const handleExtension = (e: React.ChangeEvent<HTMLInputElement>) => {
       setExtension(e.target.value);

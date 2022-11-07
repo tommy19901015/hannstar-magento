@@ -1,95 +1,98 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'AccountEditAccount';
+$pageName: "AccountEditAccount";
 
 .#{$pageName}Content {
-    padding: 0 60px;
-    margin-bottom: 100px;
-    .mainTitle {
-        @include hannstarH2Title;
-        margin-bottom: 20px;
-    }
-    .accountTitle {
-        @include hannstarH3Title;
-        border-bottom: 1px solid $hannstar-border-color;
-        padding-bottom: 5px;
-        margin-bottom: 30px;
-    }
-    .infoBlock {
-        display: flex;
-        justify-content: space-between;
-        @include hannstarContent1;
-        .leftBlock,
-        .rightBlock {
-            width: 48%;
-            .subTitle{
-                @include hannstarH4Title;
-                padding: 10px 0;
+  padding: 0 60px;
+  margin-bottom: 100px;
+  .magentoMessageBlock {
+    @include magentoMessage;
+  }
+  .mainTitle {
+    @include hannstarH2Title;
+    margin-bottom: 20px;
+  }
+  .accountTitle {
+    @include hannstarH3Title;
+    border-bottom: 1px solid $hannstar-border-color;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+  }
+  .infoBlock {
+    display: flex;
+    justify-content: space-between;
+    @include hannstarContent1;
+    .leftBlock,
+    .rightBlock {
+      width: 48%;
+      .subTitle {
+        @include hannstarH4Title;
+        padding: 10px 0;
+      }
+      .columnBlock {
+        width: 100%;
+        @include hannstarTextPadding2;
+        .title {
+          @include hannstarContentText;
+          word-break: keep-all;
+          padding-bottom: 5px;
+          &.required {
+            &::after {
+              content: "*";
+              color: $hannstar-orange1;
+              padding-left: 5px;
             }
-            .columnBlock {
-                width: 100%;
-                @include hannstarTextPadding2;
-                .title {
-                    @include hannstarContentText;
-                    word-break: keep-all;
-                    padding-bottom: 5px;
-                    &.required {
-                        &::after {
-                            content: '*';
-                            color: $hannstar-orange1;
-                            padding-left: 5px;
-                        }
-                    }
-                }
-                .errorMessage {
-                    margin-top: 10px;
-                    @include hannstarContent2;
-                    color: $hannstar-orange1;
-                }
-                .remind {
-                    margin-top: 10px;
-                    @include hannstarContent2;
-                    color: $hannstar-blue3;
-                    &.errorMessage {
-                        color: $hannstar-orange1;
-                    }
-                }
-            }
-            .bodyBlock {
-                display: flex;
-                flex-wrap: wrap;
-                input[type='text'],
-                input[type='password'] {
-                    @include hannstarInput;
-                    &.error {
-                        border-color: $hannstar-orange1;
-                    }
-                }
-            }
+          }
         }
+        .errorMessage {
+          margin-top: 10px;
+          @include hannstarContent2;
+          color: $hannstar-orange1;
+        }
+        .remind {
+          margin-top: 10px;
+          @include hannstarContent2;
+          color: $hannstar-blue3;
+          &.errorMessage {
+            color: $hannstar-orange1;
+          }
+        }
+      }
+      .bodyBlock {
+        display: flex;
+        flex-wrap: wrap;
+        input[type="text"],
+        input[type="password"] {
+          @include hannstarInput;
+          &.error {
+            border-color: $hannstar-orange1;
+          }
+        }
+      }
     }
-    .saveBtn {
-        @include hannstarBtn;
-    }
+  }
+  .saveBtn {
+    @include hannstarBtn;
+  }
 }
 
 @media screen and (max-width: $breakpoint) {
-    .#{$pageName}Content {
-        padding: 0;
+  .#{$pageName}Content {
+    padding: 0;
+    margin-bottom: 30px;
+    .infoBlock {
+      flex-direction: column;
+      .leftBlock,
+      .rightBlock {
+        width: 100%;
         margin-bottom: 30px;
-        .infoBlock {
-            flex-direction: column;
-            .leftBlock,
-            .rightBlock {
-                width: 100%;
-                margin-bottom: 30px;
-                .accountTitle{
-                    margin-bottom: 20px;;
-                }
-                .columnBlock{
-                    padding-bottom:20px;
-                }
-            } 
+        .accountTitle {
+          margin-bottom: 20px;
         }
+        .columnBlock {
+          padding-bottom: 20px;
+        }
+      }
     }
+  }
 }

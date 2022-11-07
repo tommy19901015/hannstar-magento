@@ -37,15 +37,15 @@ const AccountEditAccount: React.FC = () => {
     const [confirmNewPasswordPass, setConfirmNewPasswordPass] =
       useState<boolean>(true);
 
-    const editBlockRef: any = useRef();
-    const errorMessageBlockRef: any = useRef();
+    // const editBlockRef: any = useRef();
+    const magentoMessageRef: any = useRef();
 
     useEffect(() => {
       const magentoDefultMessageDom: any =
         document.getElementsByClassName("page messages")[0];
 
       if (magentoDefultMessageDom)
-        errorMessageBlockRef.current.appendChild(magentoDefultMessageDom);
+        magentoMessageRef.current.appendChild(magentoDefultMessageDom);
 
       setFirstName(getMagentoFirstNameDom().value);
       setLastName(getMagentoLastNameDom().value);
@@ -79,9 +79,7 @@ const AccountEditAccount: React.FC = () => {
     };
 
     const getMagentoDeleteAccountDom = (): any => {
-      const deleteAccountDom = document.getElementById(
-        "hannstarDeleteAccount"
-      );//要再去magento設
+      const deleteAccountDom = document.getElementById("hannstarDeleteAccount"); //要再去magento設
       return deleteAccountDom ? deleteAccountDom : "";
     };
 
@@ -115,7 +113,9 @@ const AccountEditAccount: React.FC = () => {
       setNewPassword(e.target.value);
     };
 
-    const handleConfirmNewPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleConfirmNewPassword = (
+      e: React.ChangeEvent<HTMLInputElement>
+    ) => {
       if (getMagentoConfirmNewPasswordDom()) {
         getMagentoConfirmNewPasswordDom().value = e.target.value;
       }
@@ -127,7 +127,7 @@ const AccountEditAccount: React.FC = () => {
       setLastNamePass(isNotEmpty(lastName));
       setNewPasswordPass(validatePassword(newPassword));
       setConfirmNewPasswordPass(compare(confirmNewPassword, newPassword));
-      setOldPasswordPass(validatePassword(oldPassword))
+      setOldPasswordPass(validatePassword(oldPassword));
 
       console.log({
         firstName,
@@ -146,98 +146,102 @@ const AccountEditAccount: React.FC = () => {
       ];
 
       if (allValidateColumn.every((v) => v === true)) {
-        const saveBtn: any = document.getElementById("hannstarSaveBtn");//要再去magento設
+        const saveBtn: any = document.getElementById("hannstarSaveBtn"); //要再去magento設
         if (saveBtn) saveBtn.click();
       }
     };
 
-    return <div className={`${pageName}Content`}>
-      <div className="magentoMessageBlock" ref={errorMessageBlockRef}></div>
-      <h1 className="mainTitle">個人專區</h1>
-      <div className="infoBlock">
-        <div className="leftBlock">
-        <div className="accountTitle">帳戶資訊</div>
-          <div className="columnBlock">
-            <div className="title required">姓</div>
-            <div className="bodyBlock input">
-              <input
-                type="text"
-                onChange={handleFirstName}
-                value={firstName}
-                className={`${!firstNamePass ? "error" : ""}`}
-              />
+    return (
+      <div className={`${pageName}Content`}>
+        <div className="magentoMessageBlock" ref={magentoMessageRef}></div>
+        <h1 className="mainTitle">個人專區</h1>
+        <div className="infoBlock">
+          <div className="leftBlock">
+            <div className="accountTitle">帳戶資訊</div>
+            <div className="columnBlock">
+              <div className="title required">姓</div>
+              <div className="bodyBlock input">
+                <input
+                  type="text"
+                  onChange={handleFirstName}
+                  value={firstName}
+                  className={`${!firstNamePass ? "error" : ""}`}
+                />
+              </div>
+              {!firstNamePass && (
+                <div className="errorMessage">必填欄位，請重新輸入</div>
+              )}
             </div>
-            {!firstNamePass && (
-              <div className="errorMessage">必填欄位，請重新輸入</div>
-            )}
+            <div className="columnBlock">
+              <div className="title required">名</div>
+              <div className="bodyBlock input">
+                <input
+                  type="text"
+                  onChange={handleLastName}
+                  value={lastName}
+                  className={`${!lastNamePass ? "error" : ""}`}
+                />
+              </div>
+              {!lastNamePass && (
+                <div className="errorMessage">必填欄位，請重新輸入</div>
+              )}
+            </div>
           </div>
-          <div className="columnBlock">
-            <div className="title required">名</div>
-            <div className="bodyBlock input">
-              <input
-                type="text"
-                onChange={handleLastName}
-                value={lastName}
-                className={`${!lastNamePass ? "error" : ""}`}
-              />
+          <div className="rightBlock">
+            <div className="accountTitle">變更密碼</div>
+            <div className="columnBlock">
+              <div className="title required">舊密碼</div>
+              <div className="bodyBlock input">
+                <input
+                  type="password"
+                  onChange={handleOldPassword}
+                  value={oldPassword}
+                  className={`${!oldPasswordPass ? "error" : ""}`}
+                />
+              </div>
+              {!oldPasswordPass && (
+                <div className="errorMessage">
+                  必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+                </div>
+              )}
             </div>
-            {!lastNamePass && (
-              <div className="errorMessage">必填欄位，請重新輸入</div>
-            )}
+            <div className="columnBlock">
+              <div className="title required">新密碼</div>
+              <div className="bodyBlock input">
+                <input
+                  type="password"
+                  onChange={handleNewPassword}
+                  value={newPassword}
+                  className={`${!newPasswordPass ? "error" : ""}`}
+                />
+              </div>
+              {!newPasswordPass && (
+                <div className="errorMessage">
+                  必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+                </div>
+              )}
+            </div>
+            <div className="columnBlock">
+              <div className="title required">密碼(再次確認)</div>
+              <div className="bodyBlock input">
+                <input
+                  type="password"
+                  onChange={handleConfirmNewPassword}
+                  value={confirmNewPassword}
+                  className={`${!confirmNewPasswordPass ? "error" : ""}`}
+                />
+              </div>
+              {!confirmNewPasswordPass && (
+                <div className="errorMessage">必填欄位；需與密碼相同</div>
+              )}
+            </div>
           </div>
         </div>
-        <div className="rightBlock">
-        <div className="accountTitle">變更密碼</div>
-          <div className="columnBlock">
-            <div className="title required">舊密碼</div>
-            <div className="bodyBlock input">
-              <input
-                type="password"
-                onChange={handleOldPassword}
-                value={oldPassword}
-                className={`${!oldPasswordPass ? "error" : ""}`}
-              />
-            </div>
-            {!oldPasswordPass && (
-              <div className="errorMessage">
-                必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
-              </div>
-            )}
-          </div>
-          <div className="columnBlock">
-            <div className="title required">新密碼</div>
-            <div className="bodyBlock input">
-              <input
-                type="password"
-                onChange={handleNewPassword}
-                value={newPassword}
-                className={`${!newPasswordPass ? "error" : ""}`}
-              />
-            </div>
-            {!newPasswordPass && (
-              <div className="errorMessage">
-                必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
-              </div>
-            )}
-          </div>
-          <div className="columnBlock">
-            <div className="title required">密碼(再次確認)</div>
-            <div className="bodyBlock input">
-              <input
-                type="password"
-                onChange={handleConfirmNewPassword}
-                value={confirmNewPassword}
-                className={`${!confirmNewPasswordPass ? "error" : ""}`}
-              />
-            </div>
-            {!confirmNewPasswordPass && (
-              <div className="errorMessage">必填欄位；需與密碼相同</div>
-            )}
-          </div>
+        <div className="saveBtn" onClick={handleSave}>
+          送出
         </div>
       </div>
-      <div className="saveBtn" onClick={handleSave}>送出</div>
-    </div>;
+    );
   };
 
   return (
