@@ -1,12 +1,13 @@
 import axios, { AxiosError } from "axios";
 
 const service = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/",
+  baseURL: "https://jsonplaceholder.typicode.com/", //這邊要替換公司API url
   headers: {
     "Content-Type": "application/json;charset=UTF-8",
     "Access-Control-Allow-Origin": "*",
     }
 });
+
 
 service.interceptors.request.use(
     (config) => {
