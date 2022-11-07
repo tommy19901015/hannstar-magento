@@ -5,37 +5,44 @@ $pageName: 'AccountMyAccount';
 .#{$pageName}Content {
     padding: 0 60px;
     margin-bottom: 100px;
-    .mainTitle {
-        @include hannstarH2Title;
-        margin-bottom: 20px;
-    }
-    .accountTitle {
-        @include hannstarH3Title;
-        border-bottom: 1px solid $hannstar-border-color;
-        padding-bottom: 5px;
-    }
-    .infoBlock {
-        display: flex;
-        justify-content: space-between;
-        @include hannstarContent1;
-        .leftBlock,
-        .rightBlock {
-            width: 50%;
-            .subTitle {
-                padding: 10px 0;
-                @include hannstarH4Title;
-            }
-            .listBlock {
-                padding: 5px 0;
-                .title {
-                    padding-right: 10px;
+    .content{
+        margin-bottom: 50px;
+        .mainTitle {
+            @include hannstarH2Title;
+            margin-bottom: 20px;
+        }
+        .accountTitle {
+            @include hannstarH3Title;
+            border-bottom: 1px solid $hannstar-border-color;
+            padding-bottom: 5px;
+        }
+        .infoBlock {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom:20px;
+            @include hannstarContent1;
+            .leftBlock,
+            .rightBlock {
+                width: 50%;
+                .subTitle {
+                    padding: 10px 0;
+                    @include hannstarH4Title;
                 }
-                .text {
+                .listBlock {
+                    padding-bottom: 5px;
+                    .title {
+                        padding-right: 10px;
+                    }
+                    .text {
+                    }
+                    &:last-of-type{
+                        margin-bottom: 20px;
+                    }
                 }
-            }
-            .editBtn {
-                margin-top: 30px;
-                @include hannstarBtn;
+                .editBtn {
+                    @include hannstarBtn;
+                    padding: 7px 16px;
+                }
             }
         }
     }
@@ -45,5 +52,24 @@ $pageName: 'AccountMyAccount';
     .#{$pageName}Content {
         padding: 0;
         margin-bottom: 30px;
+        .content{
+            .infoBlock {
+                flex-direction: column;
+                .leftBlock,
+                .rightBlock {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    .listBlock {
+                        padding-bottom: 2px;
+                        .title {
+                            padding-right: 10px;
+                        }
+                        &:last-of-type{
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
