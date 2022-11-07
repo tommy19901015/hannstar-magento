@@ -5,25 +5,35 @@
     .topBlock {
         display: flex;
         justify-content: space-between;
-        padding: 70px 20px;
+        padding: 70px 80px;
         max-width: 1400px;
         margin: 0 auto;
-        .linkBlock {
-            font-size: 16px;
-            font-weight: bolder;
-            .title {
-                padding-bottom: 15px;
-                a {
-                    color: #fff;
+        .content{
+            flex: 1;
+            .linkBlock {
+            
+                font-size: 16px;
+                font-weight: bolder;
+    
+                .title {
+                    padding-bottom: 15px;
+                    h3{
+                        margin-bottom: 5px;
+                    }
+                    a {
+                        color: #fff;
+                    }
                 }
-            }
-            .text {
-                padding-bottom: 10px;
-                a {
-                    color: $hannstar-blue0;
+                .text {
+                    padding-bottom: 10px;
+                    font-weight: 400;
+                    a {
+                        color: $hannstar-blue0;
+                    }
                 }
             }
         }
+
     }
     .topBlock_m {
         display: none;
@@ -66,6 +76,29 @@
         }
         .topBlock_m {
             display: block;
+            .collapseBlock{
+                .itemList{
+                    padding: 0 30px;
+                    .itemLi{
+                        border-bottom: 1px solid #FFF;
+                        &:last-of-type{
+                            border: none;
+                        }
+                        .liContent{
+                            padding: 20px 0;
+                            color: #FFF;
+                        }
+                        .secItemList{
+                            padding: 0;
+                            .footerLink{
+                                padding: 0px 0px 15px 0px;
+                                color: $hannstar-blue0;
+                            }
+                            
+                        }
+                    }
+                } 
+            } 
             .footerH3 {
             }
             .footerLink {

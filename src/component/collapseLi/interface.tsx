@@ -1,6 +1,8 @@
+import { ReactNode } from "react"
+
 export interface I_Porps {
   data: {
-    title: string
-    content: string[]
+    title?: string| ReactNode
+    content?: string[]| ReactNode[]
   }[]
 }

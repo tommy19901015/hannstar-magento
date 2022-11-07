@@ -5,9 +5,17 @@ import "./css.scss";
 
 
 const CollapseLi: React.FC<I_Porps> = ({ data }) => {
-    const [listOpen, setListOpen] = useState(0);
-
-    const handleOpenList = (idx: number) => setListOpen(idx);
+    const [currIndex, setCurrIndex] = useState<number>(0);
+    const [show, setShowDown] = useState<boolean>(false);
+    const handleOpenList = (idx: number) => {
+        if(idx !== currIndex){
+            setShowDown(true);
+            setCurrIndex(idx);
+        } else{
+            setShowDown(false);
+            setCurrIndex(0);
+        }
+    }
 
     const handleContentType = (content: string | React.ReactNode) => {
         return typeof content === "string" ? <div className="htmlBlock"
@@ -19,14 +27,14 @@ const CollapseLi: React.FC<I_Porps> = ({ data }) => {
         <div className="collapseBlock">
             <ul className="itemList">
                 {data.map((item, idx) => {
-                    return <li className={`itemLi ${listOpen === idx ? "open" : "close"}`}
-                        key={idx}
-                        onClick={() => handleOpenList(idx)}>
+                    return <li className={`itemLi ${currIndex === idx+1 && show ? "open" : "close"}`}
+                        key={idx+1}
+                        onClick={() => handleOpenList(idx+1)}>
                         <div className="liContent">
                             {handleContentType(item.title)}
                         </div>
                         <ul className="secItemList">
-                            {item.content.map((htmlContent, idx) =>
+                            {item.content?.map((htmlContent, idx) =>
                                 handleContentType(htmlContent))}
                         </ul>
                     </li>

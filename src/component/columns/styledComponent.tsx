@@ -30,7 +30,7 @@ export const OneColStyle: React.FC<I_Style> = styled.div`
       margin-top: 0px; 
     }
     @media (max-width: 980px) {
-    margin: 40px 24px;
+    margin: 40px 0px;
     }   
 `;
 

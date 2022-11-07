@@ -1,20 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-// import menuDataJson from "../../common/menuData.json";
-import { menuInfoData } from "../../common/menuInfoFn";
+import React, { useState, useEffect, useRef, ReactNode, ReactElement } from "react";
+import useMenu from "../../common/menuData";
 import CollapseLi from "../collapseLi/main";
 import urlConfig from "../../config/urlSetting.json";
 import { useTranslation } from "react-i18next";
+import { I_MenuType} from "../../common/menuData"
 import "./css.scss";
 
-interface I_Menu {
-  title: string;
-  href: string;
-  content: { title: string; href: string }[];
+type I_MenuContent = {
+  title: string,
+  href: string
 }
-
-type I_ServiceType = "hannstar" | "partner";
-
-type I_MenuProp = Record<I_ServiceType, I_Menu>;
 
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
@@ -37,26 +32,25 @@ const Header: React.FC = () => {
     setOpenPhoneMenu(!openPhoneMenu);
   };
 
-  const menuData: any = menuInfoData();
+  const menuList: I_MenuType = useMenu();
 
-  const menuMData: any = () =>
-    menuData[serviceType].map((item: any) => {
-      return {
-        title: <div className="menuTitle">{item.title}</div>,
-        content: item.content.map((obj: any) => (
-          <li>
-            <a className="menuContrnt" href={obj.href}>
-              {obj.title}
-            </a>
-          </li>
-        )),
-      };
-    });
+  const menuMData = menuList[serviceType].map((item) => {
+    const { title, content} = item;
+    return { 
+      title: <div className="menuTitle">{title}</div>, 
+      content: content && content.map((obj) => (
+        <li>
+          <a className="menuContrnt" href={obj.href}>
+            {obj.title}
+          </a>
+        </li>
+      )),}
+  })
 
   const MenuBlock: React.FC = () => {
     return (
       <ul className="menuUl">
-        {menuData[serviceType].map((item: any, index: number) => (
+        {menuList[serviceType].map((item, index) => (
           <li className="menuLi" key={index}>
             <div className="menuText">
               <a href={item.href}>{item.title}</a>
@@ -70,9 +64,9 @@ const Header: React.FC = () => {
               {isLogin && item.type === "member" ? (
                 <div className="member-content">
                   <h4>Tyler</h4>
-                  {menuData["member"].map((item: any) => (
+                  {menuList["member"].map((item) => (
                     <ul>
-                      {item.content.map((i: any) => (
+                      {item.content?.map((i) => (
                         <li>{i.title}</li>
                       ))}
                     </ul>
@@ -83,8 +77,8 @@ const Header: React.FC = () => {
                 </div>
               ) : (
                 <>
-                  {item.content.length > 0 &&
-                    item.content.map((subMenu: any, index: number) => (
+                  {item.content && item.content.length > 0 &&
+                    item.content?.map((subMenu:I_MenuContent, index: number) => (
                       <li key={index}>
                         <a href={subMenu.href}>{subMenu.title}</a>
                       </li>
@@ -143,7 +137,7 @@ const Header: React.FC = () => {
           <span></span>
         </div>
         <div className={`phoneMenuBlock ${openPhoneMenu ? "open" : "close"}`}>
-          <CollapseLi data={menuMData()} />
+        { menuMData&&<CollapseLi data={menuMData} />}
         </div>
       </div>
     </div>
