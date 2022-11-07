@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
-import FormComponent from "../../component/form/main";
-import { FormType } from "../../component/form/interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
@@ -14,9 +12,9 @@ const AccountMyAccount: React.FC = () => {
   const pageName = "AccountMyAccount";
   const pageData = usePageData();
   const { breadcrumbs, captionData, content } = pageData;
-  const [infoData, setInfoData] = useState<any>()
-  const [magentoName, setMagentoName] = useState<string>()
-  const [magentoEmail, setMagentoEmail] = useState<string>()
+  const [infoData, setInfoData] = useState<any>();
+  const [magentoName, setMagentoName] = useState<string>();
+  const [magentoEmail, setMagentoEmail] = useState<string>();
 
   const infoBlock: any = useRef();
   const addressesBlock: any = useRef();
@@ -125,6 +123,7 @@ const AccountMyAccount: React.FC = () => {
       <div className={`${pageName}Content`}>
         <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <h1 className="mainTitle">個人專區</h1>
+        <div className="content">
         <div className="accountTitle">帳戶資訊</div>
         <div className="infoBlock">
           <div className="leftBlock">
@@ -145,7 +144,7 @@ const AccountMyAccount: React.FC = () => {
             <div>
               <span className="text">{getMagentoSubscribedBlock().innerText}</span>
             </div>
-            <a href="/">Edit</a>
+            <a className="editBtn" href="/">Edit</a>
           </div>
         </div>
         <div className="infoBlock">
@@ -179,6 +178,37 @@ const AccountMyAccount: React.FC = () => {
             </>}
           </div>
         </div>
+        </div>
+        <div className="content">
+        <div className="accountTitle">地址簿</div>
+        <div className="infoBlock">
+          <div className="leftBlock">
+            <div className="subTitle">Default Billing Address</div>
+              <div className="listBlock">Nick Wang</div>
+              <div className="listBlock">瀚宇彩晶</div>
+              <div className="listBlock">
+                <p>Ln. 168, Xingshan Rd., Neilhu Dist.</p>
+                <p>Taipei City, Taipei, 114762</p>
+                <p>Taiwan, Province of China</p>
+              </div>
+              <div className="listBlock">T: +886955525441</div>
+              <a className="editBtn" href="/">Edit Address</a>
+          </div>
+          <div className="rightBlock">
+            <div className="subTitle">Default Billing Address</div>
+              <div className="listBlock">Nick Wang</div>
+              <div className="listBlock">瀚宇彩晶</div>
+              <div className="listBlock">
+                <p>Ln. 168, Xingshan Rd., Neilhu Dist.</p>
+                <p>Taipei City, Taipei, 114762</p>
+                <p>Taiwan, Province of China</p>
+              </div>
+              <div className="listBlock">T: +886955525441</div>
+              <a className="editBtn" href="/">Edit Address</a>
+          </div>
+        </div>
+        </div>
+
         <div ref={infoBlock} className="magentoInfoBlock"></div>
         <div ref={addressesBlock} className="magentoInfoBlock"></div>
       </div>
