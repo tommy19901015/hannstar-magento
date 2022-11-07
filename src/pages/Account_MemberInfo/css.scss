@@ -1,6 +1,6 @@
 @import "../../style/variable.scss";
 
-$pageName: "Account_MemberInfo";
+$pageName: "AccountMemberInfo";
 
 .#{$pageName}Content {
   padding: 0 60px;
@@ -9,158 +9,44 @@ $pageName: "Account_MemberInfo";
     @include hannstarH2Title;
     margin-bottom: 20px;
   }
-  .rankTypeContent {
-    margin-bottom: 100px;
-    .subTitle {
-      @include hannstarH4Title;
+  .inviteBlock{
+    width: 50%;
+    display: inline-flex;
+    float: right;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    p{
+      @include hannstarContentText;
     }
-    .rankContent {
-      align-items: center;
-      display: grid;
-      overflow: hidden;
-      grid-template-columns: 3fr 1fr 3fr;
-      grid-auto-rows: 1fr;
-      grid-column-gap: 0px;
-      .rankBlock {
-        position: relative;
-        padding-bottom: 80px;
-        .rankCard {
-          border: 1px solid $hannstar-border-color;
-          padding: 20px 0px;
-          text-align: center;
-          .rankImg {
-            margin-bottom: 20px;
-          }
-          .rankText {
-            margin-bottom: 20px;
-          }
-          .rankName {
-            display: inline-flex;
-            align-items: center;
-          }
-        }
-        .btnBlocks {
-          display: flex;
-          position: absolute;
-          bottom: 0;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          .btnBlock {
-            text-align: center;
-            margin: 0 20px;
-            .applicationBtn {
-              @include hannstarBtn;
-              text-align: center;
-            }
-          }
-        }
-      }
-
-      .arrowBlock {
-        display: flex;
-        justify-content: center;
-      }
+    input[type='text'] {
+        @include hannstarInput;
+        max-width: 180px;
+    }
+    a{
+      @include hannstarBtn;
+      text-align: center;
+      color:$hannstar-other-text-color ;
+      background-color: $hannstar-blue1;
     }
   }
-
-  .captionContent {
+  table{
     width: 100%;
-    margin: 0 auto;
-    .subTitle {
-      @include hannstarH4Title;
-      margin-bottom: 20px;
-    }
-    .tabs {
-      display: grid;
-      overflow: hidden;
-      grid-template-columns: 3fr 1fr 3fr;
-      grid-auto-rows: 1fr;
-      grid-column-gap: 0px;
-      .tab {
-        .titleText {
-        }
-        .captionIcon {
-          margin: 10px auto;
-          display: block;
-        }
+    display: table;
+    border: 1px solid #eee;
+    tr{
+      border-bottom: 1px solid $hannstar-border-color;
+      &:nth-child(1){
+        color: #fff;
+        background-color: $hannstar-blue2;
+        border-bottom: none;
       }
     }
-    .tab-switch {
-      display: none;
-    }
-
-    .tab-label {
-      position: relative;
-      display: block;
-      @include hannstarContent0;
-      color: $hannstar-blue2;
-      top: 0;
-      text-align: center;
-    }
-
-    .tab-content {
-      height: auto;
-      z-index: 1;
-      padding: 1.618rem;
-      background: #fff;
-      border: 1px solid $hannstar-border-color;
-      transition: all 0.35s;
-      @include hannstarContent2;
-      .topBlock,
-      .bottomBlock {
-        .textTitle {
-          @include hannstarH4Title;
-          text-align: center;
-        }
-      }
-      .bottomBlock {
-        .captionList {
-          min-height: 280px;
-          li {
-            display: flex;
-            align-items: center;
-            padding: 10px 0px;
-            img {
-              width: 12px;
-              height: 9px;
-              margin-right: 10px;
-            }
-            &:last-of-type {
-              color: $hannstar-blue2;
-            }
-          }
-        }
-      }
-      .topBlock {
-        .captionList {
-          border-bottom: 1px solid $hannstar-border-color;
-          margin-bottom: 20px;
-          li {
-            display: flex;
-            align-items: center;
-            padding: 10px 0px;
-            img {
-              width: 12px;
-              height: 9px;
-              margin-right: 10px;
-            }
-          }
-        }
-      }
-
-      .captionIcon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .titleText {
-          @include hannstarH4Title;
-          color: $hannstar-blue1;
-        }
-        img {
-          margin: 20px 0;
-        }
-      }
+    td{
+      width: calc( 100% / 3 );
+      width: 33.3333333333%;
+      padding: 15px 30px;
+      text-align: left;
     }
   }
 }

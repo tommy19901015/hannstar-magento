@@ -73,44 +73,28 @@ function usePageData() {
         },
       ],
     },
-    captionData: {
-      customerNormal: [
-        "行業應用文章",
-        "產品查詢",
-        "新技術合作",
-        "線上客服聊天室",
-      ],
-      customerEnterprise: [
-        "優選產品報價含零組件、方案與整機",
-        "客製化服務專案報價含零組件、方案與整機",
-        "RMA 申請",
-        "解析申請",
-        "綠色法規申請",
-        "+ 以及所有HannStar 客戶一般會員的服務",
-      ],
-      partnerNormal: [
-        "新技術合作",
-        "行業應用文章",
-        "產品查詢",
-        "線上客服聊天室",
-      ],
-      partnerEnterprise: [
-        "供應商資訊交流平台",
-        "+ 以及所有HannStar 供應商一般會員的服務",
-      ],
-    },
     content: {
-      title: "申請權限",
-      subTitle: "權限類別",
-      rank: "權限說明",
-      text: "您現在是",
-      member: "一般會員",
-      become: "您可以進一步成為",
-      companymember: "企業會員",
-      customerpermission: "客戶權限說明",
-      applymembership: "申請客戶企業會員",
-      applypartnership: "申請供應商企業會員",
-      supplierlimit: "供應商限說明",
+      title: "成員資訊",
+      label:"邀請成員",
+      btn:"+邀請",
+      table:['姓名','郵箱','職稱'],
+      member:[
+        {
+          name:"Amy Lai",
+          email:"amy@gmail.com",
+          position:"業務"
+        },
+        {
+          name:"Amy Lai",
+          email:"amy@gmail.com",
+          position:"業務"
+        },
+        {
+          name:"Amy Lai",
+          email:"amy@gmail.com",
+          position:"業務"
+        }
+      ]
     },
   };
 
