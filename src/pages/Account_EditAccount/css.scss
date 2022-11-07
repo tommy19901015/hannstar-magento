@@ -13,6 +13,7 @@ $pageName: 'AccountEditAccount';
         @include hannstarH3Title;
         border-bottom: 1px solid $hannstar-border-color;
         padding-bottom: 5px;
+        margin-bottom: 30px;
     }
     .infoBlock {
         display: flex;
@@ -20,13 +21,18 @@ $pageName: 'AccountEditAccount';
         @include hannstarContent1;
         .leftBlock,
         .rightBlock {
-            width: 50%;
+            width: 48%;
+            .subTitle{
+                @include hannstarH4Title;
+                padding: 10px 0;
+            }
             .columnBlock {
                 width: 100%;
                 @include hannstarTextPadding2;
                 .title {
                     @include hannstarContentText;
                     word-break: keep-all;
+                    padding-bottom: 5px;
                     &.required {
                         &::after {
                             content: '*';
@@ -71,5 +77,19 @@ $pageName: 'AccountEditAccount';
     .#{$pageName}Content {
         padding: 0;
         margin-bottom: 30px;
+        .infoBlock {
+            flex-direction: column;
+            .leftBlock,
+            .rightBlock {
+                width: 100%;
+                margin-bottom: 30px;
+                .accountTitle{
+                    margin-bottom: 20px;;
+                }
+                .columnBlock{
+                    padding-bottom:20px;
+                }
+            } 
+        }
     }
 }
