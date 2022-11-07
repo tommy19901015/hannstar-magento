@@ -290,6 +290,7 @@ $font-base: 16px;
     border: solid 1px $hannstar-border-color;
     background-color: #fff;
     color: $hannstar-default-text-color;
+    @include hannstarContentText;
     &::placeholder {
         color: $hannstar-border-color;
     }
@@ -395,13 +396,18 @@ $font-base: 16px;
                         div {
                             color: $hannstar-orange1;
                             margin-left: 30px;
+                            a {
+                                font-weight: $font-weighr-medium;
+                                color: $hannstar-orange1;
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
             }
             .message-success {
                 &.success {
-                    background-color: $hannstar-blue2;
+                    background-color: $hannstar-blue1;
                     padding: 6px;
                     &.message {
                         @include hannstarContent1;

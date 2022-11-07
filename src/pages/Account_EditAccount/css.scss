@@ -1,291 +1,75 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$pageName: "AccountEditAccount";
+$pageName: 'AccountEditAccount';
 
 .#{$pageName}Content {
-  padding: 0 60px;
-  margin-bottom: 100px;
-  .mainTitle {
-    @include hannstarH2Title;
-    margin-bottom: 20px;
-  }
-  .rankTypeContent {
+    padding: 0 60px;
     margin-bottom: 100px;
-    .subTitle {
-      @include hannstarH4Title;
+    .mainTitle {
+        @include hannstarH2Title;
+        margin-bottom: 20px;
     }
-    .rankContent {
-      align-items: center;
-      display: grid;
-      overflow: hidden;
-      grid-template-columns: 3fr 1fr 3fr;
-      grid-auto-rows: 1fr;
-      grid-column-gap: 0px;
-      .rankBlock {
-        position: relative;
-        padding-bottom: 80px;
-        .rankCard {
-          border: 1px solid $hannstar-border-color;
-          padding: 20px 0px;
-          text-align: center;
-          .rankImg {
-            margin-bottom: 20px;
-          }
-          .rankText {
-            margin-bottom: 20px;
-          }
-          .rankName {
-            display: inline-flex;
-            align-items: center;
-          }
-        }
-        .btnBlocks {
-          display: flex;
-          position: absolute;
-          bottom: 0;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          .btnBlock {
-            text-align: center;
-            margin: 0 20px;
-            .applicationBtn {
-              @include hannstarBtn;
-              text-align: center;
-            }
-          }
-        }
-      }
-
-      .arrowBlock {
+    .accountTitle {
+        @include hannstarH3Title;
+        border-bottom: 1px solid $hannstar-border-color;
+        padding-bottom: 5px;
+    }
+    .infoBlock {
         display: flex;
-        justify-content: center;
-      }
-    }
-  }
-
-  .captionContent {
-    width: 100%;
-    margin: 0 auto;
-    .subTitle {
-      @include hannstarH4Title;
-      margin-bottom: 20px;
-    }
-    .tabs {
-      display: grid;
-      overflow: hidden;
-      grid-template-columns: 3fr 1fr 3fr;
-      grid-auto-rows: 1fr;
-      grid-column-gap: 0px;
-      .tab {
-        .titleText {
-        }
-        .captionIcon {
-          margin: 10px auto;
-          display: block;
-        }
-      }
-    }
-    .tab-switch {
-      display: none;
-    }
-
-    .tab-label {
-      position: relative;
-      display: block;
-      @include hannstarContent0;
-      color: $hannstar-blue2;
-      top: 0;
-      text-align: center;
-    }
-
-    .tab-content {
-      height: auto;
-      z-index: 1;
-      padding: 1.618rem;
-      background: #fff;
-      border: 1px solid $hannstar-border-color;
-      transition: all 0.35s;
-      @include hannstarContent2;
-      .topBlock,
-      .bottomBlock {
-        .textTitle {
-          @include hannstarH4Title;
-          text-align: center;
-        }
-      }
-      .bottomBlock {
-        .captionList {
-          min-height: 280px;
-          li {
-            display: flex;
-            align-items: center;
-            padding: 10px 0px;
-            img {
-              width: 12px;
-              height: 9px;
-              margin-right: 10px;
+        justify-content: space-between;
+        @include hannstarContent1;
+        .leftBlock,
+        .rightBlock {
+            width: 50%;
+            .columnBlock {
+                width: 100%;
+                @include hannstarTextPadding2;
+                .title {
+                    @include hannstarContentText;
+                    word-break: keep-all;
+                    &.required {
+                        &::after {
+                            content: '*';
+                            color: $hannstar-orange1;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+                .errorMessage {
+                    margin-top: 10px;
+                    @include hannstarContent2;
+                    color: $hannstar-orange1;
+                }
+                .remind {
+                    margin-top: 10px;
+                    @include hannstarContent2;
+                    color: $hannstar-blue3;
+                    &.errorMessage {
+                        color: $hannstar-orange1;
+                    }
+                }
             }
-            &:last-of-type {
-              color: $hannstar-blue2;
+            .bodyBlock {
+                display: flex;
+                flex-wrap: wrap;
+                input[type='text'],
+                input[type='password'] {
+                    @include hannstarInput;
+                    &.error {
+                        border-color: $hannstar-orange1;
+                    }
+                }
             }
-          }
         }
-      }
-      .topBlock {
-        .captionList {
-          border-bottom: 1px solid $hannstar-border-color;
-          margin-bottom: 20px;
-          li {
-            display: flex;
-            align-items: center;
-            padding: 10px 0px;
-            img {
-              width: 12px;
-              height: 9px;
-              margin-right: 10px;
-            }
-          }
-        }
-      }
-
-      .captionIcon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .titleText {
-          @include hannstarH4Title;
-          color: $hannstar-blue1;
-        }
-        img {
-          margin: 20px 0;
-        }
-      }
     }
-  }
+    .saveBtn {
+        @include hannstarBtn;
+    }
 }
 
 @media screen and (max-width: $breakpoint) {
-  .#{$pageName}Content {
-    padding: 0;
-    margin-bottom: 30px;
-    .rankTypeContent {
-      margin-bottom: 50px;
-      .rankContent {
-        display: flex;
-        flex-direction: column;
-        grid-template-columns: 0cm;
-        grid-auto-rows: 0cm;
-        grid-column-gap: 0px;
-        .rankBlock {
-          padding-bottom: 0;
-          .rankCard {
-            padding: 20px 30px;
-          }
-          &:last-of-type {
-            padding-bottom: 80px;
-          }
-        }
-
-        .arrowBlock {
-          margin: 20px 0;
-          transform: rotate(90deg);
-        }
-      }
+    .#{$pageName}Content {
+        padding: 0;
+        margin-bottom: 30px;
     }
-    .captionContent {
-      min-height: 600px;
-      .tabs {
-        position: relative;
-        margin: 3rem 0;
-        display: flex;
-        justify-content: space-between;
-        overflow: initial;
-        grid-template-columns: 0cm;
-        grid-auto-rows: 0cm;
-        grid-auto-columns: 0cm;
-        grid-column-gap: 0cm;
-        .tab {
-          width: 49%;
-          min-height: 680px;
-          height: auto;
-          &:nth-child(2) {
-            display: none;
-          }
-          .captionIcon {
-            display: none;
-          }
-        }
-      }
-
-      .tab-switch {
-        display: none;
-      }
-
-      .tab-label {
-        position: relative;
-        display: block;
-        padding: 10px;
-        background: $hannstar-border-color;
-        color: #fff;
-        cursor: pointer;
-        top: 0;
-        transition: all 0.25s;
-        border-radius: 5px 5px 0 0;
-        text-align: center;
-      }
-
-      .tab-content {
-        height: auto;
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        padding: 1.618rem;
-        background: #fff;
-        opacity: 0;
-        border: 1px solid $hannstar-border-color;
-        border-top: 0.25rem solid $hannstar-blue3;
-        transition: all 0.35s;
-        @include hannstarContent2;
-        width: 100%;
-        box-sizing: border-box;
-        .captionList {
-          li {
-            display: flex;
-            align-items: center;
-            padding: 10px 0px;
-            img {
-              width: 12px;
-              height: 9px;
-              margin-right: 10px;
-            }
-          }
-        }
-
-        .btnBlock {
-          text-align: center;
-          .applicationBtn {
-            @include hannstarBtn;
-            text-align: center;
-          }
-        }
-      }
-
-      .tab-switch:checked ~ {
-        .tab-label {
-          background: $hannstar-blue3;
-          color: #fff;
-          border-bottom: 0;
-          transition: all 0.35s;
-          z-index: 1;
-        }
-
-        label ~ .tab-content {
-          z-index: 2;
-          opacity: 1;
-          transition: all 0.35s;
-        }
-      }
-    }
-  }
 }

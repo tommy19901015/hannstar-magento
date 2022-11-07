@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Customer Login</title>
+        <remove src="mage/calendar.css"/>
+        <remove src="css/styles-l.css"/>
+        <remove src="css/styles-m.css"/>
+        <remove src="css/styles-s.css"/>
+        <remove src="css/print.css"/>
+        <remove src="mage/polyfill.js"/>
+        <link src='Hannstar_Frontend::css/main.css'/>
+    </head>
+    <update handle="customer_account"/>
+    <body>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceBlock name="header.container" remove="true" />
+        <referenceContainer name="footer" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="footer.col.title.1" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="authentication-popup" remove="true"/>
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceBlock name="page.main.title">
+        <referenceBlock name="sidebar.main" remove="true"/>
+        <referenceBlock name="sidebar.additional" remove="true"/>
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">My Account</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Customer\Block\Account\Dashboard\Info" name="customer_account_dashboard_info" as="info" template="Magento_Customer::account/dashboard/info.phtml" cacheable="false">
+                <container name="customer.account.dashboard.info.blocks" as="additional_blocks"/>
+            </block>
+            <block class="Magento\Customer\Block\Account\Dashboard\Address" name="customer_account_dashboard_address" as="address" template="Magento_Customer::account/dashboard/address.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

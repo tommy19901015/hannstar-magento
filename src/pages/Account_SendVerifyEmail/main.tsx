@@ -45,7 +45,7 @@ const AccountSendVerifyEmail: React.FC = () => {
     const emailValidate = validate(email, patterns.email);
     setIsEmailPass(emailValidate);
     if (emailValidate) {
-      const sendBtn: any = document.getElementById("hannstar-send-btn");
+      const sendBtn: any = document.getElementById("magentoSendEmail");
       if (sendBtn) sendBtn.click();
     }
 
