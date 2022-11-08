@@ -10,7 +10,7 @@ import CollapseLi from "../collapseLi/main";
 import urlConfig from "../../config/urlSetting.json";
 import { useTranslation } from "react-i18next";
 import { I_MenuType } from "../../common/menuData";
-import { MagentoHeader } from "./magentoHeader";
+import { MagentoNotLoginHeader, MagentoLoginHeader } from "./magentoHeader";
 import "./css.scss";
 
 type I_MenuContent = {
@@ -119,7 +119,8 @@ const Header: React.FC = () => {
   return (
     <div className="hannstarHeader">
       <div ref={magentoHeaderRef} className="magentoHeader">
-        <MagentoHeader />
+        {/* <MagentoLoginHeader /> */}
+        {/* <MagentoNotLoginHeader /> */}
       </div>
       <div className="header_pc">
         <img

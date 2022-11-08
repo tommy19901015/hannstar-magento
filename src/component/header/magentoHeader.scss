@@ -1,0 +1,253 @@
+//D:\MyCode\xampp\htdocs\magento2\vendor\magento\module-page-builder\view\adminhtml\web\css\source\_fonts.less
+
+// @font-face {
+//     font-family: @icon_font;
+//     font-style: normal;
+//     font-weight: normal;
+//     src: url('@{baseDir}Magento_PageBuilder/fonts/pagebuilder-icons/pagebuilder-icons.eot');
+//     src: url('@{baseDir}Magento_PageBuilder/fonts/pagebuilder-icons/pagebuilder-icons.eot?#iefix') format('embedded-opentype'),
+//     url('@{baseDir}Magento_PageBuilder/fonts/pagebuilder-icons/pagebuilder-icons.woff') format('woff'),
+//     url('@{baseDir}Magento_PageBuilder/fonts/pagebuilder-icons/pagebuilder-icons.ttf') format('truetype'),
+//     url('@{baseDir}Magento_PageBuilder/fonts/pagebuilder-icons/pagebuilder-icons.svg#pagebuilder-icons') format('svg');
+// }
+
+// .lib-font-face(
+//     @family-name: 'luma-icons',
+//     @font-path: '@{baseDir}Magento_PageBuilder/fonts/luma-icons/Luma-Icons',
+//     @font-weight: normal,
+//     @font-style: normal
+// );
+// @mixin magentoAll {
+
+// }
+
+@mixin magentoHeader {
+  .page-header {
+    display: flex;
+    flex-direction: row-reverse;
+    .panel {
+      &.wrapper {
+        .panel {
+          &.header {
+            .contentarea {
+              display: none;
+            }
+            .links {
+              display: flex;
+              position: relative;
+              li {
+                padding-right: 20px;
+                @include hannstarContent2;
+                color: #fff;
+                a {
+                  color: #fff;
+                }
+                &:last-child {
+                  padding-right: 0;
+                }
+              }
+              .welcome {
+                padding-right: 5px;
+              }
+              .customer-welcome {
+                position: relative;
+                padding-right: 0;
+                &:hover {
+                  .customer-menu {
+                    display: block;
+                  }
+                }
+                .customer-name {
+                  display: block;
+                  width: 20px;
+                  height: 30px;
+                  position: relative;
+                  z-index: 9999;
+                  &::after {
+                    position: absolute;
+                    right: 0;
+                    content: "";
+                    display: block;
+                    width: 5px;
+                    height: 5px;
+                    border-top: 2px solid #fff;
+                    border-right: 2px solid #fff;
+                    transform: rotate(135deg);
+                    margin-top: 5px;
+                  }
+
+                  .switch {
+                    display: none;
+                  }
+                }
+                .customer-menu {
+                  display: none;
+                  position: absolute;
+                  right: -13px;
+                  top: 20px;
+                  width: 120px;
+                  background-color: #fff;
+                  border: 1px solid $hannstar-border-color;
+                  .links {
+                    display: flex;
+                    flex-direction: column;
+                    &::before {
+                      content: "";
+                      position: absolute;
+                      right: 10px;
+                      top: -12px;
+                      border: 6px solid;
+                      border-color: transparent transparent #fff transparent;
+                      z-index: 99;
+                      display: block;
+                    }
+                    li {
+                      z-index: 9999;
+                      padding: 5px 10px;
+                      a {
+                        color: $hannstar-default-text-color;
+                      }
+                      &:last-child {
+                        display: block;
+                      }
+                    }
+                  }
+                }
+              }
+              .link {
+                &.authorization-link {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .header {
+      &.content {
+        display: flex;
+        // display: none;
+        .nav-toggle {
+          display: none;
+        }
+        .logo {
+          display: none;
+        }
+        .minicart-wrapper {
+          display: none;
+        }
+        .block-search {
+          display: flex;
+          display: none;
+          .block-title {
+            display: none;
+          }
+          .block-content {
+            .form {
+              .field {
+                .label {
+                  border: 0;
+                  clip: rect(0, 0, 0, 0);
+                  height: 1px;
+                  margin: -1px;
+                  overflow: hidden;
+                  padding: 0;
+                  position: absolute;
+                  width: 1px;
+                  &::before {
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 22px;
+                    line-height: 28px;
+                    color: #757575;
+                    content: "\e615";
+                    font-family: "luma-icons";
+                    margin: 0 10px 0 0;
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                  }
+                  span {
+                    border: 0;
+                    clip: rect(0, 0, 0, 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                  }
+                }
+                .control {
+                  #search {
+                    font-size: 16px;
+                    left: -300%;
+                  }
+                  .search-autocomplete {
+                    display: none;
+                  }
+                  .nested {
+                    display: none;
+                  }
+                }
+              }
+              .actions {
+                .search {
+                  display: inline-block;
+                  background-image: none;
+                  background: none;
+                  -moz-box-sizing: content-box;
+                  border: 0;
+                  box-shadow: none;
+                  line-height: inherit;
+                  margin: 0;
+                  padding: 0;
+                  text-decoration: none;
+                  text-shadow: none;
+                  font-weight: 400;
+                  position: absolute;
+                  right: 10px;
+                  top: 0;
+                  z-index: 1;
+                  &::before {
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 16px;
+                    line-height: 32px;
+                    color: #757575;
+                    content: "\e615";
+                    font-family: "luma-icons";
+                    margin: 0;
+                    vertical-align: top;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                  }
+                  span {
+                    border: 0;
+                    clip: rect(0, 0, 0, 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .compare {
+          display: none;
+        }
+      }
+    }
+  }
+}

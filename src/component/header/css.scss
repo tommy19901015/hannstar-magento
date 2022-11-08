@@ -1,4 +1,5 @@
 @import "../../style/variable.scss";
+@import "./magentoHeader.scss";
 
 .hannstarHeader {
   position: fixed;
@@ -16,71 +17,41 @@
   height: 80px;
   z-index: 99;
   .magentoHeader {
-    .page-header {
-      display: flex;
-      flex-direction: row-reverse;
-      .panel {
-        &.wrapper {
-          background-color: darkorange;
-          .panel {
-            &.header {
-              .contentarea {
-                display: none;
-              }
-              .links {
-                display: flex;
-                li {
-                  padding-right: 20px;
-                  @include hannstarContent2;
-                  color: #fff;
-                  a {
-                    color: #fff;
-                  }
-                  &:last-child {
-                    padding-right: 0;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      .header {
-        &.content {
-          display: none;
-          .nav-toggle {
-            display: none;
-          }
-          .logo {
-            display: none;
-          }
-        }
-      }
-    }
+    height: 20px;
+    position: absolute;
+    right: 80px;
+    padding-top: 8px;
+    @include magentoHeader;
+    // @include magentoAll;
   }
   .header_pc {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    max-width: $max-width;
     .logo {
       margin-right: 10px;
     }
     .menuBlock {
       display: flex;
       flex-grow: 1;
-      height: 100%;
+      height: calc(100% - 20px);
+      padding-top: 20px;
       .menuUl {
         display: flex;
         align-items: center;
         height: 100%;
         width: 100%;
-        justify-content: space-around;
+        justify-content: flex-end;
         .menuLi {
           position: relative;
           display: flex;
           height: 100%;
-          padding: 0 7px;
+          padding: 0 15px;
+          &:last-child {
+            padding-right: 0;
+          }
           &::after {
             content: "";
             position: absolute;
@@ -114,7 +85,7 @@
           .secMenuUl {
             position: absolute;
             overflow: hidden;
-            top: 80px;
+            top: 60px;
             right: calc(50% - 180px);
             padding: 0;
             max-height: 0;
@@ -235,10 +206,12 @@
   @media screen and (max-width: $breakpoint) {
     height: 60px;
     padding: 0 20px;
+    .magentoHeader {
+      display: none;
+    }
     .header_pc {
       display: none;
     }
-
     .header_m {
       position: relative;
       display: flex;
