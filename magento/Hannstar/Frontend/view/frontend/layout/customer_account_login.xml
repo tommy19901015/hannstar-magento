@@ -19,8 +19,7 @@
     <body>
         <referenceContainer name="content">         
             <!-- customer.form.login.extra -->
-            <referenceBlock name="navigation.sections" remove="true"/>
-            <referenceBlock name="header.container"/>
+            <referenceBlock name="navigation.sections" remove="true"/>            
             <referenceContainer name="footer" remove="true" />
             <referenceBlock name="footer_links" remove="true"/>
             <referenceBlock name="footer.col.title.1" remove="true"/>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Permission</title>
+        <remove src="mage/calendar.css"/>
+        <remove src="css/styles-l.css"/>
+        <remove src="css/styles-m.css"/>
+        <remove src="css/styles-s.css"/>
+        <remove src="css/print.css"/>
+        <remove src="mage/polyfill.js"/>
+        <link src='Hannstar_Frontend::css/main.css'/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="hannstar.account.layout.main"
+                   template="Hannstar_Account::dashboard.phtml" />
+        </referenceContainer>
+         <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="authentication-popup" remove="true"/>
+    </body>
+</page>
