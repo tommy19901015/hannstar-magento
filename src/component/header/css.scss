@@ -1,322 +1,344 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
 .hannstarHeader {
-    position: fixed;
-    top: 0;
-    padding: 0 80px;
-    flex: 1 1 auto;
-    box-sizing: border-box;
-    background: linear-gradient(280deg, $hannstar-blue2 0%, $hannstar-blue3 60%, $hannstar-blue4 100%);
-    width: 100%;
-    height: 80px;
-    z-index: 99;
-    .magentoHeader {
-        .page-header {
-            display: flex;
-            flex-direction: row-reverse;
-            .panel {
-                &.wrapper {
-                    .panel .header {
-                        .action .skip .contentarea {
-                            display: none;
-                        }
-                        .switcher .language .switcher-language {
-                        }
-                        .header .links {
-                            display: flex;
-                            .greet .welcome {
-                                margin: 0 20px;
-                            }
-                        }
-                    }
-                }
-            }
-            .header .content {
+  position: fixed;
+  top: 0;
+  padding: 0 80px;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  background: linear-gradient(
+    280deg,
+    $hannstar-blue2 0%,
+    $hannstar-blue3 60%,
+    $hannstar-blue4 100%
+  );
+  width: 100%;
+  height: 80px;
+  z-index: 99;
+  .magentoHeader {
+    .page-header {
+      display: flex;
+      flex-direction: row-reverse;
+      .panel {
+        &.wrapper {
+          background-color: darkorange;
+          .panel {
+            &.header {
+              .contentarea {
                 display: none;
+              }
+              .links {
+                display: flex;
+                li {
+                  padding-right: 20px;
+                  @include hannstarContent2;
+                  color: #fff;
+                  a {
+                    color: #fff;
+                  }
+                  &:last-child {
+                    padding-right: 0;
+                  }
+                }
+              }
             }
+          }
         }
+      }
+      .header {
+        &.content {
+          display: none;
+          .nav-toggle {
+            display: none;
+          }
+          .logo {
+            display: none;
+          }
+        }
+      }
     }
-    .header_pc {
+  }
+  .header_pc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .logo {
+      margin-right: 10px;
+    }
+    .menuBlock {
+      display: flex;
+      flex-grow: 1;
+      height: 100%;
+      .menuUl {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         height: 100%;
-        .logo {
-            margin-right: 10px;
-        }
-        .menuBlock {
-            display: flex;
-            flex-grow: 1;
-            height: 100%;
-            .menuUl {
-                display: flex;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                justify-content: space-around;
-                .menuLi {
-                    position: relative;
-                    display: flex;
-                    height: 100%;
-                    padding: 0 7px;
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        z-index: 1;
-                        width: 100%;
-                        height: 0;
-                        background-color: $hannstar-blue2;
-                    }
-                    .menuText {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        a {
-                            color: #fff;
-                            font-size: $font-base;
-                            font-weight: bold;
-                            word-break: keep-all;
-                            padding-right: 5px;
-                        }
-                        .arrow {
-                            width: 5px;
-                            height: 5px;
-                            border-top: 2px solid #fff;
-                            border-right: 2px solid #fff;
-                            transform: rotate(135deg);
-                            margin-bottom: 5px;
-                        }
-                    }
-                    .secMenuUl {
-                        position: absolute;
-                        overflow: hidden;
-                        top: 80px;
-                        right: calc(50% - 180px);
-                        padding: 0;
-                        max-height: 0;
-                        li {
-                            width: 360px;
-                            text-align: center;
-                            background-color: #ddd;
-                            padding: 15px 0;
-                            a {
-                                width: 100%;
-                                font-size: $font-base;
-                                display: block;
-                                height: 100%;
-                                color: #000;
-                            }
-                            &:hover {
-                                background-color: #000;
-                                a {
-                                    color: #fff;
-                                }
-                            }
-                        }
-                    }
-                    &:hover {
-                        &::after {
-                            height: 5px;
-                            transition: all 0.3s ease-in-out;
-                        }
-                        .secMenuUl {
-                            transition: all 0.5s ease-in-out;
-                            max-height: 1000px;
-                        }
-                    }
-                    .base-box-shadow {
-                        box-shadow: 0 0 15px $hannstar-default-text-color;
-                    }
-                    .member-content {
-                        position: relative;
-                        padding: 20px;
-                        background-color: $hannstar-bg-color;
-                        width: 300px;
-
-                        h4 {
-                            border-bottom: 1px solid $hannstar-border-color;
-                            flex-direction: column;
-                            padding-bottom: 15px;
-                        }
-                        ul {
-                            width: 150px;
-                            display: inline-flex;
-                            flex-direction: column;
-                            justify-content: space-around;
-                            box-sizing: border-box;
-                            @include hannstarContent3;
-                            li {
-                                width: 100%;
-                                text-align: left;
-                                padding: 5px;
-                                cursor: pointer;
-                                background-color: $hannstar-bg-color;
-                                &:hover {
-                                    color: $hannstar-orange1;
-                                    background: $hannstar-bg-color;
-                                }
-                            }
-                            &:first-of-type {
-                                border-right: 1px solid $hannstar-border-color;
-                                padding: 20px 20px 20px 0;
-                            }
-                            &:last-of-type {
-                                padding: 20px 0px 20px 20px;
-                            }
-                        }
-
-                        .hannstarLoginBtn {
-                            @include hannstarBtn;
-                            width: 30%;
-                            text-align: center;
-                            position: absolute;
-                            bottom: 20px;
-                            right: 20px;
-                        }
-                    }
-                }
-            }
-            .otherBlock {
-                display: flex;
-                align-items: center;
-                flex-grow: 1;
-
-                .headerBtn {
-                    font-size: $font-base;
-                    color: #ffffff;
-                    margin-right: 10px;
-                    font-weight: bolder;
-                    word-break: keep-all;
-                    padding: 5px 10px;
-                    background-color: $hannstar-blue3;
-                    border-radius: 4px;
-                    line-height: 20px;
-                    cursor: pointer;
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                    &.login {
-                    }
-                    &.i18n {
-                        border: none;
-                    }
-                }
-            }
-        }
-    }
-    .header_m {
-        display: none;
-    }
-
-    @media screen and (max-width: $breakpoint) {
-        height: 60px;
-        padding: 0 20px;
-        .header_pc {
-            display: none;
-        }
-
-        .header_m {
-            position: relative;
+        width: 100%;
+        justify-content: space-around;
+        .menuLi {
+          position: relative;
+          display: flex;
+          height: 100%;
+          padding: 0 7px;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 100%;
+            height: 0;
+            background-color: $hannstar-blue2;
+          }
+          .menuText {
             display: flex;
             justify-content: space-between;
-            .logo {
-                padding-left: 20px;
+            align-items: center;
+            a {
+              color: #fff;
+              font-size: $font-base;
+              font-weight: bold;
+              word-break: keep-all;
+              padding-right: 5px;
             }
-            .menuOpenBtn {
-                position: relative;
-                width: 60px;
-                height: 60px;
-                cursor: pointer;
-                span {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 24px;
-                    height: 1px;
-                    background-color: #fff;
-                    transition: all 0.5s;
-                    &::before,
-                    &::after {
-                        content: '';
-                        top: -6px;
-                        position: absolute;
-                        left: 0;
-                        top: -6px;
-                        width: 100%;
-                        height: 1px;
-                        background-color: #dff2fa;
-                        transition: all 0.5s;
-                    }
-                    &::after {
-                        top: 6px;
-                    }
-                }
-                &.open {
-                    span {
-                        background-color: transparent;
-                        &::before {
-                            top: 0;
-                            transform: rotate(45deg);
-                            transition: all 0.5s;
-                        }
-                        &::after {
-                            top: 0;
-                            transform: rotate(-45deg);
-                        }
-                    }
-                }
+            .arrow {
+              width: 5px;
+              height: 5px;
+              border-top: 2px solid #fff;
+              border-right: 2px solid #fff;
+              transform: rotate(135deg);
+              margin-bottom: 5px;
             }
-            .phoneMenuBlock {
-                display: none;
-                position: absolute;
-                top: 60px;
+          }
+          .secMenuUl {
+            position: absolute;
+            overflow: hidden;
+            top: 80px;
+            right: calc(50% - 180px);
+            padding: 0;
+            max-height: 0;
+            li {
+              width: 360px;
+              text-align: center;
+              background-color: #ddd;
+              padding: 15px 0;
+              a {
                 width: 100%;
-                height: 100vh;
-                background-color: $hannstar-default-text-color;
-                &.open {
-                    display: block;
+                font-size: $font-base;
+                display: block;
+                height: 100%;
+                color: #000;
+              }
+              &:hover {
+                background-color: #000;
+                a {
+                  color: #fff;
                 }
-                .collapseBlock {
-                    .itemList {
-                        padding: 0;
-                        .itemLi {
-                            .liContent {
-                                padding: 15px 20px;
-                                font-size: 18px;
-                                color: #fff;
-                                &::after,
-                                &::before {
-                                    right: 25px;
-                                }
-                            }
-                            &.open {
-                                .liContent {
-                                    background-color: $hannstar-blue2;
-                                }
-                            }
-                            .secItemList {
-                                background-color: #fff;
-                                padding: 0 20px;
-                                li {
-                                    border-bottom: 1px solid #999;
-                                    &:last-child {
-                                        border: none;
-                                    }
-                                    .menuContrnt {
-                                        display: block;
-                                        font-size: 18px;
-                                        color: #999;
-                                        padding: 15px 0px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+              }
             }
+          }
+          &:hover {
+            &::after {
+              height: 5px;
+              transition: all 0.3s ease-in-out;
+            }
+            .secMenuUl {
+              transition: all 0.5s ease-in-out;
+              max-height: 1000px;
+            }
+          }
+          .base-box-shadow {
+            box-shadow: 0 0 15px $hannstar-default-text-color;
+          }
+          .member-content {
+            position: relative;
+            padding: 20px;
+            background-color: $hannstar-bg-color;
+            width: 300px;
+
+            h4 {
+              border-bottom: 1px solid $hannstar-border-color;
+              flex-direction: column;
+              padding-bottom: 15px;
+            }
+            ul {
+              width: 150px;
+              display: inline-flex;
+              flex-direction: column;
+              justify-content: space-around;
+              box-sizing: border-box;
+              @include hannstarContent3;
+              li {
+                width: 100%;
+                text-align: left;
+                padding: 5px;
+                cursor: pointer;
+                background-color: $hannstar-bg-color;
+                &:hover {
+                  color: $hannstar-orange1;
+                  background: $hannstar-bg-color;
+                }
+              }
+              &:first-of-type {
+                border-right: 1px solid $hannstar-border-color;
+                padding: 20px 20px 20px 0;
+              }
+              &:last-of-type {
+                padding: 20px 0px 20px 20px;
+              }
+            }
+
+            .hannstarLoginBtn {
+              @include hannstarBtn;
+              width: 30%;
+              text-align: center;
+              position: absolute;
+              bottom: 20px;
+              right: 20px;
+            }
+          }
         }
+      }
+      .otherBlock {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+
+        .headerBtn {
+          font-size: $font-base;
+          color: #ffffff;
+          margin-right: 10px;
+          font-weight: bolder;
+          word-break: keep-all;
+          padding: 5px 10px;
+          background-color: $hannstar-blue3;
+          border-radius: 4px;
+          line-height: 20px;
+          cursor: pointer;
+          &:last-child {
+            margin-right: 0;
+          }
+          &.login {
+          }
+          &.i18n {
+            border: none;
+          }
+        }
+      }
     }
+  }
+  .header_m {
+    display: none;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    height: 60px;
+    padding: 0 20px;
+    .header_pc {
+      display: none;
+    }
+
+    .header_m {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      .logo {
+        padding-left: 20px;
+      }
+      .menuOpenBtn {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 24px;
+          height: 1px;
+          background-color: #fff;
+          transition: all 0.5s;
+          &::before,
+          &::after {
+            content: "";
+            top: -6px;
+            position: absolute;
+            left: 0;
+            top: -6px;
+            width: 100%;
+            height: 1px;
+            background-color: #dff2fa;
+            transition: all 0.5s;
+          }
+          &::after {
+            top: 6px;
+          }
+        }
+        &.open {
+          span {
+            background-color: transparent;
+            &::before {
+              top: 0;
+              transform: rotate(45deg);
+              transition: all 0.5s;
+            }
+            &::after {
+              top: 0;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+      .phoneMenuBlock {
+        display: none;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        height: 100vh;
+        background-color: $hannstar-default-text-color;
+        &.open {
+          display: block;
+        }
+        .collapseBlock {
+          .itemList {
+            padding: 0;
+            .itemLi {
+              .liContent {
+                padding: 15px 20px;
+                font-size: 18px;
+                color: #fff;
+                &::after,
+                &::before {
+                  right: 25px;
+                }
+              }
+              &.open {
+                .liContent {
+                  background-color: $hannstar-blue2;
+                }
+              }
+              .secItemList {
+                background-color: #fff;
+                padding: 0 20px;
+                li {
+                  border-bottom: 1px solid #999;
+                  &:last-child {
+                    border: none;
+                  }
+                  .menuContrnt {
+                    display: block;
+                    font-size: 18px;
+                    color: #999;
+                    padding: 15px 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,15 +1,22 @@
-import React, { useState, useEffect, useRef, ReactNode, ReactElement } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+  ReactElement,
+} from "react";
 import useMenu from "../../common/menuData";
 import CollapseLi from "../collapseLi/main";
 import urlConfig from "../../config/urlSetting.json";
 import { useTranslation } from "react-i18next";
-import { I_MenuType } from "../../common/menuData"
+import { I_MenuType } from "../../common/menuData";
+import { MagentoHeader } from "./magentoHeader";
 import "./css.scss";
 
 type I_MenuContent = {
-  title: string,
-  href: string
-}
+  title: string;
+  href: string;
+};
 
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
@@ -24,7 +31,7 @@ const Header: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
 
   useEffect(() => {
-    const magentoDom: any = document.getElementsByClassName("page-header");
+    const magentoDom: any = document.getElementsByClassName("page-header")[0];
     if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
 
     const type = window.location.pathname.split("/")[1];
@@ -42,15 +49,17 @@ const Header: React.FC = () => {
     const { title, content } = item;
     return {
       title: <div className="menuTitle">{title}</div>,
-      content: content && content.map((obj) => (
-        <li>
-          <a className="menuContrnt" href={obj.href}>
-            {obj.title}
-          </a>
-        </li>
-      )),
-    }
-  })
+      content:
+        content &&
+        content.map((obj) => (
+          <li>
+            <a className="menuContrnt" href={obj.href}>
+              {obj.title}
+            </a>
+          </li>
+        )),
+    };
+  });
 
   const MenuBlock: React.FC = () => {
     return (
@@ -62,8 +71,9 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
               {isLogin && item.type === "member" ? (
                 <div className="member-content">
@@ -81,12 +91,15 @@ const Header: React.FC = () => {
                 </div>
               ) : (
                 <>
-                  {item.content && item.content.length > 0 &&
-                    item.content?.map((subMenu: I_MenuContent, index: number) => (
-                      <li key={index}>
-                        <a href={subMenu.href}>{subMenu.title}</a>
-                      </li>
-                    ))}
+                  {item.content &&
+                    item.content.length > 0 &&
+                    item.content?.map(
+                      (subMenu: I_MenuContent, index: number) => (
+                        <li key={index}>
+                          <a href={subMenu.href}>{subMenu.title}</a>
+                        </li>
+                      )
+                    )}
                 </>
               )}
             </ul>
@@ -105,7 +118,9 @@ const Header: React.FC = () => {
 
   return (
     <div className="hannstarHeader">
-      <div ref={magentoHeaderRef} className="magentoHeader"></div>
+      <div ref={magentoHeaderRef} className="magentoHeader">
+        <MagentoHeader />
+      </div>
       <div className="header_pc">
         <img
           className="logo"
@@ -114,7 +129,7 @@ const Header: React.FC = () => {
         />
         <div className="menuBlock">
           <MenuBlock />
-          <div className="otherBlock">
+          {/* <div className="otherBlock">
             <a className="headerBtn login" href={account.login.href}>
               {account.login.title}
             </a>
@@ -126,7 +141,7 @@ const Header: React.FC = () => {
               <option value="en">EN</option>
               <option value="cn">简中</option>
             </select>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="header_m">
