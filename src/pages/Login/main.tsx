@@ -126,7 +126,6 @@ const HannstarLogin: React.FC = () => {
           還沒有HannStar帳號?
           <a href={urlConfig.account.register.href}>建立帳號</a>
         </p>
-
         <div ref={loginBlock} className="magentoLoginBlock"></div>
       </div>
     );

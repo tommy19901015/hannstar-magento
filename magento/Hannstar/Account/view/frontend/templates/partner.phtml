@@ -1,4 +1,13 @@
 <div class="hannstarRoot" id="root_AccountPartner"></div>
+ <!-- country -->
+<div class="field country required">    
+    <label for="country" class="label">        
+        <span><?= /* @noEscape */ $block->getAttributeData()->getFrontendLabel('country_id') ?></span>    
+    </label>    
+    <div class="control">        
+        <?= $block->getCountryHtmlSelect() ?>    
+    </div>
+</div>
 <script>
     require(['jquery', 'hannstarScript'], function($, hannstarScript) {
         hannstarScript();

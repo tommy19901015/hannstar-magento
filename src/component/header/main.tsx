@@ -3,7 +3,7 @@ import useMenu from "../../common/menuData";
 import CollapseLi from "../collapseLi/main";
 import urlConfig from "../../config/urlSetting.json";
 import { useTranslation } from "react-i18next";
-import { I_MenuType} from "../../common/menuData"
+import { I_MenuType } from "../../common/menuData"
 import "./css.scss";
 
 type I_MenuContent = {
@@ -16,6 +16,7 @@ const Header: React.FC = () => {
   const [serviceType, setServiceType] = useState<string>("hannstar");
 
   const { account } = urlConfig;
+  const magentoHeaderRef: any = useRef();
 
   const { t, i18n } = useTranslation();
   const language = useRef(i18n.language);
@@ -23,6 +24,9 @@ const Header: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
 
   useEffect(() => {
+    const magentoDom: any = document.getElementsByClassName("page-header");
+    if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
+
     const type = window.location.pathname.split("/")[1];
     const mappingArr = ["hannstar", "partner", "service"];
     mappingArr.includes(type) && setServiceType(type);
@@ -35,16 +39,17 @@ const Header: React.FC = () => {
   const menuList: I_MenuType = useMenu();
 
   const menuMData = menuList[serviceType].map((item) => {
-    const { title, content} = item;
-    return { 
-      title: <div className="menuTitle">{title}</div>, 
+    const { title, content } = item;
+    return {
+      title: <div className="menuTitle">{title}</div>,
       content: content && content.map((obj) => (
         <li>
           <a className="menuContrnt" href={obj.href}>
             {obj.title}
           </a>
         </li>
-      )),}
+      )),
+    }
   })
 
   const MenuBlock: React.FC = () => {
@@ -57,9 +62,8 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${
-                item.type === "member" && "base-box-shadow"
-              }`}
+              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
+                }`}
             >
               {isLogin && item.type === "member" ? (
                 <div className="member-content">
@@ -78,7 +82,7 @@ const Header: React.FC = () => {
               ) : (
                 <>
                   {item.content && item.content.length > 0 &&
-                    item.content?.map((subMenu:I_MenuContent, index: number) => (
+                    item.content?.map((subMenu: I_MenuContent, index: number) => (
                       <li key={index}>
                         <a href={subMenu.href}>{subMenu.title}</a>
                       </li>
@@ -101,6 +105,7 @@ const Header: React.FC = () => {
 
   return (
     <div className="hannstarHeader">
+      <div ref={magentoHeaderRef} className="magentoHeader"></div>
       <div className="header_pc">
         <img
           className="logo"
@@ -137,7 +142,7 @@ const Header: React.FC = () => {
           <span></span>
         </div>
         <div className={`phoneMenuBlock ${openPhoneMenu ? "open" : "close"}`}>
-        { menuMData&&<CollapseLi data={menuMData} />}
+          {menuMData && <CollapseLi data={menuMData} />}
         </div>
       </div>
     </div>

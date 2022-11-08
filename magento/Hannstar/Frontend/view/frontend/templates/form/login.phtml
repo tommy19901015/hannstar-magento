@@ -8,6 +8,11 @@
 
 /** @var \Magento\Customer\Block\Form\Login $block */
 ?>
+<?php echo $this->getLayout()
+          ->createBlock("Magento\Framework\View\Element\Template")
+          ->setTemplate('Hannstar_Frontend::main.phtml')
+          ->toHtml();
+?>
 <div class="hannstarRoot" id="root_Login"></div>
 <div class="block block-customer-login" style="display: none;">
     <div class="block-title">

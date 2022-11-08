@@ -18,14 +18,9 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <!-- <block class="Magento\Framework\View\Element\Template"
+            <block class="Magento\Framework\View\Element\Template"
                    name="hannstar.account.layout.main"
-                   template="Hannstar_Account::partner.phtml" /> -->
-
-
-                   <block class="Hannstar\Account\Block\GetCountrySelect"
-                   name="hannstar.account.layout.main"
-                   template="Hannstar_Account::partner.phtml" />
+                   template="Hannstar_Account::memberinfo.phtml" />
         </referenceContainer>
          <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="authentication-popup" remove="true"/>
