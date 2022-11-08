@@ -1,15 +1,16 @@
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
 
 type I_MemberContent ={
-    name:string,
-    email:string,
-    position:string
+    date:string,
+    singleNumber:string,
+    item:string
+    model:string,
+    superstition:string,
+    details:string
 }
 
 type I_Content = {
     title: string,
-    btn:string,
-    label:string,
     table:string[],
     member: I_MemberContent[],
 }

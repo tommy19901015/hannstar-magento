@@ -12,28 +12,13 @@ import { postAccountInfo } from "../../services/api.service";
 const MemberInfoContent = () => {
   const { content } = usePageData();
   const pageName = "AccountDashboard";
-  const [email, setEmailValue] = useState<string>("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formatEmail = e.target.value.trim();
-    setEmailValue(formatEmail);
-  };
-
-  const handleInvite = () => {
-    const verifyEmail = validate(email, patterns.email);
-    // call api
+  const handleDetail = () => {
+    // to do
   }
   return (
     <div className={`${pageName}Content`}>
       <h1 className="mainTitle">{content.title}</h1>
-      <div className="inviteBlock">
-        <label htmlFor="email">{content.label}</label>
-        <input id="input1" type="text"
-          onChange={handleChange}
-          value={email}
-          placeholder="請輸入Email" />
-        <a className="btn" onClick={handleInvite}>{content.btn}</a>
-      </div>
       <table className="table">
         <tbody>
           <tr>
@@ -42,11 +27,14 @@ const MemberInfoContent = () => {
             }
           </tr>
           {
-            content.member.map(user => (
+            content.member.map(prod => (
               <tr>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.position}</td>
+                <td>{prod.date}</td>
+                <td>{prod.singleNumber}</td>
+                <td>{prod.item}</td>
+                <td>{prod.model}</td>
+                <td>{prod.superstition}</td>
+                <td><a href="#" onClick={handleDetail}>view</a></td>
               </tr>
             ))
           }
