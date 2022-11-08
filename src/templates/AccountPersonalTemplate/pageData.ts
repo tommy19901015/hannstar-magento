@@ -1,4 +1,5 @@
 import { DataType }from "./interface"
+import urlConfig from "../../config/urlSetting.json";
 
 export const pageData = () :DataType[] => [
     {
@@ -6,13 +7,13 @@ export const pageData = () :DataType[] => [
         categoryTitle: "個人專區",
         items: [
             {
-                title: "我的帳號/修改密碼",
-                href: "",
+                title: "帳戶資訊",
+                href: urlConfig.account.MyAccount.href,
             },
             {
-                title: "申請權限",
-                href: "/Cognito/account/custom/",
-            },
+                title: "權限管理",
+                href: urlConfig.account.AccountApplication.href,
+            }
         ]
     },
     {
@@ -21,7 +22,11 @@ export const pageData = () :DataType[] => [
         items: [
             {
                 title: "成員資訊",
-                href: "",
+                href: urlConfig.account.MemberInfo.href,
+            },
+            {
+                title: "看板",
+                href: urlConfig.account.AccountDashboard.href,
             },
         ]
     },

@@ -21,6 +21,7 @@ import AccountSendVerifyEmail from "./pages/Account_SendVerifyEmail/main";
 import AccountMyAccount from "./pages/Account_MyAccount/main";
 import AccountEditAccount from "./pages/Account_EditAccount/main";
 import AccountMemberInfo from "./pages/Account_MemberInfo/main";
+import AccountDashboard from "./pages/Account_Dashboard/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -73,6 +74,10 @@ ReactDOM.render(
       <Route
         path={account.AccountApplication.href}
         element={<AccountApplication />}
+      />
+      <Route
+        path={account.AccountDashboard.href}
+        element={<AccountDashboard />}
       />
       <Route path={account.MemberInfo.href} element={<AccountMemberInfo />} />
       <Route path={account.EditAccount.href} element={<AccountEditAccount />} />

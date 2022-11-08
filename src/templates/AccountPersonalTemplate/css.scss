@@ -5,21 +5,21 @@ $pageName: 'AccountPersonalTemplate';
 .#{$pageName}AccountToolBar {
     background-color: $hannstar-bg-color;
     height: 100%;
-    padding: 10px;
-    input{
-        &#menu, &#menu1{
+    padding: 10px 40px;
+    input {
+        &#menu,
+        &#menu1 {
             display: none;
         }
         &:checked ~ .menu-content {
             max-height: 100%;
         }
-        
     }
-    label{
+    label {
         // display: none;
-        @include hannstarH4Title 
+        @include hannstarH4Title;
     }
-    .menu-content{
+    .menu-content {
         margin-bottom: 30px;
     }
     .linkBlock {
@@ -60,12 +60,13 @@ $pageName: 'AccountPersonalTemplate';
             cursor: pointer;
             text-align: center;
             @include hannstarContent1;
-            &:last-of-type{
+            &:last-of-type {
                 display: none;
             }
         }
-        input{
-            &#menu, &#menu1 {
+        input {
+            &#menu,
+            &#menu1 {
                 display: none;
             }
             &:checked ~ .menu-content {
@@ -74,22 +75,20 @@ $pageName: 'AccountPersonalTemplate';
             &:checked ~ label {
                 display: block;
             }
-            
         }
         .menu-content {
             max-height: 0;
             overflow: hidden;
             margin-bottom: 0;
         }
-        .linkBlock{
-            .linkText{
+        .linkBlock {
+            .linkText {
                 a {
-                    display:block;
+                    display: block;
                     padding: 0 10px;
                     text-decoration: none;
                 }
             }
-        } 
+        }
     }
-      
 }

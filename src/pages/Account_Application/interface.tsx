@@ -1,5 +1,11 @@
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
 
+export enum Accountstatus {
+    Pending = "Pending",
+    NotApproved = "NotApproved",
+    Approved = "Approved"
+}
+
 type I_Module = {
     customerNormal: string[],
     customerEnterprise: string[],
@@ -19,6 +25,8 @@ type I_Content = {
     applymembership: string,
     applypartnership: string
     supplierlimit: string
+    pendingText: string
+    pendingStates: string
 }
 export interface I_PageType {
     breadcrumbs: I_Breadcrumbs,

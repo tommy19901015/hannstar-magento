@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
@@ -8,8 +8,10 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import PhoneInput from "react-phone-input-2";
+import { postAccountInfo } from "../../services/api.service";
 import "react-phone-input-2/lib/style.css";
 import "./css.scss";
+import { access } from "fs";
 
 const formData1 = [
   {
@@ -131,17 +133,17 @@ const formData6 = [
 ];
 
 const formData7 = [
-  {
-    title: "國家/地區",
-    value: "",
-    columnKey: "Country",
-    type: FormType.Select,
-    required: true,
-    option: [
-      { text: "台灣", value: "台灣" },
-      { text: "日本", value: "日本" },
-    ],
-  },
+  // {
+  //   title: "國家/地區",
+  //   value: "",
+  //   columnKey: "Country",
+  //   type: FormType.Select,
+  //   required: true,
+  //   option: [
+  //     { text: "台灣", value: "台灣" },
+  //     { text: "日本", value: "日本" },
+  //   ],
+  // },
   {
     title: "城市",
     value: "",
@@ -342,6 +344,7 @@ const formData13 = [
 
 const AccountPartner: React.FC = () => {
   const pageName = "AccountPartner";
+  const [accountInfo, setAccountInfo] = useState<any>("")
 
   const formMethods1: any = useRef(null);
   const formMethods4: any = useRef(null);
@@ -354,6 +357,71 @@ const AccountPartner: React.FC = () => {
   const formMethods11: any = useRef(null);
   const formMethods12: any = useRef(null);
   const formMethods13: any = useRef(null);
+
+  const countrySelectBlock: any = useRef();
+
+  useEffect(() => {
+    postAccountInfo({
+      email: "rfchen@hannstar.com",
+    }).then((response: any) => {
+      setAccountInfo(response)
+    });
+    setAccountInfo({
+      "UserName": "ronfu",
+      "Email": "rfchen@hannstar.com",
+      "Lang": "en",
+      "GroupName": "權限群組名稱",
+      "PhoneNumber0": "886",
+      "PhoneNumber1": "1111",
+      "PhoneNumber2": "11111",
+      "CellPhoneNumber0": "886",
+      "CellPhoneNumber1": "222222",
+      "CountryCode": "國家代碼",
+      "JobAttributes": "業務相關",
+      "JobTitle": "創辦人/董事長",
+      "InterestedType": [
+        "智慧零售",
+        "智慧育樂.",
+        "智能建築",
+        "健康關懷",
+        "交通運輸",
+        "智能製造"
+      ],
+      "CompanyName": "公司名稱",
+      "CompanySName": "公司名稱關鍵字",
+      "BusinessType": "代理商",
+      "TaxNo": "企業編號(統編/稅號)",
+      "Weblink": "公司網址",
+      "Country": "台灣",
+      "AreaCity": "城市",
+      "AreaAddress": "地址",
+      "CompanyEmpNumber": "<100",
+      "AnnualRevenue": "<1M",
+      "CompanyStockOn": "是",
+      "CompanyMA1": [
+        "車載",
+        "穿戴",
+        "工控",
+        "手機",
+        "消費類",
+        "其他"
+      ],
+      "CompanyMA2": "公司產品主要銷售國家/地區-1",
+      "CompanyMA3": "公司產品主要銷售國家/地區-2",
+      "CompanyMA4": "公司產品主要銷售國家/地區-3",
+      "TOP1": "主要出貨客戶-1",
+      "TOP2": "主要出貨客戶-2",
+      "TOP3": "主要出貨客戶-3",
+      "HannstarYN": "Y",
+      "Buy1": "瀚宇彩晶",
+      "BuyCompany1": "渠道公司名稱-1",
+      "Buy2": "瀚宇彩晶",
+      "BuyCompany2": "渠道公司名稱-2",
+      "Buy3": "瀚宇彩晶",
+      "BuyCompany3": "渠道公司名稱-3",
+      "CompanyRemark": "備註說明"
+    })
+  }, [])
 
   const formProp1 = {
     formMethods: formMethods1,
@@ -445,6 +513,9 @@ const AccountPartner: React.FC = () => {
     const [cellPhoneCode, setCellPhoneCode] = useState<string>("");
     const [cellPhoneCountry, setCellPhoneCountry] = useState<string>("");
 
+    const magentoCountrySelectDom: any = document.getElementById("country");
+    if (magentoCountrySelectDom) countrySelectBlock.current.appendChild(magentoCountrySelectDom);
+
     const handlerSubmit = () => {
       const values1 = formMethods1.current.getValues();
       const values4 = formMethods4.current.getValues();
@@ -498,7 +569,7 @@ const AccountPartner: React.FC = () => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
-        .catch(() => {});
+        .catch(() => { });
     };
 
     const handlerGoBack = () => {
@@ -580,7 +651,20 @@ const AccountPartner: React.FC = () => {
         <FormComponent {...formProp4} />
         <FormComponent {...formProp5} />
         <FormComponent {...formProp6} />
-        <FormComponent {...formProp7} />
+        <div className="columnRow">
+          <div className="columnBlock">
+            <div className="title">公司所在地(國家)</div>
+            {/* <div className="bodyBlock select" ref={countrySelectBlock}></div> */}
+            <div className="bodyBlock select">
+              <select>
+                <option>1111</option>
+                <option>2222</option>
+                <option>3333</option>
+              </select>
+            </div>
+          </div>
+          <FormComponent {...formProp7} />
+        </div>
         <FormComponent {...formProp8} />
         <FormComponent {...formProp9} />
         <FormComponent {...formProp10} />
@@ -608,7 +692,7 @@ const AccountPartner: React.FC = () => {
         type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbsData} />}
       />
-      <AccountPersonalTemplate contentComponent={<PartnerFormContent />} />
+      <AccountPersonalTemplate contentComponent={<PartnerFormContent />} rootId={accountInfo.rootid} />
     </Layout>
   );
 };

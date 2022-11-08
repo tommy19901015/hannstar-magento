@@ -9,7 +9,7 @@ import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { postEnterPrice, postUserData } from "../../services/api.service";
+import { postEnterPrice, postAccountInfo } from "../../services/api.service";
 
 import "./css.scss";
 
@@ -331,6 +331,9 @@ const formData14 = [
 
 const AccountPersonal: React.FC = () => {
   const pageName = "AccountPersonal";
+  const [accountInfo, setAccountInfo] = useState<any>("")
+
+
 
   const formMethods1: any = useRef(null);
   const formMethods4: any = useRef(null);
@@ -496,7 +499,7 @@ const AccountPersonal: React.FC = () => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
-        .catch(() => {});
+        .catch(() => { });
     };
 
     // fetch("/rest/V1/AppEnterPrice", {
@@ -514,16 +517,79 @@ const AccountPersonal: React.FC = () => {
     //   .catch(() => {});
 
     // 示範 ＡＰＩ
+    // useEffect(() => {
+    //   // userId 假資料之後要移除
+    //   postUserData({
+    //     userId: userId,
+    //     name: "Amy",
+    //     email: "amu@gmail.com",
+    //   }).then((response: any) => {
+    //     console.log("response:", response);
+    //   });
+    // }, []);
+
     useEffect(() => {
-      // userId 假資料之後要移除
-      postUserData({
-        userId: userId,
-        name: "Amy",
-        email: "amu@gmail.com",
+      postAccountInfo({
+        email: "rfchen@hannstar.com",
       }).then((response: any) => {
-        console.log("response:", response);
+        setAccountInfo(response)
       });
-    }, []);
+      setAccountInfo({
+        "UserName": "ronfu",
+        "Email": "rfchen@hannstar.com",
+        "Lang": "en",
+        "GroupName": "權限群組名稱",
+        "PhoneNumber0": "886",
+        "PhoneNumber1": "1111",
+        "PhoneNumber2": "11111",
+        "CellPhoneNumber0": "886",
+        "CellPhoneNumber1": "222222",
+        "CountryCode": "國家代碼",
+        "JobAttributes": "業務相關",
+        "JobTitle": "創辦人/董事長",
+        "InterestedType": [
+          "智慧零售",
+          "智慧育樂.",
+          "智能建築",
+          "健康關懷",
+          "交通運輸",
+          "智能製造"
+        ],
+        "CompanyName": "公司名稱",
+        "CompanySName": "公司名稱關鍵字",
+        "BusinessType": "代理商",
+        "TaxNo": "企業編號(統編/稅號)",
+        "Weblink": "公司網址",
+        "Country": "台灣",
+        "AreaCity": "城市",
+        "AreaAddress": "地址",
+        "CompanyEmpNumber": "<100",
+        "AnnualRevenue": "<1M",
+        "CompanyStockOn": "是",
+        "CompanyMA1": [
+          "車載",
+          "穿戴",
+          "工控",
+          "手機",
+          "消費類",
+          "其他"
+        ],
+        "CompanyMA2": "公司產品主要銷售國家/地區-1",
+        "CompanyMA3": "公司產品主要銷售國家/地區-2",
+        "CompanyMA4": "公司產品主要銷售國家/地區-3",
+        "TOP1": "主要出貨客戶-1",
+        "TOP2": "主要出貨客戶-2",
+        "TOP3": "主要出貨客戶-3",
+        "HannstarYN": "Y",
+        "Buy1": "瀚宇彩晶",
+        "BuyCompany1": "渠道公司名稱-1",
+        "Buy2": "瀚宇彩晶",
+        "BuyCompany2": "渠道公司名稱-2",
+        "Buy3": "瀚宇彩晶",
+        "BuyCompany3": "渠道公司名稱-3",
+        "CompanyRemark": "備註說明"
+      })
+    }, [])
 
     const handleExtension = (e: React.ChangeEvent<HTMLInputElement>) => {
       setExtension(e.target.value);
@@ -629,7 +695,7 @@ const AccountPersonal: React.FC = () => {
         type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbsData} />}
       />
-      <AccountPersonalTemplate contentComponent={<PersonalFormContent />} />
+      <AccountPersonalTemplate contentComponent={<PersonalFormContent />} rootId={accountInfo.rootid} />
     </Layout>
   );
 };

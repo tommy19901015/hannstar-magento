@@ -11,7 +11,7 @@ import { postAccountInfo } from "../../services/api.service";
 
 const MemberInfoContent = () => {
   const { content } = usePageData();
-  const pageName = "AccountMemberInfo";
+  const pageName = "AccountDashboard";
   const [email, setEmailValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +56,7 @@ const MemberInfoContent = () => {
   );
 };
 
-const AccountMemberInfo: React.FC = () => {
+const AccountDashboard: React.FC = () => {
   const { breadcrumbs } = usePageData();
   const [accountInfo, setAccountInfo] = useState<any>("")
 
@@ -134,4 +134,4 @@ const AccountMemberInfo: React.FC = () => {
   );
 };
 
-export default AccountMemberInfo;
+export default AccountDashboard;

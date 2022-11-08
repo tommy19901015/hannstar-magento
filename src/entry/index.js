@@ -11,6 +11,8 @@ import AccountApplication from "../pages/Account_Application/main";
 import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
 import AccountMyAccount from "../pages/Account_MyAccount/main";
 import AccountEditAccount from "../pages/Account_EditAccount/main";
+import AccountMemberInfo from "../pages/Account_MemberInfo/main";
+import AccountDashboard from "../pages/Account_Dashboard/main";
 import MFAQRCode from "../pages/MFAQRCode/main";
 import MFA from "../pages/MFA/main";
 import ForgotPassword from "../pages/ForgotPassword/main";
@@ -52,6 +54,8 @@ const pageMappingObj = {
   root_AccountPartner: <AccountPartner />,
   root_AccountApplication: <AccountApplication />,
   root_AccountSendVerifyEmail: <AccountSendVerifyEmail />,
+  root_AccountMemberInfo: <AccountMemberInfo/>,
+  root_AccountDashboard:<AccountDashboard />,
   root_Register: <HannstarRegister />,
   root_MFAQRCode: <MFAQRCode />,
   root_MFA: <MFA />,

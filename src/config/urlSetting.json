@@ -19,15 +19,15 @@
     },
     "AccountPersonal": {
       "title": "客戶",
-      "href": "/AccountPersonal"
+      "href": "/account/enterprise/view"
     },
     "AccountPartner": {
       "title": "供應商",
-      "href": "/AccountPartner"
+      "href": "/account/partner/view"
     },
     "AccountApplication": {
       "title": "申請權限",
-      "href": "/AccountApplication"
+      "href": "/account/permission/view"
     },
     "MyAccount": {
       "title": "個人專區",
@@ -39,7 +39,11 @@
     },
     "MemberInfo": {
       "title": "成員資訊",
-      "href": "/MemberInfo"
+      "href": "/account/memberinfo/view"
+    },
+    "AccountDashboard": {
+      "title": "看板",
+      "href": "/account/dashboard/view"
     }
   },
   "hannstar": {
