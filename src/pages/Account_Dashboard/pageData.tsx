@@ -1,57 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
-import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_PageType } from "./interface";
-
-// {
-//     "id": "1",
-//     "rootid": "123",
-//     "status": "N",
-//     "username": "ronfu",
-//     "email": "rfchen@hannstar.com",
-//     "lang": "en",
-//     "groupname": "customer",
-//     "jobattributes": "",
-//     "jobtitle": "",
-//     "phonenumber0": "",
-//     "phonenumber1": "",
-//     "phonenumber2": "",
-//     "cellphonenumber0": "",
-//     "cellphonenumber1": "",
-//     "interestedtype": [
-//         "智慧零售",
-//         "交通運輸"
-//     ],
-//     "companyname": "",
-//     "companysname": "",
-//     "taxno": "",
-//     "option": "",
-//     "optionarea": "",
-//     "weblink": "",
-//     "country": "",
-//     "countrycode": "",
-//     "areacity": "",
-//     "areaaddress": "",
-//     "technicalstaff": "",
-//     "annualrevenue": "",
-//     "companystockon": "",
-//     "companyMA1": "",
-//     "companyMA2": "",
-//     "companyMA3": "",
-//     "companyMA4": "",
-//     "TOP1": "",
-//     "TOP2": "",
-//     "TOP3": "",
-//     "HannstarYN": "Y",
-//     "HannstarCode": "12345678",
-//     "Buy1": "",
-//     "Buy2": "",
-//     "Buy3": "",
-//     "BuyCompany1": "",
-//     "BuyCompany2": "",
-//     "BuyCompany3": "",
-//     "CompanyRemark": ""
-// }
 
 function usePageData() {
   const { t } = useTranslation();
@@ -74,26 +22,25 @@ function usePageData() {
       ],
     },
     content: {
-      title: "成員資訊",
-      label:"邀請成員",
-      btn:"+邀請",
-      table:['姓名','郵箱','職稱'],
+      title: "看板",
+      table:['日期','單號','項目','產品型號','進度','詳情'],
       member:[
         {
-          name:"Amy Lai",
-          email:"amy@gmail.com",
-          position:"業務"
+          date:"2018/06/30 10:10:42 AM",
+          singleNumber:"A220920101633",
+          item:"RAM",
+          model:"040B8W8-A20",
+          superstition:"覆判完成",
+          details:""
         },
         {
-          name:"Amy Lai",
-          email:"amy@gmail.com",
-          position:"業務"
+          date:"2018/06/30 10:10:42 AM",
+          singleNumber:"A220920101633",
+          item:"RAM",
+          model:"040B8W8-A20",
+          superstition:"覆判完成",
+          details:""
         },
-        {
-          name:"Amy Lai",
-          email:"amy@gmail.com",
-          position:"業務"
-        }
       ]
     },
   };
