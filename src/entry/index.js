@@ -5,7 +5,7 @@ import "../style/common.scss";
 import Login from "../pages/Login/main";
 import Index from "../pages/index/main";
 import HannstarRegister from "../pages/Register/main";
-import AccountPersonal from "../pages/Account_Personal/main";
+import AccountPersonal from "../pages/Account_Personal/mainNew";
 import AccountPartner from "../pages/Account_Partner/main";
 import AccountApplication from "../pages/Account_Application/main";
 import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
