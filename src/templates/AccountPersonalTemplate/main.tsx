@@ -15,7 +15,7 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
   const isMobile = useIsMobile();
   const personalInfoData = pageData();
   const AccountToolBar = () => {
-    rootId = "123"
+    // rootId = "123"
     return (
       <div className={`${pageName}AccountToolBar`}>
         <input type="checkbox" id="menu" />

@@ -5,9 +5,10 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
     <head>
-        <title>Forgot Your Password?</title>
+        <title>Account Information</title>
         <remove src="mage/calendar.css"/>
         <remove src="css/styles-l.css"/>
         <remove src="css/styles-m.css"/>
@@ -17,23 +18,25 @@
         <link src='Hannstar_Frontend::css/main.css'/>
     </head>
     <body>
-        <referenceBlock name="navigation.sections" remove="true"/>        
+        <referenceBlock name="head.components">
+        <referenceBlock name="navigation.sections" remove="true"/>            
         <referenceContainer name="footer" remove="true" />
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="footer.col.title.1" remove="true"/>
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="authentication-popup" remove="true"/>
-        <referenceBlock name="page.main.title" remove="true" />
-        <referenceBlock name="root">
-            <action method="setHeaderTitle">
-                <argument translate="true" name="title" xsi:type="string">Password forgotten</argument>
-            </action>
-        </referenceBlock>
-        <referenceContainer name="content">
         <block class="Hannstar\Frontend\Block\Index"
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />
-            <block class="Magento\Customer\Block\Account\Forgotpassword" name="forgotPassword" template="Hannstar_Frontend::form/forgotpassword.phtml">
+        <block class="Magento\Framework\View\Element\Js\Components" name="customer_account_edit_head_components" template="Hannstar_Frontend::js/components.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Edit Account Information</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Customer\Block\Form\Edit" name="customer_edit" template="Hannstar_Frontend::form/edit.phtml" cacheable="false">
                 <container name="form.additional.info" as="form_additional_info"/>
             </block>
         </referenceContainer>

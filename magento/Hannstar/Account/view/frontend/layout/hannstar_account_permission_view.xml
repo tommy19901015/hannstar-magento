@@ -18,6 +18,9 @@
     </head>
     <body>
         <referenceContainer name="content">
+            <block class="Hannstar\Frontend\Block\Index"
+                   name="hannstar.frontend.layout.main"
+                   template="Hannstar_Frontend::main.phtml" />
             <block class="Magento\Framework\View\Element\Template"
                    name="hannstar.account.layout.main"
                    template="Hannstar_Account::permission.phtml" />

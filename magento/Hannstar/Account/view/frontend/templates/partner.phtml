@@ -1,11 +1,13 @@
+<?php echo $this->getLayout()
+          ->createBlock("Magento\Framework\View\Element\Template")
+          ->setTemplate('Hannstar_Frontend::main.phtml')
+          ->toHtml();
+?>
 <div class="hannstarRoot" id="root_AccountPartner"></div>
  <!-- country -->
-<div class="field country required">    
-    <label for="country" class="label">        
-        <span><?= /* @noEscape */ $block->getAttributeData()->getFrontendLabel('country_id') ?></span>    
-    </label>    
-    <div class="control">        
-        <?= $block->getCountryHtmlSelect() ?>    
+<div class="field country required">
+    <div class="control">
+        <?= $block->getCountryHtmlSelect() ?>
     </div>
 </div>
 <script>

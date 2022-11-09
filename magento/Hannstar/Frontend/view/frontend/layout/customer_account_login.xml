@@ -27,7 +27,7 @@
             <referenceBlock name="authentication-popup" remove="true"/>
             <referenceBlock name="page.main.title" remove="true" />
             <container name="customer.login.container" label="Customer Login Container" htmlTag="div" htmlClass="login-container">
-                <block class="Hannstar\Frontend\Block\index"
+                <block class="Hannstar\Frontend\Block\Index"
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />
                 <block class="Magento\Customer\Block\Form\Login" name="customer_form_login" template="Hannstar_Frontend::form/login.phtml">

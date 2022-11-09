@@ -10,15 +10,8 @@ import urlConfig from "../../config/urlSetting.json";
 import usePageData from "./pageData";
 import { Accountstatus } from "./interface"
 import { postAccountInfo } from "../../services/api.service";
+import useGetLoginInfo from "../../hooks/useGetLoginInfo"
 import "./css.scss";
-
-
-//有沒有root_id顯示左側menu的企業專區
-//status 審核中 Pending、未通過審核 NotApproved、審核 Approved
-//status 預設不通過，顯示原本畫面
-//status 審核中 Pending 上面卡牌狀態換，下面不顯示
-//status 審核 Approved 上面卡牌狀態換，下面不顯示
-
 
 const AccountApplication: React.FC = () => {
   const pageName = "AccountApplication";
@@ -26,10 +19,12 @@ const AccountApplication: React.FC = () => {
   const { breadcrumbs, captionData, content } = pageData;
 
   const [accountInfo, setAccountInfo] = useState<any>("")
+  const loginInfo = useGetLoginInfo()
+  console.log('loginInfo', loginInfo);
 
   useEffect(() => {
     postAccountInfo({
-      email: "rfchen@hannstar.com",
+      Email: window.hannstar.email
     }).then((response: any) => {
       setAccountInfo(response)
     });

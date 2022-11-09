@@ -1,4 +1,15 @@
+<?php echo $this->getLayout()
+          ->createBlock("Magento\Framework\View\Element\Template")
+          ->setTemplate('Hannstar_Frontend::main.phtml')
+          ->toHtml();
+?>
 <div class="hannstarRoot" id="root_AccountPersonal"></div>
+ <!-- country -->
+<div class="field country required">
+    <div class="control">
+        <?= $block->getCountryHtmlSelect() ?>
+    </div>
+</div>
 <script>
     require(['jquery', 'hannstarScript'], function($, hannstarScript) {
         hannstarScript();

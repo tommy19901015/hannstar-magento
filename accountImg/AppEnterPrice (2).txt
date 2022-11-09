@@ -1,0 +1,51 @@
+https://magentodev.hannstar.com/rest/V1/AppEnterPrice
+
+{
+    "UserName": "ronfu",
+    "Email": "rfchen@hannstar.com",
+    "Lang": "en",
+    "GroupName": "權限群組名稱",
+    "JobAttributes": "工作屬性",
+    "JobTitle": "職稱",
+    "PhoneNumber0": "電話國碼",
+    "PhoneNumber1": "電話號碼",
+    "PhoneNumber2": "分機",
+    "CellPhoneNumber0": "手機國碼",
+    "CellPhoneNumber1": "手機號碼",
+    "InterestedType": [
+        "智慧零售",
+        "交通運輸"
+    ],
+    "CompanyName": "公司名稱",
+    "CompanySName": "公司名稱關鍵字",
+    "BusinessType": "代理商",
+    "TaxNo": "企業編號(統編/稅號)",
+    "Weblink": "公司網址",
+    "Country": "國家地區",
+    "CountryCode": "國家代碼",
+    "AreaCity": "城市",
+    "AreaAddress": "地址",
+    "CompanyEmpNumber": "員工總數 <100 ",
+    "AnnualRevenue": "年營業額(USD) <10m",
+    "CompanyStockOn": "上市公司(是/否)",
+    "CompanyMA1": [
+        "車載",
+        "工控"
+    ],
+    "CompanyMA2": "公司產品主要銷售地區",
+    "CompanyMA3": "公司產品主要銷售地區",
+    "CompanyMA4": "公司產品主要銷售地區",
+    "TOP1": "主要出貨客戶1",
+    "TOP2": "主要出貨客戶2",
+    "TOP3": "主要出貨客戶3",
+    "HannstarYN": "Y",
+    "Buy1": "購買渠道-1",
+    "Buy2": "購買渠道-2",
+    "Buy3": "購買渠道-3",
+    "BuyCompany1": "渠道公司名稱-1",
+    "BuyCompany2": "渠道公司名稱-2",
+    "BuyCompany3": "渠道公司名稱-3",
+    "CompanyRemark": "備註說明"
+}
+
+{"result":"success","rootid":"Tsk000000401947","resultMsg":""}

@@ -33,6 +33,9 @@
             </action>
         </referenceBlock>
         <referenceContainer name="content">
+        <block class="Hannstar\Frontend\Block\Index"
+                   name="hannstar.frontend.layout.main"
+                   template="Hannstar_Frontend::main.phtml" />
             <block class="Magento\Customer\Block\Account\Dashboard\Info" name="customer_account_dashboard_info" as="info" template="Hannstar_Frontend::account/dashboard/info.phtml" cacheable="false">
                 <container name="customer.account.dashboard.info.blocks" as="additional_blocks"/>
             </block>

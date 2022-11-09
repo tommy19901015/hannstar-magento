@@ -22,6 +22,11 @@ $formData = $block->getFormData();
 <?= $block->getChildHtml('form_fields_before') ?>
 <?php /* Extensions placeholder */ ?>
 <?= $block->getChildHtml('customer.form.register.extra') ?>
+<?php echo $this->getLayout()
+          ->createBlock("Magento\Framework\View\Element\Template")
+          ->setTemplate('Hannstar_Frontend::main.phtml')
+          ->toHtml();
+?>
 
 <div class="hannstarRoot" id="root_Register"></div>
 <form class="form create account form-create-account"

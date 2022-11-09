@@ -25,6 +25,9 @@
             <referenceBlock name="copyright" remove="true"/>
             <referenceBlock name="authentication-popup" remove="true"/>
             <referenceBlock name="page.main.title" remove="true" />
+            <block class="Hannstar\Frontend\Block\Index"
+                   name="hannstar.frontend.layout.main"
+                   template="Hannstar_Frontend::main.phtml" />
             <block class="Magento\Framework\View\Element\Template" name="accountConfirmation" template="Hannstar_Frontend::form/confirmation.phtml"/>
         </referenceContainer>
     </body>

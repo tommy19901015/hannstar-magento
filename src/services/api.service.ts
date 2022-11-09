@@ -8,7 +8,7 @@ export const apiMethods = {
     fetchTodoData: (id:number) => (`/todos/${id}`),
     fetchAccountInfo:'/rest/V1/getAccountInfo',
     fetchMemberGroupList:'/rest/V1/MemberGroupList',
-    
+    fetchJoinMemberGroup:'/rest/V1/JoinMemberGroup',
 }
 
 
@@ -17,3 +17,4 @@ export const getTodoData = (id:number) => service.get(apiMethods.fetchTodoData(i
 export const postUserData = (params:UserParams) => service.post(apiMethods.fetchPost, {...params});
 export const postAccountInfo = (params:any) => service.post(apiMethods.fetchAccountInfo, {...params});
 export const postMemberGroupList = (params:any) => service.post(apiMethods.fetchMemberGroupList, {...params});
+export const postJoinMemberGroup = (params:any) => service.post(apiMethods.fetchJoinMemberGroup, {...params});

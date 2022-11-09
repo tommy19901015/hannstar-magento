@@ -25,6 +25,9 @@
             <referenceBlock name="copyright" remove="true"/>
             <referenceBlock name="authentication-popup" remove="true"/>
             <referenceBlock name="page.main.title" remove="true" />
+            <block class="Hannstar\Frontend\Block\Index"
+                   name="hannstar.frontend.layout.main"
+                   template="Hannstar_Frontend::main.phtml" />
             <block class="Magento\Customer\Block\Form\Register" name="customer_form_register" template="Hannstar_Frontend::form/register.phtml">
                 <arguments>
                     <argument name="attribute_data" xsi:type="object">Magento\Customer\Block\DataProviders\AddressAttributeData</argument>
