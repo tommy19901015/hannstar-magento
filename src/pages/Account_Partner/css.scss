@@ -47,6 +47,10 @@ $pageName: "AccountPartner";
           @include hannstarContent2;
           color: $hannstar-orange1;
         }
+        .hannstarRadio {
+          @include hannstarRadio;
+          margin: 5px 0;
+        }
         .checkbox-col {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -55,14 +59,6 @@ $pageName: "AccountPartner";
             @include hannstarCheckBox;
             margin: 5px 0;
           }
-          .hannstarRadio {
-            @include hannstarRadio;
-            margin: 5px 0;
-          }
-
-          // &.flex-wrap {
-          //   flex-wrap: wrap-reverse;
-          // }
         }
         .react-tel-input {
           &:hover {

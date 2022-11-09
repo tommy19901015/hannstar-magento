@@ -9,7 +9,7 @@ import "./css.scss";
 
 const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
   contentComponent,
-  rootId
+  rootId,
 }) => {
   const pageName = "AccountPersonalTemplate";
   const isMobile = useIsMobile();
@@ -29,19 +29,21 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
             ))}
           </ul>
         </div>
-        {rootId && <>
-          <input type="checkbox" id="menu1" />
-          <label htmlFor="menu1">{personalInfoData[1].categoryTitle}</label>
-          <div className="menu-content">
-            <ul className="linkBlock">
-              {personalInfoData[1].items.map((item, index) => (
-                <li className="linkText" key={index}>
-                  <a href={item.href}>{item.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>}
+        {rootId && (
+          <>
+            <input type="checkbox" id="menu1" />
+            <label htmlFor="menu1">{personalInfoData[1].categoryTitle}</label>
+            <div className="menu-content">
+              <ul className="linkBlock">
+                {personalInfoData[1].items.map((item, index) => (
+                  <li className="linkText" key={index}>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </>
+        )}
       </div>
     );
   };
