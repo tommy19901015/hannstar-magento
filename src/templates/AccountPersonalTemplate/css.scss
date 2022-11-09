@@ -60,9 +60,6 @@ $pageName: 'AccountPersonalTemplate';
             cursor: pointer;
             text-align: center;
             @include hannstarContent1;
-            &:last-of-type {
-                display: none;
-            }
         }
         input {
             &#menu,
@@ -71,6 +68,8 @@ $pageName: 'AccountPersonalTemplate';
             }
             &:checked ~ .menu-content {
                 max-height: 100%;
+                border-top: 1px solid $hannstar-border-color;
+                padding-top: 10px;
             }
             &:checked ~ label {
                 display: block;
@@ -80,6 +79,17 @@ $pageName: 'AccountPersonalTemplate';
             max-height: 0;
             overflow: hidden;
             margin-bottom: 0;
+            cursor: pointer;
+            li{
+                text-align: left;
+                font-size: 16px;
+                line-height: 36px;
+                font-weight: 400;
+                letter-spacing: 1px;
+                a{
+                    color: #363636;
+                }
+            }
         }
         .linkBlock {
             .linkText {
