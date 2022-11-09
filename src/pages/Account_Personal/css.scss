@@ -3,7 +3,7 @@
 $pageName: "AccountPersonal";
 
 .#{$pageName}FormBlock {
-  padding-left: 80px;
+  padding-left:80px;
 
   .formTitle {
     @include hannstarH2Title;
@@ -53,9 +53,6 @@ $pageName: "AccountPersonal";
             margin: 10px 0;
           }
         }
-        .companyRemark{
-          min-height: 200px;
-        }
         .react-tel-input {
           &:hover {
             .flag-dropdown {
@@ -78,10 +75,15 @@ $pageName: "AccountPersonal";
                   transform: scale(1);
                 }
               }
-            }
+            
+              }
           }
         }
+        .companyRemark{
+          min-height: 200px;
+        }
       }
+
       .col-1{
         width: 100%;
       }
@@ -136,7 +138,7 @@ $pageName: "AccountPersonal";
         }
       }
       .changTab {
-        margin: 0;
+        margin-right: 20px;
       }
     }
     .stepTitle {
