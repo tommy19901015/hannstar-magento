@@ -86,7 +86,7 @@ $pageName: "AccountPersonal";
           }
         }
         .companyRemark {
-          min-height: 200px;
+          @include hannstarTextarea;
         }
       }
 

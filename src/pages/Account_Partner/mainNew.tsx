@@ -331,17 +331,17 @@ const AccountPartner : React.FC = () => {
 
                 <div className="row">
                   <div className="col-3">
-                  <label className="required">公司產品主要銷售國家地區-1</label>
+                  <label className="required">公司產品主要銷售國家/地區-1</label>
                   <input type="text" defaultValue="" {...register("CompanyMA2", { required: true })} />
                   {errors.CompanyMA2 && <span>必填欄位，請重新輸入</span>}
                   </div>
                   <div className="col-3">
-                  <label className="required">公司產品主要銷售國家地區-2</label>
+                  <label className="required">公司產品主要銷售國家/地區-2</label>
                   <input type="text" defaultValue="" {...register("CompanyMA3", { required: true })} />
                   {errors.CompanyMA3 && <span>必填欄位，請重新輸入</span>}
                   </div>
                   <div className="col-3">
-                  <label className="required">公司產品主要銷售國家地區-3</label>
+                  <label className="required">公司產品主要銷售國家/地區-3</label>
                   <input type="text" defaultValue="" {...register("CompanyMA4", { required: true })} />
                   {errors.CompanyMA4 && <span>必填欄位，請重新輸入</span>}
                   </div>
