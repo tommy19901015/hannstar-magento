@@ -75,26 +75,26 @@ function usePageData() {
     },
     content: {
       title: "成員資訊",
-      label:"邀請成員",
-      btn:"+邀請",
-      table:['姓名','郵箱','職稱'],
-      member:[
-        {
-          name:"Amy Lai",
-          email:"amy@gmail.com",
-          position:"業務"
-        },
-        {
-          name:"Amy Lai",
-          email:"amy@gmail.com",
-          position:"業務"
-        },
-        {
-          name:"Amy Lai",
-          email:"amy@gmail.com",
-          position:"業務"
-        }
-      ]
+      label: "邀請成員",
+      btn: "+邀請",
+      table: ['姓名', '郵箱', '職稱'],
+      // member:[
+      //   {
+      //     name:"Amy Lai",
+      //     email:"amy@gmail.com",
+      //     position:"業務"
+      //   },
+      //   {
+      //     name:"Amy Lai",
+      //     email:"amy@gmail.com",
+      //     position:"業務"
+      //   },
+      //   {
+      //     name:"Amy Lai",
+      //     email:"amy@gmail.com",
+      //     position:"業務"
+      //   }
+      // ]
     },
   };
 

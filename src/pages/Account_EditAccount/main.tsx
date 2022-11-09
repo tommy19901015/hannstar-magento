@@ -144,7 +144,7 @@ const AccountEditAccount: React.FC = () => {
     };
 
     const getMagentoDeleteAccountDom = (): any => {
-      const deleteAccountDom = document.getElementById("hannstarDeleteAccount"); //要再去magento設
+      const deleteAccountDom = document.getElementsByClassName("action-delete")[0];
       return deleteAccountDom ? deleteAccountDom : "";
     };
 
@@ -173,8 +173,6 @@ const AccountEditAccount: React.FC = () => {
       if (getMagentoNewPasswordDom()) {
         getMagentoNewPasswordDom().value = e.target.value;
       }
-      // console.log(zxcvbn(e.target.value).score);
-      // setPasswordStrengthMeter(zxcvbn(e.target.value).score);
       setNewPassword(e.target.value);
     };
 
@@ -211,10 +209,15 @@ const AccountEditAccount: React.FC = () => {
       ];
 
       if (allValidateColumn.every((v) => v === true)) {
-        const saveBtn: any = document.getElementById("hannstarSaveBtn"); //要再去magento設
+        const saveBtn: any = document.getElementById("hannstarSaveBtn");
         if (saveBtn) saveBtn.click();
       }
     };
+
+    const handleDeleteAccount = () => {
+      const deleteBtn: any = getMagentoDeleteAccountDom()
+      if (deleteBtn) deleteBtn.click();
+    }
 
     return (
       <div className={`${pageName}Content`}>
@@ -304,6 +307,11 @@ const AccountEditAccount: React.FC = () => {
         </div>
         <div className="saveBtn" onClick={handleSave}>
           送出
+        </div>
+        <div className="deleteBlock">
+          <div className="deleteTitle">帳號刪除</div>
+          <div className="deleteText">您的帳號將被永久刪除，您一旦刪除後，帳號將無法復原，請您務必確定操作。</div>
+          <div onClick={handleDeleteAccount} className="deleteBtn">刪除帳號</div>
         </div>
       </div>
     );

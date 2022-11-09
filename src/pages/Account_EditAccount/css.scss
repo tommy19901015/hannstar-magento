@@ -1,98 +1,116 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
-$pageName: "AccountEditAccount";
+$pageName: 'AccountEditAccount';
 
 .#{$pageName}Content {
-  padding: 0 60px;
-  margin-bottom: 100px;
-  .magentoMessageBlock {
-    @include magentoMessage;
-  }
-  .mainTitle {
-    @include hannstarH2Title;
-    margin-bottom: 20px;
-  }
-  .accountTitle {
-    @include hannstarH3Title;
-    border-bottom: 1px solid $hannstar-border-color;
-    padding-bottom: 5px;
-    margin-bottom: 30px;
-  }
-  .infoBlock {
-    display: flex;
-    justify-content: space-between;
-    @include hannstarContent1;
-    .leftBlock,
-    .rightBlock {
-      width: 48%;
-      .subTitle {
-        @include hannstarH4Title;
-        padding: 10px 0;
-      }
-      .columnBlock {
-        width: 100%;
-        @include hannstarTextPadding2;
-        .title {
-          @include hannstarContentText;
-          word-break: keep-all;
-          padding-bottom: 5px;
-          &.required {
-            &::after {
-              content: "*";
-              color: $hannstar-orange1;
-              padding-left: 5px;
-            }
-          }
-        }
-        .errorMessage {
-          margin-top: 10px;
-          @include hannstarContent2;
-          color: $hannstar-orange1;
-        }
-        .remind {
-          margin-top: 10px;
-          @include hannstarContent2;
-          color: $hannstar-blue3;
-          &.errorMessage {
-            color: $hannstar-orange1;
-          }
-        }
-      }
-      .bodyBlock {
-        display: flex;
-        flex-wrap: wrap;
-        input[type="text"],
-        input[type="password"] {
-          @include hannstarInput;
-          &.error {
-            border-color: $hannstar-orange1;
-          }
-        }
-      }
+    padding: 0 60px;
+    margin-bottom: 100px;
+    .magentoMessageBlock {
+        @include magentoMessage;
     }
-  }
-  .saveBtn {
-    @include hannstarBtn;
-  }
+    .mainTitle {
+        @include hannstarH2Title;
+        margin-bottom: 20px;
+    }
+    .accountTitle {
+        @include hannstarH3Title;
+        border-bottom: 1px solid $hannstar-border-color;
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+    }
+    .infoBlock {
+        display: flex;
+        justify-content: space-between;
+        @include hannstarContent1;
+        .leftBlock,
+        .rightBlock {
+            width: 48%;
+            .subTitle {
+                @include hannstarH4Title;
+                padding: 10px 0;
+            }
+            .columnBlock {
+                width: 100%;
+                padding-bottom: 10px;
+                .title {
+                    @include hannstarContentText;
+                    word-break: keep-all;
+                    padding-bottom: 5px;
+                    &.required {
+                        &::after {
+                            content: '*';
+                            color: $hannstar-orange1;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+                .errorMessage {
+                    margin-top: 10px;
+                    @include hannstarContent2;
+                    color: $hannstar-orange1;
+                }
+                .remind {
+                    margin-top: 10px;
+                    @include hannstarContent2;
+                    color: $hannstar-blue3;
+                    &.errorMessage {
+                        color: $hannstar-orange1;
+                    }
+                }
+            }
+            .bodyBlock {
+                display: flex;
+                flex-wrap: wrap;
+                input[type='text'],
+                input[type='password'] {
+                    @include hannstarInput;
+                    &.error {
+                        border-color: $hannstar-orange1;
+                    }
+                }
+            }
+        }
+    }
+    .saveBtn {
+        @include hannstarBtn;
+    }
+    .deleteBlock {
+        padding-top: 50px;
+        .deleteTitle {
+            @include hannstarH3Title;
+            color: $hannstar-orange1;
+            border-bottom: 1px solid $hannstar-border-color;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+        .deleteText {
+            @include hannstarContent1;
+            margin-bottom: 30px;
+        }
+        .deleteBtn {
+            @include hannstarBtn;
+            background-color: $hannstar-orange1;
+            &:hover {
+                background-color: $hannstar-orange1;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $breakpoint) {
-  .#{$pageName}Content {
-    padding: 0;
-    margin-bottom: 30px;
-    .infoBlock {
-      flex-direction: column;
-      .leftBlock,
-      .rightBlock {
-        width: 100%;
+    .#{$pageName}Content {
+        padding: 0;
         margin-bottom: 30px;
-        .accountTitle {
-          margin-bottom: 20px;
+        .infoBlock {
+            flex-direction: column;
+            .leftBlock,
+            .rightBlock {
+                width: 100%;
+                margin-bottom: 30px;
+                .accountTitle {
+                    margin-bottom: 20px;
+                }
+            }
         }
-        .columnBlock {
-          padding-bottom: 20px;
-        }
-      }
     }
-  }
 }

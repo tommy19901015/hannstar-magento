@@ -145,7 +145,7 @@ const AccountMyAccount: React.FC = () => {
               <div>
                 <span className="text">{getMagentoSubscribedBlock().innerText}</span>
               </div>
-              <a className="editBtn" href="/">編輯</a>
+              <a className="editBtn" href={urlConfig.account.AccountNewsletter.href} >編輯</a>
             </div>
           </div>
           <div className="infoBlock">

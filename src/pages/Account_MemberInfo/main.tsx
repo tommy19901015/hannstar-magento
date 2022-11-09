@@ -7,12 +7,31 @@ import { ColType } from "../../component/columns/interface";
 import usePageData from "./pageData";
 import "./css.scss";
 import { validate, patterns } from "../../common/validateUtils";
-import { postAccountInfo } from "../../services/api.service";
+import { postAccountInfo, postMemberGroupList } from "../../services/api.service";
 
 const MemberInfoContent = () => {
   const { content } = usePageData();
   const pageName = "AccountMemberInfo";
   const [email, setEmailValue] = useState<string>("");
+  const [memberGroupList, setMemberGroupList] = useState<any>("")
+
+  useEffect(() => {
+    postMemberGroupList({}).then((response: any) => {
+      setMemberGroupList(response)
+    });
+    setMemberGroupList([
+      {
+        "username": "ronfu7",
+        "jobtitle": "職員",
+        "email": "ronfu7@gmail.com"
+      },
+      {
+        "username": "ronfu8",
+        "jobtitle": "職員",
+        "email": "ronfu8@gmail.com"
+      }
+    ])
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatEmail = e.target.value.trim();
@@ -21,6 +40,10 @@ const MemberInfoContent = () => {
 
   const handleInvite = () => {
     const verifyEmail = validate(email, patterns.email);
+    console.log('verifyEmail', verifyEmail);
+    if (verifyEmail) {
+      console.log('email', email);
+    }
     // call api
   }
   return (
@@ -42,11 +65,11 @@ const MemberInfoContent = () => {
             }
           </tr>
           {
-            content.member.map(user => (
+            memberGroupList && memberGroupList.map((user: any) => (
               <tr>
-                <td>{user.name}</td>
+                <td>{user.username}</td>
                 <td>{user.email}</td>
-                <td>{user.position}</td>
+                <td>{user.jobtitle}</td>
               </tr>
             ))
           }

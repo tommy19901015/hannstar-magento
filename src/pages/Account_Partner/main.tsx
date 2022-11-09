@@ -358,8 +358,6 @@ const AccountPartner: React.FC = () => {
   const formMethods12: any = useRef(null);
   const formMethods13: any = useRef(null);
 
-  const countrySelectBlock: any = useRef();
-
   useEffect(() => {
     postAccountInfo({
       email: "rfchen@hannstar.com",
@@ -513,8 +511,15 @@ const AccountPartner: React.FC = () => {
     const [cellPhoneCode, setCellPhoneCode] = useState<string>("");
     const [cellPhoneCountry, setCellPhoneCountry] = useState<string>("");
 
-    const magentoCountrySelectDom: any = document.getElementById("country");
-    if (magentoCountrySelectDom) countrySelectBlock.current.appendChild(magentoCountrySelectDom);
+    const countrySelectBlock: any = useRef();
+
+
+    useEffect(() => {
+      const magentoCountrySelectDom: any = document.getElementById("country");
+      console.log('magentoCountrySelectDom', magentoCountrySelectDom);
+      console.log('countrySelectBlock', countrySelectBlock);
+      if (magentoCountrySelectDom) countrySelectBlock.current.appendChild(magentoCountrySelectDom);
+    }, [])
 
     const handlerSubmit = () => {
       const values1 = formMethods1.current.getValues();
@@ -654,14 +659,14 @@ const AccountPartner: React.FC = () => {
         <div className="columnRow">
           <div className="columnBlock">
             <div className="title">公司所在地(國家)</div>
-            {/* <div className="bodyBlock select" ref={countrySelectBlock}></div> */}
-            <div className="bodyBlock select">
+            <div className="bodyBlock select" ref={countrySelectBlock}></div>
+            {/* <div className="bodyBlock select">
               <select>
                 <option>1111</option>
                 <option>2222</option>
                 <option>3333</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <FormComponent {...formProp7} />
         </div>

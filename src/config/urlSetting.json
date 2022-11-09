@@ -44,6 +44,10 @@
     "AccountDashboard": {
       "title": "看板",
       "href": "/account/dashboard/view"
+    },
+    "AccountNewsletter": {
+      "title": "訂閱信件",
+      "href": "/newsletter/manage/"
     }
   },
   "hannstar": {
