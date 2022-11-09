@@ -144,14 +144,26 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">職稱</label>
                 <select {...register("JobTitle")}>
-                  <option value={formData.JobTitle.option[0].value}>
+                <option value={formData.JobTitle.option[0].value}>
                     {formData.JobTitle.option[0].text}
                   </option>
                   <option value={formData.JobTitle.option[1].value}>
                     {formData.JobTitle.option[1].text}
                   </option>
                   <option value={formData.JobTitle.option[2].value}>
-                    {formData.JobTitle.option[0].text}
+                    {formData.JobTitle.option[2].text}
+                  </option>
+                  <option value={formData.JobTitle.option[3].value}>
+                    {formData.JobTitle.option[3].text}
+                  </option>
+                  <option value={formData.JobTitle.option[4].value}>
+                    {formData.JobTitle.option[4].text}
+                  </option>
+                  <option value={formData.JobTitle.option[5].value}>
+                    {formData.JobTitle.option[5].text}
+                  </option>
+                  <option value={formData.JobTitle.option[6].value}>
+                    {formData.JobTitle.option[6].text}
                   </option>
                 </select>
                 {errors.JobTitle && <span>必填欄位，請重新輸入</span>}
@@ -273,6 +285,9 @@ const AccountPartner: React.FC = () => {
                   </option>
                   <option value={formData.ApplicableArea.option[4].value}>
                     {formData.ApplicableArea.option[4].text}
+                  </option>
+                  <option value={formData.ApplicableArea.option[5].value}>
+                    {formData.ApplicableArea.option[5].text}
                   </option>
                 </select>
               </div>
@@ -397,7 +412,7 @@ const AccountPartner: React.FC = () => {
 
             <div className="row">
               <div className="col-3">
-                <label className="required">公司產品主要銷售國家地區-1</label>
+                <label className="required">公司產品主要銷售國家/地區-1</label>
                 <input
                   type="text"
                   defaultValue=""
@@ -406,7 +421,7 @@ const AccountPartner: React.FC = () => {
                 {errors.CompanyMA2 && <span>必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
-                <label className="required">公司產品主要銷售國家地區-2</label>
+                <label className="required">公司產品主要銷售國家/地區-2</label>
                 <input
                   type="text"
                   defaultValue=""
@@ -415,7 +430,7 @@ const AccountPartner: React.FC = () => {
                 {errors.CompanyMA3 && <span>必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
-                <label className="required">公司產品主要銷售國家地區-3</label>
+                <label className="required">公司產品主要銷售國家/地區-3</label>
                 <input
                   type="text"
                   defaultValue=""
@@ -511,7 +526,7 @@ const AccountPartner: React.FC = () => {
                 <label className="required">渠道公司名稱-1</label>
                 <input
                   type="text"
-                  className="mb-20"
+                  className=""
                   defaultValue=""
                   {...register("BuyCompany1", { required: true })}
                 />
@@ -539,7 +554,7 @@ const AccountPartner: React.FC = () => {
                 <label className="required">渠道公司名稱-2</label>
                 <input
                   type="text"
-                  className="mb-20"
+                  className=""
                   defaultValue=""
                   {...register("BuyCompany2", { required: true })}
                 />
@@ -567,7 +582,7 @@ const AccountPartner: React.FC = () => {
                 <label className="required">渠道公司名稱-3</label>
                 <input
                   type="text"
-                  className="mb-20"
+                  className=""
                   defaultValue=""
                   {...register("BuyCompany3", { required: true })}
                 />
@@ -580,8 +595,7 @@ const AccountPartner: React.FC = () => {
             <div className="row">
               <div className="col-1">
                 <label className="required">備註說明</label>
-                <input
-                  type="text"
+                <textarea
                   className="companyRemark"
                   defaultValue=""
                   {...register("CompanyRemark", { required: true })}

@@ -48,9 +48,9 @@ $pageName: "AccountPartner";
           color: $hannstar-orange1;
         }
         .checkbox-col {
-          // display: grid;
-          // grid-template-columns: repeat(2, 1fr);
-          // grid-gap: 20px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 20px;
           .hannstarCheckBox {
             @include hannstarCheckBox;
             margin: 5px 0;
@@ -91,12 +91,6 @@ $pageName: "AccountPartner";
         }
         .companyRemark {
           min-height: 200px;
-        }
-        .hannstarCheckBox {
-          width: 20px;
-          height: 20px;
-          border: 1px solid #b9b9b9;
-          border-radius: 3px;
         }
       }
 
@@ -147,6 +141,9 @@ $pageName: "AccountPartner";
         .col-2,
         .col-3 {
           .checkbox-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
             label {
               margin: 10px 20px 10px 0;
               &.label-w {
