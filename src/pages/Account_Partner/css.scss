@@ -42,7 +42,7 @@ $pageName: "AccountPartner";
         select {
           @include hannstarSelect;
         }
-        span {
+        .error {
           margin-top: 10px;
           @include hannstarContent2;
           color: $hannstar-orange1;
