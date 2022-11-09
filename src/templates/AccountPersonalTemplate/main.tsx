@@ -15,22 +15,41 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
   const isMobile = useIsMobile();
   const personalInfoData = pageData();
   const AccountToolBar = () => {
-    rootId = "123";
+    rootId = "123"
     return (
       <div className={`${pageName}AccountToolBar`}>
-        <input type="checkbox" id="menu" />
-        <label htmlFor="menu">{personalInfoData[0].categoryTitle}</label>
-        <div className="menu-content">
-          <ul className="linkBlock">
-            {personalInfoData[0].items.map((item, index) => (
-              <li className="linkText" key={index}>
-                <a href={item.href}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {rootId && (
+        { useIsMobile() ? (
           <>
+        <input type="checkbox" id="menu" />
+        <label htmlFor="menu">{personalInfoData[0].items[0].title}</label>
+        <ul className="menu-content">
+          {personalInfoData[0].items.map((item, index) => (
+                <li className="linkText" key={index}>
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))}
+              {rootId && <>
+                {personalInfoData[1].items.map((item, index) => (
+                  <li className="linkText" key={index}>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))}
+          </>}
+			  </ul></>
+        ):(
+          <>
+          <input type="checkbox" id="menu" />
+          <label htmlFor="menu">{personalInfoData[0].categoryTitle}</label>
+          <div className="menu-content">
+            <ul className="linkBlock">
+              {personalInfoData[0].items.map((item, index) => (
+                <li className="linkText" key={index}>
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {rootId && <>
             <input type="checkbox" id="menu1" />
             <label htmlFor="menu1">{personalInfoData[1].categoryTitle}</label>
             <div className="menu-content">
@@ -42,7 +61,8 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
                 ))}
               </ul>
             </div>
-          </>
+          </>}
+        </>
         )}
       </div>
     );
