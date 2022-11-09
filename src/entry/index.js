@@ -5,8 +5,8 @@ import "../style/common.scss";
 import Login from "../pages/Login/main";
 import Index from "../pages/index/main";
 import HannstarRegister from "../pages/Register/main";
-import AccountPersonal from "../pages/Account_Personal/main";
-import AccountPartner from "../pages/Account_Partner/main";
+import AccountPersonal from "../pages/Account_Personal/mainNew";
+import AccountPartner from "../pages/Account_Partner/mainNew";
 import AccountApplication from "../pages/Account_Application/main";
 import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
 import AccountMyAccount from "../pages/Account_MyAccount/main";
@@ -54,8 +54,8 @@ const pageMappingObj = {
   root_AccountPartner: <AccountPartner />,
   root_AccountApplication: <AccountApplication />,
   root_AccountSendVerifyEmail: <AccountSendVerifyEmail />,
-  root_AccountMemberInfo: <AccountMemberInfo/>,
-  root_AccountDashboard:<AccountDashboard />,
+  root_AccountMemberInfo: <AccountMemberInfo />,
+  root_AccountDashboard: <AccountDashboard />,
   root_Register: <HannstarRegister />,
   root_MFAQRCode: <MFAQRCode />,
   root_MFA: <MFA />,
