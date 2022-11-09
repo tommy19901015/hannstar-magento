@@ -218,20 +218,19 @@ const AccountPersonal: React.FC = () => {
                 <label className="required">感興趣的應用別(可複選)</label>
                 <div className="checkbox-col">
                   {formData.InterestedType.option.map((item, i) => (
-                    <>
-                      <label key={item.value}>
-                        <input
-                          type="checkbox"
-                          value={item.value}
-                          {...(register("InterestedType"), { required: true })}
-                        />
-                        {item.text}
-                      </label>
-                    </>
+                    <div className="hannstarCheckBox" key={i}>
+                      <input
+                        id={item.value}
+                        type="checkbox"
+                        value={item.value}
+                        {...register("InterestedType", { required: true })}
+                      />
+                      <label htmlFor={item.value}>{item.text}</label>
+                    </div>
                   ))}
+                  {errors.InterestedType && <span>必填欄位，請重新輸入</span>}
                 </div>
               </div>
-              {errors.InterestedType && <span>必填欄位，請重新輸入</span>}
             </div>
           </div>
           <div className="stepTitle">步驟 3. 企業資料</div>
@@ -328,13 +327,12 @@ const AccountPersonal: React.FC = () => {
                 {errors.AreaCity && <span>必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
-                <label className="required">地址</label>
+                <label>地址</label>
                 <input
                   type="text"
                   defaultValue=""
-                  {...register("AreaAddress", { required: true })}
+                  {...register("AreaAddress")}
                 />
-                {errors.AreaAddress && <span>必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -395,16 +393,15 @@ const AccountPersonal: React.FC = () => {
                 <label className="required">公司產品主要銷售分類(可複選)</label>
                 <div className="checkbox-col">
                   {formData.CompanyMA1.option.map((item, i) => (
-                    <>
-                      <label key={item.value}>
-                        <input
-                          type="checkbox"
-                          value={item.value}
-                          {...register("CompanyMA1")}
-                        />
-                        {item.text}
-                      </label>
-                    </>
+                    <div className="hannstarCheckBox" key={i}>
+                      <input
+                        id={item.value}
+                        type="checkbox"
+                        value={item.value}
+                        {...register("CompanyMA1", { required: true })}
+                      />
+                      <label htmlFor={item.value}>{item.text}</label>
+                    </div>
                   ))}
                   {errors.CompanyMA1 && <span>必填欄位，請重新輸入</span>}
                 </div>
@@ -479,16 +476,15 @@ const AccountPersonal: React.FC = () => {
                 <label className="required">是否已使用HannStar產品</label>
                 <div className="checkbox-col">
                   {formData.HannstarYN.option.map((item, i) => (
-                    <>
-                      <label key={item.value}>
-                        <input
-                          type="radio"
-                          value={item.value}
-                          {...register("HannstarYN")}
-                        />
-                        {item.text}
-                      </label>
-                    </>
+                    <div className="hannstarRadio" key={i}>
+                      <input
+                        {...register("HannstarYN")}
+                        id={item.value}
+                        type="radio"
+                        value={item.value}
+                      />
+                      <label htmlFor={item.value}>{item.text}</label>
+                    </div>
                   ))}
                 </div>
 
@@ -552,18 +548,16 @@ const AccountPersonal: React.FC = () => {
               </div>
             </div>
           </div>
-
           <div className="classificationBlock">
             <div className="row">
               <div className="col-1">
-                <label className="required">備註說明</label>
+                <label>備註說明</label>
                 <input
                   type="text"
                   className="companyRemark"
                   defaultValue=""
-                  {...register("CompanyRemark", { required: true })}
+                  {...register("CompanyRemark")}
                 />
-                {errors.CompanyRemark && <span>必填欄位，請重新輸入</span>}
               </div>
             </div>
           </div>

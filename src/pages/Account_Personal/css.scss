@@ -3,7 +3,7 @@
 $pageName: "AccountPersonal";
 
 .#{$pageName}FormBlock {
-  padding-left:80px;
+  padding-left: 80px;
 
   .formTitle {
     @include hannstarH2Title;
@@ -11,46 +11,53 @@ $pageName: "AccountPersonal";
     padding-bottom: 10px;
   }
   .classificationBlock {
-    margin-bottom:50px;
-    .row{
+    margin-bottom: 20px;
+    .row {
       display: flex;
       justify-content: space-between;
       width: 100%;
       margin-bottom: 5px;
-      .col-1, .col-2, .col-3{
+      .col-1,
+      .col-2,
+      .col-3 {
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
-        label{
-         margin-bottom: 10px;
-         &.required {
-          &::after {
-              content: '*';
+        label {
+          margin-bottom: 10px;
+          &.required {
+            &::after {
+              content: "*";
               color: $hannstar-orange1;
               padding-left: 5px;
+            }
           }
-      }
         }
-        input[type='text']{
+        input[type="text"] {
           @include hannstarInput;
-          &.mb-20{
+          &.mb-20 {
             margin-bottom: 20px;
           }
         }
-        select{
+        select {
           @include hannstarSelect;
         }
-        span{
+        span {
           margin-top: 10px;
           @include hannstarContent2;
           color: $hannstar-orange1;
         }
-        .checkbox-col{
-          width: 100%;
-          label{
-            width: 50%;
-            display: inline-flex;
-            margin: 10px 0;
+        .checkbox-col {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 20px;
+          .hannstarCheckBox {
+            @include hannstarCheckBox;
+            margin: 5px 0;
+          }
+          .hannstarRadio {
+            @include hannstarRadio;
+            margin: 5px 0;
           }
         }
         .react-tel-input {
@@ -75,23 +82,22 @@ $pageName: "AccountPersonal";
                   transform: scale(1);
                 }
               }
-            
-              }
+            }
           }
         }
-        .companyRemark{
+        .companyRemark {
           min-height: 200px;
         }
       }
 
-      .col-1{
+      .col-1 {
         width: 100%;
       }
-      .col-2{
+      .col-2 {
         width: 49%;
       }
-      .col-3{
-        width: calc((100%/3) - 10px);
+      .col-3 {
+        width: calc((100% / 3) - 10px);
       }
     }
     .changTab {
@@ -101,13 +107,13 @@ $pageName: "AccountPersonal";
         width: 100%;
       }
     }
-    &.flex{
+    &.flex {
       display: flex;
     }
   }
   .stepTitle {
     @include hannstarH4Title;
-    margin: 40px 0 40px;
+    margin: 20px 0;
   }
   .btnBlock {
     display: flex;
@@ -118,23 +124,32 @@ $pageName: "AccountPersonal";
       @include hannstarBtn;
       text-align: center;
       margin-right: 40px;
-      border: none;;
+      border: none;
     }
   }
   @media screen and (max-width: $breakpoint) {
     padding: 0;
     .classificationBlock {
-      .row{
+      .row {
         width: 100%;
         flex-direction: column;
-        .col-1{
+        .col-1 {
           width: 100%;
         }
-        .col-2{
+        .col-2 {
           width: 100%;
         }
-        .col-3{
+        .col-3 {
           width: 100%;
+        }
+        .col-1,
+        .col-2,
+        .col-3 {
+          .checkbox-col {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 20px;
+          }
         }
       }
       .changTab {
