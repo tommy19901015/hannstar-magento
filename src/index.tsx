@@ -15,7 +15,7 @@ import ResetPassword from "./pages/ResetPassword/main";
 import MFA from "./pages/MFA/main";
 import MFAQRCode from "./pages/MFAQRCode/main";
 import AccountPersonal from "./pages/Account_Personal/main";
-import AccountPartner from "./pages/Account_Partner/main";
+import AccountPartner from "./pages/Account_Partner/mainNew";
 import AccountApplication from "./pages/Account_Application/main";
 import AccountSendVerifyEmail from "./pages/Account_SendVerifyEmail/main";
 import AccountMyAccount from "./pages/Account_MyAccount/main";

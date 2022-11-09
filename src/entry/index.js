@@ -6,7 +6,7 @@ import Login from "../pages/Login/main";
 import Index from "../pages/index/main";
 import HannstarRegister from "../pages/Register/main";
 import AccountPersonal from "../pages/Account_Personal/main";
-import AccountPartner from "../pages/Account_Partner/main";
+import AccountPartner from "../pages/Account_Partner/mainNew";
 import AccountApplication from "../pages/Account_Application/main";
 import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
 import AccountMyAccount from "../pages/Account_MyAccount/main";
