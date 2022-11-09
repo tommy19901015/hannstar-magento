@@ -139,7 +139,7 @@ const AccountPartner: React.FC = () => {
                     {formData.JobAttributes.option[2].text}
                   </option>
                 </select>
-                {errors.JobAttributes && <span>必填欄位，請重新輸入</span>}
+                {errors.JobAttributes && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">職稱</label>
@@ -166,7 +166,7 @@ const AccountPartner: React.FC = () => {
                     {formData.JobTitle.option[6].text}
                   </option>
                 </select>
-                {errors.JobTitle && <span>必填欄位，請重新輸入</span>}
+                {errors.JobTitle && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -177,7 +177,7 @@ const AccountPartner: React.FC = () => {
                   {...register("PhoneNumber1")}
                   onChange={(value, data) => handlCallPhoneInput(value, data)}
                 />
-                {errors.PhoneNumber1 && <span>必填欄位，請重新輸入</span>}
+                {errors.PhoneNumber1 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">分機</label>
@@ -186,7 +186,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("PhoneNumber2", { required: true })}
                 />
-                {errors.PhoneNumber2 && <span>必填欄位，請重新輸入</span>}
+                {errors.PhoneNumber2 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -197,7 +197,7 @@ const AccountPartner: React.FC = () => {
                   {...register("CellPhoneNumber1")}
                   onChange={(value, data) => handlePhoneInput(value, data)}
                 />
-                {errors.CellPhoneNumber1 && <span>必填欄位，請重新輸入</span>}
+                {errors.CellPhoneNumber1 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -229,7 +229,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("CompanyName", { required: true })}
                 />
-                {errors.CompanyName && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyName && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">公司名稱關鍵字</label>
@@ -238,7 +238,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("CompanySName", { required: true })}
                 />
-                {errors.CompanySName && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanySName && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -249,7 +249,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("TaxNo", { required: true })}
                 />
-                {errors.TaxNo && <span>必填欄位，請重新輸入</span>}
+                {errors.TaxNo && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">商業類型</label>
@@ -264,7 +264,7 @@ const AccountPartner: React.FC = () => {
                     {formData.BusinessType.option[2].text}
                   </option>
                 </select>
-                {errors.BusinessType && <span>必填欄位，請重新輸入</span>}
+                {errors.BusinessType && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -300,7 +300,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("Weblink", { required: true })}
                 />
-                {errors.Weblink && <span>必填欄位，請重新輸入</span>}
+                {errors.Weblink && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -315,7 +315,7 @@ const AccountPartner: React.FC = () => {
                     {formData.Country.option[1].text}
                   </option>
                 </select>
-                {errors.Country && <span>必填欄位，請重新輸入</span>} */}
+                {errors.Country && <span className="error">必填欄位，請重新輸入</span>} */}
               </div>
               <div className="col-3">
                 <label className="required">城市</label>
@@ -324,7 +324,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("AreaCity", { required: true })}
                 />
-                {errors.AreaCity && <span>必填欄位，請重新輸入</span>}
+                {errors.AreaCity && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
                 <label className="required">地址</label>
@@ -333,7 +333,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("AreaAddress", { required: true })}
                 />
-                {errors.AreaAddress && <span>必填欄位，請重新輸入</span>}
+                {errors.AreaAddress && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -353,7 +353,7 @@ const AccountPartner: React.FC = () => {
                     {formData.CompanyEmpNumber.option[3].text}
                   </option>
                 </select>
-                {errors.CompanyEmpNumber && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyEmpNumber && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">技術人員</label>
@@ -371,7 +371,7 @@ const AccountPartner: React.FC = () => {
                     {formData.TechnicalStaff.option[3].text}
                   </option>
                 </select>
-                {errors.AnnualRevenue && <span>必填欄位，請重新輸入</span>}
+                {errors.AnnualRevenue && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -394,7 +394,7 @@ const AccountPartner: React.FC = () => {
                     {formData.AnnualRevenue.option[4].text}
                   </option>
                 </select>
-                {errors.AnnualRevenue && <span>必填欄位，請重新輸入</span>}
+                {errors.AnnualRevenue && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">上市公司</label>
@@ -406,7 +406,7 @@ const AccountPartner: React.FC = () => {
                     {formData.CompanyStockOn.option[1].text}
                   </option>
                 </select>
-                {errors.CompanyStockOn && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyStockOn && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
 
@@ -418,7 +418,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("CompanyMA2", { required: true })}
                 />
-                {errors.CompanyMA2 && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyMA2 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
                 <label className="required">公司產品主要銷售國家/地區-2</label>
@@ -427,7 +427,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("CompanyMA3", { required: true })}
                 />
-                {errors.CompanyMA3 && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyMA3 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
                 <label className="required">公司產品主要銷售國家/地區-3</label>
@@ -436,7 +436,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("CompanyMA4", { required: true })}
                 />
-                {errors.CompanyMA4 && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyMA4 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -447,7 +447,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("TOP1", { required: true })}
                 />
-                {errors.TOP1 && <span>必填欄位，請重新輸入</span>}
+                {errors.TOP1 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
                 <label className="required">主要出貨客戶-2</label>
@@ -456,7 +456,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("TOP2", { required: true })}
                 />
-                {errors.TOP2 && <span>必填欄位，請重新輸入</span>}
+                {errors.TOP2 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-3">
                 <label className="required">主要出貨客戶-3</label>
@@ -465,7 +465,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("TOP3", { required: true })}
                 />
-                {errors.TOP3 && <span>必填欄位，請重新輸入</span>}
+                {errors.TOP3 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
           </div>
@@ -477,7 +477,7 @@ const AccountPartner: React.FC = () => {
             <div className="row">
               <div className="col-2">
                 <label className="required">是否已使用HannStar產品</label>
-                <div className="checkbox-col">
+                <div className="">
                   {formData.HannstarYN.option.map((item, i) => (
                     <div className="hannstarRadio" key={i}>
                       <input
@@ -491,7 +491,7 @@ const AccountPartner: React.FC = () => {
                   ))}
                 </div>
 
-                {errors.HannstarYN && <span>必填欄位，請重新輸入</span>}
+                {errors.HannstarYN && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">
@@ -503,7 +503,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("HannstarCode", { required: true })}
                 />
-                {errors.HannstarCode && <span>必填欄位，請重新輸入</span>}
+                {errors.HannstarCode && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
             <div className="row">
@@ -520,7 +520,7 @@ const AccountPartner: React.FC = () => {
                     {formData.Buy1.option[2].text}
                   </option>
                 </select>
-                {errors.Buy1 && <span>必填欄位，請重新輸入</span>}
+                {errors.Buy1 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">渠道公司名稱-1</label>
@@ -530,7 +530,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("BuyCompany1", { required: true })}
                 />
-                {errors.BuyCompany1 && <span>必填欄位，請重新輸入</span>}
+                {errors.BuyCompany1 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
 
@@ -548,7 +548,7 @@ const AccountPartner: React.FC = () => {
                     {formData.Buy2.option[2].text}
                   </option>
                 </select>
-                {errors.Buy2 && <span>必填欄位，請重新輸入</span>}
+                {errors.Buy2 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">渠道公司名稱-2</label>
@@ -558,7 +558,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("BuyCompany2", { required: true })}
                 />
-                {errors.BuyCompany2 && <span>必填欄位，請重新輸入</span>}
+                {errors.BuyCompany2 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
 
@@ -576,7 +576,7 @@ const AccountPartner: React.FC = () => {
                     {formData.Buy3.option[2].text}
                   </option>
                 </select>
-                {errors.Buy3 && <span>必填欄位，請重新輸入</span>}
+                {errors.Buy3 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
               <div className="col-2">
                 <label className="required">渠道公司名稱-3</label>
@@ -586,7 +586,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("BuyCompany3", { required: true })}
                 />
-                {errors.BuyCompany3 && <span>必填欄位，請重新輸入</span>}
+                {errors.BuyCompany3 && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
           </div>
@@ -600,7 +600,7 @@ const AccountPartner: React.FC = () => {
                   defaultValue=""
                   {...register("CompanyRemark", { required: true })}
                 />
-                {errors.CompanyRemark && <span>必填欄位，請重新輸入</span>}
+                {errors.CompanyRemark && <span className="error">必填欄位，請重新輸入</span>}
               </div>
             </div>
           </div>
