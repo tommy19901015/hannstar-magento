@@ -17,6 +17,8 @@ const AccountPersonal: React.FC = () => {
   const [accountInfo, setAccountInfo] = useState<any>("");
   const formData = usePageData();
 
+  const countrySelectBlock: any = useRef();
+
   type Keys = keyof typeof formData;
 
   type IFormInputs = {
@@ -24,58 +26,16 @@ const AccountPersonal: React.FC = () => {
   };
 
   useEffect(() => {
+    const magentoCountrySelectDom: any = document.getElementById("country");
+    console.log("magentoCountrySelectDom", magentoCountrySelectDom);
+    console.log("countrySelectBlock", countrySelectBlock);
+    if (magentoCountrySelectDom)
+      countrySelectBlock.current.appendChild(magentoCountrySelectDom);
+
     postAccountInfo({
-      email: "rfchen@hannstar.com",
+      Email: window.hannstar.email,
     }).then((response: any) => {
       setAccountInfo(response);
-    });
-    setAccountInfo({
-      UserName: "ronfu",
-      Email: "rfchen@hannstar.com",
-      Lang: "en",
-      GroupName: "權限群組名稱",
-      PhoneNumber0: "886",
-      PhoneNumber1: "1111",
-      PhoneNumber2: "11111",
-      CellPhoneNumber0: "886",
-      CellPhoneNumber1: "222222",
-      CountryCode: "國家代碼",
-      JobAttributes: "業務相關",
-      JobTitle: "創辦人/董事長",
-      InterestedType: [
-        "智慧零售",
-        "智慧育樂.",
-        "智能建築",
-        "健康關懷",
-        "交通運輸",
-        "智能製造",
-      ],
-      CompanyName: "公司名稱",
-      CompanySName: "公司名稱關鍵字",
-      BusinessType: "代理商",
-      TaxNo: "企業編號(統編/稅號)",
-      Weblink: "公司網址",
-      Country: "台灣",
-      AreaCity: "城市",
-      AreaAddress: "地址",
-      CompanyEmpNumber: "<100",
-      AnnualRevenue: "<1M",
-      CompanyStockOn: "是",
-      CompanyMA1: ["車載", "穿戴", "工控", "手機", "消費類", "其他"],
-      CompanyMA2: "公司產品主要銷售國家/地區-1",
-      CompanyMA3: "公司產品主要銷售國家/地區-2",
-      CompanyMA4: "公司產品主要銷售國家/地區-3",
-      TOP1: "主要出貨客戶-1",
-      TOP2: "主要出貨客戶-2",
-      TOP3: "主要出貨客戶-3",
-      HannstarYN: "Y",
-      Buy1: "瀚宇彩晶",
-      BuyCompany1: "渠道公司名稱-1",
-      Buy2: "瀚宇彩晶",
-      BuyCompany2: "渠道公司名稱-2",
-      Buy3: "瀚宇彩晶",
-      BuyCompany3: "渠道公司名稱-3",
-      CompanyRemark: "備註說明",
     });
   }, []);
 
@@ -110,7 +70,25 @@ const AccountPersonal: React.FC = () => {
     } = useForm<IFormInputs>();
 
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-      console.log(data);
+      const selectDom = countrySelectBlock.current.children[0];
+      const selectIndex = selectDom.selectedIndex;
+      const Country = selectDom.value;
+      const CountryCode = selectDom.selectedOptions[selectIndex].text;
+
+      const UserName = window.hannstar?.userName;
+      const Email = window.hannstar?.email;
+      const Lang = "en";
+      const GroupName = "權限群組名稱";
+      const result = {
+        ...data,
+        Lang,
+        Country,
+        CountryCode,
+        UserName,
+        Email,
+        GroupName,
+      };
+      console.log("result", result);
     };
 
     const handlCallPhoneInput = (value: string, data: any) => {
@@ -171,10 +149,9 @@ const AccountPersonal: React.FC = () => {
                   </option>
                   <option value={formData.JobAttributes.option[5].value}>
                     {formData.JobAttributes.option[5].text}
-                    </option>
-                    <option value={formData.JobAttributes.option[6].value}>
+                  </option>
+                  <option value={formData.JobAttributes.option[6].value}>
                     {formData.JobAttributes.option[6].text}
-                  
                   </option>
                 </select>
                 {errors.JobAttributes && <span>必填欄位，請重新輸入</span>}
@@ -332,7 +309,8 @@ const AccountPersonal: React.FC = () => {
             <div className="row">
               <div className="col-3">
                 <label className="required">國家/地區</label>
-                <select {...register("Country", { required: true })}>
+                <div ref={countrySelectBlock}></div>
+                {/* <select {...register("Country", { required: true })}>
                   <option value={formData.Country.option[0].value}>
                     {formData.Country.option[0].text}
                   </option>
@@ -340,7 +318,7 @@ const AccountPersonal: React.FC = () => {
                     {formData.Country.option[1].text}
                   </option>
                 </select>
-                {errors.Country && <span>必填欄位，請重新輸入</span>}
+                {errors.Country && <span>必填欄位，請重新輸入</span>} */}
               </div>
               <div className="col-3">
                 <label className="required">城市</label>
@@ -522,68 +500,101 @@ const AccountPersonal: React.FC = () => {
           </div>
           <div className="classificationBlock">
             <div className="row">
-                <div className="col-2">
+              <div className="col-2">
                 <label className="required">購買渠道-1</label>
-                  <select {...register("Buy1", { required: true })} >
-                    <option value={formData.Buy1.option[0].value}>{formData.Buy1.option[0].text}</option>
-                    <option value={formData.Buy1.option[1].value}>{formData.Buy1.option[1].text}</option>
-                    <option value={formData.Buy1.option[2].value}>{formData.Buy1.option[2].text}</option>
-                    </select>
-                  {errors.Buy1 && <span>必填欄位，請重新輸入</span>}
-                </div>
-                <div className="col-2">
+                <select {...register("Buy1", { required: true })}>
+                  <option value={formData.Buy1.option[0].value}>
+                    {formData.Buy1.option[0].text}
+                  </option>
+                  <option value={formData.Buy1.option[1].value}>
+                    {formData.Buy1.option[1].text}
+                  </option>
+                  <option value={formData.Buy1.option[2].value}>
+                    {formData.Buy1.option[2].text}
+                  </option>
+                </select>
+                {errors.Buy1 && <span>必填欄位，請重新輸入</span>}
+              </div>
+              <div className="col-2">
                 <label className="required">渠道公司名稱-1</label>
-                      <input type="text" className="mb-20" defaultValue="" {...register("BuyCompany1", { required: true })} />
-                      {errors.BuyCompany1 && <span>必填欄位，請重新輸入</span>}
-                </div>
-              </div>
-
-              <div className="row">
-              <div className="col-2">
-              <label className="required">購買渠道-2</label>
-                  <select {...register("Buy2", { required: true })} >
-                    <option value={formData.Buy2.option[0].value}>{formData.Buy2.option[0].text}</option>
-                    <option value={formData.Buy2.option[1].value}>{formData.Buy2.option[1].text}</option>
-                    <option value={formData.Buy2.option[2].value}>{formData.Buy2.option[2].text}</option>
-                    </select>
-                  {errors.Buy2 && <span>必填欄位，請重新輸入</span>}
-              </div>
-              <div className="col-2">
-              <label className="required">渠道公司名稱-2</label>
-                  <input type="text" className="mb-20" defaultValue="" {...register("BuyCompany2", { required: true })} />
-                  {errors.BuyCompany2 && <span>必填欄位，請重新輸入</span>}
-              </div>
-              </div>
-
-              <div className="row">
-              <div className="col-2">
-              <label className="required">購買渠道-3</label>
-                  <select {...register("Buy3", { required: true })} >
-                    <option value={formData.Buy3.option[0].value}>{formData.Buy3.option[0].text}</option>
-                    <option value={formData.Buy3.option[1].value}>{formData.Buy3.option[1].text}</option>
-                    <option value={formData.Buy3.option[2].value}>{formData.Buy3.option[2].text}</option>
-                    </select>
-                    {errors.Buy3 && <span>必填欄位，請重新輸入</span>}
-              </div>
-              <div className="col-2">
-              <label className="required">渠道公司名稱-3</label>
-                  <input type="text" className="mb-20" defaultValue="" {...register("BuyCompany3", { required: true })} />
-                  {errors.BuyCompany3 && <span>必填欄位，請重新輸入</span>}
-              </div>
+                <input
+                  type="text"
+                  className="mb-20"
+                  defaultValue=""
+                  {...register("BuyCompany1", { required: true })}
+                />
+                {errors.BuyCompany1 && <span>必填欄位，請重新輸入</span>}
               </div>
             </div>
-            <div className="classificationBlock">
-              <div className="row">
-                <div className="col-1">
-                  <label>備註說明</label>
-                  <textarea
-                    className="companyRemark"
-                    defaultValue=""
-                    {...register("CompanyRemark")}
-                  />
-                </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">購買渠道-2</label>
+                <select {...register("Buy2", { required: true })}>
+                  <option value={formData.Buy2.option[0].value}>
+                    {formData.Buy2.option[0].text}
+                  </option>
+                  <option value={formData.Buy2.option[1].value}>
+                    {formData.Buy2.option[1].text}
+                  </option>
+                  <option value={formData.Buy2.option[2].value}>
+                    {formData.Buy2.option[2].text}
+                  </option>
+                </select>
+                {errors.Buy2 && <span>必填欄位，請重新輸入</span>}
+              </div>
+              <div className="col-2">
+                <label className="required">渠道公司名稱-2</label>
+                <input
+                  type="text"
+                  className="mb-20"
+                  defaultValue=""
+                  {...register("BuyCompany2", { required: true })}
+                />
+                {errors.BuyCompany2 && <span>必填欄位，請重新輸入</span>}
               </div>
             </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">購買渠道-3</label>
+                <select {...register("Buy3", { required: true })}>
+                  <option value={formData.Buy3.option[0].value}>
+                    {formData.Buy3.option[0].text}
+                  </option>
+                  <option value={formData.Buy3.option[1].value}>
+                    {formData.Buy3.option[1].text}
+                  </option>
+                  <option value={formData.Buy3.option[2].value}>
+                    {formData.Buy3.option[2].text}
+                  </option>
+                </select>
+                {errors.Buy3 && <span>必填欄位，請重新輸入</span>}
+              </div>
+              <div className="col-2">
+                <label className="required">渠道公司名稱-3</label>
+                <input
+                  type="text"
+                  className="mb-20"
+                  defaultValue=""
+                  {...register("BuyCompany3", { required: true })}
+                />
+                {errors.BuyCompany3 && <span>必填欄位，請重新輸入</span>}
+              </div>
+            </div>
+          </div>
+          <div className="classificationBlock">
+            <div className="row">
+              <div className="col-1">
+                <label>備註說明</label>
+                <textarea
+                  className="companyRemark"
+                  defaultValue=""
+                  {...register("CompanyRemark")}
+                />
+              </div>
+            </div>
+          </div>
           <div className="btnBlock">
             <div onClick={handlerGoBack} className="goBack">
               回上一頁
