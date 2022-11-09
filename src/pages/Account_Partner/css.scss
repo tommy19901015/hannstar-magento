@@ -3,7 +3,7 @@
 $pageName: "AccountPartner";
 
 .#{$pageName}FormBlock {
-  padding-left:80px;
+  padding-left: 80px;
 
   .formTitle {
     @include hannstarH2Title;
@@ -11,58 +11,58 @@ $pageName: "AccountPartner";
     padding-bottom: 10px;
   }
   .classificationBlock {
-    margin-bottom:50px;
-    .row{
+    margin-bottom: 50px;
+    .row {
       display: flex;
       justify-content: space-between;
       width: 100%;
       margin-bottom: 5px;
-      .col-1, .col-2, .col-3{
+      .col-1,
+      .col-2,
+      .col-3 {
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
-        label{
-         margin-bottom: 10px;
-         &.required {
-          &::after {
-              content: '*';
+        label {
+          margin-bottom: 10px;
+          &.required {
+            &::after {
+              content: "*";
               color: $hannstar-orange1;
               padding-left: 5px;
+            }
           }
-      }
         }
-        input[type='text']{
+        input[type="text"] {
           @include hannstarInput;
-          &.mb-20{
+          &.mb-20 {
             margin-bottom: 20px;
           }
         }
-        select{
+        select {
           @include hannstarSelect;
         }
-        span{
+        span {
           margin-top: 10px;
           @include hannstarContent2;
           color: $hannstar-orange1;
         }
-        .checkbox-col{
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
-          width: 100%;
-          label{
-            display: inline-flex;
-            margin: 10px 25px 10px 0;
-            align-items: center;
-            &.label-w{
-              width: 25%
-            }
+        .checkbox-col {
+          // display: grid;
+          // grid-template-columns: repeat(2, 1fr);
+          // grid-gap: 20px;
+          .hannstarCheckBox {
+            @include hannstarCheckBox;
+            margin: 5px 0;
+          }
+          .hannstarRadio {
+            @include hannstarRadio;
+            margin: 5px 0;
           }
 
-          &.flex-wrap{
-            flex-wrap: wrap-reverse;
-
-          }
+          // &.flex-wrap {
+          //   flex-wrap: wrap-reverse;
+          // }
         }
         .react-tel-input {
           &:hover {
@@ -86,11 +86,10 @@ $pageName: "AccountPartner";
                   transform: scale(1);
                 }
               }
-            
-              }
+            }
           }
         }
-        .companyRemark{
+        .companyRemark {
           min-height: 200px;
         }
         .hannstarCheckBox {
@@ -101,14 +100,14 @@ $pageName: "AccountPartner";
         }
       }
 
-      .col-1{
+      .col-1 {
         width: 100%;
       }
-      .col-2{
+      .col-2 {
         width: 49%;
       }
-      .col-3{
-        width: calc((100%/3) - 10px);
+      .col-3 {
+        width: calc((100% / 3) - 10px);
       }
     }
     .changTab {
@@ -118,7 +117,7 @@ $pageName: "AccountPartner";
         width: 100%;
       }
     }
-    &.flex{
+    &.flex {
       display: flex;
     }
   }
@@ -135,32 +134,34 @@ $pageName: "AccountPartner";
       @include hannstarBtn;
       text-align: center;
       margin-right: 40px;
-      border: none;;
+      border: none;
     }
   }
   @media screen and (max-width: $breakpoint) {
     padding: 0;
     .classificationBlock {
-      .row{
+      .row {
         width: 100%;
         flex-direction: column;
-        .col-1, .col-2, .col-3{
-          .checkbox-col{
-            label{
+        .col-1,
+        .col-2,
+        .col-3 {
+          .checkbox-col {
+            label {
               margin: 10px 20px 10px 0;
-              &.label-w{
-                width: 40%
+              &.label-w {
+                width: 40%;
               }
             }
           }
         }
-        .col-1{
+        .col-1 {
           width: 100%;
         }
-        .col-2{
+        .col-2 {
           width: 100%;
         }
-        .col-3{
+        .col-3 {
           width: 100%;
         }
       }

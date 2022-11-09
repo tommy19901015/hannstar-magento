@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 function usePageData() {
   const { t } = useTranslation();
   return {
-    JobAttributes:{
+    JobAttributes: {
       title: "工作屬性",
       option: [
         { text: "業務相關", value: "業務相關" },
@@ -15,7 +15,7 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    InterestedType:{
+    InterestedType: {
       title: "感興趣的應用別(可複選)",
       option: [
         { text: "智慧零售", value: "智慧零售" },
@@ -26,13 +26,13 @@ function usePageData() {
         { text: "智能製造", value: "智能製造" },
       ],
     },
-    CompanyName:{
+    CompanyName: {
       title: "公司名稱",
     },
-    CompanySName:{
+    CompanySName: {
       title: "公司名稱關鍵字",
     },
-    BusinessType:{
+    BusinessType: {
       title: "商業類型",
       option: [
         { text: "材料供應商", value: "材料供應商" },
@@ -40,26 +40,26 @@ function usePageData() {
         { text: "基礎供應商", value: "基礎供應商" },
       ],
     },
-    TaxNo:{
+    TaxNo: {
       title: "企業編號(統編/稅號)",
     },
-    Weblink:{
+    Weblink: {
       title: "公司網址",
     },
-    Country:{
+    Country: {
       title: "國家/地區",
       option: [
         { text: "台灣", value: "台灣" },
         { text: "日本", value: "日本" },
       ],
     },
-    AreaCity:{
+    AreaCity: {
       title: "城市",
     },
-    AreaAddress:{
+    AreaAddress: {
       title: "地址",
     },
-    CompanyEmpNumber:{
+    CompanyEmpNumber: {
       title: "員工總數",
       option: [
         { text: "<100", value: "<100" },
@@ -68,7 +68,7 @@ function usePageData() {
         { text: ">1000", value: ">1000" },
       ],
     },
-    AnnualRevenue:{
+    AnnualRevenue: {
       title: "年營業額(USD)",
       option: [
         { text: "<1M", value: "<1M" },
@@ -78,14 +78,14 @@ function usePageData() {
         { text: ">30M", value: ">30M" },
       ],
     },
-    CompanyStockOn:{
+    CompanyStockOn: {
       title: "上市公司",
       option: [
         { text: "是", value: "是" },
         { text: "否", value: "否" },
       ],
     },
-    CompanyMA1:{
+    CompanyMA1: {
       title: "公司產品主要銷售分類(可複選)",
       option: [
         { text: "車載", value: "車載" },
@@ -96,35 +96,35 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    CompanyMA2:{
+    CompanyMA2: {
       title: "公司產品主要銷售國家/地區-1",
     },
-    CompanyMA3:{
+    CompanyMA3: {
       title: "公司產品主要銷售國家/地區-2",
     },
-    CompanyMA4:{
+    CompanyMA4: {
       title: "公司產品主要銷售國家/地區-3",
     },
-    TOP1:{
+    TOP1: {
       title: "主要出貨客戶-1",
     },
-    TOP2:{
+    TOP2: {
       title: "主要出貨客戶-2",
     },
-    TOP3:{
+    TOP3: {
       title: "主要出貨客戶-3",
     },
-    HannstarYN:{
+    HannstarYN: {
       title: "是否已使用HannStar產品",
       option: [
         { text: "是(請在協助以下資訊)", value: "Y" },
         { text: "否/不確定", value: "N" },
       ],
     },
-    hannstarCode:{
-        title: "請在提供HannStar供應商代碼(6碼)"
+    HannstarCode: {
+      title: "請在提供HannStar供應商代碼(6碼)",
     },
-    Buy1:{
+    Buy1: {
       title: "購買渠道-1",
       option: [
         { text: "瀚宇彩晶", value: "瀚宇彩晶" },
@@ -132,10 +132,10 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    BuyCompany1:{
+    BuyCompany1: {
       title: "渠道公司名稱-1",
     },
-    Buy2:{
+    Buy2: {
       title: "購買渠道-2",
       option: [
         { text: "瀚宇彩晶", value: "瀚宇彩晶" },
@@ -143,10 +143,10 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    BuyCompany2:{
-      title: "渠道公司名稱-2"
+    BuyCompany2: {
+      title: "渠道公司名稱-2",
     },
-    Buy3:{
+    Buy3: {
       title: "購買渠道-3",
       option: [
         { text: "瀚宇彩晶", value: "瀚宇彩晶" },
@@ -154,13 +154,13 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    BuyCompany3:{
+    BuyCompany3: {
       title: "渠道公司名稱-3",
     },
-    CompanyRemark:{
+    CompanyRemark: {
       title: "備註說明",
     },
-    JobTitle:{
+    JobTitle: {
       title: "職稱",
       option: [
         { text: "創辦人/董事長", value: "創辦人/董事長" },
@@ -172,33 +172,33 @@ function usePageData() {
         { text: "其他類型", value: "其他類型" },
       ],
     },
-    ApplicableArea:{
-        title: "適用區域",
-        option: [
-          { text: "Array 廠", value: "Array 廠" },
-          { text: "Cell 廠", value: "Cell 廠" },
-          { text: "Color Filter 廠", value: "Color Filter 廠" },
-          { text: "Touch 廠", value: "Touch 廠" },
-          { text: "Module 廠", value: "Module 廠" },
-          { text: "廠務", value: "廠務" },
-        ], 
+    ApplicableArea: {
+      title: "適用區域",
+      option: [
+        { text: "Array 廠", value: "Array 廠" },
+        { text: "Cell 廠", value: "Cell 廠" },
+        { text: "Color Filter 廠", value: "Color Filter 廠" },
+        { text: "Touch 廠", value: "Touch 廠" },
+        { text: "Module 廠", value: "Module 廠" },
+        { text: "廠務", value: "廠務" },
+      ],
     },
-    TechnicalStaff:{
-        title: "技術人員",
-        option: [
-          { text: "<10", value: "<10" },
-          { text: "10-30", value: "10-30" },
-          { text: "30-100", value: "30-100" },
-          { text: ">100", value: ">100" },
-        ],
+    TechnicalStaff: {
+      title: "技術人員",
+      option: [
+        { text: "<10", value: "<10" },
+        { text: "10-30", value: "10-30" },
+        { text: "30-100", value: "30-100" },
+        { text: ">100", value: ">100" },
+      ],
     },
-    PhoneNumber0:{},
-    PhoneNumber1:{},
-    PhoneNumber2:{},
-    CellPhoneNumber0:{},
-    CellPhoneNumber1:{},
-    CountryCode:{},
-  }
+    PhoneNumber0: {},
+    PhoneNumber1: {},
+    PhoneNumber2: {},
+    CellPhoneNumber0: {},
+    CellPhoneNumber1: {},
+    CountryCode: {},
+  };
 }
 
 export default usePageData;
