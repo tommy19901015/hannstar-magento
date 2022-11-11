@@ -1,7 +1,7 @@
 import React from "react";
 import Columns from "../../component/columns/main";
 import { ColType, TopMType } from "../../component/columns/interface";
-import { I_AccountPersonalTemplate } from "./interface";
+import { I_AccountPersonalTemplate, Accountstatus } from "./interface";
 
 import { pageData } from "./pageData";
 import { useIsMobile } from "../../hooks";
@@ -10,12 +10,14 @@ import "./css.scss";
 const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
   contentComponent,
   rootId,
+  accountstatus
 }) => {
   const pageName = "AccountPersonalTemplate";
   const isMobile = useIsMobile();
   const personalInfoData = pageData();
   const AccountToolBar = () => {
-    // rootId = "123"
+    // rootId = "123" //測試資料把menu打開
+    // accountstatus = Accountstatus.Approved
     return (
       <div className={`${pageName}AccountToolBar`}>
         {useIsMobile() ? (
@@ -28,7 +30,7 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
                   <a href={item.href}>{item.title}</a>
                 </li>
               ))}
-              {rootId && <>
+              {(rootId && accountstatus === Accountstatus.Approved) && <>
                 {personalInfoData[1].items.map((item, index) => (
                   <li className="linkText" key={index}>
                     <a href={item.href}>{item.title}</a>
@@ -49,7 +51,7 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
                 ))}
               </ul>
             </div>
-            {rootId && <>
+            {(rootId && accountstatus === Accountstatus.Approved) && <>
               <input type="checkbox" id="menu1" />
               <label htmlFor="menu1">{personalInfoData[1].categoryTitle}</label>
               <div className="menu-content">
@@ -63,8 +65,9 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
               </div>
             </>}
           </>
-        )}
-      </div>
+        )
+        }
+      </div >
     );
   };
 

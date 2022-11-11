@@ -13,6 +13,8 @@ import AccountMyAccount from "../pages/Account_MyAccount/main";
 import AccountEditAccount from "../pages/Account_EditAccount/main";
 import AccountMemberInfo from "../pages/Account_MemberInfo/main";
 import AccountDashboard from "../pages/Account_Dashboard/main";
+import AccountNewsletter from "../pages/Account_Newsletter/main";
+import AccountLogout from "../pages/Account_Logout/main";
 import MFAQRCode from "../pages/MFAQRCode/main";
 import MFA from "../pages/MFA/main";
 import ForgotPassword from "../pages/ForgotPassword/main";
@@ -56,6 +58,8 @@ const pageMappingObj = {
   root_AccountSendVerifyEmail: <AccountSendVerifyEmail />,
   root_AccountMemberInfo: <AccountMemberInfo />,
   root_AccountDashboard: <AccountDashboard />,
+  root_AccountNewsletter: <AccountNewsletter/>,
+  root_AccountLogout: <AccountLogout/>,
   root_Register: <HannstarRegister />,
   root_MFAQRCode: <MFAQRCode />,
   root_MFA: <MFA />,

@@ -52,6 +52,10 @@
     "AccountNewsletter": {
       "title": "訂閱信件",
       "href": "/newsletter/manage/"
+    },
+    "AccountLogout":{
+      "title": "登出",
+      "href": "/customer/account/Success/"
     }
   },
   "hannstar": {

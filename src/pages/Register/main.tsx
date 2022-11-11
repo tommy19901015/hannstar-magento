@@ -262,11 +262,9 @@ const HannstarRegister: React.FC = () => {
             {passwordStrengthMeter === 4 && (
               <div className="meter4">非常強</div>
             )} */}
-            {!passwordPass && (
-              <div className="errorMessage">
-                必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
-              </div>
-            )}
+            <div className={`remind ${!passwordPass ? "errorMessage" : ""}`}>
+              請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+            </div>
           </div>
           <div className="columnBlock">
             <div className="title required">密碼(再次確認)</div>
@@ -289,7 +287,7 @@ const HannstarRegister: React.FC = () => {
             </div>
           </div>
           <div className="columnBlock">
-            <div className="title">公司所在地(國家)</div>
+            <div className="title">公司所在地</div>
             <div className="bodyBlock select" ref={countrySelectBlock}></div>
           </div>
           <div className="checkBlock">

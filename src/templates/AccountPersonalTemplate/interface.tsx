@@ -1,8 +1,13 @@
-import { JsxElement } from "typescript";
+export enum Accountstatus {
+  Pending = "Pending",
+  NotApproved = "NotApproved",
+  Approved = "Approved"
+}
 
 export interface I_AccountPersonalTemplate {
   contentComponent: JSX.Element;
-  rootId: string
+  rootId?: string
+  accountstatus?: Accountstatus
 }
 
 type I_Item = {

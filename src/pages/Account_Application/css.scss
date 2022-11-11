@@ -10,9 +10,9 @@ $pageName: 'AccountApplication';
         margin-bottom: 20px;
     }
     .rankTypeContent {
-        margin-bottom: 100px;
         .subTitle {
             @include hannstarH4Title;
+            margin-bottom: 20px;
         }
         .rankContent {
             align-items: center;
@@ -26,10 +26,12 @@ $pageName: 'AccountApplication';
                 padding-bottom: 80px;
                 .rankCard {
                     border: 1px solid $hannstar-border-color;
-                    padding: 20px 0px;
+                    padding: 20px;
                     text-align: center;
                     .rankImg {
                         margin-bottom: 20px;
+                        width: 100%;
+                        max-width: 276px;
                     }
                     .rankText {
                         margin-bottom: 20px;
@@ -37,22 +39,6 @@ $pageName: 'AccountApplication';
                     .rankName {
                         display: inline-flex;
                         align-items: center;
-                    }
-                }
-                .btnBlocks {
-                    display: flex;
-                    position: absolute;
-                    bottom: 0;
-                    bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    .btnBlock {
-                        text-align: center;
-                        margin: 0 20px;
-                        .applicationBtn {
-                            @include hannstarBtn;
-                            text-align: center;
-                        }
                     }
                 }
             }
@@ -63,7 +49,22 @@ $pageName: 'AccountApplication';
             }
         }
     }
-
+    .btnBlocks {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 40px;
+        .btnBlock {
+            text-align: center;
+            margin: 0 20px;
+            .applicationBtn {
+                @include hannstarBtn;
+                text-align: center;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
     .captionContent {
         width: 100%;
         margin: 0 auto;
@@ -109,7 +110,6 @@ $pageName: 'AccountApplication';
             @include hannstarContent2;
             .topBlock,
             .bottomBlock {
-                @include hannstarContent1;
                 .textTitle {
                     @include hannstarH4Title;
                     text-align: center;
@@ -171,7 +171,7 @@ $pageName: 'AccountApplication';
         padding: 0;
         margin-bottom: 30px;
         .rankTypeContent {
-            margin-bottom: 50px;
+            // margin-bottom: 50px;
             .rankContent {
                 display: flex;
                 flex-direction: column;
@@ -194,11 +194,27 @@ $pageName: 'AccountApplication';
                 }
             }
         }
+        .btnBlocks {
+            flex-direction: column;
+            width: 100%;
+            .btnBlock {
+                width: 100%;
+                text-align: inherit;
+                margin: 0;
+                a {
+                    // display: inline-block;
+                    width: calc(100% - 32px);
+                }
+                &:last-child {
+                    margin-top: 40px;
+                }
+            }
+        }
         .captionContent {
             min-height: 600px;
             .tabs {
                 position: relative;
-                margin: 3rem 0;
+                margin: 40px 0;
                 display: flex;
                 justify-content: space-between;
                 overflow: initial;
@@ -260,14 +276,6 @@ $pageName: 'AccountApplication';
                             height: 9px;
                             margin-right: 10px;
                         }
-                    }
-                }
-
-                .btnBlock {
-                    text-align: center;
-                    .applicationBtn {
-                        @include hannstarBtn;
-                        text-align: center;
                     }
                 }
             }

@@ -9,7 +9,7 @@ const getWindowRect = ()=>{
 
 const getIsMobile = () => {
   const currentWindowWidth = getWindowRect().width;
-  return currentWindowWidth < 1024;
+  return currentWindowWidth < 980;
 };
 
 function useIsMobile(): boolean {

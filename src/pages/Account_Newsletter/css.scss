@@ -1,0 +1,46 @@
+@import '../../style/variable.scss';
+
+$pageName: 'AccountNewsletter';
+
+.#{$pageName}Content {
+    padding: 0 60px;
+    margin-bottom: 100px;
+    .mainTitle {
+        @include hannstarH2Title;
+        margin-bottom: 20px;
+    }
+    table {
+        width: 100%;
+        display: table;
+        border: 1px solid #eee;
+        tr {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid $hannstar-border-color;
+            &:nth-child(1) {
+                color: #fff;
+                background-color: $hannstar-blue2;
+                border-bottom: none;
+            }
+        }
+        td {
+            width: calc((100% - 10%) / 5);
+            padding: 15px 10px;
+            text-align: center;
+            &:last-of-type {
+                width: 10%;
+            }
+            a {
+                color: $hannstar-blue2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint) {
+    .#{$pageName}Content {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+}

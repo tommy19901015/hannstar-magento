@@ -22,6 +22,8 @@ import AccountMyAccount from "./pages/Account_MyAccount/main";
 import AccountEditAccount from "./pages/Account_EditAccount/main";
 import AccountMemberInfo from "./pages/Account_MemberInfo/main";
 import AccountDashboard from "./pages/Account_Dashboard/main";
+import AccountNewsletter from "./pages/Account_Newsletter/main";
+import AccountLogout from "./pages/Account_Logout/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -79,9 +81,14 @@ ReactDOM.render(
         path={account.AccountDashboard.href}
         element={<AccountDashboard />}
       />
+      <Route
+        path={account.AccountLogout.href}
+        element={<AccountLogout />}
+      />
       <Route path={account.MemberInfo.href} element={<AccountMemberInfo />} />
       <Route path={account.EditAccount.href} element={<AccountEditAccount />} />
       <Route path={account.MyAccount.href} element={<AccountMyAccount />} />
+      <Route path={account.AccountNewsletter.href} element={<AccountNewsletter />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />

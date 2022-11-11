@@ -1,0 +1,61 @@
+失敗
+{
+    "success": "fail",
+    "errorMsg": "NO enterprice Customer"
+}
+
+成功
+{
+    "id": "39",
+    "rootid": "Tsk000000402232",
+    "customerid": null,
+    "parentid": null,
+    "status": "Approved",
+    "username": "Wang Nick",
+    "email": "nickwang@hannstar.com",
+    "lang": "en",
+    "groupname": "General",
+    "jobattributes": "業務相關",
+    "jobtitle": "創辦人/董事長",
+    "phonenumber0": "886",
+    "phonenumber1": "886111",
+    "phonenumber2": "222",
+    "cellphonenumber0": "886",
+    "cellphonenumber1": "886333",
+    "interestedtype": [
+        "智慧育樂.",
+        "交通運輸"
+    ],
+    "companyname": "hannstar",
+    "companysname": "hannstar",
+    "taxno": "企業編號(統編/稅號)",
+    "businesstype": "代理商",
+    "applicablearea": null,
+    "weblink": "https://magentodev.hannstar.com/account/enterprise/view",
+    "country": "TW",
+    "countrycode": "台灣",
+    "areacity": "城市",
+    "areaaddress": "",
+    "technicalstaff": null,
+    "annualrevenue": "<1M",
+    "companystockon": "是",
+    "companyMA1": "車載,手機",
+    "companyMA2": "公司產品主要銷售國家/地區-1",
+    "companyMA3": "",
+    "companyMA4": "",
+    "TOP1": "",
+    "TOP2": "",
+    "TOP3": "",
+    "HannstarYN": null,
+    "HannstarCode": "Y",
+    "Buy1": "瀚宇彩晶",
+    "Buy2": "瀚宇彩晶",
+    "Buy3": "瀚宇彩晶",
+    "BuyCompany1": "渠道公司名稱-1",
+    "BuyCompany2": "",
+    "BuyCompany3": "",
+    "CompanyRemark": "",
+    "CompanyEmpNumber": "<100",
+    "leadsource": null,
+    "create_Date": "2022-11-11 05:38:32"
+}

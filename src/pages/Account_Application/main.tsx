@@ -10,23 +10,19 @@ import urlConfig from "../../config/urlSetting.json";
 import usePageData from "./pageData";
 import { Accountstatus } from "./interface"
 import { postAccountInfo } from "../../services/api.service";
-import useGetLoginInfo from "../../hooks/useGetLoginInfo"
 import "./css.scss";
 
 const AccountApplication: React.FC = () => {
   const pageName = "AccountApplication";
   const pageData = usePageData();
   const { breadcrumbs, captionData, content } = pageData;
-
   const [accountInfo, setAccountInfo] = useState<any>("")
-  const loginInfo = useGetLoginInfo()
-  console.log('loginInfo', loginInfo);
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email
+      Email: window.hannstar.email,
     }).then((response: any) => {
-      setAccountInfo(response)
+      if (response.success !== "fail") setAccountInfo(response)
     });
   }, []);
 
@@ -71,25 +67,6 @@ const AccountApplication: React.FC = () => {
                 src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
               />
               <div className="text">{content.companymember}</div>
-            </div>
-          </div>
-
-          <div className="btnBlocks">
-            <div className="btnBlock">
-              <a
-                className="applicationBtn"
-                href={urlConfig.account.AccountPersonal.href}
-              >
-                {content.applymembership}
-              </a>
-            </div>
-            <div className="btnBlock">
-              <a
-                className="applicationBtn"
-                href={urlConfig.account.AccountPartner.href}
-              >
-                {content.applypartnership}
-              </a>
             </div>
           </div>
         </div>
@@ -175,106 +152,126 @@ const AccountApplication: React.FC = () => {
           <div className="subTitle">{content.subTitle}</div>
           {mappingRankType(accountInfo.status)}
         </div>
-        {(accountInfo.status === Accountstatus.NotApproved || !accountInfo.status) &&
-          <div className="captionContent">
-            <div className="subTitle">{content.rank}</div>
-            <div className="tabs">
-              <div className="tab">
-                <input
-                  type="radio"
-                  name="css-tabs"
-                  id="tab-1"
-                  checked
-                  className="tab-switch"
-                />
-                <label htmlFor="tab-1" className="tab-label titleText">
-                  {content.customerpermission}
-                </label>
-                <img
-                  alt="captionIcon"
-                  className="captionIcon"
-                  src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_client_directions_blue.png`}
-                />
-                <div className="tab-content">
-                  <div className="topBlock">
-                    <div className="textTitle">{content.member}</div>
-                    <ul className="captionList">
-                      {captionData.customerNormal.map((item) => (
-                        <li>
-                          <img
-                            alt="icon_tick"
-                            src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
-                          />
-                          <div>{item}</div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bottomBlock">
-                    <div className="textTitle">{content.companymember}</div>
-                    <ul className="captionList">
-                      {captionData.customerEnterprise.map((item) => (
-                        <li>
-                          <img
-                            alt="icon_tick"
-                            src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
-                          />
-                          <div>{item}</div>
-                        </li>
-                      ))}
-                    </ul>
+        {(!accountInfo || accountInfo.status === Accountstatus.NotApproved) &&
+          <>
+            <div className="btnBlocks">
+              <div className="btnBlock">
+                <a
+                  className="applicationBtn"
+                  href={urlConfig.account.AccountPersonal.href}
+                >
+                  {content.applymembership}
+                </a>
+              </div>
+              <div className="btnBlock">
+                <a
+                  className="applicationBtn"
+                  href={urlConfig.account.AccountPartner.href}
+                >
+                  {content.applypartnership}
+                </a>
+              </div>
+            </div>
+            <div className="captionContent">
+              <div className="subTitle">{content.rank}</div>
+              <div className="tabs">
+                <div className="tab">
+                  <input
+                    type="radio"
+                    name="css-tabs"
+                    id="tab-1"
+                    checked
+                    className="tab-switch"
+                  />
+                  <label htmlFor="tab-1" className="tab-label titleText">
+                    {content.customerpermission}
+                  </label>
+                  <img
+                    alt="captionIcon"
+                    className="captionIcon"
+                    src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_client_directions_blue.png`}
+                  />
+                  <div className="tab-content">
+                    <div className="topBlock">
+                      <div className="textTitle">{content.member}</div>
+                      <ul className="captionList">
+                        {captionData.customerNormal.map((item) => (
+                          <li>
+                            <img
+                              alt="icon_tick"
+                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                            />
+                            <div>{item}</div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bottomBlock">
+                      <div className="textTitle">{content.companymember}</div>
+                      <ul className="captionList">
+                        {captionData.customerEnterprise.map((item) => (
+                          <li>
+                            <img
+                              alt="icon_tick"
+                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                            />
+                            <div>{item}</div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="tab"></div>
-              <div className="tab">
-                <input
-                  type="radio"
-                  name="css-tabs"
-                  id="tab-2"
-                  className="tab-switch"
-                />
-                <label htmlFor="tab-2" className="tab-label titleText">
-                  {content.supplierlimit}
-                </label>
-                <img
-                  alt="captionIcon"
-                  className="captionIcon"
-                  src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_supplier_directions_blue.png`}
-                />
-                <div className="tab-content">
-                  <div className="topBlock">
-                    <div className="textTitle">{content.member}</div>
-                    <ul className="captionList">
-                      {captionData.partnerNormal.map((item) => (
-                        <li>
-                          <img
-                            alt="icon_tick"
-                            src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
-                          />
-                          <div>{item}</div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bottomBlock">
-                    <div className="textTitle">{content.companymember}</div>
-                    <ul className="captionList">
-                      {captionData.partnerEnterprise.map((item) => (
-                        <li>
-                          <img
-                            alt="icon_tick"
-                            src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
-                          />
-                          <div>{item}</div>
-                        </li>
-                      ))}
-                    </ul>
+                <div className="tab"></div>
+                <div className="tab">
+                  <input
+                    type="radio"
+                    name="css-tabs"
+                    id="tab-2"
+                    className="tab-switch"
+                  />
+                  <label htmlFor="tab-2" className="tab-label titleText">
+                    {content.supplierlimit}
+                  </label>
+                  <img
+                    alt="captionIcon"
+                    className="captionIcon"
+                    src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_supplier_directions_blue.png`}
+                  />
+                  <div className="tab-content">
+                    <div className="topBlock">
+                      <div className="textTitle">{content.member}</div>
+                      <ul className="captionList">
+                        {captionData.partnerNormal.map((item) => (
+                          <li>
+                            <img
+                              alt="icon_tick"
+                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                            />
+                            <div>{item}</div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bottomBlock">
+                      <div className="textTitle">{content.companymember}</div>
+                      <ul className="captionList">
+                        {captionData.partnerEnterprise.map((item) => (
+                          <li>
+                            <img
+                              alt="icon_tick"
+                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                            />
+                            <div>{item}</div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </>
         }
 
       </div>
@@ -287,7 +284,11 @@ const AccountApplication: React.FC = () => {
         type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbs} />}
       />
-      <AccountPersonalTemplate contentComponent={<ApplicationContent />} rootId={accountInfo.rootid} />
+      <AccountPersonalTemplate
+        contentComponent={<ApplicationContent />}
+        rootId={accountInfo.rootid}
+        accountstatus={accountInfo.status}
+      />
     </Layout>
   );
 };

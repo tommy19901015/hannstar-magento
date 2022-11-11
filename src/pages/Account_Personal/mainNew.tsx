@@ -7,14 +7,13 @@ import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { postEnterPrice, postAccountInfo } from "../../services/api.service";
+import { postEnterPrice } from "../../services/api.service";
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./css.scss";
 import usePageData from "./pageData";
 
 const AccountPersonal: React.FC = () => {
   const pageName = "AccountPersonal";
-  const [accountInfo, setAccountInfo] = useState<any>("");
   const formData = usePageData();
 
   const countrySelectBlock: any = useRef();
@@ -27,15 +26,8 @@ const AccountPersonal: React.FC = () => {
 
   useEffect(() => {
     const magentoCountrySelectDom: any = document.getElementById("country");
-    console.log("magentoCountrySelectDom", magentoCountrySelectDom);
-    console.log("countrySelectBlock", countrySelectBlock);
     if (magentoCountrySelectDom)
       countrySelectBlock.current.appendChild(magentoCountrySelectDom);
-    // postAccountInfo({
-    //   Email: window.hannstar.email,
-    // }).then((response: any) => {
-    //   setAccountInfo(response);
-    // });
   }, []);
 
 
@@ -70,11 +62,6 @@ const AccountPersonal: React.FC = () => {
     } = useForm<IFormInputs>();
 
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-      // const selectDom = countrySelectBlock.current.children[0];
-      // const selectIndex = selectDom.selectedIndex;
-      // const Country = selectDom.value;
-      // const CountryCode = selectDom.selectedOptions[selectIndex].text;
-
       const selectDom: any = document.getElementById("country");
       const Country = selectDom.value;
       const CountryCode = selectDom.selectedOptions[0].text;
@@ -82,7 +69,7 @@ const AccountPersonal: React.FC = () => {
       const UserName = window.hannstar?.userName;
       const Email = window.hannstar?.email;
       const Lang = "en";
-      const GroupName = "權限群組名稱";
+      const GroupName = "";
       const result: any = {
         ...data,
         Lang,
@@ -340,15 +327,6 @@ const AccountPersonal: React.FC = () => {
               <div className="col-3">
                 <label className="required">國家/地區</label>
                 <div ref={countrySelectBlock}></div>
-                {/* <select {...register("Country", { required: true })}>
-                  <option value={formData.Country.option[0].value}>
-                    {formData.Country.option[0].text}
-                  </option>
-                  <option value={formData.Country.option[1].value}>
-                    {formData.Country.option[1].text}
-                  </option>
-                </select>
-                {errors.Country && <span className="error">必填欄位，請重新輸入</span>} */}
               </div>
               <div className="col-3">
                 <label className="required">城市</label>
@@ -641,7 +619,6 @@ const AccountPersonal: React.FC = () => {
       />
       <AccountPersonalTemplate
         contentComponent={<PersonalFormContent />}
-        rootId={""}
       />
     </Layout>
   );

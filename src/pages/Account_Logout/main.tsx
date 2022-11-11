@@ -11,7 +11,7 @@ import { postAccountInfo } from "../../services/api.service";
 
 const MemberInfoContent = () => {
   const { content } = usePageData();
-  const pageName = "AccountDashboard";
+  const pageName = "AccountLogout";
 
   const handleDetail = () => {
     // to do
@@ -44,7 +44,7 @@ const MemberInfoContent = () => {
   );
 };
 
-const AccountDashboard: React.FC = () => {
+const AccountLogout: React.FC = () => {
   const { breadcrumbs } = usePageData();
   const [accountInfo, setAccountInfo] = useState<any>("")
 
@@ -71,4 +71,4 @@ const AccountDashboard: React.FC = () => {
   );
 };
 
-export default AccountDashboard;
+export default AccountLogout;
