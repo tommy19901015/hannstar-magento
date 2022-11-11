@@ -97,6 +97,10 @@ $pageName: 'AccountEditAccount';
     }
 }
 
+.mp-gdpr-delete-customer-account {
+    display: none;
+}
+
 @media screen and (max-width: $breakpoint) {
     .#{$pageName}Content {
         padding: 0;

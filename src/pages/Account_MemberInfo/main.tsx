@@ -41,6 +41,7 @@ const MemberInfoContent = () => {
         "JoinEmail": email
       }).then((response: any) => {
         console.log(response);
+        window.location.reload()
       });
       // call api
     }

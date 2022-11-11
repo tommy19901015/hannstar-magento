@@ -60,7 +60,7 @@ ReactDOM.render(
       <Route path={account.register.href} element={<HannstarRegister />} />
       <Route path={account.forgotPassword.href} element={<ForgotPassword />} />
       <Route path={"/resetPassword"} element={<ResetPassword />} />
-      <Route path={"/mfa"} element={<MFA />} />
+      <Route path={account.LoginMFA.href} element={<MFA />} />
       <Route
         path={"/AccountSendVerifyEmail"}
         element={<AccountSendVerifyEmail />}

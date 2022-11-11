@@ -17,6 +17,10 @@
       "title": "MFAQRcode",
       "href": "/Cognito/Account/RegisterMFA"
     },
+    "LoginMFA": {
+      "title": "MFAQRcode",
+      "href": "/Cognito/Account/LoginMFA"
+    },    
     "AccountPersonal": {
       "title": "客戶",
       "href": "/account/enterprise/view"

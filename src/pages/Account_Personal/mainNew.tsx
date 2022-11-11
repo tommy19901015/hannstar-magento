@@ -31,13 +31,13 @@ const AccountPersonal: React.FC = () => {
     console.log("countrySelectBlock", countrySelectBlock);
     if (magentoCountrySelectDom)
       countrySelectBlock.current.appendChild(magentoCountrySelectDom);
-
-    postAccountInfo({
-      Email: window.hannstar.email,
-    }).then((response: any) => {
-      setAccountInfo(response);
-    });
+    // postAccountInfo({
+    //   Email: window.hannstar.email,
+    // }).then((response: any) => {
+    //   setAccountInfo(response);
+    // });
   }, []);
+
 
   const breadcrumbsData = {
     title: "",
@@ -70,10 +70,14 @@ const AccountPersonal: React.FC = () => {
     } = useForm<IFormInputs>();
 
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-      const selectDom = countrySelectBlock.current.children[0];
-      const selectIndex = selectDom.selectedIndex;
+      // const selectDom = countrySelectBlock.current.children[0];
+      // const selectIndex = selectDom.selectedIndex;
+      // const Country = selectDom.value;
+      // const CountryCode = selectDom.selectedOptions[selectIndex].text;
+
+      const selectDom: any = document.getElementById("country");
       const Country = selectDom.value;
-      const CountryCode = selectDom.selectedOptions[selectIndex].text;
+      const CountryCode = selectDom.selectedOptions[0].text;
 
       const UserName = window.hannstar?.userName;
       const Email = window.hannstar?.email;
@@ -475,7 +479,7 @@ const AccountPersonal: React.FC = () => {
                 <input
                   type="text"
                   defaultValue=""
-                  {...register("CompanyMA4", { required: true })}
+                  {...register("CompanyMA4")}
                 />
               </div>
             </div>
@@ -637,7 +641,7 @@ const AccountPersonal: React.FC = () => {
       />
       <AccountPersonalTemplate
         contentComponent={<PersonalFormContent />}
-        rootId={accountInfo.rootid}
+        rootId={""}
       />
     </Layout>
   );

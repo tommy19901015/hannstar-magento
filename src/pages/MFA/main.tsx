@@ -9,15 +9,15 @@ const MFA: React.FC = () => {
 
   const [code, setCode] = useState<string>("");
   const [isCodeError, setIsCodeError] = useState<boolean>(true);
-  const MFAQRCodeBlockRef: any = useRef();
+  const MFABlockRef: any = useRef();
   const errorMessageBlock: any = useRef();
   const tableData = usePageData();
 
   useEffect(() => {
     const magentoDom: any = document.getElementById(
-      "hannstar-magento-mfa"
+      "hannstar-magento-loginMFA"
     );
-    if (magentoDom) MFAQRCodeBlockRef.current.appendChild(magentoDom);
+    if (magentoDom) MFABlockRef.current.appendChild(magentoDom);
 
     // const magentoErrorMessageDom: any =
     //   document.getElementsByClassName("page messages")[0];
@@ -39,7 +39,12 @@ const MFA: React.FC = () => {
     setCode(e.target.value.trim());
   };
   const handleSend = () => {
-    const sendBtn: any = document.getElementById("sendcode");
+    const sendBtn: any = document.getElementById("sendMail");
+    sendBtn && sendBtn.click();
+  };
+
+  const handleCode = () => {
+    const sendBtn: any = document.getElementById("send2");
     const codeValidate = validate(code, patterns.number);
     setIsCodeError(codeValidate);
     if (codeValidate) {
@@ -68,12 +73,12 @@ const MFA: React.FC = () => {
               )}
             </div>
           </div>
-          <div className="hannstarRegisterBtn" onClick={handleSend}>
+          <div className="hannstarRegisterBtn" onClick={handleCode}>
             {tableData.sendBtn}
           </div>
-          <span>{tableData.otherMessage}<a href="/">{tableData.linkText}</a></span>
+          <span>{tableData.otherMessage}<span onClick={handleSend}>{tableData.linkText}</span></span>
         </div>
-        <div ref={MFAQRCodeBlockRef} className="magentoBlock"></div>
+        <div ref={MFABlockRef} className="magentoBlock"></div>
       </div>
     </Layout>
   );

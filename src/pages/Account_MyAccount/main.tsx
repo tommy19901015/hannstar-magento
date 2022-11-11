@@ -152,8 +152,9 @@ const AccountMyAccount: React.FC = () => {
             <div className="leftBlock">
               <div className="subTitle">公司資訊</div>
               {accountInfo && <>
-                <ListBlock title={"公司名稱"} text={accountInfo.CompanyName} />
-                <ListBlock title={"商業類型"} text={accountInfo.BusinessType} />
+                <ListBlock title={"公司名稱"} text={accountInfo.companyname} />
+                <ListBlock title={"商業類型"} text={accountInfo.businesstype} />
+                {accountInfo.HannstarCode && <ListBlock title={"適用區域"} text={accountInfo.applicablearea} />}
               </>}
             </div>
           </div>
@@ -170,7 +171,7 @@ const AccountMyAccount: React.FC = () => {
         type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbs} />}
       />
-      <AccountPersonalTemplate contentComponent={<MyAccountContent />} rootId={accountInfo.rootId} />
+      <AccountPersonalTemplate contentComponent={<MyAccountContent />} rootId={accountInfo.rootid} />
     </Layout>
   );
 };

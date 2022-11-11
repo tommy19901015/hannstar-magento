@@ -123,11 +123,13 @@ const Header: React.FC = () => {
         {/* <MagentoLanguageHeader /> */}
       </div>
       <div className="header_pc">
-        <img
-          className="logo"
-          alt="logo"
-          src="https://www.hannstar.com/images/logo.png"
-        />
+        <a href="/">
+          <img
+            className="logo"
+            alt="logo"
+            src="https://www.hannstar.com/images/logo.png"
+          />
+        </a>
         <div className="menuBlock">
           <MenuBlock />
           {/* <div className="otherBlock">

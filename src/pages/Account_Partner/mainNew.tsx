@@ -32,11 +32,11 @@ const AccountPartner: React.FC = () => {
     if (magentoCountrySelectDom)
       countrySelectBlock.current.appendChild(magentoCountrySelectDom);
 
-    postAccountInfo({
-      Email: window.hannstar.email,
-    }).then((response: any) => {
-      setAccountInfo(response);
-    });
+    // postAccountInfo({
+    //   Email: window.hannstar.email,
+    // }).then((response: any) => {
+    //   setAccountInfo(response);
+    // });
   }, []);
 
   const breadcrumbsData = {
@@ -69,10 +69,14 @@ const AccountPartner: React.FC = () => {
       formState: { errors },
     } = useForm<IFormInputs>();
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-      const selectDom = countrySelectBlock.current.children[0];
-      const selectIndex = selectDom.selectedIndex;
+      // const selectDom = countrySelectBlock.current.children[0];
+      // const selectIndex = selectDom.selectedIndex;
+      // const Country = selectDom.value;
+      // const CountryCode = selectDom.selectedOptions[selectIndex].text;
+
+      const selectDom: any = document.getElementById("country");
       const Country = selectDom.value;
-      const CountryCode = selectDom.selectedOptions[selectIndex].text;
+      const CountryCode = selectDom.selectedOptions[0].text;
 
       const UserName = window.hannstar?.userName;
       const Email = window.hannstar?.email;
@@ -243,6 +247,9 @@ const AccountPartner: React.FC = () => {
                       <label htmlFor={item.value}>{item.text}</label>
                     </div>
                   ))}
+                  {errors.InterestedType && (
+                    <span className="error">必填欄位，請重新輸入</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -367,11 +374,11 @@ const AccountPartner: React.FC = () => {
                 )}
               </div>
               <div className="col-3">
-                <label className="required">地址</label>
+                <label>地址</label>
                 <input
                   type="text"
                   defaultValue=""
-                  {...register("AreaAddress", { required: true })}
+                  {...register("AreaAddress")}
                 />
                 {errors.AreaAddress && (
                   <span className="error">必填欄位，請重新輸入</span>
@@ -661,7 +668,7 @@ const AccountPartner: React.FC = () => {
       />
       <AccountPersonalTemplate
         contentComponent={<PartnerFormContent />}
-        rootId={accountInfo.rootid}
+        rootId={""}
       />
     </Layout>
   );

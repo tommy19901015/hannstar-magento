@@ -61,10 +61,11 @@ $pageName: 'MFA';
         @include hannstarContent2;
         color: $hannstar-blue2;
         text-align: center;
-        a {
+        span {
             @include hannstarContent2;
             color: $hannstar-blue3;
             font-weight: $font-weighr-bold;
+            cursor: pointer;
         }
     }
     @media screen and (max-width: $breakpoint) {
