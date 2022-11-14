@@ -3,7 +3,7 @@ import { FormType } from "../../component/form/interface";
 import { useTranslation } from "react-i18next";
 
 
-function useApplyList() {
+function useApplyForm() {
     const { t } = useTranslation();
   
     const tableList: I_PageData =  {
@@ -204,6 +204,6 @@ function useApplyList() {
     }
   
     return tableList;
-  }
+}
   
-  export default useApplyList;
+export default useApplyForm;

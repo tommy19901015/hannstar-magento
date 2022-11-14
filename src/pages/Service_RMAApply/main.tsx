@@ -4,7 +4,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-import useApplyList  from "./pageData";
+import useApplyForm  from "./pageData";
 import "./css.scss";
 
 const ServiceRMAApply: React.FC = () => {
@@ -13,7 +13,7 @@ const ServiceRMAApply: React.FC = () => {
   const [trDetailArr, setTrDetailArr] = useState<number[]>([0]);
   const [trDetailCount, setTrDetailCount] = useState<number>(1);
   const [selectCount, setSelectCount] = useState<number>(1);
-  const applyList = useApplyList();
+  const applyList = useApplyForm();
   const handlerSave = () => { };
   const handlerReset = () => { };
   const handlerSubmit = () => { };

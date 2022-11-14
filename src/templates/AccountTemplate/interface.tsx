@@ -16,3 +16,8 @@ export type serviceType = {
   categoryTitle:string
   serviceItems:serviceItem[]
 };
+
+export interface I_PageData{
+  signTitle: string
+  service: serviceType[]
+}

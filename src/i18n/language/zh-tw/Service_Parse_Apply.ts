@@ -18,6 +18,9 @@ export const ParseApply = {
   slice:"(片)",
   per:"(%)",
   invoice:"發票",
+  productionStage:"量產階段",
+  exceptionClass:"外觀異常類",
+  bumpClass:"凹凸點類",
   providDefectiveProduct:"(須提供不良品序號或箱號)",
   common: {
     send: "送件",

@@ -8,10 +8,12 @@ import {
 } from "../../common/validateUtils";
 import urlConfig from "../../config/urlSetting.json";
 import "./css.scss";
+import useLoginForm from "./pageData";
 
 const HannstarLogin: React.FC = () => {
   const pageName = "HannstarLogin";
-
+  const pageData = useLoginForm();
+  
   const LoginContent = () => {
     const [account, setAccount] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -74,10 +76,10 @@ const HannstarLogin: React.FC = () => {
 
     return (
       <div className="hannstarLoginBlock">
-        <h2>登入</h2>
+        <h2>{pageData.loginTitle}</h2>
         <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className="columnBlock">
-          <div className="title required">帳號</div>
+          <div className="title required">{pageData.account}</div>
           <div className="bodyBlock input">
             <input
               type="text"
@@ -95,7 +97,7 @@ const HannstarLogin: React.FC = () => {
         </div>
 
         <div className="columnBlock">
-          <div className="title required">密碼</div>
+          <div className="title required">{pageData.password}</div>
           <div className="bodyBlock input">
             <input
               onChange={handlePassword}
@@ -105,7 +107,7 @@ const HannstarLogin: React.FC = () => {
             />
           </div>
           <div className={`remind ${!isPasswordPass ? "errorMessage" : ""}`}>
-            必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+            {pageData.required}
           </div>
         </div>
         <div className="row">
@@ -113,18 +115,18 @@ const HannstarLogin: React.FC = () => {
             <div className="bodyBlock select">
               <div className="hannstarCheckBox spaceBetween alignCenter">
                 <input id="checkBox1" type="checkBox" value="yes" name="yes" />
-                <label htmlFor="checkBox1">記住帳號</label>
+                <label htmlFor="checkBox1">{pageData.rememberAccount}</label>
               </div>
             </div>
           </div>
-          <a href={urlConfig.account.forgotPassword.href}>忘記密碼</a>
+          <a href={urlConfig.account.forgotPassword.href}>{pageData.forgotPassword}</a>
         </div>
         <div className="loginBtn" onClick={handleLogin}>
-          登入
+          {pageData.loginBtn}
         </div>
         <p className="create">
-          還沒有HannStar帳號?
-          <a href={urlConfig.account.register.href}>建立帳號</a>
+          {pageData.hasAccount}
+          <a href={urlConfig.account.register.href}>{pageData.createAccount}</a>
         </p>
         <div ref={loginBlock} className="magentoLoginBlock"></div>
       </div>
