@@ -101,6 +101,26 @@ $pageName: 'AccountEditAccount';
     display: none;
 }
 
+.modals-wrapper {
+    display: none;
+}
+
+.#{$pageName}DeletePop {
+    .title {
+        @include hannstarContent0;
+        margin-bottom: 40px;
+    }
+    .btnBlock {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        .btn {
+            @include hannstarBtn;
+            margin: 0 20px;
+        }
+    }
+}
+
 @media screen and (max-width: $breakpoint) {
     .#{$pageName}Content {
         padding: 0;

@@ -41,7 +41,7 @@ const AccountMyAccount: React.FC = () => {
     postAccountInfo({
       Email: window.hannstar.email,
     }).then((response: any) => {
-      if (response.success !== "fail") setAccountInfo(response)
+      if (response.success !== false) setAccountInfo(response)
     });
   }, [])
 

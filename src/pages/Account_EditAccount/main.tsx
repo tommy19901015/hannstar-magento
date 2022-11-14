@@ -2,22 +2,19 @@ import React, { useRef, useState, useEffect } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
-import FormComponent from "../../component/form/main";
-import { FormType } from "../../component/form/interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import zxcvbn from "zxcvbn";
 import {
-  validate,
   isNotEmpty,
-  patterns,
   compare,
   validatePassword,
 } from "../../common/validateUtils";
 import urlConfig from "../../config/urlSetting.json";
 import usePageData from "./pageData";
 import "./css.scss";
-import { postEnterPrice, postAccountInfo } from "../../services/api.service";
+import { postAccountInfo } from "../../services/api.service";
+import { DeleteBlockPop } from "./magentoBlock";
+import Popup from "../../component/popup/main";
 
 const AccountEditAccount: React.FC = () => {
   const pageName = "AccountEditAccount";
@@ -25,11 +22,13 @@ const AccountEditAccount: React.FC = () => {
   const [accountInfo, setAccountInfo] = useState<any>("")
   const { breadcrumbs, captionData, content } = pageData;
 
+  const deletePopUpRef: any = useRef();
+
   useEffect(() => {
     postAccountInfo({
       Email: window.hannstar.email,
     }).then((response: any) => {
-      if (response.success !== "fail") setAccountInfo(response)
+      if (response.success !== false) setAccountInfo(response)
     });
   }, [])
 
@@ -159,13 +158,41 @@ const AccountEditAccount: React.FC = () => {
       }
     };
 
+    const getMagentoDeletePopUpDom = () => {
+      const deletePopUpBtnDom = document.getElementsByClassName("action-primary action-accept")[0]
+      return deletePopUpBtnDom ? deletePopUpBtnDom : "";
+    }
+
+    const popupProps = {
+      content: <div className={`${pageName}DeletePop`}>
+        <div className="title">請您再次確認是否刪除帳號？</div>
+        <div className="btnBlock">
+          <div className="btn" onClick={() => deletePopUpRef.current.classList.remove("show")}>取消</div>
+          <div className="btn" onClick={() => handleMagentoDeletePopUp()}>確定</div>
+        </div>
+      </div>,
+      openFc: deletePopUpRef,
+    }
+
+    const handleMagentoDeletePopUp = () => {
+      const popUpBtn: any = getMagentoDeletePopUpDom()
+      console.log("popUpBtn", popUpBtn)
+      if (popUpBtn) {
+        popUpBtn.click();
+      }
+    }
+
     const handleDeleteAccount = () => {
       const deleteBtn: any = getMagentoDeleteAccountDom()
-      if (deleteBtn) deleteBtn.click();
+      if (deleteBtn) {
+        deleteBtn.click();
+        deletePopUpRef.current.classList.add("show");
+      }
     }
 
     return (
       <div className={`${pageName}Content`}>
+        <Popup {...popupProps} />
         <div className="magentoMessageBlock" ref={magentoMessageRef}></div>
         <h1 className="mainTitle">個人專區</h1>
         <div className="infoBlock">

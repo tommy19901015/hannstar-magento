@@ -19,6 +19,11 @@ Default Billing Address
 myAccount 公司資訊調整
 editAccount 畫面調整
 
+多語系
+window.hannstar.language
+language: 'zh_Hans_CN'
+language: 'zh_Hant_TW'
+language: 'en_US'
 
 header調整
 
