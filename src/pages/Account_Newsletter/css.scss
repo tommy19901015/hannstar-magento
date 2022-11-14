@@ -9,32 +9,31 @@ $pageName: 'AccountNewsletter';
         @include hannstarH2Title;
         margin-bottom: 20px;
     }
-    table {
-        width: 100%;
-        display: table;
-        border: 1px solid #eee;
-        tr {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid $hannstar-border-color;
-            &:nth-child(1) {
-                color: #fff;
-                background-color: $hannstar-blue2;
-                border-bottom: none;
-            }
+    .subTitle{
+        @include hannstarH3Title;
+        border-bottom: 1px solid $hannstar-border-color; 
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .btnBlock{
+        .btn {
+            @include hannstarBtn;
         }
-        td {
-            width: calc((100% - 10%) / 5);
-            padding: 15px 10px;
-            text-align: center;
-            &:last-of-type {
-                width: 10%;
+    }
+    .bodyBlock {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 50px;
+        @include hannstarCheckBox;
+        .hannstarCheckBox {
+            input[type='checkbox']:checked + label,
+            input[type='checkbox']:not(:checked) + label {
+                color: $hannstar-orange1;
             }
-            a {
-                color: $hannstar-blue2;
-                cursor: pointer;
-            }
+            margin: 5px;
         }
+
     }
 }
 

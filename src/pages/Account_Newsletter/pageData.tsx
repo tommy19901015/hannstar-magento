@@ -21,28 +21,10 @@ function usePageData() {
         },
       ],
     },
-    content: {
-      title: "看板",
-      table: ["日期", "單號", "項目", "產品型號", "進度", "詳情"],
-      member: [
-        // {
-        //   date: "2018/06/30 10:10:42 AM",
-        //   singleNumber: "A220920101633",
-        //   item: "RAM",
-        //   model: "040B8W8-A20",
-        //   superstition: "覆判完成",
-        //   details: "",
-        // },
-        // {
-        //   date: "2018/06/30 10:10:42 AM",
-        //   singleNumber: "A220920101633",
-        //   item: "RAM",
-        //   model: "040B8W8-A20",
-        //   superstition: "覆判完成",
-        //   details: "",
-        // },
-      ],
-    },
+    title: "Newsletter Subscription",
+    subTitle: "Subscription option",
+    options: "General Subscription",
+    saveBtn:"Save"
   };
 
   return PageType;
