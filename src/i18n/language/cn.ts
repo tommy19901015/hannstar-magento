@@ -1,5 +1,6 @@
 import { RAMapply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
+import { LoginForm } from "./cn-ch/LoginForm";
 
 export const cn = {
     common: {
@@ -12,5 +13,6 @@ export const cn = {
     changeLanguage: "切换语系",
     RAMapply,
     ParseApply,
+    LoginForm
   };
   

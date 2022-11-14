@@ -12,7 +12,7 @@ i18n.use(initReactI18next).init({
       zh_Hant_TW: {
         translation: tw
       },
-      zh_Hant_CN: {
+      zh_Hans_CN: {
         translation: cn
       }
     },

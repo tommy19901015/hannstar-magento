@@ -47,6 +47,7 @@ import ServiceGreenService from "../pages/Service_GreenService/main";
 import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
 import ServiceParseApply from "../pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
+import "../i18n/index"
 
 const pageMappingObj = {
   root_Login: <Login />,

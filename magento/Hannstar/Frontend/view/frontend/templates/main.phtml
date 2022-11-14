@@ -1,18 +1,25 @@
 <?php 
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
     $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+    $store = $objectManager->get('Magento\Framework\Locale\Resolver');
+
     if($customerSession->isLoggedIn()) : ?>
         <script>
             console.log("login")
             window.hannstar = 
                 { islogin:true,
                   userName:"<?php echo $customerSession->getCustomer()->getName();?>",
-                  email:"<?php echo $customerSession->getCustomer()->getEmail();?>" 
+                  groupId:"<?php echo $customerSession->getCustomer()->getGroupId();?>",
+                  email:"<?php echo $customerSession->getCustomer()->getEmail();?>",
+                  language:"<?php echo $store->getLocale();?>" 
                 }
         </script>
 <?php else: ?>
 	<script>
         console.log("not login");
-        window.hannstar = {islogin:false}
+        window.hannstar = {
+                islogin:false,
+                 language:"<?php echo $store->getLocale();?>" 
+        }
     </script>
 <?php endif;?>

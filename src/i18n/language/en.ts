@@ -1,5 +1,6 @@
 import { RAMapply } from "./en-us/Service_RMA_Apply";
 import { ParseApply } from "./en-us/Service_Parse_Apply";
+import { LoginForm } from "./en-us/LoginForm";
 export const en = {
     common: {
       cancel: "Cancel",
@@ -11,5 +12,6 @@ export const en = {
     changeLanguage: "Change language",
     RAMapply,
     ParseApply,
+    LoginForm,
   };
   

@@ -15,7 +15,7 @@ export const LoginForm = {
     technicalSupport: "技術支援",
     productAndSolutionsDirections: "查詢顯示器、方案與整機多元解決方案。",
     quickQuoteDirections: "快速獲取報價，隨時查看記錄。",
-    technicalSupportDirections: "線上RMA與解析服務。",
+    technicalSupportContent: "線上RMA與解析服務。",
     supplierMember: "供應商會員",
     supplyChain: "綠色供應鏈",
     supplyChainDirections: "綠色製造是Hannstar永續經營的基石，引領上下游供應商在技術、品質、交期、環保、人權、安全與衛生等持續精進，攜手與Hannstar一起打造綠色永續供應鏈。",

@@ -17,7 +17,9 @@
         <link src='Hannstar_Frontend::css/main.css'/>
     </head>
     <body>     
-        <referenceContainer name="content">                        
+        <referenceContainer name="content">
+        <container name="header.container" as="header_container" label="Page Header Container" htmlTag="header" htmlClass="page-header" before="main.content"/>
+        <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>                
             <block class="Hannstar\Frontend\Block\Index"
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />
