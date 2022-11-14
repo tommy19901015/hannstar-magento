@@ -12,6 +12,8 @@ const AccountSendVerifyEmail: React.FC = () => {
   const emailBlock: any = useRef();
   const errorMessageBlock: any = useRef();
 
+  const {sendVerification, enterEmail, qequired, verificationletter} = usePageData();
+
   useEffect(() => {
     const magentoDom: any = document.getElementById(
       "form-validate"
@@ -54,11 +56,11 @@ const AccountSendVerifyEmail: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}`}>
-        <div className="mainTitle">寄送驗證信</div>
+        <div className="mainTitle">{sendVerification}</div>
         <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className={`${pageName}Content`}>
           <div className="columnBlock">
-            <div className="title required">請在下方欄位輸入郵箱收取驗證信。</div>
+            <div className="title required">{enterEmail}</div>
             <div className="bodyBlock input">
               <input
                 type="text"
@@ -67,11 +69,11 @@ const AccountSendVerifyEmail: React.FC = () => {
                 placeholder="請填入您的Email"
                 className={`${!isEmailPass ? "error" : ""}`}
               />
-              {!isEmailPass && <div className="errorMessage">必填欄位；輸入格式有誤，請重新輸入</div>}
+              {!isEmailPass && <div className="errorMessage">{qequired}</div>}
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleSend}>
-            發送驗證信
+            {verificationletter}
           </div>
         </div>
         <div ref={emailBlock} className="magentoRegisteBlock"></div>
