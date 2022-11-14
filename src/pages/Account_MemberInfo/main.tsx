@@ -11,7 +11,7 @@ import { postAccountInfo, postMemberGroupList, postJoinMemberGroup } from "../..
 import useGetLoginInfo from "../../hooks/useGetLoginInfo"
 
 const MemberInfoContent = () => {
-  const { content } = usePageData();
+  const { content, inputEmail } = usePageData();
   const pageName = "AccountMemberInfo";
   const [email, setEmailValue] = useState<string>("");
   const [memberGroupList, setMemberGroupList] = useState<any>("")
@@ -55,7 +55,7 @@ const MemberInfoContent = () => {
         <input id="input1" type="text"
           onChange={handleChange}
           value={email}
-          placeholder="請輸入Email" />
+          placeholder={inputEmail} />
         <a className="btn" onClick={handleInvite}>{content.btn}</a>
       </div>
       <table className="table">

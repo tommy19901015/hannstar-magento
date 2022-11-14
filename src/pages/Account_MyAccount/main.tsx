@@ -12,8 +12,20 @@ import "./css.scss";
 
 const AccountMyAccount: React.FC = () => {
   const pageName = "AccountMyAccount";
-  const pageData = usePageData();
-  const { breadcrumbs, captionData, content } = pageData;
+  const { 
+    breadcrumbs,     
+    account,
+    personalInfo,
+    edit,
+    name,
+    email,
+    subscription,
+    companyInfo,
+    companyName,
+    business,
+    applicable,
+    personal} = usePageData();
+
   const [magentoName, setMagentoName] = useState<string>();
   const [magentoEmail, setMagentoEmail] = useState<string>();
   const [accountInfo, setAccountInfo] = useState<any>("")
@@ -74,31 +86,31 @@ const AccountMyAccount: React.FC = () => {
     return (
       <div className={`${pageName}Content`}>
         <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
-        <h1 className="mainTitle">個人專區</h1>
+        <h1 className="mainTitle">{personal}</h1>
         <div className="content">
-          <div className="accountTitle">帳戶資訊</div>
+          <div className="accountTitle">{account}</div>
           <div className="infoBlock">
             <div className="leftBlock">
-              <div className="subTitle">個人資訊</div>
-              <ListBlock title={"姓名"} text={magentoName} />
-              <ListBlock title={"email"} text={magentoEmail} />
-              <a className="editBtn" href={urlConfig.account.EditAccount.href}>編輯</a>
+              <div className="subTitle">{personalInfo}</div>
+              <ListBlock title={name} text={magentoName} />
+              <ListBlock title={email} text={magentoEmail} />
+              <a className="editBtn" href={urlConfig.account.EditAccount.href}>{edit}</a>
             </div>
             <div className="rightBlock">
-              <div className="subTitle">信件訂閱</div>
+              <div className="subTitle">{subscription}</div>
               <div>
                 <span className="text">{getMagentoSubscribedBlock().innerText}</span>
               </div>
-              <a className="editBtn" href={urlConfig.account.AccountNewsletter.href} >編輯</a>
+              <a className="editBtn" href={urlConfig.account.AccountNewsletter.href} >{edit}</a>
             </div>
           </div>
           {accountInfo && accountInfo.status === Accountstatus.Approved &&
             <div className="infoBlock">
               <div className="leftBlock">
-                <div className="subTitle">公司資訊</div>
-                <ListBlock title={"公司名稱"} text={accountInfo.companyname} />
-                <ListBlock title={"商業類型"} text={accountInfo.businesstype} />
-                {accountInfo.HannstarCode && <ListBlock title={"適用區域"} text={accountInfo.applicablearea} />}
+                <div className="subTitle">{companyInfo}</div>
+                <ListBlock title={companyName} text={accountInfo.companyname} />
+                <ListBlock title={business} text={accountInfo.businesstype} />
+                {accountInfo.HannstarCode && <ListBlock title={applicable} text={accountInfo.applicablearea} />}
               </div>
             </div>}
         </div>

@@ -1,27 +1,15 @@
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
-
-type I_Module = {
-    customerNormal: string[],
-    customerEnterprise: string[],
-    partnerNormal: string[],
-    partnerEnterprise: string[]
-};
-
-type I_Content = {
-    title: string,
-    subTitle: string,
-    rank: string,
-    text: string,
-    member: string,
-    become: string,
-    companymember: string,
-    customerpermission: string,
-    applymembership: string,
-    applypartnership: string
-    supplierlimit: string
-}
-export interface I_PageType {
+export type I_PageType = {
     breadcrumbs: I_Breadcrumbs,
-    captionData: I_Module,
-    content: I_Content,
+    personal:string,
+    account:string,
+    personalInfo:string,
+    edit:string,
+    name:string,
+    email:string,
+    subscription:string,
+    companyInfo:string,
+    companyName:string,
+    business:string,
+    applicable:string,
 }

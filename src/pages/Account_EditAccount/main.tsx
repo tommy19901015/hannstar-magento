@@ -9,18 +9,30 @@ import {
   compare,
   validatePassword,
 } from "../../common/validateUtils";
-import urlConfig from "../../config/urlSetting.json";
 import usePageData from "./pageData";
 import "./css.scss";
 import { postAccountInfo } from "../../services/api.service";
-import { DeleteBlockPop } from "./magentoBlock";
 import Popup from "../../component/popup/main";
 
 const AccountEditAccount: React.FC = () => {
   const pageName = "AccountEditAccount";
-  const pageData = usePageData();
   const [accountInfo, setAccountInfo] = useState<any>("")
-  const { breadcrumbs, captionData, content } = pageData;
+  const { breadcrumbs, 
+    personal,
+    account,
+    requiredInput,
+    surname,
+    name,
+    changePass,
+    oldPassword,
+    newPassword,
+    requiredCharacters,
+    passwordAgain,
+    required,
+    saveBtn,
+    accountDelete,
+    confirmDelete,
+    deleteAccount } = usePageData();
 
   const deletePopUpRef: any = useRef();
 
@@ -194,12 +206,12 @@ const AccountEditAccount: React.FC = () => {
       <div className={`${pageName}Content`}>
         <Popup {...popupProps} />
         <div className="magentoMessageBlock" ref={magentoMessageRef}></div>
-        <h1 className="mainTitle">個人專區</h1>
+        <h1 className="mainTitle">{personal}</h1>
         <div className="infoBlock">
           <div className="leftBlock">
-            <div className="accountTitle">帳戶資訊</div>
+            <div className="accountTitle">{account}</div>
             <div className="columnBlock">
-              <div className="title required">姓</div>
+              <div className="title required">{surname}</div>
               <div className="bodyBlock input">
                 <input
                   type="text"
@@ -209,11 +221,11 @@ const AccountEditAccount: React.FC = () => {
                 />
               </div>
               {!firstNamePass && (
-                <div className="errorMessage">必填欄位，請重新輸入</div>
+                <div className="errorMessage">{requiredInput}</div>
               )}
             </div>
             <div className="columnBlock">
-              <div className="title required">名</div>
+              <div className="title required">{name}</div>
               <div className="bodyBlock input">
                 <input
                   type="text"
@@ -223,14 +235,14 @@ const AccountEditAccount: React.FC = () => {
                 />
               </div>
               {!lastNamePass && (
-                <div className="errorMessage">必填欄位，請重新輸入</div>
+                <div className="errorMessage">{requiredInput}</div>
               )}
             </div>
           </div>
           <div className="rightBlock">
-            <div className="accountTitle">變更密碼</div>
+            <div className="accountTitle">{changePass}</div>
             <div className="columnBlock">
-              <div className="title required">舊密碼</div>
+              <div className="title required">{oldPassword}</div>
               <div className="bodyBlock input">
                 <input
                   type="password"
@@ -241,12 +253,12 @@ const AccountEditAccount: React.FC = () => {
               </div>
               {!oldPasswordPass && (
                 <div className="errorMessage">
-                  必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+                  {requiredCharacters}
                 </div>
               )}
             </div>
             <div className="columnBlock">
-              <div className="title required">新密碼</div>
+              <div className="title required">{newPassword}</div>
               <div className="bodyBlock input">
                 <input
                   type="password"
@@ -257,12 +269,12 @@ const AccountEditAccount: React.FC = () => {
               </div>
               {!newPasswordPass && (
                 <div className="errorMessage">
-                  必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+                  {requiredCharacters}
                 </div>
               )}
             </div>
             <div className="columnBlock">
-              <div className="title required">密碼(再次確認)</div>
+              <div className="title required">{passwordAgain}</div>
               <div className="bodyBlock input">
                 <input
                   type="password"
@@ -272,18 +284,18 @@ const AccountEditAccount: React.FC = () => {
                 />
               </div>
               {!confirmNewPasswordPass && (
-                <div className="errorMessage">必填欄位；需與密碼相同</div>
+                <div className="errorMessage">{required}</div>
               )}
             </div>
           </div>
         </div>
         <div className="saveBtn" onClick={handleSave}>
-          送出
+          {saveBtn}
         </div>
         <div className="deleteBlock">
-          <div className="deleteTitle">帳號刪除</div>
-          <div className="deleteText">您的帳號將被永久刪除，您一旦刪除後，帳號將無法復原，請您務必確定操作。</div>
-          <div onClick={handleDeleteAccount} className="deleteBtn">刪除帳號</div>
+          <div className="deleteTitle">{accountDelete}</div>
+          <div className="deleteText">{confirmDelete}</div>
+          <div onClick={handleDeleteAccount} className="deleteBtn">{deleteAccount}</div>
         </div>
       </div>
     );
