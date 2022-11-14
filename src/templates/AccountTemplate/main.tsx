@@ -3,16 +3,16 @@ import Columns from "../../component/columns/main";
 import Layout from "../../component/layout/main";
 import { ColType, TopMType } from "../../component/columns/interface";
 import { I_AccountTemplate } from "./interface";
-import { initialServiceData } from "./pageData";
-import { serviceType } from "./interface";
+import useServiceForm from "./pageData";
+import { I_PageData } from "./interface";
 import "./css.scss";
 const AccountTemplate: React.FC<I_AccountTemplate> = ({ content }) => {
   const templateName = "AccountTemplate";
-
-  const [serviceData, setServiceData] =
-    useState<serviceType[]>(initialServiceData);
+  const initData = useServiceForm();
+  const [serviceData, setServiceData] = useState<I_PageData>(initData);
 
   const MainContainer = () => {
+    const { signTitle, service} = serviceData;
     return (
       <Columns
         type={ColType.TwoColFullPage}
@@ -22,9 +22,9 @@ const AccountTemplate: React.FC<I_AccountTemplate> = ({ content }) => {
         contentL={content}
         contentR={
           <div className={`${templateName}ServiceBlock`}>
-            <h3>立即註冊瀚宇彩晶會員</h3>
+            <h3>{signTitle}</h3>
             <>
-              {serviceData.map((category) => (
+              {service.map((category) => (
                 <div className="content">
                   <h4 className="title">{category.categoryTitle}</h4>
                   <div className="items">

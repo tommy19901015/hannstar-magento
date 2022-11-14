@@ -2,17 +2,17 @@ import i18n from "i18next";
 import {initReactI18next} from "react-i18next";
 import { en, tw, cn } from "./language/index";
 
-const DEFAULT_LANGUAGE = "tw";
+const DEFAULT_LANGUAGE = window.hannstar.language || "zh_Hant_TW";
   
 i18n.use(initReactI18next).init({
     resources: {
-      en: {
+      en_US: {
         translation: en
       },
-      tw: {
+      zh_Hant_TW: {
         translation: tw
       },
-      cn: {
+      zh_Hant_CN: {
         translation: cn
       }
     },
@@ -24,4 +24,4 @@ i18n.use(initReactI18next).init({
     }
   });
   
-  export default i18n;
+export default i18n;

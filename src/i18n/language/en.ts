@@ -1,5 +1,5 @@
-import { RAMapply } from "./cn-ch/Service_RMA_Apply";
-import { ParseApply } from "./cn-ch/Service_Parse_Apply";
+import { RAMapply } from "./en-us/Service_RMA_Apply";
+import { ParseApply } from "./en-us/Service_Parse_Apply";
 export const en = {
     common: {
       cancel: "Cancel",
