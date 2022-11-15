@@ -16,8 +16,9 @@ import Popup from "../../component/popup/main";
 
 const AccountEditAccount: React.FC = () => {
   const pageName = "AccountEditAccount";
-  const [accountInfo, setAccountInfo] = useState<any>("")
-  const { breadcrumbs, 
+  const [accountInfo, setAccountInfo] = useState<any>("");
+  const {
+    breadcrumbs,
     personal,
     account,
     requiredInput,
@@ -32,18 +33,18 @@ const AccountEditAccount: React.FC = () => {
     saveBtn,
     accountDelete,
     confirmDelete,
-    deleteAccount } = usePageData();
+    deleteAccount,
+  } = usePageData();
 
   const deletePopUpRef: any = useRef();
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email,
+      Email: window.hannstar?.email,
     }).then((response: any) => {
-      if (response.success !== false) setAccountInfo(response)
+      if (response.success !== false) setAccountInfo(response);
     });
-  }, [])
-
+  }, []);
 
   const EditAccountContent = () => {
     const [firstName, setFirstName] = useState<string>("");
@@ -100,7 +101,8 @@ const AccountEditAccount: React.FC = () => {
     };
 
     const getMagentoDeleteAccountDom = (): any => {
-      const deleteAccountDom = document.getElementsByClassName("action-delete")[0];
+      const deleteAccountDom =
+        document.getElementsByClassName("action-delete")[0];
       return deleteAccountDom ? deleteAccountDom : "";
     };
 
@@ -171,36 +173,47 @@ const AccountEditAccount: React.FC = () => {
     };
 
     const getMagentoDeletePopUpDom = () => {
-      const deletePopUpBtnDom = document.getElementsByClassName("action-primary action-accept")[0]
+      const deletePopUpBtnDom = document.getElementsByClassName(
+        "action-primary action-accept"
+      )[0];
       return deletePopUpBtnDom ? deletePopUpBtnDom : "";
-    }
+    };
 
     const popupProps = {
-      content: <div className={`${pageName}DeletePop`}>
-        <div className="title">請您再次確認是否刪除帳號？</div>
-        <div className="btnBlock">
-          <div className="btn" onClick={() => deletePopUpRef.current.classList.remove("show")}>取消</div>
-          <div className="btn" onClick={() => handleMagentoDeletePopUp()}>確定</div>
+      content: (
+        <div className={`${pageName}DeletePop`}>
+          <div className="title">請您再次確認是否刪除帳號？</div>
+          <div className="btnBlock">
+            <div
+              className="btn"
+              onClick={() => deletePopUpRef.current.classList.remove("show")}
+            >
+              取消
+            </div>
+            <div className="btn" onClick={() => handleMagentoDeletePopUp()}>
+              確定
+            </div>
+          </div>
         </div>
-      </div>,
+      ),
       openFc: deletePopUpRef,
-    }
+    };
 
     const handleMagentoDeletePopUp = () => {
-      const popUpBtn: any = getMagentoDeletePopUpDom()
-      console.log("popUpBtn", popUpBtn)
+      const popUpBtn: any = getMagentoDeletePopUpDom();
+      console.log("popUpBtn", popUpBtn);
       if (popUpBtn) {
         popUpBtn.click();
       }
-    }
+    };
 
     const handleDeleteAccount = () => {
-      const deleteBtn: any = getMagentoDeleteAccountDom()
+      const deleteBtn: any = getMagentoDeleteAccountDom();
       if (deleteBtn) {
         deleteBtn.click();
         deletePopUpRef.current.classList.add("show");
       }
-    }
+    };
 
     return (
       <div className={`${pageName}Content`}>
@@ -252,9 +265,7 @@ const AccountEditAccount: React.FC = () => {
                 />
               </div>
               {!oldPasswordPass && (
-                <div className="errorMessage">
-                  {requiredCharacters}
-                </div>
+                <div className="errorMessage">{requiredCharacters}</div>
               )}
             </div>
             <div className="columnBlock">
@@ -268,9 +279,7 @@ const AccountEditAccount: React.FC = () => {
                 />
               </div>
               {!newPasswordPass && (
-                <div className="errorMessage">
-                  {requiredCharacters}
-                </div>
+                <div className="errorMessage">{requiredCharacters}</div>
               )}
             </div>
             <div className="columnBlock">
@@ -295,7 +304,9 @@ const AccountEditAccount: React.FC = () => {
         <div className="deleteBlock">
           <div className="deleteTitle">{accountDelete}</div>
           <div className="deleteText">{confirmDelete}</div>
-          <div onClick={handleDeleteAccount} className="deleteBtn">{deleteAccount}</div>
+          <div onClick={handleDeleteAccount} className="deleteBtn">
+            {deleteAccount}
+          </div>
         </div>
       </div>
     );

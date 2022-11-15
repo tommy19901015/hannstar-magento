@@ -335,7 +335,7 @@ const AccountPersonal: React.FC = () => {
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email,
+      Email: window.hannstar?.email,
     }).then((response: any) => {
       setAccountInfo(response);
     });
@@ -553,7 +553,7 @@ const AccountPersonal: React.FC = () => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
-        .catch(() => { });
+        .catch(() => {});
     };
 
     // fetch("/rest/V1/AppEnterPrice", {

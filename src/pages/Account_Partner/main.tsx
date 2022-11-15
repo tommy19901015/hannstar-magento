@@ -344,7 +344,7 @@ const formData13 = [
 
 const AccountPartner: React.FC = () => {
   const pageName = "AccountPartner";
-  const [accountInfo, setAccountInfo] = useState<any>("")
+  const [accountInfo, setAccountInfo] = useState<any>("");
 
   const formMethods1: any = useRef(null);
   const formMethods4: any = useRef(null);
@@ -360,9 +360,9 @@ const AccountPartner: React.FC = () => {
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email,
+      Email: window.hannstar?.email,
     }).then((response: any) => {
-      setAccountInfo(response)
+      setAccountInfo(response);
     });
     // setAccountInfo({
     //   "UserName": "ronfu",
@@ -419,7 +419,7 @@ const AccountPartner: React.FC = () => {
     //   "BuyCompany3": "渠道公司名稱-3",
     //   "CompanyRemark": "備註說明"
     // })
-  }, [])
+  }, []);
 
   const formProp1 = {
     formMethods: formMethods1,
@@ -513,13 +513,13 @@ const AccountPartner: React.FC = () => {
 
     const countrySelectBlock: any = useRef();
 
-
     useEffect(() => {
       const magentoCountrySelectDom: any = document.getElementById("country");
-      console.log('magentoCountrySelectDom', magentoCountrySelectDom);
-      console.log('countrySelectBlock', countrySelectBlock);
-      if (magentoCountrySelectDom) countrySelectBlock.current.appendChild(magentoCountrySelectDom);
-    }, [])
+      console.log("magentoCountrySelectDom", magentoCountrySelectDom);
+      console.log("countrySelectBlock", countrySelectBlock);
+      if (magentoCountrySelectDom)
+        countrySelectBlock.current.appendChild(magentoCountrySelectDom);
+    }, []);
 
     const handlerSubmit = () => {
       const values1 = formMethods1.current.getValues();
@@ -574,7 +574,7 @@ const AccountPartner: React.FC = () => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
-        .catch(() => { });
+        .catch(() => {});
     };
 
     const handlerGoBack = () => {
@@ -697,7 +697,10 @@ const AccountPartner: React.FC = () => {
         type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbsData} />}
       />
-      <AccountPersonalTemplate contentComponent={<PartnerFormContent />} rootId={accountInfo.rootid} />
+      <AccountPersonalTemplate
+        contentComponent={<PartnerFormContent />}
+        rootId={accountInfo.rootid}
+      />
     </Layout>
   );
 };

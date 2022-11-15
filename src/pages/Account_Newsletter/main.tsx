@@ -10,14 +10,17 @@ import { postAccountInfo } from "../../services/api.service";
 
 const AccountNewsletterContent = () => {
   const { title, subTitle, options, saveBtn } = usePageData();
+  const [subscribed, setSubscribed] = useState<boolean>(false);
   const pageName = "AccountNewsletter";
-  const [Subscription, setAgreePrivacy] = useState<boolean>(false);
-
   const magentoMessageBlock: any = useRef();
 
   useEffect(() => {
     const magentoDefultMessageDom: any =
       document.getElementsByClassName("page messages")[0];
+
+    if (getMagentoSubscribedDom()) {
+      setSubscribed(getMagentoSubscribedDom().checked);
+    }
 
     if (magentoDefultMessageDom)
       magentoMessageBlock.current.appendChild(magentoDefultMessageDom);
@@ -29,10 +32,12 @@ const AccountNewsletterContent = () => {
   };
 
   const handleSave = () => {
-    // to do
+    const registerBtn: any = document.getElementById("subscribedBtn");
+    if (registerBtn) registerBtn.click();
   };
 
   const handleSubscribed = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSubscribed(e.target.checked);
     if (getMagentoSubscribedDom()) {
       getMagentoSubscribedDom().checked = e.target.checked;
     }
@@ -49,10 +54,10 @@ const AccountNewsletterContent = () => {
           onChange={handleSubscribed}
           id="options"
           className="hannstarCheckBox"
+          checked={subscribed}
         />
         <label htmlFor="options">{options}</label>
       </div>
-
       <div className="btnBlock">
         <div className="btn" onClick={handleSave}>
           {saveBtn}
@@ -68,7 +73,7 @@ const AccountNewsletter: React.FC = () => {
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email,
+      Email: window.hannstar?.email,
     }).then((response: any) => {
       setAccountInfo(response);
     });

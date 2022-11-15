@@ -1,45 +1,47 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'AccountNewsletter';
+$pageName: "AccountNewsletter";
 
 .#{$pageName}Content {
-    padding: 0 60px;
-    margin-bottom: 100px;
-    .mainTitle {
-        @include hannstarH2Title;
-        margin-bottom: 20px;
+  padding: 0 60px;
+  margin-bottom: 100px;
+  .magentoMessageBlock {
+    @include magentoMessage;
+  }
+  .mainTitle {
+    @include hannstarH2Title;
+    margin-bottom: 20px;
+  }
+  .subTitle {
+    @include hannstarH3Title;
+    border-bottom: 1px solid $hannstar-border-color;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .btnBlock {
+    .btn {
+      @include hannstarBtn;
     }
-    .subTitle{
-        @include hannstarH3Title;
-        border-bottom: 1px solid $hannstar-border-color; 
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+  }
+  .bodyBlock {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+    @include hannstarCheckBox;
+    .hannstarCheckBox {
+      input[type="checkbox"]:checked + label,
+      input[type="checkbox"]:not(:checked) + label {
+        color: $hannstar-orange1;
+      }
+      margin: 5px;
     }
-    .btnBlock{
-        .btn {
-            @include hannstarBtn;
-        }
-    }
-    .bodyBlock {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-bottom: 50px;
-        @include hannstarCheckBox;
-        .hannstarCheckBox {
-            input[type='checkbox']:checked + label,
-            input[type='checkbox']:not(:checked) + label {
-                color: $hannstar-orange1;
-            }
-            margin: 5px;
-        }
-
-    }
+  }
 }
 
 @media screen and (max-width: $breakpoint) {
-    .#{$pageName}Content {
-        padding: 0;
-        margin-bottom: 30px;
-    }
+  .#{$pageName}Content {
+    padding: 0;
+    margin-bottom: 30px;
+  }
 }

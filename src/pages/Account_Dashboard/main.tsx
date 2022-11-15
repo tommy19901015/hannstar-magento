@@ -15,29 +15,31 @@ const MemberInfoContent = () => {
 
   const handleDetail = () => {
     // to do
-  }
+  };
   return (
     <div className={`${pageName}Content`}>
       <h1 className="mainTitle">{content.title}</h1>
       <table className="table">
         <tbody>
           <tr>
-            {
-              content.table.map(col => (<td>{col}</td>))
-            }
+            {content.table.map((col) => (
+              <td>{col}</td>
+            ))}
           </tr>
-          {
-            content.member.map(prod => (
-              <tr>
-                <td>{prod.date}</td>
-                <td>{prod.singleNumber}</td>
-                <td>{prod.item}</td>
-                <td>{prod.model}</td>
-                <td>{prod.superstition}</td>
-                <td><a href="#" onClick={handleDetail}>view</a></td>
-              </tr>
-            ))
-          }
+          {content.member.map((prod) => (
+            <tr>
+              <td>{prod.date}</td>
+              <td>{prod.singleNumber}</td>
+              <td>{prod.item}</td>
+              <td>{prod.model}</td>
+              <td>{prod.superstition}</td>
+              <td>
+                <a href="#" onClick={handleDetail}>
+                  view
+                </a>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
@@ -46,15 +48,15 @@ const MemberInfoContent = () => {
 
 const AccountDashboard: React.FC = () => {
   const { breadcrumbs } = usePageData();
-  const [accountInfo, setAccountInfo] = useState<any>("")
+  const [accountInfo, setAccountInfo] = useState<any>("");
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email
+      Email: window.hannstar?.email,
     }).then((response: any) => {
-      setAccountInfo(response)
+      setAccountInfo(response);
     });
-  }, [])
+  }, []);
 
   return (
     <Layout>

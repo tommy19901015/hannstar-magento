@@ -7,13 +7,13 @@ import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import usePageData from "./pageData";
 import { postAccountInfo } from "../../services/api.service";
-import { Accountstatus } from "../../templates/AccountPersonalTemplate/interface"
+import { Accountstatus } from "../../templates/AccountPersonalTemplate/interface";
 import "./css.scss";
 
 const AccountMyAccount: React.FC = () => {
   const pageName = "AccountMyAccount";
-  const { 
-    breadcrumbs,     
+  const {
+    breadcrumbs,
     account,
     personalInfo,
     edit,
@@ -24,22 +24,28 @@ const AccountMyAccount: React.FC = () => {
     companyName,
     business,
     applicable,
-    personal} = usePageData();
+    personal,
+  } = usePageData();
 
   const [magentoName, setMagentoName] = useState<string>();
   const [magentoEmail, setMagentoEmail] = useState<string>();
-  const [accountInfo, setAccountInfo] = useState<any>("")
+  const [accountInfo, setAccountInfo] = useState<any>("");
 
   const infoBlock: any = useRef();
   const addressesBlock: any = useRef();
   const errorMessageBlock: any = useRef();
 
   useEffect(() => {
-    const magentoDashboardDom: any = document.getElementById("block-dashboard-info");
+    const magentoDashboardDom: any = document.getElementById(
+      "block-dashboard-info"
+    );
     if (magentoDashboardDom) infoBlock.current.appendChild(magentoDashboardDom);
 
-    const magentoAddressesDom: any = document.getElementById("block-dashboard-addresses");
-    if (magentoAddressesDom) addressesBlock.current.appendChild(magentoAddressesDom);
+    const magentoAddressesDom: any = document.getElementById(
+      "block-dashboard-addresses"
+    );
+    if (magentoAddressesDom)
+      addressesBlock.current.appendChild(magentoAddressesDom);
 
     const magentoDefultMessageDom: any =
       document.getElementsByClassName("page messages")[0];
@@ -47,15 +53,15 @@ const AccountMyAccount: React.FC = () => {
     if (magentoDefultMessageDom)
       errorMessageBlock.current.appendChild(magentoDefultMessageDom);
 
-    setMagentoName(getMagentoName().innerText)
-    setMagentoEmail(getMagentoEmail().innerText)
+    setMagentoName(getMagentoName().innerText);
+    setMagentoEmail(getMagentoEmail().innerText);
 
     postAccountInfo({
-      Email: window.hannstar.email,
+      Email: window.hannstar?.email,
     }).then((response: any) => {
-      if (response.success !== false) setAccountInfo(response)
+      if (response.success !== false) setAccountInfo(response);
     });
-  }, [])
+  }, []);
 
   const getMagentoName = () => {
     const nameDom: any = document.getElementById("magentoInfoName");
@@ -73,15 +79,14 @@ const AccountMyAccount: React.FC = () => {
   };
 
   const MyAccountContent = () => {
-
-
-
     const ListBlock = ({ title, text }: any) => {
-      return (<div className="listBlock">
-        <span className="title">{title}:</span>
-        <span className="text">{text}</span>
-      </div>)
-    }
+      return (
+        <div className="listBlock">
+          <span className="title">{title}:</span>
+          <span className="text">{text}</span>
+        </div>
+      );
+    };
 
     return (
       <div className={`${pageName}Content`}>
@@ -94,25 +99,40 @@ const AccountMyAccount: React.FC = () => {
               <div className="subTitle">{personalInfo}</div>
               <ListBlock title={name} text={magentoName} />
               <ListBlock title={email} text={magentoEmail} />
-              <a className="editBtn" href={urlConfig.account.EditAccount.href}>{edit}</a>
+              <a className="editBtn" href={urlConfig.account.EditAccount.href}>
+                {edit}
+              </a>
             </div>
             <div className="rightBlock">
               <div className="subTitle">{subscription}</div>
               <div>
-                <span className="text">{getMagentoSubscribedBlock().innerText}</span>
+                <span className="text">
+                  {getMagentoSubscribedBlock().innerText}
+                </span>
               </div>
-              <a className="editBtn" href={urlConfig.account.AccountNewsletter.href} >{edit}</a>
+              <a
+                className="editBtn"
+                href={urlConfig.account.AccountNewsletter.href}
+              >
+                {edit}
+              </a>
             </div>
           </div>
-          {accountInfo && accountInfo.status === Accountstatus.Approved &&
+          {accountInfo && accountInfo.status === Accountstatus.Approved && (
             <div className="infoBlock">
               <div className="leftBlock">
                 <div className="subTitle">{companyInfo}</div>
                 <ListBlock title={companyName} text={accountInfo.companyname} />
                 <ListBlock title={business} text={accountInfo.businesstype} />
-                {accountInfo.HannstarCode && <ListBlock title={applicable} text={accountInfo.applicablearea} />}
+                {accountInfo.HannstarCode && (
+                  <ListBlock
+                    title={applicable}
+                    text={accountInfo.applicablearea}
+                  />
+                )}
               </div>
-            </div>}
+            </div>
+          )}
         </div>
         <div ref={infoBlock} className="magentoInfoBlock"></div>
         <div ref={addressesBlock} className="magentoInfoBlock"></div>
@@ -129,7 +149,8 @@ const AccountMyAccount: React.FC = () => {
       <AccountPersonalTemplate
         contentComponent={<MyAccountContent />}
         rootId={accountInfo.rootid}
-        accountstatus={accountInfo.status} />
+        accountstatus={accountInfo.status}
+      />
     </Layout>
   );
 };

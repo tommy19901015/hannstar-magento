@@ -8,7 +8,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import usePageData from "./pageData";
-import { Accountstatus } from "./interface"
+import { Accountstatus } from "./interface";
 import { postAccountInfo } from "../../services/api.service";
 import "./css.scss";
 
@@ -16,134 +16,139 @@ const AccountApplication: React.FC = () => {
   const pageName = "AccountApplication";
   const pageData = usePageData();
   const { breadcrumbs, captionData, content } = pageData;
-  const [accountInfo, setAccountInfo] = useState<any>("")
+  const [accountInfo, setAccountInfo] = useState<any>("");
 
   useEffect(() => {
     postAccountInfo({
-      Email: window.hannstar.email,
+      Email: window.hannstar?.email,
     }).then((response: any) => {
-      if (response.success !== false) setAccountInfo(response)
+      if (response.success !== false) setAccountInfo(response);
     });
   }, []);
 
   const ApplicationContent = () => {
-
     const RankTypeNotApproved = () => {
-      return <div className="rankContent">
-        <div className="rankBlock">
-          <div className="rankCard">
-            <img
-              className="rankImg"
-              alt="rankImg"
-              src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
-            />
-            <div className="rankText">{content.text}</div>
-            <div className="rankName">
+      return (
+        <div className="rankContent">
+          <div className="rankBlock">
+            <div className="rankCard">
               <img
-                alt="rankText"
-                src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                className="rankImg"
+                alt="rankImg"
+                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
               />
-              <div className="text">{content.member}</div>
+              <div className="rankText">{content.text}</div>
+              <div className="rankName">
+                <img
+                  alt="rankText"
+                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                />
+                <div className="text">{content.member}</div>
+              </div>
+            </div>
+          </div>
+          <div className="arrowBlock">
+            <img
+              alt="arrow"
+              src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
+            />
+          </div>
+          <div className="rankBlock">
+            <div className="rankCard">
+              <img
+                className="rankImg"
+                alt="rankImg"
+                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
+              />
+              <div className="rankText">{content.become}</div>
+              <div className="rankName">
+                <img
+                  alt="rankText"
+                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                />
+                <div className="text">{content.companymember}</div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="arrowBlock">
-          <img
-            alt="arrow"
-            src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
-          />
-        </div>
-        <div className="rankBlock">
-          <div className="rankCard">
-            <img
-              className="rankImg"
-              alt="rankImg"
-              src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
-            />
-            <div className="rankText">{content.become}</div>
-            <div className="rankName">
-              <img
-                alt="rankText"
-                src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
-              />
-              <div className="text">{content.companymember}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    }
+      );
+    };
 
     const RankTypePending = () => {
-      return <div className="rankContent">
-        <div className="rankBlock">
-          <div className="rankCard">
-            <img
-              className="rankImg"
-              alt="rankImg"
-              src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
-            />
-            <div className="rankText">{content.text}</div>
-            <div className="rankName">
+      return (
+        <div className="rankContent">
+          <div className="rankBlock">
+            <div className="rankCard">
               <img
-                alt="rankText"
-                src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                className="rankImg"
+                alt="rankImg"
+                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
               />
-              <div className="text">{content.member}</div>
+              <div className="rankText">{content.text}</div>
+              <div className="rankName">
+                <img
+                  alt="rankText"
+                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                />
+                <div className="text">{content.member}</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="arrowBlock">
-          <img
-            alt="arrow"
-            src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
-          />
-        </div>
-        <div className="rankBlock">
-          <div className="rankCard">
+          <div className="arrowBlock">
             <img
-              className="rankImg"
-              alt="rankImg"
-              src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
+              alt="arrow"
+              src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
             />
-            <div className="rankText">{content.pendingText}</div>
-            <div className="rankName">
-              <div className="text">{content.pendingStates}</div>
+          </div>
+          <div className="rankBlock">
+            <div className="rankCard">
+              <img
+                className="rankImg"
+                alt="rankImg"
+                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
+              />
+              <div className="rankText">{content.pendingText}</div>
+              <div className="rankName">
+                <div className="text">{content.pendingStates}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    }
+      );
+    };
 
     const RankTypeApproved = () => {
-      return <div className="rankContent">
-        <div className="rankBlock">
-          <div className="rankCard">
-            <img
-              className="rankImg"
-              alt="rankImg"
-              src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
-            />
-            <div className="rankText">{content.text}</div>
-            <div className="rankName">
+      return (
+        <div className="rankContent">
+          <div className="rankBlock">
+            <div className="rankCard">
               <img
-                alt="rankText"
-                src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                className="rankImg"
+                alt="rankImg"
+                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
               />
-              <div className="text">{content.companymember}</div>
+              <div className="rankText">{content.text}</div>
+              <div className="rankName">
+                <img
+                  alt="rankText"
+                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                />
+                <div className="text">{content.companymember}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    }
+      );
+    };
 
     const mappingRankType = (status: Accountstatus) => {
       const typeObj = {
         [Accountstatus.Approved]: <RankTypeApproved />,
         [Accountstatus.NotApproved]: <RankTypeNotApproved />,
-        [Accountstatus.Pending]: <RankTypePending />
-      }
-      return status ? typeObj[status] : <RankTypeNotApproved />
-    }
+        [Accountstatus.Pending]: <RankTypePending />,
+      };
+      return status ? typeObj[status] : <RankTypeNotApproved />;
+    };
 
     return (
       <div className={`${pageName}Content`}>
@@ -152,7 +157,7 @@ const AccountApplication: React.FC = () => {
           <div className="subTitle">{content.subTitle}</div>
           {mappingRankType(accountInfo.status)}
         </div>
-        {(!accountInfo || accountInfo.status === Accountstatus.NotApproved) &&
+        {(!accountInfo || accountInfo.status === Accountstatus.NotApproved) && (
           <>
             <div className="btnBlocks">
               <div className="btnBlock">
@@ -272,8 +277,7 @@ const AccountApplication: React.FC = () => {
               </div>
             </div>
           </>
-        }
-
+        )}
       </div>
     );
   };
