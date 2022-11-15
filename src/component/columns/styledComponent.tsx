@@ -24,10 +24,10 @@ export const TwoColFullStyle: React.FC<I_Style> = styled.div`
 `;
 
 export const OneColStyle: React.FC<I_Style> = styled.div`    
-    margin: 0px 60px;
+    margin: 0px auto;
+    padding: 0px 60px;
     max-width:1400px;
     &:first-child{
-      margin-top: 0px; 
     }
     @media (max-width: 980px) {
     margin: 30px 0px;
@@ -38,9 +38,9 @@ export const OneColStyle: React.FC<I_Style> = styled.div`
 export const TwoColStyle: React.FC<I_Style> = styled.div`
   display: flex;
   padding:0 60px;
-  margin: 40px 0px;
+  margin: 40px auto;
+  max-width: 1400px;
   &:first-child{
-    margin-top: 0px; 
   }
   @media (max-width: 980px) {
     flex-direction: ${(props: { topMContent: TopMType }) =>
