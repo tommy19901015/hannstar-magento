@@ -24,6 +24,8 @@ const AccountPartner: React.FC = () => {
     [key in Keys]: string | number | string[];
   };
 
+  const errorMsg = formData.Required;
+
   useEffect(() => {
     const magentoCountrySelectDom: any = document.getElementById("country");
     console.log("magentoCountrySelectDom", magentoCountrySelectDom);
@@ -99,8 +101,8 @@ const AccountPartner: React.FC = () => {
     return (
       <div className={`${pageName}FormBlock`}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="formTitle">申請企業會員</div>
-          <div className="stepTitle">步驟 1. 請選擇您的身份</div>
+          <div className="formTitle">{formData.ApplyMembership}</div>
+          <div className="stepTitle">{formData.Step1}</div>
           <div className="classificationBlock flex">
             <a
               className="changTab"
@@ -121,108 +123,62 @@ const AccountPartner: React.FC = () => {
               />
             </a>
           </div>
-          <div className="stepTitle">步驟 2. 申請人資訊</div>
+          <div className="stepTitle">{formData.Step2}</div>
           <div className="classificationBlock">
             <div className="row">
               <div className="col-2">
-                <label className="required">工作屬性</label>
+                <label className="required">{ formData.JobAttributes.title}</label>
                 <select {...register("JobAttributes")}>
-                  <option value={formData.JobAttributes.option[0].value}>
-                    {formData.JobAttributes.option[0].text}
-                  </option>
-                  <option value={formData.JobAttributes.option[1].value}>
-                    {formData.JobAttributes.option[1].text}
-                  </option>
-                  <option value={formData.JobAttributes.option[2].value}>
-                    {formData.JobAttributes.option[2].text}
-                  </option>
-                  <option value={formData.JobAttributes.option[3].value}>
-                    {formData.JobAttributes.option[3].text}
-                  </option>
-                  <option value={formData.JobAttributes.option[4].value}>
-                    {formData.JobAttributes.option[4].text}
-                  </option>
-                  <option value={formData.JobAttributes.option[5].value}>
-                    {formData.JobAttributes.option[5].text}
-                  </option>
-                  <option value={formData.JobAttributes.option[6].value}>
-                    {formData.JobAttributes.option[6].text}
-                  </option>
+                  { formData.JobAttributes.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.JobAttributes && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.JobAttributes && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">職稱</label>
+                <label className="required">{ formData.JobTitle.title}</label>
                 <select {...register("JobTitle")}>
-                  <option value={formData.JobTitle.option[0].value}>
-                    {formData.JobTitle.option[0].text}
-                  </option>
-                  <option value={formData.JobTitle.option[1].value}>
-                    {formData.JobTitle.option[1].text}
-                  </option>
-                  <option value={formData.JobTitle.option[2].value}>
-                    {formData.JobTitle.option[2].text}
-                  </option>
-                  <option value={formData.JobTitle.option[3].value}>
-                    {formData.JobTitle.option[3].text}
-                  </option>
-                  <option value={formData.JobTitle.option[4].value}>
-                    {formData.JobTitle.option[4].text}
-                  </option>
-                  <option value={formData.JobTitle.option[5].value}>
-                    {formData.JobTitle.option[5].text}
-                  </option>
-                  <option value={formData.JobTitle.option[6].value}>
-                    {formData.JobTitle.option[6].text}
-                  </option>
+                  { formData.JobTitle.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.JobTitle && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.JobTitle && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">電話號碼</label>
+                <label className="required">{formData.PhoneNumber1}</label>
                 <PhoneInput
                   country={"tw"}
                   {...register("PhoneNumber1")}
                   onChange={(value, data) => handlCallPhoneInput(value, data)}
                 />
-                {errors.PhoneNumber1 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.PhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">分機</label>
+                <label className="required">{formData.PhoneNumber2}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("PhoneNumber2", { required: true })}
-                />
-                {errors.PhoneNumber2 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                /> 
+                {errors.PhoneNumber2 && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">手機號碼</label>
+                <label className="required">{formData.CellPhoneNumber1}</label>
                 <PhoneInput
                   country={"tw"}
                   {...register("CellPhoneNumber1")}
                   onChange={(value, data) => handlePhoneInput(value, data)}
                 />
-                {errors.CellPhoneNumber1 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.CellPhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-1">
-                <label className="required">感興趣的應用別(可複選)</label>
+                <label className="required">{formData.InterestedType.title}</label>
                 <div className="checkbox-col">
                   {formData.InterestedType.option.map((item, i) => (
                     <div className="hannstarCheckBox" key={i}>
@@ -235,231 +191,151 @@ const AccountPartner: React.FC = () => {
                       <label htmlFor={item.value}>{item.text}</label>
                     </div>
                   ))}
-                  {errors.InterestedType && (
-                    <span className="error">必填欄位，請重新輸入</span>
-                  )}
+                  {errors.InterestedType && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
             </div>
           </div>
-          <div className="stepTitle">步驟 3. 企業資料</div>
+          <div className="stepTitle">{formData.Step3}</div>
           <div className="classificationBlock">
             <div className="row">
               <div className="col-2">
-                <label className="required">公司名稱</label>
+                <label className="required">{formData.CompanyName.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("CompanyName", { required: true })}
                 />
-                {errors.CompanyName && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.CompanyName && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">公司名稱關鍵字</label>
+                <label className="required">{formData.CompanySName.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("CompanySName", { required: true })}
                 />
-                {errors.CompanySName && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.CompanySName && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">企業編號(統編/稅號)</label>
+                <label className="required">{formData.TaxNo.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("TaxNo", { required: true })}
                 />
-                {errors.TaxNo && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.TaxNo && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">商業類型</label>
+                <label className="required">{formData.BusinessType.title}</label>
                 <select {...register("BusinessType")}>
-                  <option value={formData.BusinessType.option[0].value}>
-                    {formData.BusinessType.option[0].text}
-                  </option>
-                  <option value={formData.BusinessType.option[1].value}>
-                    {formData.BusinessType.option[1].text}
-                  </option>
-                  <option value={formData.BusinessType.option[2].value}>
-                    {formData.BusinessType.option[2].text}
-                  </option>
+                  { formData.BusinessType.option.map(({value,text}) => (
+                    <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.BusinessType && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.BusinessType && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">適用區域</label>
+                <label className="required">{formData.ApplicableArea.title}</label>
                 <select {...register("ApplicableArea")}>
-                  <option value={formData.ApplicableArea.option[0].value}>
-                    {formData.ApplicableArea.option[0].text}
-                  </option>
-                  <option value={formData.ApplicableArea.option[1].value}>
-                    {formData.ApplicableArea.option[1].text}
-                  </option>
-                  <option value={formData.ApplicableArea.option[2].value}>
-                    {formData.ApplicableArea.option[2].text}
-                  </option>
-                  <option value={formData.ApplicableArea.option[3].value}>
-                    {formData.ApplicableArea.option[3].text}
-                  </option>
-                  <option value={formData.ApplicableArea.option[4].value}>
-                    {formData.ApplicableArea.option[4].text}
-                  </option>
-                  <option value={formData.ApplicableArea.option[5].value}>
-                    {formData.ApplicableArea.option[5].text}
-                  </option>
+                  { formData.ApplicableArea.option.map(({value,text}) => (
+                    <option value={value}>{text}</option>
+                  ))}
                 </select>
               </div>
             </div>
             <div className="row">
               <div className="col-1">
-                <label className="required">公司網址</label>
+                <label className="required">{formData.Weblink.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("Weblink", { required: true })}
                 />
-                {errors.Weblink && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.Weblink && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-3">
-                <label className="required">國家/地區</label>
+                <label className="required">{formData.Country.title}</label>
                 <div ref={countrySelectBlock}></div>
               </div>
               <div className="col-3">
-                <label className="required">城市</label>
+                <label className="required">{formData.AreaCity.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("AreaCity", { required: true })}
                 />
-                {errors.AreaCity && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.AreaCity && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-3">
-                <label>地址</label>
+                <label>{formData.AreaAddress.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("AreaAddress")}
                 />
-                {errors.AreaAddress && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.AreaAddress && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">員工總數</label>
+                <label className="required">{formData.CompanyEmpNumber.title}</label>
                 <select {...register("CompanyEmpNumber", { required: true })}>
-                  <option value={formData.CompanyEmpNumber.option[0].value}>
-                    {formData.CompanyEmpNumber.option[0].text}
-                  </option>
-                  <option value={formData.CompanyEmpNumber.option[1].value}>
-                    {formData.CompanyEmpNumber.option[1].text}
-                  </option>
-                  <option value={formData.CompanyEmpNumber.option[2].value}>
-                    {formData.CompanyEmpNumber.option[2].text}
-                  </option>
-                  <option value={formData.CompanyEmpNumber.option[3].value}>
-                    {formData.CompanyEmpNumber.option[3].text}
-                  </option>
+                  { formData.CompanyEmpNumber.option.map(({value,text}) => (
+                    <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.CompanyEmpNumber && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.CompanyEmpNumber && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">技術人員</label>
+                <label className="required">{formData.TechnicalStaff.title}</label>
                 <select {...register("TechnicalStaff", { required: true })}>
-                  <option value={formData.TechnicalStaff.option[0].value}>
-                    {formData.TechnicalStaff.option[0].text}
-                  </option>
-                  <option value={formData.TechnicalStaff.option[1].value}>
-                    {formData.TechnicalStaff.option[1].text}
-                  </option>
-                  <option value={formData.TechnicalStaff.option[2].value}>
-                    {formData.TechnicalStaff.option[2].text}
-                  </option>
-                  <option value={formData.TechnicalStaff.option[3].value}>
-                    {formData.TechnicalStaff.option[3].text}
-                  </option>
+                  { formData.TechnicalStaff.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.AnnualRevenue && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.AnnualRevenue && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">年營業額(USD)</label>
+                <label className="required">{formData.AnnualRevenue.title}</label>
                 <select {...register("AnnualRevenue", { required: true })}>
-                  <option value={formData.AnnualRevenue.option[0].value}>
-                    {formData.AnnualRevenue.option[0].text}
-                  </option>
-                  <option value={formData.AnnualRevenue.option[1].value}>
-                    {formData.AnnualRevenue.option[1].text}
-                  </option>
-                  <option value={formData.AnnualRevenue.option[2].value}>
-                    {formData.AnnualRevenue.option[2].text}
-                  </option>
-                  <option value={formData.AnnualRevenue.option[3].value}>
-                    {formData.AnnualRevenue.option[3].text}
-                  </option>
-                  <option value={formData.AnnualRevenue.option[4].value}>
-                    {formData.AnnualRevenue.option[4].text}
-                  </option>
+                  { formData.AnnualRevenue.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.AnnualRevenue && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.AnnualRevenue && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">上市公司</label>
+                <label className="required">{formData.CompanyStockOn.title}</label>
                 <select {...register("CompanyStockOn", { required: true })}>
-                  <option value={formData.CompanyStockOn.option[0].value}>
-                    {formData.CompanyStockOn.option[0].text}
-                  </option>
-                  <option value={formData.CompanyStockOn.option[1].value}>
-                    {formData.CompanyStockOn.option[1].text}
-                  </option>
+                  { formData.CompanyStockOn.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.CompanyStockOn && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.CompanyStockOn && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
 
             <div className="row">
               <div className="col-3">
-                <label className="required">公司產品主要銷售國家/地區-1</label>
+                <label className="required">{formData.CompanyMA2.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("CompanyMA2", { required: true })}
                 />
-                {errors.CompanyMA2 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.CompanyMA2 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-3">
-                <label>公司產品主要銷售國家/地區-2</label>
+                <label>{formData.CompanyMA3.title}</label>
                 <input
                   type="text"
                   defaultValue=""
@@ -467,7 +343,7 @@ const AccountPartner: React.FC = () => {
                 />
               </div>
               <div className="col-3">
-                <label>公司產品主要銷售國家/地區-3</label>
+                <label>{formData.CompanyMA4.title}</label>
                 <input
                   type="text"
                   defaultValue=""
@@ -477,34 +353,32 @@ const AccountPartner: React.FC = () => {
             </div>
             <div className="row">
               <div className="col-3">
-                <label className="required">主要出貨客戶-1</label>
+                <label className="required">{formData.TOP1.title}</label>
                 <input
                   type="text"
                   defaultValue=""
                   {...register("TOP1", { required: true })}
                 />
-                {errors.TOP1 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.TOP1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-3">
-                <label>主要出貨客戶-2</label>
+                <label>{formData.TOP2.title}</label>
                 <input type="text" defaultValue="" {...register("TOP2")} />
               </div>
               <div className="col-3">
-                <label>主要出貨客戶-3</label>
+                <label>{formData.TOP3.title}</label>
                 <input type="text" defaultValue="" {...register("TOP3")} />
               </div>
             </div>
           </div>
           <div className="stepTitle">
-            為能提供更完整的服務，請問貴司是否已使用HannStar產品
+            {formData.Step4}
           </div>
 
           <div className="classificationBlock">
             <div className="row">
               <div className="col-2">
-                <label className="required">是否已使用HannStar產品</label>
+                <label className="required">{formData.HannstarYN.title}</label>
                 <div className="">
                   {formData.HannstarYN.option.map((item, i) => (
                     <div className="hannstarRadio" key={i}>
@@ -518,13 +392,10 @@ const AccountPartner: React.FC = () => {
                     </div>
                   ))}
                 </div>
-
-                {errors.HannstarYN && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.HannstarYN && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label>請在提供HannStar供應商代碼(6碼)</label>
+                <label>{formData.HannstarCode.title}</label>
                 <input
                   type="text"
                   className=""
@@ -535,53 +406,37 @@ const AccountPartner: React.FC = () => {
             </div>
             <div className="row">
               <div className="col-2">
-                <label className="required">購買渠道-1</label>
+                <label className="required">{formData.Buy1.title}</label>
                 <select {...register("Buy1", { required: true })}>
-                  <option value={formData.Buy1.option[0].value}>
-                    {formData.Buy1.option[0].text}
-                  </option>
-                  <option value={formData.Buy1.option[1].value}>
-                    {formData.Buy1.option[1].text}
-                  </option>
-                  <option value={formData.Buy1.option[2].value}>
-                    {formData.Buy1.option[2].text}
-                  </option>
+                  { formData.Buy1.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
-                {errors.Buy1 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.Buy1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">渠道公司名稱-1</label>
+                <label className="required">{formData.BuyCompany1.title}</label>
                 <input
                   type="text"
                   className=""
                   defaultValue=""
                   {...register("BuyCompany1", { required: true })}
                 />
-                {errors.BuyCompany1 && (
-                  <span className="error">必填欄位，請重新輸入</span>
-                )}
+                {errors.BuyCompany1 && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
 
             <div className="row">
               <div className="col-2">
-                <label>購買渠道-2</label>
+                <label>{formData.Buy2.title}</label>
                 <select {...register("Buy2")}>
-                  <option value={formData.Buy2.option[0].value}>
-                    {formData.Buy2.option[0].text}
-                  </option>
-                  <option value={formData.Buy2.option[1].value}>
-                    {formData.Buy2.option[1].text}
-                  </option>
-                  <option value={formData.Buy2.option[2].value}>
-                    {formData.Buy2.option[2].text}
-                  </option>
+                  { formData.Buy2.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
               </div>
               <div className="col-2">
-                <label>渠道公司名稱-2</label>
+                <label>{formData.BuyCompany2.title}</label>
                 <input
                   type="text"
                   className=""
@@ -592,21 +447,15 @@ const AccountPartner: React.FC = () => {
             </div>
             <div className="row">
               <div className="col-2">
-                <label>購買渠道-3</label>
+                <label>{formData.Buy3.title}</label>
                 <select {...register("Buy3")}>
-                  <option value={formData.Buy3.option[0].value}>
-                    {formData.Buy3.option[0].text}
-                  </option>
-                  <option value={formData.Buy3.option[1].value}>
-                    {formData.Buy3.option[1].text}
-                  </option>
-                  <option value={formData.Buy3.option[2].value}>
-                    {formData.Buy3.option[2].text}
-                  </option>
+                  { formData.Buy3.option.map(({value,text}) => (
+                      <option value={value}>{text}</option>
+                  ))}
                 </select>
               </div>
               <div className="col-2">
-                <label>渠道公司名稱-3</label>
+                <label>{formData.BuyCompany3.title}</label>
                 <input
                   type="text"
                   className=""
@@ -619,7 +468,7 @@ const AccountPartner: React.FC = () => {
           <div className="classificationBlock">
             <div className="row">
               <div className="col-1">
-                <label>備註說明</label>
+                <label>{formData.Notes}</label>
                 <textarea
                   className="companyRemark"
                   defaultValue=""
@@ -630,9 +479,9 @@ const AccountPartner: React.FC = () => {
           </div>
           <div className="btnBlock">
             <div onClick={handlerGoBack} className="goBack">
-              回上一頁
+              {formData.Goback}
             </div>
-            <input type="submit" defaultValue="確認申請" className="confirm" />
+            <input type="submit" defaultValue={formData.Application} className="confirm" />
           </div>
         </form>
       </div>
