@@ -3,9 +3,7 @@
 $pageName: 'HannstarLogin';
 
 .#{$pageName}Container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 40px 0;
+    padding-top: 40px;
     .magentoLoginBlock {
         display: none;
     }
@@ -15,7 +13,7 @@ $pageName: 'HannstarLogin';
     .hannstarLoginBlock {
         display: flex;
         flex-direction: column;
-        padding: 0 80px;
+        padding-right: 50px;
         @include hannstarContent0;
         h2 {
             @include hannstarH2Title;

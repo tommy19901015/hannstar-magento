@@ -15,7 +15,7 @@ const AccountTemplate: React.FC<I_AccountTemplate> = ({ content }) => {
     const { signTitle, service} = serviceData;
     return (
       <Columns
-        type={ColType.TwoColFullPage}
+        type={ColType.TwoCol}
         widthL={50}
         widthR={50}
         topMContent={TopMType.Left}
