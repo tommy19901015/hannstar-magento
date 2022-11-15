@@ -73,7 +73,7 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
 
   return (
     <Columns
-      type={isMobile ? ColType.TwoCol : ColType.TwoColFullPage} // TwoCol
+      type={ColType.TwoCol} // TwoCol
       widthL={15}
       widthR={85}
       minWidthL={"250px"}
