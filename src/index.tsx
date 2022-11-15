@@ -82,22 +82,22 @@ ReactDOM.render(
         path={account.AccountDashboard.href}
         element={<AccountDashboard />}
       />
-      <Route
-        path={account.AccountLogout.href}
-        element={<AccountLogout />}
-      />
+      <Route path={account.AccountLogout.href} element={<AccountLogout />} />
       <Route path={account.MemberInfo.href} element={<AccountMemberInfo />} />
       <Route path={account.EditAccount.href} element={<AccountEditAccount />} />
       <Route path={account.MyAccount.href} element={<AccountMyAccount />} />
-      <Route path={account.AccountNewsletter.href} element={<AccountNewsletter />} />
+      <Route
+        path={account.AccountNewsletter.href}
+        element={<AccountNewsletter />}
+      />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
-      <Route path="/zh-tw/e-biz" element={<EBiz />} />
-      <Route path="/zh-tw/solution" element={<Solution />} />
-      <Route path="/zh-tw/stronghold" element={<Stronghold />} />
+      <Route path="/e-biz" element={<EBiz />} />
+      <Route path="/solution" element={<Solution />} />
+      <Route path="/stronghold" element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
       <Route path="/template3" element={<Template3Page />} />
