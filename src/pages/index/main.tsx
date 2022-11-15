@@ -222,15 +222,15 @@ const Index: React.FC = () => {
       />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={allStore.graphics1Data1} />}
+        content={<GraphicsLine {...allStore.graphics1Data1} />}
       />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={allStore.graphics1Data2} />}
+        content={<GraphicsLine {...allStore.graphics1Data2} />}
       />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={allStore.graphics1Data3} />}
+        content={<GraphicsLine {...allStore.graphics1Data3} />}
       />
     </Layout>
   );

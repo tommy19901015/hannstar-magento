@@ -6,7 +6,6 @@ $componentName: 'Graphics3';
     .graphicsBlock {
         display: flex;
         align-items: center;
-        background-color: $hannstar-bg-color;
         margin-bottom: 40px;
         &:nth-child(odd) {
             flex-direction: row-reverse;
@@ -22,11 +21,11 @@ $componentName: 'Graphics3';
             width: 50%;
             padding: 32px;
             .title {
-                @include hannstarH3Title;
+                @include hannstarH4Title;
                 padding-bottom: 32px;
             }
             .content {
-                @include hannstarContent0;
+                @include hannstarContent1;
                 padding-bottom: 32px;
             }
             .linkBtn {

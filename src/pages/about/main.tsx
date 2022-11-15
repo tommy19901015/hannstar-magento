@@ -43,11 +43,11 @@ const About: React.FC = () => {
     );
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     const post = getTodoData(2);
-    console.log('post:',post)
-  },[])
-  
+    console.log('post:', post)
+  }, [])
+
 
   return (
     <Layout>
@@ -55,10 +55,10 @@ const About: React.FC = () => {
       <Banner {...bannerTextData} />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={graphics1Data1} />} />
+        content={<GraphicsLine {...graphics1Data1} />} />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine data={graphics1Data2} />} />
+        content={<GraphicsLine {...graphics1Data2} />} />
       <Columns
         type={ColType.OneCol}
         content={<Milestone />} />

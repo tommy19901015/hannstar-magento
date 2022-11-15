@@ -1,0 +1,7 @@
+@import '../../style/variable.scss';
+
+$pageName: 'Template1';
+
+.#{$pageName}ModuleBlock {
+    margin-bottom: 120px;
+}

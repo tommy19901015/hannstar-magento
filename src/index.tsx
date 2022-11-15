@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
 import Index from "./pages/index/main";
+import CSRIndex from "./pages/CSR_Index/main";
 import About from "./pages/about/main";
 import EBiz from "./pages/e-biz/main";
 import Solution from "./pages/solution/main";
@@ -91,6 +92,7 @@ ReactDOM.render(
       <Route path={account.AccountNewsletter.href} element={<AccountNewsletter />} />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
+      <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/zh-tw/e-biz" element={<EBiz />} />

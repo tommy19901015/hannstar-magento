@@ -1,7 +1,7 @@
 import React from "react";
 import "./css.scss";
 import { I_Graphics3 } from "./interface"
-import { ImgStyle } from "./styledComponent"
+import { ImgStyle, GraphicsStyle } from "./styledComponent"
 
 
 
@@ -10,7 +10,7 @@ const Graphics3: React.FC<I_Graphics3> = ({ data }) => {
 
     return (
         <div className={`${componentName}Content`}>
-            {data.map((item, index) => <div className="graphicsBlock" key={index}>
+            {data.map((item, index) => <GraphicsStyle className="graphicsBlock" key={index}>
                 <div className="imgBlock">
                     <ImgStyle src={item.src} alt={item.title} imgSizePercent={item.imgSizePercent} />
                 </div>
@@ -19,7 +19,7 @@ const Graphics3: React.FC<I_Graphics3> = ({ data }) => {
                     <div className="content">{item.content}</div>
                     {item.btnText && <a className="linkBtn" href={item.btnHref}>{item.btnText}</a>}
                 </div>
-            </div>)}
+            </GraphicsStyle>)}
         </div>
     )
 }
