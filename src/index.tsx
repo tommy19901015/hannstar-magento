@@ -25,6 +25,8 @@ import AccountMemberInfo from "./pages/Account_MemberInfo/main";
 import AccountDashboard from "./pages/Account_Dashboard/main";
 import AccountNewsletter from "./pages/Account_Newsletter/main";
 import AccountLogout from "./pages/Account_Logout/main";
+//企業永續
+import CSRESG from "./pages/CSR_ESG/main"
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -93,6 +95,7 @@ ReactDOM.render(
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
       <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
+      <Route path={"/news/esg"} element={<CSRESG />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/e-biz" element={<EBiz />} />

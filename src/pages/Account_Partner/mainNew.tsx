@@ -6,7 +6,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
 import PhoneInput from "react-phone-input-2";
-import { postAppVendor, postAccountInfo } from "../../services/api.service";
+import { postAppVendor } from "../../services/api.service";
 import "react-phone-input-2/lib/style.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./css.scss";
@@ -127,19 +127,19 @@ const AccountPartner: React.FC = () => {
           <div className="classificationBlock">
             <div className="row">
               <div className="col-2">
-                <label className="required">{ formData.JobAttributes.title}</label>
+                <label className="required">{formData.JobAttributes.title}</label>
                 <select {...register("JobAttributes")}>
-                  { formData.JobAttributes.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.JobAttributes.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
                 {errors.JobAttributes && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
-                <label className="required">{ formData.JobTitle.title}</label>
+                <label className="required">{formData.JobTitle.title}</label>
                 <select {...register("JobTitle")}>
-                  { formData.JobTitle.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.JobTitle.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
                 {errors.JobTitle && (<span className="error">{errorMsg}</span>)}
@@ -161,7 +161,7 @@ const AccountPartner: React.FC = () => {
                   type="text"
                   defaultValue=""
                   {...register("PhoneNumber2", { required: true })}
-                /> 
+                />
                 {errors.PhoneNumber2 && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
@@ -231,7 +231,7 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.BusinessType.title}</label>
                 <select {...register("BusinessType")}>
-                  { formData.BusinessType.option.map(({value,text}) => (
+                  {formData.BusinessType.option.map(({ value, text }) => (
                     <option value={value}>{text}</option>
                   ))}
                 </select>
@@ -242,7 +242,7 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.ApplicableArea.title}</label>
                 <select {...register("ApplicableArea")}>
-                  { formData.ApplicableArea.option.map(({value,text}) => (
+                  {formData.ApplicableArea.option.map(({ value, text }) => (
                     <option value={value}>{text}</option>
                   ))}
                 </select>
@@ -287,7 +287,7 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.CompanyEmpNumber.title}</label>
                 <select {...register("CompanyEmpNumber", { required: true })}>
-                  { formData.CompanyEmpNumber.option.map(({value,text}) => (
+                  {formData.CompanyEmpNumber.option.map(({ value, text }) => (
                     <option value={value}>{text}</option>
                   ))}
                 </select>
@@ -296,8 +296,8 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.TechnicalStaff.title}</label>
                 <select {...register("TechnicalStaff", { required: true })}>
-                  { formData.TechnicalStaff.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.TechnicalStaff.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
                 {errors.AnnualRevenue && (<span className="error">{errorMsg}</span>)}
@@ -307,8 +307,8 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.AnnualRevenue.title}</label>
                 <select {...register("AnnualRevenue", { required: true })}>
-                  { formData.AnnualRevenue.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.AnnualRevenue.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
                 {errors.AnnualRevenue && (<span className="error">{errorMsg}</span>)}
@@ -316,8 +316,8 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.CompanyStockOn.title}</label>
                 <select {...register("CompanyStockOn", { required: true })}>
-                  { formData.CompanyStockOn.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.CompanyStockOn.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
                 {errors.CompanyStockOn && (<span className="error">{errorMsg}</span>)}
@@ -408,8 +408,8 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.Buy1.title}</label>
                 <select {...register("Buy1", { required: true })}>
-                  { formData.Buy1.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.Buy1.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
                 {errors.Buy1 && (<span className="error">{errorMsg}</span>)}
@@ -430,8 +430,8 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label>{formData.Buy2.title}</label>
                 <select {...register("Buy2")}>
-                  { formData.Buy2.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.Buy2.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
               </div>
@@ -449,8 +449,8 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label>{formData.Buy3.title}</label>
                 <select {...register("Buy3")}>
-                  { formData.Buy3.option.map(({value,text}) => (
-                      <option value={value}>{text}</option>
+                  {formData.Buy3.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
                   ))}
                 </select>
               </div>

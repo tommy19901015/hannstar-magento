@@ -9,6 +9,7 @@ export const apiMethods = {
   fetchAccountInfo: "/rest/V1/getAccountInfo",
   fetchMemberGroupList: "/rest/V1/MemberGroupList",
   fetchJoinMemberGroup: "/rest/V1/JoinMemberGroup",
+  fetchGetD360Art: "/rest/V1/getArt",
 };
 
 export const postEnterPrice = (params: PriceFormParams) =>
@@ -25,3 +26,5 @@ export const postMemberGroupList = (params: any) =>
   service.post(apiMethods.fetchMemberGroupList, { ...params });
 export const postJoinMemberGroup = (params: any) =>
   service.post(apiMethods.fetchJoinMemberGroup, { ...params });
+export const postGetD360Art = (params: any) =>
+service.post(apiMethods.fetchGetD360Art, { ...params });

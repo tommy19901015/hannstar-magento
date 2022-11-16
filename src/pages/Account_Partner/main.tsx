@@ -11,7 +11,6 @@ import PhoneInput from "react-phone-input-2";
 import { postAccountInfo } from "../../services/api.service";
 import "react-phone-input-2/lib/style.css";
 import "./css.scss";
-import { access } from "fs";
 
 const formData1 = [
   {
@@ -574,7 +573,7 @@ const AccountPartner: React.FC = () => {
           console.log("data", data);
           //{result: 'success', resultMsg: ''}
         })
-        .catch(() => {});
+        .catch(() => { });
     };
 
     const handlerGoBack = () => {
