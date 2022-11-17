@@ -109,7 +109,7 @@ ReactDOM.render(
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/e-biz" element={<EBiz />} />
       <Route path="/solution" element={<Solution />} />
-      <Route path="/stronghold" element={<Stronghold />} />
+      <Route path={hannstar.stronghold.href} element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
       <Route path="/template3" element={<Template3Page />} />
@@ -168,16 +168,16 @@ ReactDOM.render(
 
       <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
       <Route path={"/news/esg"} element={<CSRESG />} />
-      <Route path={"/news/csrsgi"}  element={<CSRSGI />} />
+      <Route path={"/news/csrsgi"} element={<CSRSGI />} />
       <Route path={"/news/ed"} element={<CSRED />} />
-      <Route path={"/news/gp"}  element={<CSRGP />} />
+      <Route path={"/news/gp"} element={<CSRGP />} />
       <Route path={"/news/isms"} element={<CSRISMS />} />
-      <Route path={"/news/mr"}  element={<CSRMR />} />
-      <Route path={"/news/osha"}  element={<CSROSHA />} />
-      <Route path={"/news/sp"}  element={<CSRSP />} />
-      <Route path={"/news/sscm"}  element={<CSRSSCM />} />
-      <Route path={"/news/td"}  element={<CSRTD />} />
-      
+      <Route path={"/news/mr"} element={<CSRMR />} />
+      <Route path={"/news/osha"} element={<CSROSHA />} />
+      <Route path={"/news/sp"} element={<CSRSP />} />
+      <Route path={"/news/sscm"} element={<CSRSSCM />} />
+      <Route path={"/news/td"} element={<CSRTD />} />
+
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

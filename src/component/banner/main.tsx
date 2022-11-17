@@ -8,12 +8,17 @@ const Banner: React.FC<I_Banner> = ({ src, title, text, textAlign }) => {
 
     return (
         <div className={`${componentName}Content`}>
-            <BGBannerStyle src={src}>
+            {/* <BGBannerStyle src={src}>
                 <div className={`textBlock ${textAlign}`}>
                     <h2 className="title">{title}</h2>
                     <div className="text">{text}</div>
                 </div>
-            </BGBannerStyle>
+            </BGBannerStyle> */}
+            <img src={src} alt={title} />
+            <div className={`textBlock ${textAlign}`}>
+                <h2 className="title">{title}</h2>
+                <div className="text">{text}</div>
+            </div>
         </div>
     )
 }

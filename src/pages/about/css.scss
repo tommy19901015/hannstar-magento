@@ -2,7 +2,7 @@
 
 .milestoneBlock {
     width: 100%;
-
+    padding: 60px 0;
     .title {
         @include hannstarH2Title;
         text-align: center;
@@ -36,19 +36,19 @@
 
             .item {
                 width: 100%;
-                .historyDate{
+                .historyDate {
                     display: flex;
                     align-items: center;
-                    justify-content:initial;
-                    margin-bottom: 10px;           
+                    justify-content: initial;
+                    margin-bottom: 10px;
                 }
-                .imgBlock{
+                .imgBlock {
                     margin-bottom: 10px;
                     border: 6px solid #fff;
                     box-shadow: 0 0 29px rgb(0 0 0 / 10%);
                     transition: all 0.5s ease-out;
                     width: fit-content;
-                    img{
+                    img {
                         display: block;
                         max-width: 100%;
                         -webkit-backface-visibility: hidden;
@@ -56,23 +56,23 @@
                     }
                 }
 
-                h3{
+                h3 {
                     @include hannstarContentText;
                 }
             }
 
-            &:nth-child(odd){
+            &:nth-child(odd) {
                 margin-left: auto;
-                padding-left: 60px; 
+                padding-left: 60px;
                 &::before {
                     left: -15px;
                 }
                 &::after {
                     left: -3px;
                 }
-                .historyDate{
+                .historyDate {
                     &::before {
-                        content: ">";
+                        content: '>';
                         font-size: 20px;
                         margin-right: 10px;
                     }
@@ -83,10 +83,10 @@
                 margin-right: auto;
                 padding-right: 60px;
                 text-align: right;
-                .historyDate{
+                .historyDate {
                     justify-content: flex-end;
                     &::after {
-                        content: "<";
+                        content: '<';
                         font-size: 20px;
                         margin-right: 10px;
                     }
@@ -103,7 +103,7 @@
                 }
             }
             &::before {
-                content: "";
+                content: '';
                 position: absolute;
                 z-index: 1;
                 border-radius: 50%;
@@ -116,7 +116,7 @@
             }
 
             &::after {
-                content: "";
+                content: '';
                 position: absolute;
                 z-index: 1;
                 border-radius: 50%;
@@ -126,21 +126,20 @@
                 background-color: #0094da;
                 box-sizing: border-box;
             }
-    
+
             .item {
-                .historyDate{
+                .historyDate {
                     display: flex;
                     align-items: center;
                     @include hannstarH2Title;
                     color: $hannstar-blue2;
-                 }
+                }
             }
-            
         }
     }
 
     @media (max-width: $breakpoint) {
-        .historyList{
+        .historyList {
             background-position-x: 1.5px;
             &::before {
                 left: 0;
@@ -149,7 +148,7 @@
             li {
                 width: 100%;
                 margin-top: 30px;
-                &:nth-child(odd){
+                &:nth-child(odd) {
                     padding-left: 25px;
                     &::before {
                         left: -12px;
@@ -161,48 +160,46 @@
                 &:nth-child(even) {
                     padding-left: 25px;
                     padding-right: 0px;
-    
+
                     &::before {
                         left: -12px;
                     }
                     &::after {
                         left: 0;
                     }
-                    .item{
-                        .historyDate{
-                            &::before{
-                                content: ">";
+                    .item {
+                        .historyDate {
+                            &::before {
+                                content: '>';
                                 font-size: 20px;
                                 margin-right: 10px;
                             }
-                            &::after{
-                                content: "";
+                            &::after {
+                                content: '';
                                 font-size: 20px;
                                 margin-right: 10px;
                             }
-
                         }
                     }
                 }
-                .item{
-                    .historyDate{
+                .item {
+                    .historyDate {
                         justify-content: left;
                     }
-                    h3{
+                    h3 {
                         text-align: left;
                         line-height: 1.4;
                     }
                 }
                 &::before {
-                    top:10px;
+                    top: 10px;
                 }
-                &::after{
-                    top:22px;
+                &::after {
+                    top: 22px;
                 }
             }
         }
     }
 }
-
 
 // breakpoint

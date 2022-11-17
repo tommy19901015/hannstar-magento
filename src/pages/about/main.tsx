@@ -6,6 +6,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import GraphicsLine from "../../component/graphicsLine/main";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
+import Graphics3 from "../../component/graphics3/main";
 import { TextAlign } from "../../component/banner/interface";
 import usePageData from "./pageData";
 import { getTodoData } from "../../services/api.service";
@@ -16,8 +17,7 @@ const About: React.FC = () => {
   const {
     breadcrumbs,
     bannerTextData,
-    graphics1Data1,
-    graphics1Data2,
+    graphics3Data,
     milestoneData,
   } = usePageData();
 
@@ -43,22 +43,20 @@ const About: React.FC = () => {
     );
   };
 
-  useEffect(() => {
-    const post = getTodoData(2);
-    console.log('post:', post)
-  }, [])
+
 
 
   return (
     <Layout>
-      <Breadcrumbs {...breadcrumbs} />
-      <Banner {...bannerTextData} />
+      <Columns
+        type={ColType.OneColFullPage}
+        content={<Banner {...bannerTextData} />} />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine {...graphics1Data1} />} />
+        content={<Breadcrumbs {...breadcrumbs} />} />
       <Columns
         type={ColType.OneCol}
-        content={<GraphicsLine {...graphics1Data2} />} />
+        content={<Graphics3 data={graphics3Data} />} />
       <Columns
         type={ColType.OneCol}
         content={<Milestone />} />

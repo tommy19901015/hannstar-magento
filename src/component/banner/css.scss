@@ -4,6 +4,10 @@ $componentName: 'Banner';
 
 .#{$componentName}Content {
     position: relative;
+    img {
+        width: 100%;
+        max-height: 400px;
+    }
     .textBlock {
         position: absolute;
         width: 500px;

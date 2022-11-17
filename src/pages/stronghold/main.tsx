@@ -9,7 +9,7 @@ import { GraphicsLineType } from "../../component/graphicsLine/interface";
 import "./css.scss";
 
 const breadcrumbsData = {
-  title: "全球據點",
+  title: "",
   breadcrumbsLink: [
     {
       text: "首頁",
@@ -61,34 +61,39 @@ const allData = {
 };
 
 const Stronghold: React.FC = () => {
+  const pageName = "Stronghold"
+
   const TextBlock = () => {
     return (
-      <div className="strongholdBlock">
-        <div className="leftBlock">
-          <img
-            alt="全球據點"
-            src="https://www.hannstar.com/upload/stronghold_map_list/twL_stronghold_map_22A26_6dxvf6rzgt.jpg"
-          />
-        </div>
-        <div className="rightBlock">
-          {allData.strongholdData.map((item) => {
-            return (
-              <div className="contentBlock">
-                <div className="titleBlock">
-                  <span className="icon"></span>
-                  <span className="title">{item.title}</span>
+      <div className={`${pageName}Content`}>
+        <div className="mainTitle">全球據點</div>
+        <div className={`${pageName}Block`}>
+          <div className="leftBlock">
+            <img
+              alt="全球據點"
+              src="https://www.hannstar.com/upload/stronghold_map_list/twL_stronghold_map_22A26_6dxvf6rzgt.jpg"
+            />
+          </div>
+          <div className="rightBlock">
+            {allData.strongholdData.map((item) => {
+              return (
+                <div className="contentBlock">
+                  <div className="titleBlock">
+                    <span className="icon"></span>
+                    <span className="title">{item.title}</span>
+                  </div>
+                  <div className="addressBlock">
+                    <span className="title">公司地址</span>
+                    <span className="content">{item.address}</span>
+                  </div>
+                  <div className="phoneBlock">
+                    <span className="title">連絡電話</span>
+                    <span className="contrnt">{item.phone}</span>
+                  </div>
                 </div>
-                <div className="addressBlock">
-                  <span className="title">公司地址</span>
-                  <span className="content">{item.address}</span>
-                </div>
-                <div className="phoneBlock">
-                  <span className="title">連絡電話</span>
-                  <span className="contrnt">{item.phone}</span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     );
@@ -96,8 +101,10 @@ const Stronghold: React.FC = () => {
 
   return (
     <Layout>
-      <Breadcrumbs {...allData.breadcrumbsData} />
-      <Columns type={ColType.OneCol} content={<TextBlock />} />
+      <Columns type={ColType.OneCol} content={<>
+        <Breadcrumbs {...allData.breadcrumbsData} />
+        <TextBlock />
+      </>} />
     </Layout>
   );
 };
