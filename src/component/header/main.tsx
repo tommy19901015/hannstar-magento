@@ -2,8 +2,6 @@ import React, {
   useState,
   useEffect,
   useRef,
-  ReactNode,
-  ReactElement,
 } from "react";
 import useMenu from "../../common/menuData";
 import CollapseLi from "../collapseLi/main";
