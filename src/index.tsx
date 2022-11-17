@@ -56,6 +56,15 @@ import Template3Page from "./pages/Template3/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
+import CSRSGI from "./pages/CSR_SGI/main";
+import CSRED from "./pages/CSR_ED/main";
+import CSRGP from "./pages/CSR_GP/main";
+import CSRISMS from "./pages/CSR_ISMS/main";
+import CSRMR from "./pages/CSR_MR/main";
+import CSROSHA from "./pages/CSR_OSHA/main";
+import CSRSP from "./pages/CSR_SP/main";
+import CSRSSCM from "./pages/CSR_SSCM/main";
+import CSRTD from "./pages/CSR_TD/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -94,8 +103,6 @@ ReactDOM.render(
       />
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={hannstar.about.href} element={<About />} />
-      <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
-      <Route path={"/news/esg"} element={<CSRESG />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/e-biz" element={<EBiz />} />
@@ -154,6 +161,21 @@ ReactDOM.render(
         path={service.lawApply.href}
         element={<ServiceGreenServiceApply />}
       />
+
+      {/* for CSR */}
+
+      <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
+      <Route path={"/news/esg"} element={<CSRESG />} />
+      <Route path={"/news/csrsgi"}  element={<CSRSGI />} />
+      <Route path={"/news/ed"} element={<CSRED />} />
+      <Route path={"/news/gp"}  element={<CSRGP />} />
+      <Route path={"/news/isms"} element={<CSRISMS />} />
+      <Route path={"/news/mr"}  element={<CSRMR />} />
+      <Route path={"/news/osha"}  element={<CSROSHA />} />
+      <Route path={"/news/sp"}  element={<CSRSP />} />
+      <Route path={"/news/sscm"}  element={<CSRSSCM />} />
+      <Route path={"/news/td"}  element={<CSRTD />} />
+      
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

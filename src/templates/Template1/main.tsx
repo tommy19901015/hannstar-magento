@@ -7,10 +7,11 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import TitleContent from "../../component/titleContent/main";
 import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
-import { I_Template1 } from "./interface";
+import { I_Template1 } from "../../types/Tmeplate1/interface";
 import "./css.scss";
+import Tab from "../../component/tab/main";
 
-const Template1: React.FC<I_Template1> = ({ banner, breadcrumbs, module1, module2, module3, module4, module5, module6 }) => {
+const Template1: React.FC<I_Template1> = ({ banner, tabId, breadcrumbs, module1, module2, module3, module4, module5, module6 }) => {
   const pageName = "Template1"
 
   const pageBuilder = () => {
@@ -25,6 +26,12 @@ const Template1: React.FC<I_Template1> = ({ banner, breadcrumbs, module1, module
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<Breadcrumbs {...breadcrumbs} />} />)
     }
+
+    if (tabId) {
+      pageContentArr.push(<Columns type={ColType.OneCol}
+        content={<Tab activeId={tabId} />} />)
+    }
+
 
     if (module1) {
       pageContentArr.push(<Columns type={ColType.OneCol}

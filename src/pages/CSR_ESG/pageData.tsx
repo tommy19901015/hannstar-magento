@@ -3,6 +3,7 @@ import { TextAlign } from "../../component/banner/interface";
 import urlConfig from "../../config/urlSetting.json";
 import { I_PageType } from "./interface";
 import { GraphicsLineType } from "../../component/graphicsLine/interface"
+import { TabEnum } from "../../types/Tmeplate1/interface";
 
 
 function usePageData() {
@@ -41,6 +42,7 @@ function usePageData() {
                 },
             }
         ],
+        tabId:TabEnum['CSRESG'],
         module4: {
             graphics3: [
                 {
