@@ -50,7 +50,7 @@ const Tab: React.FC <Props>= ({activeId})  => {
       <div className="TabBlock">
         <ul>
           {
-            tabs && tabs.map(tab=>( <li className={`${activeId === tab.id ?"active":""}`}>{ tab.text }</li> ))
+            tabs && tabs.map(tab=>( <li className={`${activeId === tab.id ?"active":""}`}><a href="#">{ tab.text }</a></li> ))
           }
         </ul>
       </div>
