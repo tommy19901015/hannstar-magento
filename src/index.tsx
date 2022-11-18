@@ -30,7 +30,11 @@ import CSRESG from "./pages/CSR_ESG/main"
 
 //投資人專區
 import InvestorsSummary from "./pages/Investors_Summary/main";
-
+import InvestorsConference from "./pages/Investors_Conference/main";
+import InvestorsDividend from "./pages/Investors_Dividend/main";
+import InvestorsRevenue from "./pages/Investors_Revenue/main";
+import InvestorsShareholdermeeting from "./pages/Investors_Shareholdermeeting/main";
+import InvestorsReport from "./pages/Investors_Report/main";
 import InvestorsContacts from "./pages/Investors_Contacts/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
@@ -168,7 +172,6 @@ ReactDOM.render(
       />
 
       {/* for CSR */}
-
       <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
       <Route path={"/news/esg"} element={<CSRESG />} />
       <Route path={"/news/csrsgi"} element={<CSRSGI />} />
@@ -180,9 +183,15 @@ ReactDOM.render(
       <Route path={"/news/sp"} element={<CSRSP />} />
       <Route path={"/news/sscm"} element={<CSRSSCM />} />
       <Route path={"/news/td"} element={<CSRTD />} />
+      {/* 投資人專區 */}
+      <Route path={hannstar.investors_Summary.href} element={<InvestorsSummary />} />
+      <Route path={hannstar.investors_Revenue.href} element={<InvestorsRevenue />} />
+      <Route path={hannstar.investors_Report.href} element={<InvestorsReport />} />
+      <Route path={hannstar.investors_Conference.href} element={<InvestorsConference />} />
+      <Route path={hannstar.investors_Shareholdermeeting.href} element={<InvestorsShareholdermeeting />} />
+      <Route path={hannstar.investors_Dividend.href} element={<InvestorsDividend />} />
+      <Route path={hannstar.investors_Contacts.href} element={<InvestorsContacts />} />
 
-      <Route path={"/investorsContacts"} element={<InvestorsContacts />} />
-      <Route path={"/investors/summary"} element={<InvestorsSummary />} />
 
     </Routes>
   </BrowserRouter>,

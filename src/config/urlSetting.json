@@ -87,12 +87,44 @@
     "csrIndex": {
       "title": "企業永續",
       "href": "/csr/index"
+    },
+    "investors_Summary":{ 
+      "title": "公司概況", 
+      "href": "/investors/summary" 
+    },
+    "investors_Revenue":{ 
+      "title": "每月營收", 
+      "href": "/investors/revenue/" 
+    },
+    "investors_Report":{ 
+      "title": "財務季報及公司年報", 
+      "href": "/investors/report" 
+    },
+    "investors_Conference":{ 
+      "title": "法人說明會", 
+      "href": "/investors/conference" 
+    },
+    "investors_Shareholdermeeting":{ 
+      "title": "股東會資訊", 
+      "href": "/investors/shareholdermeeting" 
+    },
+    "investors_Dividend":{ 
+      "title": "股利分派", 
+      "href": "/investors/dividend" 
+    },
+    "investors_Quote":{ 
+      "title": "股價查詢", 
+      "href": "https://tw.stock.yahoo.com/quote/6116" 
+    },
+    "investors_Contacts":{ 
+      "title": "投資人相關洽詢", 
+      "href": "/investors/contacts" 
     }
   },
   "partner": {
     "index": {
-      "title": "供應商平台",
-      "href": "/partner/index/view"
+    "title": "供應商平台",
+    "href": "/partner/index/view"
     },
     "manageandadvisory": {
       "title": "管理與諮詢",

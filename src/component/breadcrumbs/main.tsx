@@ -11,7 +11,10 @@ const Breadcrumbs: React.FC<I_Breadcrumbs> = ({ title, breadcrumbsLink }) => {
         <div className={`${componentName}Content`}>
             <div className="linkBlock">
                 {breadcrumbsLink.map((item, index) =>
-                    <a className="link" href={item.href} key={index}>{item.text}</a>)}
+                    item.href ?
+                        <a className="link" href={item.href} key={index}>{item.text}</a> :
+                        <span className="link" key={index}>{item.text}</span>
+                )}
             </div>
             <h1 className="mainTitle">{title}</h1>
         </div>

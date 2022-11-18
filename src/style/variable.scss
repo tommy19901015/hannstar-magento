@@ -435,3 +435,19 @@ $font-base: 16px;
         }
     }
 }
+
+@mixin D360Style {
+    table {
+        width: 100% !important;
+        border: 1px solid $hannstar-border-color;
+        tr {
+            td {
+                border: 1px solid $hannstar-border-color;
+                padding: 10px;
+            }
+        }
+    }
+    .hannstarTableRWD {
+        display: none;
+    }
+}

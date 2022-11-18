@@ -110,8 +110,8 @@ const testJsonArr = [
   }
 ]
 
-const InvestorsSummary: React.FC = () => {
-  const pageName = "InvestorsSummary";
+const InvestorsDividend: React.FC = () => {
+  const pageName = "InvestorsDividend";
   const [d360Data, setD360Data] = useState<any>()
   const [activeTabIdx, setActiveTabIdx] = useState<number>(0)
 
@@ -168,4 +168,4 @@ const InvestorsSummary: React.FC = () => {
   );
 };
 
-export default InvestorsSummary;
+export default InvestorsDividend;

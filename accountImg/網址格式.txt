@@ -1,0 +1,41 @@
+企業永續	公司治理	資訊安全管理	版型	/sustainability/governance/Information security management
+企業永續	綠色創新	氣候變遷風險管理	版型	/sustainability/Environment/Climate changeriskmanagement
+企業永續	綠色創新	綠色產品	版型	/sustainability/Environment/Greenproducts
+企業永續	綠色創新	永續生產	版型	/sustainabilityEnvironment/Sustainableproduction
+企業永續	綠色創新	永續供應鏈	版型	/sustainability/Environment/SustainableSupplyChain
+企業永續	社會共融	多元平等	版型	/sustainability/Social/DiversityandIncluion
+企業永續	社會共融	人才發展	版型	/sustainability/Social/GrowthandDevelopment
+企業永續	社會共融	職業安全衛生	版型	/sustainability/Social/HealthandSafetyatHannStar
+企業永續	社會共融	社會參與	版型	/sustainabilitySocial/SocialEngagement
+企業永續	社會共融	彩晶基金會	外連網址	https://hannstarfoundation.org/
+
+
+###########################################################################
+
+
+
+對應網頁					網址	主管姓名1	主管姓名2	主管姓名3	主管姓名4
+關於瀚宇彩晶-瀚宇彩晶團隊					/about/team				
+關於瀚宇彩晶-品質管理與策略					/about/strategy				
+企業永續-公司治理					/sustainability/governance				
+企業永續-永續管理					/sustainability/csr				
+企業永續-社會共融					/sustainability/communion				
+企業永續-報告書					/sustainability/report				
+投資人關係-公司概況					/investors/summary				
+投資人關係-每月營收					/investors/revenue/				
+投資人關係-財務季報及年報					/investors/report				
+投資人關係-法人說明會					/investors/conference				
+投資人關係-股東會資訊					/investors/shareholdermeeting				
+投資人關係-股利分派					/investors/dividend				
+投資人關係-投資人相關洽詢					/investors/contacts				
+訊息中心-投資人關係					/news/investors				
+訊息中心-產品					/news/product				
+訊息中心-企業永續					/news/esg				
+訊息中心-活動訊息					/news/events				
+訊息中心-教育訊息					/news/eduinfo				
+訊息中心-技術訊息					/news/techinfo				
+產品行銷平台(paperdisplay)					/paperdisplay/article				
+產品行銷平台(tftdisplay)					/tftdisplay/article				
+客戶服務平台-技術諮詢					/service/technicalsupport				
+方案整合服務平台					/solution/article				
+HannSpree					/hannspree/article				
