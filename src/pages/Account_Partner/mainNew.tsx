@@ -404,66 +404,6 @@ const AccountPartner: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="row">
-              <div className="col-2">
-                <label className="required">{formData.Buy1.title}</label>
-                <select {...register("Buy1", { required: true })}>
-                  {formData.Buy1.option.map(({ value, text }) => (
-                    <option value={value}>{text}</option>
-                  ))}
-                </select>
-                {errors.Buy1 && (<span className="error">{errorMsg}</span>)}
-              </div>
-              <div className="col-2">
-                <label className="required">{formData.BuyCompany1.title}</label>
-                <input
-                  type="text"
-                  className=""
-                  defaultValue=""
-                  {...register("BuyCompany1", { required: true })}
-                />
-                {errors.BuyCompany1 && (<span className="error">{errorMsg}</span>)}
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-2">
-                <label>{formData.Buy2.title}</label>
-                <select {...register("Buy2")}>
-                  {formData.Buy2.option.map(({ value, text }) => (
-                    <option value={value}>{text}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-2">
-                <label>{formData.BuyCompany2.title}</label>
-                <input
-                  type="text"
-                  className=""
-                  defaultValue=""
-                  {...register("BuyCompany2")}
-                />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-2">
-                <label>{formData.Buy3.title}</label>
-                <select {...register("Buy3")}>
-                  {formData.Buy3.option.map(({ value, text }) => (
-                    <option value={value}>{text}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-2">
-                <label>{formData.BuyCompany3.title}</label>
-                <input
-                  type="text"
-                  className=""
-                  defaultValue=""
-                  {...register("BuyCompany3")}
-                />
-              </div>
-            </div>
           </div>
           <div className="classificationBlock">
             <div className="row">

@@ -124,39 +124,6 @@ function usePageData() {
     HannstarCode: {
       title: "請在提供HannStar供應商代碼(6碼)",
     },
-    Buy1: {
-      title: "購買渠道-1",
-      option: [
-        { text: "瀚宇彩晶", value: "瀚宇彩晶" },
-        { text: "代理商", value: "代理商" },
-        { text: "其他", value: "其他" },
-      ],
-    },
-    BuyCompany1: {
-      title: "渠道公司名稱-1",
-    },
-    Buy2: {
-      title: "購買渠道-2",
-      option: [
-        { text: "瀚宇彩晶", value: "瀚宇彩晶" },
-        { text: "代理商", value: "代理商" },
-        { text: "其他", value: "其他" },
-      ],
-    },
-    BuyCompany2: {
-      title: "渠道公司名稱-2",
-    },
-    Buy3: {
-      title: "購買渠道-3",
-      option: [
-        { text: "瀚宇彩晶", value: "瀚宇彩晶" },
-        { text: "代理商", value: "代理商" },
-        { text: "其他", value: "其他" },
-      ],
-    },
-    BuyCompany3: {
-      title: "渠道公司名稱-3",
-    },
     CompanyRemark: {
       title: "備註說明",
     },
