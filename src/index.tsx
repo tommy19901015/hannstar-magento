@@ -28,6 +28,9 @@ import AccountLogout from "./pages/Account_Logout/main";
 //企業永續
 import CSRESG from "./pages/CSR_ESG/main"
 
+//投資人專區
+import InvestorsSummary from "./pages/Investors_Summary/main";
+
 import InvestorsContacts from "./pages/Investors_Contacts/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
@@ -177,6 +180,9 @@ ReactDOM.render(
       <Route path={"/news/sp"} element={<CSRSP />} />
       <Route path={"/news/sscm"} element={<CSRSSCM />} />
       <Route path={"/news/td"} element={<CSRTD />} />
+
+      <Route path={"/investorsContacts"} element={<InvestorsContacts />} />
+      <Route path={"/investors/summary"} element={<InvestorsSummary />} />
 
     </Routes>
   </BrowserRouter>,
