@@ -34,7 +34,7 @@ const newnewTemplate1: React.FC<any> = (props) => {
     <Columns type={ColType.OneCol} content={<Breadcrumbs {...data} />} />
   );
 
-  const Graphics3Block = (data: any) => (
+  const SustainabilityGraphics3 = (data: any) => (
     <Columns
       type={ColType.OneCol}
       content={
@@ -97,7 +97,7 @@ const newnewTemplate1: React.FC<any> = (props) => {
       FullBanner: <FullBanner />,
       BannerBlock: <BannerBlock {...data} />,
       BreadcrumbsBlock: <BreadcrumbsBlock />,
-      Graphics3Block: <Graphics3Block />,
+      SustainabilityGraphics3: <SustainabilityGraphics3 />,
       TitleContent: <TitleContent />,
       TitleContentGraphicsCard: <TitleContentGraphicsCard />,
       TitleContentImgGrid: <TitleContentImgGrid />,
