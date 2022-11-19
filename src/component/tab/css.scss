@@ -28,68 +28,7 @@
             display: none;
         }
         .dropdown{
-            @include hannstarContent1;
-        }
-        .dropdown-header {
-            padding: 15px 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            
-            &.active {
-                color: #FFF;
-                background: $hannstar-blue2;
-                position: relative;
-            }
-            .icon{
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    right: 15px;
-                    width: 12px;
-                    height: 2px;
-                    background-color: $hannstar-border-color;
-                    transform: rotate(90deg);
-                    transition: all 0.3s ease-out;
-                  }
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    right: 15px;
-                    width: 12px;
-                    height: 2px;
-                    background-color: #FFF;
-                    transition: 0.3s ease-out;
-                }
-                &.open {
-                    &::after {
-                      transform: rotate(0);
-                    }
-                  }
-            }
-          }
-          
-          .dropdown-body {
-            border-top: 1px solid #E5E8EC;
-            display: none;
-            background-color: $hannstar-bg-color;
-          
-            &.open {
-              display: block;
-            }
-          }
-          
-          .dropdown-item {
-            padding: 10px;
-            border-bottom: 1px solid $hannstar-border-color;
-          
-            &:hover {
-              cursor: pointer;
-            }
-          }
-          
+            @include hannstarSelect;
+        }          
     }
 }
