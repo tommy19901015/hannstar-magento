@@ -37,7 +37,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       <Columns type={ColType.OneCol} content={<Breadcrumbs {...item} />} />
     ));
 
-  const Graphics3Block = ({ data }: any) => (
+  const SustainabilityGraphics3 = ({ data }: any) => (
     <Columns
       type={ColType.OneCol}
       content={
@@ -117,10 +117,10 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       FullBanner: <FullBanner data={data} />,
       BannerBlock: <BannerBlock data={data} />,
       BreadcrumbsBlock: <BreadcrumbsBlock data={data} />,
-      Graphics3Block: <Graphics3Block data={data} />,
+      SustainabilityGraphics3: <SustainabilityGraphics3 data={data} />, //
       TitleContentBlock: <TitleContentBlock data={data} />,
-      TitleContentGraphicsCard: <TitleContentGraphicsCard data={data} />,
-      TitleContentImgGrid: <TitleContentImgGrid data={data} />,
+      TitleContentGraphicsCard: <TitleContentGraphicsCard data={data} />, // 3x3 
+      TitleContentImgGrid: <TitleContentImgGrid data={data} />, // 4X4    組建  先不用
       TitleContentVideo: <TitleContentVideo data={data} />,
       TitleContentBanner: <TitleContentBanner data={data} />,
     };

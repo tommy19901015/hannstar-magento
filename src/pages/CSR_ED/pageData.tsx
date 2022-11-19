@@ -38,7 +38,7 @@ function usePageData() {
         ],
       },
       {
-        type: "Graphics3Block",
+        type: "SustainabilityGraphics3",
         data: [
           {
             src: "https://fakeimg.pl/1000x700/?text=Image",
