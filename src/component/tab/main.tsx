@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useIsMobile } from "../../hooks";
 import "./css.scss";
 
 type Props = {
@@ -6,7 +7,9 @@ type Props = {
 }
 
 const Tab: React.FC <Props>= ({activeId})  => {
-
+  const [isOpen, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const isMobile = useIsMobile();
   const tabs = [
     {
       id: 1,
@@ -46,13 +49,46 @@ const Tab: React.FC <Props>= ({activeId})  => {
     },
   ]
 
+  const toggleDropdown = () => setOpen(!isOpen);
+  
+  const handleItemClick = (id:any) => {
+    selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
+  }
+
   return (
       <div className="TabBlock">
-        <ul>
-          {
-            tabs && tabs.map(tab=>( <li className={`${activeId === tab.id ?"active":""}`}><a href="#">{ tab.text }</a></li> ))
-          }
-        </ul>
+        {
+          isMobile?
+          (
+            <div className='dropdown'>
+            <div className={`dropdown-header active`}onClick={toggleDropdown}>
+              {selectedItem ? 
+                tabs.filter(item => item.id === selectedItem)[0].text : 
+                tabs.filter(item => item.id === activeId)[0].text}
+              <i className={`icon ${isOpen && "open"}`}></i>
+            </div>
+            <div className={`dropdown-body ${isOpen && 'open'}`}>
+              {tabs.map(item => (
+                <div className="dropdown-item" onClick={e => handleItemClick(e)} >
+                  {item.text}
+            </div>
+          ))}
+        </div>
+      </div>
+          )
+          :
+          (
+            <ul>
+            {
+              tabs && tabs.map(tab=>( 
+                <li className={`${activeId === tab.id ?"active":""}`}>
+                  <a href="#">{ tab.text }</a>
+                  </li> 
+              ))
+            }
+          </ul>
+          )
+        }
       </div>
   );
 };
