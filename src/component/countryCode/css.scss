@@ -1,0 +1,27 @@
+@import '../../style/variable.scss';
+
+
+.TabBlock {
+    ul{
+        display: flex;
+        @include hannstarContent1;
+        margin-bottom: 50px;
+        li {
+            text-align: center;
+            padding: 8px 15px;
+            cursor: pointer;
+            float: left;
+            display: inline-flex;
+            background-color: $hannstar-bg-color;
+            a{
+                color: $hannstar-default-text-color;
+            }
+            &.active {
+                a{
+                    color: #FFF;
+                }
+                background: $hannstar-blue2;
+            }
+        }
+    }
+}

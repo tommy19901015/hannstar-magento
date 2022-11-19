@@ -1,21 +1,22 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
-import PhoneInput from "react-phone-input-2";
 import { postAppVendor } from "../../services/api.service";
-import "react-phone-input-2/lib/style.css";
+import 'react-phone-number-input/style.css';
+import { getCountryCallingCode } from 'react-phone-number-input/input';
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./css.scss";
 import usePageData from "./pageData";
+import CountryCodeComponent  from '../../component/countryCode/main';
+
 
 const AccountPartner: React.FC = () => {
   const pageName = "AccountPartner";
   const formData = usePageData();
-
   const countrySelectBlock: any = useRef();
 
   type Keys = keyof typeof formData;
@@ -51,7 +52,6 @@ const AccountPartner: React.FC = () => {
       },
     ],
   };
-
   const handlerGoBack = () => {
     window.history.back();
   };
@@ -65,8 +65,8 @@ const AccountPartner: React.FC = () => {
     } = useForm<IFormInputs>();
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
       const selectDom: any = document.getElementById("country");
-      const Country = selectDom.value;
-      const CountryCode = selectDom.selectedOptions[0].text;
+      //const Country = selectDom.value;
+      //const CountryCode = selectDom.selectedOptions[0].text;
 
       const UserName = window.hannstar?.userName;
       const Email = window.hannstar?.email;
@@ -75,8 +75,8 @@ const AccountPartner: React.FC = () => {
       const result: any = {
         ...data,
         Lang,
-        Country,
-        CountryCode,
+        //Country,
+        //CountryCode,
         UserName,
         Email,
         GroupName,
@@ -86,16 +86,6 @@ const AccountPartner: React.FC = () => {
         console.log("response", response);
         window.location.href = urlConfig.account.AccountApplication.href;
       });
-    };
-
-    const handlCallPhoneInput = (value: string, data: any) => {
-      setValue("PhoneNumber0", data.dialCode);
-      setValue("PhoneNumber1", value);
-    };
-
-    const handlePhoneInput = (value: string, data: any) => {
-      setValue("CellPhoneNumber0", data.dialCode);
-      setValue("CellPhoneNumber1", value);
     };
 
     return (
@@ -145,14 +135,19 @@ const AccountPartner: React.FC = () => {
                 {errors.JobTitle && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
-            <div className="row">
+            <div className="row align-end">
               <div className="col-2">
                 <label className="required">{formData.PhoneNumber1}</label>
-                <PhoneInput
-                  country={"tw"}
-                  {...register("PhoneNumber1")}
-                  onChange={(value, data) => handlCallPhoneInput(value, data)}
-                />
+                <div className="countryBlock">
+                <CountryCodeComponent onSelectionUpdate={(data:any)=> setValue("PhoneNumber0",getCountryCallingCode(data))}/>
+                  <input
+                    type="text"
+                    className="country-num-input"
+                    {...register("PhoneNumber1", { required: true })}
+                    onChange={event => setValue("PhoneNumber1", event.target.value)}
+                  />
+                </div>
+              
                 {errors.PhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
@@ -168,11 +163,16 @@ const AccountPartner: React.FC = () => {
             <div className="row">
               <div className="col-2">
                 <label className="required">{formData.CellPhoneNumber1}</label>
-                <PhoneInput
-                  country={"tw"}
-                  {...register("CellPhoneNumber1")}
-                  onChange={(value, data) => handlePhoneInput(value, data)}
-                />
+                <div className="countryBlock">
+                <CountryCodeComponent onSelectionUpdate={(data:any)=> setValue("CellPhoneNumber0",getCountryCallingCode(data))}/>
+                <input
+                  type="text"
+                  className="country-num-input"
+                  defaultValue=""
+                  {...register("CellPhoneNumber1", { required: true })}
+                  onChange={event => setValue("CellPhoneNumber1", event.target.value)}
+                />  
+                </div>
                 {errors.CellPhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
@@ -260,10 +260,10 @@ const AccountPartner: React.FC = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-3">
+              {/* <div className="col-3">
                 <label className="required">{formData.Country.title}</label>
                 <div ref={countrySelectBlock}></div>
-              </div>
+              </div> */}
               <div className="col-3">
                 <label className="required">{formData.AreaCity.title}</label>
                 <input
