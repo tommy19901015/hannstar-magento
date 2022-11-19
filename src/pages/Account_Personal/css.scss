@@ -38,6 +38,22 @@ $pageName: "AccountPersonal";
           &.mb-20 {
             margin-bottom: 20px;
           }
+          &.country-num-input{
+            @include hannstarInput;
+            width: calc(100% - 75px);
+            border-radius: 0px 3px 3px 0px;
+          }
+        }
+        .countryBlock{
+          display: flex;
+          align-content: end;
+          .country-select{
+            width: 75px;
+            border-radius: 3px 0 0 3px;
+          }
+          .country-code{
+            width: 75px;
+          }
         }
         select {
           @include hannstarSelect;

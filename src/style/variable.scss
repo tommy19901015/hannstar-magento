@@ -269,7 +269,7 @@ $font-base: 16px;
     -webkit-appearance: none;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTCIiIigoKCIiIiYmJiIiIi0tLSIiIiQkJCIiIt46NpcAAAAJdFJOUwDZJpVE7hG7aqeRgzAAAAAtSURBVAjXY2AgCTDPBAIDEKty5szpYKHEmTPFwAymyKkKEFWeU6DKORoYSAQAySII+PoRspAAAAAASUVORK5CYII=)
         no-repeat center transparent;
-    background-position-x: calc(100% - 10px);
+    background-position-x: calc(100% - 5px);
     @include hannstarContentText;
     line-height: 1.8;
     &:hover {

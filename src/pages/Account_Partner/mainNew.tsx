@@ -5,9 +5,7 @@ import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/mai
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
-//import PhoneInput from "react-phone-input-2";
 import { postAppVendor } from "../../services/api.service";
-//import "react-phone-input-2/lib/style.css";
 import 'react-phone-number-input/style.css';
 import { getCountryCallingCode } from 'react-phone-number-input/input';
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -88,14 +86,6 @@ const AccountPartner: React.FC = () => {
         console.log("response", response);
         window.location.href = urlConfig.account.AccountApplication.href;
       });
-    };
-
-    const handlePhoneInput = (countryCode:any) => {
-      setValue("PhoneNumber0", getCountryCallingCode(countryCode));
-    };
-
-    const handlCellPhoneInput = (countryCode:any ) => {
-      setValue("CellPhoneNumber0", getCountryCallingCode(countryCode));
     };
 
     return (

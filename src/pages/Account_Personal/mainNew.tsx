@@ -5,12 +5,13 @@ import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/mai
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import urlConfig from "../../config/urlSetting.json";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { getCountryCallingCode } from 'react-phone-number-input/input';
+import 'react-phone-number-input/style.css';
 import { postEnterPrice } from "../../services/api.service";
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./css.scss";
 import usePageData from "./pageData";
+import CountryCodeComponent  from '../../component/countryCode/main';
 
 const AccountPersonal: React.FC = () => {
   const pageName = "AccountPersonal";
@@ -145,14 +146,19 @@ const AccountPersonal: React.FC = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-2">
+            <div className="col-2">
                 <label className="required">{formData.PhoneNumber1}</label>
-                <PhoneInput
-                country={"tw"}
-                  {...register("PhoneNumber1")}
-                  onChange={(value, data) => handlCallPhoneInput(value, data)}
-                />
-                {errors.PhoneNumber1 && ( <span className="error">{ errorMsg }</span>)}
+                <div className="countryBlock">
+                <CountryCodeComponent onSelectionUpdate={(data:any)=> setValue("PhoneNumber0",getCountryCallingCode(data))}/>
+                  <input
+                    type="text"
+                    className="country-num-input"
+                    {...register("PhoneNumber1", { required: true })}
+                    onChange={event => setValue("PhoneNumber1", event.target.value)}
+                  />
+                </div>
+              
+                {errors.PhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
                 <label className="required">{formData.PhoneNumber2}</label>
@@ -165,14 +171,19 @@ const AccountPersonal: React.FC = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-2">
+            <div className="col-2">
                 <label className="required">{formData.CellPhoneNumber1}</label>
-                <PhoneInput
-                  country={"tw"}
-                  {...register("CellPhoneNumber1")}
-                  onChange={(value, data) => handlePhoneInput(value, data)}
-                />
-                {errors.CellPhoneNumber1 && ( <span className="error">{ errorMsg }</span>)}
+                <div className="countryBlock">
+                <CountryCodeComponent onSelectionUpdate={(data:any)=> setValue("CellPhoneNumber0",getCountryCallingCode(data))}/>
+                <input
+                  type="text"
+                  className="country-num-input"
+                  defaultValue=""
+                  {...register("CellPhoneNumber1", { required: true })}
+                  onChange={event => setValue("CellPhoneNumber1", event.target.value)}
+                />  
+                </div>
+                {errors.CellPhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             <div className="row">
