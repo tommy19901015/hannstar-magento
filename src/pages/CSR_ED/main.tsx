@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../component/layout/main";
-import Template1 from "../../templates/Template1/main";
+// import Template1 from "../../templates/Template1/main";
+import TemplateLayout from "../../templates/TemplateLayout/main";
 import usePageData from "./pageData";
 import "./css.scss";
 
@@ -10,7 +11,7 @@ const CSRED: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}MainContainer`}>
-        <Template1 {...pageData} />
+        <TemplateLayout {...pageData} />
       </div>
     </Layout>
   );
