@@ -20,6 +20,7 @@ import {
   I_TitleContentBanner,
   I_TitleContentImgGrid
  } from "../../types/base";
+import ArticleBlock from "../../component/articleBlock/main";
 
 const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
   const pageName = "TemplateLayout";
@@ -128,6 +129,18 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       />
     ));
   }
+  const ArticleContent:Function = ({data}:any) : JSX.Element => {
+    return (
+      <Columns
+        type={ColType.OneCol}
+        content={
+          <div className={`${pageName}ModuleBlock`}>
+            <ArticleBlock data={data} />
+          </div>
+        }
+      />
+    );
+  }
 
 
   const mappingType = (data: I_DataModel[]) => {
@@ -142,6 +155,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       TitleContentImgGrid: <TitleContentImgGrid data={data} />, // 4X4    組建  先不用
       TitleContentVideo: <TitleContentVideo data={data} />,
       TitleContentBanner: <TitleContentBanner data={data} />,
+      ArticleContent:<ArticleContent data={data}/>
     };
   };
 

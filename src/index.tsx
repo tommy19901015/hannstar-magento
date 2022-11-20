@@ -88,6 +88,10 @@ import CSRSSCM from "./pages/CSR_SSCM/main";
 import CSRTD from "./pages/CSR_TD/main";
 
 import CSRClimChangeRM from "./pages/CSR_ClimChangeRM/main";
+import CareersServe from "./pages/CareersDetail_Serve/main";
+import CareersRecruit from "./pages/CareersDetail_Recruit/main";
+import CareersIndex from "./pages/CareersDetail_Index/main";
+import CareersDevelop from "./pages/CareersDetail_Develop/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -269,7 +273,15 @@ ReactDOM.render(
         path={hannstar.investors_Contacts.href}
         element={<InvestorsContacts />}
       />
+
+       {/* 人資專區 */}
+      <Route path={"/careers/serve"} element={<CareersServe />}/>
+      <Route path={"/careers/recruit"} element={<CareersRecruit />}/>
+      <Route path={"/careers/index"} element={<CareersIndex />}/>
+      <Route path={"/careers/develop"} element={<CareersDevelop />}/>
     </Routes>
+
+    
   </BrowserRouter>,
   document.getElementById("root")
 );
