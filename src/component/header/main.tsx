@@ -1,14 +1,15 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import useMenu from "../../common/menuData";
 import CollapseLi from "../collapseLi/main";
 import urlConfig from "../../config/urlSetting.json";
 import { useTranslation } from "react-i18next";
 import { I_MenuType } from "../../common/menuData";
-import { MagentoNotLoginHeader, MagentoLoginHeader, MagentoLanguageHeader } from "./magentoHeader";
+import {
+  MagentoNotLoginHeader,
+  MagentoLoginHeader,
+  MagentoLanguageHeader,
+  MagentoInputHeader,
+} from "./magentoHeader";
 import "./css.scss";
 
 type I_MenuContent = {
@@ -69,8 +70,9 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
               {isLogin && item.type === "member" ? (
                 <div className="member-content">
@@ -116,6 +118,7 @@ const Header: React.FC = () => {
   return (
     <div className="hannstarHeader">
       <div ref={magentoHeaderRef} className="magentoHeader">
+        <MagentoInputHeader />
         {/* <MagentoLoginHeader /> */}
         {/* <MagentoNotLoginHeader /> */}
         {/* <MagentoLanguageHeader /> */}
