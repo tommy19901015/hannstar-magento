@@ -4,8 +4,8 @@ import TemplateLayout from "../../templates/TemplateLayout/main";
 import usePageData from "./pageData";
 import "./css.scss";
 
-const CSRIndex: React.FC = () => {
-  const pageName = "CSRIndex";
+const SustainabilityCSR: React.FC = () => {
+  const pageName = "SustainabilityCSR";
   const pageData = usePageData();
   return (
     <Layout>
@@ -16,4 +16,4 @@ const CSRIndex: React.FC = () => {
   );
 };
 
-export default CSRIndex;
+export default SustainabilityCSR;

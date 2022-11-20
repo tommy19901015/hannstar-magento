@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
 import Index from "./pages/index/main";
-import CSRIndex from "./pages/CSR_Index/main";
+import CSRIndex from "./pages/Sustainability_Index/main";
 import EBiz from "./pages/e-biz/main";
 import Solution from "./pages/solution/main";
 import Document360Test from "./pages/document360Test/main";
@@ -30,7 +30,6 @@ import AboutFamily from "./pages/About_Family/main";
 import AboutCertification from "./pages/About_Certification/main";
 import AboutTeam from "./pages/About_Team/main";
 //企業永續
-import CSRESG from "./pages/CSR_ESG/main";
 
 //投資人專區
 import InvestorsSummary from "./pages/Investors_Summary/main";
@@ -69,17 +68,25 @@ import Template3Page from "./pages/Template3/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
+import SustainabilityIndex from "./pages/Sustainability_Index/main";
+import SustainabilityChairman from "./pages/Sustainability_Chairman/main";
+import SustainabilityGovernance from "./pages/Sustainability_Governance/main";
+import SustainabilityEnvironment from "./pages/Sustainability_Environment/main";
+import SustainabilityCommunion from "./pages/Sustainability_Communion/main";
+import SustainabilityReport from "./pages/Sustainability_Report/main";
+import SustainabilityESG from "./pages/Sustainability_ESG/main";
+
+import SustainabilityCSR from "./pages/Sustainability_CSR/main";
+
 import CSRSGI from "./pages/CSR_SGI/main";
 import CSRED from "./pages/CSR_ED/main";
-import CSRGP from "./pages/CSR_GP/main";
 import CSRISMS from "./pages/CSR_ISMS/main";
 import CSRMR from "./pages/CSR_MR/main";
 import CSROSHA from "./pages/CSR_OSHA/main";
 import CSRSP from "./pages/CSR_SP/main";
 import CSRSSCM from "./pages/CSR_SSCM/main";
 import CSRTD from "./pages/CSR_TD/main";
-import CSRStakeholder from "./pages/CSR_Stakeholder/main";
-import CSRSocialParticipation from "./pages/CSR_SocialParticipation/main";
+
 import CSRClimChangeRM from "./pages/CSR_ClimChangeRM/main";
 const { hannstar, partner, service, account } = urlConfig;
 
@@ -176,19 +183,50 @@ ReactDOM.render(
         element={<ServiceGreenServiceApply />}
       />
       {/* for CSR */}
-      <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
-      <Route path={"/news/esg"} element={<CSRESG />} />
+
+      {/* <Route path={"/news/esg"} element={<CSRESG />} />  */}
       <Route path={"/news/csrsgi"} element={<CSRSGI />} />
       <Route path={"/news/ed"} element={<CSRED />} />
-      <Route path={"/news/gp"} element={<CSRGP />} />
       <Route path={"/news/isms"} element={<CSRISMS />} />
       <Route path={"/news/mr"} element={<CSRMR />} />
       <Route path={"/news/osha"} element={<CSROSHA />} />
       <Route path={"/news/sp"} element={<CSRSP />} />
       <Route path={"/news/sscm"} element={<CSRSSCM />} />
       <Route path={"/news/td"} element={<CSRTD />} />
-      <Route path={"/news/stakeholder"} element={<CSRStakeholder />} />
-      <Route path={"/news/socialparticipation"} element={<CSRSocialParticipation />} />
+      {/*--------------*/}
+      <Route
+        path={hannstar.sustainability_index.href}
+        element={<SustainabilityIndex />}
+      />
+      <Route
+        path={hannstar.sustainability_csr.href}
+        element={<SustainabilityChairman />}
+      />
+      <Route
+        path={hannstar.sustainability_governance.href}
+        element={<SustainabilityGovernance />}
+      />
+      <Route
+        path={hannstar.sustainability_environment.href}
+        element={<SustainabilityEnvironment />}
+      />
+      <Route
+        path={hannstar.sustainability_communion.href}
+        element={<SustainabilityCommunion />}
+      />
+      <Route
+        path={hannstar.sustainability_report.href}
+        element={<SustainabilityReport />}
+      />
+      <Route
+        path={hannstar.sustainability_esg.href}
+        element={<SustainabilityESG />}
+      />
+      <Route
+        path={hannstar.sustainability_csr.href}
+        element={<SustainabilityCSR />}
+      />
+      {/*--------------*/}
       <Route path={"/news/climchangerm"} element={<CSRClimChangeRM />} />
       {/* 關於瀚宇彩晶 */}
       <Route path={hannstar.about_index.href} element={<AboutIndex />} />

@@ -5,8 +5,8 @@ import NewnewTemplate1 from "../../templates/Template1/newnewmain";
 import usePageData from "./pageData";
 import "./css.scss";
 
-const CSRStakeholder: React.FC = () => {
-  const pageName = "CSRStakeholder";
+const SustainabilityCommunion: React.FC = () => {
+  const pageName = "SustainabilityCommunion";
   const pageData = usePageData();
   return (
     <Layout>
@@ -18,4 +18,4 @@ const CSRStakeholder: React.FC = () => {
   );
 };
 
-export default CSRStakeholder;
+export default SustainabilityCommunion;

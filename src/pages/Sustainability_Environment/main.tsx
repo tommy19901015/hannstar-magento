@@ -4,8 +4,8 @@ import TemplateLayout from "../../templates/TemplateLayout/main";
 import usePageData from "./pageData";
 import "./css.scss";
 
-const CSRGP: React.FC = () => {
-  const pageName = "CSRGP";
+const SustainabilityEnvironment: React.FC = () => {
+  const pageName = "SustainabilityEnvironment";
   const pageData = usePageData();
   return (
     <Layout>
@@ -16,4 +16,4 @@ const CSRGP: React.FC = () => {
   );
 };
 
-export default CSRGP;
+export default SustainabilityEnvironment;
