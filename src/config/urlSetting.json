@@ -84,10 +84,35 @@
       "title": "全球據點",
       "href": "/about/stronghold/view"
     },
-    "csrIndex": {
+    "sustainability_index": {
       "title": "企業永續",
-      "href": "/csr/index"
+      "href": "/sustainability/index/view"
     },
+    "sustainability_csr": {
+      "title": "永續管理",
+      "href": "/sustainability/csr/view"
+    },
+    "sustainability_governance": {
+      "title": "公司治理",
+      "href": "/sustainability/governance/view"
+    },
+    "sustainability_environment": {
+      "title": "綠色創新",
+      "href": "/sustainability/environment/view"
+    },
+    "sustainability_communion": {
+      "title": "社會共融",
+      "href": "/sustainability/communion/view"
+    },
+    "sustainability_report": {
+      "title": "報告書下載",
+      "href": "/sustainability/report/view"
+    },
+    "sustainability_esg": {
+      "title": "永續訊息",
+      "href": "/sustainability/esg/view"
+    },
+
     "investors_Summary": {
       "title": "公司概況",
       "href": "/investors/summary/view"
