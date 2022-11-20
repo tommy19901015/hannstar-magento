@@ -3,5 +3,5 @@ export interface I_TitleContent {
     content: string;
     btnText?: string;
     btnHref?: string;
-    bgColor?: string
+    bgColor?: string;
 }

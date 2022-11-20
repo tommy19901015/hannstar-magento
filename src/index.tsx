@@ -78,6 +78,9 @@ import CSROSHA from "./pages/CSR_OSHA/main";
 import CSRSP from "./pages/CSR_SP/main";
 import CSRSSCM from "./pages/CSR_SSCM/main";
 import CSRTD from "./pages/CSR_TD/main";
+import CSRStakeholder from "./pages/CSR_Stakeholder/main";
+import CSRSocialParticipation from "./pages/CSR_SocialParticipation/main";
+import CSRClimChangeRM from "./pages/CSR_ClimChangeRM/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -184,6 +187,9 @@ ReactDOM.render(
       <Route path={"/news/sp"} element={<CSRSP />} />
       <Route path={"/news/sscm"} element={<CSRSSCM />} />
       <Route path={"/news/td"} element={<CSRTD />} />
+      <Route path={"/news/stakeholder"} element={<CSRStakeholder />} />
+      <Route path={"/news/socialparticipation"} element={<CSRSocialParticipation />} />
+      <Route path={"/news/climchangerm"} element={<CSRClimChangeRM />} />
       {/* 關於瀚宇彩晶 */}
       <Route path={hannstar.about_index.href} element={<AboutIndex />} />
       <Route
