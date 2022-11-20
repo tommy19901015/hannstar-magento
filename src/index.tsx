@@ -86,12 +86,12 @@ import CSROSHA from "./pages/CSR_OSHA/main";
 import CSRSP from "./pages/CSR_SP/main";
 import CSRSSCM from "./pages/CSR_SSCM/main";
 import CSRTD from "./pages/CSR_TD/main";
-
 import CSRClimChangeRM from "./pages/CSR_ClimChangeRM/main";
-import CareersServe from "./pages/CareersDetail_Serve/main";
-import CareersRecruit from "./pages/CareersDetail_Recruit/main";
-import CareersIndex from "./pages/CareersDetail_Index/main";
-import CareersDevelop from "./pages/CareersDetail_Develop/main";
+//人才招募
+import CareersDetailWork from "./pages/CareersDetail_Work/main";
+import CareersDetailJoin from "./pages/CareersDetail_Join/main";
+import CareersDetailIndex from "./pages/CareersDetail_Index/main";
+import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -274,14 +274,24 @@ ReactDOM.render(
         element={<InvestorsContacts />}
       />
 
-       {/* 人資專區 */}
-      <Route path={"/careers/serve"} element={<CareersServe />}/>
-      <Route path={"/careers/recruit"} element={<CareersRecruit />}/>
-      <Route path={"/careers/index"} element={<CareersIndex />}/>
-      <Route path={"/careers/develop"} element={<CareersDevelop />}/>
+      {/* 人資專區 */}
+      <Route
+        path={hannstar.careersDetail_Work.href}
+        element={<CareersDetailWork />}
+      />
+      <Route
+        path={hannstar.careersDetail_Join.href}
+        element={<CareersDetailJoin />}
+      />
+      <Route
+        path={hannstar.careersDetail_Index.href}
+        element={<CareersDetailIndex />}
+      />
+      <Route
+        path={hannstar.careersDetail_Growup.href}
+        element={<CareersDetailGrowup />}
+      />
     </Routes>
-
-    
   </BrowserRouter>,
   document.getElementById("root")
 );

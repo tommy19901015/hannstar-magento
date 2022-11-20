@@ -57,6 +57,12 @@ import InvestorsRevenue from "../pages/Investors_Revenue/main";
 import InvestorsShareholdermeeting from "../pages/Investors_Shareholdermeeting/main";
 import InvestorsReport from "../pages/Investors_Report/main";
 import InvestorsContacts from "../pages/Investors_Contacts/main";
+//人才招募
+import CareersDetailWork from "../pages/CareersDetail_Work/main";
+import CareersDetailJoin from "../pages/CareersDetail_Join/main";
+import CareersDetailIndex from "../pages/CareersDetail_Index/main";
+import CareersDetailGrowup from "../pages/CareersDetail_Growup/main";
+
 import "../i18n/index";
 
 const pageMappingObj = {
@@ -91,6 +97,10 @@ const pageMappingObj = {
   root_InvestorsShareholdermeeting: <InvestorsShareholdermeeting />,
   root_InvestorsReport: <InvestorsReport />,
   root_InvestorsContacts: <InvestorsContacts />,
+  root_CareersDetailWork: <CareersDetailWork />,
+  root_CareersDetailJoin: <CareersDetailJoin />,
+  root_CareersDetailIndex: <CareersDetailIndex />,
+  root_CareersDetailGrowup: <CareersDetailGrowup />,
   root_PartnerIndex: <PartnerIndex />,
   root_PartnerQuotationList: <PartnerQuotationList />,
   root_PartnerQuotation: <PartnerQuotation />,

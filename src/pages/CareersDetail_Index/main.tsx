@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../component/layout/main";
-// import TemplateLayout from "../../templates/TemplateLayout/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
 import usePageData from "./pageData";
 import "./css.scss";

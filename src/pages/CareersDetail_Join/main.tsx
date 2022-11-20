@@ -1,12 +1,11 @@
 import React from "react";
 import Layout from "../../component/layout/main";
-// import TemplateLayout from "../../templates/TemplateLayout/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
 import usePageData from "./pageData";
 import "./css.scss";
 
-const CareersDevelop: React.FC = () => {
-  const pageName = "CareersDevelop";
+const CareersDetailJoin: React.FC = () => {
+  const pageName = "CareersDetailJoin";
   const pageData = usePageData();
   return (
     <Layout>
@@ -17,4 +16,4 @@ const CareersDevelop: React.FC = () => {
   );
 };
 
-export default CareersDevelop;
+export default CareersDetailJoin;

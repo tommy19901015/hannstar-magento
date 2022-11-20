@@ -112,7 +112,6 @@
       "title": "永續訊息",
       "href": "/sustainability/esg/view"
     },
-
     "investors_Summary": {
       "title": "公司概況",
       "href": "/investors/summary/view"
@@ -144,6 +143,22 @@
     "investors_Contacts": {
       "title": "投資人相關洽詢",
       "href": "/investors/contacts/view"
+    },
+    "careersDetail_Index": {
+      "title": "人才招募",
+      "href": "/careersDetail/index/view"
+    },
+    "careersDetail_Work": {
+      "title": "工作在彩晶",
+      "href": "/careersDetail/work/view"
+    },
+    "careersDetail_Growup": {
+      "title": "成長在彩晶",
+      "href": "/careersDetail/growup/view"
+    },
+    "careersDetail_Join": {
+      "title": "加入彩晶",
+      "href": "/careersDetail/join/view"
     }
   },
   "partner": {

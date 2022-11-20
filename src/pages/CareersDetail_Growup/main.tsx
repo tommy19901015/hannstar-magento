@@ -1,12 +1,11 @@
 import React from "react";
 import Layout from "../../component/layout/main";
-// import TemplateLayout from "../../templates/TemplateLayout/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
 import usePageData from "./pageData";
 import "./css.scss";
 
-const CareersServe: React.FC = () => {
-  const pageName = "CareersServe";
+const CareersDetailGrowup: React.FC = () => {
+  const pageName = "CareersDetailGrowup";
   const pageData = usePageData();
   return (
     <Layout>
@@ -17,4 +16,4 @@ const CareersServe: React.FC = () => {
   );
 };
 
-export default CareersServe;
+export default CareersDetailGrowup;

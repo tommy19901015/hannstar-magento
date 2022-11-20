@@ -84,13 +84,13 @@ function useMenu() {
         ],
       },
       {
-        title: "人力資源",
+        title: "人才招募",
         type: "resources",
-        href: "",
+        href: hannstar.careersDetail_Index.href,
         content: [
-          { title: "工作在彩晶", href: "" },
-          { title: "成長在彩晶", href: "" },
-          { title: "加入彩晶", href: "" },
+          { title: "工作在彩晶", href: hannstar.careersDetail_Work.href },
+          { title: "成長在彩晶", href: hannstar.careersDetail_Growup.href },
+          { title: "加入彩晶", href: hannstar.careersDetail_Join.href },
         ],
       },
       {
