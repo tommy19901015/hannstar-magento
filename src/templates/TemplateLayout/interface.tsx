@@ -5,11 +5,12 @@ import { I_ArticleList2 } from "../../component/articleList2/interface";
 //import { I_Graphics3 } from "../../component/graphics3/interface";
 import { I_GraphicsCard } from "../../component/graphicsCard/interface";
 // import {I_ArticleList2} from "../../component/tabProductList/interface"
+import { I_Props } from "../../component/articleBlock/interface";
 
 
 import { I_Banner, I_Breadcrumbs, I_TitleContent, I_GraphicsModel, I_TitleContentBanner } from "../../types/base";
 
-export type I_DataModel = I_Banner | I_Breadcrumbs | I_TitleContent | I_ArticleList2 | I_GraphicsModel | I_GraphicsCard | I_TitleContentBanner;
+export type I_DataModel = I_Banner | I_Breadcrumbs | I_Props | I_TitleContent | I_ArticleList2 | I_GraphicsModel | I_GraphicsCard | I_TitleContentBanner;
 export interface I_TemplateLayout {
   props: {
     type: string;
