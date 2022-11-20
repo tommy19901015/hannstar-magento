@@ -26,8 +26,10 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
 
   const FullBanner: Function = ({data}:any): JSX.Element[] =>{
     return  data.map((item: any) => (
+      <>
       <Columns type={ColType.OneColFullPage} content={<Banner {...item} />} />
-    ));;
+      </>
+    ));
     
   }
     

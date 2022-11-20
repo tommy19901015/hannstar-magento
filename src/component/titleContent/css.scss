@@ -12,7 +12,7 @@ $componentName: 'TitleContent';
         text-align: center;
         .content {
             @include hannstarContent0;
-            padding-bottom: 60px;
+            //padding-bottom: 60px;
         }
         .linkBtn {
             @include hannstarBtn;
