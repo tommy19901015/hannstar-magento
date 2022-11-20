@@ -3,10 +3,8 @@ import "./style/reset.css";
 import "./style/common.scss";
 import Index from "./pages/index/main";
 import CSRIndex from "./pages/CSR_Index/main";
-import About from "./pages/about/main";
 import EBiz from "./pages/e-biz/main";
 import Solution from "./pages/solution/main";
-import Stronghold from "./pages/stronghold/main";
 import Document360Test from "./pages/document360Test/main";
 import FormTest from "./pages/formTest/main";
 import HannstarLogin from "./pages/Login/main";
@@ -25,8 +23,14 @@ import AccountMemberInfo from "./pages/Account_MemberInfo/main";
 import AccountDashboard from "./pages/Account_Dashboard/main";
 import AccountNewsletter from "./pages/Account_Newsletter/main";
 import AccountLogout from "./pages/Account_Logout/main";
+//關於瀚宇彩晶
+import AboutIndex from "./pages/About_Index/main";
+import AboutStronghold from "./pages/About_Stronghold/main";
+import AboutFamily from "./pages/About_Family/main";
+import AboutCertification from "./pages/About_Certification/main";
+import AboutTeam from "./pages/About_Team/main";
 //企業永續
-import CSRESG from "./pages/CSR_ESG/main"
+import CSRESG from "./pages/CSR_ESG/main";
 
 //投資人專區
 import InvestorsSummary from "./pages/Investors_Summary/main";
@@ -111,12 +115,10 @@ ReactDOM.render(
         element={<AccountNewsletter />}
       />
       <Route path={hannstar.index.href} element={<Index />} />
-      <Route path={hannstar.about.href} element={<About />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/e-biz" element={<EBiz />} />
       <Route path="/solution" element={<Solution />} />
-      <Route path={hannstar.stronghold.href} element={<Stronghold />} />
       <Route path="/document360Test" element={<Document360Test />} />
       <Route path="/formTest" element={<FormTest />} />
       <Route path="/template3" element={<Template3Page />} />
@@ -170,7 +172,6 @@ ReactDOM.render(
         path={service.lawApply.href}
         element={<ServiceGreenServiceApply />}
       />
-
       {/* for CSR */}
       <Route path={hannstar.csrIndex.href} element={<CSRIndex />} />
       <Route path={"/news/esg"} element={<CSRESG />} />
@@ -183,16 +184,47 @@ ReactDOM.render(
       <Route path={"/news/sp"} element={<CSRSP />} />
       <Route path={"/news/sscm"} element={<CSRSSCM />} />
       <Route path={"/news/td"} element={<CSRTD />} />
+      {/* 關於瀚宇彩晶 */}
+      <Route path={hannstar.about_index.href} element={<AboutIndex />} />
+      <Route
+        path={hannstar.about_stronghold.href}
+        element={<AboutStronghold />}
+      />
+      <Route path={hannstar.about_family.href} element={<AboutFamily />} />
+      <Route
+        path={hannstar.about_certification.href}
+        element={<AboutCertification />}
+      />
+      <Route path={hannstar.about_team.href} element={<AboutTeam />} />
       {/* 投資人專區 */}
-      <Route path={hannstar.investors_Summary.href} element={<InvestorsSummary />} />
-      <Route path={hannstar.investors_Revenue.href} element={<InvestorsRevenue />} />
-      <Route path={hannstar.investors_Report.href} element={<InvestorsReport />} />
-      <Route path={hannstar.investors_Conference.href} element={<InvestorsConference />} />
-      <Route path={hannstar.investors_Shareholdermeeting.href} element={<InvestorsShareholdermeeting />} />
-      <Route path={hannstar.investors_Dividend.href} element={<InvestorsDividend />} />
-      <Route path={hannstar.investors_Contacts.href} element={<InvestorsContacts />} />
-
-
+      <Route
+        path={hannstar.investors_Summary.href}
+        element={<InvestorsSummary />}
+      />
+      <Route
+        path={hannstar.investors_Revenue.href}
+        element={<InvestorsRevenue />}
+      />
+      <Route
+        path={hannstar.investors_Report.href}
+        element={<InvestorsReport />}
+      />
+      <Route
+        path={hannstar.investors_Conference.href}
+        element={<InvestorsConference />}
+      />
+      <Route
+        path={hannstar.investors_Shareholdermeeting.href}
+        element={<InvestorsShareholdermeeting />}
+      />
+      <Route
+        path={hannstar.investors_Dividend.href}
+        element={<InvestorsDividend />}
+      />
+      <Route
+        path={hannstar.investors_Contacts.href}
+        element={<InvestorsContacts />}
+      />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

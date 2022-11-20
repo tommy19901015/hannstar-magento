@@ -19,12 +19,8 @@ import MFAQRCode from "../pages/MFAQRCode/main";
 import MFA from "../pages/MFA/main";
 import ForgotPassword from "../pages/ForgotPassword/main";
 import ResetPassword from "../pages/ResetPassword/main";
-import About from "../pages/about/main";
 import EBiz from "../pages/e-biz/main";
 import Solution from "../pages/solution/main";
-import Stronghold from "../pages/stronghold/main";
-import Document360Test from "../pages/document360Test/main";
-import FormTest from "../pages/formTest/main";
 import PartnerIndex from "../pages/Partner_Index/main";
 import PartnerQuotationList from "../pages/Partner_QuotationList/main";
 import PartnerQuotation from "../pages/Partner_Quotation/main";
@@ -47,7 +43,21 @@ import ServiceGreenService from "../pages/Service_GreenService/main";
 import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
 import ServiceParseApply from "../pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
-import "../i18n/index"
+//關於瀚宇彩晶
+import AboutIndex from "../pages/About_Index/main";
+import AboutStronghold from "../pages/About_Stronghold/main";
+import AboutFamily from "../pages/About_Family/main";
+import AboutTeam from "../pages/About_Team/main";
+import AboutCertification from "../pages/About_Certification/main";
+//投資人專區
+import InvestorsSummary from "../pages/Investors_Summary/main";
+import InvestorsConference from "../pages/Investors_Conference/main";
+import InvestorsDividend from "../pages/Investors_Dividend/main";
+import InvestorsRevenue from "../pages/Investors_Revenue/main";
+import InvestorsShareholdermeeting from "../pages/Investors_Shareholdermeeting/main";
+import InvestorsReport from "../pages/Investors_Report/main";
+import InvestorsContacts from "../pages/Investors_Contacts/main";
+import "../i18n/index";
 
 const pageMappingObj = {
   root_Login: <Login />,
@@ -59,20 +69,28 @@ const pageMappingObj = {
   root_AccountSendVerifyEmail: <AccountSendVerifyEmail />,
   root_AccountMemberInfo: <AccountMemberInfo />,
   root_AccountDashboard: <AccountDashboard />,
-  root_AccountNewsletter: <AccountNewsletter/>,
-  root_AccountLogout: <AccountLogout/>,
+  root_AccountNewsletter: <AccountNewsletter />,
+  root_AccountLogout: <AccountLogout />,
   root_Register: <HannstarRegister />,
   root_MFAQRCode: <MFAQRCode />,
   root_MFA: <MFA />,
   root_ForgotPassword: <ForgotPassword />,
   root_ResetPassword: <ResetPassword />,
   root_Index: <Index />,
-  root_About: <About />,
+  root_AboutIndex: <AboutIndex />,
+  root_AboutStronghold: <AboutStronghold />,
+  root_AboutFamily: <AboutFamily />,
+  root_AboutTeam: <AboutTeam />,
+  root_AboutCertification: <AboutCertification />,
   root_EBiz: <EBiz />,
   root_Solution: <Solution />,
-  root_Stronghold: <Stronghold />,
-  root_Document360Test: <Document360Test />,
-  root_FormTest: <FormTest />,
+  root_InvestorsSummary: <InvestorsSummary />,
+  root_InvestorsConference: <InvestorsConference />,
+  root_InvestorsDividend: <InvestorsDividend />,
+  root_InvestorsRevenue: <InvestorsRevenue />,
+  root_InvestorsShareholdermeeting: <InvestorsShareholdermeeting />,
+  root_InvestorsReport: <InvestorsReport />,
+  root_InvestorsContacts: <InvestorsContacts />,
   root_PartnerIndex: <PartnerIndex />,
   root_PartnerQuotationList: <PartnerQuotationList />,
   root_PartnerQuotation: <PartnerQuotation />,

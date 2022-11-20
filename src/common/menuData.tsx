@@ -24,14 +24,17 @@ function useMenu() {
         type: "about",
         href: "",
         content: [
-          { title: hannstar.about.title, href: hannstar.about.href },
-          { title: hannstar.team.title, href: hannstar.team.href },
-          { title: hannstar.family.title, href: hannstar.family.href },
           {
-            title: hannstar.certification.title,
-            href: hannstar.certification.href,
+            title: "瀚宇彩晶簡介",
+            href: hannstar.about_index.href,
           },
-          { title: hannstar.stronghold.title, href: hannstar.stronghold.href },
+          { title: "瀚宇彩晶團隊", href: hannstar.about_team.href },
+          { title: "瀚宇關係企業", href: hannstar.about_family.href },
+          {
+            title: "認證與肯定",
+            href: hannstar.about_certification.href,
+          },
+          { title: "全球據點", href: hannstar.about_stronghold.href },
         ],
       },
       {
@@ -82,7 +85,10 @@ function useMenu() {
           { title: "每月營收", href: hannstar.investors_Revenue.href },
           { title: "財務季報及公司年報", href: hannstar.investors_Report.href },
           { title: "法人說明會", href: hannstar.investors_Conference.href },
-          { title: "股東會資訊", href: hannstar.investors_Shareholdermeeting.href },
+          {
+            title: "股東會資訊",
+            href: hannstar.investors_Shareholdermeeting.href,
+          },
           { title: "股利分派", href: hannstar.investors_Dividend.href },
           { title: "股價查詢", href: hannstar.investors_Quote.href },
           { title: "投資人相關洽詢", href: hannstar.investors_Contacts.href },

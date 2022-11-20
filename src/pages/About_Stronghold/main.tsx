@@ -60,8 +60,8 @@ const allData = {
   strongholdData,
 };
 
-const Stronghold: React.FC = () => {
-  const pageName = "Stronghold"
+const AboutStronghold: React.FC = () => {
+  const pageName = "AboutStronghold";
 
   const TextBlock = () => {
     return (
@@ -101,12 +101,17 @@ const Stronghold: React.FC = () => {
 
   return (
     <Layout>
-      <Columns type={ColType.OneCol} content={<>
-        <Breadcrumbs {...allData.breadcrumbsData} />
-        <TextBlock />
-      </>} />
+      <Columns
+        type={ColType.OneCol}
+        content={
+          <>
+            <Breadcrumbs {...allData.breadcrumbsData} />
+            <TextBlock />
+          </>
+        }
+      />
     </Layout>
   );
 };
 
-export default Stronghold;
+export default AboutStronghold;

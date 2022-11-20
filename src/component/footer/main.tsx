@@ -10,12 +10,18 @@ const footerData = [
     title: "關於瀚宇彩晶",
     href: "",
     content: [
-      { title: hannstar.about.title, href: hannstar.about.href },
-      { title: hannstar.team.title, href: hannstar.team.href },
-      { title: hannstar.family.title, href: hannstar.family.href },
-      { title: hannstar.certification.title, href: hannstar.certification.href },
-      { title: hannstar.stronghold.title, href: hannstar.stronghold.href }
-    ]
+      {
+        title: "瀚宇彩晶簡介",
+        href: hannstar.about_index.href,
+      },
+      { title: "瀚宇彩晶團隊", href: hannstar.about_team.href },
+      { title: "瀚宇關係企業", href: hannstar.about_family.href },
+      {
+        title: "認證與肯定",
+        href: hannstar.about_certification.href,
+      },
+      { title: "全球據點", href: hannstar.about_stronghold.href },
+    ],
   },
   {
     title: "產品應用",
@@ -78,46 +84,47 @@ const footerData = [
 ];
 
 const TopBlock: React.FC = () => {
-
   return (
     <div className="topBlock">
       {footerData.map((item) => {
         return (
           <div className="content">
-          <ul className="linkBlock">
-            <li className="title">
-              <h3>
-                <a href={item.href}>{item.title}</a>
-              </h3>
-            </li>
-            {item.content.map((data) => (
-              <li className="text">
-                <a href={data.href}>{data.title}</a>
+            <ul className="linkBlock">
+              <li className="title">
+                <h3>
+                  <a href={item.href}>{item.title}</a>
+                </h3>
               </li>
-            ))}
-          </ul>
+              {item.content.map((data) => (
+                <li className="text">
+                  <a href={data.href}>{data.title}</a>
+                </li>
+              ))}
+            </ul>
           </div>
-
         );
       })}
     </div>
   );
 };
 
-
 const TopBlock_M: React.FC = () => {
   const collapseLiData: any = footerData.map((item: any) => {
     return {
       title: <h3 className="footerH3">{item.title}</h3>,
-      content: item.content.map((obj: any) => <a className="footerLink" href={obj.href}>{obj.title}</a>)
-    }
-  })
+      content: item.content.map((obj: any) => (
+        <a className="footerLink" href={obj.href}>
+          {obj.title}
+        </a>
+      )),
+    };
+  });
   return (
     <div className="topBlock_m">
       <CollapseLi data={collapseLiData} />
     </div>
   );
-}
+};
 const BottomBlock: React.FC = () => {
   return (
     <div className="bottomBlock">

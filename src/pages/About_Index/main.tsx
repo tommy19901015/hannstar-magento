@@ -12,14 +12,9 @@ import usePageData from "./pageData";
 import { getTodoData } from "../../services/api.service";
 import "./css.scss";
 
-const About: React.FC = () => {
-
-  const {
-    breadcrumbs,
-    bannerTextData,
-    graphics3Data,
-    milestoneData,
-  } = usePageData();
+const AboutIndex: React.FC = () => {
+  const { breadcrumbs, bannerTextData, graphics3Data, milestoneData } =
+    usePageData();
 
   const Milestone: React.FC = () => {
     return (
@@ -31,8 +26,11 @@ const About: React.FC = () => {
               <li className="">
                 <div className="item">
                   <div className="historyDate">{item.date}</div>
-                  {item.imgSrc === "" ||
-                    <div className="imgBlock"><img src={item.imgSrc} alt={item.title} /></div>}
+                  {item.imgSrc === "" || (
+                    <div className="imgBlock">
+                      <img src={item.imgSrc} alt={item.title} />
+                    </div>
+                  )}
                   <h3>{item.title}</h3>
                 </div>
               </li>
@@ -43,26 +41,23 @@ const About: React.FC = () => {
     );
   };
 
-
-
-
   return (
     <Layout>
       <Columns
         type={ColType.OneColFullPage}
-        content={<Banner {...bannerTextData} />} />
+        content={<Banner {...bannerTextData} />}
+      />
       <Columns
         type={ColType.OneCol}
-        content={<Breadcrumbs {...breadcrumbs} />} />
+        content={<Breadcrumbs {...breadcrumbs} />}
+      />
       <Columns
         type={ColType.OneCol}
-        content={<Graphics3 data={graphics3Data} />} />
-      <Columns
-        type={ColType.OneCol}
-        content={<Milestone />} />
-
+        content={<Graphics3 data={graphics3Data} />}
+      />
+      <Columns type={ColType.OneCol} content={<Milestone />} />
     </Layout>
   );
 };
 
-export default About;
+export default AboutIndex;
