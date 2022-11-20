@@ -37,7 +37,7 @@ function usePageData() {
               ],
             },
             {
-              type: "TitleContent",
+              type: "TitleContentBlock",
               data: [
                   {                     
                     title: "職業安全績效",
@@ -46,7 +46,7 @@ function usePageData() {
               ],
             },
             {
-                type: "TitleContent",
+                type: "TitleContentBlock",
                 data: [
                     {                     
                       title: "供應鏈風險鑑別與管理",
@@ -177,7 +177,7 @@ function usePageData() {
                 },]
             },
             {
-                type: "TitleContent",
+                type: "TitleContentBlock",
                 data: [
                     {                     
                       title: "預防和減輕職業危害",

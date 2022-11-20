@@ -38,7 +38,7 @@ function usePageData() {
               ],
             },
             {
-              type: "TitleContent",
+              type: "TitleContentBlock",
               data: [
                   {                     
                     title: "永續供應鏈",
@@ -47,7 +47,7 @@ function usePageData() {
               ],
             },
             {
-                type: "TitleContent",
+                type: "TitleContentBlock",
                 data: [
                     {                     
                       title: "供應鏈風險鑑別與管理",
