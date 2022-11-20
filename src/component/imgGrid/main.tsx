@@ -2,7 +2,7 @@ import React from "react";
 import { I_ImgGrid } from "./interface";
 import "./css.scss";
 
-const ImgGrid: React.FC<I_ImgGrid> = ({ data }) => {
+const ImgGrid: React.FC<I_ImgGrid[]> = (data:I_ImgGrid[]) => {
   const componentName = "ImgGrid";
 
   return (

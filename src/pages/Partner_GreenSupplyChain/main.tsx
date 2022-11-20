@@ -588,7 +588,7 @@ const PartnerGreenSupplyChain: React.FC = () => {
         type={ColType.OneCol}
         bgColor={"#f6f6f6"}
         content={<div className={`${pageName}Graphics3`}>
-          <Graphics3 data={graphics3Props} />
+          <Graphics3 groups={graphics3Props} />
         </div>} />)
   }
 

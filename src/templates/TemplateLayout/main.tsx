@@ -8,20 +8,31 @@ import TitleContent from "../../component/titleContent/main";
 import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
-import { I_TemplateLayout } from "./interface";
+import { I_TemplateLayout, I_DataModel} from "./interface";
 import "./css.scss";
 import Tab from "../../component/tab/main";
+import { 
+  I_Banner, 
+  I_Breadcrumbs, 
+  I_TitleContent, 
+  I_GraphicsModel, 
+  I_TitleContentVideo,
+  I_TitleContentBanner,
+  I_TitleContentImgGrid
+ } from "../../types/base";
 
 const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
   const pageName = "TemplateLayout";
 
-  const FullBanner = ({ data }: any) =>
-    data.map((item: any) => (
+  const FullBanner: Function = ({data}:any): JSX.Element[] =>{
+    return  data.map((item: any) => (
       <Columns type={ColType.OneColFullPage} content={<Banner {...item} />} />
-    ));
-
-  const BannerBlock = ({ data }: any) =>
-    data.map((item: any) => (
+    ));;
+    
+  }
+    
+  const BannerBlock:Function = ({data}:any): JSX.Element[] => {
+    return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -31,25 +42,28 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
+  }
 
-  const BreadcrumbsBlock = ({ data }: any) =>
-    data.map((item: any) => (
+  const BreadcrumbsBlock:Function = ({data}:any): JSX.Element[] => {
+    return data.map((item: any) => (
       <Columns type={ColType.OneCol} content={<Breadcrumbs {...item} />} />
     ));
+  }
 
-  const SustainabilityGraphics3 = ({ data }: any) => (
-    <Columns
+  const SustainabilityGraphics3:Function = ({data}:any): JSX.Element => {
+    return (
+      <Columns
       type={ColType.OneCol}
       content={
         <div className={`${pageName}ModuleBlock`}>
-          <Graphics3 data={data} />
+          <Graphics3 groups={data}/>
         </div>
       }
     />
-  );
+  )};
 
-  const TitleContentBlock = ({ data }: any) =>
-    data.map((item: any) => (
+  const TitleContentBlock:Function = ({data}:any): JSX.Element[] => {
+    return data.map((item:any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -59,9 +73,10 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
+  }
 
-  const TitleContentBanner = ({ data }: any) =>
-    data.map((item: any) => (
+  const TitleContentBanner:Function = ({data}:any): JSX.Element[] => {
+    return data.map((item:any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -72,22 +87,23 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
+  }
 
-  const TitleContentImgGrid = (data: any) =>
-    data.map((item: any) => (
+  const TitleContentImgGrid:Function = ({data}:any): JSX.Element []=> {
+    return data.map((item:any) => (
       <Columns
         type={ColType.OneCol}
         content={
           <div className={`${pageName}ModuleBlock`}>
             <TitleContent {...item.titleContent} />
-            <ImgGrid {...data.imgGrid} />
+            <ImgGrid {...item.imgGrids} />
           </div>
         }
       />
     ));
-
-  const TitleContentVideo = ({ data }: any) =>
-    data.map((item: any) => (
+  }
+  const TitleContentVideo:Function = ({data}:any): JSX.Element[] => {
+    return data.map((item:any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -98,9 +114,9 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-
-  const TitleContentGraphicsCard = (data: any) =>
-    data.map((item: any) => (
+  }
+  const TitleContentGraphicsCard:Function = ({data}:any) : JSX.Element => {
+    return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -111,10 +127,13 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
+  }
 
-  const mappingType = (data: any) => {
+
+  const mappingType = (data: I_DataModel[]) => {
+    console.log('mappingType',data)
     return {
-      FullBanner: <FullBanner data={data} />,
+      FullBanner: <FullBanner data={data}/>,
       BannerBlock: <BannerBlock data={data} />,
       BreadcrumbsBlock: <BreadcrumbsBlock data={data} />,
       SustainabilityGraphics3: <SustainabilityGraphics3 data={data} />, //
