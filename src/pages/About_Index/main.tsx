@@ -53,7 +53,7 @@ const AboutIndex: React.FC = () => {
       />
       <Columns
         type={ColType.OneCol}
-        content={<Graphics3 data={graphics3Data} />}
+        content={<Graphics3 groups={graphics3Data} />}
       />
       <Columns type={ColType.OneCol} content={<Milestone />} />
     </Layout>
