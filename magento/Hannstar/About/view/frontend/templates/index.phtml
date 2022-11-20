@@ -1,0 +1,11 @@
+<?php echo $this->getLayout()
+          ->createBlock("Magento\Framework\View\Element\Template")
+          ->setTemplate('Hannstar_Frontend::main.phtml')
+          ->toHtml();
+?>
+<div class="hannstarRoot" id="root_AboutIndex"></div>
+<script>
+    require(['jquery', 'hannstarScript'], function($, hannstarScript) {
+        hannstarScript();
+    });
+</script>

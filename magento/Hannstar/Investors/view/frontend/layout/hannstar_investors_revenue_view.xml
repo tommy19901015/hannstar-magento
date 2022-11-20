@@ -1,20 +1,13 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <title>Permission</title>
+    <head>        
         <remove src="mage/calendar.css"/>
         <remove src="css/styles-l.css"/>
         <remove src="css/styles-m.css"/>
         <remove src="css/styles-s.css"/>
         <remove src="css/print.css"/>
         <remove src="mage/polyfill.js"/>
-        <link src='Hannstar_Frontend::css/test.css'/>
         <link src='Hannstar_Frontend::css/main.css'/>
     </head>
     <body>
@@ -22,11 +15,11 @@
         <block class="Hannstar\Frontend\Block\Index"
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />
-        <block class="Hannstar\Account\Block\GetCountrySelect"
-            name="hannstar.account.layout.main"
-            template="Hannstar_Account::partner.phtml" />
+        <block class="Magento\Framework\View\Element\Template"
+                name="hannstar.investors.layout.main"
+                template="Hannstar_Investors::revenue.phtml" />
         </referenceContainer>
-         <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="authentication-popup" remove="true"/>
     </body>
 </page>
