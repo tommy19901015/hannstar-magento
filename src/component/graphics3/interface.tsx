@@ -1,11 +1,15 @@
+type I_GrapModel= {
+    src: string;
+    title: string;
+    content: string[] | string ;
+    comment?: string;
+    subTitle?: string;
+    btnText?: string;
+    btnHref?: string;
+    bgColor?: string
+    imgSizePercent?: number;
+}
+
 export interface I_Graphics3 {
-    data: {
-        src: string;
-        title: string;
-        content: string;
-        btnText?: string;
-        btnHref?: string;
-        bgColor?: string
-        imgSizePercent?: number;
-    }[]
+    groups:I_GrapModel[]
 }

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
-// import { I_Template1, TabEnum } from "../../types/Tmeplate1/interface";
+// import { TabEnum } from "../../types/Tmeplate1/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
 function usePageData() {
@@ -26,7 +26,7 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: "首頁",
+                text: "企業永續",
                 href: "",
               },
               {

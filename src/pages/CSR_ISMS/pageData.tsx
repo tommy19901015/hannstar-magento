@@ -25,7 +25,7 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
                 {
-                    text: "首頁",
+                    text: "企業永續",
                     href: "",
                 },
                 {

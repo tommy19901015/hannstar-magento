@@ -1,4 +1,4 @@
-import { ResponseType, PriceFormParams, UserParams } from "../types/base";
+import { ResponseType, PriceFormParams, UserParams } from "../types/api";
 import service from "./api.interceptors";
 
 export const apiMethods = {
