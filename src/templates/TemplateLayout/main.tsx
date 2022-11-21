@@ -10,7 +10,7 @@ import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
 import { I_TemplateLayout, I_DataModel } from "./interface";
 import "./css.scss";
-import Tab from "../../component/tab/main";
+import SustainabilityTab from "../../component/sustainabilityTab/main";
 import {
   I_Banner,
   I_Breadcrumbs,
@@ -18,7 +18,7 @@ import {
   I_GraphicsModel,
   I_TitleContentVideo,
   I_TitleContentBanner,
-  I_TitleContentImgGrid
+  I_TitleContentImgGrid,
 } from "../../types/base";
 import ArticleBlock from "../../component/articleBlock/main";
 import TabProductList from "../../component/tabProductList/main";
@@ -32,8 +32,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         <Columns type={ColType.OneColFullPage} content={<Banner {...item} />} />
       </>
     ));
-
-  }
+  };
 
   const BannerBlock: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
@@ -46,13 +45,13 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-  }
+  };
 
   const BreadcrumbsBlock: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
       <Columns type={ColType.OneCol} content={<Breadcrumbs {...item} />} />
     ));
-  }
+  };
 
   const SustainabilityGraphics3: Function = ({ data }: any): JSX.Element => {
     return (
@@ -64,7 +63,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
           </div>
         }
       />
-    )
+    );
   };
 
   const TitleContentBlock: Function = ({ data }: any): JSX.Element[] => {
@@ -78,7 +77,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-  }
+  };
 
   const TitleContentBanner: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
@@ -92,7 +91,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-  }
+  };
 
   const TitleContentImgGrid: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
@@ -106,7 +105,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-  }
+  };
   const TitleContentVideo: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
       <Columns
@@ -119,7 +118,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-  }
+  };
   const TitleContentGraphicsCard: Function = ({ data }: any): JSX.Element => {
     return data.map((item: any) => (
       <Columns
@@ -132,7 +131,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     ));
-  }
+  };
   const ArticleContent: Function = ({ data }: any): JSX.Element => {
     return (
       <Columns
@@ -144,7 +143,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     );
-  }
+  };
 
   const TabProductListBlock: Function = ({ data }: any): JSX.Element => {
     return (
@@ -157,23 +156,23 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
         }
       />
     );
-  }
+  };
 
   const mappingType = (data: I_DataModel[]) => {
-    console.log('mappingType', data)
+    console.log("mappingType", data);
     return {
       FullBanner: <FullBanner data={data} />,
       BannerBlock: <BannerBlock data={data} />,
       BreadcrumbsBlock: <BreadcrumbsBlock data={data} />,
       SustainabilityGraphics3: <SustainabilityGraphics3 data={data} />, //
       TitleContentBlock: <TitleContentBlock data={data} />,
-      TitleContentGraphicsCard: <TitleContentGraphicsCard data={data} />, // 3x3 
+      TitleContentGraphicsCard: <TitleContentGraphicsCard data={data} />, // 3x3
       TitleContentImgGrid: <TitleContentImgGrid data={data} />, // 4X4    組建  先不用
       TitleContentVideo: <TitleContentVideo data={data} />,
       TitleContentBanner: <TitleContentBanner data={data} />,
       ArticleContent: <ArticleContent data={data} />,
       TabProductListBlock: <TabProductListBlock data={data} />,
-      // Tab: <Tab data={data} />
+      SustainabilityTab: <SustainabilityTab data={data} />,
     };
   };
 

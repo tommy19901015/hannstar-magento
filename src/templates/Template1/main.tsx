@@ -9,92 +9,139 @@ import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
 import { I_Template1 } from "../../types/Tmeplate1/interface";
 import "./css.scss";
-import Tab from "../../component/tab/main";
+import Tab from "../../component/sustainabilityTab/main";
 
-const Template1: React.FC<I_Template1> = ({ banner, tabId, breadcrumbs, module1, module2, module3, module4, module5, module6 }) => {
-  const pageName = "Template1"
+const Template1: React.FC<I_Template1> = ({
+  banner,
+  tabId,
+  breadcrumbs,
+  module1,
+  module2,
+  module3,
+  module4,
+  module5,
+  module6,
+}) => {
+  const pageName = "Template1";
 
   const pageBuilder = () => {
-    const pageContentArr: JSX.Element[] = []
+    const pageContentArr: JSX.Element[] = [];
     if (banner) {
-      pageContentArr.push(<Columns type={ColType.OneColFullPage}
-        content={<Banner {...banner} />}
-      />)
+      pageContentArr.push(
+        <Columns
+          type={ColType.OneColFullPage}
+          content={<Banner {...banner} />}
+        />
+      );
     }
 
     if (breadcrumbs) {
-      pageContentArr.push(<Columns type={ColType.OneCol}
-        content={<Breadcrumbs {...breadcrumbs} />} />)
+      pageContentArr.push(
+        <Columns
+          type={ColType.OneCol}
+          content={<Breadcrumbs {...breadcrumbs} />}
+        />
+      );
     }
 
     if (tabId) {
-      pageContentArr.push(<Columns type={ColType.OneCol}
-        content={<Tab activeId={tabId} />} />)
+      pageContentArr.push(
+        <Columns type={ColType.OneCol} content={<Tab activeId={tabId} />} />
+      );
     }
 
-
     if (module1) {
-      pageContentArr.push(<Columns type={ColType.OneCol}
-        content={<div className={`${pageName}ModuleBlock`}>
-          <TitleContent {...module1.titleContent} />
-        </div>} />)
+      pageContentArr.push(
+        <Columns
+          type={ColType.OneCol}
+          content={
+            <div className={`${pageName}ModuleBlock`}>
+              <TitleContent {...module1.titleContent} />
+            </div>
+          }
+        />
+      );
     }
 
     if (module2) {
-      module2.map(item => {
-        pageContentArr.push(<Columns type={ColType.OneCol}
-          content={<div className={`${pageName}ModuleBlock`}>
-            <TitleContent {...item.titleContent} />
-            <Banner {...item.banner} />
-          </div>} />)
-      })
+      module2.map((item) => {
+        pageContentArr.push(
+          <Columns
+            type={ColType.OneCol}
+            content={
+              <div className={`${pageName}ModuleBlock`}>
+                <TitleContent {...item.titleContent} />
+                <Banner {...item.banner} />
+              </div>
+            }
+          />
+        );
+      });
     }
 
     if (module3) {
-      module3.map(item => {
-        pageContentArr.push(<Columns type={ColType.OneCol}
-          content={<div className={`${pageName}ModuleBlock`}>
-            <TitleContent {...item.titleContent} />
-            <Video {...item.video} />
-          </div>} />)
-      })
+      module3.map((item) => {
+        pageContentArr.push(
+          <Columns
+            type={ColType.OneCol}
+            content={
+              <div className={`${pageName}ModuleBlock`}>
+                <TitleContent {...item.titleContent} />
+                <Video {...item.video} />
+              </div>
+            }
+          />
+        );
+      });
     }
 
     if (module4) {
-      pageContentArr.push(<Columns type={ColType.OneCol}
-        content={<div className={`${pageName}ModuleBlock`}>
-          <Graphics3 groups={module4.graphics3} />
-        </div>} />)
+      pageContentArr.push(
+        <Columns
+          type={ColType.OneCol}
+          content={
+            <div className={`${pageName}ModuleBlock`}>
+              <Graphics3 groups={module4.graphics3} />
+            </div>
+          }
+        />
+      );
     }
 
     if (module5) {
-      module5.map(item => {
-        pageContentArr.push(<Columns type={ColType.OneCol}
-          content={<div className={`${pageName}ModuleBlock`}>
-            <TitleContent {...item.titleContent} />
-            <Video {...item.video} />
-          </div>} />)
-      })
+      module5.map((item) => {
+        pageContentArr.push(
+          <Columns
+            type={ColType.OneCol}
+            content={
+              <div className={`${pageName}ModuleBlock`}>
+                <TitleContent {...item.titleContent} />
+                <Video {...item.video} />
+              </div>
+            }
+          />
+        );
+      });
     }
 
     if (module6) {
-      pageContentArr.push(<Columns type={ColType.OneCol}
-        content={<div className={`${pageName}ModuleBlock`}>
-          <TitleContent {...module6.titleContent} />
-          <GraphicsCard {...module6.graphicsCard} />
-        </div>} />)
+      pageContentArr.push(
+        <Columns
+          type={ColType.OneCol}
+          content={
+            <div className={`${pageName}ModuleBlock`}>
+              <TitleContent {...module6.titleContent} />
+              <GraphicsCard {...module6.graphicsCard} />
+            </div>
+          }
+        />
+      );
     }
-    return pageContentArr
-  }
-
-
+    return pageContentArr;
+  };
 
   const MainContainer = () => {
-    return (
-      <>
-        {pageBuilder().map(item => item)}
-      </>
-    );
+    return <>{pageBuilder().map((item) => item)}</>;
   };
   return <MainContainer />;
 };

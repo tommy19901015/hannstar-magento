@@ -6,10 +6,27 @@ import { I_ArticleList2 } from "../../component/articleList2/interface";
 import { I_GraphicsCard } from "../../component/graphicsCard/interface";
 import { I_Video } from "../../component/video/interface";
 import { I_TabsModule } from "../../component/tabProductList/interface";
+import { I_SustainabilityTab } from "../../component/sustainabilityTab/interface";
 
-import { I_Banner, I_Breadcrumbs, I_TitleContent, I_GraphicsModel, I_TitleContentBanner } from "../../types/base";
+import {
+  I_Banner,
+  I_Breadcrumbs,
+  I_TitleContent,
+  I_GraphicsModel,
+  I_TitleContentBanner,
+} from "../../types/base";
 
-export type I_DataModel = I_TabsModule | I_Banner | I_Breadcrumbs | I_TitleContent | I_ArticleList2 | I_GraphicsModel | I_GraphicsCard | I_TitleContentBanner | I_Video;
+export type I_DataModel =
+  | I_TabsModule
+  | I_Banner
+  | I_Breadcrumbs
+  | I_TitleContent
+  | I_ArticleList2
+  | I_GraphicsModel
+  | I_GraphicsCard
+  | I_TitleContentBanner
+  | I_SustainabilityTab
+  | I_Video;
 export interface I_TemplateLayout {
   props: {
     type: string;
