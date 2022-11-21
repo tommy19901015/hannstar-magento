@@ -18,7 +18,7 @@ $componentName: 'Banner';
             padding-bottom: 32px;
         }
         .text {
-            @include hannstarContent0;
+            @include hannstarContent1;
             color: #fff;
         }
         &.topRight {
@@ -35,5 +35,17 @@ $componentName: 'Banner';
             bottom: 0;
             right: 0;
         }
+    }
+    @media screen and (max-width: $breakpoint) {
+        .textBlock {
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            .title {
+                @include hannstarH3Title;
+                color: #fff;
+                padding-bottom: 20px;
+            }
+        } 
     }
 }

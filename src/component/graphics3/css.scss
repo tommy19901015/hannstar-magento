@@ -34,5 +34,27 @@ $componentName: 'Graphics3';
         }
     }
     @media screen and (max-width: $breakpoint) {
+        .graphicsBlock {
+            flex-direction: column;
+            &:nth-child(odd) {
+                flex-direction: column;
+            }
+            &:last-child {
+            flex-direction: column;
+            }
+            .imgBlock{
+                width: 100%;
+            }
+            .textBlock{
+                width: 100%;
+                padding: 20px 0px;
+                .title{
+                    padding-bottom: 15px;
+                }
+                .content {
+                    padding-bottom: 0;
+                }
+            }
+        }
     }
 }
