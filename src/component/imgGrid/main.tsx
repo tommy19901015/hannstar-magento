@@ -1,13 +1,13 @@
 import React from "react";
-import { I_ImgGrid } from "./interface";
+import { I_GridModel } from "./interface";
 import "./css.scss";
 
-const ImgGrid: React.FC<I_ImgGrid[]> = (data:I_ImgGrid[]) => {
+const ImgGrid: React.FC<I_GridModel> = ({row, imgs}) => {
   const componentName = "ImgGrid";
-
+  console.log('imgs',imgs)
   return (
     <div className={`${componentName}Content`}>
-      {data.map((item, idx) => {
+      {imgs.map((item, idx) => {
         return (
           <img
             className={`${componentName}Img`}

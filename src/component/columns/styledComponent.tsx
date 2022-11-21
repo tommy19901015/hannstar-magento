@@ -24,7 +24,7 @@ export const TwoColFullStyle: React.FC<I_Style> = styled.div`
 `;
 
 export const OneColStyle: React.FC<I_Style> = styled.div`    
-    margin: 0px auto;
+    margin: 80px auto;
     padding: 0px 60px;
     max-width:1400px;
     &:first-child{

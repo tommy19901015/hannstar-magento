@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
 import { TabEnum } from "../../types/Tmeplate1/interface";
-import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
+import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";  
 
 function usePageData() {
   const { t } = useTranslation();
@@ -35,6 +35,29 @@ function usePageData() {
             ],
           },
         ],
+      },
+      {
+        type: "TitleContentBlock",
+        data: [
+            {                     
+              title: "綠色產品",
+              content: "2021年瀚宇彩晶所有產品線皆100% 符合產品無有害物質相關法規及客戶規範、100%符合第三方綠色檢測，且持續維持客戶要求造成危害物質（HSF）客訴件數0件。",   
+            },
+        ],
+      },
+      {
+        type: "TitleContentImgGrid",
+        data: [
+          {
+            rowCount:4, 
+            imgGrids:[
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+            ]
+          }
+        ]
       },
       {
         type: "TitleContentBanner",
@@ -76,10 +99,6 @@ function usePageData() {
             }
         ],
       },
-      {
-        type:"SustainabilityGraphics3",
-        data:[]
-      }
     ],
   };
 

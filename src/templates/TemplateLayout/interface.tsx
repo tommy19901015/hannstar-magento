@@ -14,11 +14,13 @@ import {
   I_TitleContent,
   I_GraphicsModel,
   I_TitleContentBanner,
+  I_TitleContentImgGrid
 } from "../../types/base";
 
 export type I_DataModel =
   | I_TabsModule
   | I_Banner
+  | I_TitleContentImgGrid
   | I_Breadcrumbs
   | I_TitleContent
   | I_ArticleList2

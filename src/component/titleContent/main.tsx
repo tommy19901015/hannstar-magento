@@ -13,7 +13,7 @@ const TitleContent: React.FC<I_TitleContent> = ({ title, content, btnText, btnHr
             <TitleContentStyle bgColor={bgColor}>
                 <div className="title">{title}</div>
                 <div className="textBlock">
-                    <div className="content">{content}</div>
+                    <div className={`${content && 'content'}`}>{content}</div>
                     {
                         btnText && <a className="linkBtn" href={btnHref}>{btnText}</a>
                     }

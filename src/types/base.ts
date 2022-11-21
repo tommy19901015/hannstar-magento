@@ -50,7 +50,7 @@ export interface I_TitleContentVideo{
 }
 
 export interface I_TitleContentImgGrid{
-    titleContent:I_TitleContent,
+    rowCount: number;
     imgGrids: {
         src: string;
     }[],

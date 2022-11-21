@@ -42,9 +42,28 @@ function usePageData() {
         data: [
             {                     
               title: "永續重點績效",
-              content: ""
+              content: "",
             },
         ],
+      },
+      {
+        type: "TitleContentImgGrid",
+        data: [
+          {
+            rowCount:4, 
+            imgGrids:[
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+
+            ]
+          }
+        ]
       },
       {
           type:"SustainabilityGraphics3",
