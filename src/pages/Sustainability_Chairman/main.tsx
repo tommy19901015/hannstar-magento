@@ -5,6 +5,7 @@ import usePageData from "./pageData";
 import Columns from "../../component/columns/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { ColType } from "../../component/columns/interface";
+import SustainabilityTab from "../../component/sustainabilityBlock/main";
 import "./css.scss";
 
 const SustainabilityChairman: React.FC = () => {
@@ -64,6 +65,11 @@ const SustainabilityChairman: React.FC = () => {
       </div>
     );
   };
+  const ffprop = {
+    type: "csr",
+    activeId: 1,
+    component: "tab",
+  };
 
   return (
     <Layout>
@@ -72,6 +78,7 @@ const SustainabilityChairman: React.FC = () => {
         content={
           <>
             <Breadcrumbs {...pageData.breadcrumbs} />
+            <SustainabilityTab {...ffprop} />
             {/* <D360Block /> */}
           </>
         }

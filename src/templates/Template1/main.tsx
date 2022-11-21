@@ -9,7 +9,7 @@ import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
 import { I_Template1 } from "../../types/Tmeplate1/interface";
 import "./css.scss";
-import Tab from "../../component/sustainabilityTab/main";
+import Tab from "../../component/sustainabilityBlock/main";
 
 const Template1: React.FC<I_Template1> = ({
   banner,
@@ -45,9 +45,10 @@ const Template1: React.FC<I_Template1> = ({
     }
 
     if (tabId) {
-      pageContentArr.push(
-        <Columns type={ColType.OneCol} content={<Tab activeId={tabId} />} />
-      );
+      pageContentArr
+        .push
+        // <Columns type={ColType.OneCol} content={<Tab activeId={tabId} />} />
+        ();
     }
 
     if (module1) {

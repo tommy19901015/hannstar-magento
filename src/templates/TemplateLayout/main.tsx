@@ -10,7 +10,7 @@ import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
 import { I_TemplateLayout, I_DataModel } from "./interface";
 import "./css.scss";
-import SustainabilityTab from "../../component/sustainabilityTab/main";
+import SustainabilityTab from "../../component/sustainabilityBlock/main";
 import {
   I_Banner,
   I_Breadcrumbs,
@@ -172,7 +172,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       TitleContentBanner: <TitleContentBanner data={data} />,
       ArticleContent: <ArticleContent data={data} />,
       TabProductListBlock: <TabProductListBlock data={data} />,
-      SustainabilityTab: <SustainabilityTab data={data} />,
+      // SustainabilityTab: <SustainabilityTab data={data} />,
     };
   };
 

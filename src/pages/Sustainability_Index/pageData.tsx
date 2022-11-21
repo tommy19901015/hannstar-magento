@@ -38,6 +38,20 @@ function usePageData() {
           ],
       },
       {
+        type: "TitleContentImgGrid",
+        data: [
+            {    
+              titleContent: {
+                title: "永續重點績效",
+                content: ""
+              }, 
+              imgGrids:[
+   
+              ]
+            }
+          ]
+      },
+      {
         type: "TitleContentBlock",
         data: [
             {                     
@@ -46,6 +60,7 @@ function usePageData() {
             },
         ],
       },
+
       {
         type: "TitleContentImgGrid",
         data: [
