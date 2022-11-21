@@ -10,7 +10,7 @@ import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
 import { I_Template1 } from "../../types/Tmeplate1/interface";
 import "./css.scss";
-import Tab from "../../component/sustainabilityTab/main";
+import Tab from "../../component/sustainabilityBlock/main";
 
 const newnewTemplate1: React.FC<any> = (props) => {
   const pageName = "Template1";
