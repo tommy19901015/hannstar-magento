@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
 function usePageData() {
@@ -42,6 +43,38 @@ function usePageData() {
               content: "建立完整的人才計劃，透過正式與非正式的學習路徑，協助你成長並實現自我價值。",   
             },
         ],
+      },
+      {
+        type: "TitleContentGraphicsCard",
+        data: [
+          {
+            rowCount: 3,
+            theme: GraphicsTheme.Theme1,
+            data: [
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"數位創新培訓",
+                text:"超過400堂優質課程的線上學習平台直播、平台、APP等多元的學習模式線上加線下混成學習，提升學習效果",
+                href:"",
+                btnText:"",
+              },
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"完整教育訓練管道",
+                text:"新人訓及導師制，讓員工成為即戰力必修課程與部門訓練，提升工作技能外訓、參訪與考察，強化專業的深度",
+                href:"",
+                btnText:"",
+              },
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"趨勢新知導入",
+                text:"豐富的資料與電子報章雜誌資源每日/每週/每月 專業與充電新知不定期、系列式的專家趨勢講座",
+                href:"",
+                btnText:"",
+              }
+            ],
+          }
+        ]
       },
     ],
   };

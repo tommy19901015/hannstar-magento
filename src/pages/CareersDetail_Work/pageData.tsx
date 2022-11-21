@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
 function usePageData() {
@@ -80,6 +81,38 @@ function usePageData() {
               content: "",   
             },
         ],
+      },
+      {
+        type: "TitleContentGraphicsCard",
+        data: [
+          {
+            rowCount: 3,
+            theme: GraphicsTheme.Theme1,
+            data: [
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"具產業競爭力之薪酬",
+                text:"優渥薪酬與營運利潤成果共享創新貢獻獎勵制度員工認股計劃",
+                href:"",
+                btnText:"",
+              },
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"全方位員工照顧",
+                text:"免費員工及眷屬團體保險專業醫療駐廠諮詢優於勞基法的預給特休假制度",
+                href:"",
+                btnText:"",
+              },
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"退休安定",
+                text:"依法提撥6% 個人退休金舊制退休準備金超額提存，確保退休生活邀請退休員工擔任顧問，豐富經驗傳承",
+                href:"",
+                btnText:"",
+              }
+            ],
+          }
+        ]
       },
     ],
   };
