@@ -437,17 +437,86 @@ $font-base: 16px;
 }
 
 @mixin D360Style {
-    table {
-        width: 100% !important;
-        border: 1px solid $hannstar-border-color;
-        tr {
-            td {
-                border: 1px solid $hannstar-border-color;
-                padding: 10px;
+    .d360Title {
+        @include hannstarH3Title;
+        padding-bottom: 30px;
+    }
+    .d360Ul {
+        display: flex;
+        @include hannstarContent1;
+        margin-bottom: 50px;
+        .d360Li {
+            text-align: center;
+            padding: 8px 15px;
+            cursor: pointer;
+            float: left;
+            display: inline-flex;
+            background-color: $hannstar-bg-color;
+            &.active {
+                color: #fff;
+                background: $hannstar-blue2;
             }
         }
     }
-    .hannstarTableRWD {
+    .d360Select {
         display: none;
+    }
+    .d360ContentBlock {
+        .d360HTML {
+            &.content {
+                padding-bottom: 20px;
+            }
+            &.tablePC {
+                table {
+                    width: 100% !important;
+                    border: 1px solid $hannstar-border-color;
+                    thead {
+                        tr {
+                            th {
+                                padding: 10px;
+                            }
+                        }
+                    }
+                    tr {
+                        td {
+                            border: 1px solid $hannstar-border-color;
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+            &.tableM {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+        .d360Title {
+            @include hannstarH3Title;
+            padding-bottom: 30px;
+        }
+        .d360Ul {
+            display: none;
+        }
+        .d360Select {
+            display: block;
+            @include hannstarSelect();
+            margin-bottom: 30px;
+        }
+        .d360ContentBlock {
+            .d360HTML {
+                &.tablePC {
+                    display: none;
+                }
+                &.tableM {
+                    display: block;
+                    padding: 30px 0;
+                    border: 1px solid $hannstar-border-color;
+                    .htmlBlock {
+                        color: $hannstar-default-text-color;
+                    }
+                }
+            }
+        }
     }
 }

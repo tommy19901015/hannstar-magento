@@ -5,6 +5,8 @@ import usePageData from "./pageData";
 import Columns from "../../component/columns/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { ColType } from "../../component/columns/interface";
+import CollapseLi from "../../component/collapseLi/main"
+import D3603 from "../../D360fakeData/D3603.json"
 import "./css.scss";
 
 const testData = {
@@ -134,7 +136,17 @@ const InvestorsRevenue: React.FC = () => {
     // setD360Data(testData.data)
 
     //test data--------------
-    setD360Data(testJsonArr)
+    console.log('D3603', D3603);
+    if (D3603.result === "success") {
+      const tt = D3603.data.map((item) => {
+        return JSON.parse(item)
+      })
+      console.log('tt', tt);
+      setD360Data(tt)
+    }
+
+
+
     //test data--------------
   }, [])
 
@@ -143,14 +155,44 @@ const InvestorsRevenue: React.FC = () => {
   }
 
   const D360Block = () => {
+
+    const getRWDTable = (document360Data: any) => {
+      const div: any = document.createElement('div');
+      div.innerHTML = document360Data.trim();
+      const table: any = div.getElementsByTagName('table')
+      const trLlist: any = table[0].getElementsByTagName("tr")
+      const trLlistArray = [...trLlist]
+      const rwdData = trLlistArray.map((tr: any, idx: number) => {
+        const td = tr.getElementsByTagName("td")
+        const tdArray = [...td]
+        return { title: tdArray[0].innerText, content: [tdArray[1].innerHTML] }
+      })
+      return <CollapseLi data={rwdData} />
+    };
+
+    const multipleBlock = (document360Data: any) => {
+      return document360Data.block.map((item: any) => <>
+        {item.content && <div className="d360HTML content" dangerouslySetInnerHTML={{ __html: item.content }} />}
+        {item.tablePC && <div className="d360HTML tablePC" dangerouslySetInnerHTML={{ __html: item.tablePC }} />}
+        {item.tableM && <div className="d360HTML tableM">{getRWDTable(item.tableM)}</div>}
+      </>)
+    }
+
     return <div className={`${pageName}ContentBlock`}>
-      <ul className="d360Ul">
-        {testJsonArr.map((item: any, index: any) => <li className={`d360Li ${activeTabIdx === index ? "active" : ""}`} onClick={() => handleClickTab(index)}>{item.metaTitle}</li>)}
-      </ul>
-      {d360Data && <div className="d360ContentBlock">
-        <div className="d360Title">{d360Data[activeTabIdx].metaTitle}</div>
-        <div className="d360HTML" dangerouslySetInnerHTML={{ __html: d360Data[activeTabIdx].block[0].tablePC }} />
-      </div>}
+      {
+        d360Data && <>
+          <ul className="d360Ul">
+            {d360Data.map((item: any, index: number) => <li className={`d360Li ${activeTabIdx === index ? "active" : ""}`} onClick={() => handleClickTab(index)}>{item.tab}</li>)}
+          </ul>
+          <select className="d360Select" value={activeTabIdx} onChange={(e) => handleClickTab(e.target.value)}>
+            {d360Data.map((item: any, index: number) => <option value={index}>{item.tab}</option>)}
+          </select>
+          <div className="d360ContentBlock">
+            <div className="d360Title">{d360Data[activeTabIdx].metaTitle}</div>
+            {multipleBlock(d360Data[activeTabIdx])}
+          </div>
+        </>
+      }
     </div >
   }
 
