@@ -55,6 +55,75 @@ function usePageData() {
             },
         ],
       },
+      {
+        type: "TabProductListBlock",
+        data: [
+            {                     
+              tabName: "台北",
+              tabData: [
+                {
+                  src: "https://fakeimg.pl/350x200/?text=Hello",
+                  title: "全球車載業務",
+                  isHot: true,
+                  content:"您會需要負責與全球頂尖的車廠進行顯示產品的推廣與銷售，藉此您會了解國際車廠最新的需求與趨勢，讓自己走在車用電子領域的最前線。",
+                  productId: "1",
+                  btnTextL:"查看職缺內容",
+                  btnTextR:"投遞履歷"
+                },
+                {
+                  src: "https://fakeimg.pl/350x200/?text=Hello",
+                  title: "全球工控業務",
+                  isHot: true,
+                  content:"需要與國內外系統大廠及方案整合公司合作，接觸智慧娛樂、智慧醫療、智慧交通等各項引領潮流的新科技產品，一起讓顯示器增進我們的生活樂趣，並帶來更多的便利。",
+                  productId: "2",
+                  btnTextL:"查看職缺內容",
+                  btnTextR:"投遞履歷"
+                },
+                {
+                  src: "https://fakeimg.pl/350x200/?text=Hello",
+                  title: "工控/車載PM工程師",
+                  isHot: true,
+                  content:"您將運用負責工業和汽車產品領域海外品牌客戶的整體解決方案產品，共同創造出多元的科技新品，且跨部門與其他夥伴密切合作，以優化產品功能。",
+                  productId: "3",
+                  btnTextL:"查看職缺內容",
+                  btnTextR:"投遞履歷"
+                },
+                {
+                  src: "https://fakeimg.pl/350x200/?text=Hello",
+                  title: "工控/系統軟體工程師",
+                  isHot: true,
+                  content:"系統程式開發與建置系統支持企業運營與各項業務推展，需收集各單位對於系統應用的需求，進行系統開發或維護的提供最佳解決方案。",
+                  productId: "4",
+                  btnTextL:"查看職缺內容",
+                  btnTextR:"投遞履歷"
+                },
+              ]
+            },
+            {                     
+              tabName: "台南",
+              tabData: [
+                {
+                  src: "https://fakeimg.pl/350x200/?text=Hello",
+                  title: "工控/車載PM工程師",
+                  isHot: true,
+                  content:"您將運用負責工業和汽車產品領域海外品牌客戶的整體解決方案產品，共同創造出多元的科技新品，且跨部門與其他夥伴密切合作，以優化產品功能。",
+                  productId: "3",
+                  btnTextL:"查看職缺內容",
+                  btnTextR:"投遞履歷"
+                },
+                {
+                  src: "https://fakeimg.pl/350x200/?text=Hello",
+                  title: "工控/系統軟體工程師",
+                  isHot: true,
+                  content:"系統程式開發與建置系統支持企業運營與各項業務推展，需收集各單位對於系統應用的需求，進行系統開發或維護的提供最佳解決方案。",
+                  productId: "4",
+                  btnTextL:"查看職缺內容",
+                  btnTextR:"投遞履歷"
+                },
+              ]
+            },
+        ],
+      },
     ],
   };
 

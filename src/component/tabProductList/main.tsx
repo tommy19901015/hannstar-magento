@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./css.scss";
-import { I_Article, I_ArticleList2 } from "./interface";
+import { I_TabsModule, I_TabDataModule } from "./interface";
 
-const fakeApiData = [
+const productListData = [
   {
     tabName: "11111",
     tabData: [
@@ -138,28 +138,29 @@ const fakeApiData = [
   },
 ];
 
-const TabProductList: React.FC<any> = () => {
+const TabProductList: React.FC<I_TabsModule[]> = (data) => {
   const componentName = "TabProductList";
-
-  const [productListData, setProductListData] = useState<any>([]);
+  const [initTabList, setInitTabList,] = useState<I_TabsModule[]>([]);
+  const [productListData, setProductListData] = useState<I_TabDataModule[]>([]);
   const [tab, setTab] = useState<number>(0);
 
   useEffect(() => {
-    setProductListData(fakeApiData[0].tabData);
-  }, [fakeApiData]);
+    let initTab = Object.values(data);
+    setInitTabList(initTab);
+  }, [data]);
 
   const TabBlock = () => {
     const changeTab = (tabName: string, index: number) => {
       setTab(index);
       const filterData = tabName
-        ? fakeApiData.filter((item: any) => item.tabName === tabName)
-        : fakeApiData;
+        ? initTabList.filter(item => item.tabName === tabName)
+        : initTabList;
       setProductListData(filterData[0].tabData);
     };
 
     return (
       <div className="tabContent">
-        {fakeApiData.map((item, index) => (
+        {initTabList.map((item, index) => (
           <div
             className={`tab ${tab === index ? "active" : ""}`}
             onClick={() => changeTab(item.tabName, index)}
@@ -171,7 +172,7 @@ const TabProductList: React.FC<any> = () => {
     );
   };
 
-  const ProductCard: React.FC<any> = ({ title, src, content, index }) => {
+  const ProductCard: React.FC<any> = ({ title, src, content, index, btnTextL, btnTextR }) => {
     return (
       <div className="productBlock" key={index}>
         <div className="imgBlock">
@@ -181,8 +182,8 @@ const TabProductList: React.FC<any> = () => {
           <div className="productTitle">{title}</div>
           <div className="productContent">{content}</div>
           <div className="btnBlock">
-            <div className="btn1">了解詳細規格</div>
-            <div className="btn2">提出需求</div>
+            <div className="btn1">{btnTextL}</div>
+            <div className="btn2">{btnTextR}</div>
           </div>
         </div>
       </div>
@@ -193,7 +194,7 @@ const TabProductList: React.FC<any> = () => {
     <div className={`${componentName}Content`}>
       <TabBlock />
       <div className="productListBlock">
-        {productListData.map((item: any, index: any) => (
+        {productListData.map((item, index) => (
           <ProductCard {...{ ...item, index }} />
         ))}
       </div>

@@ -26,7 +26,7 @@ $componentName: 'TabProductList';
 
     .productListBlock {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         .productBlock {
             display: inline-block;
             width: 20%;
