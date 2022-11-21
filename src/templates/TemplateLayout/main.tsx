@@ -8,34 +8,34 @@ import TitleContent from "../../component/titleContent/main";
 import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
-import { I_TemplateLayout, I_DataModel} from "./interface";
+import { I_TemplateLayout, I_DataModel } from "./interface";
 import "./css.scss";
 import Tab from "../../component/tab/main";
-import { 
-  I_Banner, 
-  I_Breadcrumbs, 
-  I_TitleContent, 
-  I_GraphicsModel, 
+import {
+  I_Banner,
+  I_Breadcrumbs,
+  I_TitleContent,
+  I_GraphicsModel,
   I_TitleContentVideo,
   I_TitleContentBanner,
   I_TitleContentImgGrid
- } from "../../types/base";
+} from "../../types/base";
 import ArticleBlock from "../../component/articleBlock/main";
 import TabProductList from "../../component/tabProductList/main";
 
 const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
   const pageName = "TemplateLayout";
 
-  const FullBanner: Function = ({data}:any): JSX.Element[] =>{
-    return  data.map((item: any) => (
+  const FullBanner: Function = ({ data }: any): JSX.Element[] => {
+    return data.map((item: any) => (
       <>
-      <Columns type={ColType.OneColFullPage} content={<Banner {...item} />} />
+        <Columns type={ColType.OneColFullPage} content={<Banner {...item} />} />
       </>
     ));
-    
+
   }
-    
-  const BannerBlock:Function = ({data}:any): JSX.Element[] => {
+
+  const BannerBlock: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
@@ -48,26 +48,27 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     ));
   }
 
-  const BreadcrumbsBlock:Function = ({data}:any): JSX.Element[] => {
+  const BreadcrumbsBlock: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
       <Columns type={ColType.OneCol} content={<Breadcrumbs {...item} />} />
     ));
   }
 
-  const SustainabilityGraphics3:Function = ({data}:any): JSX.Element => {
+  const SustainabilityGraphics3: Function = ({ data }: any): JSX.Element => {
     return (
       <Columns
-      type={ColType.OneCol}
-      content={
-        <div className={`${pageName}ModuleBlock`}>
-          <Graphics3 groups={data}/>
-        </div>
-      }
-    />
-  )};
+        type={ColType.OneCol}
+        content={
+          <div className={`${pageName}ModuleBlock`}>
+            <Graphics3 groups={data} />
+          </div>
+        }
+      />
+    )
+  };
 
-  const TitleContentBlock:Function = ({data}:any): JSX.Element[] => {
-    return data.map((item:any) => (
+  const TitleContentBlock: Function = ({ data }: any): JSX.Element[] => {
+    return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -79,8 +80,8 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     ));
   }
 
-  const TitleContentBanner:Function = ({data}:any): JSX.Element[] => {
-    return data.map((item:any) => (
+  const TitleContentBanner: Function = ({ data }: any): JSX.Element[] => {
+    return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -93,8 +94,8 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     ));
   }
 
-  const TitleContentImgGrid:Function = ({data}:any): JSX.Element []=> {
-    return data.map((item:any) => (
+  const TitleContentImgGrid: Function = ({ data }: any): JSX.Element[] => {
+    return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -106,8 +107,8 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       />
     ));
   }
-  const TitleContentVideo:Function = ({data}:any): JSX.Element[] => {
-    return data.map((item:any) => (
+  const TitleContentVideo: Function = ({ data }: any): JSX.Element[] => {
+    return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
         content={
@@ -119,7 +120,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       />
     ));
   }
-  const TitleContentGraphicsCard:Function = ({data}:any) : JSX.Element => {
+  const TitleContentGraphicsCard: Function = ({ data }: any): JSX.Element => {
     return data.map((item: any) => (
       <Columns
         type={ColType.OneCol}
@@ -132,7 +133,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       />
     ));
   }
-  const ArticleContent:Function = ({data}:any) : JSX.Element => {
+  const ArticleContent: Function = ({ data }: any): JSX.Element => {
     return (
       <Columns
         type={ColType.OneCol}
@@ -145,13 +146,13 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     );
   }
 
-  const TabProductListBlock:Function = ({data}:any) : JSX.Element => {
+  const TabProductListBlock: Function = ({ data }: any): JSX.Element => {
     return (
       <Columns
         type={ColType.OneCol}
         content={
           <div className={`${pageName}ModuleBlock`}>
-        <TabProductList {...data}/>
+            <TabProductList {...data} />
           </div>
         }
       />
@@ -159,9 +160,9 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
   }
 
   const mappingType = (data: I_DataModel[]) => {
-    console.log('mappingType',data)
+    console.log('mappingType', data)
     return {
-      FullBanner: <FullBanner data={data}/>,
+      FullBanner: <FullBanner data={data} />,
       BannerBlock: <BannerBlock data={data} />,
       BreadcrumbsBlock: <BreadcrumbsBlock data={data} />,
       SustainabilityGraphics3: <SustainabilityGraphics3 data={data} />, //
@@ -170,8 +171,9 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       TitleContentImgGrid: <TitleContentImgGrid data={data} />, // 4X4    組建  先不用
       TitleContentVideo: <TitleContentVideo data={data} />,
       TitleContentBanner: <TitleContentBanner data={data} />,
-      ArticleContent:<ArticleContent data={data}/>,
-      TabProductListBlock:<TabProductListBlock data={data}/>
+      ArticleContent: <ArticleContent data={data} />,
+      TabProductListBlock: <TabProductListBlock data={data} />,
+      // Tab: <Tab data={data} />
     };
   };
 

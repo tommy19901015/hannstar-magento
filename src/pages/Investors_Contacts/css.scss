@@ -3,25 +3,6 @@
 $pageName: 'InvestorsContacts';
 
 .#{$pageName}ContentBlock {
-    padding: 60px 0;
-    .d360TitleBlock {
-        @include hannstarH3Title;
-    }
-    .d360ContentBlock {
-        .d360Table {
-            table {
-                width: 100% !important;
-                border: 1px solid $hannstar-border-color;
-                tr {
-                    td {
-                        border: 1px solid $hannstar-border-color;
-                        padding: 10px;
-                    }
-                }
-            }
-            .hannstarTableRWD {
-                display: none;
-            }
-        }
-    }
+    padding: 40px 0;
+    @include D360Style;
 }

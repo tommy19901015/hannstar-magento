@@ -467,6 +467,7 @@ $font-base: 16px;
                 padding-bottom: 20px;
             }
             &.tablePC {
+                padding-bottom: 30px;
                 table {
                     width: 100% !important;
                     border: 1px solid $hannstar-border-color;
@@ -487,6 +488,44 @@ $font-base: 16px;
             }
             &.tableM {
                 display: none;
+            }
+            &.tablePDF {
+                table {
+                    width: 100%;
+                    border: 1px solid $hannstar-border-color;
+                    tbody {
+                        tr {
+                            &:first-child {
+                                background-color: $hannstar-blue2;
+                                color: #fff;
+                                padding: 10px;
+                            }
+                            td {
+                                border: 1px solid $hannstar-border-color;
+                                padding: 10px;
+                                a {
+                                    position: relative;
+                                    width: 100px;
+                                    height: 100px;
+                                    display: inline-block;
+                                    overflow: hidden;
+                                    color: transparent;
+                                    &::after {
+                                        position: absolute;
+                                        content: '';
+                                        width: 100px;
+                                        height: 100px;
+                                        top: 0;
+                                        left: 0;
+                                        background-image: url('https://magentodev.hannstar.com/static/version1669000113/frontend/Magento/luma/en_US/images/logo.svg');
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

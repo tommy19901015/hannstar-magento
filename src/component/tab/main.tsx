@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useIsMobile } from "../../hooks";
+import sustainabilityData from "../../common/sustainabilityData"
 import "./css.scss";
 
 type Props = {
   activeId: number
+  type?: string
+  data?: {
+    id: number,
+    text: string
+    href: string
+  }[]
 }
 
-const Tab: React.FC <Props>= ({activeId})  => {
+const Tab: React.FC<Props> = ({ activeId, data, type }) => {
   const isMobile = useIsMobile();
   const tabs = [
     {
@@ -46,34 +53,37 @@ const Tab: React.FC <Props>= ({activeId})  => {
       text: '公司治理章程與程序'
     },
   ]
+  // const tabData = sustainabilityData()[type]
+  const renderData = tabs
+
 
   return (
-      <div className="TabBlock">
-        {
-          isMobile?
+    <div className="TabBlock">
+      {
+        isMobile ?
           (
             <select name="" id="" className='dropdown'>
-               {tabs.map((tab) => (
-            <option key={tab.id} value={tab.text}>
-              {tab.text}
-            </option>
-            ))}
+              {renderData.map((tab: any) => (
+                <option key={tab.id} value={tab.text}>
+                  {tab.text}
+                </option>
+              ))}
             </select>
           )
           :
           (
             <ul>
-            {
-              tabs && tabs.map(tab=>( 
-                <li className={`${activeId === tab.id ?"active":""}`}>
-                  <a href="#">{ tab.text }</a>
-                  </li> 
-              ))
-            }
-          </ul>
+              {
+                renderData && renderData.map((tab: any) => (
+                  <li className={`${activeId === tab.id ? "active" : ""}`}>
+                    <a href="#">{tab.text}</a>
+                  </li>
+                ))
+              }
+            </ul>
           )
-        }
-      </div>
+      }
+    </div>
   );
 };
 

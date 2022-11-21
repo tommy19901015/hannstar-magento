@@ -4,17 +4,17 @@ import { postGetD360Art } from "../../services/api.service";
 import usePageData from "./pageData";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import D360ArticleList from "../../component/d360ArticleList/main";
-import D3601 from "../../D360fakeData/D3601.json";
+import Breadcrumbs from "../../component/breadcrumbs/main";
+import CollapseLi from "../../component/collapseLi/main"
+import D3603 from "../../D360fakeData/D3603.json";
 import D3602 from "../../D360fakeData/D3602.json";
+import D360_multipleBlock from "../../D360fakeData/D360_multipleBlock.json"
 import "./css.scss";
-
-// const testData: any =
 
 const InvestorsContacts: React.FC = () => {
   const pageName = "InvestorsContacts";
-  const [d360Data, setD360Data] = useState<any>();
-  const [selectOption, setSelectOption] = useState<string>("");
+  const [d360Data, setD360Data] = useState<any>()
+  const [activeTabIdx, setActiveTabIdx] = useState<number>(0)
 
   const pageData = usePageData();
 
@@ -33,76 +33,64 @@ const InvestorsContacts: React.FC = () => {
     //   });
 
     // setD360Data(testData.data)
-    console.log("D3601", D3601);
-    setD360Data(D3601.data);
-  }, []);
 
-  const MultipleBlock = () => {
-    const totalData: any = [];
-    if (d360Data) {
-      return d360Data.block.map((item: any, index: number) => {
-        const initData = item.content
-          .replace("###Table PC#", "###Table PC")
-          .replace("###Table M#", "###Table M");
-        const strArr: string[] = [];
-        const pcStartBlock: string = initData.split("###Table PC")[0];
-        const pcEndBlock: string = initData.split("###Table PC")[2];
-        let mStartBlock: string = "";
-        let mEndBlock: string = "";
-        if (pcEndBlock) {
-          mStartBlock = pcEndBlock.split("###Table M")[0];
-          mEndBlock = pcEndBlock.split("###Table M")[2];
-        }
-        strArr.push(pcStartBlock);
-        strArr.push(item.tablePC);
-        // strArr.push(getRWDTable(item.tableM))
-        strArr.push(mStartBlock);
-        strArr.push(mEndBlock);
-        totalData.push(strArr);
-        return (
-          <div className="testMultipleBlock">
-            <div dangerouslySetInnerHTML={{ __html: pcStartBlock }} />
-            <div dangerouslySetInnerHTML={{ __html: item.tablePC }} />
-            {/* {item.tableM && <div className="mTable">{getRWDTable(item.tableM)}</div>} */}
-            <div dangerouslySetInnerHTML={{ __html: mStartBlock }} />
-            <div dangerouslySetInnerHTML={{ __html: mEndBlock }} />
-          </div>
-        );
-      });
+    //test data--------------
+    console.log('D3603', D360_multipleBlock);
+    if (D360_multipleBlock.result === "success") {
+      setD360Data([D360_multipleBlock])
     }
-    return null;
-  };
 
-  const D360Article = () => {
-    return (
-      <div className="">
-        <div className="d360TitleBlock">{d360Data.metaTitle}</div>
-        <div className="d360ContentBlock">
-          {d360Data.block.map((item: any) => (
-            <>
-              {/* <div className="testHtml" dangerouslySetInnerHTML={{ __html: item.content }} /> */}
-              <br />
-              <div
-                className="d360Table"
-                dangerouslySetInnerHTML={{ __html: item.tablePC }}
-              />
-            </>
-          ))}
-        </div>
-      </div>
-    );
-  };
+
+
+    //test data--------------
+  }, [])
+
+  const D360Block = () => {
+
+    const getRWDTable = (document360Data: any) => {
+      const div: any = document.createElement('div');
+      div.innerHTML = document360Data.trim();
+      const table: any = div.getElementsByTagName('table')
+      const trLlist: any = table[0].getElementsByTagName("tr")
+      const trLlistArray = [...trLlist]
+      const rwdData = trLlistArray.map((tr: any, idx: number) => {
+        const td = tr.getElementsByTagName("td")
+        const tdArray = [...td]
+        return { title: tdArray[0].innerText, content: [tdArray[1].innerHTML] }
+      })
+      return <CollapseLi data={rwdData} />
+    };
+
+    const multipleBlock = (document360Data: any) => {
+      return document360Data.block.map((item: any) => <>
+        {item.content && <div className="d360HTML content" dangerouslySetInnerHTML={{ __html: item.content }} />}
+        {item.tablePC && <div className="d360HTML tablePC" dangerouslySetInnerHTML={{ __html: item.tablePC }} />}
+        {item.tableM && <div className="d360HTML tableM">{getRWDTable(item.tableM)}</div>}
+      </>)
+    }
+
+    return <div className={`${pageName}ContentBlock`}>
+      {
+        d360Data && <>
+          <div className="d360ContentBlock">
+            <div className="d360Title">{d360Data[activeTabIdx].metaTitle}</div>
+            {multipleBlock(d360Data[activeTabIdx].data)}
+          </div>
+        </>
+      }
+    </div >
+  }
 
   return (
     <Layout>
       <Columns
         type={ColType.OneCol}
         content={
-          <div className={`${pageName}ContentBlock`}>
-            {d360Data && <D360Article />}
-          </div>
-        }
-      />
+          <>
+            <Breadcrumbs {...pageData.breadcrumbs} />
+            <D360Block />
+          </>
+        } />
     </Layout>
   );
 };
