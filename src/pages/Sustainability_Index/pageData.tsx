@@ -38,14 +38,29 @@ function usePageData() {
           ],
       },
       {
+        type: "TitleContentImgGrid",
+        data: [
+            {    
+              titleContent: {
+                title: "永續重點績效",
+                content: ""
+              }, 
+              imgGrids:[
+   
+              ]
+            }
+          ]
+      },
+      {
         type: "TitleContentBlock",
         data: [
             {                     
               title: "永續重點績效",
-              content: ""
+              content: "",
             },
         ],
       },
+
       {
           type:"SustainabilityGraphics3",
           data:[
