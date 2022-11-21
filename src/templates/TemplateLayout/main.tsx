@@ -21,6 +21,7 @@ import {
   I_TitleContentImgGrid
  } from "../../types/base";
 import ArticleBlock from "../../component/articleBlock/main";
+import TabProductList from "../../component/tabProductList/main";
 
 const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
   const pageName = "TemplateLayout";
@@ -144,6 +145,18 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     );
   }
 
+  const TabProductListBlock:Function = ({data}:any) : JSX.Element => {
+    return (
+      <Columns
+        type={ColType.OneCol}
+        content={
+          <div className={`${pageName}ModuleBlock`}>
+        <TabProductList {...data}/>
+          </div>
+        }
+      />
+    );
+  }
 
   const mappingType = (data: I_DataModel[]) => {
     console.log('mappingType',data)
@@ -157,7 +170,8 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       TitleContentImgGrid: <TitleContentImgGrid data={data} />, // 4X4    組建  先不用
       TitleContentVideo: <TitleContentVideo data={data} />,
       TitleContentBanner: <TitleContentBanner data={data} />,
-      ArticleContent:<ArticleContent data={data}/>
+      ArticleContent:<ArticleContent data={data}/>,
+      TabProductListBlock:<TabProductListBlock data={data}/>
     };
   };
 

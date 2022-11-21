@@ -11,8 +11,8 @@ $componentName: 'TitleContent';
     .textBlock {
         text-align: center;
         .content {
-            @include hannstarContent0;
-            //padding-bottom: 60px;
+            @include hannstarContent1;
+            padding-bottom: 30px;
         }
         .linkBtn {
             @include hannstarBtn;
@@ -20,8 +20,12 @@ $componentName: 'TitleContent';
     }
     @media screen and (max-width: $breakpoint) {
         .title {
+            @include hannstarH3Title;
+            padding-bottom: 20px;
         }
         .content {
+            @include hannstarContent1;
+            padding-bottom: 20px;
         }
     }
 }

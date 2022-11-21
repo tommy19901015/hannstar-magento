@@ -63,7 +63,7 @@ const Template3: React.FC<I_Template3> = ({ banner, breadcrumbs, module1, module
       pageContentArr.push(<Columns type={ColType.OneCol}
         content={<div className={`${pageName}ModuleBlock`}>
           <TitleContent {...module5.tabProductList} />
-          <TabProductList />
+          {/* <TabProductList /> */}
         </div>} />)
     }
 

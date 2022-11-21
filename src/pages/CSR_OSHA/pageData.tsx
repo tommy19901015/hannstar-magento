@@ -37,78 +37,33 @@ function usePageData() {
               ],
             },
             {
-              type: "TitleContentBlock",
-              data: [
-                  {                     
-                    title: "職業安全績效",
-                    content: "瀚宇彩晶落實在地採購，減少環境衝擊外亦期待增加當地就業機會，促進經濟發展。所有供應商均需配合瀚宇彩晶企業社會責任政策，簽署「瀚宇彩晶勞工與道德供應商承諾書」及「瀚宇彩晶勞工和道德風險評估表」，方可成為合格供應商。對於供應商之績效，瀚宇彩晶定期於每月及每季進行評核，當有發生重大情況時，則啟動不定期評鑑審核。勞工與道德供應商承諾書及風險評估表等RBA文件簽署率100%，環安與道德社會責任表現考核通過率100%",   
-                  },
-              ],
-            },
-            {
-                type: "TitleContentBlock",
-                data: [
-                    {                     
-                      title: "供應鏈風險鑑別與管理",
-                      content: "供應鏈的ESG風險除了會帶來營運中斷風險外，亦會帶來聲譽風險。如何建構具ESG韌性的供應鏈，與供應商共創價值瀚宇彩晶的重要使命之一。",   
-                    },
-                ],
-            },
-            {
-              type:"SustainabilityGraphics3",
+              type: "TitleContentBanner",
               data:[
-                {
-                    src: "https://fakeimg.pl/1000x700/?text=Image",
-                    title: "重要原物料",
-                    content:["玻璃基板","驅動IC","偏光板","背光板","液晶材料","彩色濾光片"]
-                },
-                {
-                    src: "https://fakeimg.pl/1000x700/?text=Image",
-                    title: "風險類型",
-                    content:["可取得性和管道的實體限制","價格變化風險","法規風險","聲譽風險"]
-                },
-                {
-                    src: "https://fakeimg.pl/1000x700/?text=Image",
-                    title: "供應鏈管理策略",
-                    content:["供應商的多元化","材料的儲備","替代材料和替代材料的","開發或採購","對關鍵原物料回收技術的投資"]
-                },
+                  {
+                      titleContent: {
+                        title: "職業安全績效",
+                        content:
+                          "瀚宇彩晶致力降低職業傷害的風險，並教育訓練、人力配置、設備改善、制度改善四個面向進行改善和優化，我們投入超過千萬的資源與系統，盤查和管理一萬六千多個安全開關，增設七位工安專職人員、調訓近900名同仁、建置安全採購規範、改善近百台的設備，同時劃分101個巡檢區域、改善作業流程，以強化和完善工作的場域和環境。"
+                      },
+                      banner: {
+                        src: "https://fakeimg.pl/1000x700/?text=Image",
+                        title: "",
+                        text: "",
+                        textAlign: TextAlign.BottomLeft,
+                      },
+                    },
               ]
             },
             {
-                type: "TitleContentBanner",
-                data:[
-                    {
-                        titleContent: {
-                          title: "職業安全績效",
-                          content:
-                            "瀚宇彩晶致力降低職業傷害的風險，並教育訓練、人力配置、設備改善、制度改善四個面向進行改善和優化，我們投入超過千萬的資源與系統，盤查和管理一萬六千多個安全開關，增設七位工安專職人員、調訓近900名同仁、建置安全採購規範、改善近百台的設備，同時劃分101個巡檢區域、改善作業流程，以強化和完善工作的場域和環境。"
-                        },
-                        banner: {
-                          src: "https://fakeimg.pl/1000x700/?text=Image",
-                          title: "",
-                          text: "",
-                          textAlign: TextAlign.BottomLeft,
-                        },
-                      },
-                ]
-            },
-            {
-                type: "BannerBlock",
-                data:[
-                    {
-                        titleContent: {
-                          title: "環安政策",
-                          content:
-                            ""
-                        },
-                        banner: {
-                          src: "https://fakeimg.pl/1000x700/?text=Image",
-                          title: "",
-                          text: "",
-                          textAlign: TextAlign.BottomLeft,
-                        },
-                      },
-                ]
+              type: "BannerBlock",
+              data: [
+                {
+                  src: "https://fakeimg.pl/1000x700/?text=Image",
+                  title: "環安政策",
+                  text: "",
+                  textAlign: TextAlign.BottomLeft,
+                },
+              ],
             },
             {
                 type:"SustainabilityGraphics3",
@@ -131,22 +86,15 @@ function usePageData() {
                 ]
             },
             {
-                type: "BannerBlock",
-                data:[
-                    {
-                        titleContent: {
-                          title: "健康促進",
-                          content:
-                            "瀚宇彩晶重視員工的安全健康，定期辦理健康促進宣導與活動，並定期提供健康相關檢測或諮詢服務，2021年度健康檢查總人數為2,689人次，健康促進宣導活動參與總人數為703人次"
-                        },
-                        banner: {
-                          src: "https://fakeimg.pl/1000x700/?text=Image",
-                          title: "",
-                          text: "",
-                          textAlign: TextAlign.BottomLeft,
-                        },
-                      },
-                ]
+              type: "BannerBlock",
+              data: [
+                {
+                  src: "https://fakeimg.pl/1000x700/?text=Image",
+                  title: "健康促進",
+                  text: "瀚宇彩晶重視員工的安全健康，定期辦理健康促進宣導與活動，並定期提供健康相關檢測或諮詢服務，2021年度健康檢查總人數為2,689人次，健康促進宣導活動參與總人數為703人次",
+                  textAlign: TextAlign.BottomLeft,
+                },
+              ],
             },
             {
                 type:"SustainabilityGraphics3",

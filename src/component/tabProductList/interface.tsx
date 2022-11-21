@@ -1,16 +1,14 @@
-export interface I_Article {
+export type I_TabDataModule = {
   src: string;
   title: string;
-  date: string;
-  description: string;
-  href: string;
-  index?: number;
+  isHot: boolean;
+  content:string;
+  productId:string;
+  btnTextL?:string;
+  btnTextR?:string;
 }
 
-export interface I_ArticleList2 {
-  title: string;
-  data: {
-    catalog: string;
-    articleDatas: I_Article[];
-  }[];
+export interface I_TabsModule {
+  tabName: string;
+  tabData: I_TabDataModule[];
 }
