@@ -4,7 +4,7 @@ import { I_GraphicsCard } from "./interface";
 
 const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
   const componentName = "GraphicsCard";
-
+  console.log(' data, rowCount, theme', data, rowCount, theme)
   return (
     <div className={`${componentName}Content row${rowCount}`}>
       {data.map((item, idx) => (
@@ -15,7 +15,13 @@ const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
           <div className={`contentWrap ${theme}`}>
             <div className="textBlock">
               <div className={`title ${theme}`}>{item.title}</div>
-              <div className="content">{item.text}</div>
+              {
+                Array.isArray(item.text)?
+                <>{item.text.map(childcontent => <ul className="content"><li>{childcontent}</li></ul>)}</>
+                :<div className="content">{item.text}</div>
+
+              }
+  
             </div>
             {item.href &&
               <a className="btnBlock" href={item.href}>{item.btnText}</a>}

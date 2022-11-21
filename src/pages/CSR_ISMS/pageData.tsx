@@ -37,23 +37,27 @@ function usePageData() {
         ],
       },
       {
-        type: "TitleContentBanner",
+        type: "TitleContentBlock",
         data: [
-            {
-                
-                titleContent: {
-                    title: "資訊安全管理",
-                    content: ""
-                },
-                banner: {
-                    src: "https://fakeimg.pl/1000x700/?text=Image",
-                    title: "",
-                    text: "",
-                    textAlign: TextAlign.BottomLeft,
-                },
-                
+            {                     
+              title: "資訊安全管理",
+              content: ""
             },
         ],
+      },
+      {
+        type: "TitleContentImgGrid",
+        data: [
+          {
+            rowCount:4, 
+            imgGrids:[
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+            ]
+          }
+        ]
       },
       {
         type:"SustainabilityGraphics3",
@@ -74,10 +78,6 @@ function usePageData() {
             },
         ]
       },
-      {
-        type:"SustainabilityGraphics3",
-        data:[]
-      }
     ],
   };
 

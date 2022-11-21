@@ -38,6 +38,20 @@ function usePageData() {
                 ],
             },
             {
+              type: "TitleContentImgGrid",
+              data: [
+                {
+                  rowCount:4, 
+                  imgGrids:[
+                    { src: "https://fakeimg.pl/100x100/?text=Image" },
+                    { src: "https://fakeimg.pl/100x100/?text=Image" },
+                    { src: "https://fakeimg.pl/100x100/?text=Image" },
+                    { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  ]
+                }
+              ]
+            },
+            {
                 type:"SustainabilityGraphics3",
                 data:[
                     {

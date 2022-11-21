@@ -93,18 +93,19 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     ));
   };
 
-  const TitleContentImgGrid: Function = ({ data }: any): JSX.Element[] => {
-    return data.map((item: any) => (
+  const TitleContentImgGrid: Function = ({ data }: any): JSX.Element => {
+      const { titleContent, row, imgGrids} = data[0];
+    return (
       <Columns
         type={ColType.OneCol}
         content={
           <div className={`${pageName}ModuleBlock`}>
-            <TitleContent {...item.titleContent} />
-            <ImgGrid {...item.imgGrids} />
+            <TitleContent {...titleContent} />
+            <ImgGrid row={row} imgs={imgGrids} />
           </div>
         }
       />
-    ));
+    );
   };
   const TitleContentVideo: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
@@ -120,17 +121,16 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     ));
   };
   const TitleContentGraphicsCard: Function = ({ data }: any): JSX.Element => {
-    return data.map((item: any) => (
+    return (
       <Columns
         type={ColType.OneCol}
         content={
           <div className={`${pageName}ModuleBlock`}>
-            <TitleContent {...item.titleContent} />
-            <GraphicsCard {...item.graphicsCard} />
+            <GraphicsCard {...data[0]} />
           </div>
         }
       />
-    ));
+    );
   };
   const ArticleContent: Function = ({ data }: any): JSX.Element => {
     return (

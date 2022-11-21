@@ -3,8 +3,8 @@
 $pageName: "TemplateLayout";
 
 .#{$pageName}ModuleBlock {
-  margin-bottom: 120px;
+  //margin-bottom: 120px;
   @media screen and (max-width: $breakpoint) {
-    margin-bottom: 80px;
+    //margin-bottom: 80px;
   }
 }

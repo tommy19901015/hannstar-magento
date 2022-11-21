@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
 function usePageData() {
@@ -132,7 +133,39 @@ function usePageData() {
                       content: "除定期委托外部機構執行作業環境採樣檢測外，公司也推動專業職能治療師一對一指導及調理服務，以降低及預防肌肉骨骼傷害，確保同仁健康；另避免ITO靶材研磨作業同仁可能造成肺部病變，改善銦靶材研磨作業的曝露，除規劃出一個獨立空間作業外，並要求作業同仁配戴正壓式呼吸防護具，每年執行作業同仁血中銦的特殊健檢，以掌握同仁的曝露情況，落實分級健康管理，目前作業同仁血中銦檢測值（≦3.0μg/L）皆符合法規要求。此外，為保護交付承攬工程的外部工作者，確實做好各項安全管理，訂有「承攬商安全衛生及環保管理辦法」管制，並對特殊作業（包含動火、吊掛、局限空間等作業），要求由瀚宇彩晶承辦人偕同工安室與承攬單位人員實施作業前查核，確認相關安全防護後，始可動工作業。"
                     },
                 ],
-              },
+            },
+            {
+              type: "TitleContentGraphicsCard",
+              data: [
+                {
+                  rowCount: 3,
+                  theme: GraphicsTheme.Theme1,
+                  data: [
+                    {
+                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      title:"人因性危害防治",
+                      text:"邀請專業職能治療師帶入職能治療概念，改善後續下背痛引發的影響。藉由教導自主訓練運動，改善身體活動障礙、改變肌肉狀況、保護脊椎、減低疼痛，進而提高生活品質之功效，減少日後罹患下背痛症候群所造成影響。",
+                      href:"",
+                      btnText:"",
+                    },
+                    {
+                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      title:"自動檢查機制",
+                      text:"為保障公司及全體員工的安全與健康，並確保所有機械設備、設施、警報、消防設施保有正常功能，瀚宇彩晶積極推動自動檢查，並藉由發現潛在之危害，而予以有效的預防職業災害發生。自動檢查項目包括升降機、鍋爐、堆高機、自動導引車、固定式起重機、高／低壓電器設備、壓力容器、高壓氣體特定設備、特化／化學設備、局部排氣設施及各項危險性作業之檢點等。",
+                      href:"",
+                      btnText:"",
+                    },
+                    {
+                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      title:"作業環境測定",
+                      text:"為提供員工一個安全及衛生之作業環境，瀚宇彩晶每半年針對有機溶劑、特定化學物質、粉塵、二氧化碳、鉛、照明及噪音定期實施作業環境測定，目前測定結果報告皆為正常。每次測定結果皆公佈於公用公佈欄上。",
+                      href:"",
+                      btnText:"",
+                    }
+                  ],
+                }
+              ]
+            },
         ],
     }
     return PageType;

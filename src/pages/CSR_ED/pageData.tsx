@@ -37,6 +37,41 @@ function usePageData() {
           },
         ],
       },
+
+      {
+        type: "TitleContentBlock",
+        data: [
+            {                     
+              title: "多元平等",
+              content: "建立尊重人權、多元平等人才任用、文化包容、員工成長、健康安全的友善職場，我們期待透過優秀的人力資本，持續為台灣面板產業創造無限可能。",   
+            },
+        ],
+      },
+      {
+        type: "TitleContentImgGrid",
+        data: [
+          {
+            rowCount:4, 
+            imgGrids:[
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+            ]
+          }
+        ]
+      },
+      {
+        type: "BannerBlock",
+        data: [
+          {
+            src: "https://fakeimg.pl/1000x700/?text=Image",
+            title: "尊重人權",
+            text: "我們支持並嚴格遵守國際勞動法規《負責任商業聯盟行為準則》的要求，訂定《工作規則》以維護員工權益，以及《性別工作平等法》、 《性騷擾防治及處理辦法》與《執行職務遭受不法侵害預防計畫》。要求全體人員於執行業務範圍內，實施良好的勞工與道德政策，並將這一要求延伸到供應商和承包商。",
+            textAlign: TextAlign.BottomLeft,
+          },
+        ]
+      },
       {
         type: "SustainabilityGraphics3",
         data: [
@@ -73,46 +108,61 @@ function usePageData() {
         ],
       },
       {
-        type: "TitleContentBanner",
+        type: "BannerBlock",
         data: [
           {
-            titleContent: {
-              title: "多元平等",
-              content:
-                "建立尊重人權、多元平等人才任用、文化包容、員工成長、健康安全的友善職場，我們期待透過優秀的人力資本，持續為台灣面板產業創造無限可能。",
-            },
-            banner: {
-              src: "https://fakeimg.pl/1000x700/?text=Image",
-              title: "",
-              text: "",
-              textAlign: TextAlign.BottomLeft,
-            },
+            src: "https://fakeimg.pl/1000x700/?text=Image",
+            title: "員工薪酬與福利",
+            text: "瀚宇彩晶所制定的薪酬、福利政策，不因性別、種族、宗教、政治立場、婚姻狀況或工會社團等而有所不同；相同職務、職等之不同性別員工基本薪資比例皆相同，且薪資給付100% 優於法定最低工資。",
+            textAlign: TextAlign.BottomLeft,
           },
-          {
-            titleContent: {
+        ]
+      },
+
+      {
+        type: "TitleContentBlock",
+        data: [
+            {                     
               title: "2021年非擔任主管職務之全時員工年度薪酬平均數及中位數",
-              content: "",
+              content: ""
             },
-            banner: {
-              src: "https://fakeimg.pl/1000x700/?text=Image",
-              title: "",
-              text: "",
-              textAlign: TextAlign.BottomLeft,
-            },
-          },
-          {
-            titleContent: {
-              title: "2021年度育嬰照護",
-              content: "",
-            },
-            banner: {
-              src: "https://fakeimg.pl/1000x700/?text=Image",
-              title: "",
-              text: "",
-              textAlign: TextAlign.BottomLeft,
-            },
-          },
         ],
+      },
+      {
+        type: "TitleContentImgGrid",
+        data: [
+          {
+            rowCount:3, 
+            imgGrids:[
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+            ]
+          }
+        ]
+      },
+
+      {
+        type: "TitleContentBlock",
+        data: [
+            {                     
+              title: "2021年度育嬰照護",
+              content: ""
+            },
+        ],
+      },
+      {
+        type: "TitleContentImgGrid",
+        data: [
+          {
+            rowCount:3, 
+            imgGrids:[
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+              { src: "https://fakeimg.pl/100x100/?text=Image" },
+            ]
+          }
+        ]
       },
     ],
   };

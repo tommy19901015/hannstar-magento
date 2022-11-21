@@ -9,7 +9,7 @@ export interface I_GraphicsCard {
   data: {
     src: string;
     title: string;
-    text: string;
+    text: string|string[];
     href?: string;
     btnText?: string;
   }[];

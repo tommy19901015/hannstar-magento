@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
 
@@ -38,6 +39,33 @@ function usePageData() {
             ],
           },
           {
+            type: "TitleContentBlock",
+            data: [
+                {                     
+                  title: "永續生產",
+                  content: ""
+                },
+            ],
+          },
+          {
+            type: "TitleContentImgGrid",
+            data: [
+              {
+                rowCount:4, 
+                imgGrids:[
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                ]
+              }
+            ]
+          },
+          {
             type: "TitleContentBanner",
             data: [
                 {
@@ -56,11 +84,38 @@ function usePageData() {
                 },
             ],
           },
-
           {
-            type:"SustainabilityGraphics3",
-            data:[]
-          }
+            type: "TitleContentGraphicsCard",
+            data: [
+              {
+                rowCount: 3,
+                theme: GraphicsTheme.Theme1,
+                data: [
+                  {
+                    src:"https://fakeimg.pl/100x100/?text=Image",
+                    title:"100%使用FCs機導入NF3及SF6燃燒減量設備",
+                    text:"溫室氣體排放自2005年累積至2021年已減少1,928,165公噸CO2e",
+                    href:"",
+                    btnText:"",
+                  },
+                  {
+                    src:"https://fakeimg.pl/100x100/?text=Image",
+                    title:"Array光阻液回收",
+                    text:"將製程中塗佈後多餘的光阻液收集，2021年回收再利用65.07公噸光阻液。",
+                    href:"",
+                    btnText:"",
+                  },
+                  {
+                    src:"https://fakeimg.pl/100x100/?text=Image",
+                    title:"再生水工程改善",
+                    text:"降低製造再生水後清洗管路的耗水量，預估每年可節省36,500百萬公升用水",
+                    href:"",
+                    btnText:"",
+                  }
+                ],
+              }
+            ]
+          },
         ],
       };
 

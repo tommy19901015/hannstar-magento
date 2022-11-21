@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TabEnum } from "../../types/Tmeplate1/interface";
 
@@ -35,6 +36,53 @@ function usePageData() {
             ],
           },
         ],
+      },
+      {
+        type: "TitleContentGraphicsCard",
+        data: [
+          {
+            rowCount: 3,
+            theme: GraphicsTheme.Theme1,
+            data: [
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"環境(E)",
+                text:[
+                  "廢棄物管理★",
+                  "低碳產品★",
+                  "氣候變遷與能源管理",
+                  "水資源管理"
+                ],
+                href:"",
+                btnText:"",
+              },
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"社會(S)",
+                text:[
+                  "產品無毒化★",
+                  "人才吸引與留任★",
+                  "職業健康與安全★",
+                  "責任採購",
+                  "人才培育與發展",
+                  "社會關懷與參與"
+                ],
+                href:"",
+                btnText:"",
+              },
+              {
+                src:"https://fakeimg.pl/100x100/?text=Image",
+                title:"經濟治理(G)",
+                text:[
+                  "誠信經營★",
+                  "營運績效"
+                ],
+                href:"",
+                btnText:"",
+              }
+            ],
+          }
+        ]
       },
       {
         type: "TitleContentBlock",
