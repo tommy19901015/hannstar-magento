@@ -95,6 +95,9 @@ import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
 import TFTIndex from "./pages/TFT_Index/main";
 import SolutionLabel from "./pages/Solution_Label/main";
 import SolutionIndex from "./pages/Solution_Index/main";
+import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
+import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
+import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -303,7 +306,11 @@ ReactDOM.render(
         path={"/solution/index"}
         element={<SolutionIndex />}/>
 
-<Route path={"/news/tft"} element={<TFTIndex/>}/>
+      <Route path={"/news/tft"} element={<TFTIndex/>}/>
+
+      <Route path={"/paperDisplay/index"} element={<PaperDisplayIndex/>}/>
+      <Route path={"/paperDisplay/technology"} element={<PaperDisplayTechnology/>}/>
+      <Route path={"/paperDisplay/introduce"} element={<PaperDisplayIntroduce/>}/>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

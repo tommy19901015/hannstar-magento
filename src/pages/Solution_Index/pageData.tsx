@@ -21,13 +21,11 @@ function usePageData() {
                 ],
             },
             {
-              type: "FullBanner",
+              type: "TitleContentBlock",
               data: [
-                {
-                  src: "https://fakeimg.pl/1000x700/?text=Image",
+                {                     
                   title: "Solution and System Integration Service",
-                  text: "Through the product intelligence optimization system, combined with platform big data operation, customers can quickly find the appropriate display panel and product information. Display application areas include: smart manufacturing, smart buildings, transportation, smart retail, health care, and smart education.",
-                  textAlign: TextAlign.BottomLeft,
+                  content: "Through the product intelligence optimization system, combined with platform big data operation, customers can quickly find the appropriate display panel and product information. Display application areas include: smart manufacturing, smart buildings, transportation, smart retail, health care, and smart education."
                 },
               ],
           },
