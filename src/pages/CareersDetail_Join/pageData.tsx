@@ -12,8 +12,8 @@ function usePageData() {
         data: [
           {
             src: "https://fakeimg.pl/1000x700/?text=Image",
-            title: "",
-            text: "彩晶讓你與時俱進成為更好的自己",
+            title: "彩晶讓你與時俱進成為更好的自己",
+            text: "",
             textAlign: TextAlign.BottomLeft,
           },
         ],

@@ -12,8 +12,8 @@ function usePageData() {
         data: [
           {
             src: "https://fakeimg.pl/1000x700/?text=Image",
-            title: "",
-            text: "工作在彩晶為彩晶人提供舒適的工作環境與便利設施",
+            title: "工作在彩晶為彩晶人提供舒適的工作環境與便利設施",
+            text: "",
             textAlign: TextAlign.BottomLeft,
           },
         ],

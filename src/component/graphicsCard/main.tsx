@@ -21,8 +21,12 @@ const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
                 :<div className="content">{item.text}</div>
               }
             </div>
-            {item.href &&
-              <a className="btnBlock" href={item.href}>{item.btnText}</a>}
+            {item.href  && (
+              <>
+              <a className="btnBlock" href={item.href}>{item.btnText}</a>
+              <a className="btnBlock" href={item.hrefSec}>{item.btnTextSec}</a>
+              </>
+            )}
           </div>
         </a>
       ))}

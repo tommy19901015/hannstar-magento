@@ -5,11 +5,12 @@ import { ImgStyle, GraphicsStyle } from "./styledComponent";
 import { I_TemplateLayout, I_DataModel} from "../../templates/TemplateLayout/interface";
 
 const Graphics3: React.FC<I_Graphics3> = ({groups}:I_Graphics3) => {
+  console.log('groups',groups)
   const componentName = "Graphics3";
   return (
     <div className={`${componentName}Content`}>
       {groups.map((item, index) => (
-        <GraphicsStyle className="graphicsBlock" key={index}>
+        <GraphicsStyle className={`graphicsBlock`} key={index}>
           <div className="imgBlock">
             <ImgStyle
               src={item.src}

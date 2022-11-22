@@ -2,11 +2,11 @@ import React from "react";
 import { I_GridModel } from "./interface";
 import "./css.scss";
 
-const ImgGrid: React.FC<I_GridModel> = ({row, imgs}) => {
+const ImgGrid: React.FC<I_GridModel> = ({rowCount, imgs}) => {
   const componentName = "ImgGrid";
-  console.log('imgs',imgs)
+  console.log('imgs',rowCount)
   return (
-    <div className={`${componentName}Content`}>
+    <div className={`${componentName}Content row-${rowCount}`}>
       {imgs.map((item, idx) => {
         return (
           <img

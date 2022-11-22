@@ -4,6 +4,6 @@ export type I_ImgGrid = {
 }
 
 export type I_GridModel = { 
-  row: number;
+  rowCount: number;
   imgs: I_ImgGrid[];
 }
