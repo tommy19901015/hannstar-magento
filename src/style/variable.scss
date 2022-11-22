@@ -464,6 +464,8 @@ $font-base: 16px;
     .d360ContentBlock {
         .d360HTML {
             &.content {
+                font-size: 16px;
+                line-height: 1.8;
                 padding-bottom: 20px;
             }
             &.tablePC {
@@ -506,16 +508,16 @@ $font-base: 16px;
                                 vertical-align: middle;
                                 a {
                                     position: relative;
-                                    width: 48px;
-                                    height: 48px;
+                                    width: 30px;
+                                    height: 30px;
                                     display: inline-block;
                                     overflow: hidden;
                                     color: transparent;
                                     &::after {
                                         position: absolute;
                                         content: '';
-                                        width: 48px;
-                                        height: 48px;
+                                        width: 30px;
+                                        height: 30px;
                                         top: 0;
                                         left: 0;
                                         background-image: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/hannstar/download-PDF.png');

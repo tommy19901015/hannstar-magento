@@ -31,7 +31,7 @@ function useMenu() {
           { title: "瀚宇彩晶團隊", href: hannstar.about_team.href },
           { title: "瀚宇關係企業", href: hannstar.about_family.href },
           {
-            title: "認證與肯定",
+            title: "認證與獎項",
             href: hannstar.about_certification.href,
           },
           { title: "全球據點", href: hannstar.about_stronghold.href },
