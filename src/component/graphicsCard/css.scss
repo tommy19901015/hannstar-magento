@@ -4,7 +4,7 @@ $componentName: 'GraphicsCard';
 
 .#{$componentName}Content {
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 60px;
     &.row2 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -25,7 +25,7 @@ $componentName: 'GraphicsCard';
         }
         .imgBlock {
             position: relative;
-            padding-bottom: 56.2%;
+            padding-bottom: 66.6%;
             img {
                 position: absolute;
                 object-fit: cover;
@@ -56,12 +56,15 @@ $componentName: 'GraphicsCard';
                     }
                 }
                 .content {
-                    @include hannstarContent0;
-                    padding: 20px 0;
+                    @include hannstarContent1;
+                    padding-top: 10px;
                 }
             }
             .btnBlock {
                 @include hannstarBtn;
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
             }
         }
     }

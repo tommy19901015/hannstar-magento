@@ -4,8 +4,15 @@ $componentName: "ImgGrid";
 
 .#{$componentName}Content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &.row-3{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &.row-4{
+    grid-template-columns: repeat(4, 1fr);
+  }
   .#{$componentName}Img {
     width: 100%;
   }

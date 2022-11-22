@@ -47,15 +47,25 @@ function usePageData() {
         {
           rowCount:3, 
           imgGrids:[
-            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
-            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
-            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
-            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
-            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
-            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x60/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x60/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x60/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x60/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x60/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x60/?text=Image", href:"" },
           ]
         }
       ]
+    },
+    {
+      type: "TitleContentBlock",
+      data: [
+        {
+          title: "提出需求",
+          content:
+            "",
+        },
+      ],
     },
     {
       type: "TitleContentGraphicsCard",
@@ -89,9 +99,9 @@ function usePageData() {
               src:"https://fakeimg.pl/100x100/?text=Image",
               title:"報價",
               text:"提供客戶線上專案報價服務",
-              href:"",
+              href:"/",
               btnText:"優選產品",
-              hrefSec:"",
+              hrefSec:"/",
               btnTextSec:"客製化服務",
             }
           ],
@@ -101,21 +111,6 @@ function usePageData() {
 
   ],
 }
-  // const PageType: I_PageType = {
-  //   breadcrumbs: {
-  //     title: "",
-  //     breadcrumbsLink: [
-  //       {
-  //         text: t("About_Family.breadcrumbsIndex"),
-  //         href: "/",
-  //       },
-  //       {
-  //         text: "報告書下載",
-  //         href: "",
-  //       },
-  //     ],
-  //   },
-  // };
 
   return PageType;
 }

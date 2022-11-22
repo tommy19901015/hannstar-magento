@@ -11,8 +11,8 @@ function usePageData() {
         data: [
           {
             src: "https://fakeimg.pl/1000x700/?text=Image",
-            title: "",
-            text: "透過不斷創新，我們透過綠色顯示器的應用 開啟讓世界更美好、生活更精采的視窗",
+            title: "擁抱改變 開創未來與我們一起發揮科技無所不在的影響力",
+            text: "",
             textAlign: TextAlign.BottomLeft,
           },
         ],

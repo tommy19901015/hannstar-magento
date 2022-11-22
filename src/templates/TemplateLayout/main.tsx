@@ -95,14 +95,16 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
   };
 
   const TitleContentImgGrid: Function = ({ data }: any): JSX.Element => {
-      const { titleContent, row, imgGrids} = data[0];
+    console.log('data[0]',data[0])
+      const { titleContent, rowCount, imgGrids} = data[0];
+
     return (
       <Columns
         type={ColType.OneCol}
         content={
           <div className={`${pageName}ModuleBlock`}>
             <TitleContent {...titleContent} />
-            <ImgGrid row={row} imgs={imgGrids} />
+            <ImgGrid rowCount={rowCount} imgs={imgGrids} />
           </div>
         }
       />
