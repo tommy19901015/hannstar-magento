@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
-import { GraphicsTheme } from "../../component/graphicsCard/interface";
-import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
-import { TabEnum } from "../../types/Tmeplate1/interface";
+import { TextAlign } from "../../../component/banner/interface";
+import { GraphicsTheme } from "../../../component/graphicsCard/interface";
+import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -42,7 +41,7 @@ function usePageData() {
         data: [
           {
             type: "csr",
-            activeId: 0,
+            activeId: 2,
             component: "tab",
           },
         ],

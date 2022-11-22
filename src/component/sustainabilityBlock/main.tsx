@@ -9,6 +9,7 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
   activeId,
   component,
   type,
+  handleSustainabilityTab,
 }) => {
   const isMobile = useIsMobile();
 
@@ -35,8 +36,11 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
           <ul>
             {tabData &&
               tabData.map((tab: any, index: number) => (
-                <li className={`${activeId === index ? "active" : ""}`}>
-                  <a href="/">{tab.text}</a>
+                <li
+                  className={`${activeId === index ? "active" : ""}`}
+                  onClick={() => handleSustainabilityTab(tab.type)}
+                >
+                  {tab.text}
                 </li>
               ))}
           </ul>
