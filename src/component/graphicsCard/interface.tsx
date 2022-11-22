@@ -12,5 +12,7 @@ export interface I_GraphicsCard {
     text: string|string[];
     href?: string;
     btnText?: string;
+    hrefSec?:string;
+    btnTextSec?:string;
   }[];
 }

@@ -6,6 +6,7 @@ const ArticleList2: React.FC<I_ArticleList2> = ({ title, data }) => {
   const componentName = "ArticleList2";
 
   const ArticleBlock: React.FC<I_Article> = (article, index) => {
+    console.log('article',article)
     return (
       <a className="articleBlock" href={article.href} key={index}>
         <div className="imgBlock">
@@ -13,8 +14,14 @@ const ArticleList2: React.FC<I_ArticleList2> = ({ title, data }) => {
         </div>
         <div className="contentWrap">
           <div className="articleTitle">{article.title}</div>
-          <div className="date">{article.date}</div>
-          <div className="description">{article.description}</div>
+          <div className="date">{article.subTitle}</div>
+          <div className="description">
+          {
+            Array.isArray(article.description)?
+            <>{article.description.map(childcontent => <ul className="content"><li>{childcontent}</li></ul>)}</>
+            :<div className="content">{article.description}</div>
+          }
+          </div>
         </div>
       </a>
     );
@@ -29,7 +36,7 @@ const ArticleList2: React.FC<I_ArticleList2> = ({ title, data }) => {
             <div className="catalogTitle">{item.catalog}</div>
             <div className="catalogContent">
               {item.articleDatas.map((article, index) => (
-                <ArticleBlock {...{ ...article, index }} />
+                <ArticleBlock {...article} />
               ))}
             </div>
           </div>

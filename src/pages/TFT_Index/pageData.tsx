@@ -1,23 +1,132 @@
 import { useTranslation } from "react-i18next";
 import { I_PageType } from "./interface";
 
+import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
+import { TextAlign } from "../../component/banner/interface";
+import { GraphicsTheme } from "../../component/graphicsCard/interface";
+
 function usePageData() {
   const { t } = useTranslation();
-  const PageType: I_PageType = {
-    breadcrumbs: {
-      title: "",
-      breadcrumbsLink: [
+  const PageType: I_TemplateLayout = {
+  props: [
+    {
+      type: "FullBanner",
+      data: [
         {
-          text: t("About_Family.breadcrumbsIndex"),
-          href: "/",
-        },
-        {
-          text: "報告書下載",
-          href: "",
+          src: "https://fakeimg.pl/1000x700/?text=Image",
+          title: "永續管理",
+          text: "追求成長與創新，深耕企業文化與核心價值，攜手利害關係人，透過價值鏈的延伸，實現永續經營的目標。",
+          textAlign: TextAlign.BottomLeft,
         },
       ],
     },
-  };
+    {
+      type: "FullBanner",
+      data: [
+        {
+          src: "https://fakeimg.pl/1000x700/?text=Image",
+          title: "永續管理",
+          text: "追求成長與創新，深耕企業文化與核心價值，攜手利害關係人，透過價值鏈的延伸，實現永續經營的目標。",
+          textAlign: TextAlign.BottomLeft,
+        },
+      ],
+    },
+    {
+      type: "FullBanner",
+      data: [
+        {
+          src: "https://fakeimg.pl/1000x700/?text=Image",
+          title: "關於產品行銷服務平台",
+          text: "透過產品智慧優選系統，結合平台大數據運運行，客戶能快速找到相對應合適的顯示面板及產品資訊。顯示應用領域包括：智能製造、智能建築、交通運輸、智慧零售、健康關懷、智慧育樂。",
+          textAlign: TextAlign.Center,
+        },
+      ],
+    },
+    {
+      type: "TitleContentBlock",
+      data: [
+        {
+          title: "產品應用",
+          content:
+            "",
+        },
+      ],
+    },
+    {
+      type: "TitleContentImgGrid",
+      data: [
+        {
+          rowCount:3, 
+          imgGrids:[
+            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+            { src: "https://fakeimg.pl/100x100/?text=Image", href:"" },
+          ]
+        }
+      ]
+    },
+    {
+      type: "TitleContentGraphicsCard",
+      data: [
+        {
+          rowCount: 4,
+          theme: GraphicsTheme.Theme1,
+          data: [
+            {
+              src:"https://fakeimg.pl/100x100/?text=Image",
+              title:"產品查詢",
+              text:"結合平台大數據運行，提供多元化產品，以符合客戶需求",
+              href:"",
+              btnText:"",
+            },
+            {
+              src:"https://fakeimg.pl/100x100/?text=Image",
+              title:"特殊材料",
+              text:"提供客戶線上專案報價服務",
+              href:"",
+              btnText:"",
+            },
+            {
+              src:"https://fakeimg.pl/100x100/?text=Image",
+              title:"智慧方案整合",
+              text:"一站式方案整合服務，提供嵌入式主板、顯示器與UI設計服務",
+              href:"",
+              btnText:"",
+            },
+            {
+              src:"https://fakeimg.pl/100x100/?text=Image",
+              title:"報價",
+              text:"提供客戶線上專案報價服務",
+              href:"",
+              btnText:"優選產品",
+              hrefSec:"",
+              btnTextSec:"客製化服務",
+            }
+          ],
+        }
+      ]
+    },
+
+  ],
+}
+  // const PageType: I_PageType = {
+  //   breadcrumbs: {
+  //     title: "",
+  //     breadcrumbsLink: [
+  //       {
+  //         text: t("About_Family.breadcrumbsIndex"),
+  //         href: "/",
+  //       },
+  //       {
+  //         text: "報告書下載",
+  //         href: "",
+  //       },
+  //     ],
+  //   },
+  // };
 
   return PageType;
 }

@@ -3,6 +3,7 @@ export enum TextAlign {
     TopLeft = "topLeft",
     BottomLeft = "bottomLeft",
     BottomRight = "bottomRight",
+    Center = "center",
 }
 
 export interface I_Banner {

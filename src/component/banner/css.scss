@@ -35,6 +35,11 @@ $componentName: 'Banner';
             bottom: 0;
             right: 0;
         }
+        &.center {
+            top: 50%;
+            right: 50%;
+            transform: translate(-50%,-50%);
+        }
     }
     @media screen and (max-width: $breakpoint) {
         .textBlock {

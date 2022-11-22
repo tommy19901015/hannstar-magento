@@ -19,9 +19,7 @@ const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
                 Array.isArray(item.text)?
                 <>{item.text.map(childcontent => <ul className="content"><li>{childcontent}</li></ul>)}</>
                 :<div className="content">{item.text}</div>
-
               }
-  
             </div>
             {item.href &&
               <a className="btnBlock" href={item.href}>{item.btnText}</a>}

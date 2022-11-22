@@ -8,6 +8,7 @@ import TitleContent from "../../component/titleContent/main";
 import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
+import ArticleList2 from "../../component/articleList2/main";
 import { I_TemplateLayout, I_DataModel } from "./interface";
 import "./css.scss";
 import SustainabilityTab from "../../component/sustainabilityBlock/main";
@@ -158,6 +159,19 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
     );
   };
 
+  const ArticleListContent: Function = ({ data }: any): JSX.Element => {
+    return (
+      <Columns
+        type={ColType.OneCol}
+        content={
+          <div className={`${pageName}ModuleBlock`}>
+            <ArticleList2 {...data[0]} />
+          </div>
+        }
+      />
+    );
+  };
+
   const mappingType = (data: I_DataModel[]) => {
     console.log("mappingType", data);
     return {
@@ -172,6 +186,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({ props }) => {
       TitleContentBanner: <TitleContentBanner data={data} />,
       ArticleContent: <ArticleContent data={data} />,
       TabProductListBlock: <TabProductListBlock data={data} />,
+      ArticleListContent: <ArticleListContent data={data} />,
       // SustainabilityTab: <SustainabilityTab data={data} />,
     };
   };

@@ -53,6 +53,7 @@ export interface I_TitleContentImgGrid{
     rowCount: number;
     imgGrids: {
         src: string;
+        href?:string;
     }[],
 }
 

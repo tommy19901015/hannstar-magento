@@ -38,13 +38,71 @@ function usePageData() {
         ]
       },
       {
-        type: "TitleContentBlock",
-        data: [
-            {                     
-              title: "應徵流程",
-              content: "",   
-            },
-        ],
+        type: "ArticleListContent",
+        data:[
+          {
+          title: "應徵流程",
+          data: [
+            {
+              catalog: "",
+              articleDatas:[
+                {
+                  src: "https://fakeimg.pl/100x100/?text=Image",
+                  title: "步驟1-工作搜尋",
+                  subTitle: "facebook  / 瀚宇彩晶104",
+                  description: [
+                    "依據個人的學歷、經歷及專業，搜尋有興趣的職缺"
+                  ],
+                  href: "",
+                },
+                {
+                  src: "https://fakeimg.pl/100x100/?text=Image",
+                  title: "步驟2-履歷投遞",
+                  subTitle: "瀚宇彩晶104",
+                  description: [
+                    "履歷投遞後，主管將根據履歷合適程度進行審閱",
+                    "同時也會評估你的履歷是否適合其他職務"
+                  ],
+                  href: "",
+                },
+                {
+                  src: "https://fakeimg.pl/100x100/?text=Image",
+                  title: "步驟3-電話訪談",
+                  subTitle: "",
+                  description: [
+                    "合適者人資會進一步與你聯繫並邀請面談",
+                    "初步訪談了解你的經歷，並說明後續面試流程",
+                    "透過mail提供面試資訊與確認面試時間"
+                  ],
+                  href: "",
+                },
+                {
+                  src: "https://fakeimg.pl/100x100/?text=Image",
+                  title: "步驟4-填寫彩晶人事資料表",
+                  subTitle: "",
+                  description: "",
+                  href: "",
+                },
+                {
+                  src: "https://fakeimg.pl/100x100/?text=Image",
+                  title: "步驟5-到場或視訊參加面談",
+                  subTitle: "",
+                  description: [
+                    "依據與你約定的面試時間到場或視訊進行面談"],
+                  href: "",
+                },
+                {
+                  src: "https://fakeimg.pl/100x100/?text=Image",
+                  title: "步驟6-接獲錄取通知與報到",
+                  subTitle: "",
+                  description: ["資歷查核後，人資單位將以電話通知並說明報到程序，最後寄發錄取通知書"],
+                  href: "",
+                }
+              ],
+            }
+          ]
+          },
+        ]
       },
       {
         type: "TitleContentBlock",
