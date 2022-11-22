@@ -15,5 +15,19 @@ $componentName: "ImgGrid";
   }
   .#{$componentName}Img {
     width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  .#{$componentName}Content {
+    display: grid;
+    grid-gap: 30px;
+    &.row-3{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &.row-4{
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

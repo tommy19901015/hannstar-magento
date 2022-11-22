@@ -7,6 +7,8 @@ $componentName: 'GraphicsCard';
     grid-gap: 60px;
     &.row2 {
         grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        justify-content: center;
     }
     &.row3 {
         grid-template-columns: repeat(3, 1fr);
@@ -19,6 +21,8 @@ $componentName: 'GraphicsCard';
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        max-width: 300px;
+        width: 100%;
         box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
         &.Theme2 {
             box-shadow: none;
@@ -69,5 +73,20 @@ $componentName: 'GraphicsCard';
         }
     }
     @media screen and (max-width: $breakpoint) {
+        grid-gap: 20px;
+        &.row2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &.row3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &.row4 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .cardBlock {
+            width: 100%;
+            max-width: 300px;
+    }
+
     }
 }
