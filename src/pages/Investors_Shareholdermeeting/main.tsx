@@ -5,6 +5,7 @@ import usePageData from "./pageData";
 import Columns from "../../component/columns/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { ColType } from "../../component/columns/interface";
+import D360_oneArticle from "../../D360fakeData/D360_oneArticle.json"
 import "./css.scss";
 
 const testData = {
@@ -134,7 +135,8 @@ const InvestorsShareholdermeeting: React.FC = () => {
     // setD360Data(testData.data)
 
     //test data--------------
-    setD360Data(testJsonArr)
+    setD360Data(D360_oneArticle)
+    console.log('D360_oneArticle', D360_oneArticle);
     //test data--------------
   }, [])
 
@@ -144,12 +146,12 @@ const InvestorsShareholdermeeting: React.FC = () => {
 
   const D360Block = () => {
     return <div className={`${pageName}ContentBlock`}>
-      <ul className="d360Ul">
+      {/* <ul className="d360Ul">
         {testJsonArr.map((item: any, index: any) => <li className={`d360Li ${activeTabIdx === index ? "active" : ""}`} onClick={() => handleClickTab(index)}>{item.metaTitle}</li>)}
-      </ul>
+      </ul> */}
       {d360Data && <div className="d360ContentBlock">
-        <div className="d360Title">{d360Data[activeTabIdx].metaTitle}</div>
-        <div className="d360HTML" dangerouslySetInnerHTML={{ __html: d360Data[activeTabIdx].block[0].tablePC }} />
+        <div className="d360Title">{d360Data.data.metaTitle}</div>
+        <div className="d360HTML" dangerouslySetInnerHTML={{ __html: d360Data.data.block[0].content }} />
       </div>}
     </div >
   }

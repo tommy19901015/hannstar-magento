@@ -503,21 +503,22 @@ $font-base: 16px;
                             td {
                                 border: 1px solid $hannstar-border-color;
                                 padding: 10px;
+                                vertical-align: middle;
                                 a {
                                     position: relative;
-                                    width: 100px;
-                                    height: 100px;
+                                    width: 48px;
+                                    height: 48px;
                                     display: inline-block;
                                     overflow: hidden;
                                     color: transparent;
                                     &::after {
                                         position: absolute;
                                         content: '';
-                                        width: 100px;
-                                        height: 100px;
+                                        width: 48px;
+                                        height: 48px;
                                         top: 0;
                                         left: 0;
-                                        background-image: url('https://magentodev.hannstar.com/static/version1669000113/frontend/Magento/luma/en_US/images/logo.svg');
+                                        background-image: url('https://s3magentodev.s3.us-west-2.amazonaws.com/Image/hannstar/download-PDF.png');
                                         background-size: contain;
                                         background-repeat: no-repeat;
                                     }
