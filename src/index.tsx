@@ -98,6 +98,9 @@ import SolutionIndex from "./pages/Solution_Index/main";
 import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
 import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
 import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
+import HannspreeIndex from "./pages/Hannspree_Iindex/main";
+import HannspreeSolve from "./pages/Hannspree_Solve/main";
+import HannspreeCustom from "./pages/Hannspree_Custom/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -303,6 +306,12 @@ ReactDOM.render(
       <Route path={"/paperDisplay/index"} element={<PaperDisplayIndex/>}/>
       <Route path={"/paperDisplay/technology"} element={<PaperDisplayTechnology/>}/>
       <Route path={"/paperDisplay/introduce"} element={<PaperDisplayIntroduce/>}/>
+
+
+      <Route path={"/hannspree/index"} element={<HannspreeIndex/>}/>
+      <Route path={"/hannspree/solve"} element={<HannspreeSolve/>}/>
+      <Route path={"/hannspree/custom"} element={<HannspreeCustom/>}/>
+
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
