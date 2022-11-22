@@ -22,10 +22,10 @@ const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
               }
             </div>
             {item.href  && (
-              <>
               <a className="btnBlock" href={item.href}>{item.btnText}</a>
+            )}
+            {item.hrefSec  && (
               <a className="btnBlock" href={item.hrefSec}>{item.btnTextSec}</a>
-              </>
             )}
           </div>
         </a>

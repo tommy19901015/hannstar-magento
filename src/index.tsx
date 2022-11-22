@@ -93,6 +93,8 @@ import CareersDetailJoin from "./pages/CareersDetail_Join/main";
 import CareersDetailIndex from "./pages/CareersDetail_Index/main";
 import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
 import TFTIndex from "./pages/TFT_Index/main";
+import SolutionLabel from "./pages/Solution_Label/main";
+import SolutionIndex from "./pages/Solution_Index/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -292,6 +294,14 @@ ReactDOM.render(
         path={hannstar.careersDetail_Growup.href}
         element={<CareersDetailGrowup />}
       />
+
+      <Route
+        path={"/solution/label"}
+        element={<SolutionLabel />}/>
+
+      <Route
+        path={"/solution/index"}
+        element={<SolutionIndex />}/>
 
 <Route path={"/news/tft"} element={<TFTIndex/>}/>
     </Routes>
