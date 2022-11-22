@@ -210,7 +210,7 @@ ReactDOM.render(
       />
       <Route
         path={hannstar.sustainability_csr.href}
-        element={<SustainabilityChairman />}
+        element={<SustainabilityCSR />}
       />
       <Route
         path={hannstar.sustainability_governance.href}
@@ -231,10 +231,6 @@ ReactDOM.render(
       <Route
         path={hannstar.sustainability_esg.href}
         element={<SustainabilityESG />}
-      />
-      <Route
-        path={hannstar.sustainability_csr.href}
-        element={<SustainabilityCSR />}
       />
       {/*--------------*/}
       <Route path={"/news/climchangerm"} element={<CSRClimChangeRM />} />
@@ -298,13 +294,9 @@ ReactDOM.render(
         element={<CareersDetailGrowup />}
       />
 
-      <Route
-        path={"/solution/label"}
-        element={<SolutionLabel />}/>
+      <Route path={"/solution/label"} element={<SolutionLabel />} />
 
-      <Route
-        path={"/solution/index"}
-        element={<SolutionIndex />}/>
+      <Route path={"/solution/index"} element={<SolutionIndex />} />
 
       <Route path={"/news/tft"} element={<TFTIndex/>}/>
 
