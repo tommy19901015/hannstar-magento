@@ -161,23 +161,6 @@ function usePageData() {
     ],
   };
 
-  // const PageType: any = {
-  //   tab: [
-  //     { text: "董事長的話", href: "" },
-  //     { text: "永續治理", href: "" },
-  //     { text: "利害關係人議合", href: "" },
-  //     { text: "利害關係人溝通管道", href: "" },
-  //   ],
-  //   graphics3: {
-  //     src: "https://fakeimg.pl/1000x700/?text=Image",
-  //     title: "請參閱瀚宇彩晶2021年度永續報告書",
-  //     content: "第1章  永續管理",
-  //     btnText: "閱讀全文",
-  //     btnHref: "/",
-  //     bgColor: "#F6F6F6",
-  //   },
-  // };
-
   return PageType;
 }
 

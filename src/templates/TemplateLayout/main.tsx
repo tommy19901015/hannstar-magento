@@ -89,7 +89,6 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
   };
 
   const TitleContentImgGrid: Function = ({ data }: any): JSX.Element => {
-    console.log("data[0]", data[0]);
     const { titleContent, rowCount, imgGrids } = data[0];
 
     return (
@@ -185,7 +184,6 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
   };
 
   const mappingType = (data: I_DataModel[]) => {
-    console.log("mappingType", data);
     return {
       FullBanner: <FullBanner data={data} />,
       BannerBlock: <BannerBlock data={data} />,

@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import Layout from "../../component/layout/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
-
-import Breadcrumbs from "../../component/breadcrumbs/main";
 import SustainabilityBlock from "../../component/sustainabilityBlock/main";
-
 import Chairman from "./Chairman/pageData";
 import Governance from "./Governance/pageData";
 import Negotiate from "./Negotiate/pageData";
 import Communicate from "./Communicate/pageData";
+
 import "./css.scss";
 
 const SustainabilityCSR: React.FC = () => {
   const pageName = "SustainabilityCSR";
-  // const pageData = usePageData();
 
   const ChairmanData = Chairman();
   const GovernanceData = Governance();
@@ -73,14 +70,13 @@ const SustainabilityCSR: React.FC = () => {
   return (
     <Layout>
       <div className={`${pageName}MainContainer`}>
-        {/* <SustainabilityBlock */}
-        {/* <TemplateLayout
-          {...pageData}
-          handleSustainabilityTab={handleSustainabilityTab}
-        /> */}
         {mappingType()[sustainabilityTabType]}
-        {/* <Graphics3 {[{...pageData.graphics3}]} /> */}
-        {/* <Graphics3 groups={[{ ...pageData.graphics3 }]} /> */}
+        <SustainabilityBlock
+          {...{
+            component: "graphics3",
+            type: "csr",
+          }}
+        />
       </div>
     </Layout>
   );
