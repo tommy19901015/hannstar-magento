@@ -46,7 +46,7 @@ $componentName: 'ArticleList2';
                         flex-direction: column;
                         height: 100%;
                         .articleTitle {
-                            @include hannstarH3Title;
+                            @include hannstarH4Title;
                             padding-top: 10px;
                         }
                         .date {
@@ -55,7 +55,7 @@ $componentName: 'ArticleList2';
                             padding: 10px 0;
                         }
                         .description {
-                            @include hannstarContent0;
+                            @include hannstarContent1;
                             -webkit-line-clamp: 3;
                             -webkit-box-orient: vertical;
                             overflow: hidden;

@@ -1,9 +1,9 @@
 export interface I_Article {
-  src: string;
-  title: string;
-  date: string;
-  description: string;
-  href: string;
+  src?: string;
+  title?: string;
+  subTitle?: string;
+  description?: string| string[];
+  href?: string;
   index?: number;
 }
 
