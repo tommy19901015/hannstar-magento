@@ -13,6 +13,9 @@ $componentName: "ImgGrid";
   &.row-4{
     grid-template-columns: repeat(4, 1fr);
   }
+  &.row-5{
+    grid-template-columns: repeat(5, 1fr);
+  }
   .#{$componentName}Img {
     width: 100%;
     max-width: 300px;
@@ -27,6 +30,9 @@ $componentName: "ImgGrid";
       grid-template-columns: repeat(2, 1fr);
     }
     &.row-4{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &.row-5{
       grid-template-columns: repeat(2, 1fr);
     }
   }

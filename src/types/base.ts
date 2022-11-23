@@ -63,6 +63,7 @@ export interface I_TitleContentImgGrid{
     imgGrids: {
         src: string;
         href?:string;
+        text?:string;
     }[],
 }
 

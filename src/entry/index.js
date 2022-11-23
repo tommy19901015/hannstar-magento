@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "../style/reset.css";
 import "../style/common.scss";
 import Login from "../pages/Login/main";
-import Index from "../pages/index/main";
+import Index from "../pages/oddindex/main";
 import HannstarRegister from "../pages/Register/main";
 import AccountPersonal from "../pages/Account_Personal/mainNew";
 import AccountPartner from "../pages/Account_Partner/mainNew";
