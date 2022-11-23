@@ -14,6 +14,8 @@ import "./css.scss";
 import SustainabilityBlock from "../../component/sustainabilityBlock/main";
 import ArticleBlock from "../../component/articleBlock/main";
 import TabProductList from "../../component/tabProductList/main";
+import MessageCenter from "../../component/messageCenter/main";
+import PlatformEntry from "../../component/platformEntry/main";
 
 const TemplateLayout: React.FC<I_TemplateLayout> = ({
   props,
@@ -183,6 +185,19 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
     );
   };
 
+  const MessageCenterPlatform: Function = ({ data }: any): JSX.Element => {
+    console.log("datadata", data);
+    return (
+      <Columns
+        type={ColType.TwoColFullPage}
+        widthL={50}
+        widthR={50}
+        contentL={<MessageCenter />}
+        contentR={<PlatformEntry data={data} />}
+      />
+    );
+  };
+
   const mappingType = (data: I_DataModel[]) => {
     return {
       FullBanner: <FullBanner data={data} />,
@@ -198,6 +213,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
       TabProductListBlock: <TabProductListBlock data={data} />,
       ArticleListContent: <ArticleListContent data={data} />,
       SustainabilityTab: <SustainabilityTab data={data} />,
+      MessageCenterPlatform: <MessageCenterPlatform data={data} />,
     };
   };
 

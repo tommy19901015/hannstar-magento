@@ -11,6 +11,7 @@ import {
   I_GraphicsModel,
   I_TitleContentBanner,
   I_TitleContentImgGrid,
+  I_MessageCenterPlatform,
 } from "../../types/base";
 
 export type I_DataModel =
@@ -24,6 +25,7 @@ export type I_DataModel =
   | I_GraphicsCard
   | I_TitleContentBanner
   | I_SustainabilityBlock
+  | I_MessageCenterPlatform
   | I_Video;
 export interface I_TemplateLayout {
   props: {

@@ -16,37 +16,42 @@ const EBiz: React.FC = () => {
     {
       src: "https://e-biz.hannstar.com/img/banner/00.jpg",
       title: "產品行銷服務平台",
-      content: "透過平台大數據，客戶能快速找到各應用領域的產品資訊和方案、提出需求並得到回覆"
+      content:
+        "透過平台大數據，客戶能快速找到各應用領域的產品資訊和方案、提出需求並得到回覆",
     },
     {
       src: "https://e-biz.hannstar.com/img/banner/01.jpg",
       title: "智慧零售",
-      content: "以瀚宇彩晶創新顯示產品優化客戶體驗、創意行銷、提高運營及管理效率"
+      content:
+        "以瀚宇彩晶創新顯示產品優化客戶體驗、創意行銷、提高運營及管理效率",
     },
     {
       src: "https://e-biz.hannstar.com/img/banner/02.jpg",
       title: "智能建築",
-      content: "運用新興技術，創造安全、高效及舒適的智慧化環境"
+      content: "運用新興技術，創造安全、高效及舒適的智慧化環境",
     },
     {
       src: "https://e-biz.hannstar.com/img/banner/03.jpg",
       title: "交通運輸",
-      content: "面對資訊變化快速的移動世代，提供駕馭海、陸、空全方位的資訊顯示產品"
+      content:
+        "面對資訊變化快速的移動世代，提供駕馭海、陸、空全方位的資訊顯示產品",
     },
     {
       src: "https://e-biz.hannstar.com/img/banner/04.jpg",
       title: "智能製造",
-      content: "通過瀚宇彩晶物聯網應用產品，打造高效能的產品生產流程"
+      content: "通過瀚宇彩晶物聯網應用產品，打造高效能的產品生產流程",
     },
     {
       src: "https://e-biz.hannstar.com/img/banner/05.jpg",
       title: "智慧育樂",
-      content: "智能醫療打破傳統模式，守護個人健康，先進的產品及服務讓您更易於創造健康生活、關心生態環境"
+      content:
+        "智能醫療打破傳統模式，守護個人健康，先進的產品及服務讓您更易於創造健康生活、關心生態環境",
     },
     {
       src: "https://e-biz.hannstar.com/img/banner/06.jpg",
       title: "健康關懷",
-      content: "智能醫療打破傳統模式，守護個人健康先進的產品及服務讓您更易於創造健康生活、關心生態環境"
+      content:
+        "智能醫療打破傳統模式，守護個人健康先進的產品及服務讓您更易於創造健康生活、關心生態環境",
     },
   ];
   const messageCenterData = [
@@ -165,8 +170,7 @@ const EBiz: React.FC = () => {
     {
       src: "https://e-biz.hannstar.com/slider_img/smart_sport_mobile3.jpg",
       title: "產品查詢",
-      text:
-        "結合平台大數據運行，提供多元化產品，以符合客戶需求",
+      text: "結合平台大數據運行，提供多元化產品，以符合客戶需求",
       href: "",
       btnText: "了解更多",
     },
@@ -180,16 +184,14 @@ const EBiz: React.FC = () => {
     {
       src: "https://e-biz.hannstar.com/slider_img/smart_retail_mobile4.jpg",
       title: "智慧方案整合",
-      text:
-        "一站式方案整合服務，提供嵌入式主板、顯示器與UI設計服務",
+      text: "一站式方案整合服務，提供嵌入式主板、顯示器與UI設計服務",
       href: "",
       btnText: "了解更多",
     },
     {
       src: "https://e-biz.hannstar.com/slider_img/Quotation-s.jpg",
       title: "報價",
-      text:
-        "提供客戶線上專案報價服務",
+      text: "提供客戶線上專案報價服務",
       href: "",
       btnText: "了解更多",
     },
@@ -235,22 +237,18 @@ const EBiz: React.FC = () => {
     <Layout>
       <Columns
         type={ColType.OneColFullPage}
-        content={<BannerSlider data={allData.bannerData} />} />
+        content={<BannerSlider data={allData.bannerData} />}
+      />
       <Columns
         type={ColType.TwoColFullPage}
         widthL={60}
         widthR={40}
-        contentL={<MessageCenter data={allData.messageCenterData} />}
-        contentR={<PlatformEntry data={allData.platformEntryData} />} />
-      <Columns
-        type={ColType.OneColFullPage}
-        content={<AboutTextBlock />} />
-      <Columns
-        type={ColType.OneCol}
-        content={<ServiceBlock />} />
-      <Columns
-        type={ColType.OneCol}
-        content={<RequestTextBlock />} />
+        contentL={<MessageCenter />}
+        contentR={<PlatformEntry data={allData.platformEntryData} />}
+      />
+      <Columns type={ColType.OneColFullPage} content={<AboutTextBlock />} />
+      <Columns type={ColType.OneCol} content={<ServiceBlock />} />
+      <Columns type={ColType.OneCol} content={<RequestTextBlock />} />
     </Layout>
   );
 };

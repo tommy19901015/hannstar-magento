@@ -265,6 +265,30 @@
       "href": "/service/greenlawapply/view"
     }
   },
+  "tftDisplay": {
+    "index": {
+      "title": "首頁",
+      "href": "/tft/index/view"
+    }
+  },
+  "paperDisplay": {
+    "index": {
+      "title": "首頁",
+      "href": "/tft/paperDisplay/view"
+    }
+  },
+  "hannspree": {
+    "index": {
+      "title": "首頁",
+      "href": "/hannspree/index/view"
+    }
+  },
+  "solution": {
+    "index": {
+      "title": "首頁",
+      "href": "/solution/index/view"
+    }
+  },
   "footerlinks": {
     "contactus": {
       "title": "聯絡我們",

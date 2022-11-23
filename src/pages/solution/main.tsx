@@ -16,17 +16,20 @@ const Solution: React.FC = () => {
     {
       src: "https://solution.hannstar.com/Content/images/banner/home1.jpg",
       title: "方案整合及系統服務",
-      content: "物聯網快速發展下，智慧產品也更加多元，透過豐富顯示資源與經驗，提供客戶整合性方案服務。"
+      content:
+        "物聯網快速發展下，智慧產品也更加多元，透過豐富顯示資源與經驗，提供客戶整合性方案服務。",
     },
     {
       src: "https://solution.hannstar.com/Content/images/banner/home2.jpg",
       title: "方案產品",
-      content: "以瀚宇彩晶創新顯示產品優化客戶體驗、創意行銷、提高運營及管理效率"
+      content:
+        "以瀚宇彩晶創新顯示產品優化客戶體驗、創意行銷、提高運營及管理效率",
     },
     {
       src: "https://solution.hannstar.com/Content/images/banner/home3.jpg",
       title: "方案應用",
-      content: "瀚宇彩晶顯示方案可廣范應用於各領域中，滿足全方位的智慧生活需求。"
+      content:
+        "瀚宇彩晶顯示方案可廣范應用於各領域中，滿足全方位的智慧生活需求。",
     },
   ];
   const messageCenterData = [
@@ -158,7 +161,9 @@ const Solution: React.FC = () => {
   const ServiceBlock = () => {
     return (
       <div className={`${pageName}ServiceBlock`}>
-        <div className="title">完整的開發流程，幫助您的產品可靠且完美解決痛點</div>
+        <div className="title">
+          完整的開發流程，幫助您的產品可靠且完美解決痛點
+        </div>
         <div className={`${pageName}ImgBlock`}>
           <div className={`${pageName}TopBlock`}>
             <img
@@ -166,14 +171,16 @@ const Solution: React.FC = () => {
               alt="產品發想階段"
             />
           </div>
-          <div className={`${pageName}BottomBlock`}><img
-            src="https://solution.hannstar.com/Content/images/home/development-process2.png"
-            alt="開發實作階段"
-          />
+          <div className={`${pageName}BottomBlock`}>
+            <img
+              src="https://solution.hannstar.com/Content/images/home/development-process2.png"
+              alt="開發實作階段"
+            />
             <img
               src="https://solution.hannstar.com/Content/images/home/development-process3.png"
               alt="量產維護階段"
-            /></div>
+            />
+          </div>
         </div>
       </div>
     );
@@ -183,22 +190,24 @@ const Solution: React.FC = () => {
     <Layout>
       <Columns
         type={ColType.OneColFullPage}
-        content={<BannerSlider data={allData.bannerData} />} />
+        content={<BannerSlider data={allData.bannerData} />}
+      />
       <Columns
         type={ColType.TwoColFullPage}
         widthL={60}
         widthR={40}
-        contentL={<MessageCenter data={allData.messageCenterData} />}
-        contentR={<PlatformEntry data={allData.platformEntryData} />} />
+        contentL={<MessageCenter />}
+        contentR={<PlatformEntry data={allData.platformEntryData} />}
+      />
       <Columns
         type={ColType.OneColFullPage}
-        content={<SolutionIntegrationTextBlock />} />
-      <Columns
-        type={ColType.OneColFullPage}
-        content={<ServiceBlock />} />
+        content={<SolutionIntegrationTextBlock />}
+      />
+      <Columns type={ColType.OneColFullPage} content={<ServiceBlock />} />
       <Columns
         type={ColType.OneCol}
-        content={<Graphics2 data={allData.graphics2Data} />} />
+        content={<Graphics2 data={allData.graphics2Data} />}
+      />
     </Layout>
   );
 };

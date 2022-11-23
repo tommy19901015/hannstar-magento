@@ -153,12 +153,12 @@ const ServiceIndex: React.FC = () => {
   // ];
 
   //  bannerData: I_BannerType[],
-    //messageCenterData: I_MessageType[],
-    //platformEntryData:I_PlatformType[],
-    //graphicsCardData:I_GraphicsCardType[],
-    //articleList:I_ArticleType[],
+  //messageCenterData: I_MessageType[],
+  //platformEntryData:I_PlatformType[],
+  //graphicsCardData:I_GraphicsCardType[],
+  //articleList:I_ArticleType[],
 
-      // const allData = {
+  // const allData = {
   //   bannerData,
   //   messageCenterData,
   //   platformEntryData,
@@ -166,14 +166,13 @@ const ServiceIndex: React.FC = () => {
   //   articleList,
   // };
 
-    const {
-      bannerData,
-      messageCenterData,
-      platformEntryData,
-      graphicsCardData,
-      articleList
-    } = useServiceIndex()
-
+  const {
+    bannerData,
+    messageCenterData,
+    platformEntryData,
+    graphicsCardData,
+    articleList,
+  } = useServiceIndex();
 
   const AboutServiceBlock = () => {
     return (
@@ -208,22 +207,18 @@ const ServiceIndex: React.FC = () => {
     <Layout>
       <Columns
         type={ColType.OneColFullPage}
-        content={<BannerSlider data={bannerData} />} />
+        content={<BannerSlider data={bannerData} />}
+      />
       <Columns
         type={ColType.TwoColFullPage}
         widthL={60}
         widthR={40}
-        contentL={<MessageCenter data={messageCenterData} />}
-        contentR={<PlatformEntry data={platformEntryData} />} />
-      <Columns
-        type={ColType.OneColFullPage}
-        content={<AboutServiceBlock />} />
-      <Columns
-        type={ColType.OneCol}
-        content={<ServiceBlock />} />
-      <Columns
-        type={ColType.OneCol}
-        content={<ArticleListBlock />} />
+        contentL={<MessageCenter />}
+        contentR={<PlatformEntry data={platformEntryData} />}
+      />
+      <Columns type={ColType.OneColFullPage} content={<AboutServiceBlock />} />
+      <Columns type={ColType.OneCol} content={<ServiceBlock />} />
+      <Columns type={ColType.OneCol} content={<ArticleListBlock />} />
     </Layout>
   );
 };

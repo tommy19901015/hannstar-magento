@@ -14,9 +14,9 @@ import "./css.module.scss";
 import store from "../../store";
 import { fetchDataRequest } from "../../store/action";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
-import urlConfig from "../../config/urlSetting.json"
+import urlConfig from "../../config/urlSetting.json";
 
-const { hannstar, partner, service } = urlConfig
+const { hannstar, partner, service } = urlConfig;
 //header
 //footer
 //共用??
@@ -213,7 +213,7 @@ const Index: React.FC = () => {
         type={ColType.TwoColFullPage}
         widthL={60}
         widthR={40}
-        contentL={<MessageCenter data={allStore.messageCenterData} />}
+        contentL={<MessageCenter />}
         contentR={<PlatformEntry data={allStore.platformEntryData} />}
       />
       <Columns

@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
-import OddIndex from "./pages/oddindex/main";
 import Index from "./pages/Index/main";
 import CSRIndex from "./pages/Sustainability_Index/main";
 import EBiz from "./pages/e-biz/main";
@@ -103,9 +102,17 @@ import HannspreeIndex from "./pages/Hannspree_Iindex/main";
 import HannspreeSolve from "./pages/Hannspree_Solve/main";
 import HannspreeCustom from "./pages/Hannspree_Custom/main";
 
-
 import NewsFinancial from "./pages/News_Financial/main";
-const { hannstar, partner, service, account } = urlConfig;
+const {
+  hannstar,
+  partner,
+  service,
+  account,
+  tftDisplay,
+  paperDisplay,
+  solution,
+  hannspree,
+} = urlConfig;
 
 ReactDOM.render(
   <BrowserRouter>
@@ -301,19 +308,19 @@ ReactDOM.render(
         path={hannstar.careersDetail_Growup.href}
         element={<CareersDetailGrowup />}
       />
-
       <Route path={"/solution/label"} element={<SolutionLabel />} />
-
-      <Route path={"/solution/index"} element={<SolutionIndex />} />
-
-      <Route path={"/news/tft"} element={<TFTIndex />} />
-
-      <Route path={"/paperDisplay/index"} element={<PaperDisplayIndex />} />
-      <Route path={"/paperDisplay/technology"} element={<PaperDisplayTechnology />} />
-      <Route path={"/paperDisplay/introduce"} element={<PaperDisplayIntroduce />} />
-
-
-      <Route path={"/hannspree/index"} element={<HannspreeIndex />} />
+      <Route path={solution.index.href} element={<SolutionIndex />} />
+      <Route path={tftDisplay.index.href} element={<TFTIndex />} />
+      <Route path={paperDisplay.index.href} element={<PaperDisplayIndex />} />
+      <Route
+        path={"/paperDisplay/technology"}
+        element={<PaperDisplayTechnology />}
+      />
+      <Route
+        path={"/paperDisplay/introduce"}
+        element={<PaperDisplayIntroduce />}
+      />
+      <Route path={hannspree.index.href} element={<HannspreeIndex />} />
       <Route path={"/hannspree/solve"} element={<HannspreeSolve />} />
       <Route path={"/hannspree/custom"} element={<HannspreeCustom />} />
 

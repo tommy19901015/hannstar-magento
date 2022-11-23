@@ -1,8 +1,17 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
-import { TabEnum } from "../../types/Tmeplate1/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
+import urlConfig from "../../config/urlSetting.json";
+const {
+  hannstar,
+  partner,
+  service,
+  tftDisplay,
+  paperDisplay,
+  solution,
+  hannspree,
+} = urlConfig;
 
 function usePageData() {
   const { t } = useTranslation();
@@ -16,6 +25,41 @@ function usePageData() {
             title: "創新技術、品質服務",
             text: "",
             textAlign: TextAlign.BottomLeft,
+          },
+        ],
+      },
+      {
+        type: "MessageCenterPlatform",
+        data: [
+          {
+            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
+            title: "TFT Display",
+            href: tftDisplay.index.href,
+          },
+          {
+            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
+            title: "Paper Display",
+            href: paperDisplay.index.href,
+          },
+          {
+            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
+            title: "客戶服務",
+            href: service.index.href,
+          },
+          {
+            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_20F17_cfe6j6bk57.png",
+            title: "方案整合及系統服務",
+            href: solution.index.href,
+          },
+          {
+            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+            title: "供應商協同合作",
+            href: partner.index.href,
+          },
+          {
+            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+            title: "瀚斯寶麗",
+            href: hannspree.index.href,
           },
         ],
       },
@@ -38,40 +82,40 @@ function usePageData() {
             theme: GraphicsTheme.Theme1,
             data: [
               {
-                src:"https://fakeimg.pl/100x100/?text=Image",
-                title:"顯示紙技術",
-                text:"優運用先進技術打造的顯示紙，具備超長續航力、強光下可視、真實紙感體驗等特性，顛覆傳統顯示器視覺與書寫體驗，並且更省電節能、友善環境。",
-                href:"",
-                btnText:"",
+                src: "https://fakeimg.pl/100x100/?text=Image",
+                title: "顯示紙技術",
+                text: "優運用先進技術打造的顯示紙，具備超長續航力、強光下可視、真實紙感體驗等特性，顛覆傳統顯示器視覺與書寫體驗，並且更省電節能、友善環境。",
+                href: "",
+                btnText: "",
               },
               {
-                src:"https://fakeimg.pl/100x100/?text=Image",
-                title:"顯示紙產品選購",
-                text:"提供多種規格之精選產品和客製化服務，滿足您各種顯示應用需求。",
-                href:"",
-                btnText:"",
+                src: "https://fakeimg.pl/100x100/?text=Image",
+                title: "顯示紙產品選購",
+                text: "提供多種規格之精選產品和客製化服務，滿足您各種顯示應用需求。",
+                href: "",
+                btnText: "",
               },
               {
-                src:"https://fakeimg.pl/100x100/?text=Image",
-                title:"綠色永續設計",
-                text:"從材料設備供應商、產品設計、製程到物流和包材，皆致力降低產品碳足跡，為永續未來而努力。",
-                href:"",
-                btnText:"",
-              }
+                src: "https://fakeimg.pl/100x100/?text=Image",
+                title: "綠色永續設計",
+                text: "從材料設備供應商、產品設計、製程到物流和包材，皆致力降低產品碳足跡，為永續未來而努力。",
+                href: "",
+                btnText: "",
+              },
             ],
-          }
-        ]
+          },
+        ],
       },
       {
-        type:"SustainabilityGraphics3",
-        data:[
-            {
-                src: "https://fakeimg.pl/1000x700/?text=Image",
-                title: "探索顯示紙多元應用",
-                content:
-                    "顯示紙低功耗、戶外可視、寬溫顯示、支援動態播放、動態顯示、全彩顯示、貼近紙感體驗等特性，提供智慧零售、交通運輸、智慧育樂、智能製造、健康關懷、智能建築六大智慧應用更環保節能的顯示解決方案。"
-            },
-        ]
+        type: "SustainabilityGraphics3",
+        data: [
+          {
+            src: "https://fakeimg.pl/1000x700/?text=Image",
+            title: "探索顯示紙多元應用",
+            content:
+              "顯示紙低功耗、戶外可視、寬溫顯示、支援動態播放、動態顯示、全彩顯示、貼近紙感體驗等特性，提供智慧零售、交通運輸、智慧育樂、智能製造、健康關懷、智能建築六大智慧應用更環保節能的顯示解決方案。",
+          },
+        ],
       },
       {
         type: "BannerBlock",
@@ -98,26 +142,41 @@ function usePageData() {
       {
         type: "TitleContentBlock",
         data: [
-            {                     
-              title: "資訊安全管理",
-              content: ""
-            },
+          {
+            title: "資訊安全管理",
+            content: "",
+          },
         ],
       },
       {
         type: "TitleContentImgGrid",
         data: [
           {
-            rowCount:5, 
-            imgGrids:[
-              { text:"瀚宇彩欣", src: "https://fakeimg.pl/100x50/?text=Image" },
-              { text:"和鑫光電", src: "https://fakeimg.pl/100x50/?text=Image" },
-              { text:"瀚斯寶麗", src: "https://fakeimg.pl/100x50/?text=Image" },
-              { text:"瀚寓酒店", src: "https://fakeimg.pl/100x50/?text=Image" },
-              { text:"彩晶文教基金會", src: "https://fakeimg.pl/100x50/?text=Image" },
-            ]
-          }
-        ]
+            rowCount: 5,
+            imgGrids: [
+              {
+                text: "瀚宇彩欣",
+                src: "https://fakeimg.pl/100x50/?text=Image",
+              },
+              {
+                text: "和鑫光電",
+                src: "https://fakeimg.pl/100x50/?text=Image",
+              },
+              {
+                text: "瀚斯寶麗",
+                src: "https://fakeimg.pl/100x50/?text=Image",
+              },
+              {
+                text: "瀚寓酒店",
+                src: "https://fakeimg.pl/100x50/?text=Image",
+              },
+              {
+                text: "彩晶文教基金會",
+                src: "https://fakeimg.pl/100x50/?text=Image",
+              },
+            ],
+          },
+        ],
       },
     ],
   };

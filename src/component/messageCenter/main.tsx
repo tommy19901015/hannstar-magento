@@ -1,20 +1,35 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./css.scss";
+import { I_GroupArray } from "./interface";
+import DD360Test from "../../D360fakeData/D360ArticleList.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-interface I_GroupArray {
-  tag: string;
-  date: string;
-  title: string;
-}
+const MessageCenter: React.FC = () => {
+  const [d360Data, setD360Data] = useState<any>();
 
-interface I_Porps {
-  data: I_GroupArray[];
-}
+  useEffect(() => {
+    // const postData = {
+    //   "functionName": "Magento",
+    //   "method": "GetAllArticles",
+    //   "language": "zh-hant",
+    //   "site": "/news/esg"
+    // }
 
-const MessageCenter: React.FC<I_Porps> = ({ data }) => {
+    // postGetD360Art(postData).then((response: any) => {
+    //   console.log("response", response);
+    //   if (response.result === "success") {
+    //     setD360Data(response.data)
+    //   }
+    // });
+    // selectData();
+
+    const D360Test: any = DD360Test;
+    setD360Data(D360Test.data);
+    console.log("D360Test", D360Test);
+  }, []);
+
   const sliderRef = useRef<any>(null);
 
   const groupArrByValue = (array: I_GroupArray[], subGroupLength: number) => {
@@ -54,19 +69,20 @@ const MessageCenter: React.FC<I_Porps> = ({ data }) => {
       </div>
       <div className="rightBlock">
         <Slider ref={sliderRef} {...settings}>
-          {groupArrByValue(data, 3).map((item, idx) => (
-            <div className="messageBlock" key={idx}>
-              {item.data.map((obj, idx) => {
-                return (
-                  <li key={idx}>
-                    <div className="tag">{obj.tag}</div>
-                    <div className="date">{obj.date}</div>
-                    <div className="title">{obj.title}</div>
-                  </li>
-                );
-              })}
-            </div>
-          ))}
+          {d360Data &&
+            groupArrByValue(d360Data, 3).map((item, idx) => (
+              <div className="messageBlock" key={idx}>
+                {item.data.map((obj, idx) => {
+                  return (
+                    <li key={idx}>
+                      <div className="tag">{obj.tag}</div>
+                      <div className="date">{obj["published-date"]}</div>
+                      <div className="title">{obj.title}</div>
+                    </li>
+                  );
+                })}
+              </div>
+            ))}
         </Slider>
         <a className="moreBtn" href="/">
           MORE

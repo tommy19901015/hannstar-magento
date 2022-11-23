@@ -1,15 +1,9 @@
 import React from "react";
+import { I_PlatformEntry } from "./interface";
 import "./css.scss";
 
-interface I_Props {
-  data: {
-    title: string;
-    src: string;
-    href: string;
-  }[];
-}
-
-const PlatformEntry: React.FC<I_Props> = ({ data }) => {
+const PlatformEntry: React.FC<I_PlatformEntry> = ({ data }) => {
+  console.log("fff", data);
   return (
     <div
       className={`platformEntryBlock ${
