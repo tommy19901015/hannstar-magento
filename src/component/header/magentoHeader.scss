@@ -183,7 +183,8 @@
                     .control {
                       #search {
                         @include hannstarInput;
-                        border-radius: 4px 0 0 4px;
+                        border-radius: 4px;
+                        border: 1px solid #FFF;
                         width: 100%;
                         height: 25px;
                       }
@@ -193,14 +194,19 @@
                     }
                   }
                   .actions {
-                    .search {
+                    button{
+                      background-color: transparent;
+                      background-repeat: no-repeat;
+                      border: none;
                       cursor: pointer;
+                      overflow: hidden;
+                      outline: none;
+                    }
+                    .search {
                       width: 25px;
                       height: 25px;
-                      background-color: #d9d9d9;
-                      border-radius: 0 4px 4px 0;
-                      background-image: url("https://cdn-icons-png.flaticon.com/128/149/149852.png");
-                      background-size: 20px;
+                      background-image: url("./seach.png");
+                      background-size: 15px;
                       background-repeat: no-repeat;
                       background-position: 50%;
                       border: none;
@@ -278,6 +284,7 @@
                   #search {
                     font-size: 16px;
                     left: -300%;
+                    
                   }
                   .search-autocomplete {
                     display: none;
@@ -321,6 +328,7 @@
                     speak: none;
                     text-align: center;
                   }
+ 
                   span {
                     border: 0;
                     clip: rect(0, 0, 0, 0);

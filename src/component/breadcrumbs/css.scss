@@ -3,10 +3,7 @@
 $componentName: 'Breadcrumbs';
 
 .#{$componentName}Content {
-    // max-width: 1440px;
-    // margin: 0 auto;
     .linkBlock {
-        padding: 20px 0;
         .link {
             @include hannstarContent0;
             &::after {
