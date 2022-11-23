@@ -101,6 +101,7 @@ import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
 import HannspreeIndex from "./pages/Hannspree_Iindex/main";
 import HannspreeSolve from "./pages/Hannspree_Solve/main";
 import HannspreeCustom from "./pages/Hannspree_Custom/main";
+import AboutStrategy from "./pages/About_Strategy/main";
 const { hannstar, partner, service, account } = urlConfig;
 
 ReactDOM.render(
@@ -311,7 +312,7 @@ ReactDOM.render(
       <Route path={"/hannspree/index"} element={<HannspreeIndex/>}/>
       <Route path={"/hannspree/solve"} element={<HannspreeSolve/>}/>
       <Route path={"/hannspree/custom"} element={<HannspreeCustom/>}/>
-
+      <Route path={"/about/strategy"} element={<AboutStrategy/>}/>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
