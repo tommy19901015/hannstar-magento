@@ -117,7 +117,7 @@ const Header: React.FC = () => {
   return (
     <div className="hannstarHeader">
       <div ref={magentoHeaderRef} className="magentoHeader">
-        {/* <MagentoInputHeader /> */}
+        <MagentoInputHeader />
         {/* <MagentoLoginHeader /> */}
         {/* <MagentoNotLoginHeader /> */}
         {/* <MagentoLanguageHeader /> */}
