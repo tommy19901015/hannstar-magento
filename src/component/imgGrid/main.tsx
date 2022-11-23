@@ -9,11 +9,13 @@ const ImgGrid: React.FC<I_GridModel> = ({rowCount, imgs}) => {
     <div className={`${componentName}Content row-${rowCount}`}>
       {imgs.map((item, idx) => {
         return (
+          <div>
           <img
             className={`${componentName}Img`}
             src={item.src}
-            alt={`${componentName}${idx}`}
-          />
+            alt={`${componentName}${idx}`} />
+            {item.text && (<span>{item.text}</span>)}
+          </div>
         );
       })}
     </div>

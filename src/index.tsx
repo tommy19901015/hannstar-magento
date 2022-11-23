@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
-import Index from "./pages/index/main";
+import OddIndex from "./pages/oddindex/main";
+import Index from "./pages/Index/main";
 import CSRIndex from "./pages/Sustainability_Index/main";
 import EBiz from "./pages/e-biz/main";
 import Solution from "./pages/solution/main";
@@ -140,6 +141,7 @@ ReactDOM.render(
         path={account.AccountNewsletter.href}
         element={<AccountNewsletter />}
       />
+      {/* <Route path={hannstar.index.href} element={<OddIndex />} /> */}
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
