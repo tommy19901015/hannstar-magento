@@ -1,81 +1,168 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Layout from "../../component/layout/main";
-import { postGetD360Art } from "../../services/api.service";
-import usePageData from "./pageData";
-import Columns from "../../component/columns/main";
-import Breadcrumbs from "../../component/breadcrumbs/main";
-import { ColType } from "../../component/columns/interface";
-import "./css.scss";
+import TemplateLayout from "../../templates/TemplateLayout/main";
+import SustainabilityBlock from "../../component/sustainabilityBlock/main";
+import D360Templates from "../../templates/D360Templates/main";
+import Director from "./Director/pageData"
+import Audit from "./Audit/pageData"
+import Salary from "./Salary/pageData"
+import Check from "./Check/pageData"
+import Operate from "./Operate/pageData"
+import Risk from "./Risk/pageData"
+import InfoSecurity from "./InfoSecurity/pageData"
+import Trade from "./Trade/pageData"
+import Charter from "./Charter/pageData"
+
 
 const SustainabilityGovernance: React.FC = () => {
   const pageName = "SustainabilityGovernance";
-  const [d360Data, setD360Data] = useState<any>();
-  const [activeTabIdx, setActiveTabIdx] = useState<number>(0);
+  const DirectorData = Director();
+  const AuditData = Audit();
+  const SalaryData = Salary();
+  const CheckData = Check();
+  const OperateData = Operate();
+  const RiskData = Risk();
+  const InfoSecurityData = InfoSecurity();
+  const TradeData = Trade();
+  const CharterData = Charter();
 
-  const pageData = usePageData();
+  const [sustainabilityTabType, SetSustainabilityTabType] =
+    useState<string>("Director");
 
-  useEffect(() => {
-    //   const postData = {
-    //     "functionName": "Magento",
-    //     "method": "GetArticle",
-    //     "language": "zh-hant",
-    //     "site": "f59b73a6-4a2f-463f-a328-c6b10bfa598a"
-    //   }
-    //   postGetD360Art(postData).then((response: any) => {
-    //     console.log("response", response);
-    //     if (response.result === "success") {
-    //       setD360Data(response.data)
-    //     }
-    //   });
-    // setD360Data(testData.data)
-    //test data--------------
-    // setD360Data(testJsonArr);
-    //test data--------------
-  }, []);
-
-  const handleClickTab = (index: any) => {
-    setActiveTabIdx(index);
+  const handleSustainabilityTab = (type: string) => {
+    SetSustainabilityTabType(type);
   };
 
-  const D360Block = () => {
+  const D360TemplatesProp =
+  {
+    site: "/investors/report",
+    method: "GetAllArticles"
+  }
+
+  const DirectorBlock: React.FC = () => {
     return (
-      <div className={`${pageName}ContentBlock`}>
-        <ul className="d360Ul">
-          {d360Data.map((item: any, index: any) => (
-            <li
-              className={`d360Li ${activeTabIdx === index ? "active" : ""}`}
-              onClick={() => handleClickTab(index)}
-            >
-              {item.metaTitle}
-            </li>
-          ))}
-        </ul>
-        {d360Data && (
-          <div className="d360ContentBlock">
-            <div className="d360Title">{d360Data[activeTabIdx].metaTitle}</div>
-            <div
-              className="d360HTML"
-              dangerouslySetInnerHTML={{
-                __html: d360Data[activeTabIdx].block[0].tablePC,
-              }}
-            />
-          </div>
-        )}
-      </div>
+      <>
+        <TemplateLayout
+          {...DirectorData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <D360Templates {...D360TemplatesProp} />
+      </>
     );
+  };
+
+  const AuditBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...AuditData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <div>審計委員會</div>
+      </>
+    );
+  };
+  const SalaryBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...SalaryData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <div>薪酬委員會</div>
+      </>
+    );
+  };
+  const CheckBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...CheckData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <div>內部稽核</div>
+      </>
+    );
+  };
+  const OperateBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...OperateData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <div>誠信經營</div>
+      </>
+    );
+  };
+  const RiskBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...RiskData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+      </>
+    );
+  };
+  const InfoSecurityBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...InfoSecurityData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+      </>
+    );
+  };
+  const TradeBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...TradeData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <div>內部重大資訊處理暨防範內線交易管理</div>
+      </>
+    );
+  };
+  const CharterBlock: React.FC = () => {
+    return (
+      <>
+        <TemplateLayout
+          {...CharterData}
+          handleSustainabilityTab={handleSustainabilityTab}
+        />
+        <div>公司治理章程與程序</div>
+      </>
+    );
+  };
+
+  const mappingType = () => {
+    return {
+      Director: <DirectorBlock />,
+      Audit: <AuditBlock />,
+      Salary: <SalaryBlock />,
+      Check: <CheckBlock />,
+      Operate: <OperateBlock />,
+      Risk: <RiskBlock />,
+      InfoSecurity: <InfoSecurityBlock />,
+      Trade: <TradeBlock />,
+      Charter: <CharterBlock />,
+    };
   };
 
   return (
     <Layout>
-      <Columns
-        type={ColType.OneCol}
-        content={
-          <>
-            <Breadcrumbs {...pageData.breadcrumbs} />
-            {/* <D360Block /> */}
-          </>
-        }
-      />
+      <div className={`${pageName}MainContainer`}>
+        {mappingType()[sustainabilityTabType]}
+        <SustainabilityBlock
+          {...{
+            component: "graphics3",
+            type: "governance",
+          }}
+        />
+      </div>
     </Layout>
   );
 };

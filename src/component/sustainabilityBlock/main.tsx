@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useIsMobile } from "../../hooks";
 import sustainabilityData from "../../common/sustainabilityData";
 import Graphics3 from "../graphics3/main";
 import { I_SustainabilityBlock } from "./interface";
+import Columns from "../../component/columns/main";
+import { ColType } from "../../component/columns/interface";
 import "./css.scss";
 
 const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
@@ -54,7 +56,13 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
       {component === "tab" ? (
         <Tab />
       ) : (
-        <Graphics3 groups={[{ ...graphics3Data }]} />
+        <Columns
+          type={ColType.OneCol}
+          content={
+            <Graphics3 groups={[{ ...graphics3Data }]} />
+          }
+        />
+
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
-import { TabEnum } from "../../types/Tmeplate1/interface";
-import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
+import { TextAlign } from "../../../component/banner/interface";
+import { TabEnum } from "../../../types/Tmeplate1/interface";
+import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -33,6 +33,16 @@ function usePageData() {
                 href: "",
               },
             ],
+          },
+        ],
+      },
+      {
+        type: "SustainabilityTab",
+        data: [
+          {
+            type: "governance",
+            activeId: 5,
+            component: "tab",
           },
         ],
       },

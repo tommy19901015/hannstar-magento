@@ -6,7 +6,6 @@ export type SustainabilityData = {
   type: string;
   tab: {
     text: string;
-    href: string;
     type: string;
   }[];
   graphics3: I_GrapModel;
@@ -20,10 +19,10 @@ function useSustainabilityData() {
     {
       type: "csr", //永續管理
       tab: [
-        { text: "董事長的話", href: "", type: "Chairman" },
-        { text: "永續治理", href: "", type: "Governance" },
-        { text: "利害關係人議合", href: "", type: "Negotiate" },
-        { text: "利害關係人溝通管道", href: "", type: "Communicate" },
+        { text: "董事長的話", type: "Chairman" },
+        { text: "永續治理", type: "Governance" },
+        { text: "利害關係人議合", type: "Negotiate" },
+        { text: "利害關係人溝通管道", type: "Communicate" },
       ],
       graphics3: {
         src: "https://fakeimg.pl/1000x700/?text=Image",
@@ -37,15 +36,15 @@ function useSustainabilityData() {
     {
       type: "governance", //公司治理
       tab: [
-        { text: "董事會名單", href: "", type: "" },
-        { text: "審計委員會", href: "", type: "" },
-        { text: "薪酬委員會", href: "", type: "" },
-        { text: "內部稽核", href: "", type: "" },
-        { text: "誠信經營", href: "", type: "" },
-        { text: "風險管理", href: "", type: "" },
-        { text: "資訊安全管理", href: "", type: "" },
-        { text: "內部重大資訊處理暨防範內線交易管理", href: "", type: "" },
-        { text: "公司治理章程與程序", href: "", type: "" },
+        { text: "董事會名單", type: "Director" },
+        { text: "審計委員會", type: "Audit" },
+        { text: "薪酬委員會", type: "Salary" },
+        { text: "內部稽核", type: "Check" },
+        { text: "誠信經營", type: "Operate" },
+        { text: "風險管理", type: "Risk" },
+        { text: "資訊安全管理", type: "InfoSecurity" },
+        { text: "內部重大資訊處理暨防範內線交易管理", type: "Trade" },
+        { text: "公司治理章程與程序", type: "Charter" },
       ],
       graphics3: {
         src: "https://fakeimg.pl/1000x700/?text=Image",
@@ -59,10 +58,10 @@ function useSustainabilityData() {
     {
       type: "environment", //綠色創新
       tab: [
-        { text: "永續生產", href: "", type: "" },
-        { text: "綠色產品", href: "", type: "" },
-        { text: "氣候變遷風險管理", href: "", type: "" },
-        { text: "永續供應鏈", href: "", type: "" },
+        { text: "永續生產", type: "Production" },
+        { text: "綠色產品", type: "GreenProduct" },
+        { text: "氣候變遷風險管理", type: "Weather" },
+        { text: "永續供應鏈", type: "SupplyChain" },
       ],
       graphics3: {
         src: "https://fakeimg.pl/1000x700/?text=Image",
@@ -74,15 +73,15 @@ function useSustainabilityData() {
       },
     },
     {
-      type: "communion", //社會共融
+      type: "social", //社會共融
       tab: [
-        { text: "多元平等", href: "", type: "" },
-        { text: "人才發展", href: "", type: "" },
-        { text: "職業安全衛生", href: "", type: "" },
-        { text: "社會參與", href: "", type: "" },
-        { text: "彩晶基金會", href: "", type: "" },
-        { text: "RBA年度績效目標", href: "", type: "" },
-        { text: "勞工與道德政策", href: "", type: "" },
+        { text: "多元平等", type: "Equality" },
+        { text: "人才發展", type: "Talents" },
+        { text: "職業安全衛生", type: "Profession" },
+        { text: "社會參與", type: "Society" },
+        { text: "彩晶基金會", type: "Foundation" },
+        { text: "RBA年度績效目標", type: "RBA" },
+        { text: "勞工與道德政策", type: "Labor" },
       ],
       graphics3: {
         src: "https://fakeimg.pl/1000x700/?text=Image",

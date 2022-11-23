@@ -21,12 +21,8 @@ const InvestorsConference: React.FC = () => {
     <Layout>
       <Columns
         type={ColType.OneCol}
-        content={
-          <>
-            <Breadcrumbs {...pageData.breadcrumbs} />
-            <D360Templates {...D360TemplatesProp} />
-          </>
-        } />
+        content={<Breadcrumbs {...pageData.breadcrumbs} />} />
+      <D360Templates {...D360TemplatesProp} />
     </Layout>
   );
 };

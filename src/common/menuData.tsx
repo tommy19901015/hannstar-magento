@@ -60,7 +60,7 @@ function useMenu() {
           { title: "永續管理", href: hannstar.sustainability_csr.href },
           { title: "公司治理", href: hannstar.sustainability_governance.href },
           { title: "綠色創新", href: hannstar.sustainability_environment.href },
-          { title: "社會共融", href: hannstar.sustainability_communion.href },
+          { title: "社會共融", href: hannstar.sustainability_social.href },
           { title: "報告書下載", href: hannstar.sustainability_report.href },
           { title: "永續訊息", href: hannstar.sustainability_esg.href },
         ],

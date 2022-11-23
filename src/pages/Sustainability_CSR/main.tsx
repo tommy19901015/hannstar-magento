@@ -6,7 +6,7 @@ import Chairman from "./Chairman/pageData";
 import Governance from "./Governance/pageData";
 import Negotiate from "./Negotiate/pageData";
 import Communicate from "./Communicate/pageData";
-
+import D360Templates from "../../templates/D360Templates/main";
 import "./css.scss";
 
 const SustainabilityCSR: React.FC = () => {
@@ -31,8 +31,29 @@ const SustainabilityCSR: React.FC = () => {
           {...ChairmanData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>董事長的話</div>
+        <D360Templates {...{
+          site: "/investors/summary",
+          method: "GetAllArticles"
+        }} />
       </>
+    );
+  };
+
+  const GovernanceBlock: React.FC = () => {
+    return (
+      <TemplateLayout
+        {...GovernanceData}
+        handleSustainabilityTab={handleSustainabilityTab}
+      />
+    );
+  };
+
+  const NegotiateBlock: React.FC = () => {
+    return (
+      <TemplateLayout
+        {...NegotiateData}
+        handleSustainabilityTab={handleSustainabilityTab}
+      />
     );
   };
 
@@ -51,21 +72,13 @@ const SustainabilityCSR: React.FC = () => {
   const mappingType = () => {
     return {
       Chairman: <ChairmanBlock />,
-      Governance: (
-        <TemplateLayout
-          {...GovernanceData}
-          handleSustainabilityTab={handleSustainabilityTab}
-        />
-      ),
-      Negotiate: (
-        <TemplateLayout
-          {...NegotiateData}
-          handleSustainabilityTab={handleSustainabilityTab}
-        />
-      ),
+      Governance: <GovernanceBlock />,
+      Negotiate: <NegotiateBlock />,
       Communicate: <CommunicateBlock />,
     };
   };
+
+
 
   return (
     <Layout>
