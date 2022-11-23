@@ -25,17 +25,26 @@ export type I_TitleContent = {
     bgColor?: string
 }
 
+type commentList = {
+    commentTitle:string,
+    comments:string[],
+  }
 
+  
 export type I_GraphicsModel = {
     src: string;
     title: string;
-    content: string[] | string ;
-    comment?: string;
+    content: string[] | string;
+    comment?: commentList |string;
     subTitle?: string;
     btnText?: string;
     btnHref?: string;
-    bgColor?: string
+    bgColor?: string;
+    image?:string;
+    paragraphs?: boolean;
     imgSizePercent?: number;
+    theme?: number;
+    moreHref:"/";
 }
 export interface I_TitleContentBanner {
     titleContent:I_TitleContent,
