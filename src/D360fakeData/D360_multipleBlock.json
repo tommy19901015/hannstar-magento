@@ -1,31 +1,33 @@
 {
-    "result": "success",
-    "data": {
-        "site": "/investors/contacts",
-        "metaTitle": "投資相關洽詢",
-        "articleId": "f59b73a6-4a2f-463f-a328-c6b10bfa598a",
-        "block": [
-            {
-                "tablePC": "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:100%;\"><tbody><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">洽詢單位</span></th><td><span style=\"font-size:16px;\">瀚宇彩晶股份有限公司 股務辦事處</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">地址</span></th><td><span style=\"font-size:16px;\">臺北市114內湖區行善路398號8樓</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(886)2-2790-5885</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">網址</span></th><td><span style=\"font-size:16px;\"><a href=\"http://stock.walsin.com\" target=\"_blank\">http://stock.walsin.com</a></span></td></tr></tbody></table>",
-                "tablePDF": null,
-                "tableM": null,
-                "content": "<p><span style=\"font-size:18px;\">個人投資及股務代理訊息</span></p>"
-            },
-            {
-                "tablePC": "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:100%;\"><tbody><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">洽詢單位</span></th><td><span style=\"font-size:16px;\">瀚宇彩晶股份有限公司</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">發言人</span></th><td><span style=\"font-size:16px;\">簡宏毅 Justin Chien</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(886)2-5555-0077</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">代理發言人</span></th><td><span style=\"font-size:16px;\">張志銘 Stanley Chang</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(886)2-5555-0077</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">地址</span></th><td><span style=\"font-size:16px;\">台北市114內湖區行善路168巷15號4樓</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">Email</span></th><td><span style=\"font-size:16px;\">IR@hannstar.com</span></td></tr></tbody></table>",
-                "tablePDF": null,
-                "tableM": null,
-                "content": "<p><span style=\"font-size:18px;\">專業投資機構</span></p>"
-            },
-            {
-                "tablePC": "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:100%;\"><tbody><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">洽詢單位</span></th><td><span style=\"font-size:16px;\">Citibank, N.A., Depositary Receipts Services</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">地址</span></th><td><span style=\"font-size:16px;\">388 Greenwich Street, New York, NY 10013, U.S.A. &nbsp;</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(+1)877-248-4237</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">網址</span></th><td><span style=\"font-size:16px;\"><a href=\"https://www.citi.com/dr\" target=\"_blank\">https://www.citi.com/dr</a></span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">Email</span></th><td><span style=\"font-size:16px;\">citibank@shareholders-online.com</span></td></tr></tbody></table>",
-                "tablePDF": null,
-                "tableM": null,
-                "content": "<p><span style=\"font-size:18px;\">海外存託憑證(GDR)存託銀行</span></p>"
-            }
-        ],
-        "editor-id": "30025841",
-        "metaDescription": null
-    },
-    "resultMsg": ""
+  "result": "success",
+  "data": [
+    {
+      "site": "/investors/contacts",
+      "metaTitle": "投資相關洽詢",
+      "articleId": "f59b73a6-4a2f-463f-a328-c6b10bfa598a",
+      "block": [
+        {
+          "tablePC": "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:100%;\"><tbody><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">洽詢單位</span></th><td><span style=\"font-size:16px;\">瀚宇彩晶股份有限公司 股務辦事處</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">地址</span></th><td><span style=\"font-size:16px;\">臺北市114內湖區行善路398號8樓</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(886)2-2790-5885</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">網址</span></th><td><span style=\"font-size:16px;\"><a href=\"http://stock.walsin.com\" target=\"_blank\">http://stock.walsin.com</a></span></td></tr></tbody></table>",
+          "tablePDF": null,
+          "tableM": null,
+          "content": "<p><span style=\"font-size:18px;\">個人投資及股務代理訊息</span></p>"
+        },
+        {
+          "tablePC": "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:100%;\"><tbody><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">洽詢單位</span></th><td><span style=\"font-size:16px;\">瀚宇彩晶股份有限公司</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">發言人</span></th><td><span style=\"font-size:16px;\">簡宏毅 Justin Chien</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(886)2-5555-0077</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">代理發言人</span></th><td><span style=\"font-size:16px;\">張志銘 Stanley Chang</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(886)2-5555-0077</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">地址</span></th><td><span style=\"font-size:16px;\">台北市114內湖區行善路168巷15號4樓</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">Email</span></th><td><span style=\"font-size:16px;\">IR@hannstar.com</span></td></tr></tbody></table>",
+          "tablePDF": null,
+          "tableM": null,
+          "content": "<p><span style=\"font-size:18px;\">專業投資機構</span></p>"
+        },
+        {
+          "tablePC": "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:100%;\"><tbody><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">洽詢單位</span></th><td><span style=\"font-size:16px;\">Citibank, N.A., Depositary Receipts Services</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">地址</span></th><td><span style=\"font-size:16px;\">388 Greenwich Street, New York, NY 10013, U.S.A. &nbsp;</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">電話</span></th><td><span style=\"font-size:16px;\">(+1)877-248-4237</span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">網址</span></th><td><span style=\"font-size:16px;\"><a href=\"https://www.citi.com/dr\" target=\"_blank\">https://www.citi.com/dr</a></span></td></tr><tr><th scope=\"row\" style=\"text-align: center; width:120px; background-color: rgb(0, 148, 218);\"><span style=\"color:#ffffff;\">Email</span></th><td><span style=\"font-size:16px;\">citibank@shareholders-online.com</span></td></tr></tbody></table>",
+          "tablePDF": null,
+          "tableM": null,
+          "content": "<p><span style=\"font-size:18px;\">海外存託憑證(GDR)存託銀行</span></p>"
+        }
+      ],
+      "editor-id": "30025841",
+      "metaDescription": null
+    }
+  ],
+  "resultMsg": ""
 }
