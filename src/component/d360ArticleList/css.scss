@@ -19,9 +19,12 @@ $componentName: 'D360ArticleList';
                 background-color: $hannstar-blue1;
                 color: $hannstar-default-text-color;
                 text-align: center;
-                padding: 3px;
+                padding: 3px 5px;
                 border-radius: 10px;
-                width: 80px;
+                &.only {
+                    position: initial;
+                    display: initial;
+                }
             }
             img {
                 width: 100%;

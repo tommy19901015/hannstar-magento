@@ -7,8 +7,8 @@ import { ColType } from "../../component/columns/interface";
 import D360Templates from "../../templates/D360Templates/main";
 import "./css.scss";
 
-const SustainabilityReport: React.FC = () => {
-  const pageName = "SustainabilityReport";
+const D360Article: React.FC = () => {
+  const pageName = "D360Article";
   const pageData = usePageData();
 
   const D360TemplatesProp =
@@ -19,12 +19,9 @@ const SustainabilityReport: React.FC = () => {
 
   return (
     <Layout>
-      <Columns
-        type={ColType.OneCol}
-        content={<Breadcrumbs {...pageData.breadcrumbs} />} />
       <D360Templates {...D360TemplatesProp} />
     </Layout>
   );
 };
 
-export default SustainabilityReport;
+export default D360Article;

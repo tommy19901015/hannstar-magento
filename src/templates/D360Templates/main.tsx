@@ -6,7 +6,7 @@ import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import "./css.scss";
 //---------------------------------
-import DD360Test from "../../D360fakeData/D360_summary.json"
+// import DD360Test from "../../D360fakeData/D360_summary.json"
 // import DD360Test from "../../D360fakeData/D3603.json"
 // import DD360Test from "../../D360fakeData/D360_PDF.json"
 // import DD360Test from "../../D360fakeData/D360_oneArticle.json"
@@ -27,24 +27,14 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
       "site": site
     }
 
-    // postGetD360Art(postData).then((response: any) => {
-    //   console.log("response", response);
-    //   if (response.result === "success") {
-    //     if (method === "GetArticle") {
-    //       setD360Data(response.data)
-    //     } else {
-    //       setD360Data(response.data.map((item: any) => JSON.parse(item)))
-    //     }
-    //   }
-    // });
+    postGetD360Art(postData).then((response: any) => {
+      if (response.result === "success") {
+        setD360Data([response.data])
+      }
+    });
 
-    const D360Test: any = DD360Test;
-    if (method === "GetArticle") {
-      console.log("D360Test", D360Test)
-      setD360Data([D360Test.data])
-    } else {
-      setD360Data(D360Test.data.map((item: any) => JSON.parse(item)))
-    }
+    // const D360Test: any = DD360Test;
+    // setD360Data(D360Test.data)
   }, [])
 
   const handleClickTab = (index: any) => {

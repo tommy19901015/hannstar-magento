@@ -98,8 +98,8 @@ function useMenu() {
         type: "message",
         href: "",
         content: [
-          { title: "投資人關係", href: "" },
-          { title: "企業永續", href: "" },
+          { title: "投資人關係", href: hannstar.news_financial.href },
+          { title: "企業永續", href: hannstar.sustainability_esg.href },
         ],
       },
     ],

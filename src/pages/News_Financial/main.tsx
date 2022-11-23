@@ -10,8 +10,8 @@ import "./css.scss";
 
 import DD360Test from "../../D360fakeData/D360ArticleList.json"
 
-const SustainabilityESG: React.FC = () => {
-  const pageName = "SustainabilityESG";
+const NewsFinancial: React.FC = () => {
+  const pageName = "NewsFinancial";
   const [d360Data, setD360Data] = useState<any>()
   const [showData, setShowData] = useState<any>()
   const [selectOption, setSelectOption] = useState<string>("");
@@ -23,7 +23,7 @@ const SustainabilityESG: React.FC = () => {
     //   "functionName": "Magento",
     //   "method": "GetAllArticles",
     //   "language": "zh-hant",
-    //   "site": "/news/esg"
+    //   "site": "/news/investors"
     // }
 
     // postGetD360Art(postData).then((response: any) => {
@@ -33,12 +33,12 @@ const SustainabilityESG: React.FC = () => {
     //     setShowData(response.data)
     //   }
     // });
-    // selectData();
+    selectData();
 
     const D360Test: any = DD360Test;
     setD360Data(D360Test.data)
     setShowData(D360Test.data)
-
+    selectData();
 
   }, []);
 
@@ -55,7 +55,7 @@ const SustainabilityESG: React.FC = () => {
     setSelectOption(e.target.value)
     e.target.value === "all" ?
       setShowData(d360Data) :
-      setShowData(d360Data.filter((item: any) => item["published-date"].split("/")[0] === e.target.value))
+      setShowData(d360Data.filter((item: any) => item["published-date"].split(".")[0] === e.target.value))
   }
 
   return (
@@ -80,4 +80,4 @@ const SustainabilityESG: React.FC = () => {
   );
 };
 
-export default SustainabilityESG;
+export default NewsFinancial;

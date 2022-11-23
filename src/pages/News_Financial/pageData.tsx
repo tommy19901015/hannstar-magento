@@ -16,7 +16,7 @@ function usePageData() {
                                 href: "",
                             },
                             {
-                                text: "永續訊息",
+                                text: "投資人關係",
                                 href: "",
                             },
                         ],

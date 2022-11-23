@@ -4,9 +4,14 @@ import { I_D360Article, I_D360ArticleList } from "./interface";
 
 const D360ArticleList: React.FC<I_D360ArticleList> = ({ data }) => {
   const componentName = "D360ArticleList";
-  console.log("data", data);
+  console.log("dataaa", data);
 
-  const ArticleBlock: React.FC<I_D360Article> = ({ title, src, tag, date }) => {
+  const ArticleBlock: React.FC<any> = (articleData) => {
+    const { title, tag } = articleData
+    const previewImage = articleData["preview-image"]
+    const date = articleData["published-date"]
+
+
     const splitDate = () => {
       const dateArr = date.split("/")
       const year = dateArr[0]
@@ -22,10 +27,8 @@ const D360ArticleList: React.FC<I_D360ArticleList> = ({ data }) => {
     return (
       <a className="articleBlock" href={"/"}>
         <div className="imgBlock">
-          {/* <div className="tag">{tag}</div> */}
-          <div className="tag">企業永續</div>
-          <img src="https://fakeimg.pl/300x200/ddd/" alt={title} />
-          {/* <img src={src} alt={title} /> */}
+          <div className={`tag ${previewImage ? "" : "only"}`}>{tag}</div>
+          <img src={previewImage} alt={title} />
         </div>
         <div className="contentWrap">
           <div className="dateBlock">

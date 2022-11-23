@@ -159,6 +159,10 @@
     "careersDetail_Join": {
       "title": "加入彩晶",
       "href": "/careersDetail/join/view"
+    },
+    "news_financial": {
+      "title": "投資人關係",
+      "href": "/news/financial/view"
     }
   },
   "partner": {
