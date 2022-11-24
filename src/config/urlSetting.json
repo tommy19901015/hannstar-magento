@@ -289,12 +289,24 @@
     "index": {
       "title": "首頁",
       "href": "/hannspree/index/view"
+    },
+    "solve": {
+      "title": "學習解決方案",
+      "href": "/hannspree/solve/view"
+    },
+    "custom": {
+      "title": "客製化服務",
+      "href": "/hannspree/custom/view"
     }
   },
   "solution": {
     "index": {
       "title": "首頁",
       "href": "/solution/index/view"
+    },
+    "label": {
+      "title": "方案系統",
+      "href": "/solution/label/view"
     }
   },
   "footerlinks": {

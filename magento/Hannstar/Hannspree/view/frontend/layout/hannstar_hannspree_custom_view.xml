@@ -23,8 +23,8 @@
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />
         <block class="Magento\Framework\View\Element\Template"
-                name="hannstar.partner.layout.main"
-                template="Hannstar_Partner::index.phtml" />
+                name="hannstar.hannspree.layout.main"
+                template="Hannstar_Hannspree::custom.phtml" />
         </referenceContainer>
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="authentication-popup" remove="true"/>

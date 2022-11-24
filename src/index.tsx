@@ -308,7 +308,7 @@ ReactDOM.render(
         path={hannstar.careersDetail_Growup.href}
         element={<CareersDetailGrowup />}
       />
-      <Route path={"/solution/label"} element={<SolutionLabel />} />
+      <Route path={solution.label.href} element={<SolutionLabel />} />
       <Route path={solution.index.href} element={<SolutionIndex />} />
       <Route path={tftdisplay.index.href} element={<TFTIndex />} />
       <Route path={paperdisplay.index.href} element={<PaperDisplayIndex />} />
@@ -321,8 +321,8 @@ ReactDOM.render(
         element={<PaperDisplayIntroduce />}
       />
       <Route path={hannspree.index.href} element={<HannspreeIndex />} />
-      <Route path={"/hannspree/solve"} element={<HannspreeSolve />} />
-      <Route path={"/hannspree/custom"} element={<HannspreeCustom />} />
+      <Route path={hannspree.solve.href} element={<HannspreeSolve />} />
+      <Route path={hannspree.custom.href} element={<HannspreeCustom />} />
 
       <Route path={hannstar.news_financial.href} element={<NewsFinancial />} />
     </Routes>

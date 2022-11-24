@@ -70,6 +70,19 @@ import SustainabilityEnvironment from "../pages/Sustainability_Environment/main"
 import SustainabilitySocial from "../pages/Sustainability_Social/main";
 import SustainabilityReport from "../pages/Sustainability_Report/main";
 import SustainabilityESG from "../pages/Sustainability_ESG/main";
+//Hannspree
+import HannspreeIndex from "../pages/Hannspree_Iindex/main";
+import HannspreeCustom from "../pages/Hannspree_Custom/main";
+import HannspreeSolve from "../pages/Hannspree_Solve/main";
+//Solution
+import SolutionIndex from "../pages/Solution_Index/main";
+import SolutionLabel from "../pages/Solution_Label/main";
+//Paperdisplay
+import PaperDisplayIndex from "../pages/PaperDisplay_Index/main";
+import PaperDisplayIntroduce from "../pages/PaperDisplay_Introduce/main";
+import PaperDisplayTechnology from "../pages/PaperDisplay_Technology/main";
+//Tftdisplay
+import TFTIndex from "../pages/TFT_Index/main";
 
 import "../i18n/index";
 
@@ -137,6 +150,15 @@ const pageMappingObj = {
   root_ServiceCustomerSupport: <ServiceCustomerSupport />,
   root_ServiceParseApply: <ServiceParseApply />,
   root_ServiceGreenServiceApply: <ServiceGreenServiceApply />,
+  root_HannspreeIndex:<HannspreeIndex/>,
+  root_HannspreeCustom:<HannspreeCustom/>,
+  root_HannspreeSolve:<HannspreeSolve/>,
+  root_SolutionIndex:<SolutionIndex/>,
+  root_SolutionLabel:<SolutionLabel/>,
+  root_PaperDisplayIndex:<PaperDisplayIndex/>,
+  root_PaperDisplayIntroduce:<PaperDisplayIntroduce/>,
+  root_PaperDisplayTechnology:<PaperDisplayTechnology/>,
+  root_TFTIndex:<TFTIndex/>,
   root_Index: <Index />,
 };
 

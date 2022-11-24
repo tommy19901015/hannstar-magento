@@ -213,6 +213,25 @@ function useMenu() {
         ],
       }
     ],
+    solution: [
+      {
+        title: "方案系統及整合服務",
+        href: "",
+        content: [
+          { title: "方案系統及整合服務", href: solution.label.href },
+        ],
+      }
+    ],
+    hannspree: [
+      {
+        title: "hannspree",
+        href: "",
+        content: [
+          { title: "學習解決方案", href: hannspree.solve.href },
+          { title: "客製化服務", href: hannspree.custom.href },
+        ],
+      }
+    ],
     member: [
       {
         content: [

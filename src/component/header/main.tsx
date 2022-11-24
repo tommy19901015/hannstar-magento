@@ -34,7 +34,7 @@ const Header: React.FC = () => {
     if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
 
     const type = window.location.pathname.split("/")[1];
-    const mappingArr = ["hannstar", "partner", "service", "paperdisplay", "tftdisplay"];
+    const mappingArr = ["hannstar", "partner", "service", "paperdisplay", "tftdisplay", "solution", "hannspree"];
     mappingArr.includes(type) && setServiceType(type);
   }, []);
 
