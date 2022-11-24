@@ -25,11 +25,11 @@ $componentName: 'TabProductList';
     }
 
     .productListBlock {
-        display: flex;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        grid-gap: 10px;
         .productBlock {
             display: inline-block;
-            width: 20%;
             border-bottom: 2px solid $hannstar-border-color;
             padding-bottom: 20px;
             .imgBlock {
@@ -41,6 +41,7 @@ $componentName: 'TabProductList';
                 }
             }
             .contentWrap {
+                padding: 16px;
                 .productTitle {
                     font-weight: bold;
                     font-size: 20px;
@@ -48,20 +49,26 @@ $componentName: 'TabProductList';
                 }
                 .productContent {
                     font-size: 16px;
+                    height:120px;
                     word-wrap: break-word;
                     list-style: circle;
+                    line-height: 1.6;
                 }
                 .btnBlock {
-                    display: flex;
-                    justify-content: space-between;
                     align-items: center;
+                    text-align: center;
                     margin-top: 20px;
                     font-size: 16px;
                     .btn1 {
+                        width: 100%;
                         @include hannstarBtn2;
+                        margin: 5px 0;
                     }
                     .btn2 {
-                        @include hannstarBtn;
+                        width: 100%;
+                        @include hannstarBtn2;
+                        margin: 5px 0;
+                        //@include hannstarBtn;
                     }
                 }
             }
@@ -71,5 +78,10 @@ $componentName: 'TabProductList';
 
 .#{$componentName}Content {
     @media screen and (max-width: $breakpoint) {
+        .productListBlock {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            grid-gap: 10px;
+        }
     }
 }

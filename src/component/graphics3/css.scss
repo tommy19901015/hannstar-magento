@@ -33,7 +33,7 @@ $componentName: 'Graphics3';
             width: 50%;
             padding: 32px;
             .title {
-                @include hannstarH4Title;
+                @include hannstarH3Title;
                 padding-bottom: 32px;
             }
             .logo{
@@ -47,7 +47,7 @@ $componentName: 'Graphics3';
                 @include hannstarBtn;
             }
             .comment{
-                padding-top: 20px;
+                padding-top: 16px;
                 .commentTitle{
                     @include hannstarH4Title;
                 }
@@ -98,14 +98,42 @@ $componentName: 'Graphics3';
             .imgBlock{
                 width: 100%;
             }
+            &:nth-of-type(even){
+                .imgBlock{
+                    padding-right: 0;
+                }
+            }
             .textBlock{
                 width: 100%;
-                padding: 20px 0px;
+                padding: 0px;
                 .title{
-                    padding-bottom: 15px;
+                    padding: 16px 0;
+                }
+                .logo{
+                    padding-bottom: 16px; 
                 }
                 .content {
-                    padding-bottom: 0;
+                    padding-bottom: 16px;
+                }
+                &.borderStyle {
+                    .line {
+                        width: 60%;
+                    }
+                }
+            }
+            &.customization{
+                width: 100%;
+                //padding: 40px 0px 40px 30px;
+                .textBlock{
+                    padding: 40px 0px 40px 30px;
+                }
+                .title{
+                    padding-bottom: 16px;
+                }
+                &.borderStyle {
+                    .line {
+                        width: 60%;
+                    }
                 }
             }
         }

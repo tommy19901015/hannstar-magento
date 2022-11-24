@@ -14,7 +14,7 @@ const Graphics3: React.FC<I_Graphics3> = ({groups}:I_Graphics3) => {
   return (
     <div className={`${componentName}Content`}>
       {groups.map((item, index) => (
-        <GraphicsStyle className={`graphicsBlock ${(item.theme && item.theme ===  GrapTheme.Customization) ? 'align-inherit':''}`} key={index}>
+        <GraphicsStyle className={`graphicsBlock ${(item.theme && item.theme ===  GrapTheme.Customization) ? 'align-inherit customization':''}`} key={index}>
           <div className="imgBlock">
             <ImgStyle
               src={item.src}
