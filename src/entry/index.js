@@ -63,13 +63,13 @@ import CareersDetailJoin from "../pages/CareersDetail_Join/main";
 import CareersDetailIndex from "../pages/CareersDetail_Index/main";
 import CareersDetailGrowup from "../pages/CareersDetail_Growup/main";
 //企業永續
-import SustainabilityIndex from "../pages/Sustainability_Index";
-import SustainabilityCSR from "../pages/Sustainability_CSR";
-import SustainabilityGovernance from "../pages/Sustainability_Governance";
-import SustainabilityEnvironment from "../pages/Sustainability_Environment";
-import SustainabilitySocial from "../pages/Sustainability_Social";
-import SustainabilityReport from "../pages/Sustainability_Report";
-import SustainabilityESG from "../pages/Sustainability_ESG";
+import SustainabilityIndex from "../pages/Sustainability_Index/main";
+import SustainabilityCSR from "../pages/Sustainability_CSR/main";
+import SustainabilityGovernance from "../pages/Sustainability_Governance/main";
+import SustainabilityEnvironment from "../pages/Sustainability_Environment/main";
+import SustainabilitySocial from "../pages/Sustainability_Social/main";
+import SustainabilityReport from "../pages/Sustainability_Report/main";
+import SustainabilityESG from "../pages/Sustainability_ESG/main";
 
 import "../i18n/index";
 
@@ -109,13 +109,13 @@ const pageMappingObj = {
   root_CareersDetailJoin: <CareersDetailJoin />,
   root_CareersDetailIndex: <CareersDetailIndex />,
   root_CareersDetailGrowup: <CareersDetailGrowup />,
-  root_Sustainability_Index: <SustainabilityIndex />,
-  root_Sustainability_CSR: <SustainabilityCSR />,
-  root_Sustainability_Governance: <SustainabilityGovernance />,
-  root_Sustainability_Environment: <SustainabilityEnvironment />,
-  root_Sustainability_Social: <SustainabilitySocial />,
-  root_Sustainability_Report: <SustainabilityReport />,
-  root_Sustainability_ESG: <SustainabilityESG />,
+  root_SustainabilityIndex: <SustainabilityIndex />,
+  root_SustainabilityCSR: <SustainabilityCSR />,
+  root_SustainabilityGovernance: <SustainabilityGovernance />,
+  root_SustainabilityEnvironment: <SustainabilityEnvironment />,
+  root_SustainabilitySocial: <SustainabilitySocial />,
+  root_SustainabilityReport: <SustainabilityReport />,
+  root_SustainabilityESG: <SustainabilityESG />,
   root_PartnerIndex: <PartnerIndex />,
   root_PartnerQuotationList: <PartnerQuotationList />,
   root_PartnerQuotation: <PartnerQuotation />,

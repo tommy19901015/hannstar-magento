@@ -201,7 +201,7 @@ function usePageData() {
       },
       {
         date: "2001年12月",
-        title: "成立南京瀚宇彩欣LCM模組廠",
+        title: "成立南京瀚宇彩晶LCM模組廠",
         imgSrc:
           "",
       },

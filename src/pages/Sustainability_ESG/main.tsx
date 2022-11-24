@@ -6,6 +6,7 @@ import Columns from "../../component/columns/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
 import { ColType } from "../../component/columns/interface";
 import D360ArticleList from "../../component/d360ArticleList/main";
+import mappingD360I18n from "../../common/mappingD360I18n";
 import "./css.scss";
 
 import DD360Test from "../../D360fakeData/D360ArticleList.json"
@@ -19,25 +20,25 @@ const SustainabilityESG: React.FC = () => {
   const pageData = usePageData();
 
   useEffect(() => {
-    // const postData = {
-    //   "functionName": "Magento",
-    //   "method": "GetAllArticles",
-    //   "language": "zh-hant",
-    //   "site": "/news/esg"
-    // }
+    const postData = {
+      "functionName": "Magento",
+      "method": "GetAllArticles",
+      "language": mappingD360I18n(window.hannstar?.language),
+      "site": "/news/esg"
+    }
 
-    // postGetD360Art(postData).then((response: any) => {
-    //   console.log("response", response);
-    //   if (response.result === "success") {
-    //     setD360Data(response.data)
-    //     setShowData(response.data)
-    //   }
-    // });
-    // selectData();
+    postGetD360Art(postData).then((response: any) => {
+      console.log("response", response);
+      if (response.result === "success") {
+        setD360Data(response.data)
+        setShowData(response.data)
+      }
+    });
+    selectData();
 
-    const D360Test: any = DD360Test;
-    setD360Data(D360Test.data)
-    setShowData(D360Test.data)
+    // const D360Test: any = DD360Test;
+    // setD360Data(D360Test.data)
+    // setShowData(D360Test.data)
 
 
   }, []);

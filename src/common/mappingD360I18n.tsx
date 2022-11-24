@@ -1,10 +1,11 @@
-function mappingD360I18n(lang: string) {
+function mappingD360I18n(magentoLang: string) {
   const mappingObj: any = {
-    "en-us": "en_US",
-    "zh-hant": "zh_Hant_TW",
-    "zh-cn": "zh_Hans_CN",
+    "en_US": "en",
+    "zh_Hant_TW": "zh-hant",
+    "zh_Hans_CN": "zh",
   };
-  return lang && mappingObj[lang] ? mappingObj[lang] : "zh_Hant_TW";
+  return magentoLang && mappingObj[magentoLang] ?
+    mappingObj[magentoLang] : "zh_Hant_TW";
 }
 
 export default mappingD360I18n;
