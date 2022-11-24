@@ -3,6 +3,7 @@
 $componentName: 'Breadcrumbs';
 
 .#{$componentName}Content {
+    padding-top: 20px;
     .linkBlock {
         .link {
             @include hannstarContent0;
