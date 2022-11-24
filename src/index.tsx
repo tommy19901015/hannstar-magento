@@ -108,8 +108,8 @@ const {
   partner,
   service,
   account,
-  tftDisplay,
-  paperDisplay,
+  tftdisplay,
+  paperdisplay,
   solution,
   hannspree,
 } = urlConfig;
@@ -310,14 +310,14 @@ ReactDOM.render(
       />
       <Route path={"/solution/label"} element={<SolutionLabel />} />
       <Route path={solution.index.href} element={<SolutionIndex />} />
-      <Route path={tftDisplay.index.href} element={<TFTIndex />} />
-      <Route path={paperDisplay.index.href} element={<PaperDisplayIndex />} />
+      <Route path={tftdisplay.index.href} element={<TFTIndex />} />
+      <Route path={paperdisplay.index.href} element={<PaperDisplayIndex />} />
       <Route
-        path={"/paperDisplay/technology"}
+        path={paperdisplay.technology.href}
         element={<PaperDisplayTechnology />}
       />
       <Route
-        path={"/paperDisplay/introduce"}
+        path={paperdisplay.introduce.href}
         element={<PaperDisplayIntroduce />}
       />
       <Route path={hannspree.index.href} element={<HannspreeIndex />} />

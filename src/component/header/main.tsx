@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
 
-  const { account } = urlConfig;
+  const { account, hannstar } = urlConfig;
   const magentoHeaderRef: any = useRef();
 
   const { t, i18n } = useTranslation();
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
     if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
 
     const type = window.location.pathname.split("/")[1];
-    const mappingArr = ["hannstar", "partner", "service"];
+    const mappingArr = ["hannstar", "partner", "service", "paperdisplay", "tftdisplay"];
     mappingArr.includes(type) && setServiceType(type);
   }, []);
 
@@ -123,7 +123,7 @@ const Header: React.FC = () => {
         {/* <MagentoLanguageHeader /> */}
       </div>
       <div className="header_pc">
-        <a href="/">
+        <a href={hannstar.index.href}>
           <img
             className="logo"
             alt="logo"

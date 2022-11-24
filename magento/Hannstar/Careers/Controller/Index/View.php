@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hannstar\CareersDetail\Controller\Index;
+namespace Hannstar\Careers\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Controller\ResultFactory;

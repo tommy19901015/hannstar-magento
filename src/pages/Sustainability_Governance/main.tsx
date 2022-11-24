@@ -46,7 +46,6 @@ const SustainabilityGovernance: React.FC = () => {
           {...DirectorData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <D360Templates {...D360TemplatesProp} />
       </>
     );
   };

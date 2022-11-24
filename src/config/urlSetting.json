@@ -62,7 +62,7 @@
   "hannstar": {
     "index": {
       "title": "官網首頁",
-      "href": "/"
+      "href": "/index/index/view"
     },
     "about_index": {
       "title": "瀚宇彩晶簡介",
@@ -146,19 +146,19 @@
     },
     "careersDetail_Index": {
       "title": "人才招募",
-      "href": "/careersDetail/index/view"
+      "href": "/careers/index/view"
     },
     "careersDetail_Work": {
       "title": "工作在彩晶",
-      "href": "/careersDetail/work/view"
+      "href": "/careers/work/view"
     },
     "careersDetail_Growup": {
       "title": "成長在彩晶",
-      "href": "/careersDetail/growup/view"
+      "href": "/careers/growup/view"
     },
     "careersDetail_Join": {
       "title": "加入彩晶",
-      "href": "/careersDetail/join/view"
+      "href": "/careers/join/view"
     },
     "news_financial": {
       "title": "投資人關係",
@@ -265,16 +265,24 @@
       "href": "/service/greenlawapply/view"
     }
   },
-  "tftDisplay": {
+  "tftdisplay": {
     "index": {
       "title": "首頁",
-      "href": "/tft/index/view"
+      "href": "/tftdisplay/index/view"
     }
   },
-  "paperDisplay": {
+  "paperdisplay": {
     "index": {
       "title": "首頁",
-      "href": "/tft/paperDisplay/view"
+      "href": "/paperdisplay/index/view"
+    },
+     "technology": {
+      "title": "顯示紙技術1",
+      "href": "/paperdisplay/technology/view"
+    },
+    "introduce": {
+      "title": "顯示紙技術2",
+      "href": "/paperdisplay/introduce/view"
     }
   },
   "hannspree": {

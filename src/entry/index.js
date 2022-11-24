@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "../style/reset.css";
 import "../style/common.scss";
 import Login from "../pages/Login/main";
-import Index from "../pages/oddindex/main";
+import Index from "../pages/Index/main";
 import HannstarRegister from "../pages/Register/main";
 import AccountPersonal from "../pages/Account_Personal/mainNew";
 import AccountPartner from "../pages/Account_Partner/mainNew";
@@ -90,7 +90,6 @@ const pageMappingObj = {
   root_MFA: <MFA />,
   root_ForgotPassword: <ForgotPassword />,
   root_ResetPassword: <ResetPassword />,
-  root_Index: <Index />,
   root_AboutIndex: <AboutIndex />,
   root_AboutStronghold: <AboutStronghold />,
   root_AboutFamily: <AboutFamily />,
@@ -138,6 +137,7 @@ const pageMappingObj = {
   root_ServiceCustomerSupport: <ServiceCustomerSupport />,
   root_ServiceParseApply: <ServiceParseApply />,
   root_ServiceGreenServiceApply: <ServiceGreenServiceApply />,
+  root_Index: <Index />,
 };
 
 const targetDom = Object.keys(pageMappingObj).filter(

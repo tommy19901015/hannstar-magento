@@ -31,10 +31,6 @@ const SustainabilityCSR: React.FC = () => {
           {...ChairmanData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <D360Templates {...{
-          site: "/investors/summary",
-          method: "GetAllArticles"
-        }} />
       </>
     );
   };
@@ -64,7 +60,6 @@ const SustainabilityCSR: React.FC = () => {
           {...CommunicateData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>利害關係人溝通管道</div>
       </>
     );
   };

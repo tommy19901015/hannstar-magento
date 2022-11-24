@@ -13,7 +13,7 @@ export interface I_MenuType {
   [key: string]: I_MenuItemType[];
 }
 
-const { hannstar, partner, service, footerlinks } = urlConfig;
+const { hannstar, partner, service, footerlinks, paperdisplay, tftdisplay, solution, hannspree } = urlConfig;
 
 function useMenu() {
   const { t } = useTranslation();
@@ -194,6 +194,24 @@ function useMenu() {
         href: "",
         content: [],
       },
+    ],
+    tftdisplay: [
+      {
+        title: "tftdisplay",
+        href: "/",
+        content: [
+        ],
+      }
+    ],
+    paperdisplay: [
+      {
+        title: "paperDisplay",
+        href: "",
+        content: [
+          { title: "顯示紙技術1", href: paperdisplay.technology.href },
+          { title: "顯示紙技術2", href: paperdisplay.introduce.href },
+        ],
+      }
     ],
     member: [
       {

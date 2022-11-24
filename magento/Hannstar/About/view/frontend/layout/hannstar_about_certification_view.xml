@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>        
         <remove src="mage/calendar.css"/>
         <remove src="css/styles-l.css"/>
@@ -12,6 +12,13 @@
     </head>
     <body>
         <referenceContainer name="content">
+        <referenceBlock name="navigation.sections" remove="true"/>            
+        <referenceContainer name="footer" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="footer.col.title.1" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="authentication-popup" remove="true"/>
+        <referenceBlock name="page.main.title" remove="true" />
         <block class="Hannstar\Frontend\Block\Index"
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />

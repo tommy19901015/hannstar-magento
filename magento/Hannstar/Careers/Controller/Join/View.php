@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hannstar\CareersDetail\Controller\Growup;
+namespace Hannstar\Careers\Controller\Join;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Controller\ResultFactory;

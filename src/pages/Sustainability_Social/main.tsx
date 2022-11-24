@@ -95,10 +95,6 @@ const SustainabilitySocial: React.FC = () => {
           {...LaborData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <D360Templates {...{
-          site: "/investors/report",
-          method: "GetAllArticles"
-        }} />
       </>
     );
   };

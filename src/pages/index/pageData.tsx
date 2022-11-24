@@ -7,8 +7,8 @@ const {
   hannstar,
   partner,
   service,
-  tftDisplay,
-  paperDisplay,
+  tftdisplay,
+  paperdisplay,
   solution,
   hannspree,
 } = urlConfig;
@@ -34,12 +34,12 @@ function usePageData() {
           {
             src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
             title: "TFT Display",
-            href: tftDisplay.index.href,
+            href: tftdisplay.index.href,
           },
           {
             src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
             title: "Paper Display",
-            href: paperDisplay.index.href,
+            href: paperdisplay.index.href,
           },
           {
             src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
