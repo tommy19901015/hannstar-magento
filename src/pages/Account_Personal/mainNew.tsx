@@ -37,15 +37,15 @@ const AccountPersonal: React.FC = () => {
     title: "",
     breadcrumbsLink: [
       {
-        text: "首頁",
+        text: formData.breadcrumbsData.breadcrumbsLinkFrontPage,
         href: "",
       },
       {
-        text: "會員中心",
+        text: formData.breadcrumbsData.breadcrumbsLinkMemberCentre,
         href: "",
       },
       {
-        text: "我的權限",
+        text: formData.breadcrumbsData.breadcrumbsLinkMemberCentrePermissions,
         href: "",
       },
     ],
