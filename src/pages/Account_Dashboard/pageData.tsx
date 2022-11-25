@@ -8,22 +8,29 @@ function usePageData() {
       title: "",
       breadcrumbsLink: [
         {
-          text: "首頁",
+          text: t('Account_Dashboard.breadcrumbsLinkFrontPage'),
           href: "",
         },
         {
-          text: "會員中心",
+          text: t('Account_Dashboard.breadcrumbsLinkMemberCentre'),
           href: "",
         },
         {
-          text: "看板",
+          text: t('Account_Dashboard.breadcrumbsLinkDashboard'),
           href: "",
         },
       ],
     },
     content: {
-      title: "看板",
-      table: ["日期", "單號", "項目", "產品型號", "進度", "詳情"],
+      title: t('Account_Dashboard.contentTitle'),
+      table: [
+        t('Account_Dashboard.contentTableDate'),
+        t('Account_Dashboard.contentTableNumber'),
+        t('Account_Dashboard.contentTableProject'),
+        t('Account_Dashboard.contentTableProductNo'),
+        t('Account_Dashboard.contentTableSchedule'),
+        t('Account_Dashboard.contentTableDetails')
+      ],
       member: [
         // {
         //   date: "2018/06/30 10:10:42 AM",

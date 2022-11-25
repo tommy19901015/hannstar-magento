@@ -1,6 +1,6 @@
 {
-  "s3Url_magentodev": "https://s3magentodev.s3.us-west-2.amazonaws.com",
-  "s3Url": "https://dvqruze971ijv.cloudfront.net",
+  "s3Url": "https://s3magentodev.s3.us-west-2.amazonaws.com",
+  "s3Url_magentodev": "https://dvqruze971ijv.cloudfront.net",
   "account": {
     "login": {
       "title": "登入",
@@ -62,7 +62,8 @@
   "hannstar": {
     "index": {
       "title": "官網首頁",
-      "href": "/index/index/view"
+      "href": "/",
+      "hrefOld": "/index/index/view"      
     },
     "about_index": {
       "title": "瀚宇彩晶簡介",

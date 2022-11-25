@@ -11,7 +11,7 @@ import { getCountryCallingCode } from 'react-phone-number-input/input';
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./css.scss";
 import usePageData from "./pageData";
-import CountryCodeComponent  from '../../component/countryCode/main';
+import CountryCodeComponent from '../../component/countryCode/main';
 
 
 const AccountPartner: React.FC = () => {
@@ -139,7 +139,7 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.PhoneNumber1}</label>
                 <div className="countryBlock">
-                <CountryCodeComponent onSelectionUpdate={(data:any)=> setValue("PhoneNumber0",getCountryCallingCode(data))}/>
+                  <CountryCodeComponent onSelectionUpdate={(data: any) => setValue("PhoneNumber0", getCountryCallingCode(data))} />
                   <input
                     type="text"
                     className="country-num-input"
@@ -147,7 +147,7 @@ const AccountPartner: React.FC = () => {
                     onChange={event => setValue("PhoneNumber1", event.target.value)}
                   />
                 </div>
-              
+
                 {errors.PhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">
@@ -164,14 +164,14 @@ const AccountPartner: React.FC = () => {
               <div className="col-2">
                 <label className="required">{formData.CellPhoneNumber1}</label>
                 <div className="countryBlock">
-                <CountryCodeComponent onSelectionUpdate={(data:any)=> setValue("CellPhoneNumber0",getCountryCallingCode(data))}/>
-                <input
-                  type="text"
-                  className="country-num-input"
-                  defaultValue=""
-                  {...register("CellPhoneNumber1", { required: true })}
-                  onChange={event => setValue("CellPhoneNumber1", event.target.value)}
-                />  
+                  <CountryCodeComponent onSelectionUpdate={(data: any) => setValue("CellPhoneNumber0", getCountryCallingCode(data))} />
+                  <input
+                    type="text"
+                    className="country-num-input"
+                    defaultValue=""
+                    {...register("CellPhoneNumber1", { required: true })}
+                    onChange={event => setValue("CellPhoneNumber1", event.target.value)}
+                  />
                 </div>
                 {errors.CellPhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
@@ -260,10 +260,10 @@ const AccountPartner: React.FC = () => {
               </div>
             </div>
             <div className="row">
-              {/* <div className="col-3">
+              <div className="col-3">
                 <label className="required">{formData.Country.title}</label>
                 <div ref={countrySelectBlock}></div>
-              </div> */}
+              </div>
               <div className="col-3">
                 <label className="required">{formData.AreaCity.title}</label>
                 <input

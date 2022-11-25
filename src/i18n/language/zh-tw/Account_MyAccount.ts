@@ -1,0 +1,17 @@
+export const Account_MyAccount = {
+    breadcrumbsLinkFrontPage: "首頁",
+    breadcrumbsLinkMemberCentre:"會員中心",
+    breadcrumbsLinkMemberCentreHref: "",
+    breadcrumbsLinkAccountInfo: "帳戶資訊",
+    personal: "個人專區",
+    account: "帳戶資訊",
+    personalInfo: "個人資訊",
+    edit: "編輯",
+    name: "姓名",
+    email: "email",
+    subscription: "信件訂閱",
+    companyInfo: "公司資訊",
+    companyName: "公司名稱",
+    business: "商業類型",
+    applicable: "適用區域",
+};

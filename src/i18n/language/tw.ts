@@ -14,6 +14,14 @@ import { About_Family } from "./zh-tw/About_Family";
 import { About_Index } from "./zh-tw/About_Index";
 import { About_Stronghold } from "./zh-tw/About_Stronghold";
 import { About_Team } from "./zh-tw/About_Team";
+import { Account_Application } from "./zh-tw/Account_Application";
+import { Account_Dashboard } from "./zh-tw/Account_Dashboard"
+import { Account_EditAccount } from "./zh-tw/Account_EditAccount"
+import { Account_Logout } from "./zh-tw/Account_Logout"
+import { Account_MemberInfo } from "./zh-tw/Account_MemberInfo"
+import { Account_MyAccount } from "./zh-tw/Account_MyAccount"
+import {Account_Newsletter } from "./zh-tw/Account_Newsletter"
+import { Account_SendVerifyEmail } from "./zh-tw/Account_SendVerifyEmail"
 
 export const tw = {
   common: {
@@ -40,4 +48,12 @@ export const tw = {
   About_Index,
   About_Stronghold,
   About_Team,
+  Account_Application,
+  Account_Dashboard,
+  Account_EditAccount,
+  Account_Logout,
+  Account_MemberInfo,
+  Account_MyAccount,
+  Account_Newsletter,
+  Account_SendVerifyEmail
 };

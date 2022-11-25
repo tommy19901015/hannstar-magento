@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 function usePageData() {
   const { t } = useTranslation();
   return {
-    JobAttributes:{
+    JobAttributes: {
       title: "工作屬性",
       option: [
         { text: "業務相關", value: "業務相關" },
@@ -15,7 +15,7 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    InterestedType:{
+    InterestedType: {
       title: "感興趣的應用別(可複選)",
       option: [
         { text: "智慧零售", value: "智慧零售" },
@@ -26,13 +26,13 @@ function usePageData() {
         { text: "智能製造", value: "智能製造" },
       ],
     },
-    CompanyName:{
+    CompanyName: {
       title: "公司名稱",
     },
-    CompanySName:{
+    CompanySName: {
       title: "公司名稱關鍵字",
     },
-    BusinessType:{
+    BusinessType: {
       title: "商業類型",
       option: [
         { text: "代理商", value: "代理商" },
@@ -44,26 +44,22 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    TaxNo:{
+    TaxNo: {
       title: "企業編號(統編/稅號)",
     },
-    Weblink:{
+    Weblink: {
       title: "公司網址",
     },
-    Country:{
-      title: "國家/地區",
-      option: [
-        { text: "台灣", value: "台灣" },
-        { text: "日本", value: "日本" },
-      ],
+    Country: {
+      title: "地區",
     },
-    AreaCity:{
+    AreaCity: {
       title: "城市",
     },
-    AreaAddress:{
+    AreaAddress: {
       title: "地址",
     },
-    CompanyEmpNumber:{
+    CompanyEmpNumber: {
       title: "員工總數",
       option: [
         { text: "<100", value: "<100" },
@@ -72,7 +68,7 @@ function usePageData() {
         { text: ">1000", value: ">1000" },
       ],
     },
-    AnnualRevenue:{
+    AnnualRevenue: {
       title: "年營業額(USD)",
       option: [
         { text: "<1M", value: "<1M" },
@@ -82,14 +78,14 @@ function usePageData() {
         { text: ">30M", value: ">30M" },
       ],
     },
-    CompanyStockOn:{
+    CompanyStockOn: {
       title: "上市公司",
       option: [
         { text: "是", value: "是" },
         { text: "否", value: "否" },
       ],
     },
-    CompanyMA1:{
+    CompanyMA1: {
       title: "公司產品主要銷售分類(可複選)",
       option: [
         { text: "車載", value: "車載" },
@@ -100,32 +96,32 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    CompanyMA2:{
-      title: "公司產品主要銷售國家/地區-1",
+    CompanyMA2: {
+      title: "公司產品主要銷售地區-1",
     },
-    CompanyMA3:{
-      title: "公司產品主要銷售國家/地區-2",
+    CompanyMA3: {
+      title: "公司產品主要銷售地區-2",
     },
-    CompanyMA4:{
-      title: "公司產品主要銷售國家/地區-3",
+    CompanyMA4: {
+      title: "公司產品主要銷售地區-3",
     },
-    TOP1:{
+    TOP1: {
       title: "主要出貨客戶-1",
     },
-    TOP2:{
+    TOP2: {
       title: "主要出貨客戶-2",
     },
-    TOP3:{
+    TOP3: {
       title: "主要出貨客戶-3",
     },
-    HannstarYN:{
+    HannstarYN: {
       title: "是否已使用HannStar產品",
       option: [
         { text: "是(請在協助以下資訊)", value: "Y" },
         { text: "否/不確定", value: "N" },
       ],
     },
-    Buy1:{
+    Buy1: {
       title: "購買渠道-1",
       option: [
         { text: "瀚宇彩晶", value: "瀚宇彩晶" },
@@ -133,10 +129,10 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    BuyCompany1:{
+    BuyCompany1: {
       title: "渠道公司名稱-1",
     },
-    Buy2:{
+    Buy2: {
       title: "購買渠道-2",
       option: [
         { text: "瀚宇彩晶", value: "瀚宇彩晶" },
@@ -144,10 +140,10 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    BuyCompany2:{
+    BuyCompany2: {
       title: "渠道公司名稱-2"
     },
-    Buy3:{
+    Buy3: {
       title: "購買渠道-3",
       option: [
         { text: "瀚宇彩晶", value: "瀚宇彩晶" },
@@ -155,13 +151,13 @@ function usePageData() {
         { text: "其他", value: "其他" },
       ],
     },
-    BuyCompany3:{
+    BuyCompany3: {
       title: "渠道公司名稱-3",
     },
-    CompanyRemark:{
+    CompanyRemark: {
       title: "備註說明",
     },
-    JobTitle:{
+    JobTitle: {
       title: "職稱",
       option: [
         { text: "創辦人/董事長", value: "創辦人/董事長" },
@@ -174,20 +170,20 @@ function usePageData() {
       ],
     },
     PhoneNumber0: "",
-    PhoneNumber1:"電話號碼",
+    PhoneNumber1: "電話號碼",
     PhoneNumber2: "分機",
     CellPhoneNumber0: "",
     CellPhoneNumber1: "手機號碼",
     CountryCode: {},
-    ApplyMembership:"申請企業會員",
-    Step1:"步驟 1. 請選擇您的身份",
-    Step2:"步驟 2. 申請人資訊",
-    Step3:"步驟 3. 企業資料",
-    Step4:"為能提供更完整的服務，請問貴司是否已使用HannStar產品",
-    Goback:"回上一頁",
-    Notes:"備註說明",
-    Application:"確認申請",
-    Required:"必填欄位，請重新輸入"
+    ApplyMembership: "申請企業會員",
+    Step1: "步驟 1. 請選擇您的身份",
+    Step2: "步驟 2. 申請人資訊",
+    Step3: "步驟 3. 企業資料",
+    Step4: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
+    Goback: "回上一頁",
+    Notes: "備註說明",
+    Application: "確認申請",
+    Required: "必填欄位，請重新輸入"
   }
 }
 

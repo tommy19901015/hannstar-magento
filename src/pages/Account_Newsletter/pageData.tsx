@@ -5,26 +5,22 @@ function usePageData() {
   const { t } = useTranslation();
   const PageType: I_PageType = {
     breadcrumbs: {
-      title: "",
       breadcrumbsLink: [
         {
-          text: "首頁",
-          href: "",
+          text: t('Account_Newsletter.breadcrumbsLinkFrontPage'),
         },
         {
-          text: "會員中心",
-          href: "",
+          text: t('Account_Newsletter.breadcrumbsLinkMemberCentre'),
         },
         {
-          text: "看板",
-          href: "",
+          text: t('Account_Newsletter.breadcrumbsLinkDashboard'),
         },
       ],
     },
-    title: "Newsletter Subscription",
-    subTitle: "Subscription option",
-    options: "General Subscription",
-    saveBtn:"Save"
+    title: t('Account_Newsletter.title'),
+    subTitle: t('Account_Newsletter.subTitle'),
+    options: t('Account_Newsletter.options'),
+    saveBtn: t('Account_Newsletter.saveBtn')
   };
 
   return PageType;

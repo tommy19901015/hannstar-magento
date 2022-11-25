@@ -47,11 +47,7 @@ function usePageData() {
       title: "公司網址",
     },
     Country: {
-      title: "國家/地區",
-      option: [
-        { text: "台灣", value: "台灣" },
-        { text: "日本", value: "日本" },
-      ],
+      title: "地區",
     },
     AreaCity: {
       title: "城市",
@@ -97,13 +93,13 @@ function usePageData() {
       ],
     },
     CompanyMA2: {
-      title: "公司產品主要銷售國家/地區-1",
+      title: "公司產品主要銷售地區-1",
     },
     CompanyMA3: {
-      title: "公司產品主要銷售國家/地區-2",
+      title: "公司產品主要銷售地區-2",
     },
     CompanyMA4: {
-      title: "公司產品主要銷售國家/地區-3",
+      title: "公司產品主要銷售地區-3",
     },
     TOP1: {
       title: "主要出貨客戶-1",
@@ -160,20 +156,20 @@ function usePageData() {
       ],
     },
     PhoneNumber0: "",
-    PhoneNumber1:"電話號碼",
+    PhoneNumber1: "電話號碼",
     PhoneNumber2: "分機",
     CellPhoneNumber0: "",
     CellPhoneNumber1: "手機號碼",
     CountryCode: {},
-    ApplyMembership:"申請供應商會員",
-    Step1:"步驟 1. 請選擇您的身份",
-    Step2:"步驟 2. 申請人資訊",
-    Step3:"步驟 3. 企業資料",
-    Step4:"為能提供更完整的服務，請問貴司是否已使用HannStar產品",
-    Goback:"回上一頁",
-    Notes:"備註說明",
-    Application:"確認申請",
-    Required:"必填欄位，請重新輸入"
+    ApplyMembership: "申請供應商會員",
+    Step1: "步驟 1. 請選擇您的身份",
+    Step2: "步驟 2. 申請人資訊",
+    Step3: "步驟 3. 企業資料",
+    Step4: "為能提供更完整服務，請問貴司是否為 HannStar 供應商? *",
+    Goback: "回上一頁",
+    Notes: "備註說明",
+    Application: "確認申請",
+    Required: "必填欄位，請重新輸入"
   };
 }
 

@@ -10,25 +10,26 @@ function usePageData() {
       title: "",
       breadcrumbsLink: [
         {
-          text: "首頁",
-          href: "",
+          text: t('Account_MemberInfo.breadcrumbsLinkFrontPage'),
         },
         {
-          text: "會員中心",
-          href: "",
+          text: t('Account_MemberInfo.breadcrumbsLinkMemberCentre'),
         },
         {
-          text: "成員資訊",
-          href: "",
+          text: t('Account_MemberInfo.breadcrumbsLinkMemberInfo'),
         },
       ],
     },
-    inputEmail:"請輸入Email",
+    inputEmail: t('Account_MemberInfo.inputEmail'),
     content: {
-      title: "成員資訊",
-      label: "邀請成員",
-      btn: "+邀請",
-      table: ["姓名", "郵箱", "職稱"],
+      title: t('Account_MemberInfo.contentTitle'),
+      label: t('Account_MemberInfo.contentLabel'),
+      btn: t('Account_MemberInfo.contentBtn'),
+      table: [
+        t('Account_MemberInfo.contentTableName'),
+        t('Account_MemberInfo.contentTableEmail'),
+        t('Account_MemberInfo.contentTableJobTitle')
+      ],
     },
   };
 
