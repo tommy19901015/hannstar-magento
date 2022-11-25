@@ -31,6 +31,10 @@ const SustainabilityCSR: React.FC = () => {
           {...ChairmanData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
+        <D360Templates {... {
+          site: "a844d0f9-4d43-403b-89b8-cc52f8f289fd",
+          method: "GetArticle"
+        }} />
       </>
     );
   };
@@ -60,6 +64,10 @@ const SustainabilityCSR: React.FC = () => {
           {...CommunicateData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
+        <D360Templates {... {
+          site: "9f8b5cd6-4341-4737-a9d0-8ebb7de94359",
+          method: "GetArticle"
+        }} />
       </>
     );
   };

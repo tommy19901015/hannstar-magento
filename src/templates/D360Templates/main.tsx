@@ -7,10 +7,11 @@ import { ColType } from "../../component/columns/interface";
 import mappingD360I18n from "../../common/mappingD360I18n";
 import "./css.scss";
 //---------------------------------
-import DD360Test from "../../D360fakeData/D360_summary.json";
+// import DD360Test from "../../D360fakeData/D360_summary.json";
+// import DD360Test from "../../D360fakeData/D360_Communicate.json";
 // import DD360Test from "../../D360fakeData/D3603.json"
 // import DD360Test from "../../D360fakeData/D360_PDF.json"
-// import DD360Test from "../../D360fakeData/D360_oneArticle.json"
+import DD360Test from "../../D360fakeData/D360_oneArticle.json"
 // import DD360Test from "../../D360fakeData/D360_multipleBlock.json";
 // import DD360Test from "../../D360fakeData/D360_TabEmpty.json"
 //---------------------------------
@@ -28,14 +29,14 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
       "site": site
     }
 
-    postGetD360Art(postData).then((response: any) => {
-      if (response.result === "success") {
-        setD360Data(response.data)
-      }
-    });
+    // postGetD360Art(postData).then((response: any) => {
+    //   if (response.result === "success") {
+    //     setD360Data(response.data)
+    //   }
+    // });
 
-    // const D360Test: any = DD360Test;
-    // setD360Data(D360Test.data);
+    const D360Test: any = DD360Test;
+    setD360Data(D360Test.data);
   }, []);
 
   const handleClickTab = (index: any) => {
@@ -43,7 +44,6 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
   };
 
   const D360Block = () => {
-    console.log("d360Data", d360Data);
     const getRWDTable = (document360Data: any) => {
       const div: any = document.createElement("div");
       div.innerHTML = document360Data.trim();
@@ -59,7 +59,6 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
     };
 
     const multipleBlock = (document360Data: any) => {
-      console.log("multipleBlock", document360Data);
       return document360Data.block.map((item: any) => (
         <>
           {item.content && (
@@ -116,9 +115,6 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
               </>
             )}
             <div className="d360ContentBlock">
-              <div className="d360Title">
-                {d360Data[activeTabIdx].metaTitle}
-              </div>
               {multipleBlock(d360Data[activeTabIdx])}
             </div>
           </>
