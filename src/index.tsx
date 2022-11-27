@@ -2,11 +2,8 @@ import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
 import Index from "./pages/Index/main";
-import CSRIndex from "./pages/Sustainability_Index/main";
 import EBiz from "./pages/e-biz/main";
 import Solution from "./pages/solution/main";
-import Document360Test from "./pages/document360Test/main";
-import FormTest from "./pages/formTest/main";
 import HannstarLogin from "./pages/Login/main";
 import HannstarRegister from "./pages/Register/main";
 import ForgotPassword from "./pages/ForgotPassword/main";
@@ -30,7 +27,13 @@ import AboutFamily from "./pages/About_Family/main";
 import AboutCertification from "./pages/About_Certification/main";
 import AboutTeam from "./pages/About_Team/main";
 //企業永續
-
+import SustainabilityIndex from "./pages/Sustainability_Index/main";
+import SustainabilityGovernance from "./pages/Sustainability_Governance/main";
+import SustainabilityEnvironment from "./pages/Sustainability_Environment/main";
+import SustainabilitySocial from "./pages/Sustainability_Social/main";
+import SustainabilityReport from "./pages/Sustainability_Report/main";
+import SustainabilityESG from "./pages/Sustainability_ESG/main";
+import SustainabilityCSR from "./pages/Sustainability_CSR/main";
 //投資人專區
 import InvestorsSummary from "./pages/Investors_Summary/main";
 import InvestorsConference from "./pages/Investors_Conference/main";
@@ -39,6 +42,24 @@ import InvestorsRevenue from "./pages/Investors_Revenue/main";
 import InvestorsShareholdermeeting from "./pages/Investors_Shareholdermeeting/main";
 import InvestorsReport from "./pages/Investors_Report/main";
 import InvestorsContacts from "./pages/Investors_Contacts/main";
+//人才招募
+import CareersDetailWork from "./pages/CareersDetail_Work/main";
+import CareersDetailJoin from "./pages/CareersDetail_Join/main";
+import CareersDetailIndex from "./pages/CareersDetail_Index/main";
+import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
+//TFT
+import TFTIndex from "./pages/TFT_Index/main";
+//PaperDisplay
+import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
+import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
+import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
+//Hannspree
+import HannspreeIndex from "./pages/Hannspree_Iindex/main";
+import HannspreeSolve from "./pages/Hannspree_Solve/main";
+import HannspreeCustom from "./pages/Hannspree_Custom/main";
+//方案
+import SolutionLabel from "./pages/Solution_Label/main";
+import SolutionIndex from "./pages/Solution_Index/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
@@ -63,44 +84,9 @@ import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import ServiceParseApply from "./pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
-
-import Template3Page from "./pages/Template3/main";
 import urlConfig from "./config/urlSetting.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
-import SustainabilityIndex from "./pages/Sustainability_Index/main";
-import SustainabilityChairman from "./pages/Sustainability_Chairman/main";
-import SustainabilityGovernance from "./pages/Sustainability_Governance/main";
-import SustainabilityEnvironment from "./pages/Sustainability_Environment/main";
-import SustainabilitySocial from "./pages/Sustainability_Social/main";
-import SustainabilityReport from "./pages/Sustainability_Report/main";
-import SustainabilityESG from "./pages/Sustainability_ESG/main";
-
-import SustainabilityCSR from "./pages/Sustainability_CSR/main";
-
-import CSRSGI from "./pages/CSR_SGI/main";
-import CSRED from "./pages/CSR_ED/main";
-import CSRISMS from "./pages/CSR_ISMS/main";
-import CSRMR from "./pages/CSR_MR/main";
-import CSROSHA from "./pages/CSR_OSHA/main";
-import CSRSP from "./pages/CSR_SP/main";
-import CSRSSCM from "./pages/CSR_SSCM/main";
-import CSRTD from "./pages/CSR_TD/main";
-import CSRClimChangeRM from "./pages/CSR_ClimChangeRM/main";
-//人才招募
-import CareersDetailWork from "./pages/CareersDetail_Work/main";
-import CareersDetailJoin from "./pages/CareersDetail_Join/main";
-import CareersDetailIndex from "./pages/CareersDetail_Index/main";
-import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
-import TFTIndex from "./pages/TFT_Index/main";
-import SolutionLabel from "./pages/Solution_Label/main";
-import SolutionIndex from "./pages/Solution_Index/main";
-import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
-import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
-import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
-import HannspreeIndex from "./pages/Hannspree_Iindex/main";
-import HannspreeSolve from "./pages/Hannspree_Solve/main";
-import HannspreeCustom from "./pages/Hannspree_Custom/main";
 
 import NewsFinancial from "./pages/News_Financial/main";
 const {
@@ -154,9 +140,6 @@ ReactDOM.render(
       <Route path={partner.index.href} element={<PartnerIndex />} />
       <Route path="/e-biz" element={<EBiz />} />
       <Route path="/solution" element={<Solution />} />
-      <Route path="/document360Test" element={<Document360Test />} />
-      <Route path="/formTest" element={<FormTest />} />
-      <Route path="/template3" element={<Template3Page />} />
       <Route
         path={partner.quotationList.href}
         element={<PartnerQuotationList />}
@@ -207,18 +190,6 @@ ReactDOM.render(
         path={service.lawApply.href}
         element={<ServiceGreenServiceApply />}
       />
-      {/* for CSR */}
-
-      {/* <Route path={"/news/esg"} element={<CSRESG />} />  */}
-      <Route path={"/news/csrsgi"} element={<CSRSGI />} />
-      <Route path={"/news/ed"} element={<CSRED />} />
-      <Route path={"/news/isms"} element={<CSRISMS />} />
-      <Route path={"/news/mr"} element={<CSRMR />} />
-      <Route path={"/news/osha"} element={<CSROSHA />} />
-      <Route path={"/news/sp"} element={<CSRSP />} />
-      <Route path={"/news/sscm"} element={<CSRSSCM />} />
-      <Route path={"/news/td"} element={<CSRTD />} />
-      {/*--------------*/}
       <Route
         path={hannstar.sustainability_index.href}
         element={<SustainabilityIndex />}
@@ -247,8 +218,6 @@ ReactDOM.render(
         path={hannstar.sustainability_esg.href}
         element={<SustainabilityESG />}
       />
-      {/*--------------*/}
-      <Route path={"/news/climchangerm"} element={<CSRClimChangeRM />} />
       {/* 關於瀚宇彩晶 */}
       <Route path={hannstar.about_index.href} element={<AboutIndex />} />
       <Route

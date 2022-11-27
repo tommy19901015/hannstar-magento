@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../style/reset.css";
 import "../style/common.scss";
-import Login from "../pages/Login/main";
 import Index from "../pages/Index/main";
+//登入註冊相關
+import Login from "../pages/Login/main";
 import HannstarRegister from "../pages/Register/main";
 import AccountPersonal from "../pages/Account_Personal/mainNew";
 import AccountPartner from "../pages/Account_Partner/mainNew";
@@ -19,6 +20,7 @@ import MFAQRCode from "../pages/MFAQRCode/main";
 import MFA from "../pages/MFA/main";
 import ForgotPassword from "../pages/ForgotPassword/main";
 import ResetPassword from "../pages/ResetPassword/main";
+//需要再調整
 import EBiz from "../pages/e-biz/main";
 import Solution from "../pages/solution/main";
 import PartnerIndex from "../pages/Partner_Index/main";
@@ -150,15 +152,15 @@ const pageMappingObj = {
   root_ServiceCustomerSupport: <ServiceCustomerSupport />,
   root_ServiceParseApply: <ServiceParseApply />,
   root_ServiceGreenServiceApply: <ServiceGreenServiceApply />,
-  root_HannspreeIndex:<HannspreeIndex/>,
-  root_HannspreeCustom:<HannspreeCustom/>,
-  root_HannspreeSolve:<HannspreeSolve/>,
-  root_SolutionIndex:<SolutionIndex/>,
-  root_SolutionLabel:<SolutionLabel/>,
-  root_PaperDisplayIndex:<PaperDisplayIndex/>,
-  root_PaperDisplayIntroduce:<PaperDisplayIntroduce/>,
-  root_PaperDisplayTechnology:<PaperDisplayTechnology/>,
-  root_TFTIndex:<TFTIndex/>,
+  root_HannspreeIndex: <HannspreeIndex />,
+  root_HannspreeCustom: <HannspreeCustom />,
+  root_HannspreeSolve: <HannspreeSolve />,
+  root_SolutionIndex: <SolutionIndex />,
+  root_SolutionLabel: <SolutionLabel />,
+  root_PaperDisplayIndex: <PaperDisplayIndex />,
+  root_PaperDisplayIntroduce: <PaperDisplayIntroduce />,
+  root_PaperDisplayTechnology: <PaperDisplayTechnology />,
+  root_TFTIndex: <TFTIndex />,
   root_Index: <Index />,
 };
 
