@@ -1,0 +1,29 @@
+<?php
+/*
+product list 
+left bar 
+filter block
+ */
+?>
+
+<ol class="items">
+    <?php foreach ($filterItems as $filterItem): ?>
+        <li class="item">
+          <!-- raw data
+                <a href="https://www.hannstar.com" rel="nofollow" >
+                  LabelName
+                  <span class="count">
+                    countNum
+                  </span>
+                </a>
+           -->
+            <?php if ($filterItem->getCount() > 0): ?>
+                <a href="<?= $escaper->escapeUrl($filterItem->getUrl()) ?>" rel="nofollow" >
+                  <?= /* @noEscape */ $filterItem->getLabel() ?>
+                </a>
+            <?php else: ?>
+                <?= /* @noEscape */ $filterItem->getLabel() ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>

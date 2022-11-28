@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <head>
+    <title>TFT Display Preferred Product List</title>
+  </head>
+ 
+
+    <body>
+        <!--adding attribute tag to inherit the default stying for products-->
+        <attribute name="class" value="page-products"/>
+        
+        <container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container">
+         <referenceContainer name="content">
+            <block class="Tftdisplay\TftdisplayModule\Block\Product\ListProduct" name="mycollection_index_index" as="product_list" template="Tftdisplay_TftdisplayModule::product/list.phtml">
+            </block>
+            <block class="Tftdisplay\TftdisplayModule\Block\Navigation" name="catalog.leftnav" as="navigation" before="-" template="Magento_LayeredNavigation::layer/view.phtml">              
+            <block class="Tftdisplay\TftdisplayModule\Block\Navigation\State" name="catalog.navigation.state" as="state" template="Tftdisplay_TftdisplayModule::layer/state.phtml" />
+            <block class="Magento\LayeredNavigation\Block\Navigation\FilterRenderer" name="catalog.navigation.renderer" as="renderer" template="Tftdisplay_TftdisplayModule::layer/filter.phtml">
+                <arguments>
+                    <argument name="product_layer_view_model" xsi:type="object">Magento\LayeredNavigation\ViewModel\Layer\Filter</argument>
+                </arguments>
+            </block>
+            </block>
+        </referenceContainer>
+
+          
+       </container>
+
+        
+
+
+
+    </body>
+</page>
