@@ -70,7 +70,14 @@ $componentName: 'ArticleList2';
     @media screen and (max-width: $breakpoint) {
         .title {
         }
-        .content {
+        .articleContent {
+            .catalogBlock{
+                .catalogContent {
+                    grid-gap: 30px;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            
+            }
         }
     }
 }

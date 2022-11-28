@@ -26,6 +26,7 @@ $componentName: 'Breadcrumbs';
     }
 
     @media screen and (max-width: $breakpoint) {
+        padding-top: 0px;
         .linkBlock {
             padding: 0;
         }
