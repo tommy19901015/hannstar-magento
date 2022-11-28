@@ -1,0 +1,11 @@
+11/28
+
+以下這些都是用舊的templates，幫我改新的
+Partner_Manageandadvisory
+Partner_Manufacturing
+Service_GreenService
+Service_CustomerSupport
+
+關於瀚宇彩晶
+黃色圈起來 打叉不用，只有兩頁要新增，資料夾名稱先自己訂
+https://www.figma.com/file/jd3ojH73WhjdGGXb67NL9H/%E5%AE%98%E7%B6%B2test?node-id=0%3A1&t=j7OPvt4VtkLnikce-0
