@@ -1,10 +1,10 @@
 11/28
 
 以下這些都是用舊的templates，幫我改新的
-Partner_Manageandadvisory
-Partner_Manufacturing
-Service_GreenService
-Service_CustomerSupport
+Partner_Manageandadvisory  > OK
+Partner_Manufacturing > OK
+Service_GreenService > OK
+Service_CustomerSupport > OK
 
 關於瀚宇彩晶
 黃色圈起來 打叉不用，只有兩頁要新增，資料夾名稱先自己訂

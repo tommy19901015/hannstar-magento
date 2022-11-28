@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
-import usePageData from "./pageData"
+import usePageData from "./pageData";
 import "./css.scss";
 
-const PartnerManageandadvisory: React.FC = () => {
-  const pageName = "PartnerManageandadvisory";
+const ServiceGreenProductPolicy: React.FC = () => {
+  const pageName = "ServiceGreenProductPolicy";
   const pageData = usePageData();
   return (
     <Layout>
@@ -16,4 +16,4 @@ const PartnerManageandadvisory: React.FC = () => {
   );
 };
 
-export default PartnerManageandadvisory;
+export default ServiceGreenProductPolicy;

@@ -3,7 +3,7 @@ import Columns from "../../component/columns/main";
 import { ColType, TopMType } from "../../component/columns/interface";
 import { I_AccountPersonalTemplate, Accountstatus } from "./interface";
 
-import { pageData } from "./pageData";
+import useInitData from "./pageData";
 import { useIsMobile } from "../../hooks";
 import "./css.scss";
 
@@ -14,7 +14,7 @@ const AccountPersonalTemplate: React.FC<I_AccountPersonalTemplate> = ({
 }) => {
   const pageName = "AccountPersonalTemplate";
   const isMobile = useIsMobile();
-  const personalInfoData = pageData();
+  const personalInfoData = useInitData();
   const AccountToolBar = () => {
     // rootId = "123" //測試資料把menu打開
     // accountstatus = Accountstatus.Approved

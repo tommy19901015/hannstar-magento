@@ -24,6 +24,9 @@ import {Account_Newsletter } from "./zh-tw/Account_Newsletter"
 import { Account_SendVerifyEmail } from "./zh-tw/Account_SendVerifyEmail"
 import { Account_Personal } from "./zh-tw/Account_Personal";
 import { Account_Partner } from "./zh-tw/Account_Partner";
+import { Account_Personal_Template } from "./zh-tw/Account_Personal_Template";
+import { MFA } from "./zh-tw/MFA";
+import { MFAQRCODE } from "./zh-tw/MFAQRCode";
 
 export const tw = {
   common: {
@@ -59,5 +62,8 @@ export const tw = {
   Account_Newsletter,
   Account_SendVerifyEmail,
   Account_Personal,
-  Account_Partner
+  Account_Partner,
+  Account_Personal_Template,
+  MFA,
+  MFAQRCODE
 };

@@ -89,6 +89,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
 
 import NewsFinancial from "./pages/News_Financial/main";
+import ServiceGreenManagement from "./pages/Service_GreenManagement/main";
+import ServiceGreenProductPolicy from "./pages/Service_GreenProductPolicy/main";
 const {
   hannstar,
   partner,
@@ -294,6 +296,10 @@ ReactDOM.render(
       <Route path={hannspree.custom.href} element={<HannspreeCustom />} />
 
       <Route path={hannstar.news_financial.href} element={<NewsFinancial />} />
+
+      <Route path={"/news/serviceGreenManagement"} element={<ServiceGreenManagement />} />
+      <Route path={"/news/serviceGreenProductPolicy"} element={<ServiceGreenProductPolicy />} />
+
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
