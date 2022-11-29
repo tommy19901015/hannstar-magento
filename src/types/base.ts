@@ -61,6 +61,7 @@ export interface I_TitleContentImgGrid {
     src: string;
     href?: string;
     text?: string;
+    content?: string;
   }[];
 }
 

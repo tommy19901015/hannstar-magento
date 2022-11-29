@@ -9,3 +9,14 @@ LandingPage_Image/Image/hannstar/sustainability
 LandingPage_Image/Image/hannstar/sustainability/sustainablemanagement
 (Rectangle1914 / Group6338 / Rectangle2503 / Rectangle2502 / image373 / image373_1 基本上是全部)
 圖檔命名將空格移除
+
+
+利害關係人溝通管道 & 董事長的話 都沒有資料
+
+
+LandingPage_Image/Image/hannstar/sustainability/sustainablemanagement/topbanner1.png
+LandingPage_Image/Image/hannstar/sustainability/governance/topbanner1.png
+應該提供一版給 「 請參閱瀚宇彩晶2021年度永續報告書 」右邊圖檔 目前的是for banner
+
+
+`${urlConfig.s3Url}/Image/hannstar/sustainability/sustainablemanagement/topbanner1.png`

@@ -20,6 +20,13 @@ $componentName: "ImgGrid";
     width: 100%;
     max-width: 300px;
   }
+  .title{
+    @include hannstarContent1;
+    margin-bottom: 5px;
+  }
+  .content{
+    @include hannstarContent2;
+  }
 }
 
 @media screen and (max-width: $breakpoint) {

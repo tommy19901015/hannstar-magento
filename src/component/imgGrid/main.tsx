@@ -14,7 +14,8 @@ const ImgGrid: React.FC<I_GridModel> = ({rowCount, imgs}) => {
             className={`${componentName}Img`}
             src={item.src}
             alt={`${componentName}${idx}`} />
-            {item.text && (<span>{item.text}</span>)}
+            {item.text && (<h6 className="title">{item.text}</h6>)}
+            {item.content && <span className="content">{item.content}</span>}
           </div>
         );
       })}
