@@ -17,31 +17,46 @@ $pageName: 'TFTPreferredProduct';
         .sidebar {
             .block {
                 &.filter {
+                    .block-title {
+                        &.filter-title {
+                            padding-bottom: 20px;
+                        }
+                    }
                     .block-content {
                         &.filter-content {
                             .filter-current {
                                 //搜尋條件
                                 padding-bottom: 20px;
+                                .block-subtitle {
+                                    &.filter-current-subtitle {
+                                        padding-bottom: 20px;
+                                    }
+                                }
                                 .items {
+                                    margin-top: 20px;
                                     .item {
+                                        display: flex;
+                                        align-items: center;
                                         position: relative;
-                                        padding-left: 15px;
+                                        padding-left: 25px;
+                                        margin-bottom: 10px;
                                         .filter-label {
                                             font-weight: bolder;
                                             display: block;
                                         }
                                         .filter-value {
                                             display: block;
-                                            padding-top: 10px;
-                                            font-size: 14px;
+                                            padding-left: 10px;
+                                            // padding-top: 10px;
+                                            // font-size: 14px;
                                         }
                                         .action {
                                             &.remove {
                                                 &::after,
                                                 &::before {
                                                     position: absolute;
-                                                    left: 0;
-                                                    top: 0;
+                                                    left: 6px;
+                                                    top: 2px;
                                                     content: '';
                                                     height: 15px;
                                                     width: 1px;
@@ -62,15 +77,17 @@ $pageName: 'TFTPreferredProduct';
                             .block-actions {
                                 &.filter-actions {
                                     padding-bottom: 20px;
+                                    a {
+                                        color: $hannstar-blue3;
+                                    }
                                 }
                             }
                             .block-subtitle {
                                 &.filter-subtitle {
-                                    padding-bottom: 10px;
-                                    border-bottom: 1px solid $hannstar-border-color;
                                 }
                             }
                             .filter-options {
+                                margin-top: 20px;
                                 .filter-options-item {
                                     cursor: pointer;
                                     border-bottom: 1px solid $hannstar-border-color;
@@ -90,9 +107,11 @@ $pageName: 'TFTPreferredProduct';
                                         }
                                     }
                                     &.active {
-                                        &::after {
-                                            transform: rotate(-45deg);
-                                            margin-bottom: 5px;
+                                        .filter-options-title {
+                                            &::after {
+                                                transform: rotate(-45deg);
+                                                margin-bottom: 5px;
+                                            }
                                         }
                                         .filter-options-content {
                                             display: block;
@@ -116,5 +135,43 @@ $pageName: 'TFTPreferredProduct';
         }
     }
     .rightMagentoBlock {
+        padding-left: 80px;
+        .products {
+            &.wrapper {
+                &.list {
+                    &.products-list {
+                        ol {
+                            li {
+                                .product-item-info {
+                                    display: flex;
+                                    .product {
+                                        .product-item-name {
+                                            @include hannstarH4Title;
+                                            a {
+                                                color: $hannstar-default-text-color;
+                                            }
+                                        }
+                                        .product-item-inner {
+                                            margin-top: 20px;
+                                            .product-item-actions {
+                                                margin-bottom: 20px;
+                                                .actions-primary {
+                                                    form {
+                                                        button {
+                                                            @include hannstarBtn;
+                                                            border: none;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

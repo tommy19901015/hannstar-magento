@@ -15,11 +15,11 @@ const TFTPreferredProduct: React.FC = () => {
   const rightMagentoBlock: any = useRef();
 
   useEffect(() => {
-    // const leftMagentoDom: any = document.getElementsByClassName("sidebar-main")[0];
-    // if (leftMagentoDom) leftMagentoBlock.current.appendChild(leftMagentoDom);
+    const leftMagentoDom: any = document.getElementsByClassName("sidebar-main")[0];
+    if (leftMagentoDom) leftMagentoBlock.current.appendChild(leftMagentoDom);
 
-    // const rightMagentoDom: any = document.getElementsByClassName("products-list")[0];
-    // if (rightMagentoDom) rightMagentoBlock.current.appendChild(rightMagentoDom);
+    const rightMagentoDom: any = document.getElementsByClassName("products-list")[0];
+    if (rightMagentoDom) rightMagentoBlock.current.appendChild(rightMagentoDom);
 
   }, []);
 
@@ -30,10 +30,10 @@ const TFTPreferredProduct: React.FC = () => {
           type={ColType.TwoCol}
           widthL={30}
           widthR={70}
-          // contentL={<div ref={leftMagentoBlock} />}
-          // contentR={<div ref={rightMagentoBlock} />}
-          contentL={<div className="leftMagentoBlock"><MagentoFilterBar /></div>}
-          contentR={<div className="rightMagentoBlock"><MagentoProductContent /></div>}
+          contentL={<div className="leftMagentoBlock" ref={leftMagentoBlock} />}
+          contentR={<div className="rightMagentoBlock" ref={rightMagentoBlock} />}
+        // contentL={<div className="leftMagentoBlock"><MagentoFilterBar /></div>}
+        // contentR={<div className="rightMagentoBlock"><MagentoProductContent /></div>}
         />
       </div>
     </Layout>

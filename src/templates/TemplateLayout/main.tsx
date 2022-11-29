@@ -112,7 +112,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
         content={
           <div className={`${pageName}ModuleBlock`}>
             <TitleContent {...item.titleContent} />
-            <Video {...item.video} />
+            <Video {...item} />
           </div>
         }
       />
