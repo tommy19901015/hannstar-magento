@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
-import { GraphicsLineType } from "../../component/graphicsLine/interface";
 import { I_PageType } from "./interface";
+import urlConfig from "../../config/urlSetting.json";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -26,7 +26,7 @@ function usePageData() {
     },
 
     bannerTextData: {
-      src: "https://www.hannstar.com/upload/package_b/ALL_package_20F12_5iycmervqs.jpg",
+      src: `${urlConfig.s3Url}/Image/hannstar/index/banner1.jpg`,
       title: "瀚宇彩晶願景",
       text: "讓我們的下一代都能享受新彩麗世界的新希望透過不斷創新的顯示技術，讓視覺可以穿越綠野、越過高山，到達世界的彼端，打開一扇使人類生命更豐富，讓生活更精采的視窗",
       textAlign: TextAlign.BottomLeft
@@ -40,8 +40,8 @@ function usePageData() {
       {
         date: "2021年11月",
         title: "榮獲TCSA電子製造業類別之「永續報告」金獎",
-        imgSrc:
-          "https://www.hannstar.com/upload/about_history_list/twL_about_history_22A26_24ret9v6xj.jpg",
+        imgSrc:`${urlConfig.s3Url}/Image/account/banner1.jpg`
+          // "https://www.hannstar.com/upload/about_history_list/twL_about_history_22A26_24ret9v6xj.jpg",
       },
       {
         date: "2021年9月",
