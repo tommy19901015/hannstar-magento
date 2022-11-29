@@ -7,6 +7,7 @@ import { ColType } from "../../component/columns/interface";
 import GraphicsLine from "../../component/graphicsLine/main";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
 import "./css.scss";
+import urlConfig from "../../config/urlSetting.json";
 
 const breadcrumbsData = {
   title: "",
@@ -71,7 +72,7 @@ const AboutStronghold: React.FC = () => {
           <div className="leftBlock">
             <img
               alt="全球據點"
-              src="https://www.hannstar.com/upload/stronghold_map_list/twL_stronghold_map_22A26_6dxvf6rzgt.jpg"
+              src={`${urlConfig.s3Url}/Image/hannstar/about/GlobalLocation/map.jpg`}
             />
           </div>
           <div className="rightBlock">
