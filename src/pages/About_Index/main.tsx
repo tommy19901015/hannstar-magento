@@ -4,12 +4,8 @@ import Layout from "../../component/layout/main";
 import Banner from "../../component/banner/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import GraphicsLine from "../../component/graphicsLine/main";
-import { GraphicsLineType } from "../../component/graphicsLine/interface";
 import Graphics3 from "../../component/graphics3/main";
-import { TextAlign } from "../../component/banner/interface";
 import usePageData from "./pageData";
-import { getTodoData } from "../../services/api.service";
 import "./css.scss";
 
 const AboutIndex: React.FC = () => {
