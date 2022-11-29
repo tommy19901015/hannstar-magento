@@ -66,7 +66,7 @@ const MFAQRCode: React.FC = () => {
             <div className="titleContent">
               <div className="mainTitle">{tableData.pageTitle}</div>
               <p>{tableData.subTitle}</p>
-              <img alt="demo" className="mobileImgContent" src="https://s3magentodev.s3.us-west-2.amazonaws.com/Image/account/img_2fa_demo.png" />
+              <img alt="demo" className="mobileImgContent" src={`${urlConfig.s3Url}/Image/account/img_2fa_demo.png`} />
               <span>{tableData.noteTitle}</span>
               <div className="stepGuide">
                 {tableData.stepGuide}<i className=""></i>

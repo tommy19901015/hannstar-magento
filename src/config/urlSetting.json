@@ -1,6 +1,6 @@
 {
   "s3Url": "https://s3magentodev.hannstar.com",
-  "s3Url_magentodev": "https://dvqruze971ijv.cloudfront.net",
+  "s3Url_magentodev": "https://s3magentodev.s3.us-west-2.amazonaws.com/",
   "account": {
     "login": {
       "title": "登入",

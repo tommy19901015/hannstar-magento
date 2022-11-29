@@ -2,5 +2,119 @@
 
 $pageName: 'TFTPreferredProduct';
 
-.#{$pageName}ContentBlock {
+@font-face {
+    font-family: 'luma-icons';
+    src: url('https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff2') format('woff2'),
+        url('https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.#{$pageName}MainContainer {
+    padding-top: 40px;
+    .leftMagentoBlock {
+        .sidebar {
+            .block {
+                &.filter {
+                    .block-content {
+                        &.filter-content {
+                            .filter-current {
+                                //搜尋條件
+                                padding-bottom: 20px;
+                                .items {
+                                    .item {
+                                        position: relative;
+                                        padding-left: 15px;
+                                        .filter-label {
+                                            font-weight: bolder;
+                                            display: block;
+                                        }
+                                        .filter-value {
+                                            display: block;
+                                            padding-top: 10px;
+                                            font-size: 14px;
+                                        }
+                                        .action {
+                                            &.remove {
+                                                &::after,
+                                                &::before {
+                                                    position: absolute;
+                                                    left: 0;
+                                                    top: 0;
+                                                    content: '';
+                                                    height: 15px;
+                                                    width: 1px;
+                                                    background-color: $hannstar-default-text-color;
+                                                    transform: rotate(45deg);
+                                                }
+                                                &::after {
+                                                    transform: rotate(-45deg);
+                                                }
+                                                span {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .block-actions {
+                                &.filter-actions {
+                                    padding-bottom: 20px;
+                                }
+                            }
+                            .block-subtitle {
+                                &.filter-subtitle {
+                                    padding-bottom: 10px;
+                                    border-bottom: 1px solid $hannstar-border-color;
+                                }
+                            }
+                            .filter-options {
+                                .filter-options-item {
+                                    cursor: pointer;
+                                    border-bottom: 1px solid $hannstar-border-color;
+                                    padding: 10px 0;
+                                    .filter-options-title {
+                                        position: relative;
+                                        &::after {
+                                            position: absolute;
+                                            right: 20px;
+                                            content: '';
+                                            width: 8px;
+                                            height: 8px;
+                                            border-top: 1px solid $hannstar-default-text-color;
+                                            border-right: 1px solid $hannstar-default-text-color;
+                                            transform: rotate(135deg);
+                                            margin-bottom: 5px;
+                                        }
+                                    }
+                                    &.active {
+                                        &::after {
+                                            transform: rotate(-45deg);
+                                            margin-bottom: 5px;
+                                        }
+                                        .filter-options-content {
+                                            display: block;
+                                            padding-top: 10px;
+                                            .items {
+                                                .item {
+                                                    padding: 5px 0;
+                                                    a {
+                                                        @include hannstarContent2;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rightMagentoBlock {
+    }
 }
