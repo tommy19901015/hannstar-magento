@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
-import { TabEnum } from "../../types/Tmeplate1/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { GrapTheme } from "../../component/graphics3/interface";
+import urlConfig from "../../config/urlSetting.json";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -43,7 +42,7 @@ function usePageData() {
         type: "SustainabilityGraphics3",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig.s3Url}/Image/hannstar/about/family/hannstar.jpg`,
             title: "瀚宇彩晶",
             image: "https://fakeimg.pl/80x50/?text=Image",
             paragraphs: true,
@@ -61,7 +60,7 @@ function usePageData() {
             moreHref: "/",
           },
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig.s3Url}/Image/hannstar/about/family/hannstouch.jpg`,
             title: "和鑫光電",
             image: "https://fakeimg.pl/80x50/?text=Image",
             paragraphs: true,
@@ -79,7 +78,7 @@ function usePageData() {
             moreHref: "/",
           },
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig.s3Url}/Image/hannstar/about/family/hannspree.jpg`,
             title: "瀚斯寶麗",
             image: "https://fakeimg.pl/80x50/?text=Image",
             paragraphs: true,
@@ -96,7 +95,7 @@ function usePageData() {
             moreHref: "/",
           },
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig.s3Url}/Image/hannstar/about/family/hannshouse.jpg`,
             title: "瀚寓酒店",
             image: "https://fakeimg.pl/80x50/?text=Image",
             paragraphs: true,
@@ -114,7 +113,7 @@ function usePageData() {
             moreHref: "/",
           },
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig.s3Url}/Image/hannstar/about/family/foundation.jpg`,
             title: "彩晶文教基金會",
             image: "https://fakeimg.pl/80x50/?text=Image",
             paragraphs: true,

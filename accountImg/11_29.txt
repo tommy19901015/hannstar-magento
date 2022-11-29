@@ -2,3 +2,5 @@
 
 路徑為 (前面都要加S3變數)
 {`${urlConfig.s3Url}/Image/account/img_2fa_demo.png`}
+
+ `${urlConfig.s3Url}/Image/hannstar/about/family/hannstar.jpg`

@@ -1,0 +1,11 @@
+LandingPage_Image/Image/hannstar/careers
+裡面的資料夾 (work/join/grow/recruit) 命名包含圖檔命名都要將空格移除
+
+
+LandingPage_Image/Image/hannstar/about/family
+缺少相關企業ＬＯＧＯ
+
+LandingPage_Image/Image/hannstar/sustainability
+LandingPage_Image/Image/hannstar/sustainability/sustainablemanagement
+(Rectangle1914 / Group6338 / Rectangle2503 / Rectangle2502 / image373 / image373_1 基本上是全部)
+圖檔命名將空格移除
