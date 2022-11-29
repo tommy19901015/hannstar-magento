@@ -1,177 +1,225 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'TFTPreferredProduct';
+$pageName: "TFTPreferredProduct";
 
 @font-face {
-    font-family: 'luma-icons';
-    src: url('https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff2') format('woff2'),
-        url('https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+  font-family: "luma-icons";
+  src: url("https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff2")
+      format("woff2"),
+    url("https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 .#{$pageName}MainContainer {
-    padding-top: 40px;
-    .leftMagentoBlock {
-        .sidebar {
-            .block {
-                &.filter {
-                    .block-title {
-                        &.filter-title {
-                            padding-bottom: 20px;
-                        }
-                    }
-                    .block-content {
-                        &.filter-content {
-                            .filter-current {
-                                //搜尋條件
-                                padding-bottom: 20px;
-                                .block-subtitle {
-                                    &.filter-current-subtitle {
-                                        padding-bottom: 20px;
-                                    }
-                                }
-                                .items {
-                                    margin-top: 20px;
-                                    .item {
-                                        display: flex;
-                                        align-items: center;
-                                        position: relative;
-                                        padding-left: 25px;
-                                        margin-bottom: 10px;
-                                        .filter-label {
-                                            font-weight: bolder;
-                                            display: block;
-                                        }
-                                        .filter-value {
-                                            display: block;
-                                            padding-left: 10px;
-                                            // padding-top: 10px;
-                                            // font-size: 14px;
-                                        }
-                                        .action {
-                                            &.remove {
-                                                &::after,
-                                                &::before {
-                                                    position: absolute;
-                                                    left: 6px;
-                                                    top: 2px;
-                                                    content: '';
-                                                    height: 15px;
-                                                    width: 1px;
-                                                    background-color: $hannstar-default-text-color;
-                                                    transform: rotate(45deg);
-                                                }
-                                                &::after {
-                                                    transform: rotate(-45deg);
-                                                }
-                                                span {
-                                                    display: none;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            .block-actions {
-                                &.filter-actions {
-                                    padding-bottom: 20px;
-                                    a {
-                                        color: $hannstar-blue3;
-                                    }
-                                }
-                            }
-                            .block-subtitle {
-                                &.filter-subtitle {
-                                }
-                            }
-                            .filter-options {
-                                margin-top: 20px;
-                                .filter-options-item {
-                                    cursor: pointer;
-                                    border-bottom: 1px solid $hannstar-border-color;
-                                    padding: 10px 0;
-                                    .filter-options-title {
-                                        position: relative;
-                                        &::after {
-                                            position: absolute;
-                                            right: 20px;
-                                            content: '';
-                                            width: 8px;
-                                            height: 8px;
-                                            border-top: 1px solid $hannstar-default-text-color;
-                                            border-right: 1px solid $hannstar-default-text-color;
-                                            transform: rotate(135deg);
-                                            margin-bottom: 5px;
-                                        }
-                                    }
-                                    &.active {
-                                        .filter-options-title {
-                                            &::after {
-                                                transform: rotate(-45deg);
-                                                margin-bottom: 5px;
-                                            }
-                                        }
-                                        .filter-options-content {
-                                            display: block;
-                                            padding-top: 10px;
-                                            .items {
-                                                .item {
-                                                    padding: 5px 0;
-                                                    a {
-                                                        @include hannstarContent2;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+  padding-top: 40px;
+  .leftMagentoBlock {
+    .sidebar {
+      .block {
+        &.filter {
+          .block-title {
+            &.filter-title {
+              padding-bottom: 20px;
             }
-        }
-    }
-    .rightMagentoBlock {
-        padding-left: 80px;
-        .products {
-            &.wrapper {
-                &.list {
-                    &.products-list {
-                        ol {
-                            li {
-                                .product-item-info {
-                                    display: flex;
-                                    .product {
-                                        .product-item-name {
-                                            @include hannstarH4Title;
-                                            a {
-                                                color: $hannstar-default-text-color;
-                                            }
-                                        }
-                                        .product-item-inner {
-                                            margin-top: 20px;
-                                            .product-item-actions {
-                                                margin-bottom: 20px;
-                                                .actions-primary {
-                                                    form {
-                                                        button {
-                                                            @include hannstarBtn;
-                                                            border: none;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+          }
+          .block-content {
+            &.filter-content {
+              .filter-current {
+                //搜尋條件
+                padding-bottom: 20px;
+                .block-subtitle {
+                  &.filter-current-subtitle {
+                    padding-bottom: 20px;
+                  }
                 }
+                .items {
+                  margin-top: 20px;
+                  .item {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    padding-left: 25px;
+                    margin-bottom: 10px;
+                    .filter-label {
+                      font-weight: bolder;
+                      display: block;
+                    }
+                    .filter-value {
+                      display: block;
+                      padding-left: 10px;
+                      // padding-top: 10px;
+                      // font-size: 14px;
+                    }
+                    .action {
+                      &.remove {
+                        &::after,
+                        &::before {
+                          position: absolute;
+                          left: 6px;
+                          top: 2px;
+                          content: "";
+                          height: 15px;
+                          width: 1px;
+                          background-color: $hannstar-default-text-color;
+                          transform: rotate(45deg);
+                        }
+                        &::after {
+                          transform: rotate(-45deg);
+                        }
+                        span {
+                          display: none;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              .block-actions {
+                &.filter-actions {
+                  padding-bottom: 20px;
+                  a {
+                    color: $hannstar-blue3;
+                  }
+                }
+              }
+              .block-subtitle {
+                &.filter-subtitle {
+                }
+              }
+              .filter-options {
+                margin-top: 20px;
+                .filter-options-item {
+                  cursor: pointer;
+                  border-bottom: 1px solid $hannstar-border-color;
+                  padding: 10px 0;
+                  .filter-options-title {
+                    position: relative;
+                    &::after {
+                      position: absolute;
+                      right: 20px;
+                      content: "";
+                      width: 8px;
+                      height: 8px;
+                      border-top: 1px solid $hannstar-default-text-color;
+                      border-right: 1px solid $hannstar-default-text-color;
+                      transform: rotate(135deg);
+                      margin-bottom: 5px;
+                    }
+                  }
+                  &.active {
+                    .filter-options-title {
+                      &::after {
+                        transform: rotate(-45deg);
+                        margin-bottom: 5px;
+                      }
+                    }
+                    .filter-options-content {
+                      display: block;
+                      padding-top: 10px;
+                      .items {
+                        .item {
+                          padding: 5px 0;
+                          a {
+                            @include hannstarContent2;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
+          }
         }
+      }
     }
+  }
+  .rightMagentoBlock {
+    padding-left: 80px;
+    .products-list {
+      &.wrapper {
+        &.list {
+          &.products-list {
+            border: 1px solid $hannstar-border-color;
+            ol {
+              li {
+                border-bottom: 1px solid $hannstar-border-color;
+                &.hannstar_product_header {
+                  display: flex;
+                  background-color: $hannstar-blue2;
+                  .header_text {
+                    width: 50%;
+                    color: #fff;
+                    padding: 10px 0;
+                    text-align: center;
+                    &:first-child,
+                    &:last-child {
+                      width: 25%;
+                    }
+                  }
+                }
+                .product-item-info {
+                  display: flex;
+                  .product-item-photo {
+                    width: 25%;
+                    border-right: 1px solid $hannstar-border-color;
+                    padding: 20px;
+                    img {
+                      width: 100%;
+                      height: auto;
+                    }
+                  }
+                  .product-item-details {
+                    width: 75%;
+                    .product-item-inner {
+                      display: flex;
+                      .product-item-actions {
+                        .actions-primary {
+                          display: flex;
+                          width: 100%;
+                          .hannstar_product_detail_block {
+                            padding: 20px;
+                            width: 50%;
+                            border-right: 1px solid $hannstar-border-color;
+                            .product-item-name {
+                              font-size: 20px;
+                              padding-bottom: 10px;
+                              a {
+                                color: $hannstar-default-text-color;
+                              }
+                            }
+                            .hannstar_product_text {
+                              padding: 5px 0;
+                            }
+                          }
+                          .hannstar_product_specification_block {
+                            padding: 20px;
+                            width: 50%;
+                            border-right: 1px solid $hannstar-border-color;
+                            .hannstar_specification_text {
+                              padding: 5px 0;
+                            }
+                          }
+                        }
+                      }
+                      .product-item-description {
+                        padding: 20px;
+                        a {
+                          display: block;
+                          @include hannstarBtn;
+                          margin-bottom: 10px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

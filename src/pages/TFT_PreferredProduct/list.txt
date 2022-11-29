@@ -1,0 +1,207 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+use Magento\Framework\App\Action\Action;
+
+?>
+
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+/** @var \Magento\Catalog\Helper\Output $_helper */
+$_helper = $block->getData('outputHelper');
+?>
+<?php if (!$_productCollection->count()): ?>
+    <div class="message info empty">
+        <div><?= $escaper->escapeHtml(__('We can\'t find products matching the selection.')) ?></div>
+    </div>
+<?php else: ?>
+    <?= $block->getToolbarHtml() ?>
+    <?= $block->getAdditionalHtml() ?>
+    <?php
+        $viewMode = 'list';
+        $imageDisplayArea = 'category_page_list';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos = $block->getPositioned();
+    ?>
+    <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
+        <table>
+            <thead>
+                <tr>
+                    <td>圖片</td>
+                    <td>產品</td>
+                    <td>詢問</td>
+                </tr>                
+            </thead>
+            <tbody>
+                <tbody>
+        </table>
+        <ol class="products list items product-items">
+            <li class="hannstar_product_header">
+                <div class="header_text"></div>
+                <div class="header_text"></div>
+                <div class="header_text"></div>
+            </li>
+
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+            <li class="item product product-item">
+                <div class="product-item-info"
+                     id="product-item-info_<?= /* @noEscape */ $_product->getId() ?>"
+                     data-container="product-<?= /* @noEscape */ $viewMode ?>">
+                    <?php
+                    $productImage = $block->getImage($_product, $imageDisplayArea);
+                    if ($pos != null) {
+                        $position = 'left:' . $productImage->getWidth() . 'px;'
+                            . 'top:' . $productImage->getHeight() . 'px;';
+                    }
+                    ?>
+                    <?php // Product Image ?>
+                    <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                       class="product photo product-item-photo"
+                       tabindex="-1">
+                        <?= $productImage->toHtml(); ?>
+                    </a>
+                    <div class="product details product-item-details">
+                        <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                        
+
+                        <?= $block->getProductDetailsHtml($_product) ?>
+
+                        <div class="product-item-inner">
+                            <div class="product actions product-item-actions">
+                                <div class="actions-primary">
+                                    <div class="hannstar_product_detail_block">
+                                        <div class="product name product-item-name">
+                                            <a class="product-item-link"
+                                            href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
+                                                <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
+                                            </a>
+                                        </div>
+                                        <div class="hannstar_product_text">產品型態:MDL</div>
+                                        <div class="hannstar_product_text">產品型態:MDL</div>
+                                        <div class="hannstar_product_text">尺寸:1.45</div>
+                                        <div class="hannstar_product_text">解析度:360X360</div>
+                                        <div class="hannstar_product_text">介面:SPI</div>
+                                        <div class="hannstar_product_text">面板技術別:Paper Display</div>
+                                    </div>
+                                    <div class="hannstar_product_specification_block">
+                                        <div class="hannstar_specification_text">色飽和度:35</div>
+                                        <div class="hannstar_specification_text">表面處裡:HG</div>
+                                        <div class="hannstar_specification_text">亮度:300</div>
+                                        <div class="hannstar_specification_text">PIN數:24</div>
+                                        <div class="hannstar_specification_text">觸控模式:W/O touch</div>
+                                    </div>                                   
+                                    <?php if ($_product->isSaleable()):?>
+                                        
+                                    <?php else:?>
+                                        <?php if ($_product->isAvailable()):?>
+                                            <div class="stock available">
+                                                <span><?= $escaper->escapeHtml(__('In stock')) ?></span></div>
+                                        <?php else:?>
+                                            <div class="stock unavailable">
+                                                <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
+                                    /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                        $position,
+                                        'product-item-info_' . $_product->getId() . ' div.actions-primary'
+                                    ) : '' ?>
+                                <div data-role="add-to-links" class="actions-secondary">
+                                    <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
+                                        <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?= ($pos && strpos($pos, $viewMode . '-secondary')) ?
+                                    /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                        $position,
+                                        'product-item-info_' . $_product->getId() . ' div.actions-secondary'
+                                    ) : '' ?>
+                            </div>
+                            <?php if ($showDescription): ?>
+                                <div class="product description product-item-description">
+                                    <?= /* @noEscape */ $_helper->productAttribute(
+                                        $_product,
+                                        $_product->getShortDescription(),
+                                        'short_description'
+                                    ) ?>
+                                    <!-- <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                                       title="<?= /* @noEscape */ $_productNameStripped ?>"
+                                       class="action more"><?= $escaper->escapeHtml(__('Learn More')) ?></a> -->
+
+
+                                        <!-- <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                        <form data-role="tocart-form"
+                                              data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
+                                              action="<?= $escaper->escapeUrl($postParams['action']) ?>"
+                                              method="post">
+          
+                                            <input type="hidden"
+                                                   name="product"
+                                                   value="<?= /* @noEscape */ $postParams['data']['product'] ?>">
+                                            <input type="hidden"
+                                                   name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>"
+                                                   value="<?=
+                                                   /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
+                                                    ?>">
+                                            <?= $block->getBlockHtml('formkey') ?>
+                                            <button type="submit"
+                                                    title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
+                                                    class="action tocart primary"
+                                                    disabled>
+                                                <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
+                                            </button>
+                                        </form> -->
+
+
+                                    <a href="#" 
+                                        class="action towishlist"
+                                        title="<?php echo $block->escapeHtml(__('Add to Wishlist')); ?>"
+                                        aria-label="<?php echo $block->escapeHtml(__('Add to Wishlist')); ?>"
+                                        data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_product); ?>'
+                                        data-action="add-to-wishlist"
+                                        role="button">
+                                        <span><?php /* @escapeNotVerified */ echo __('Add to Wishlist') ?></span>
+                                    </a>
+                                    <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');?>
+                                    <a href="#" 
+                                        
+                                        title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                        aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                        data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>'
+                                        role="button">
+                                        <span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <?= ($pos && strpos($pos, $viewMode . '-actions')) ?
+                /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                    $position,
+                    'product-item-info_' . $_product->getId() . ' div.product-item-actions'
+                ) : '' ?>
+            </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+
+    <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
+    <script type="text/x-magento-init">
+    {
+        "[data-role=tocart-form], .form.map.checkout": {
+            "catalogAddToCart": {
+                "product_sku": "<?= $escaper->escapeJs($_product->getSku()) ?>"
+            }
+        }
+    }
+    </script>
+<?php endif; ?>
