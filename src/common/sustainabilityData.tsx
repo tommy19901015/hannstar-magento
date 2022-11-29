@@ -25,7 +25,7 @@ function useSustainabilityData() {
         { text: "利害關係人溝通管道", type: "Communicate" },
       ],
       graphics3: {
-        src: "https://fakeimg.pl/1000x700/?text=Image",
+        src: `${urlConfig.s3Url}/Image/hannstar/sustainability/sustainablemanagement/Group5946.png`,
         title: "請參閱瀚宇彩晶2021年度永續報告書",
         content: "第1章  永續管理",
         btnText: "閱讀全文",
@@ -64,7 +64,7 @@ function useSustainabilityData() {
         { text: "永續供應鏈", type: "SupplyChain" },
       ],
       graphics3: {
-        src: "https://fakeimg.pl/1000x700/?text=Image",
+        src: `${urlConfig.s3Url}/Image/hannstar/sustainability/governance/Supplier2.png`,
         title: "請參閱瀚宇彩晶2021年度永續報告書",
         content: "第3章  綠色創新",
         btnText: "閱讀全文",
