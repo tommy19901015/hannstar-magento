@@ -41,17 +41,18 @@ const SlickComponent: React.FC<I_Carousel> = ({ imgs }) => {
           </div>
         ))}
       </Slider>
-
+ 
       <Slider
         asNavFor={nav1}
         ref={slider2}
         slidesToShow={3}
         swipeToSlide={true}
         focusOnSelect={true}
+        className="itemSlider"
       >
         {imgs.map((img) => (
           <div>
-            <img src={img.img} alt="productImg" style={{ width: "100px" }} />
+            <img src={img.img} alt="productImg" />
           </div>
         ))}
       </Slider>
