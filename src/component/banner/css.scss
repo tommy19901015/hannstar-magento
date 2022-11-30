@@ -45,10 +45,13 @@ $componentName: 'Banner';
         }
     }
     @media screen and (max-width: $breakpoint) {
+        position: initial;
         .textBlock {
             width: 100%;
-            max-width: 500px;
+            max-width:100%;
             padding: 30px;
+            position: initial;
+            background-color: $hannstar-blue1;
             .title {
                 @include hannstarH3Title;
                 color: #fff;
