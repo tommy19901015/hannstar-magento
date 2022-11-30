@@ -1,0 +1,33 @@
+@import '../../style/variable.scss';
+
+$componentName: 'TitleContent';
+
+.#{$componentName}Content {
+    max-width: 1000px;
+    margin: 0 auto;
+    .title {
+        @include hannstarH2Title;
+        text-align: center;
+    }
+    .textBlock {
+        text-align: center;
+        .content {
+            @include hannstarContent1;
+            padding: 30px 0;
+            text-align: left;
+        }
+        .linkBtn {
+            @include hannstarBtn;
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+        .title {
+            @include hannstarH3Title;
+            //padding-bottom: 20px;
+        }
+        .content {
+            @include hannstarContent1;
+            padding: 20px 0;
+        }
+    }
+}
