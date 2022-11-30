@@ -283,11 +283,44 @@ $pageName: "TFTPreferredProduct";
   // }
   @media screen and (max-width: $breakpoint) {
     padding-top: 20px;
+    .rightMagentoBlock{
+      padding: 0;
+      .products-list {
+        table, thead, tbody, th, td, tr {
+          display: block;
+        }
+        table{
+          thead{
+            tr{
+              position: absolute;
+              top: -9999px;
+              left: -9999px;
+            }
+          }
+          tbody{
+            tr{
+              td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding: 20px;
+                &:first-child {
+                  width: 100%;
+                }
+                &:last-child {
+                  width: 100%;
+                }
+               
+              }
+
+            }
+
+          }
+        }
+      }
+    }
     .leftMagentoBlock {
       margin-bottom: 40px;
-    }
-    .rightMagentoBlock {
-      padding: 0;
     }
   }
 }
