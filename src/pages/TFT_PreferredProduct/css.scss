@@ -2,17 +2,6 @@
 
 $pageName: "TFTPreferredProduct";
 
-@font-face {
-  font-family: "luma-icons";
-  src: url("https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff2")
-      format("woff2"),
-    url("https://s3magentodev.hannstar.com/Image/font/Luma-Icons.woff")
-      format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 .#{$pageName}MainContainer {
   padding-top: 40px;
   .leftMagentoBlock {
@@ -137,89 +126,168 @@ $pageName: "TFTPreferredProduct";
     }
   }
   .rightMagentoBlock {
-    padding-left: 80px;
+    padding-left: 40px;
     .products-list {
-      &.wrapper {
-        &.list {
-          &.products-list {
-            border: 1px solid $hannstar-border-color;
-            ol {
-              li {
-                border-bottom: 1px solid $hannstar-border-color;
-                &.hannstar_product_header {
-                  display: flex;
-                  background-color: $hannstar-blue2;
-                  .header_text {
-                    width: 50%;
-                    color: #fff;
-                    padding: 10px 0;
-                    text-align: center;
-                    &:first-child,
-                    &:last-child {
-                      width: 25%;
-                    }
-                  }
-                }
-                .product-item-info {
-                  display: flex;
-                  .product-item-photo {
-                    width: 25%;
-                    border-right: 1px solid $hannstar-border-color;
-                    padding: 20px;
-                    img {
-                      width: 100%;
-                      height: auto;
-                    }
-                  }
-                  .product-item-details {
-                    width: 75%;
-                    .product-item-inner {
-                      display: flex;
-                      .product-item-actions {
-                        .actions-primary {
-                          display: flex;
-                          width: 100%;
-                          .hannstar_product_detail_block {
-                            padding: 20px;
-                            width: 50%;
-                            border-right: 1px solid $hannstar-border-color;
-                            .product-item-name {
-                              font-size: 20px;
-                              padding-bottom: 10px;
-                              a {
-                                color: $hannstar-default-text-color;
-                              }
-                            }
-                            .hannstar_product_text {
-                              padding: 5px 0;
-                            }
-                          }
-                          .hannstar_product_specification_block {
-                            padding: 20px;
-                            width: 50%;
-                            border-right: 1px solid $hannstar-border-color;
-                            .hannstar_specification_text {
-                              padding: 5px 0;
-                            }
+      table {
+        border: 1px solid $hannstar-border-color;
+        thead {
+          tr {
+            background-color: $hannstar-blue2;
+            td {
+              @include hannstarH4Title;
+              color: #fff;
+              padding: 10px;
+              text-align: center;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              &:first-child {
+                width: 30%;
+              }
+              &:last-child {
+                width: 20%;
+              }
+              vertical-align: top;
+              border: 1px solid $hannstar-border-color;
+              padding: 20px;
+              img {
+                width: 100%;
+                height: auto;
+              }
+              .product-item-details {
+                .product-item-inner {
+                  .product-item-actions {
+                    .actions-primary {
+                      .hannstar_product_detail_block {
+                        .product-item-name {
+                          margin-bottom: 20px;
+                          a {
+                            @include hannstarH4Title;
                           }
                         }
+                        .hannstar_product_text {
+                          @include hannstarContent1;
+                        }
                       }
-                      .product-item-description {
-                        padding: 20px;
-                        a {
-                          display: block;
-                          @include hannstarBtn;
-                          margin-bottom: 10px;
+                      .hannstar_product_specification_block {
+                        .hannstar_specification_text {
+                          @include hannstarContent1;
                         }
                       }
                     }
                   }
                 }
               }
+              .towishlist,
+              .compare {
+                display: block;
+                @include hannstarBtn;
+                margin-bottom: 25px;
+                width: 100%;
+                text-align: center;
+              }
             }
           }
         }
       }
+    }
+  }
+  // .rightMagentoBlock {
+  //   padding-left: 80px;
+  //   .products-list {
+  //     &.wrapper {
+  //       &.list {
+  //         &.products-list {
+  //           border: 1px solid $hannstar-border-color;
+  //           ol {
+  //             li {
+  //               border-bottom: 1px solid $hannstar-border-color;
+  //               &.hannstar_product_header {
+  //                 display: flex;
+  //                 background-color: $hannstar-blue2;
+  //                 .header_text {
+  //                   width: 50%;
+  //                   color: #fff;
+  //                   padding: 10px 0;
+  //                   text-align: center;
+  //                   &:first-child,
+  //                   &:last-child {
+  //                     width: 25%;
+  //                   }
+  //                 }
+  //               }
+  //               .product-item-info {
+  //                 display: flex;
+  //                 .product-item-photo {
+  //                   width: 25%;
+  //                   border-right: 1px solid $hannstar-border-color;
+  //                   padding: 20px;
+  //                   img {
+  //                     width: 100%;
+  //                     height: auto;
+  //                   }
+  //                 }
+  //                 .product-item-details {
+  //                   width: 75%;
+  //                   .product-item-inner {
+  //                     display: flex;
+  //                     .product-item-actions {
+  //                       .actions-primary {
+  //                         display: flex;
+  //                         width: 100%;
+  //                         .hannstar_product_detail_block {
+  //                           padding: 20px;
+  //                           width: 50%;
+  //                           border-right: 1px solid $hannstar-border-color;
+  //                           .product-item-name {
+  //                             font-size: 20px;
+  //                             padding-bottom: 10px;
+  //                             a {
+  //                               color: $hannstar-default-text-color;
+  //                             }
+  //                           }
+  //                           .hannstar_product_text {
+  //                             padding: 5px 0;
+  //                           }
+  //                         }
+  //                         .hannstar_product_specification_block {
+  //                           padding: 20px;
+  //                           width: 50%;
+  //                           border-right: 1px solid $hannstar-border-color;
+  //                           .hannstar_specification_text {
+  //                             padding: 5px 0;
+  //                           }
+  //                         }
+  //                       }
+  //                     }
+  //                     .product-item-description {
+  //                       padding: 20px;
+  //                       a {
+  //                         display: block;
+  //                         @include hannstarBtn;
+  //                         margin-bottom: 10px;
+  //                       }
+  //                     }
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  @media screen and (max-width: $breakpoint) {
+    padding-top: 20px;
+    .leftMagentoBlock {
+      margin-bottom: 40px;
+    }
+    .rightMagentoBlock {
+      padding: 0;
     }
   }
 }

@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
-import { ColType } from "../../component/columns/interface";
+import { ColType, TopMType } from "../../component/columns/interface";
 import { MagentoFilterBar } from "./magentoFilterBar";
 import {
   MagentoProductContent,
   MagentoProductContent2,
+  MagentoProductContentTable,
 } from "./magentoProductContent";
 import usePageData from "./pageData";
 import "./css.scss";
@@ -29,8 +30,9 @@ const TFTPreferredProduct: React.FC = () => {
       <div className={`${pageName}MainContainer`}>
         <Columns
           type={ColType.TwoCol}
-          widthL={30}
-          widthR={70}
+          widthL={25}
+          widthR={75}
+          topMContent={TopMType.Left}
           // contentL={<div className="leftMagentoBlock" ref={leftMagentoBlock} />}
           // contentR={<div className="rightMagentoBlock" ref={rightMagentoBlock} />}
           contentL={
@@ -40,7 +42,7 @@ const TFTPreferredProduct: React.FC = () => {
           }
           contentR={
             <div className="rightMagentoBlock">
-              <MagentoProductContent2 />
+              <MagentoProductContentTable />
             </div>
           }
         />
