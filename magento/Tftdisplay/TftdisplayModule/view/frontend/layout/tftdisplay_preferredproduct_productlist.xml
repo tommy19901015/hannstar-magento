@@ -1,11 +1,25 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <head>
-    <title>TFT Display Preferred Product List</title>
+    <remove src="mage/calendar.css"/>
+    <remove src="css/styles-l.css"/>
+    <remove src="css/styles-m.css"/>
+    <remove src="css/styles-s.css"/>
+    <remove src="css/print.css"/>
+    <remove src="mage/polyfill.js"/>
+    <link src='Hannstar_Frontend::css/main.css'/>
   </head>
  
 
     <body>
+        <referenceBlock name="navigation.sections" remove="true"/>            
+        <referenceContainer name="footer" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="footer.col.title.1" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="authentication-popup" remove="true"/>
+        <referenceBlock name="sidebar.additional" remove="true"/>
+        <referenceBlock name="product.info.upsell" remove="true"/>
         <!--adding attribute tag to inherit the default stying for products-->
         <attribute name="class" value="page-products"/>
         
@@ -21,6 +35,13 @@
                 </arguments>
             </block>
             </block>
+
+            <block class="Hannstar\Frontend\Block\Index"
+                   name="hannstar.frontend.layout.main"
+                   template="Hannstar_Frontend::main.phtml" />
+            <block class="Magento\Framework\View\Element\Template" 
+                   name="accountConfirmation" 
+                   template="Tftdisplay_TftdisplayModule::product/preferredproduct.phtml"/>
         </referenceContainer>
 
           

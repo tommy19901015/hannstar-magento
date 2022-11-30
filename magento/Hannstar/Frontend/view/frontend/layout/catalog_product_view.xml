@@ -26,6 +26,7 @@
         <referenceBlock name="authentication-popup" remove="true"/>
         <referenceBlock name="sidebar.additional" remove="true"/>
         <referenceBlock name="product.info.upsell" remove="true"/>
+         <!-- <referenceBlock name="product.info.media" remove="true"/> -->
 
         <attribute name="itemtype" value="http://schema.org/Product" />
         <attribute name="itemscope" value="itemscope"/>
@@ -223,10 +224,17 @@
                     name="product_viewed_counter"
                     template="Magento_Catalog::product/view/counter.phtml"/>
 
+
             <block 
                 class="Magento\Framework\View\Element\Template" 
                 name="productdetails" 
-                template="Hannstar_Frontend::productdetails.phtml"/>        
+                template="Hannstar_Frontend::productdetails.phtml"/>
+
+            <!-- <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="Hannstar_Frontend::product/view/gallery.phtml">
+                
+            </block> -->
+
+
         </referenceContainer>
     </body>
 </page>
