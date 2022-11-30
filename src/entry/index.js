@@ -87,6 +87,8 @@ import PaperDisplayTechnology from "../pages/PaperDisplay_Technology/main";
 import TFTIndex from "../pages/TFT_Index/main";
 import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
 
+import MagentoProductDetails from "../pages/Magento_ProductDetails/main"
+
 import "../i18n/index";
 
 const pageMappingObj = {
@@ -163,6 +165,7 @@ const pageMappingObj = {
   root_PaperDisplayTechnology: <PaperDisplayTechnology />,
   root_TFTIndex: <TFTIndex />,
   root_TFTPreferredProduct:<TFTPreferredProduct />,
+  root_MagentoProductDetails:<MagentoProductDetails />,
   root_Index: <Index />,
 };
 

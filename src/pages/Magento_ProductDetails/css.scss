@@ -1,0 +1,119 @@
+@import '../../style/variable.scss';
+
+$pageName: 'MagentoProductDetails';
+
+.#{$pageName}MainContainer {
+    padding-top: 40px;
+    .#{$pageName}Content {
+        .topBlock {
+            display: flex;
+            .magentoProductMedia {
+                width: 50%;
+                .action-skip-wrapper {
+                    display: none;
+                }
+                .fotorama__stage {
+                    width: auto !important;
+                    height: auto !important;
+                    .fotorama__stage__shaft {
+                        width: auto !important;
+                    }
+                    img {
+                        width: 100% !important;
+                        height: auto !important;
+                    }
+                }
+            }
+            .magentoInfo {
+                width: 50%;
+                .page-title {
+                    @include hannstarH3Title;
+                    margin-bottom: 20px;
+                }
+                .product-reviews-summary {
+                    &.empty {
+                        display: none;
+                    }
+                }
+                .product-info-price {
+                    .price-final_price {
+                        display: none;
+                    }
+                    .product-info-stock-sku {
+                        .stock {
+                            &.available {
+                                display: none;
+                            }
+                        }
+                        .sku {
+                            display: flex;
+                            margin-bottom: 20px;
+                            .type {
+                                padding-right: 10px;
+                            }
+                        }
+                    }
+                }
+                .product-add-form {
+                    display: none;
+                }
+                .product-social-links {
+                    a {
+                        @include hannstarBtn;
+                    }
+                }
+            }
+        }
+        .magentoProductDetail {
+            .product {
+                .mage-tabs-disabled {
+                    .productTabTitle {
+                        display: flex;
+                        .title {
+                            min-width: 130px;
+                            text-align: center;
+                            cursor: pointer;
+                            padding: 10px 20px;
+                            background-color: $hannstar-border-color;
+
+                            margin-right: 10px;
+                            a {
+                                color: $hannstar-blue3;
+                            }
+                            &.active {
+                                background-color: $hannstar-blue3;
+                                a {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                    .productTabContent {
+                        border-top: 2px solid $hannstar-blue3;
+                        .content {
+                            @include hannstarContentText;
+                            margin-top: 10px;
+                            padding: 10px 20px;
+                            border: 1px solid $hannstar-border-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint) {
+        .#{$pageName}Content {
+            .topBlock {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+                .magentoProductMedia {
+                    width: 100%;
+                }
+                .magentoInfo {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
