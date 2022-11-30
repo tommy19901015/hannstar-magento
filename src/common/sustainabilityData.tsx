@@ -84,7 +84,7 @@ function useSustainabilityData() {
         { text: "勞工與道德政策", type: "Labor" },
       ],
       graphics3: {
-        src: "https://fakeimg.pl/1000x700/?text=Image",
+        src:`${urlConfig.s3Url}/Image/hannstar/sustainability/social/Supplier2.png`,
         title: "請參閱瀚宇彩晶2021年度永續報告書",
         content: "第4章  從人文關懷出發的社會參與",
         btnText: "閱讀全文",
