@@ -1,5 +1,6 @@
 import { RAMapply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
+import { RMAList } from "./cn-ch/Service_RMA_List";
 import { LoginForm } from "./cn-ch/LoginForm";
 import { Investors_Summary } from "./cn-ch/Investors_Summary";
 import { Investors_Revenue } from "./cn-ch/Investors_Revenue";
@@ -13,6 +14,19 @@ import { About_Family } from "./cn-ch/About_Family";
 import { About_Index } from "./cn-ch/About_Index";
 import { About_Stronghold } from "./cn-ch/About_Stronghold";
 import { About_Team } from "./cn-ch/About_Team";
+import { Account_Application } from "./cn-ch/Account_Application";
+import { Account_Dashboard } from "./cn-ch/Account_Dashboard"
+import { Account_EditAccount } from "./cn-ch/Account_EditAccount"
+import { Account_Logout } from "./cn-ch/Account_Logout"
+import { Account_MemberInfo } from "./cn-ch/Account_MemberInfo"
+import { Account_MyAccount } from "./cn-ch/Account_MyAccount"
+import {Account_Newsletter } from "./cn-ch/Account_Newsletter"
+import { Account_SendVerifyEmail } from "./cn-ch/Account_SendVerifyEmail"
+import { Account_Personal } from "./cn-ch/Account_Personal";
+import { Account_Partner } from "./cn-ch/Account_Partner";
+import { Account_Personal_Template } from "./cn-ch/Account_Personal_Template";
+import { MFA } from "./cn-ch/MFA";
+import { MFAQRCODE } from "./cn-ch/MFAQRCode";
 
 export const cn = {
   common: {
@@ -25,6 +39,7 @@ export const cn = {
   changeLanguage: "切换语系",
   RAMapply,
   ParseApply,
+  RMAList,
   LoginForm,
   Investors_Summary,
   Investors_Revenue,
@@ -38,4 +53,17 @@ export const cn = {
   About_Index,
   About_Stronghold,
   About_Team,
+  Account_Application,
+  Account_Dashboard,
+  Account_EditAccount,
+  Account_Logout,
+  Account_MemberInfo,
+  Account_MyAccount,
+  Account_Newsletter,
+  Account_SendVerifyEmail,
+  Account_Personal,
+  Account_Partner,
+  Account_Personal_Template,
+  MFA,
+  MFAQRCODE
 };

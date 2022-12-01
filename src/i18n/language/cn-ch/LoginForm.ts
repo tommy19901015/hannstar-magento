@@ -1,7 +1,7 @@
 export const LoginForm = {
     loginTitle:"登入",
-    account: "帐号",
-    password: "密码",
+    account: "帳號",
+    password: "密碼",
     rememberAccount: "記住帳號",
     forgotPassword: "忘記密碼",
     createAccount: "建立帳號",
