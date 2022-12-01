@@ -2,6 +2,12 @@
 
 $pageName: 'MagentoProductDetails';
 
+.product {
+    &.media {
+        display: none;
+    }
+}
+
 .#{$pageName}MainContainer {
     padding-top: 40px;
     .#{$pageName}Content {
@@ -26,6 +32,7 @@ $pageName: 'MagentoProductDetails';
             }
             .magentoInfo {
                 width: 50%;
+                padding-left: 40px;
                 .page-title {
                     @include hannstarH3Title;
                     margin-bottom: 20px;

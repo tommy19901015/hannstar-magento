@@ -3,26 +3,28 @@
 $componentName: 'slickComponent';
 
 .#{$componentName}Content {
-    .mainSlider{
+    .mainSlider {
         margin-bottom: 20px;
     }
-    .mainSlider, .itemSlider{
-        .slick-list{
+    .mainSlider,
+    .itemSlider {
+        .slick-list {
             .slick-slide {
-                img{
+                img {
                     width: 100%;
+                    max-width: 500;
+                    max-height: 500px;
                 }
             }
         }
     }
 
-
-    .itemSlider{
+    .itemSlider {
         .slick-slide > div {
-        margin: 0 10px;
+            margin: 0 10px;
         }
         .slick-list {
-        margin: 0 -10px;
+            margin: 0 -10px;
         }
     }
     @media screen and (max-width: $breakpoint) {

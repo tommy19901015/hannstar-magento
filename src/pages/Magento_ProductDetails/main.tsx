@@ -34,7 +34,6 @@ const MagentoProductDetails: React.FC = () => {
     const magentoInfoBlockDom: any =
       document.getElementsByClassName("product-info-main")[0];
 
-    console.log("magentoInfoBlockDom", magentoInfoBlockDom);
     if (magentoInfoBlockDom)
       magentoInfoBlock.current.appendChild(magentoInfoBlockDom);
     const magentoDetailsBlockDom: any = document.getElementsByClassName(
@@ -47,61 +46,56 @@ const MagentoProductDetails: React.FC = () => {
 
   // const testImgData = [
   //   {
-  //     thumb:
-  //       "http://tommylee.magento.com/media/catalog/product\\cache\\c30134b0ebf5e43acb8cef637f15b3a9\\/m/g/mg05-br-0.jpg",
-  //     img: "http://fakeimg.pl/700x700/?text=1111",
-  //     full: "http://tommylee.magento.com/media/catalog/product\\cache\\ff36c727959f0c54636dc849b3427e12\\/m/g/mg05-br-0.jpg",
-  //     caption: "Image",
-  //     position: "1",
-  //     isMain: true,
-  //     type: "image",
-  //     videoUrl: null,
+  //     "thumb": "https://fakeimg.pl/868x868/ff0000/?text=11",
+  //     img: "https://fakeimg.pl/868x868/ff0000/?text=11",
+  //     "full": "https://fakeimg.pl/868x868/ff0000/?text=11",
+  //     "caption": "Image",
+  //     "position": "1",
+  //     "isMain": true,
+  //     "type": "image",
+  //     "videoUrl": null
   //   },
   //   {
-  //     thumb:
-  //       "http://tommylee.magento.com/media/catalog/product\\cache\\c30134b0ebf5e43acb8cef637f15b3a9\\/m/g/mg05-br-0.jpg",
-  //     img: "http://fakeimg.pl/700x700/?text=2222",
-  //     full: "http://tommylee.magento.com/media/catalog/product\\cache\\ff36c727959f0c54636dc849b3427e12\\/m/g/mg05-br-0.jpg",
-  //     caption: "Image",
-  //     position: "2",
-  //     isMain: false,
-  //     type: "image",
-  //     videoUrl: null,
+  //     "thumb": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "img": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "full": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "caption": "Image",
+  //     "position": "2",
+  //     "isMain": false,
+  //     "type": "image",
+  //     "videoUrl": null
   //   },
   //   {
-  //     thumb:
-  //       "http://tommylee.magento.com/media/catalog/product\\cache\\c30134b0ebf5e43acb8cef637f15b3a9\\/m/g/mg05-br-0.jpg",
-  //     img: "http://fakeimg.pl/700x700/?text=3333",
-  //     full: "http://tommylee.magento.com/media/catalog/product\\cache\\ff36c727959f0c54636dc849b3427e12\\/m/g/mg05-br-0.jpg",
-  //     caption: "Image",
-  //     position: "3",
-  //     isMain: false,
-  //     type: "image",
-  //     videoUrl: null,
+  //     "thumb": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "img": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "full": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "caption": "Image",
+  //     "position": "2",
+  //     "isMain": false,
+  //     "type": "image",
+  //     "videoUrl": null
   //   },
   //   {
-  //     thumb:
-  //       "http://tommylee.magento.com/media/catalog/product\\cache\\c30134b0ebf5e43acb8cef637f15b3a9\\/m/g/mg05-br-0.jpg",
-  //     img: "http://fakeimg.pl/700x700/?text=4444",
-  //     full: "http://tommylee.magento.com/media/catalog/product\\cache\\ff36c727959f0c54636dc849b3427e12\\/m/g/mg05-br-0.jpg",
-  //     caption: "Image",
-  //     position: "4",
-  //     isMain: false,
-  //     type: "image",
-  //     videoUrl: null,
+  //     "thumb": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "img": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "full": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "caption": "Image",
+  //     "position": "2",
+  //     "isMain": false,
+  //     "type": "image",
+  //     "videoUrl": null
   //   },
   //   {
-  //     thumb:
-  //       "http://tommylee.magento.com/media/catalog/product\\cache\\c30134b0ebf5e43acb8cef637f15b3a9\\/m/g/mg05-br-0.jpg",
-  //     img: "http://fakeimg.pl/700x700/?text=5555",
-  //     full: "http://tommylee.magento.com/media/catalog/product\\cache\\ff36c727959f0c54636dc849b3427e12\\/m/g/mg05-br-0.jpg",
-  //     caption: "Image",
-  //     position: "5",
-  //     isMain: false,
-  //     type: "image",
-  //     videoUrl: null,
-  //   },
-  // ];
+  //     "thumb": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "img": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "full": "https://fakeimg.pl/868x868/ff0000/?text=22",
+  //     "caption": "Image",
+  //     "position": "2",
+  //     "isMain": false,
+  //     "type": "image",
+  //     "videoUrl": null
+  //   }
+  // ]
 
   return (
     <Layout>
@@ -127,7 +121,7 @@ const MagentoProductDetails: React.FC = () => {
               <div className={`${pageName}Content`}>
                 <div className="topBlock">
                   <div className="magentoProductMedia">
-                    <SlickComponent imgs={window.hannstarProductImgs && []} />
+                    <SlickComponent imgs={window.hannstarProductImgs} />
                   </div>
                   <div className="magentoInfo" ref={magentoInfoBlock}></div>
                 </div>
