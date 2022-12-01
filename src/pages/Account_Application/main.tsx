@@ -6,7 +6,7 @@ import FormComponent from "../../component/form/main";
 import { FormType } from "../../component/form/interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import usePageData from "./pageData";
 import { Accountstatus } from "./interface";
 import { postAccountInfo } from "../../services/api.service";
@@ -35,13 +35,13 @@ const AccountApplication: React.FC = () => {
               <img
                 className="rankImg"
                 alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
+                src={`${urlConfig().s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
               />
               <div className="rankText">{content.text}</div>
               <div className="rankName">
                 <img
                   alt="rankText"
-                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                  src={`${urlConfig().s3Url}/Image/account/icon_login_member_basic.png`}
                 />
                 <div className="text">{content.member}</div>
               </div>
@@ -50,7 +50,7 @@ const AccountApplication: React.FC = () => {
           <div className="arrowBlock">
             <img
               alt="arrow"
-              src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
+              src={`${urlConfig().s3Url}/Image/account/icon_info_permissions_arrow.png`}
             />
           </div>
           <div className="rankBlock">
@@ -58,13 +58,13 @@ const AccountApplication: React.FC = () => {
               <img
                 className="rankImg"
                 alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
+                src={`${urlConfig().s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
               />
               <div className="rankText">{content.become}</div>
               <div className="rankName">
                 <img
                   alt="rankText"
-                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                  src={`${urlConfig().s3Url}/Image/account/icon_login_member_enterprise.png`}
                 />
                 <div className="text">{content.companymember}</div>
               </div>
@@ -82,13 +82,13 @@ const AccountApplication: React.FC = () => {
               <img
                 className="rankImg"
                 alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
+                src={`${urlConfig().s3Url}/Image/account/img_info_permissions_card_basic_y.png`}
               />
               <div className="rankText">{content.text}</div>
               <div className="rankName">
                 <img
                   alt="rankText"
-                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_basic.png`}
+                  src={`${urlConfig().s3Url}/Image/account/icon_login_member_basic.png`}
                 />
                 <div className="text">{content.member}</div>
               </div>
@@ -97,7 +97,7 @@ const AccountApplication: React.FC = () => {
           <div className="arrowBlock">
             <img
               alt="arrow"
-              src={`${urlConfig.s3Url}/Image/account/icon_info_permissions_arrow.png`}
+              src={`${urlConfig().s3Url}/Image/account/icon_info_permissions_arrow.png`}
             />
           </div>
           <div className="rankBlock">
@@ -105,7 +105,7 @@ const AccountApplication: React.FC = () => {
               <img
                 className="rankImg"
                 alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
+                src={`${urlConfig().s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
               />
               <div className="rankText">{content.pendingText}</div>
               <div className="rankName">
@@ -125,13 +125,13 @@ const AccountApplication: React.FC = () => {
               <img
                 className="rankImg"
                 alt="rankImg"
-                src={`${urlConfig.s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
+                src={`${urlConfig().s3Url}/Image/account/img_info_permissions_card_enterprise_y.png`}
               />
               <div className="rankText">{content.text}</div>
               <div className="rankName">
                 <img
                   alt="rankText"
-                  src={`${urlConfig.s3Url}/Image/account/icon_login_member_enterprise.png`}
+                  src={`${urlConfig().s3Url}/Image/account/icon_login_member_enterprise.png`}
                 />
                 <div className="text">{content.companymember}</div>
               </div>
@@ -163,7 +163,7 @@ const AccountApplication: React.FC = () => {
               <div className="btnBlock">
                 <a
                   className="applicationBtn"
-                  href={urlConfig.account.AccountPersonal.href}
+                  href={urlConfig().account.AccountPersonal.href}
                 >
                   {content.applymembership}
                 </a>
@@ -171,7 +171,7 @@ const AccountApplication: React.FC = () => {
               <div className="btnBlock">
                 <a
                   className="applicationBtn"
-                  href={urlConfig.account.AccountPartner.href}
+                  href={urlConfig().account.AccountPartner.href}
                 >
                   {content.applypartnership}
                 </a>
@@ -194,7 +194,7 @@ const AccountApplication: React.FC = () => {
                   <img
                     alt="captionIcon"
                     className="captionIcon"
-                    src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_client_directions_blue.png`}
+                    src={`${urlConfig().s3Url}/Image/account/icon_enterprisemember_client_directions_blue.png`}
                   />
                   <div className="tab-content">
                     <div className="topBlock">
@@ -204,7 +204,7 @@ const AccountApplication: React.FC = () => {
                           <li>
                             <img
                               alt="icon_tick"
-                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                              src={`${urlConfig().s3Url}/Image/account/icon_tick.png`}
                             />
                             <div>{item}</div>
                           </li>
@@ -218,7 +218,7 @@ const AccountApplication: React.FC = () => {
                           <li>
                             <img
                               alt="icon_tick"
-                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                              src={`${urlConfig().s3Url}/Image/account/icon_tick.png`}
                             />
                             <div>{item}</div>
                           </li>
@@ -241,7 +241,7 @@ const AccountApplication: React.FC = () => {
                   <img
                     alt="captionIcon"
                     className="captionIcon"
-                    src={`${urlConfig.s3Url}/Image/account/icon_enterprisemember_supplier_directions_blue.png`}
+                    src={`${urlConfig().s3Url}/Image/account/icon_enterprisemember_supplier_directions_blue.png`}
                   />
                   <div className="tab-content">
                     <div className="topBlock">
@@ -251,7 +251,7 @@ const AccountApplication: React.FC = () => {
                           <li>
                             <img
                               alt="icon_tick"
-                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                              src={`${urlConfig().s3Url}/Image/account/icon_tick.png`}
                             />
                             <div>{item}</div>
                           </li>
@@ -265,7 +265,7 @@ const AccountApplication: React.FC = () => {
                           <li>
                             <img
                               alt="icon_tick"
-                              src={`${urlConfig.s3Url}/Image/account/icon_tick.png`}
+                              src={`${urlConfig().s3Url}/Image/account/icon_tick.png`}
                             />
                             <div>{item}</div>
                           </li>

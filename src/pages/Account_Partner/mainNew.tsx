@@ -4,7 +4,7 @@ import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import { postAppVendor } from "../../services/api.service";
 import 'react-phone-number-input/style.css';
 import { getCountryCallingCode } from 'react-phone-number-input/input';
@@ -84,7 +84,7 @@ const AccountPartner: React.FC = () => {
       console.log("result", result);
       postAppVendor(result).then((response: any) => {
         console.log("response", response);
-        window.location.href = urlConfig.account.AccountApplication.href;
+        window.location.href = urlConfig().account.AccountApplication.href;
       });
     };
 
@@ -96,20 +96,20 @@ const AccountPartner: React.FC = () => {
           <div className="classificationBlock flex">
             <a
               className="changTab"
-              href={urlConfig.account.AccountPersonal.href}
+              href={urlConfig().account.AccountPersonal.href}
             >
               <img
-                alt={urlConfig.account.AccountPersonal.title}
-                src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_normal.png`}
+                alt={urlConfig().account.AccountPersonal.title}
+                src={`${urlConfig().s3Url}/Image/account/btn_enterprisemember_client_normal.png`}
               />
             </a>
             <a
               className="changTab"
-              href={urlConfig.account.AccountPartner.href}
+              href={urlConfig().account.AccountPartner.href}
             >
               <img
-                alt={urlConfig.account.AccountPartner.title}
-                src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`}
+                alt={urlConfig().account.AccountPartner.title}
+                src={`${urlConfig().s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`}
               />
             </a>
           </div>

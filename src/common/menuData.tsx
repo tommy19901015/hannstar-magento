@@ -1,4 +1,4 @@
-import urlConfig from "../config/urlSetting.json";
+import { urlConfig } from "../config/urlSetting";
 import { useTranslation } from "react-i18next";
 
 export type I_MenuItemType = {
@@ -13,7 +13,7 @@ export interface I_MenuType {
   [key: string]: I_MenuItemType[];
 }
 
-const { hannstar, partner, service, footerlinks, paperdisplay, tftdisplay, solution, hannspree } = urlConfig;
+const { hannstar, partner, service, footerlinks, paperdisplay, tftdisplay, solution, hannspree } = urlConfig();
 
 function useMenu() {
   const { t } = useTranslation();

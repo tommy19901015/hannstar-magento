@@ -6,14 +6,14 @@ import {
   validate,
   validatePassword,
 } from "../../common/validateUtils";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import "./css.scss";
 import useLoginForm from "./pageData";
 
 const HannstarLogin: React.FC = () => {
   const pageName = "HannstarLogin";
   const pageData = useLoginForm();
-  
+
   const LoginContent = () => {
     const [account, setAccount] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -119,14 +119,14 @@ const HannstarLogin: React.FC = () => {
               </div>
             </div>
           </div>
-          <a href={urlConfig.account.forgotPassword.href}>{pageData.forgotPassword}</a>
+          <a href={urlConfig().account.forgotPassword.href}>{pageData.forgotPassword}</a>
         </div>
         <div className="loginBtn" onClick={handleLogin}>
           {pageData.loginBtn}
         </div>
         <p className="create">
           {pageData.hasAccount}
-          <a href={urlConfig.account.register.href}>{pageData.createAccount}</a>
+          <a href={urlConfig().account.register.href}>{pageData.createAccount}</a>
         </p>
         <div ref={loginBlock} className="magentoLoginBlock"></div>
       </div>

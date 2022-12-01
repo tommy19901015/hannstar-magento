@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../../component/banner/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
-import urlConfig from "../../../config/urlSetting.json";
+import { urlConfig } from "../../../config/urlSetting";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src:`${urlConfig.s3Url}/Image/hannstar/sustainability/environment/topbanner1_1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/topbanner1_1.png`,
             title: "綠色創新",
             text: "從綠色產品之設計、供應鏈到生產，秉持企業成長與生態環境共榮的信念，厚植綠色管理於日常營運。",
             textAlign: TextAlign.BottomLeft,
@@ -61,10 +61,10 @@ function usePageData() {
           {
             rowCount: 4,
             imgGrids: [
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus4.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus2.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus3.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus4.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus2.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus3.png` },
             ]
           }
         ]
@@ -82,17 +82,17 @@ function usePageData() {
         type: "SustainabilityGraphics3",
         data: [
           {
-            src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
             title: "重要原物料",
             content: ["玻璃基板", "驅動IC", "偏光板", "背光板", "液晶材料", "彩色濾光片"]
           },
           {
-            src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
             title: "風險類型",
             content: ["可取得性和管道的實體限制", "價格變化風險", "法規風險", "聲譽風險"]
           },
           {
-            src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
             title: "供應鏈管理策略",
             content: ["供應商的多元化", "材料的儲備", "替代材料和替代材料的", "開發或採購", "對關鍵原物料回收技術的投資"]
           },
@@ -108,7 +108,7 @@ function usePageData() {
                 "瀚宇彩晶遵循RBA責任商業聯盟行為準則（Responsible Business Alliance, RBA）中關於衝突礦產相關規定，要求一階供應商出具書面承諾及完成衝突礦產調查表，透過內部綠色產品管理系統對供應商採用礦產情形進行調查合格率達100%。",
             },
             banner: {
-              src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/Group5953.png`,
+              src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/Group5953.png`,
               title: "",
               text: "",
               textAlign: TextAlign.BottomLeft,
@@ -120,7 +120,7 @@ function usePageData() {
         type: "SustainabilityGraphics3",
         data: [
           {
-            src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle2508.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle2508.png`,
             title: "Hannstar的衝突礦產政策",
             comment: "衝突礦產調查模板不僅有效利於管理使用衝突礦產的供應商，更讓我們容易獲得供應商的衝突礦產信息。因此我們提出了一份被認可的冶煉廠/精煉廠清單，並通過供應鏈所提出的衝突礦物調查報告比對後列出我們確定的鉭，錫，鎢，金和鈷的冶煉廠/精煉廠的名稱和位置，並且公佈此清單。它屬於Hannstar的衝突礦產盡職調查的一部分。",
             content: [
@@ -129,7 +129,7 @@ function usePageData() {
             ]
           },
           {
-            src: `${urlConfig.s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle2508_1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle2508_1.png`,
             title: "供應商要求",
             subTitle: "Hannstar就其負責任的礦產採購向供應商傳達以下期望",
             content: [

@@ -7,7 +7,7 @@ import {
   validatePassword,
 } from "../../common/validateUtils";
 import "./css.scss";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 
 const MFAQRCode: React.FC = () => {
   const pageName = "MFAQRCode";
@@ -66,14 +66,14 @@ const MFAQRCode: React.FC = () => {
             <div className="titleContent">
               <div className="mainTitle">{tableData.pageTitle}</div>
               <p>{tableData.subTitle}</p>
-              <img alt="demo" className="mobileImgContent" src={`${urlConfig.s3Url}/Image/account/img_2fa_demo.png`} />
+              <img alt="demo" className="mobileImgContent" src={`${urlConfig().s3Url}/Image/account/img_2fa_demo.png`} />
               <span>{tableData.noteTitle}</span>
               <div className="stepGuide">
                 {tableData.stepGuide}<i className=""></i>
               </div>
             </div>
             <div className="imgContent">
-              <img alt="demo" src={`${urlConfig.s3Url}/Image/account/img_2fa_demo.png`} />
+              <img alt="demo" src={`${urlConfig().s3Url}/Image/account/img_2fa_demo.png`} />
             </div>
           </div>
         </div>
@@ -90,10 +90,10 @@ const MFAQRCode: React.FC = () => {
 
                 <div className="stepExample">
                   <a rel="noreferrer" target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=zh_TW&gl=US">
-                    <img className="appImg" alt="android" src={`${urlConfig.s3Url}/Image/account/img_2fa_app_android.png`} />
+                    <img className="appImg" alt="android" src={`${urlConfig().s3Url}/Image/account/img_2fa_app_android.png`} />
                   </a>
                   <a rel="noreferrer" target="_blank" href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458">
-                    <img className="appImg" alt="ios" src={`${urlConfig.s3Url}/Image/account/img_2fa_app_ios.png`} />
+                    <img className="appImg" alt="ios" src={`${urlConfig().s3Url}/Image/account/img_2fa_app_ios.png`} />
                   </a>
                 </div>
               </div>

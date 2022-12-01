@@ -4,7 +4,7 @@ import Layout from "../../component/layout/main";
 import AccountPersonalTemplate from "../../templates/AccountPersonalTemplate/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import usePageData from "./pageData";
 import { postAccountInfo } from "../../services/api.service";
 import { Accountstatus } from "../../templates/AccountPersonalTemplate/interface";
@@ -99,7 +99,7 @@ const AccountMyAccount: React.FC = () => {
               <div className="subTitle">{personalInfo}</div>
               <ListBlock title={name} text={magentoName} />
               <ListBlock title={email} text={magentoEmail} />
-              <a className="editBtn" href={urlConfig.account.EditAccount.href}>
+              <a className="editBtn" href={urlConfig().account.EditAccount.href}>
                 {edit}
               </a>
             </div>
@@ -112,7 +112,7 @@ const AccountMyAccount: React.FC = () => {
               </div>
               <a
                 className="editBtn"
-                href={urlConfig.account.AccountNewsletter.href}
+                href={urlConfig().account.AccountNewsletter.href}
               >
                 {edit}
               </a>

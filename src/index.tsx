@@ -87,7 +87,7 @@ import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import ServiceParseApply from "./pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
-import urlConfig from "./config/urlSetting.json";
+import { urlConfig } from "./config/urlSetting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
 
@@ -103,7 +103,7 @@ const {
   paperdisplay,
   solution,
   hannspree,
-} = urlConfig;
+} = urlConfig();
 
 ReactDOM.render(
   <BrowserRouter>

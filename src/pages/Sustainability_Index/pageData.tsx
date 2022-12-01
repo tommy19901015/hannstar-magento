@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign } from "../../component/banner/interface";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
 function usePageData() {
@@ -51,49 +51,49 @@ function usePageData() {
         type: "TitleContentImgGrid",
         data: [
           {
-            rowCount:4, 
-            imgGrids:[
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus1.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus2.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus3.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus4.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus5.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus6.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus7.png` },
-              { src: `${urlConfig.s3Url}/Image/hannstar/sustainability/focus8.png` },
+            rowCount: 4,
+            imgGrids: [
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus1.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus2.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus3.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus4.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus5.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus6.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus7.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/focus8.png` },
 
             ]
           }
         ]
       },
       {
-          type:"SustainabilityGraphics3",
-          data:[
-            {
-              src: `${urlConfig.s3Url}/Image/hannstar/sustainability/Rectangle1914.png`,
-              title: "Sustainalytics ESG 風險評級低",
-              content:
-                "2021年歐洲專業永續評比機構《Sustainalytics》ESG（環境、社會、治理面）評級結果為低風險",
-            },
-            {
-              src: `${urlConfig.s3Url}/Image/hannstar/sustainability/Group6338.png`,
-              title: "EcoVadis 永續評比 銅獎",
-              content:
-                "EcoVadis旨在透過控制供應鏈風險，來改善企業的可持續性和社會責任表現，評鑑項目包含環境、勞工與人權、商業道德、可持續採購。2021年瀚宇彩晶榮獲EcoVadis永讀評比之銅獎榮耀。",
-            },
-            {
-              src: `${urlConfig.s3Url}/Image/hannstar/sustainability/Rectangle2503.png`,
-              title: "TCSA 永續報告書 銀獎",
-              content:
-                "彩晶發行之2021永續報告書獲得台灣永續能源研究基金會舉辦的「永續報告獎項-銀獎」肯定，展現彩晶長期多元化的永續行動成果。",
-            },
-            {
-              src: `${urlConfig.s3Url}/Image/hannstar/sustainability/Rectangle2502.png`,
-              title: "資誠永續影響力獎",
-              content:
-                "彩晶基金會以「不安中的勇氣」紀錄片榮獲資誠永續影響力特別獎。秉持「善用故事力，創造影響力」的核心理念，以2分鐘的永續專案影片，以善創意啟發人心，並呼應聯合國永續發展目標（SDGs）。",
-            },
-          ]
+        type: "SustainabilityGraphics3",
+        data: [
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/Rectangle1914.png`,
+            title: "Sustainalytics ESG 風險評級低",
+            content:
+              "2021年歐洲專業永續評比機構《Sustainalytics》ESG（環境、社會、治理面）評級結果為低風險",
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/Group6338.png`,
+            title: "EcoVadis 永續評比 銅獎",
+            content:
+              "EcoVadis旨在透過控制供應鏈風險，來改善企業的可持續性和社會責任表現，評鑑項目包含環境、勞工與人權、商業道德、可持續採購。2021年瀚宇彩晶榮獲EcoVadis永讀評比之銅獎榮耀。",
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/Rectangle2503.png`,
+            title: "TCSA 永續報告書 銀獎",
+            content:
+              "彩晶發行之2021永續報告書獲得台灣永續能源研究基金會舉辦的「永續報告獎項-銀獎」肯定，展現彩晶長期多元化的永續行動成果。",
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/Rectangle2502.png`,
+            title: "資誠永續影響力獎",
+            content:
+              "彩晶基金會以「不安中的勇氣」紀錄片榮獲資誠永續影響力特別獎。秉持「善用故事力，創造影響力」的核心理念，以2分鐘的永續專案影片，以善創意啟發人心，並呼應聯合國永續發展目標（SDGs）。",
+          },
+        ]
       },
       {
         type: "TitleContentBlock",
@@ -108,7 +108,7 @@ function usePageData() {
         type: "TitleContentVideo",
         data: [
           {
-            src:`${urlConfig.s3Url}/Image/hannstar/sustainability/image373.png`
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/image373.png`
           }
         ]
       },
@@ -125,7 +125,7 @@ function usePageData() {
         type: "TitleContentVideo",
         data: [
           {
-            src:`${urlConfig.s3Url}/Image/hannstar/sustainability/image373_1.png`
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/image373_1.png`
           }
         ]
       },

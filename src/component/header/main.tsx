@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import useMenu from "../../common/menuData";
 import CollapseLi from "../collapseLi/main";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import { useTranslation } from "react-i18next";
 import { I_MenuType } from "../../common/menuData";
 import {
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
 
-  const { account, hannstar } = urlConfig;
+  const { account, hannstar } = urlConfig();
   const magentoHeaderRef: any = useRef();
 
   const { t, i18n } = useTranslation();

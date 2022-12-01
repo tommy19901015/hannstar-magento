@@ -1,6 +1,6 @@
 
 import { DataType } from "./interface"
-import urlConfig from "../../config/urlSetting.json";
+import {urlConfig} from "../../config/urlSetting";
 import { useTranslation } from "react-i18next";
 
 
@@ -13,11 +13,11 @@ function useInitData() {
             items: [
                 {
                     title: t('Account_Personal_Template.breadcrumbsLinkAccountInfo'),
-                    href: urlConfig.account.MyAccount.href,
+                    href: urlConfig().account.MyAccount.href,
                 },
                 {
                     title: t('Account_Personal_Template.breadcrumbsLinkAuthority'),
-                    href: urlConfig.account.AccountApplication.href,
+                    href: urlConfig().account.AccountApplication.href,
                 }
             ]
         },
@@ -27,11 +27,11 @@ function useInitData() {
             items: [
                 {
                     title: t('Account_Personal_Template.breadcrumbsLinkMember'),
-                    href: urlConfig.account.MemberInfo.href,
+                    href: urlConfig().account.MemberInfo.href,
                 },
                 {
                     title: t('Account_Personal_Template.breadcrumbsLinkKanban'),
-                    href: urlConfig.account.AccountDashboard.href,
+                    href: urlConfig().account.AccountDashboard.href,
                 },
             ]
         },

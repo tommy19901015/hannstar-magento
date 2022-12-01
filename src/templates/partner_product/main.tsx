@@ -15,10 +15,10 @@ import {
   I_ProductCountInfo,
   I_PartnerProductTemplate,
 } from "./interface";
-import urlConfig from "../../config/urlSetting.json"
+import { urlConfig } from "../../config/urlSetting"
 import "./css.scss";
 
-const { partner } = urlConfig;
+const { partner } = urlConfig();
 
 const userInfoData = {
   name: "pdmo01",

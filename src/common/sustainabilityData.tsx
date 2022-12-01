@@ -1,4 +1,4 @@
-import urlConfig from "../config/urlSetting.json";
+import { urlConfig } from "../config/urlSetting";
 import { I_GrapModel } from "../component/graphics3/interface";
 import { useTranslation } from "react-i18next";
 
@@ -11,7 +11,7 @@ export type SustainabilityData = {
   graphics3: I_GrapModel;
 }[];
 
-const { hannstar, partner, service, footerlinks } = urlConfig;
+const { hannstar, partner, service, footerlinks, s3Url } = urlConfig();
 
 function useSustainabilityData() {
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ function useSustainabilityData() {
         { text: "利害關係人溝通管道", type: "Communicate" },
       ],
       graphics3: {
-        src: `${urlConfig.s3Url}/Image/hannstar/sustainability/sustainablemanagement/Group5946.png`,
+        src: `${s3Url}/Image/hannstar/sustainability/sustainablemanagement/Group5946.png`,
         title: "請參閱瀚宇彩晶2021年度永續報告書",
         content: "第1章  永續管理",
         btnText: "閱讀全文",
@@ -64,7 +64,7 @@ function useSustainabilityData() {
         { text: "永續供應鏈", type: "SupplyChain" },
       ],
       graphics3: {
-        src: `${urlConfig.s3Url}/Image/hannstar/sustainability/governance/Supplier2.png`,
+        src: `${s3Url}/Image/hannstar/sustainability/governance/Supplier2.png`,
         title: "請參閱瀚宇彩晶2021年度永續報告書",
         content: "第3章  綠色創新",
         btnText: "閱讀全文",
@@ -84,7 +84,7 @@ function useSustainabilityData() {
         { text: "勞工與道德政策", type: "Labor" },
       ],
       graphics3: {
-        src:`${urlConfig.s3Url}/Image/hannstar/sustainability/social/Supplier2.png`,
+        src: `${s3Url}/Image/hannstar/sustainability/social/Supplier2.png`,
         title: "請參閱瀚宇彩晶2021年度永續報告書",
         content: "第4章  從人文關懷出發的社會參與",
         btnText: "閱讀全文",

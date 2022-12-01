@@ -6,7 +6,7 @@ import FormComponent from "../../component/form/main";
 import { FormType } from "../../component/form/interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import urlConfig from "../../config/urlSetting.json";
+import { urlConfig } from "../../config/urlSetting";
 import PhoneInput from "react-phone-input-2";
 import { postAccountInfo } from "../../services/api.service";
 import "react-phone-input-2/lib/style.css";
@@ -601,16 +601,16 @@ const AccountPartner: React.FC = () => {
         <div className="formTitle">申請企業會員</div>
         <div className="stepTitle">步驟 1. 請選擇您的身份</div>
         <div className="classificationBlock">
-          <a className="changTab" href={urlConfig.account.AccountPersonal.href}>
+          <a className="changTab" href={urlConfig().account.AccountPersonal.href}>
             <img
-              alt={urlConfig.account.AccountPersonal.title}
-              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_client_normal.png`}
+              alt={urlConfig().account.AccountPersonal.title}
+              src={`${urlConfig().s3Url}/Image/account/btn_enterprisemember_client_normal.png`}
             />
           </a>
-          <a className="changTab" href={urlConfig.account.AccountPartner.href}>
+          <a className="changTab" href={urlConfig().account.AccountPartner.href}>
             <img
-              alt={urlConfig.account.AccountPartner.title}
-              src={`${urlConfig.s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`}
+              alt={urlConfig().account.AccountPartner.title}
+              src={`${urlConfig().s3Url}/Image/account/btn_enterprisemember_supplier_hnp.png`}
             />
           </a>
         </div>
