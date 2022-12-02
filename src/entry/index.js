@@ -37,6 +37,7 @@ import PartnerManageandadvisory from "../pages/Partner_Manageandadvisory/main";
 import PartnerTechnical from "../pages/Partner_Technical/main";
 import PartnerGreenSupplyChain from "../pages/Partner_GreenSupplyChain/main";
 import PartnerManufacturing from "../pages/Partner_Manufacturing/main";
+//客戶服務
 import ServiceIndex from "../pages/Service_Index/main";
 import ServiceRMAApply from "../pages/Service_RMAApply/main";
 import ServiceRMAList from "../pages/Service_RMAList/main";
@@ -45,6 +46,7 @@ import ServiceGreenService from "../pages/Service_GreenService/main";
 import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
 import ServiceParseApply from "../pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
+import ServiceTechnicalSupport from "../pages/Service_TechnicalSupport/main";
 //關於瀚宇彩晶
 import AboutIndex from "../pages/About_Index/main";
 import AboutStronghold from "../pages/About_Stronghold/main";
@@ -166,6 +168,7 @@ const pageMappingObj = {
   root_TFTIndex: <TFTIndex />,
   root_TFTPreferredProduct:<TFTPreferredProduct />,
   root_MagentoProductDetails:<MagentoProductDetails />,
+  root_ServiceTechnicalSupport:<oot_ServiceTechnicalSupport />,
   root_Index: <Index />,
 };
 

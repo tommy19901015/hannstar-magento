@@ -267,6 +267,10 @@ export const urlConfig = () => {
       "greenLawApply": {
         "title": "綠色環保申請",
         "href": mappingD360I18n() + "/service/greenlawapply/view"
+      },
+      "technicalSupport": {
+        "title": "技術諮詢",
+        "href": mappingD360I18n() + "/service/technicalsupport/view"
       }
     },
     "tftdisplay": {

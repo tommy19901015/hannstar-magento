@@ -1,0 +1,74 @@
+@import '../../style/variable.scss';
+
+$componentName: 'D360ArticleList2';
+
+.#{$componentName}Content {
+    .articleContent {
+        display: grid;
+        grid-gap: 80px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 32px 0;
+        .articleBlock {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .imgBlock {
+                position: relative;
+                padding-bottom: 56.2%;
+                img {
+                    position: absolute;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .contentWrap {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                .articleTitle {
+                    @include hannstarH4Title;
+                    padding-top: 10px;
+                }
+                .date {
+                    @include hannstarContent3;
+                    color: $hannstar-orange1;
+                    padding: 10px 0;
+                }
+                .description {
+                    @include hannstarContent1;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    display: -webkit-box;
+                }
+                .tagBlock {
+                    padding: 10px 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    .tag {
+                        @include hannstarContent2;
+                        background-color: $hannstar-form-bg-color;
+                        padding: 5px;
+                        border-radius: 5px;
+                        margin: 0 20px 20px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        .title {
+        }
+        .articleContent {
+            .catalogBlock {
+                .catalogContent {
+                    grid-gap: 30px;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        }
+    }
+}

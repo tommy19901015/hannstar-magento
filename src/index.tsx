@@ -50,8 +50,6 @@ import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
 //TFT
 import TFTIndex from "./pages/TFT_Index/main";
 import TFTPreferredProduct from "./pages/TFT_PreferredProduct/main";
-
-import MagentoProductDetails from "./pages/Magento_ProductDetails/main";
 //PaperDisplay
 import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
 import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
@@ -87,6 +85,11 @@ import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import ServiceParseApply from "./pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
+import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
+//Magento 原生頁面
+import MagentoProductCompare from "./pages/Magento_ProductCompare/main";
+import MagentoProductDetails from "./pages/Magento_ProductDetails/main";
+
 import { urlConfig } from "./config/urlSetting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./i18n";
@@ -94,6 +97,7 @@ import "./i18n";
 import NewsFinancial from "./pages/News_Financial/main";
 import ServiceGreenManagement from "./pages/Service_GreenManagement/main";
 import ServiceGreenProductPolicy from "./pages/Service_GreenProductPolicy/main";
+
 const {
   hannstar,
   partner,
@@ -304,6 +308,8 @@ ReactDOM.render(
       <Route path={"/news/serviceGreenProductPolicy"} element={<ServiceGreenProductPolicy />} />
       <Route path={"/tftdisplay/PreferredProduct/ProductList"} element={<TFTPreferredProduct />} />
       <Route path={"/MagentoProductDetails"} element={<MagentoProductDetails />} />
+      <Route path={"/MagentoProductCompare"} element={<MagentoProductCompare />} />
+      <Route path={service.technicalSupport.href} element={<ServiceTechnicalSupport />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
