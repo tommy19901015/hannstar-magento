@@ -2,7 +2,8 @@ import { useTranslation } from "react-i18next";
 import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
-import { TabEnum } from "../../types/Tmeplate1/interface";
+import { urlConfig } from "../../config/urlSetting";
+import { string } from "prop-types";
 
 
 function usePageData() {
@@ -13,7 +14,7 @@ function usePageData() {
                 type: "FullBanner",
                 data: [
                   {
-                    src: "https://fakeimg.pl/1000x700/?text=Image",
+                    src: `${urlConfig().s3Url}/Image/hannspree/solution/img_solution_bn.jpg`,
                     title: "",
                     text: "",
                     textAlign: TextAlign.BottomLeft,
@@ -47,9 +48,9 @@ function usePageData() {
               {
                 rowCount:3, 
                 imgGrids:[
-                  { src: "https://fakeimg.pl/100x100/?text=Image" },
-                  { src: "https://fakeimg.pl/100x100/?text=Image" },
-                  { src: "https://fakeimg.pl/100x100/?text=Image" },
+                  { src:`${urlConfig().s3Url}/Image/hannspree/solution/img_senario_school.jpg` },
+                  { src:`${urlConfig().s3Url}/Image/hannspree/solution/img_senario_eduorgs.jpg` },
+                  { src:`${urlConfig().s3Url}/Image/hannspree/solution/img_senario_tutor.jpg` },
                 ]
               }
             ]
@@ -71,21 +72,21 @@ function usePageData() {
               theme: GraphicsTheme.Theme1,
               data: [
                 {
-                  src:"https://fakeimg.pl/100x100/?text=Image",
+                  src: `${urlConfig().s3Url}/Image/hannspree/solution/img_features_onlineclass.png`,
                   title:"線上教室：打造高互動空間",
                   text:"輕鬆建立你的線上教室，同時完成學生邀請通知。透過內建互動機制，讓師生彷彿親臨現場，學習栩栩如生。",
                   href:"",
                   btnText:"",
                 },
                 {
-                  src:"https://fakeimg.pl/100x100/?text=Image",
+                  src: `${urlConfig().s3Url}/Image/hannspree/solution/img_features_videoclass.png`,
                   title:"錄播課程：反覆觀看內容",
                   text:"教師可上傳各式學習資源或補充教材。提供學生可以自由依照學習進度，安排學習時間，在錄播課程裡，無限制的複習學習內容。",
                   href:"",
                   btnText:"",
                 },
                 {
-                  src:"https://fakeimg.pl/100x100/?text=Image",
+                  src: `${urlConfig().s3Url}/Image/hannspree/solution/img_features_backend.png`,
                   title:"後台系統：掌握學習狀態",
                   text:"每個學習行為都清楚呈現，包含線上學習、錄播課程以及學習時數。掌握學生學習狀況，透過數據便能有效對症下藥，讓學習更有效率。",
                   href:"",
@@ -112,14 +113,14 @@ function usePageData() {
                   theme: GraphicsTheme.Theme1,
                   data: [
                     {
-                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      src: `${urlConfig().s3Url}/Image/hannspree/solution/img_prod_15.6notebook.png`,
                       title:"15.6”筆記型電腦",
                       text:"",
                       href:"",
                       btnText:"",
                     },
                     {
-                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      src: `${urlConfig().s3Url}/Image/hannspree/solution/img_prod_10.1tablet.png`,
                       title:"10.3”閱讀平板",
                       text:"",
                       href:"",
@@ -147,7 +148,7 @@ function usePageData() {
                   theme: GraphicsTheme.Theme1,
                   data: [
                     {
-                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      src: `${urlConfig().s3Url}/Image/hannspree/solution/img_partner_antek.png`,
                       title:"先博通訊(股)有限公司",
                       text:[
                         "‧公司地址 : 新竹縣湖口鄉鳳山村中華路15之1號",
@@ -158,7 +159,7 @@ function usePageData() {
                       btnText:"more",
                     },
                     {
-                      src:"https://fakeimg.pl/100x100/?text=Image",
+                      src: `${urlConfig().s3Url}/Image/hannspree/solution/img_main_banner.png`,
                       title:"思哈(股)有限公司",
                       text:[
                         "‧公司地址 : 台北市松山區復興北路231巷19號4樓",
@@ -171,6 +172,19 @@ function usePageData() {
                   ],
                 }
               ]
+            },
+            {
+              type: "SustainabilityGraphics3",
+              data: [
+                {
+                  src: `${urlConfig().s3Url}/Image/hannspree/solution/img_contact_contactus.png`,
+                  title: "與我們聯繫",
+                  btnText: "聯絡我們",
+                  btnHref: "/",
+                  content:
+                    "如您有品牌合作或是任何客製化的需求，請點選以下聯絡我們，填寫表單資料後，將由業務同仁與您聯繫。",
+                },
+              ],
             },
         ]
     }
