@@ -1,4 +1,4 @@
-import { TextAlign } from "../component/banner/interface";
+import { TextAlign, BannerType } from "../component/banner/interface";
 import { GraphicsTheme } from "../component/graphicsCard/interface";
 
 // Banner Type
@@ -7,6 +7,9 @@ export type I_Banner = {
   title: string;
   text: string;
   textAlign: TextAlign;
+  btnText?: string;
+  btnHref?: string;
+  type?: BannerType;
 };
 
 // Breadcrumbs Type

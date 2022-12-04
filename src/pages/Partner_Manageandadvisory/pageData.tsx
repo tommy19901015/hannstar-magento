@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
@@ -15,6 +15,7 @@ function usePageData() {
                 title: "管理與諮詢",
                 text: "透過持續不定期評鑑來提升供應鏈管理，以及多年技術經驗透過雲端共享，與供應商共同迎向永續未來。",
                 textAlign: TextAlign.BottomLeft,
+                type: BannerType.Main,
             },
           ],
         },

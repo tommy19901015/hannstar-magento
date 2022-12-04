@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { urlConfig } from "../../config/urlSetting";
@@ -26,6 +26,7 @@ function usePageData() {
             title: "創新技術、品質服務",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

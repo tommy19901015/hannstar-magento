@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 
 function useServiceIndex() {
@@ -15,6 +15,7 @@ function useServiceIndex() {
               title: "創新技術、品質服務",
               text: "",
               textAlign: TextAlign.BottomLeft,
+              type: BannerType.Main,
             },
           ],
         },

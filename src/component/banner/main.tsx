@@ -1,11 +1,10 @@
 import React from "react";
 import { BGBannerStyle } from "./styledComponent";
-import { I_Banner } from "./interface"
+import { BannerType, I_Banner } from "./interface"
 import "./css.scss";
 
-const Banner: React.FC<I_Banner> = ({ src, title, text, textAlign, btnText, btnHref }) => {
+const Banner: React.FC<I_Banner> = ({ src, title, text, textAlign, btnText, btnHref, type = BannerType.Default }) => {
     const componentName = "Banner";
-
     return (
         <div className={`${componentName}Content`}>
             {/* <BGBannerStyle src={src}>
@@ -14,8 +13,8 @@ const Banner: React.FC<I_Banner> = ({ src, title, text, textAlign, btnText, btnH
                     <div className="text">{text}</div>
                 </div>
             </BGBannerStyle> */}
-            <img src={src} alt={title} />
-            <div className={`textBlock ${textAlign}`}>
+            <img src={src} alt={title} className={`${type === BannerType.Main ? "min-h-400": ""}`} />
+            <div className={`textBlock ${textAlign} ${type === BannerType.Main ? "main-banner-text":""}`}>
                 <h2 className="title">{title}</h2>
                 <div className="text">
                     {btnText&&<a href={btnHref}>{btnText}</a>}

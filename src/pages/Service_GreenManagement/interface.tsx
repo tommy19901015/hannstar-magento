@@ -1,5 +1,5 @@
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 
 type I_Banner = {

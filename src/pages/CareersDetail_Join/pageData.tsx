@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../config/urlSetting";
@@ -16,6 +16,7 @@ function usePageData() {
             title: "彩晶讓你與時俱進成為更好的自己",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

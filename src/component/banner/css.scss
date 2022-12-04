@@ -6,7 +6,9 @@ $componentName: 'Banner';
     position: relative;
     img {
         width: 100%;
-        max-height: 400px;
+        &.min-h-400{
+            max-height: 400px;
+        }
     }
     .textBlock {
         position: absolute;
@@ -45,7 +47,7 @@ $componentName: 'Banner';
         }
     }
     @media screen and (max-width: $breakpoint) {
-        position: initial;
+
         .textBlock {
             width: 100%;
             max-width:100%;
@@ -56,6 +58,13 @@ $componentName: 'Banner';
                 @include hannstarH3Title;
                 color: #fff;
                 padding-bottom: 20px;
+            }
+            &.main-banner-text{
+                position: absolute;
+                background: none;
+                padding: 30px;
+                width: 100%;
+                max-width: 100%;
             }
         } 
     }

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../config/urlSetting";
 
@@ -15,6 +15,7 @@ function usePageData() {
             title: "人才，是企業面對激烈競爭環境時，最能展現力量的優勢之一期待創新、熱情、勇於突破的你加入我們的團隊",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },
