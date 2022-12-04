@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { I_PageType } from "./interface";
 import { urlConfig } from "../../config/urlSetting";
 
@@ -29,7 +29,8 @@ function usePageData() {
       src: `${urlConfig().s3Url}/Image/hannstar/about/Profile/HannStarVision.jpg`,
       title: "瀚宇彩晶願景",
       text: "讓我們的下一代都能享受新彩麗世界的新希望透過不斷創新的顯示技術，讓視覺可以穿越綠野、越過高山，到達世界的彼端，打開一扇使人類生命更豐富，讓生活更精采的視窗",
-      textAlign: TextAlign.BottomLeft
+      textAlign: TextAlign.BottomLeft,
+      type: BannerType.Main,
     },
     milestoneData: [
       {

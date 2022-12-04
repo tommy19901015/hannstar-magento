@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 function usePageData() {
@@ -14,6 +14,7 @@ function usePageData() {
                 title: "協同製造夥伴平台",
                 text: "該平台提供線上報價、生產管控，達到資訊即時化、溝通無國界的協同合作",
                 textAlign: TextAlign.BottomLeft,
+                type: BannerType.Main,
             },
           ],
         },

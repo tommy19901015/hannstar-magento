@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TabEnum } from "../../types/Tmeplate1/interface";
@@ -16,6 +16,7 @@ function usePageData() {
             title: "",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

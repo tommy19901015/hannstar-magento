@@ -6,6 +6,11 @@ export enum TextAlign {
     Center = "center",
 }
 
+export enum BannerType {
+    Main,
+    Default,
+}
+
 export interface I_Banner {
     src: string;
     title: string;
@@ -13,4 +18,5 @@ export interface I_Banner {
     textAlign: TextAlign;
     btnText?: string;
     btnHref?: string;
+    type?: BannerType;
 }

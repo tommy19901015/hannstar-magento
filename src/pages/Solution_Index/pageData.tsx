@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TabEnum } from "../../types/Tmeplate1/interface";
@@ -16,6 +16,7 @@ function usePageData() {
             title: "方案系統及整合服務",
             text: "物聯網快速發展下，智慧產品也更加多元，透過豐富顯示資源與經驗，提供客戶整合性方案服務",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

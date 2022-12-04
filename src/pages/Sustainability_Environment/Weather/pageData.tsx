@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../../component/banner/interface";
+import { TextAlign , BannerType } from "../../../component/banner/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../../config/urlSetting";
 
@@ -15,6 +15,7 @@ function usePageData() {
             title: "綠色創新",
             text: "從綠色產品之設計、供應鏈到生產，秉持企業成長與生態環境共榮的信念，厚植綠色管理於日常營運。",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

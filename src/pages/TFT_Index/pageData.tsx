@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { I_PageType } from "./interface";
 
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 
 function usePageData() {
@@ -17,6 +17,7 @@ function usePageData() {
             title: "",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

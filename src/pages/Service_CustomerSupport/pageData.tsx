@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface"
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
@@ -15,6 +15,7 @@ function usePageData() {
             title: "客戶通",
             text: "透過客戶服務平台簡易、便利的服務，讓客戶享受更快速的專業諮詢交流。不論是產品需要解析、排除異常、或是後續的RMA更換，都能由全方位的售後服務團隊為您效勞。",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
             },
           ],
         },

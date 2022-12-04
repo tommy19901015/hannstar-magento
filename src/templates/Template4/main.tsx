@@ -2,7 +2,7 @@ import React from "react";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import Banner from "../../component/banner/main";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import TitleContent from "../../component/titleContent/main";
 import GraphicsCard from "../../component/graphicsCard/main";

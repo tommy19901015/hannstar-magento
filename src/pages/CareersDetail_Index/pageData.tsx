@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../config/urlSetting";
 
@@ -15,6 +15,7 @@ function usePageData() {
             title: "擁抱改變 開創未來與我們一起發揮科技無所不在的影響力",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

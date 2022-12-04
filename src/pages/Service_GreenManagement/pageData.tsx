@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
@@ -16,6 +16,7 @@ function usePageData() {
                 title: "品質管理與策略",
                 text: "",
                 textAlign: TextAlign.BottomLeft,
+                type: BannerType.Main,
             },
           ],
         },

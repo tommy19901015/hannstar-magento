@@ -1,5 +1,5 @@
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { GraphicsLineType } from "../../component/graphicsLine/interface";
 import { I_Graphics3 } from "../../component/graphics3/interface"
@@ -9,6 +9,7 @@ type I_Banner = {
     title: string,
     text: string,
     textAlign: TextAlign,
+    type: BannerType.Main,
 };
 
 type I_GraphicsContent = {

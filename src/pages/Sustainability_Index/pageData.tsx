@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { urlConfig } from "../../config/urlSetting";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
@@ -16,6 +16,7 @@ function usePageData() {
             title: "綠色創新 友善環境 共創永續價值",
             text: "",
             textAlign: TextAlign.BottomLeft,
+            type: BannerType.Main,
           },
         ],
       },

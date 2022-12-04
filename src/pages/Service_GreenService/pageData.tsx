@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign } from "../../component/banner/interface";
+import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
@@ -16,6 +16,7 @@ function usePageData() {
                 title: "綠色環保申請",
                 text: "「可回收、低污染、省資源」致力推動綠色產品發展，並取得環保標章，符合永續發展",
                 textAlign: TextAlign.BottomLeft,
+                type: BannerType.Main,
             },
           ],
         },
