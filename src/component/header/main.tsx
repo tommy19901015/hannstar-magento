@@ -33,8 +33,16 @@ const Header: React.FC = () => {
     const magentoDom: any = document.getElementsByClassName("page-header")[0];
     if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
 
-    const type = window.location.pathname.split("/")[1];
-    const mappingArr = ["hannstar", "partner", "service", "paperdisplay", "tftdisplay", "solution", "hannspree"];
+    const type = window.location.pathname.split("/")[2];
+    const mappingArr = [
+      "hannstar",
+      "partner",
+      "service",
+      "paperdisplay",
+      "tftdisplay",
+      "solution",
+      "hannspree",
+    ];
     mappingArr.includes(type) && setServiceType(type);
   }, []);
 
@@ -70,8 +78,9 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
               {isLogin && item.type === "member" ? (
                 <div className="member-content">
