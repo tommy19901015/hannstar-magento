@@ -20,12 +20,13 @@ type I_MenuContent = {
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
+  const [language, setLanguage] = useState<string>("zh-tw");
 
   const { account, hannstar } = urlConfig();
   const magentoHeaderRef: any = useRef();
 
   const { t, i18n } = useTranslation();
-  const language = useRef(i18n.language);
+  // const language = useRef(i18n.language);
 
   const [isLogin, setIsLogin] = useState<boolean>(true);
 
@@ -51,6 +52,21 @@ const Header: React.FC = () => {
   };
 
   const menuList: I_MenuType = useMenu();
+
+  const TopHeaderBlock = () => {
+    return (
+      <div>
+        <input type="text" />
+        <a href={account.login.href}>登入</a>
+        <a href={account.register.href}>註冊</a>
+        <select>
+          <option>繁中</option>
+          <option>簡中</option>
+          <option>EN</option>
+        </select>
+      </div>
+    );
+  };
 
   const menuMData = menuList[serviceType].map((item) => {
     const { title, content } = item;
@@ -126,6 +142,7 @@ const Header: React.FC = () => {
   return (
     <div className="hannstarHeader">
       <div ref={magentoHeaderRef} className="magentoHeader">
+        <TopHeaderBlock />
         {/* <MagentoInputHeader /> */}
         {/* <MagentoLoginHeader /> */}
         {/* <MagentoNotLoginHeader /> */}
