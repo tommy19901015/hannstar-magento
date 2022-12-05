@@ -16,7 +16,57 @@
         position: absolute;
         right: 80px;
         padding-top: 8px;
-        @include magentoHeader;
+        .hannstarTopBlock {
+            display: flex;
+            align-self: center;
+            .algoliaInputBlock {
+                display: flex;
+                margin-right: 15px;
+                .algoliaInput {
+                    @include hannstarInput;
+                    border-radius: 4px;
+                    border: 1px solid #fff;
+                    width: 100%;
+                    height: 25px;
+                    margin-right: 5px;
+                }
+                .searchIcon {
+                    cursor: pointer;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url('./seach.png');
+                    background-size: 15px;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    border: none;
+                }
+            }
+            .languageSelect {
+                margin-right: 10px;
+                font-size: 14px;
+                background-color: transparent;
+                color: #fff;
+                border: none;
+                outline: none;
+                option {
+                    color: $hannstar-default-text-color;
+                }
+            }
+            .accountBlock {
+                display: flex;
+                align-self: center;
+                .toolBarText {
+                    display: block;
+                    color: #fff;
+                    font-size: 14px;
+                    margin-right: 10px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        // @include magentoHeader;
         // @include magentoAll;
     }
     .header_pc {

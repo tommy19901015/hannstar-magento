@@ -4,6 +4,7 @@ import CollapseLi from "../collapseLi/main";
 import { urlConfig } from "../../config/urlSetting";
 import { useTranslation } from "react-i18next";
 import { I_MenuType } from "../../common/menuData";
+import mappingUrlI18n from "../../common/mappingUrlI18n"
 import {
   MagentoNotLoginHeader,
   MagentoLoginHeader,
@@ -20,7 +21,7 @@ type I_MenuContent = {
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
-  const [language, setLanguage] = useState<string>("zh-tw");
+  const [language, setLanguage] = useState<string>(window.hannstar.language);
 
   const { account, hannstar } = urlConfig();
   const magentoHeaderRef: any = useRef();
@@ -51,19 +52,47 @@ const Header: React.FC = () => {
     setOpenPhoneMenu(!openPhoneMenu);
   };
 
+  const handleSelectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const urlArr = window.location.pathname.split("/");
+    const mappingObj: any = {
+      "en_US": "en",
+      "zh_Hant_TW": "tw",
+      "zh_Hans_CN": "cn",
+    };
+    if (urlArr[1] === "tw" || urlArr[1] === "en" || urlArr[1] === "cn") {
+      urlArr[1] = mappingObj[e.target.value] ? mappingObj[e.target.value] : "tw"
+    } else {
+      urlArr[0] = mappingObj[e.target.value] ? mappingObj[e.target.value] : "tw"
+    }
+    window.location.href = urlArr.join("/")
+  }
+
   const menuList: I_MenuType = useMenu();
 
   const TopHeaderBlock = () => {
     return (
-      <div>
-        <input type="text" />
-        <a href={account.login.href}>登入</a>
-        <a href={account.register.href}>註冊</a>
-        <select>
-          <option>繁中</option>
-          <option>簡中</option>
-          <option>EN</option>
+      <div className="hannstarTopBlock">
+        <div className="algoliaInputBlock">
+          <input className="algoliaInput" type="text" />
+          <div className="searchIcon">
+
+          </div>
+        </div>
+        <select className="languageSelect" value={language} onChange={handleSelectLanguage}>
+          <option value="zh_Hant_TW">繁中</option>
+          <option value="zh_Hans_CN">简中</option>
+          <option value="en_US">EN</option>
         </select>
+        {window.hannstar.islogin ?
+          <div className="accountBlock">
+            <a className="toolBarText" href={account.MyAccount.href}>會員中心</a>
+            <a className="toolBarText" href={account.AccountLogout.href}>登出</a>
+          </div>
+          :
+          <div className="accountBlock">
+            <a className="toolBarText" href={account.login.href}>登入</a>
+            <a className="toolBarText" href={account.register.href}>註冊</a>
+          </div>}
       </div>
     );
   };
@@ -141,7 +170,7 @@ const Header: React.FC = () => {
   return (
     <div className="hannstarHeader">
       <div ref={magentoHeaderRef} className="magentoHeader">
-        {/* <TopHeaderBlock /> */}
+        <TopHeaderBlock />
         {/* <MagentoInputHeader /> */}
         {/* <MagentoLoginHeader /> */}
         {/* <MagentoNotLoginHeader /> */}
