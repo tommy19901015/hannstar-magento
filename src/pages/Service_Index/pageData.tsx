@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
+import { urlConfig } from "../../config/urlSetting";
 
 function useServiceIndex() {
     const { t } = useTranslation();
@@ -11,7 +12,7 @@ function useServiceIndex() {
           type: "FullBanner",
           data: [
             {
-              src: "https://fakeimg.pl/1000x700/?text=Image",
+              src: `${urlConfig().s3Url}/Image/service/index/Homepage_CustomerService/Banner_Greeneco.jpg`,
               title: "創新技術、品質服務",
               text: "",
               textAlign: TextAlign.BottomLeft,
@@ -23,17 +24,17 @@ function useServiceIndex() {
           type: "MessageCenterPlatform",
           data: [
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
+              src: `${urlConfig().s3Url}/Image/service/index/Homepage_CustomerService/Support_Customersupport.jpg`,
               title: "客戶通",
               href: "/",
             },
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
+              src: `${urlConfig().s3Url}/Image/service/index/Homepage_CustomerService/Support_Greeneco.jpg`,
               title: "綠色環保申請",
               href: "/",
             },
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
+              src: `${urlConfig().s3Url}/Image/service/index/Homepage_CustomerService/Support_Technicalsupport.jpg`,
               title: "技術諮詢",
               href: "/",
             },

@@ -4,6 +4,7 @@ import { I_PageType } from "./interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
+import { urlConfig } from "../../config/urlSetting";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src:`${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_banner/smart_retailing_banner.jpg`,
             title: "",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -25,37 +26,37 @@ function usePageData() {
         type: "MessageCenterPlatform",
         data: [
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
+            src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/smart_retailing_icon.png`,
             title: "智慧零售",
             href: "/",
           },
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
+            src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/smart_retailing_icon.png`,
             title: "智能建築",
             href: "/",
           },
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
+            src:`${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/transportation_icon.png`,
             title: "交通運輸",
             href: "/",
           },
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_20F17_cfe6j6bk57.png",
+            src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/smart_edutainment_icon.png`,
             title: "智慧育樂",
             href: "/",
           },
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+            src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/healthcare_icon.png`,
             title: "健康關懷",
             href: "/",
           },
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+            src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/iiot_icon.png`,
             title: "智能製造",
             href: "/",
           },
           {
-            src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_784869e23g.png",
+            src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_icon/iiot_icon.png`,
             title: "綠色顯示器",
             href: "/",
           },
@@ -86,12 +87,12 @@ function usePageData() {
           {
             rowCount: 3,
             imgGrids: [
-              { src: "https://fakeimg.pl/100x60/?text=Image", href: "" },
-              { src: "https://fakeimg.pl/100x60/?text=Image", href: "" },
-              { src: "https://fakeimg.pl/100x60/?text=Image", href: "" },
-              { src: "https://fakeimg.pl/100x60/?text=Image", href: "" },
-              { src: "https://fakeimg.pl/100x60/?text=Image", href: "" },
-              { src: "https://fakeimg.pl/100x60/?text=Image", href: "" },
+              { src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_section/smart_retailing.jpg`, href: "" },
+              { src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_section/smart_building.jpg`, href: "" },
+              { src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_section/transportation.jpg`, href: "" },
+              { src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_section/smart_edutainment.jpg`, href: "" },
+              { src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_section/healthcare.jpg`, href: "" },
+              { src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_page_application_section/iiot.jpg`, href: "" },
             ],
           },
         ],
@@ -113,28 +114,28 @@ function usePageData() {
             theme: GraphicsTheme.Theme1,
             data: [
               {
-                src: "https://fakeimg.pl/100x100/?text=Image",
+                src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_Page_send_inquiries/product_search.jpg`,
                 title: "產品查詢",
                 text: "結合平台大數據運行，提供多元化產品，以符合客戶需求",
                 href: "",
                 btnText: "",
               },
               {
-                src: "https://fakeimg.pl/100x100/?text=Image",
+                src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_Page_send_inquiries/product_search.jpg`,
                 title: "特殊材料",
                 text: "提供客戶線上專案報價服務",
                 href: "",
                 btnText: "",
               },
               {
-                src: "https://fakeimg.pl/100x100/?text=Image",
+                src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_Page_send_inquiries/smart_solution_system_integration.jpg`,
                 title: "智慧方案整合",
                 text: "一站式方案整合服務，提供嵌入式主板、顯示器與UI設計服務",
                 href: "",
                 btnText: "",
               },
               {
-                src: "https://fakeimg.pl/100x100/?text=Image",
+                src: `${urlConfig().s3Url}/Image/tftdisplay/index/Main_Page/main_Page_send_inquiries/customization_service.jpg`,
                 title: "報價",
                 text: "提供客戶線上專案報價服務",
                 href: "/",
