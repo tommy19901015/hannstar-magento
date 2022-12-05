@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TextAlign , BannerType} from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
+import { urlConfig } from "../../config/urlSetting";
 
 function useServiceIndex() {
     const { t } = useTranslation();
@@ -11,7 +12,7 @@ function useServiceIndex() {
           type: "FullBanner",
           data: [
             {
-              src: "https://fakeimg.pl/1000x700/?text=Image",
+              src: `${urlConfig().s3Url}/Image/partner/index/banner02.jpg`,
               title: "創新技術、品質服務",
               text: "",
               textAlign: TextAlign.BottomLeft,
@@ -23,22 +24,22 @@ function useServiceIndex() {
           type: "MessageCenterPlatform",
           data: [
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_t4gtmsjux5.png",
+              src: `${urlConfig().s3Url}/Image/partner/index/icon_material.png`,
               title: "材料供應商",
               href: "/",
             },
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_xnf94vwkwm.png",
+              src: `${urlConfig().s3Url}/Image/partner/index/icon_equipment.png`,
               title: "設備供應商",
               href: "/",
             },
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
+              src: `${urlConfig().s3Url}/Image/partner/index/icon_manufacturing.png`,
               title: "協同製造夥伴",
               href: "/",
             },
             {
-              src: "https://webdev.hannstar.com/upload/ad_icon_list/twL_ad_21G07_pub4mi8vcn.png",
+              src: `${urlConfig().s3Url}/Image/partner/index/icon_mna.png`,
               title: "管理與諮詢",
               href: "/",
             },
@@ -62,28 +63,28 @@ function useServiceIndex() {
               theme: GraphicsTheme.Theme1,
               data: [
                 {
-                  src: "https://partner.hannstar.com/images/supplier/home2.jpg",
+                  src: `${urlConfig().s3Url}/Image/partner/index/card01.jpg`,
                   title: "材料供應商",
                   text: "運用材料創新，創造面板無限可能性，攜手合作，推動顯示科技新世界。。",
                   href: "",
                   btnText: "了解更多",
                 },
                 {
-                  src: "https://partner.hannstar.com/images/supplier/home3.jpg",
+                  src: `${urlConfig().s3Url}/Image/partner/index/card02.jpg`,
                   title: "設備供應商",
                   text: "運用技術創新，攜手合作，共創綠色顯示科技新世界。",
                   href: "",
                   btnText: "了解更多",
                 },
                 {
-                  src: "https://partner.hannstar.com/images/supplier/home1.jpg",
+                  src: `${urlConfig().s3Url}/Image/partner/index/card03.jpg`,
                   title: "協同製造夥伴",
                   text: "以客戶服務為核心，提供線上報價、生產流程、標準品資料上傳及協同採購等即時服務。",
                   href: "",
                   btnText: "了解更多",
                 },
                 {
-                  src: "https://partner.hannstar.com/images/supplier/home4.jpg",
+                  src: `${urlConfig().s3Url}/Image/partner/index/card04.jpg`,
                   title: "管理諮詢",
                   text: "不定期評鑑與稽核來提升供應鏈管理，提供產品解析指南，協助綠色供應商服務。",
                   href: "",
@@ -107,7 +108,7 @@ function useServiceIndex() {
           type: "BannerBlock",
           data: [
             {
-              src: "https://partner.hannstar.com/images/supplier/strategy.png",
+              src: `${urlConfig().s3Url}/Image/partner/index/chart01-tc.png`,
               title: "",
               text: "",
               textAlign: TextAlign.BottomLeft,
