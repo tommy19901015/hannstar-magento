@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType} from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { urlConfig } from "../../config/urlSetting";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 
@@ -12,7 +12,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/topbanner.png`,
             title: "綠色創新 友善環境 共創永續價值",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -109,7 +109,7 @@ function usePageData() {
         type: "TitleContentVideo",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/image373.png`
+            src: `${urlConfig().s3Url}/Video/hannstar/sustainability/ESG_report.mp4`
           }
         ]
       },
@@ -126,7 +126,7 @@ function usePageData() {
         type: "TitleContentVideo",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/image373_1.png`
+            src: `${urlConfig().s3Url}/Video/hannstar/sustainability/2022_hannstarfoundation_Disturbance.mp4`
           }
         ]
       },

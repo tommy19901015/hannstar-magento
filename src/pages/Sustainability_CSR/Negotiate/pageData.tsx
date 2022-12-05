@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType } from "../../../component/banner/interface";
+import { TextAlign, BannerType } from "../../../component/banner/interface";
 import { GraphicsTheme } from "../../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../../config/urlSetting";
@@ -12,7 +12,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/topbanner1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/topbanner_1.png`,
             title: "永續管理",
             text: "追求成長與創新，深耕企業文化與核心價值，攜手利害關係人，透過價值鏈的延伸，實現永續經營的目標。",
             textAlign: TextAlign.BottomLeft,
@@ -72,12 +72,12 @@ function usePageData() {
               {
                 text: "2. 辨識利害關係人及其關注議題",
                 content: "透過內部討論鑑別出：員工、客戶、供應商、資金提供者、政府機關、社區、媒體及非政府組織8大族群的利害關係人，並發放關注度問卷以了解其關注議題。",
-                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/demopic(1).png`,
+                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/demopic_1.png`,
               },
               {
                 text: "3. 排序與鑑別重大議題",
                 content: "針對問卷的回收結果以了解每個永續議題的受關注程度。另一方面進行內部討論以評估各永續議題對於環境、經濟與社會的衝擊程度。",
-                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/demopic(2).png`,
+                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/demopic_2.png`,
               },
             ],
           },
@@ -114,7 +114,7 @@ function usePageData() {
                 btnText: "",
               },
               {
-                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/MaskGroup(1).png`,
+                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/MaskGroup_1.png`,
                 title: "社會(S)",
                 text: [
                   "產品無毒化★",
@@ -128,7 +128,7 @@ function usePageData() {
                 btnText: "",
               },
               {
-                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/MaskGroup(2).png`,
+                src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/MaskGroup_2.png`,
                 title: "經濟治理(G)",
                 text: ["誠信經營★", "營運績效"],
                 href: "",

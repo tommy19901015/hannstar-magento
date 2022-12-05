@@ -94,9 +94,8 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${
-                item.type === "member" && "base-box-shadow"
-              }`}
+              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
+                }`}
             >
               {isLogin && item.type === "member" ? (
                 <div className="member-content">
@@ -142,7 +141,7 @@ const Header: React.FC = () => {
   return (
     <div className="hannstarHeader">
       <div ref={magentoHeaderRef} className="magentoHeader">
-        <TopHeaderBlock />
+        {/* <TopHeaderBlock /> */}
         {/* <MagentoInputHeader /> */}
         {/* <MagentoLoginHeader /> */}
         {/* <MagentoNotLoginHeader /> */}

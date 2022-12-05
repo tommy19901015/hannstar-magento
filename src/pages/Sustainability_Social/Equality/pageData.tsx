@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType } from "../../../component/banner/interface";
+import { TextAlign, BannerType } from "../../../component/banner/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../../config/urlSetting";
 
@@ -62,10 +62,10 @@ function usePageData() {
           {
             rowCount: 4,
             imgGrids: [
-              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/.png` },
-              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/.png` },
-              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/.png` },
-              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/focus1.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/focus2.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/focus3.png` },
+              { src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/diversity/focus4.png` },
             ]
           }
         ]

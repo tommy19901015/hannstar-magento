@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType } from "../../../component/banner/interface";
+import { TextAlign, BannerType } from "../../../component/banner/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
+import { urlConfig } from "../../../config/urlSetting";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/topbanner_1.png`,
             title: "永續管理",
             text: "追求成長與創新，深耕企業文化與核心價值，攜手利害關係人，透過價值鏈的延伸，實現永續經營的目標。",
             textAlign: TextAlign.BottomLeft,

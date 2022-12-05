@@ -44,7 +44,7 @@ function usePageData() {
           {
             src: `${urlConfig().s3Url}/Image/hannstar/about/family/hannstar.jpg`,
             title: "瀚宇彩晶",
-            image: "https://fakeimg.pl/80x50/?text=Image",
+            image: `${urlConfig().s3Url}/Image/hannstar/index/hannstar_logo.jpg`,
             paragraphs: true,
             theme: GrapTheme.Customization,
             content:
@@ -62,7 +62,7 @@ function usePageData() {
           {
             src: `${urlConfig().s3Url}/Image/hannstar/about/family/hannstouch.jpg`,
             title: "和鑫光電",
-            image: "https://fakeimg.pl/80x50/?text=Image",
+            image: `${urlConfig().s3Url}/Image/hannstar/index/hannstouch_logo.jpg`,
             paragraphs: true,
             theme: GrapTheme.Customization,
             content:
@@ -80,7 +80,7 @@ function usePageData() {
           {
             src: `${urlConfig().s3Url}/Image/hannstar/about/family/hannspree.jpg`,
             title: "瀚斯寶麗",
-            image: "https://fakeimg.pl/80x50/?text=Image",
+            image: `${urlConfig().s3Url}/Image/hannstar/index/hsnnspree_logo.jpg`,
             paragraphs: true,
             theme: GrapTheme.Customization,
             content:
@@ -97,7 +97,7 @@ function usePageData() {
           {
             src: `${urlConfig().s3Url}/Image/hannstar/about/family/hannshouse.jpg`,
             title: "瀚寓酒店",
-            image: "https://fakeimg.pl/80x50/?text=Image",
+            image: `${urlConfig().s3Url}/Image/hannstar/index/hannshouse_logo.png`,
             paragraphs: true,
             theme: GrapTheme.Customization,
             content:
@@ -115,7 +115,7 @@ function usePageData() {
           {
             src: `${urlConfig().s3Url}/Image/hannstar/about/family/foundation.jpg`,
             title: "彩晶文教基金會",
-            image: "https://fakeimg.pl/80x50/?text=Image",
+            image: `${urlConfig().s3Url}/Image/hannstar/index/foundation_logo.jpg`,
             paragraphs: true,
             theme: GrapTheme.Customization,
             content:

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType } from "../../../component/banner/interface";
+import { TextAlign, BannerType } from "../../../component/banner/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../../config/urlSetting";
 
@@ -83,17 +83,17 @@ function usePageData() {
         type: "SustainabilityGraphics3",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle1914_1.png`,
             title: "重要原物料",
             content: ["玻璃基板", "驅動IC", "偏光板", "背光板", "液晶材料", "彩色濾光片"]
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle2500.png`,
             title: "風險類型",
             content: ["可取得性和管道的實體限制", "價格變化風險", "法規風險", "聲譽風險"]
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/focus1.png`,
+            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/environment/supplychain/Rectangle2503.png`,
             title: "供應鏈管理策略",
             content: ["供應商的多元化", "材料的儲備", "替代材料和替代材料的", "開發或採購", "對關鍵原物料回收技術的投資"]
           },

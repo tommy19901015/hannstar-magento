@@ -1,0 +1,12 @@
+/tftdisplay/index/view (換圖)
+
+/solution/index/view (更新文案 + 換圖)
+/solution/label/view (更新文案 + 換圖)
+
+
+/service/index/view (換圖)
+
+/partner/index/view (換圖)
+
+
+https://www.figma.com/file/OcaamqTk56c1BTyxW0hGjs/12_05_test?node-id=0%3A1&t=8pDmeq9R0xMGOhxy-0
