@@ -21,7 +21,7 @@ type I_MenuContent = {
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
-  const [language, setLanguage] = useState<string>(window.hannstar.language);
+  const [language, setLanguage] = useState<string>(window.hannstar?.language);
 
   const { account, hannstar } = urlConfig();
   const magentoHeaderRef: any = useRef();
@@ -32,8 +32,8 @@ const Header: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
 
   useEffect(() => {
-    const magentoDom: any = document.getElementsByClassName("page-header")[0];
-    if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
+    // const magentoDom: any = document.getElementsByClassName("page-header")[0];
+    // if (magentoDom) magentoHeaderRef.current.appendChild(magentoDom);
 
     const type = window.location.pathname.split("/")[2];
     const mappingArr = [

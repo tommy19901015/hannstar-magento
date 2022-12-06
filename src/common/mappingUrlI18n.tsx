@@ -1,5 +1,5 @@
 function mappingUrlI18n() {
-  const magentoLang = window.hannstar.language
+  const magentoLang = window.hannstar?.language
   const urlLang = window.location.pathname.split("/")[1]
   if (urlLang) {
     const mappingObj: any = {
