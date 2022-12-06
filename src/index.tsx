@@ -86,6 +86,7 @@ import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import ServiceParseApply from "./pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
 import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
+import ServiceArticle from "./pages/Service_Article/main"
 //Magento 原生頁面
 import MagentoProductCompare from "./pages/Magento_ProductCompare/main";
 import MagentoProductDetails from "./pages/Magento_ProductDetails/main";
@@ -310,6 +311,7 @@ ReactDOM.render(
       <Route path={"/MagentoProductDetails"} element={<MagentoProductDetails />} />
       <Route path={"/MagentoProductCompare"} element={<MagentoProductCompare />} />
       <Route path={service.technicalSupport.href} element={<ServiceTechnicalSupport />} />
+      <Route path={service.article.href} element={<ServiceArticle />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

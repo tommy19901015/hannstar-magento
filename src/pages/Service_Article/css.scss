@@ -1,0 +1,11 @@
+@import '../../style/variable.scss';
+
+$pageName: 'ServiceArticle';
+
+.#{$pageName}ContentBlock {
+    .articleSelect {
+        @include hannstarSelect;
+        width: 120px;
+        margin-bottom: 30px;
+    }
+}

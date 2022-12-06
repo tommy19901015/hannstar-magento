@@ -47,6 +47,7 @@ import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
 import ServiceParseApply from "../pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
 import ServiceTechnicalSupport from "../pages/Service_TechnicalSupport/main";
+import ServiceArticle from "../pages/Service_Article/main"
 //關於瀚宇彩晶
 import AboutIndex from "../pages/About_Index/main";
 import AboutStronghold from "../pages/About_Stronghold/main";
@@ -157,6 +158,8 @@ const pageMappingObj = {
   root_ServiceCustomerSupport: <ServiceCustomerSupport />,
   root_ServiceParseApply: <ServiceParseApply />,
   root_ServiceGreenServiceApply: <ServiceGreenServiceApply />,
+  root_ServiceTechnicalSupport:<ServiceTechnicalSupport />,
+  root_ServiceArticle:<ServiceArticle />,
   root_HannspreeIndex: <HannspreeIndex />,
   root_HannspreeCustom: <HannspreeCustom />,
   root_HannspreeSolve: <HannspreeSolve />,
@@ -168,7 +171,6 @@ const pageMappingObj = {
   root_TFTIndex: <TFTIndex />,
   root_TFTPreferredProduct:<TFTPreferredProduct />,
   root_MagentoProductDetails:<MagentoProductDetails />,
-  root_ServiceTechnicalSupport:<oot_ServiceTechnicalSupport />,
   root_Index: <Index />,
 };
 

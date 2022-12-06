@@ -57,8 +57,12 @@ export const urlConfig = () => {
         "title": "訂閱信件",
         "href": mappingD360I18n() + "/newsletter/manage/"
       },
+      "AccountMagentoLogoutUrl": {
+        "title": "Magento 登出 url",
+        "href": mappingD360I18n() + "/customer/account/logout/"
+      },
       "AccountLogout": {
-        "title": "登出",
+        "title": "登出頁面",
         "href": mappingD360I18n() + "/customer/account/Success/"
       }
     },
@@ -271,6 +275,10 @@ export const urlConfig = () => {
       "technicalSupport": {
         "title": "技術諮詢",
         "href": mappingD360I18n() + "/service/technicalsupport/view"
+      },
+      "article": {
+        "title": "技術諮詢",
+        "href": mappingD360I18n() + "/service/technicalsupport/article"
       }
     },
     "tftdisplay": {

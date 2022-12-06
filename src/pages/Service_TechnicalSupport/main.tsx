@@ -9,11 +9,8 @@ import D360ArticleList2 from "../../component/d360ArticleList2/main";
 import mappingD360I18n from "../../common/mappingD360I18n";
 import "./css.scss";
 
-import DD360Test from "../../D360fakeData/D360_Technicalsupport.json"
-
 const ServiceTechnicalSupport: React.FC = () => {
   const pageName = "ServiceTechnicalSupport";
-  const [d360Data, setD360Data] = useState<any>()
   const [showData, setShowData] = useState<any>()
   const [articleType, setArticleType] = useState<string>("/service/technical");
 
@@ -27,22 +24,27 @@ const ServiceTechnicalSupport: React.FC = () => {
       "site": articleType
     }
 
-    // postGetD360Art(postData).then((response: any) => {
-    //   console.log("response", response);
-    //   if (response.result === "success") {
-    //     setD360Data(response.data)
-    //     setShowData(response.data)
-    //   }
-    // });
-
-    const D360Test: any = DD360Test;
-    setD360Data(D360Test.data)
-    setShowData(D360Test.data)
-
+    postGetD360Art(postData).then((response: any) => {
+      if (response.result === "success") {
+        setShowData(response.data)
+      }
+    });
   }, []);
 
   const handlerOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setArticleType(e.target.value)
+    const postData = {
+      "functionName": "Magento",
+      "method": "GetAllArticles",
+      "language": mappingD360I18n(window.hannstar?.language),
+      "site": e.target.value
+    }
+
+    postGetD360Art(postData).then((response: any) => {
+      if (response.result === "success") {
+        setShowData(response.data)
+      }
+    });
   }
 
   return (

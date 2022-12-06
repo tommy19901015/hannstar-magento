@@ -86,7 +86,7 @@ const Header: React.FC = () => {
         {window.hannstar.islogin ?
           <div className="accountBlock">
             <a className="toolBarText" href={account.MyAccount.href}>會員中心</a>
-            <a className="toolBarText" href={account.AccountLogout.href}>登出</a>
+            <a className="toolBarText" href={account.AccountMagentoLogoutUrl.href}>登出</a>
           </div>
           :
           <div className="accountBlock">
@@ -181,7 +181,7 @@ const Header: React.FC = () => {
           <img
             className="logo"
             alt="logo"
-            src="https://www.hannstar.com/images/logo.png"
+            src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
           />
         </a>
         <div className="menuBlock">
@@ -205,7 +205,7 @@ const Header: React.FC = () => {
         <img
           className="logo"
           alt="logo"
-          src="https://www.hannstar.com/images/logo.png"
+          src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
         />
         <div
           className={`menuOpenBtn ${openPhoneMenu ? "open" : "close"}`}

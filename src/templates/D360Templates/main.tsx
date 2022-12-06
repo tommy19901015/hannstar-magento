@@ -34,9 +34,6 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
         setD360Data(response.data)
       }
     });
-
-    // const D360Test: any = DD360Test;
-    // setD360Data(D360Test.data);
   }, []);
 
   const handleClickTab = (index: any) => {

@@ -1,14 +1,14 @@
 import React from "react";
 import "./css.scss";
 import { I_D360Article2, I_D360ArticleList2 } from "./interface";
+import { urlConfig } from "../../config/urlSetting";
 
 const D360ArticleList2: React.FC<I_D360ArticleList2> = ({ data }) => {
   const componentName = "D360ArticleList2";
 
   const ArticleBlock: React.FC<I_D360Article2> = (article, index) => {
-    console.log('article', article)
     return (
-      <a className="articleBlock" href={"article.href"} key={index}>
+      <a className="articleBlock" href={`${urlConfig().service.article.href}?articleID=${article.articleId}`} key={index}>
         <div className="imgBlock">
           <img src={article["preview-image"]} alt={article.title} />
         </div>

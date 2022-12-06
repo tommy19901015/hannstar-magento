@@ -3,6 +3,7 @@ import CollapseLi from "../collapseLi/main";
 import { useTranslation } from "react-i18next";
 import useMenu from "../../common/menuData";
 import { I_MenuType } from "../../common/menuData";
+import { urlConfig } from "../../config/urlSetting";
 import "./css.scss";
 
 const Footer: React.FC = () => {
@@ -68,7 +69,7 @@ const Footer: React.FC = () => {
             <img
               className="logo"
               alt="logo"
-              src="https://www.hannstar.com/images/logo.png"
+              src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
             />
           </a>
           <div className="footerMenu">
