@@ -54,6 +54,7 @@ import AboutStronghold from "../pages/About_Stronghold/main";
 import AboutFamily from "../pages/About_Family/main";
 import AboutTeam from "../pages/About_Team/main";
 import AboutCertification from "../pages/About_Certification/main";
+import AboutStrategy from "../pages/About_Strategy/main";
 //投資人專區
 import InvestorsSummary from "../pages/Investors_Summary/main";
 import InvestorsConference from "../pages/Investors_Conference/main";
@@ -116,6 +117,7 @@ const pageMappingObj = {
   root_AboutFamily: <AboutFamily />,
   root_AboutTeam: <AboutTeam />,
   root_AboutCertification: <AboutCertification />,
+  root_AboutStrategy:<AboutStrategy/>,
   root_EBiz: <EBiz />,
   root_Solution: <Solution />,
   root_InvestorsSummary: <InvestorsSummary />,

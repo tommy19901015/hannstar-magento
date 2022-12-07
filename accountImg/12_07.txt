@@ -1,0 +1,15 @@
+以下這幾頁都是用舊的form去做
+在幫我改成新的樣式，在舊的資料夾開個newMain.tsx去做  舊得先留下來
+
+
+法規申請
+/service/lawapply/view
+
+技術合作
+/partner/technical/view
+
+RFQ產品報價線上報價
+/partner/quotation/view
+
+需求申請
+/partner/application/view

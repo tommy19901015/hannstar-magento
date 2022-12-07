@@ -9,8 +9,8 @@ import Communicate from "./Policy/pageData";
 import D360Templates from "../../templates/D360Templates/main";
 import "./css.scss";
 
-const AboutTTTTT: React.FC = () => {
-  const pageName = "AboutTTTTT";
+const AboutStrategy: React.FC = () => {
+  const pageName = "AboutStrategy";
 
   const ChairmanData = Chairman();
   const GovernanceData = Governance();
@@ -100,4 +100,4 @@ const AboutTTTTT: React.FC = () => {
   );
 };
 
-export default AboutTTTTT;
+export default AboutStrategy;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useIsMobile } from "../../hooks";
 import sustainabilityData from "../../common/sustainabilityData";
 import Graphics3 from "../graphics3/main";
@@ -13,6 +13,20 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
   type,
   handleSustainabilityTab,
 }) => {
+  const [tabType, setTabType] = useState<string>(type)
+
+  useEffect(() => {
+    console.log('typetype', type);
+    setTabType(type)
+  }, [])
+
+  const handleChangeTab = (tabType: string) => {
+    console.log('changeValue', tabType);
+    setTabType(tabType)
+    handleSustainabilityTab(tabType)
+
+  }
+
   const isMobile = useIsMobile();
 
   const tabData = sustainabilityData().filter(
@@ -23,13 +37,19 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
     (item: any) => item.type === type
   )[0].graphics3;
 
+
+
   const Tab = () => {
+    console.log('lll');
     return (
       <div className="TabBlock">
         {isMobile ? (
-          <select className="dropdown">
+          <select
+            className="dropdown"
+            value={tabType}
+            onChange={(e) => handleChangeTab(e.target.value)}>
             {tabData.map((tab: any) => (
-              <option key={tab.id} value={tab.text}>
+              <option key={tab.id} value={tab.type}>
                 {tab.text}
               </option>
             ))}

@@ -92,6 +92,10 @@ export const urlConfig = () => {
         "title": "全球據點",
         "href": mappingD360I18n() + "/about/stronghold/view"
       },
+      "about_strategy": {
+        "title": "全球據點",
+        "href": mappingD360I18n() + "/about/strategy/view"
+      },
       "sustainability_index": {
         "title": "企業永續",
         "href": mappingD360I18n() + "/sustainability/index/view"

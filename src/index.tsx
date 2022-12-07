@@ -26,6 +26,7 @@ import AboutStronghold from "./pages/About_Stronghold/main";
 import AboutFamily from "./pages/About_Family/main";
 import AboutCertification from "./pages/About_Certification/main";
 import AboutTeam from "./pages/About_Team/main";
+import AboutStrategy from "./pages/About_Strategy/main";
 //企業永續
 import SustainabilityIndex from "./pages/Sustainability_Index/main";
 import SustainabilityGovernance from "./pages/Sustainability_Governance/main";
@@ -240,6 +241,7 @@ ReactDOM.render(
         element={<AboutCertification />}
       />
       <Route path={hannstar.about_team.href} element={<AboutTeam />} />
+      <Route path={hannstar.about_strategy.href} element={<AboutStrategy />} />
       {/* 投資人專區 */}
       <Route
         path={hannstar.investors_Summary.href}
