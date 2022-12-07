@@ -40,57 +40,75 @@ const SustainabilityGovernance: React.FC = () => {
   }
 
   const DirectorBlock: React.FC = () => {
+    //董事會名單
     return (
       <>
         <TemplateLayout
           {...DirectorData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
+        <D360Templates {... {
+          site: "5e63ca05-dc2b-4147-b473-cc587ea5a4c1",
+          method: "GetArticle"
+        }} />
       </>
     );
   };
 
   const AuditBlock: React.FC = () => {
+    //審計委員會
     return (
       <>
         <TemplateLayout
           {...AuditData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>審計委員會</div>
+        <D360Templates {... {
+          site: "d09aa5cf-5f9b-4bc8-9931-c5531ede1aab",
+          method: "GetArticle"
+        }} />
       </>
     );
   };
   const SalaryBlock: React.FC = () => {
+    //薪酬委員會
     return (
       <>
         <TemplateLayout
           {...SalaryData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>薪酬委員會</div>
+        <D360Templates {... {
+          site: "a37a23e7-dc10-40ea-a2d4-6c96c6fe3f88",
+          method: "GetArticle"
+        }} />
       </>
     );
   };
   const CheckBlock: React.FC = () => {
+    //內部稽核
     return (
       <>
         <TemplateLayout
           {...CheckData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>內部稽核</div>
+
       </>
     );
   };
   const OperateBlock: React.FC = () => {
+    //誠信經營
     return (
       <>
         <TemplateLayout
           {...OperateData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>誠信經營</div>
+        <D360Templates {... {
+          site: "b2e44058-39da-48e7-9080-15a5fb1c814d",
+          method: "GetArticle"
+        }} />
       </>
     );
   };
@@ -115,24 +133,32 @@ const SustainabilityGovernance: React.FC = () => {
     );
   };
   const TradeBlock: React.FC = () => {
+    //內部重大資訊處理暨防範內線交易管理
     return (
       <>
         <TemplateLayout
           {...TradeData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>內部重大資訊處理暨防範內線交易管理</div>
+        <D360Templates {... {
+          site: "a5d6cbf0-d43c-4125-b831-70b1c651892e",
+          method: "GetArticle"
+        }} />
       </>
     );
   };
   const CharterBlock: React.FC = () => {
+    //公司治理章程與程序
     return (
       <>
         <TemplateLayout
           {...CharterData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <div>公司治理章程與程序</div>
+        <D360Templates {... {
+          site: "7d34ea41-4af0-4b6d-b4ae-87d9be565cbb",
+          method: "GetArticle"
+        }} />
       </>
     );
   };

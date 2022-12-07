@@ -21,7 +21,8 @@ const ServiceArticle: React.FC = () => {
     return {
       site: articleID ? articleID
         : window.location.href = urlConfig().service.technicalSupport.href,
-      method: "GetArticle"
+      method: "GetArticle",
+      type: "ServiceArticle"
     }
   }
 
@@ -29,10 +30,7 @@ const ServiceArticle: React.FC = () => {
   return (
     <Layout>
       <TemplateLayout {...pageData} />
-      <Columns
-        type={ColType.OneCol}
-        content={<D360Templates {...d360TemplatesProp()} />}
-      />
+      <D360Templates {...d360TemplatesProp()} />
     </Layout>
   );
 };

@@ -13,6 +13,7 @@ function useLoginForm() {
     required: t('LoginForm.required'),
     loginBtn: t('LoginForm.loginBtn'),
     hasAccount: t('LoginForm.hasAccount'),
+    errorMessage: t('LoginForm.errorMessage'),
   };
 
   return formList;

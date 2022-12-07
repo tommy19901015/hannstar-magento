@@ -14,9 +14,11 @@ import "./css.scss";
 // import DD360Test from "../../D360fakeData/D360_oneArticle.json"
 // import DD360Test from "../../D360fakeData/D360_multipleBlock.json";
 // import DD360Test from "../../D360fakeData/D360_TabEmpty.json"
+// import DD360Test from "../../D360fakeData/D360Empty_Error.json";
+// import DD360Test from "../../D360fakeData/D360Error2.json"
 //---------------------------------
 
-const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
+const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
   const pageName = "D360Templates";
   const [d360Data, setD360Data] = useState<any>();
   const [activeTabIdx, setActiveTabIdx] = useState<number>(0);
@@ -31,14 +33,38 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
 
     postGetD360Art(postData).then((response: any) => {
       if (response.result === "success") {
-        setD360Data(response.data)
+        checkD360Data(response) ? setD360Data(response.data) : setD360Data({ dataError: "資料錯誤" })
+      } else {
+        setD360Data({ dataError: "資料錯誤" })
       }
     });
+
+    // checkD360Data(DD360Test) ? setD360Data(DD360Test.data) : setD360Data({ dataError: "資料錯誤" })
   }, []);
 
   const handleClickTab = (index: any) => {
     setActiveTabIdx(index);
   };
+
+  const checkD360Data = (checkData: any) => {
+    console.log('checkData', checkData);
+    if (
+      checkData &&
+      checkData.hasOwnProperty('data') &&
+      Array.isArray(checkData.data) &&
+      checkData.data.length !== 0
+    ) {
+      const checkArr = checkData.data.map((item: any) =>
+        item.hasOwnProperty('block') && Array.isArray(item.block))
+      return !checkArr.includes(false)
+    } else {
+      return false
+    }
+  }
+  const ErrorBlock = () => {
+    console.log("D360 資料錯誤");
+    return null
+  }
 
   const D360Block = () => {
     const getRWDTable = (document360Data: any) => {
@@ -55,9 +81,15 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
       return <CollapseLi data={rwdData} />;
     };
 
-    const multipleBlock = (document360Data: any) => {
-      return document360Data.block.map((item: any) => (
+    const multipleBlock = (blockData: any) => {
+      return blockData.block.map((item: any) => (
         <>
+          {type === "ServiceArticle" &&
+            <div className="serviceArticleBlock">
+              <div className="serviceArticleTitle">{blockData.title}</div>
+              <div className="serviceArticleDate">{blockData["published-date"]}</div>
+            </div>
+          }
           {item.content && (
             <div
               className="d360HTML content"
@@ -85,7 +117,7 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
 
     return (
       <div className={`${pageName}ModuleBlock`}>
-        {d360Data && (
+        {d360Data && !d360Data.dataError ? (
           <>
             {d360Data.length > 1 && (
               <>
@@ -115,7 +147,7 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method }) => {
               {multipleBlock(d360Data[activeTabIdx])}
             </div>
           </>
-        )}
+        ) : <ErrorBlock />}
       </div>
     );
   };

@@ -1,201 +1,27 @@
-import { I_PageData } from "./interface"
-import { FormType } from "../../component/form/interface";
+import { useTranslation } from "react-i18next";
+import { I_PageData } from "./interface";
 
-export const pageData = (): I_PageData => {
-    return {
-        breadcrumbs: {
-            title: "",
-            breadcrumbsLink: [
-                {
-                    text: "首頁",
-                    href: "",
-                },
-                {
-                    text: "客戶通",
-                    href: "",
-                },
-            ],
-        },
-        pageTitle: "RMA申請",
-        formTitle: "基本資料",
-        formData: [
-            {
-                title: "客戶",
-                value: "",
-                columnKey: "1",
-                type: FormType.Intput,
-                placeholder: "",
-                disabled: true,
-            },
-            {
-                title: "代理商",
-                value: "",
-                columnKey: "2",
-                type: FormType.Intput,
-                placeholder: "",
-            },
-            {
-                title: "單號",
-                value: "",
-                columnKey: "3",
-                type: FormType.Intput,
-                placeholder: "",
-                disabled: true,
-            },
-            {
-                title: "CQS窗口",
-                value: "",
-                columnKey: "4",
-                type: FormType.Intput,
-                placeholder: "",
-                disabled: true,
-            },
-            {
-                title: "機種料號",
-                value: "",
-                columnKey: "5",
-                type: FormType.Intput,
-                placeholder: "",
-                required: true,
-            },
-            {
-                title: "出貨類別",
-                value: "",
-                columnKey: "6",
-                type: FormType.Select,
-                placeholder: "",
-                option: [
-                    { text: "中板(1/4版,1/6版)", value: "中板(1/4版,1/6版)" },
-                    { text: "Full cell", value: "Full cell" },
-                    { text: "COG", value: "COG" },
-                    { text: "FOG", value: "FOG" },
-                    { text: "MDL", value: "MDL" },
-                    { text: "Sensor", value: "Sensor" },
-                    { text: "TM", value: "TM" },
-                    { text: "TP", value: "TP" },
-                    { text: "PCBa", value: "PCBa" },
-                ],
-            },
-            {
-                title: "月結年份",
-                value: "",
-                columnKey: "7",
-                type: FormType.Select,
-                placeholder: "",
-                required: true,
-                option: [
-                    { text: "2022", value: "2022" },
-                    { text: "2012", value: "2012" },
-                ],
-            },
-            {
-                title: "月結月份",
-                value: "",
-                columnKey: "8",
-                type: FormType.Select,
-                placeholder: "",
-                required: true,
-                option: [
-                    { text: "1", value: "1" },
-                    { text: "2", value: "2" },
-                    { text: "3", value: "3" },
-                    { text: "4", value: "4" },
-                    { text: "5", value: "5" },
-                    { text: "6", value: "6" },
-                    { text: "7", value: "7" },
-                    { text: "8", value: "8" },
-                    { text: "9", value: "9" },
-                    { text: "10", value: "10" },
-                    { text: "11", value: "11" },
-                    { text: "12", value: "12" },
-                ],
-            },
-            {
-                title: "投入數(片)",
-                value: "",
-                columnKey: "9",
-                type: FormType.Intput,
-                placeholder: "",
-                required: true,
-            },
-            {
-                title: "不良數(片)",
-                value: "",
-                columnKey: "10",
-                type: FormType.Intput,
-                placeholder: "",
-                required: true,
-            },
-            {
-                title: "不良率(%)",
-                value: "",
-                columnKey: "11",
-                type: FormType.Intput,
-                placeholder: "",
-            },
-            {
-                title: "Invoice",
-                value: "",
-                columnKey: "11",
-                type: FormType.Intput,
-                placeholder: "",
-            },
-            {
-                title: "保良(%)",
-                value: "",
-                columnKey: "12",
-                type: FormType.Intput,
-                placeholder: "",
-            },
-            {
-                title: "箱號",
-                value: "",
-                columnKey: "13",
-                type: FormType.Intput,
-                placeholder: "",
-            },
-            {
-                title: "快速覆判",
-                value: "",
-                columnKey: "14",
-                type: FormType.Radio,
-                placeholder: "",
-                option: [
-                    { text: "是", value: "yes" },
-                    { text: "否", value: "no" },
-                ],
-            },
-        ],
-        badDetailsTitle: "不良明細載入",
-        tabNames: ["單筆填寫", "批次匯入"],
-        tableSelectOption: [
-            {
-                text: "是",
-                value: "yes"
-            },
-            {
-                text: "否",
-                value: "no"
-            },
-        ],
-        addTrBtnText: "新增",
-        tableHead: {
-            action: "Action",
-            index: "項次",
-            hannstarNo: "Hannstar序號",
-            warranty: "保固",
-            badType: "不良名稱",
-            img: "圖片",
-        },
-        batchImportText: {
-            title1: "Step1:載入批次資料",
-            text1: "下載範本",
-            title2: "Step2:批次圖片上傳",
-            noteText2: "檔名需以數字命名,由1,2,3 ...依序對應至不良項次,可選擇多張照片同時上傳",
-            text2: "下載範本",
-        },
-        saveBtn: "儲存",
-        resetBtn: "重製",
-        sendBtn: "送件"
-    }
+function useRegisterForm() {
+    const { t } = useTranslation();
+    const formList: I_PageData = {
+        registerTitle: t('RegisterForm.registerTitle'),
+        firstName: t('RegisterForm.firstName'),
+        lastName: t('RegisterForm.lastName'),
+        email: t('RegisterForm.email'),
+        password: t('RegisterForm.password'),
+        confirmPassword: t('RegisterForm.confirmPassword'),
+        companyName: t('RegisterForm.companyName'),
+        companyAddress: t('RegisterForm.companyAddress'),
+        agreePrivacyText1: t('RegisterForm.agreePrivacyText1'),
+        agreePrivacyText2: t('RegisterForm.agreePrivacyText2'),
+        agreeEmail: t('RegisterForm.agreeEmail'),
+        registerBtn: t('RegisterForm.registerBtn'),
+        errorMessage1: t('RegisterForm.errorMessage1'),
+        errorMessage2: t('RegisterForm.errorMessage2'),
+        errorMessage3: t('RegisterForm.errorMessage3'),
+    };
+
+    return formList;
 }
+
+export default useRegisterForm;

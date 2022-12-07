@@ -58,30 +58,28 @@ const SustainabilitySocial: React.FC = () => {
   };
 
   const FoundationBlock: React.FC = () => {
+    //彩晶基金會
     return (
       <>
         <TemplateLayout
           {...FoundationData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <D360Templates {...{
-          site: "/investors/report",
-          method: "GetAllArticles"
-        }} />
       </>
     );
   };
 
   const RBABlock: React.FC = () => {
+    //RBA年度績效目標
     return (
       <>
         <TemplateLayout
           {...RBAData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-        <D360Templates {...{
-          site: "/investors/report",
-          method: "GetAllArticles"
+        <D360Templates {... {
+          site: "c6e38d52-a6a7-491c-b185-dbb5cb1cdee7",
+          method: "GetArticle"
         }} />
       </>
     );
@@ -89,12 +87,17 @@ const SustainabilitySocial: React.FC = () => {
 
 
   const LaborBlock: React.FC = () => {
+    //勞工與道德政策
     return (
       <>
         <TemplateLayout
           {...LaborData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
+        <D360Templates {... {
+          site: "a0ebfa2c-0326-4d7e-8c27-b58d43aaade8",
+          method: "GetArticle"
+        }} />
       </>
     );
   };

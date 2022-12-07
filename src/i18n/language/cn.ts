@@ -2,6 +2,7 @@ import { RAMapply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
 import { RMAList } from "./cn-ch/Service_RMA_List";
 import { LoginForm } from "./cn-ch/LoginForm";
+import { RegisterForm } from "./cn-ch/RegisterForm"
 import { Investors_Summary } from "./cn-ch/Investors_Summary";
 import { Investors_Revenue } from "./cn-ch/Investors_Revenue";
 import { Investors_Report } from "./cn-ch/Investors_Report";
@@ -41,6 +42,7 @@ export const cn = {
   ParseApply,
   RMAList,
   LoginForm,
+  RegisterForm,
   Investors_Summary,
   Investors_Revenue,
   Investors_Report,

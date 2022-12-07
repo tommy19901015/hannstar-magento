@@ -9,11 +9,12 @@ import {
   validatePassword,
 } from "../../common/validateUtils";
 import "./css.scss";
-import { pageData } from "./pageData";
+import useRegisterForm from "./pageData";
 import AccountTemplate from "../../templates/AccountTemplate/main";
 
 const HannstarRegister: React.FC = () => {
   const pageName = "HannstarRegister";
+  const pageData = useRegisterForm();
 
   const RegisterContent = () => {
     const [firstName, setFirstName] = useState<string>("");
@@ -195,12 +196,12 @@ const HannstarRegister: React.FC = () => {
     return (
       <div className="hannstarRegisterBlock">
         <div ref={registerBlock}></div>
-        <h2>會員註冊</h2>
+        <h2>{pageData.registerTitle}</h2>
         <div className="magentoMessageBlock" ref={errorMessageBlock}></div>
         <div className={`${pageName}Content`}>
           <div className="row">
             <div className="columnBlock">
-              <div className="title required">姓</div>
+              <div className="title required">{pageData.firstName}</div>
               <div className="bodyBlock input">
                 <input
                   type="text"
@@ -210,11 +211,11 @@ const HannstarRegister: React.FC = () => {
                 />
               </div>
               {!firstNamePass && (
-                <div className="errorMessage">必填欄位，請重新輸入</div>
+                <div className="errorMessage">{pageData.errorMessage1}</div>
               )}
             </div>
             <div className="columnBlock">
-              <div className="title required">名</div>
+              <div className="title required">{pageData.lastName}</div>
               <div className="bodyBlock input">
                 <input
                   type="text"
@@ -224,12 +225,12 @@ const HannstarRegister: React.FC = () => {
                 />
               </div>
               {!lastNamePass && (
-                <div className="errorMessage">必填欄位，請重新輸入</div>
+                <div className="errorMessage">{pageData.errorMessage1}</div>
               )}
             </div>
           </div>
           <div className="columnBlock">
-            <div className="title required">電子郵箱(即帳號)</div>
+            <div className="title required">{pageData.email}</div>
             <div className="bodyBlock input">
               <input
                 type="text"
@@ -240,12 +241,12 @@ const HannstarRegister: React.FC = () => {
             </div>
             {!emailPass && (
               <div className="errorMessage">
-                必填欄位；輸入格式有誤，請重新輸入
+                {pageData.errorMessage1}
               </div>
             )}
           </div>
           <div className="columnBlock">
-            <div className="title required">密碼</div>
+            <div className="title required">{pageData.password}</div>
             <div className="bodyBlock input">
               <input
                 type="password"
@@ -263,11 +264,11 @@ const HannstarRegister: React.FC = () => {
               <div className="meter4">非常強</div>
             )} */}
             <div className={`remind ${!passwordPass ? "errorMessage" : ""}`}>
-              請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元
+              {pageData.errorMessage2}
             </div>
           </div>
           <div className="columnBlock">
-            <div className="title required">密碼(再次確認)</div>
+            <div className="title required">{pageData.confirmPassword}</div>
             <div className="bodyBlock input">
               <input
                 type="password"
@@ -277,17 +278,17 @@ const HannstarRegister: React.FC = () => {
               />
             </div>
             {!confirmPasswordPass && (
-              <div className="errorMessage">必填欄位；需與密碼相同</div>
+              <div className="errorMessage">{pageData.errorMessage1}</div>
             )}
           </div>
           <div className="columnBlock">
-            <div className="title">公司名稱</div>
+            <div className="title">{pageData.companyName}</div>
             <div className="bodyBlock input">
               <input type="text" onChange={handleCompany} value={company} />
             </div>
           </div>
           <div className="columnBlock">
-            <div className="title">公司所在地</div>
+            <div className="title">{pageData.companyAddress}</div>
             <div className="bodyBlock select" ref={countrySelectBlock}></div>
           </div>
           <div className="checkBlock">
@@ -300,10 +301,10 @@ const HannstarRegister: React.FC = () => {
                     onChange={handleAgreePrivacy}
                   />
                   <label htmlFor="agreePrivacy">
-                    我已詳閱並同意<a href="/">瀚宇彩晶隱私申明</a>
+                    {pageData.agreePrivacyText1}<a href="/">{pageData.agreePrivacyText2}</a>
                   </label>
                   {!agreePrivacyPass && (
-                    <div className="errorMessage">必填欄位 </div>
+                    <div className="errorMessage">{pageData.errorMessage3} </div>
                   )}
                 </div>
               </div>
@@ -317,14 +318,14 @@ const HannstarRegister: React.FC = () => {
                     onChange={handleAgreeEmail}
                   />
                   <label htmlFor="agreeEmail">
-                    我同意收到Hannstar信件與產品資訊
+                    {pageData.agreeEmail}
                   </label>
                 </div>
               </div>
             </div>
           </div>
           <div className="hannstarRegisterBtn" onClick={handleRegister}>
-            申請註冊
+            {pageData.registerBtn}
           </div>
         </div>
         <div ref={registerBlock} className="magentoRegisteBlock"></div>

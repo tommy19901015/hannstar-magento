@@ -3,6 +3,16 @@
 $pageName: 'D360Templates';
 
 .#{$pageName}ModuleBlock {
-    padding: 60px 0;
+    .serviceArticleBlock {
+        margin-bottom: 40px;
+        .serviceArticleTitle {
+            @include hannstarH2Title;
+            padding-bottom: 20px;
+        }
+        .serviceArticleDate {
+            @include hannstarContent1;
+            color: $hannstar-orange1;
+        }
+    }
     @include D360Style;
 }

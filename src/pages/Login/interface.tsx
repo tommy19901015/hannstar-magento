@@ -8,4 +8,5 @@ export interface I_PageData {
     required: string
     loginBtn: string
     hasAccount: string
+    errorMessage: string
 }

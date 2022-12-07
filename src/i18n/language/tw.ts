@@ -2,6 +2,7 @@ import { RAMapply } from "./zh-tw/Service_RMA_Apply";
 import { ParseApply } from "./zh-tw/Service_Parse_Apply";
 import { RMAList } from "./zh-tw/Service_RMA_List";
 import { LoginForm } from "./zh-tw/LoginForm";
+import { RegisterForm } from "./zh-tw/RegisterForm"
 import { Investors_Summary } from "./zh-tw/Investors_Summary";
 import { Investors_Revenue } from "./zh-tw/Investors_Revenue";
 import { Investors_Report } from "./zh-tw/Investors_Report";
@@ -41,6 +42,7 @@ export const tw = {
   ParseApply,
   RMAList,
   LoginForm,
+  RegisterForm,
   Investors_Summary,
   Investors_Revenue,
   Investors_Report,

@@ -13,19 +13,7 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
   type,
   handleSustainabilityTab,
 }) => {
-  const [tabType, setTabType] = useState<string>(type)
 
-  useEffect(() => {
-    console.log('typetype', type);
-    setTabType(type)
-  }, [])
-
-  const handleChangeTab = (tabType: string) => {
-    console.log('changeValue', tabType);
-    setTabType(tabType)
-    handleSustainabilityTab(tabType)
-
-  }
 
   const isMobile = useIsMobile();
 
@@ -40,13 +28,29 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
 
 
   const Tab = () => {
-    console.log('lll');
+    // const [tabType, setTabType] = useState<string>("")
+
+    // useEffect(() => {
+    //   console.log('typetype', type);
+    //   setTabType(type)
+    // }, [])
+
+    // console.log('out type', type);
+
+    const handleChangeTab = (tabType: string) => {
+      // console.log('changeValue', tabType);
+      // console.log('prop type', type);
+      // setTabType(tabType)
+      handleSustainabilityTab(tabType)
+
+    }
+
     return (
       <div className="TabBlock">
         {isMobile ? (
           <select
             className="dropdown"
-            value={tabType}
+            // value={type}
             onChange={(e) => handleChangeTab(e.target.value)}>
             {tabData.map((tab: any) => (
               <option key={tab.id} value={tab.type}>

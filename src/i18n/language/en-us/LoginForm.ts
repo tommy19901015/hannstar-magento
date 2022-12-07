@@ -18,6 +18,7 @@ export const LoginForm = {
     technicalSupportContent: "Online RMA and analysis service。",
     supplierMember: "Supplier Member",
     supplyChain: "Green Supply Chain",
+    errorMessage:"必填欄位；輸入格式有誤，請重新輸入",
     supplyChainDirections: "Green manufacturing is the foundation of HannStar's sustainable management, leading upstream and downstream suppliers to continuously improve in technology, quality, lead time, environmental protection, human rights, safety, and hygiene. Collobrating with HannStar to build a green and sustainable supply chain.",
 };
 

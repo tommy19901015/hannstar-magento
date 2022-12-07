@@ -91,7 +91,7 @@ const HannstarLogin: React.FC = () => {
           </div>
           {!isAccountPass && (
             <div className="errorMessage">
-              必填欄位；輸入格式有誤，請重新輸入
+              {pageData.errorMessage}
             </div>
           )}
         </div>
