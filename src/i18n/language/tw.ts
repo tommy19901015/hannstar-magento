@@ -27,6 +27,8 @@ import { Account_Partner } from "./zh-tw/Account_Partner";
 import { Account_Personal_Template } from "./zh-tw/Account_Personal_Template";
 import { MFA } from "./zh-tw/MFA";
 import { MFAQRCODE } from "./zh-tw/MFAQRCode";
+import { ServiceGreenApply } from "./zh-tw/Service_Green_Apply";
+import { PartnerTechnical } from "./zh-tw/Partner_Technical";
 
 export const tw = {
   common: {
@@ -65,5 +67,7 @@ export const tw = {
   Account_Partner,
   Account_Personal_Template,
   MFA,
-  MFAQRCODE
+  MFAQRCODE,
+  ServiceGreenApply,
+  PartnerTechnical
 };

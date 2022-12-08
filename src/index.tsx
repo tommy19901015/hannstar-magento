@@ -74,7 +74,7 @@ import PartnerSolutionInventory from "./pages/Partner_SolutionInventory/main";
 import PartnerAddSolution from "./pages/Partner_AddSolution/main";
 import PartnerApplication from "./pages/Partner_Application/main";
 import PartnerManageandadvisory from "./pages/Partner_Manageandadvisory/main";
-import PartnerTechnical from "./pages/Partner_Technical/main";
+import PartnerTechnical from "./pages/Partner_Technical/newMain";
 import PartnerGreenSupplyChain from "./pages/Partner_GreenSupplyChain/main";
 import PartnerManufacturing from "./pages/Partner_Manufacturing/main";
 //客戶服務(Service)
@@ -85,7 +85,7 @@ import ServiceParseList from "./pages/Service_ParseList/main";
 import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import ServiceParseApply from "./pages/Service_ParseApply/main";
-import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
+import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/newMain";
 import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
 import ServiceArticle from "./pages/Service_Article/main"
 //Magento 原生頁面
