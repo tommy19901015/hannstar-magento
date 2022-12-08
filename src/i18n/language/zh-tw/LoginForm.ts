@@ -7,6 +7,7 @@ export const LoginForm = {
     createAccount: "建立帳號",
     required: "必填欄位；請輸入至少8個字元，並包含至少一個大寫、一個小寫和一個特殊字元",
     loginBtn: "登入",
+    errorMessage:"必填欄位；輸入格式有誤，請重新輸入",
     hasAccount: "還沒有HannStar帳號?",
     signTitle: "立即註冊瀚宇彩晶會員",
     customer: "客戶會員",

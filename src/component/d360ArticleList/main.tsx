@@ -1,13 +1,13 @@
 import React from "react";
+import { urlConfig } from "../../config/urlSetting";
 import "./css.scss";
 import { I_D360Article, I_D360ArticleList } from "./interface";
 
-const D360ArticleList: React.FC<I_D360ArticleList> = ({ data }) => {
+const D360ArticleList: React.FC<I_D360ArticleList> = ({ data, articleUrl }) => {
   const componentName = "D360ArticleList";
-  console.log("dataaa", data);
 
   const ArticleBlock: React.FC<any> = (articleData) => {
-    const { title, tag } = articleData
+    const { title, tag, articleId } = articleData
     const previewImage = articleData["preview-image"]
     const date = articleData["published-date"]
 
@@ -25,7 +25,7 @@ const D360ArticleList: React.FC<I_D360ArticleList> = ({ data }) => {
     }
 
     return (
-      <a className="articleBlock" href={"/"}>
+      <a className="articleBlock" href={`${articleUrl}?articleID=${articleId}`}>
         <div className="imgBlock">
           <div className={`tag ${previewImage ? "" : "only"}`}>{tag}</div>
           <img src={previewImage} alt={title} />

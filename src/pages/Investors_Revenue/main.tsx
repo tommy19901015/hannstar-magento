@@ -12,7 +12,7 @@ const InvestorsRevenue: React.FC = () => {
 
   const D360TemplatesProp =
   {
-    site: "/investors/revenue/",
+    site: "/investors/revenue",
     method: "GetAllArticles"
   }
 

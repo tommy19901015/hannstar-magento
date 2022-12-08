@@ -7,4 +7,5 @@ export interface I_D360Article {
 
 export interface I_D360ArticleList {
   data: I_D360Article[]
+  articleUrl: string
 }

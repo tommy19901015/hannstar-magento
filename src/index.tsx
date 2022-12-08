@@ -35,6 +35,7 @@ import SustainabilitySocial from "./pages/Sustainability_Social/main";
 import SustainabilityReport from "./pages/Sustainability_Report/main";
 import SustainabilityESG from "./pages/Sustainability_ESG/main";
 import SustainabilityCSR from "./pages/Sustainability_CSR/main";
+import SustainabilityArticle from "./pages/Sustainability_Article/main";
 //投資人專區
 import InvestorsSummary from "./pages/Investors_Summary/main";
 import InvestorsConference from "./pages/Investors_Conference/main";
@@ -228,6 +229,10 @@ ReactDOM.render(
       <Route
         path={hannstar.sustainability_esg.href}
         element={<SustainabilityESG />}
+      />
+      <Route
+        path={hannstar.sustainability_article.href}
+        element={<SustainabilityArticle />}
       />
       {/* 關於瀚宇彩晶 */}
       <Route path={hannstar.about_index.href} element={<AboutIndex />} />

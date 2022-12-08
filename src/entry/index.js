@@ -76,6 +76,10 @@ import SustainabilityEnvironment from "../pages/Sustainability_Environment/main"
 import SustainabilitySocial from "../pages/Sustainability_Social/main";
 import SustainabilityReport from "../pages/Sustainability_Report/main";
 import SustainabilityESG from "../pages/Sustainability_ESG/main";
+import SustainabilityArticle from "../pages/Sustainability_Article/main";
+//訊息中心
+import NewsFinancial from "../pages/News_Financial/main";
+import NewsArticle from "../pages/News_Article/main";
 //Hannspree
 import HannspreeIndex from "../pages/Hannspree_Iindex/main";
 import HannspreeCustom from "../pages/Hannspree_Custom/main";
@@ -138,6 +142,9 @@ const pageMappingObj = {
   root_SustainabilitySocial: <SustainabilitySocial />,
   root_SustainabilityReport: <SustainabilityReport />,
   root_SustainabilityESG: <SustainabilityESG />,
+  root_SustainabilityArticle:<SustainabilityArticle />,
+  root_NewsFinancial: <NewsFinancial />,
+  root_NewsArticle: <NewsArticle />,
   root_PartnerIndex: <PartnerIndex />,
   root_PartnerQuotationList: <PartnerQuotationList />,
   root_PartnerQuotation: <PartnerQuotation />,

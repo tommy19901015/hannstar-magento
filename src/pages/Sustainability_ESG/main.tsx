@@ -10,6 +10,7 @@ import mappingD360I18n from "../../common/mappingD360I18n";
 import "./css.scss";
 
 import DD360Test from "../../D360fakeData/D360ArticleList.json"
+import { urlConfig } from "../../config/urlSetting";
 
 const SustainabilityESG: React.FC = () => {
   const pageName = "SustainabilityESG";
@@ -72,7 +73,9 @@ const SustainabilityESG: React.FC = () => {
                   <option value={item.value}>{item.text}</option>
                 ))}
               </select>
-              {showData && <D360ArticleList data={showData} />}
+              {showData && <D360ArticleList
+                data={showData}
+                articleUrl={urlConfig().hannstar.sustainability_article.href} />}
             </div>
           </>
         }

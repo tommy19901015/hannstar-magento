@@ -472,6 +472,7 @@ $font-base: 16px;
             }
             &.tablePC {
                 padding-bottom: 30px;
+                overflow: auto;
                 table {
                     width: 100% !important;
                     border: 1px solid $hannstar-border-color;

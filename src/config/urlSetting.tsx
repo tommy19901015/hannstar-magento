@@ -124,6 +124,10 @@ export const urlConfig = () => {
         "title": "永續訊息",
         "href": mappingD360I18n() + "/sustainability/esg/view"
       },
+      "sustainability_article": {
+        "title": "永續訊息 文章",
+        "href": mappingD360I18n() + "/sustainability/esg/article"
+      },
       "investors_Summary": {
         "title": "公司概況",
         "href": mappingD360I18n() + "/investors/summary/view"
@@ -175,6 +179,10 @@ export const urlConfig = () => {
       "news_financial": {
         "title": "投資人關係",
         "href": mappingD360I18n() + "/news/financial/view"
+      },
+      "news_article": {
+        "title": "投資人關係 文章",
+        "href": mappingD360I18n() + "/news/financial/article"
       }
     },
     "partner": {
