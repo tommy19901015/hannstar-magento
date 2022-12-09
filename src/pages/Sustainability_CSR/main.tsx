@@ -25,6 +25,7 @@ const SustainabilityCSR: React.FC = () => {
   };
 
   const ChairmanBlock: React.FC = () => {
+    //董事長的話
     return (
       <>
         <TemplateLayout
@@ -58,6 +59,7 @@ const SustainabilityCSR: React.FC = () => {
   };
 
   const CommunicateBlock: React.FC = () => {
+    //利害關係人溝通管道
     return (
       <>
         <TemplateLayout

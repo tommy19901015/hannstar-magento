@@ -1,35 +1,40 @@
 import React, { useState } from "react";
 import Layout from "../../component/layout/main";
 import TemplateLayout from "../../templates/TemplateLayout/main";
-import SustainabilityBlock from "../../component/sustainabilityBlock/main";
-import Chairman from "./Manage/pageData";
-import Governance from "./Environmental/pageData";
-import Negotiate from "./Certified/pageData";
-import Communicate from "./Policy/pageData";
+import AboutBlock from "../../component/aboutBlock/main";
+
+import Certified from "./Certified/pageData";
+import Policy from "./Policy/pageData";
+import Environmental from "./Environmental/pageData"
+import Manage from "./Manage/pageData"
+import Event from "./Event/pageData"
+
 import D360Templates from "../../templates/D360Templates/main";
 import "./css.scss";
 
 const AboutStrategy: React.FC = () => {
   const pageName = "AboutStrategy";
 
-  const ChairmanData = Chairman();
-  const GovernanceData = Governance();
-  const NegotiateData = Negotiate();
-  const CommunicateData = Communicate();
+  const CertifiedData = Certified();
+  const PolicyData = Policy();
+  const EnvironmentalData = Environmental();
+  const ManageData = Manage();
+  const EventData = Event();
 
-  const [sustainabilityTabType, SetSustainabilityTabType] =
-    useState<string>("Chairman");
+  const [aboutTabType, setAboutTabType] =
+    useState<string>("Manage");
 
-  const handleSustainabilityTab = (type: string) => {
-    SetSustainabilityTabType(type);
+  const handleAboutTab = (type: string) => {
+    setAboutTabType(type);
   };
 
-  const ChairmanBlock: React.FC = () => {
+  const ManageBlock: React.FC = () => {
+    //品質管理與策略
     return (
       <>
         <TemplateLayout
-          {...ChairmanData}
-          handleSustainabilityTab={handleSustainabilityTab}
+          {...ManageData}
+          handleAboutTab={handleAboutTab}
         />
         <D360Templates
           {...{
@@ -41,30 +46,52 @@ const AboutStrategy: React.FC = () => {
     );
   };
 
-  const GovernanceBlock: React.FC = () => {
+  const PolicyBlock: React.FC = () => {
     return (
       <TemplateLayout
-        {...GovernanceData}
-        handleSustainabilityTab={handleSustainabilityTab}
+        {...PolicyData}
+        handleAboutTab={handleAboutTab}
       />
     );
   };
 
-  const NegotiateBlock: React.FC = () => {
-    return (
-      <TemplateLayout
-        {...NegotiateData}
-        handleSustainabilityTab={handleSustainabilityTab}
-      />
-    );
-  };
-
-  const CommunicateBlock: React.FC = () => {
+  const EnvironmentalBlock: React.FC = () => {
+    //綠色環保
     return (
       <>
         <TemplateLayout
-          {...CommunicateData}
-          handleSustainabilityTab={handleSustainabilityTab}
+          {...EnvironmentalData}
+          handleAboutTab={handleAboutTab}
+        />
+        <D360Templates
+          {...{
+            site: "9f8b5cd6-4341-4737-a9d0-8ebb7de94359",
+            method: "GetArticle",
+          }}
+        />
+      </>
+    );
+  };
+
+  const CertifiedBlock: React.FC = () => {
+    //綠色管理與認證
+    return (
+      <>
+        <TemplateLayout
+          {...CertifiedData}
+          handleAboutTab={handleAboutTab}
+        />
+      </>
+    );
+  };
+
+  const EventBlock: React.FC = () => {
+    //綠色產品大事記
+    return (
+      <>
+        <TemplateLayout
+          {...EventData}
+          handleAboutTab={handleAboutTab}
         />
         <D360Templates
           {...{
@@ -78,23 +105,18 @@ const AboutStrategy: React.FC = () => {
 
   const mappingType = () => {
     return {
-      Chairman: <ChairmanBlock />,
-      Governance: <GovernanceBlock />,
-      Negotiate: <NegotiateBlock />,
-      Communicate: <CommunicateBlock />,
+      Manage: <ManageBlock />,
+      Policy: <PolicyBlock />,
+      Environmental: <EnvironmentalBlock />,
+      Certified: <CertifiedBlock />,
+      Even: <EventBlock />,
     };
   };
 
   return (
     <Layout>
       <div className={`${pageName}MainContainer`}>
-        {mappingType()[sustainabilityTabType]}
-        <SustainabilityBlock
-          {...{
-            component: "graphics3",
-            type: "csr",
-          }}
-        />
+        {mappingType()[aboutTabType]}
       </div>
     </Layout>
   );

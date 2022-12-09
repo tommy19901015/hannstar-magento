@@ -42,6 +42,15 @@ function usePageData() {
         ],
       },
       {
+        type: "AboutTab",
+        data: [
+          {
+            type: "about",
+            activeId: 3
+          },
+        ],
+      },
+      {
         type: "TitleContentBlock",
         data: [
           {

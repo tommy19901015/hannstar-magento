@@ -12,6 +12,7 @@ import ArticleList2 from "../../component/articleList2/main";
 import { I_TemplateLayout, I_DataModel } from "./interface";
 import "./css.scss";
 import SustainabilityBlock from "../../component/sustainabilityBlock/main";
+import AboutBlock from "../../component/aboutBlock/main";
 import ArticleBlock from "../../component/articleBlock/main";
 import TabProductList from "../../component/tabProductList/main";
 import MessageCenter from "../../component/messageCenter/main";
@@ -20,6 +21,7 @@ import PlatformEntry from "../../component/platformEntry/main";
 const TemplateLayout: React.FC<I_TemplateLayout> = ({
   props,
   handleSustainabilityTab,
+  handleAboutTab,
 }) => {
   const pageName = "TemplateLayout";
 
@@ -185,6 +187,22 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
     );
   };
 
+  const AboutTab: Function = ({ data }: any): JSX.Element => {
+    return (
+      <Columns
+        type={ColType.OneCol}
+        content={
+          <div className={`${pageName}ModuleBlock`}>
+            <AboutBlock
+              {...data[0]}
+              handleAboutTab={handleAboutTab}
+            />
+          </div>
+        }
+      />
+    );
+  };
+
   const MessageCenterPlatform: Function = ({ data }: any): JSX.Element => {
     console.log("datadata", data);
     return (
@@ -213,6 +231,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
       TabProductListBlock: <TabProductListBlock data={data} />,
       ArticleListContent: <ArticleListContent data={data} />,
       SustainabilityTab: <SustainabilityTab data={data} />,
+      AboutTab: <AboutTab data={data} />,
       MessageCenterPlatform: <MessageCenterPlatform data={data} />,
     };
   };

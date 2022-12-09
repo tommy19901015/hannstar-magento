@@ -38,12 +38,11 @@ function usePageData() {
         ],
       },
       {
-        type: "SustainabilityTab",
+        type: "AboutTab",
         data: [
           {
-            type: "csr",
-            activeId: 0,
-            component: "tab",
+            type: "about",
+            activeId: 0
           },
         ],
       },

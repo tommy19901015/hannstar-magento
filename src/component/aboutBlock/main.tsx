@@ -1,28 +1,19 @@
 import React from "react";
 import { useIsMobile } from "../../hooks";
-import sustainabilityData from "../../common/sustainabilityData";
-import Graphics3 from "../graphics3/main";
-import { I_SustainabilityBlock } from "./interface";
-import Columns from "../../component/columns/main";
-import { ColType } from "../../component/columns/interface";
+import aboutData from "../../common/aboutData";
+import { I_AboutBlock } from "./interface";
 import "./css.scss";
 
-const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
+const AboutBlock: React.FC<I_AboutBlock> = ({
   activeId,
-  component,
   type,
-  handleSustainabilityTab,
+  handleAboutTab,
 }) => {
   const isMobile = useIsMobile();
 
-  const tabData = sustainabilityData().filter(
+  const tabData = aboutData().filter(
     (item: any) => item.type === type
   )[0].tab;
-
-  const graphics3Data = sustainabilityData().filter(
-    (item: any) => item.type === type
-  )[0].graphics3;
-
 
 
   const Tab = () => {
@@ -31,7 +22,7 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
         {isMobile ? (
           <select
             className="dropdown"
-            onChange={(e) => handleSustainabilityTab(e.target.value)}>
+            onChange={(e) => handleAboutTab(e.target.value)}>
             {tabData.map((tab: any, index: number) => {
               return activeId === index ? <option key={tab.id} value={tab.type} selected>
                 {tab.text}
@@ -46,7 +37,7 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
               tabData.map((tab: any, index: number) => (
                 <li
                   className={`${activeId === index ? "active" : ""}`}
-                  onClick={() => handleSustainabilityTab(tab.type)}
+                  onClick={() => handleAboutTab(tab.type)}
                 >
                   {tab.text}
                 </li>
@@ -58,20 +49,8 @@ const SustainabilityBlock: React.FC<I_SustainabilityBlock> = ({
   };
 
   return (
-    <>
-      {component === "tab" ? (
-        <Tab />
-      ) : (
-        <Columns
-          type={ColType.OneCol}
-          content={
-            <Graphics3 groups={[{ ...graphics3Data }]} />
-          }
-        />
-
-      )}
-    </>
+    <Tab />
   );
 };
 
-export default SustainabilityBlock;
+export default AboutBlock;

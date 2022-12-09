@@ -1,0 +1,30 @@
+@import "../../style/variable.scss";
+
+.TabBlock {
+  ul {
+    display: flex;
+    @include hannstarContent1;
+    margin-bottom: 50px;
+    li {
+      text-align: center;
+      padding: 8px 15px;
+      cursor: pointer;
+      float: left;
+      display: inline-flex;
+      background-color: $hannstar-bg-color;
+      color: $hannstar-default-text-color;
+      &.active {
+        background: $hannstar-blue2;
+        color: #fff;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
+    ul {
+      display: none;
+    }
+    .dropdown {
+      @include hannstarSelect;
+    }
+  }
+}

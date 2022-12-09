@@ -3,6 +3,7 @@ import { I_GraphicsCard } from "../../component/graphicsCard/interface";
 import { I_Video } from "../../component/video/interface";
 import { I_TabsModule } from "../../component/tabProductList/interface";
 import { I_SustainabilityBlock } from "../../component/sustainabilityBlock/interface";
+import { I_AboutBlock } from "../../component/aboutBlock/interface";
 
 import {
   I_Banner,
@@ -25,6 +26,7 @@ export type I_DataModel =
   | I_GraphicsCard
   | I_TitleContentBanner
   | I_SustainabilityBlock
+  | I_AboutBlock
   | I_MessageCenterPlatform
   | I_Video;
 export interface I_TemplateLayout {
@@ -33,4 +35,5 @@ export interface I_TemplateLayout {
     data: I_DataModel[];
   }[];
   handleSustainabilityTab?: any;
+  handleAboutTab?: any;
 }
