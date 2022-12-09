@@ -5,7 +5,7 @@ import { ColType } from "../../component/columns/interface";
 import FormComponent from "../../component/form/main";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { FormType } from "../../component/form/interface";
-import useGreenServiceApply from "./pageData";
+import useGreenServiceApply from "./pageDataOld";
 import "./css.scss";
 
 const ServiceGreenServiceApply: React.FC = () => {
