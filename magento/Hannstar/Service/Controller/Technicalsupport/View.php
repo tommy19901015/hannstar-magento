@@ -1,8 +1,8 @@
 <?php
 
 declare(strict_types=1);
-
-namespace Hannstar\Tftdisplay\Controller\Index;
+                                      
+namespace Hannstar\Service\Controller\Technicalsupport;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Controller\ResultFactory;

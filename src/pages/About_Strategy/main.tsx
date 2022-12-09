@@ -109,7 +109,7 @@ const AboutStrategy: React.FC = () => {
       Policy: <PolicyBlock />,
       Environmental: <EnvironmentalBlock />,
       Certified: <CertifiedBlock />,
-      Even: <EventBlock />,
+      Event: <EventBlock />,
     };
   };
 

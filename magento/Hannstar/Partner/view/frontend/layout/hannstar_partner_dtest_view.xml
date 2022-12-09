@@ -6,7 +6,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_config
     </head>
     <body>
     
-    
+    <referenceBlock name="header.container" remove="true" />
         <referenceContainer name="content">        
             <block class="Magento\Framework\View\Element\Template"
                    name="hannstar.partner.layout.main"

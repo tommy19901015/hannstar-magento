@@ -12,6 +12,7 @@
     </head>
     <body>
         <referenceContainer name="content">
+        <referenceBlock name="header.container" remove="true" />
         <referenceBlock name="navigation.sections" remove="true"/>            
         <referenceContainer name="footer" remove="true" />
         <referenceBlock name="footer_links" remove="true"/>
@@ -23,8 +24,8 @@
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />
         <block class="Magento\Framework\View\Element\Template"
-                name="hannstar.tftdisplay.layout.main"
-                template="Hannstar_Tftdisplay::index.phtml" />
+                name="hannstar.service.layout.main"
+                template="Hannstar_Service::techinicalsupport.phtml" />
         </referenceContainer>
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="authentication-popup" remove="true"/>

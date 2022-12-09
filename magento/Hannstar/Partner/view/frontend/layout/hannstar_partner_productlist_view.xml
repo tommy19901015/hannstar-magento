@@ -13,6 +13,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_config
     </head>
     <body>
         <referenceContainer name="content">
+        <referenceBlock name="header.container" remove="true" />
             <block class="Magento\Framework\View\Element\Template"
                    name="hannstar.partner.layout.main"
                    template="Hannstar_Partner::productlist.phtml" />

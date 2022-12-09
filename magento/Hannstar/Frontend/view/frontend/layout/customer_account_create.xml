@@ -18,6 +18,7 @@
     </head>
     <body>
         <referenceContainer name="content">
+        <referenceBlock name="header.container" remove="true" />  
             <referenceBlock name="navigation.sections" remove="true"/>            
             <referenceContainer name="footer" remove="true" />
             <referenceBlock name="footer_links" remove="true"/>

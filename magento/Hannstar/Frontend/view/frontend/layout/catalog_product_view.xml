@@ -18,6 +18,7 @@
     <update handle="catalog_product_opengraph" />
     <update handle="page_calendar"/>
     <body>
+    <referenceBlock name="header.container" remove="true" />  
         <referenceBlock name="navigation.sections" remove="true"/>            
         <referenceContainer name="footer" remove="true" />
         <referenceBlock name="footer_links" remove="true"/>
@@ -26,7 +27,6 @@
         <referenceBlock name="authentication-popup" remove="true"/>
         <referenceBlock name="sidebar.additional" remove="true"/>
         <referenceBlock name="product.info.upsell" remove="true"/>
-         <!-- <referenceBlock name="product.info.media" remove="true"/> -->
 
         <attribute name="itemtype" value="http://schema.org/Product" />
         <attribute name="itemscope" value="itemscope"/>
@@ -229,11 +229,6 @@
                 class="Magento\Framework\View\Element\Template" 
                 name="productdetails" 
                 template="Hannstar_Frontend::productdetails.phtml"/>
-
-            <!-- <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="Hannstar_Frontend::product/view/gallery.phtml">
-                
-            </block> -->
-
 
         </referenceContainer>
     </body>

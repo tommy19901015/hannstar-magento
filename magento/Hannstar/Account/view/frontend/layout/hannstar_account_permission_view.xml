@@ -7,7 +7,6 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <title>Permission</title>
         <remove src="mage/calendar.css"/>
         <remove src="css/styles-l.css"/>
         <remove src="css/styles-m.css"/>
@@ -18,6 +17,8 @@
     </head>
     <body>     
         <referenceContainer name="content">
+                <referenceBlock name="navigation.sections" remove="true"/> 
+        <referenceBlock name="header.container" remove="true" />  
         <container name="header.container" as="header_container" label="Page Header Container" htmlTag="header" htmlClass="page-header" before="main.content"/>
         <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>                
             <block class="Hannstar\Frontend\Block\Index"

@@ -7,7 +7,6 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <title>Customer Login</title>
         <remove src="mage/calendar.css"/>
         <remove src="css/styles-l.css"/>
         <remove src="css/styles-m.css"/>
@@ -18,6 +17,7 @@
     </head>
     <update handle="customer_account"/>
     <body>
+    <referenceBlock name="header.container" remove="true" />  
         <referenceBlock name="navigation.sections" remove="true"/>        
         <referenceContainer name="footer" remove="true" />
         <referenceBlock name="footer_links" remove="true"/>

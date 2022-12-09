@@ -7,7 +7,6 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <title>Permission</title>
         <remove src="mage/calendar.css"/>
         <remove src="css/styles-l.css"/>
         <remove src="css/styles-m.css"/>
@@ -18,6 +17,7 @@
     </head>
     <body>
         <referenceContainer name="content">
+        <referenceBlock name="header.container" remove="true" />  
         <block class="Hannstar\Frontend\Block\Index"
                    name="hannstar.frontend.layout.main"
                    template="Hannstar_Frontend::main.phtml" />

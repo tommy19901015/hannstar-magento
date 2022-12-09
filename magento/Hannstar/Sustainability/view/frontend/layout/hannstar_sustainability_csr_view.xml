@@ -11,6 +11,7 @@
         <link src='Hannstar_Frontend::css/main.css'/>
     </head>
     <body>
+        <referenceBlock name="header.container" remove="true" />
         <referenceContainer name="content">
         <referenceBlock name="navigation.sections" remove="true"/>            
         <referenceContainer name="footer" remove="true" />
