@@ -38,7 +38,7 @@ const ServiceGreenServiceApply: React.FC = () => {
           <>
             <h1 className={`${pageName}H1Title`}>法規申請</h1>
             <div className={`${pageName}FormBlock`}>
-            <form onSubmit={handleSubmit(onSubmit)}></form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className={`title`}>基本資料</div>
               <div className="classificationBlock">
                 <div className="row">
@@ -55,7 +55,7 @@ const ServiceGreenServiceApply: React.FC = () => {
                     type="text"
                     defaultValue=""
                     {...register("Agent", { required: true })}/>
-                     {errors.Agent && (<span className="error">{errorMsg}</span>)}
+                    {errors.Agent && (<span className="error">{errorMsg}</span>)}
                   </div>
                 </div>
 
@@ -118,6 +118,7 @@ const ServiceGreenServiceApply: React.FC = () => {
                   defaultValue=""
                   {...register("Remark")}
                 />
+                 {errors.Agent && (<span className="error">{errorMsg}</span>)}
               </div>
             </div>
             </div>
@@ -137,6 +138,7 @@ const ServiceGreenServiceApply: React.FC = () => {
                 </div>
                 <input type="submit" defaultValue={formData.Send} className="btn" />
               </div>
+              </form>
             </div>
           </>
         );

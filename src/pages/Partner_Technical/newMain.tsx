@@ -170,7 +170,7 @@ const PartnerTechnical: React.FC = () => {
               </div>
                 </div>
               </div>
-              <p>先選取Mac或PC的檔案，並按"上傳"鈕，才能執行附檔作業。</p>
+              <p>{formData.NoteContent}</p>
           </div>
           
             <div className="btnBlock">

@@ -2,35 +2,209 @@
 
 $pageName: 'PartnerApplication';
 
+// .#{$pageName}FormBlock {
+//     padding: 0 80px;
+//     margin-bottom: 80px;
+//     .#{$pageName}ContentBlock {
+//         margin-bottom: 80px;
+//         .#{$pageName}Title {
+//             @include hannstarH3Title;
+//             color: $hannstar-blue2;
+//             margin-bottom: 20px;
+//         }
+//         .#{$pageName}UploadBlock {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//             .uploadBtn {
+//                 @include hannstarBtn;
+//                 width: 48px;
+//                 text-align: center;
+//             }
+//         }
+//     }
+//     .#{$pageName}BtnBlock {
+//         display: flex;
+//         justify-content: center;
+//         margin: 80px 0;
+//         .formBtn {
+//             @include hannstarBtn;
+//             width: 48px;
+//             text-align: center;
+//         }
+//     }
+// }
+
+
 .#{$pageName}FormBlock {
-    padding: 0 80px;
-    margin-bottom: 80px;
-    .#{$pageName}ContentBlock {
-        margin-bottom: 80px;
-        .#{$pageName}Title {
-            @include hannstarH3Title;
-            color: $hannstar-blue2;
-            margin-bottom: 20px;
+    width: 100%;
+    margin: 80px auto;
+    .#{$pageName}TextBlock {
+      text-align: center;
+      margin-bottom: 40px;
+      .title {
+          @include hannstarH3Title;
+          text-align: center;
+          background-color: $hannstar-blue2;
+          color: #fff;
+          padding: 10px 0;
+          }
+      }
+  
+    .classificationBlock {
+      margin-bottom: 20px;
+      .title {
+        @include hannstarH3Title;
+        text-align: center;
+        background-color: $hannstar-blue2;
+        color: #fff;
+        padding: 10px 0;
+        margin-bottom: 40px;
         }
-        .#{$pageName}UploadBlock {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .uploadBtn {
-                @include hannstarBtn;
-                width: 48px;
-                text-align: center;
-            }
-        }
-    }
-    .#{$pageName}BtnBlock {
+      .row {
         display: flex;
-        justify-content: center;
-        margin: 80px 0;
-        .formBtn {
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 5px;
+
+        .col-1,
+        .col-2,
+        .col-3 {
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          label {
+            margin-bottom: 10px;
+            &.required {
+              &::after {
+                content: "*";
+                color: $hannstar-orange1;
+                padding-left: 5px;
+              }
+            }
+          }
+          input[type="text"] {
+            @include hannstarInput;
+            width: 100%;
+            &.mb-20 {
+              margin-bottom: 20px;
+            }
+          }
+          select {
+            @include hannstarSelect;
+          }
+          .error {
+            margin-top: 10px;
+            @include hannstarContent2;
+            color: $hannstar-orange1;
+          }
+          .radios {
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            grid-gap: 10px;
+            .hannstarRadio {
+              @include hannstarRadio;
+              margin-top: 5px;
+            }
+          }
+          .react-tel-input {
+            &:hover {
+              .flag-dropdown {
+                border: solid 1px $hannstar-default-text-color;
+              }
+            }
+            .form-control {
+              @include hannstarInput;
+              padding-left: 60px;
+              width: 100%;
+              height: 40px;
+            }
+            .flag-dropdown {
+              background-color: #fff;
+              .selected-flag {
+                width: 50px;
+                .flag {
+                  transform: scale(1.3);
+                  .arrow {
+                    transform: scale(1);
+                  }
+                }
+              }
+            }
+          }
+          .companyRemark {
+            min-height: 200px;
+          }
+          .btn {
             @include hannstarBtn;
-            width: 48px;
             text-align: center;
+            max-width: 80px;
+            border: none;
+          }
         }
+  
+        .col-1 {
+          width: 100%;
+        }
+        .col-2 {
+          width: 49%;
+        }
+        .col-3 {
+          width: calc((100% / 3) - 10px);
+        }
+       
+      }
+      &.flex {
+        display: flex;
+      }
     }
-}
+    .btnBlock {
+      display: flex;
+      justify-content: center;
+      margin: 80px auto;
+      max-width: 150px;
+  
+      .btn {
+        @include hannstarBtn;
+        text-align: center;
+        border: none;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $breakpoint) {
+      .#{$pageName}FormBlock {
+          margin: 30px auto;
+      .classificationBlock {
+        .row {
+          width: 100%;
+          flex-direction: column;
+          .col-1 {
+            width: 100%;
+          }
+          .col-2 {
+            width: 100%;
+          }
+          .col-3 {
+            width: 100%;
+          }
+          .col-1,
+          .col-2,
+          .col-3 {
+            .radios {
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+              grid-gap: 20px;
+            }
+            input[type="text"] {
+              @include hannstarInput;
+              width: 100%;
+              }
+          }
+        }
+      }
+      .btnBlock {
+          margin: 30px auto;
+        }
+      }
+    }

@@ -27,7 +27,7 @@ function useGreenServiceApply() {
       TaxNo: t('ServiceGreenApply.singleNumber'),
       Date: t('ServiceGreenApply.billingDate'),
       Model: t('ServiceGreenApply.model'),
-      Required: "",
+      Required: t('ServiceGreenApply.required'),
       ApplicationType : {
         title: t('ServiceGreenApply.applicationProject.text'),
         option: [
