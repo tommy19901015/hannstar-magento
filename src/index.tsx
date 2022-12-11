@@ -65,14 +65,14 @@ import SolutionIndex from "./pages/Solution_Index/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
-import PartnerQuotation from "./pages/Partner_Quotation/main";
+import PartnerQuotation from "./pages/Partner_Quotation/newMain";
 import PartnerProductList from "./pages/Partner_ProductList/main";
 import PartnerProductInventory from "./pages/Partner_ProductInventory/main";
 import PartnerAddProduct from "./pages/Partner_AddProduct/main";
 import PartnerSolutionList from "./pages/Partner_SolutionList/main";
 import PartnerSolutionInventory from "./pages/Partner_SolutionInventory/main";
 import PartnerAddSolution from "./pages/Partner_AddSolution/main";
-import PartnerApplication from "./pages/Partner_Application/main";
+import PartnerApplication from "./pages/Partner_Application/newMain";
 import PartnerManageandadvisory from "./pages/Partner_Manageandadvisory/main";
 import PartnerTechnical from "./pages/Partner_Technical/newMain";
 import PartnerGreenSupplyChain from "./pages/Partner_GreenSupplyChain/main";

@@ -29,4 +29,5 @@ export const ServiceGreenApply = {
       send: "送件",
       reset:"重置",
     },
+    required:"必填欄位，請重新輸入"
   };
