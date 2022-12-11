@@ -5,9 +5,9 @@ import AboutBlock from "../../component/aboutBlock/main";
 
 import Certified from "./Certified/pageData";
 import Policy from "./Policy/pageData";
-import Environmental from "./Environmental/pageData"
-import Manage from "./Manage/pageData"
-import Event from "./Event/pageData"
+import Environmental from "./Environmental/pageData";
+import Manage from "./Manage/pageData";
+import Event from "./Event/pageData";
 
 import D360Templates from "../../templates/D360Templates/main";
 import "./css.scss";
@@ -21,8 +21,7 @@ const AboutStrategy: React.FC = () => {
   const ManageData = Manage();
   const EventData = Event();
 
-  const [aboutTabType, setAboutTabType] =
-    useState<string>("Manage");
+  const [aboutTabType, setAboutTabType] = useState<string>("Manage");
 
   const handleAboutTab = (type: string) => {
     setAboutTabType(type);
@@ -32,10 +31,7 @@ const AboutStrategy: React.FC = () => {
     //品質管理與策略
     return (
       <>
-        <TemplateLayout
-          {...ManageData}
-          handleAboutTab={handleAboutTab}
-        />
+        <TemplateLayout {...ManageData} handleAboutTab={handleAboutTab} />
         <D360Templates
           {...{
             site: "a844d0f9-4d43-403b-89b8-cc52f8f289fd",
@@ -47,12 +43,8 @@ const AboutStrategy: React.FC = () => {
   };
 
   const PolicyBlock: React.FC = () => {
-    return (
-      <TemplateLayout
-        {...PolicyData}
-        handleAboutTab={handleAboutTab}
-      />
-    );
+    //綠色產品政策
+    return <TemplateLayout {...PolicyData} handleAboutTab={handleAboutTab} />;
   };
 
   const EnvironmentalBlock: React.FC = () => {
@@ -77,10 +69,7 @@ const AboutStrategy: React.FC = () => {
     //綠色管理與認證
     return (
       <>
-        <TemplateLayout
-          {...CertifiedData}
-          handleAboutTab={handleAboutTab}
-        />
+        <TemplateLayout {...CertifiedData} handleAboutTab={handleAboutTab} />
       </>
     );
   };
@@ -89,10 +78,7 @@ const AboutStrategy: React.FC = () => {
     //綠色產品大事記
     return (
       <>
-        <TemplateLayout
-          {...EventData}
-          handleAboutTab={handleAboutTab}
-        />
+        <TemplateLayout {...EventData} handleAboutTab={handleAboutTab} />
         <D360Templates
           {...{
             site: "9f8b5cd6-4341-4737-a9d0-8ebb7de94359",

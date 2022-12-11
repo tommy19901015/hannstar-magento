@@ -11,9 +11,9 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/topbanner_1.png`,
-            title: "永續管理",
-            text: "追求成長與創新，深耕企業文化與核心價值，攜手利害關係人，透過價值鏈的延伸，實現永續經營的目標。",
+            src: "https://e-service-test.hannstar.com/Content/images/img/banner/green-service.jpg",
+            title: "品質管理與策略",
+            text: "",
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
           },
@@ -26,11 +26,15 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: "企業永續",
+                text: "首頁",
                 href: "",
               },
               {
-                text: "永續管理",
+                text: "關於瀚宇彩晶",
+                href: "",
+              },
+              {
+                text: "品質管理與策略",
                 href: "",
               },
             ],
@@ -42,7 +46,7 @@ function usePageData() {
         data: [
           {
             type: "about",
-            activeId: 0
+            activeId: 0,
           },
         ],
       },

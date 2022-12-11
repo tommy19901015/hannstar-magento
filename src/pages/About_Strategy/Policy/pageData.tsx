@@ -34,7 +34,7 @@ function usePageData() {
                 href: "",
               },
               {
-                text: " 品質管理與策略",
+                text: " 綠色產品政策",
                 href: "",
               },
             ],
@@ -46,7 +46,7 @@ function usePageData() {
         data: [
           {
             type: "about",
-            activeId: 1
+            activeId: 1,
           },
         ],
       },

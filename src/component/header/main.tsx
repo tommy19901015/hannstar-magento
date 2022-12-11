@@ -4,7 +4,7 @@ import CollapseLi from "../collapseLi/main";
 import { urlConfig } from "../../config/urlSetting";
 import { useTranslation } from "react-i18next";
 import { I_MenuType } from "../../common/menuData";
-import mappingUrlI18n from "../../common/mappingUrlI18n"
+import mappingUrlI18n from "../../common/mappingUrlI18n";
 import {
   MagentoNotLoginHeader,
   MagentoLoginHeader,
@@ -55,17 +55,21 @@ const Header: React.FC = () => {
   const handleSelectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const urlArr = window.location.pathname.split("/");
     const mappingObj: any = {
-      "en_US": "en",
-      "zh_Hant_TW": "tw",
-      "zh_Hans_CN": "cn",
+      en_US: "en",
+      zh_Hant_TW: "tw",
+      zh_Hans_CN: "cn",
     };
     if (urlArr[1] === "tw" || urlArr[1] === "en" || urlArr[1] === "cn") {
-      urlArr[1] = mappingObj[e.target.value] ? mappingObj[e.target.value] : "tw"
+      urlArr[1] = mappingObj[e.target.value]
+        ? mappingObj[e.target.value]
+        : "tw";
     } else {
-      urlArr[0] = mappingObj[e.target.value] ? mappingObj[e.target.value] : "tw"
+      urlArr[0] = mappingObj[e.target.value]
+        ? mappingObj[e.target.value]
+        : "tw";
     }
-    window.location.href = urlArr.join("/")
-  }
+    window.location.href = urlArr.join("/");
+  };
 
   const menuList: I_MenuType = useMenu();
 
@@ -74,25 +78,39 @@ const Header: React.FC = () => {
       <div className="hannstarTopBlock">
         <div className="algoliaInputBlock">
           <input className="algoliaInput" type="text" />
-          <div className="searchIcon">
-
-          </div>
+          <div className="searchIcon"></div>
         </div>
-        <select className="languageSelect" value={language} onChange={handleSelectLanguage}>
+        <select
+          className="languageSelect"
+          value={language}
+          onChange={handleSelectLanguage}
+        >
           <option value="zh_Hant_TW">繁中</option>
           <option value="zh_Hans_CN">简中</option>
           <option value="en_US">EN</option>
         </select>
-        {window.hannstar.islogin ?
+        {window.hannstar.islogin ? (
           <div className="accountBlock">
-            <a className="toolBarText" href={account.MyAccount.href}>會員中心</a>
-            <a className="toolBarText" href={account.AccountMagentoLogoutUrl.href}>登出</a>
+            <a className="toolBarText" href={account.MyAccount.href}>
+              會員中心
+            </a>
+            <a
+              className="toolBarText"
+              href={account.AccountMagentoLogoutUrl.href}
+            >
+              登出
+            </a>
           </div>
-          :
+        ) : (
           <div className="accountBlock">
-            <a className="toolBarText" href={account.login.href}>登入</a>
-            <a className="toolBarText" href={account.register.href}>註冊</a>
-          </div>}
+            <a className="toolBarText" href={account.login.href}>
+              登入
+            </a>
+            <a className="toolBarText" href={account.register.href}>
+              註冊
+            </a>
+          </div>
+        )}
       </div>
     );
   };
@@ -123,49 +141,23 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
-              {isLogin && item.type === "member" ? (
-                <div className="member-content">
-                  <h4>Tyler</h4>
-                  {menuList["member"].map((item) => (
-                    <ul>
-                      {item.content?.map((i) => (
-                        <li>{i.title}</li>
-                      ))}
-                    </ul>
-                  ))}
-                  <a className="hannstarLoginBtn" href={account.login.href}>
-                    {account.login.title}
-                  </a>
-                </div>
-              ) : (
-                <>
-                  {item.content &&
-                    item.content.length > 0 &&
-                    item.content?.map(
-                      (subMenu: I_MenuContent, index: number) => (
-                        <li key={index}>
-                          <a href={subMenu.href}>{subMenu.title}</a>
-                        </li>
-                      )
-                    )}
-                </>
-              )}
+              {item.content &&
+                item.content.length > 0 &&
+                item.content?.map((subMenu: I_MenuContent, index: number) => (
+                  <li key={index}>
+                    <a href={subMenu.href}>{subMenu.title}</a>
+                  </li>
+                ))}
             </ul>
           </li>
         ))}
       </ul>
     );
   };
-
-  // const handleChangeLanguage = () => {
-  //   const newLanguage = language.current === "tw" ? "en" : "tw";
-  //   language.current = newLanguage;
-  //   console.log('newLanguage', newLanguage)
-  //   i18n.changeLanguage(language.current);
-  // };
 
   return (
     <div className="hannstarHeader">
@@ -186,19 +178,6 @@ const Header: React.FC = () => {
         </a>
         <div className="menuBlock">
           <MenuBlock />
-          {/* <div className="otherBlock">
-            <a className="headerBtn login" href={account.login.href}>
-              {account.login.title}
-            </a>
-            <select
-              className="headerBtn i18n"
-              onChange={(lang) => i18n.changeLanguage(lang.target.value)}
-            >
-              <option value="tw">繁中</option>
-              <option value="en">EN</option>
-              <option value="cn">简中</option>
-            </select>
-          </div> */}
         </div>
       </div>
       <div className="header_m">
@@ -207,6 +186,10 @@ const Header: React.FC = () => {
           alt="logo"
           src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
         />
+        <div className="algoliaInputBlock">
+          <input className="algoliaInput" type="text" />
+          <div className="searchIcon"></div>
+        </div>
         <div
           className={`menuOpenBtn ${openPhoneMenu ? "open" : "close"}`}
           onClick={handleOpenPhoneMenu}

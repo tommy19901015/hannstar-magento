@@ -1,71 +1,73 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$componentName: 'Banner';
+$componentName: "Banner";
 
 .#{$componentName}Content {
-    position: relative;
-    img {
-        width: 100%;
-        &.min-h-400{
-            max-height: 400px;
-        }
+  position: relative;
+  img {
+    width: 100%;
+    &.min-h-400 {
+      max-height: 400px;
     }
+  }
+  .textBlock {
+    position: absolute;
+    width: 500px;
+    padding: 40px 60px;
+    .title {
+      @include hannstarH2Title;
+      color: #fff;
+      padding-bottom: 10px;
+      text-shadow: 0.1em 0.1em 0.2em $hannstar-default-text-color;
+    }
+    .text {
+      @include hannstarContent0;
+      color: #fff;
+      text-shadow: 0.1em 0.1em 0.2em $hannstar-default-text-color;
+      font-weight: 600;
+    }
+    &.topRight {
+      top: 0;
+      right: 0;
+    }
+    &.topLeft {
+      top: 0;
+    }
+    &.bottomLeft {
+      bottom: 0;
+    }
+    &.bottomRight {
+      bottom: 0;
+      right: 0;
+    }
+    &.center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      text-align: center;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
     .textBlock {
+      width: 100%;
+      max-width: 100%;
+      padding: 30px;
+      position: initial;
+      background-color: $hannstar-blue1;
+      .title {
+        @include hannstarH3Title;
+        color: #fff;
+        padding-bottom: 20px;
+      }
+      &.main-banner-text {
         position: absolute;
-        width: 500px;
-        padding: 40px 60px;
-        .title {
-            @include hannstarH2Title;
-            color: #fff;
-            padding-bottom: 32px;
-        }
-        .text {
-            @include hannstarContent1;
-            color: #fff;
-        }
-        &.topRight {
-            top: 0;
-            right: 0;
-        }
-        &.topLeft {
-            top: 0;
-        }
-        &.bottomLeft {
-            bottom: 0;
-        }
-        &.bottomRight {
-            bottom: 0;
-            right: 0;
-        }
-        &.center {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            width: 600px;
-            text-align: center;
-            padding: 0;
-        }
+        background: none;
+        padding: 30px;
+        width: 100%;
+        max-width: 100%;
+      }
     }
-    @media screen and (max-width: $breakpoint) {
-
-        .textBlock {
-            width: 100%;
-            max-width:100%;
-            padding: 30px;
-            position: initial;
-            background-color: $hannstar-blue1;
-            .title {
-                @include hannstarH3Title;
-                color: #fff;
-                padding-bottom: 20px;
-            }
-            &.main-banner-text{
-                position: absolute;
-                background: none;
-                padding: 30px;
-                width: 100%;
-                max-width: 100%;
-            }
-        } 
-    }
+  }
 }
