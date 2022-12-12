@@ -193,10 +193,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
         type={ColType.OneCol}
         content={
           <div className={`${pageName}ModuleBlock`}>
-            <AboutBlock
-              {...data[0]}
-              handleAboutTab={handleAboutTab}
-            />
+            <AboutBlock {...data[0]} handleAboutTab={handleAboutTab} />
           </div>
         }
       />
@@ -208,8 +205,8 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
     return (
       <Columns
         type={ColType.TwoColFullPage}
-        widthL={50}
-        widthR={50}
+        widthL={60}
+        widthR={40}
         contentL={<MessageCenter />}
         contentR={<PlatformEntry data={data} />}
       />

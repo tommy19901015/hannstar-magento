@@ -158,7 +158,7 @@ function usePageData() {
         type: "TitleContentBlock",
         data: [
           {
-            title: "資訊安全管理",
+            title: "關係企業",
             content: "",
           },
         ],
