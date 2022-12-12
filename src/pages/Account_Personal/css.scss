@@ -35,6 +35,8 @@ $pageName: "AccountPersonal";
         }
         input[type="text"] {
           @include hannstarInput;
+          width: 100%;
+          
           &.mb-20 {
             margin-bottom: 20px;
           }
@@ -74,6 +76,9 @@ $pageName: "AccountPersonal";
           .hannstarRadio {
             @include hannstarRadio;
             margin: 5px 0;
+            label{
+              margin-bottom: 0;
+            }
           }
         }
         .react-tel-input {
@@ -103,6 +108,7 @@ $pageName: "AccountPersonal";
         }
         .companyRemark {
           @include hannstarTextarea;
+          width: 100%;
         }
       }
 
@@ -164,7 +170,10 @@ $pageName: "AccountPersonal";
           .checkbox-col {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            grid-gap: 20px;
+            grid-gap: 5px;
+          }
+          input[type="text"] {
+            width: 100%;
           }
         }
       }

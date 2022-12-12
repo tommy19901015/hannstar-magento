@@ -8,7 +8,7 @@ type Props = {
 }
 
 const CountryCodeComponent: React.FC <Props>= ({onSelectionUpdate})  => {
-  const [ country, setCountry] = useState("");
+  const [ country, setCountry] = useState("TW");
   const handleChange = (event:any) => {
     setCountry(event.target.value);
     onSelectionUpdate(event.target.value);
@@ -22,9 +22,7 @@ const CountryCodeComponent: React.FC <Props>= ({onSelectionUpdate})  => {
           className="country-select"
           onChange={handleChange}
           >
-          <option value="">
-            {'國碼'}
-          </option>
+        
           {getCountries().map((country) => (
             <option key={country} value={country}>
               + {getCountryCallingCode(country)}
