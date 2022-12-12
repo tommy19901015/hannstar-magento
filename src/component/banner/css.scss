@@ -6,14 +6,6 @@ $componentName: "Banner";
   position: relative;
   img {
     width: 100%;
-    &.min-h-400 {
-      width: auto;
-      height: 400px;
-      overflow-x: hidden;
-      left: 50%;
-      position: relative;
-      transform: translateX(-50%);
-    }
   }
   .textBlock {
     position: absolute;
@@ -55,6 +47,17 @@ $componentName: "Banner";
     }
   }
   @media screen and (max-width: $breakpoint) {
+    img {
+      width: 100%;
+      &.min-h-400 {
+        width: auto;
+        height: 400px;
+        overflow-x: hidden;
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
+      }
+    }
     .textBlock {
       width: 100%;
       max-width: 100%;
