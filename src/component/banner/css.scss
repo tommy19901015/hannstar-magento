@@ -7,7 +7,12 @@ $componentName: "Banner";
   img {
     width: 100%;
     &.min-h-400 {
-      max-height: 400px;
+      width: auto;
+      height: 400px;
+      overflow-x: hidden;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
     }
   }
   .textBlock {
@@ -18,12 +23,12 @@ $componentName: "Banner";
       @include hannstarH2Title;
       color: #fff;
       padding-bottom: 10px;
-      text-shadow: 0.1em 0.1em 0.2em $hannstar-default-text-color;
+      text-shadow: 1px 1px 2px $hannstar-default-text-color;
     }
     .text {
       @include hannstarContent0;
       color: #fff;
-      text-shadow: 0.1em 0.1em 0.2em $hannstar-default-text-color;
+      text-shadow: 1px 1px 2px $hannstar-default-text-color;
       font-weight: 600;
     }
     &.topRight {

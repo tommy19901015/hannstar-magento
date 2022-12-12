@@ -30,13 +30,13 @@
 1.paperdisplay 新首頁調整 figma黃色框框
 https://www.figma.com/file/TDapp5NPEgj4ZPmWydvYSD/test_5?node-id=0%3A1&t=XD236xToaxFOs3UT-0
 
-2.layout第一個banner手機板 img 高度給400 圖片比例要正常，圖片兩邊切掉
+2.layout第一個banner手機板 img 高度給400 圖片比例要正常，圖片兩邊切掉 V
 
-3.layout banner 當沒有 content 手機板調整 例如:企業永續的公司治理的風險管理(手機板) content沒資料時藍色隱藏
+3.layout banner 當沒有 content 手機板調整 例如:企業永續的公司治理的風險管理(手機板) content沒資料時藍色隱藏 V
 
 4.人才招募 成長在彩晶 熱門職缺 一開始沒資料
 
-5.人才招募 工作在彩晶 6宮格 前兩張圖改正方形 比例要一樣
+5.人才招募 工作在彩晶 6宮格 前兩張圖改正方形 比例要一樣 V
 
 6.電話國碼調整 把預設文字拿掉 看哪樣比較好改
 
