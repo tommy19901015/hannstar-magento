@@ -27,8 +27,6 @@ const MFAQRCode: React.FC = () => {
     const QRCodeDom: any = document.getElementById("QRcode");
     if (QRCodeDom) QRCodeBlockRef.current.appendChild(QRCodeDom);
 
-
-
     // const magentoErrorMessageDom: any =
     //   document.getElementsByClassName("page messages")[0];
     // if (magentoErrorMessageDom)
@@ -55,7 +53,6 @@ const MFAQRCode: React.FC = () => {
       const sendBtn: any = document.getElementById("send2");
       sendBtn && sendBtn.click();
     }
-
   };
 
   return (
@@ -66,34 +63,61 @@ const MFAQRCode: React.FC = () => {
             <div className="titleContent">
               <div className="mainTitle">{tableData.pageTitle}</div>
               <p>{tableData.subTitle}</p>
-              <img alt="demo" className="mobileImgContent" src={`${urlConfig().s3Url}/Image/account/img_2fa_demo.png`} />
+              <img
+                alt="demo"
+                className="mobileImgContent"
+                src={`${urlConfig().s3Url}/Image/account/img_2fa_demo.png`}
+              />
               <span>{tableData.noteTitle}</span>
-              <div className="stepGuide">
-                {tableData.stepGuide}<i className=""></i>
-              </div>
             </div>
             <div className="imgContent">
-              <img alt="demo" src={`${urlConfig().s3Url}/Image/account/img_2fa_demo.png`} />
+              <img
+                alt="demo"
+                src={`${urlConfig().s3Url}/Image/account/img_2fa_demo.png`}
+              />
             </div>
           </div>
         </div>
         <div className={`${pageName}StepContent`}>
           <div className="contentBlock">
-
             <div className="subTitle">{tableData.formTitle}</div>
             <div className="content">
               <div className="step">
                 <div className="stepDescription">
                   <span className="stepNum">1</span>
-                  <span className="description">{tableData.installText1}<br />{tableData.installText2}</span>
+                  <span className="description">
+                    {tableData.installText1}
+                    <br />
+                    {tableData.installText2}
+                  </span>
                 </div>
 
                 <div className="stepExample">
-                  <a rel="noreferrer" target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=zh_TW&gl=US">
-                    <img className="appImg" alt="android" src={`${urlConfig().s3Url}/Image/account/img_2fa_app_android.png`} />
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=zh_TW&gl=US"
+                  >
+                    <img
+                      className="appImg"
+                      alt="android"
+                      src={`${
+                        urlConfig().s3Url
+                      }/Image/account/img_2fa_app_android.png`}
+                    />
                   </a>
-                  <a rel="noreferrer" target="_blank" href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458">
-                    <img className="appImg" alt="ios" src={`${urlConfig().s3Url}/Image/account/img_2fa_app_ios.png`} />
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458"
+                  >
+                    <img
+                      className="appImg"
+                      alt="ios"
+                      src={`${
+                        urlConfig().s3Url
+                      }/Image/account/img_2fa_app_ios.png`}
+                    />
                   </a>
                 </div>
               </div>
@@ -112,7 +136,11 @@ const MFAQRCode: React.FC = () => {
               <div className="step">
                 <div className="stepDescription">
                   <span className="stepNum">3</span>
-                  <span className="description">{tableData.verifylText1}<br />{tableData.verifylText2}</span>
+                  <span className="description">
+                    {tableData.verifylText1}
+                    <br />
+                    {tableData.verifylText2}
+                  </span>
                 </div>
 
                 <div className="bodyBlock input">
@@ -128,13 +156,11 @@ const MFAQRCode: React.FC = () => {
                       必填欄位；輸入格式有誤，請重新輸入
                     </div>
                   )}
-                  <div
-                    className="hannstarVerifyBtn"
-                    onClick={handleSend}
-                  >{tableData.verifyBtn}</div>
+                  <div className="hannstarVerifyBtn" onClick={handleSend}>
+                    {tableData.verifyBtn}
+                  </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

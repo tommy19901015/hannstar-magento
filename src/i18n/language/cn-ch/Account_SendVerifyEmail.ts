@@ -1,6 +1,6 @@
 export const Account_SendVerifyEmail = {
-    sendVerification: "寄送驗證信",
-    enterEmail: "請在下方欄位輸入郵箱收取驗證信。",
-    qequired: "必填欄位；輸入格式有誤，請重新輸入",
-    verificationletter: "發送驗證信",
+    sendVerification: "寄送验证信",
+    enterEmail: "请在下方栏位输入邮箱收取验证信。",
+    qequired: "必填栏位。输入格式有误，请重新输入。",
+    verificationletter: "发送验证信",
 };

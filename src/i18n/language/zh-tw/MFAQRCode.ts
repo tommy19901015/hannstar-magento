@@ -11,9 +11,8 @@ export const MFAQRCODE = {
     verifylText2: "應用程式上的代碼",
     bindSubTitle:
       "請您打開身份驗證應用程式，掃描下方QR code或輸入key值，進行身份綁定",
-    bindNote: "請輸入key值，進行身份綁定",
+    bindNote: "顯示key值",
     verifyBtn: "完成雙重身份綁定",
-    errorMessage: "必填欄位；輸入格式有誤，請重新輸入",
+    errorMessage: "必填欄位。輸入格式有誤，請重新輸入。",
     placeholder: "請輸入代碼",
-    stepGuide: "綁定雙重身份驗證3步驟",
   };

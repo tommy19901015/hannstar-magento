@@ -1,77 +1,77 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'MFA';
+$pageName: "MFA";
 
 .#{$pageName} {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px;
+  .mainTitle {
+    @include hannstarH2Title;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .#{$pageName}Content {
+    width: 30%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding: 80px;
-    .mainTitle {
-        @include hannstarH2Title;
-        text-align: center;
-        margin-bottom: 25px;
-    }
-    .#{$pageName}Content {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .columnBlock {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            @include hannstarTextPadding1;
-            .title {
-                width: 100%;
-                @include hannstarContent2;
-                word-break: keep-all;
-                @include hannstarTextPadding1;
-            }
-            .errorMessage {
-                margin-top: 10px;
-                @include hannstarContent2;
-                color: $hannstar-orange1;
-            }
-        }
-        .bodyBlock {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            input {
-                @include hannstarInput;
-                &.error {
-                    border-color: $hannstar-orange1;
-                }
-            }
-        }
-    }
-
-    .hannstarRegisterBtn {
-        @include hannstarBtn;
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    span {
+    justify-content: center;
+    .columnBlock {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      @include hannstarTextPadding1;
+      .title {
+        width: 100%;
         @include hannstarContent2;
-        color: $hannstar-blue2;
-        text-align: center;
-        span {
-            @include hannstarContent2;
-            color: $hannstar-blue3;
-            font-weight: $font-weighr-bold;
-            cursor: pointer;
-        }
+        word-break: keep-all;
+        @include hannstarTextPadding1;
+      }
+      .errorMessage {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-orange1;
+      }
     }
-    @media screen and (max-width: $breakpoint) {
-        padding: 30px 0;
-        .#{$pageName}Content {
-            width: 100%;
+    .bodyBlock {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      input {
+        @include hannstarInput;
+        &.error {
+          border-color: $hannstar-orange1;
         }
+      }
     }
+  }
+
+  .hannstarRegisterBtn {
+    @include hannstarBtn;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  span {
+    @include hannstarContent2;
+    color: $hannstar-blue2;
+    text-align: center;
+    span {
+      @include hannstarContent2;
+      color: $hannstar-blue3;
+      font-weight: $font-weighr-bold;
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
+    padding: 30px;
+    .#{$pageName}Content {
+      width: 100%;
+    }
+  }
 }

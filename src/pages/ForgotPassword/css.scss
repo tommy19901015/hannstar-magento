@@ -1,68 +1,67 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'ForgotPassword';
+$pageName: "ForgotPassword";
 
 .#{$pageName} {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include hannstarBlockPadding;
+  .mainTitle {
+    @include hannstarH2Title;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .magentoMessageBlock {
+    @include magentoMessage;
+  }
+  .#{$pageName}Content {
+    width: 30%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    @include hannstarBlockPadding;
-    .mainTitle {
-        @include hannstarH2Title;
-        text-align: center;
-        margin-bottom: 25px;
+    justify-content: center;
+    .columnBlock {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      @include hannstarTextPadding1;
+      .title {
+        width: 100%;
+        @include hannstarContent2;
+        word-break: keep-all;
+        @include hannstarTextPadding1;
+      }
+      .errorMessage {
+        margin-top: 10px;
+        @include hannstarContent2;
+        color: $hannstar-orange1;
+      }
     }
-    .magentoMessageBlock {
-        @include magentoMessage;
-    }
-    .#{$pageName}Content {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .columnBlock {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            @include hannstarTextPadding1;
-            .title {
-                width: 100%;
-                @include hannstarContent2;
-                word-break: keep-all;
-                @include hannstarTextPadding1;
-            }
-            .errorMessage {
-                margin-top: 10px;
-                @include hannstarContent2;
-                color: $hannstar-orange1;
-            }
+    .bodyBlock {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      input[type="text"] {
+        @include hannstarInput;
+        &.error {
+          border-color: $hannstar-orange1;
         }
-        .bodyBlock {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            input[type='text'] {
-                @include hannstarInput;
-                &.error {
-                    border-color: $hannstar-orange1;
-                }
-            }
-        }
+      }
     }
+  }
 
-    .hannstarRegisterBtn {
-        @include hannstarBtn;
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
+  .hannstarRegisterBtn {
+    @include hannstarBtn;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: $breakpoint) {
+    padding: 30px;
+    .#{$pageName}Content {
+      width: 100%;
     }
-    @media screen and (max-width: $breakpoint) {
-        padding: 30px 0 30px;
-        .#{$pageName}Content {
-            width: 100%;
-        }
-    }
+  }
 }

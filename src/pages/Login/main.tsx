@@ -85,14 +85,12 @@ const HannstarLogin: React.FC = () => {
               type="text"
               onChange={handleAccout}
               value={account}
-              placeholder="請填入您的Email"
+              placeholder={pageData.emailPlaceholder}
               className={`${!isAccountPass ? "error" : ""}`}
             />
           </div>
           {!isAccountPass && (
-            <div className="errorMessage">
-              {pageData.errorMessage}
-            </div>
+            <div className="errorMessage">{pageData.errorMessage}</div>
           )}
         </div>
 
@@ -119,14 +117,18 @@ const HannstarLogin: React.FC = () => {
               </div>
             </div>
           </div>
-          <a href={urlConfig().account.forgotPassword.href}>{pageData.forgotPassword}</a>
+          <a href={urlConfig().account.forgotPassword.href}>
+            {pageData.forgotPassword}
+          </a>
         </div>
         <div className="loginBtn" onClick={handleLogin}>
           {pageData.loginBtn}
         </div>
         <p className="create">
           {pageData.hasAccount}
-          <a href={urlConfig().account.register.href}>{pageData.createAccount}</a>
+          <a href={urlConfig().account.register.href}>
+            {pageData.createAccount}
+          </a>
         </p>
         <div ref={loginBlock} className="magentoLoginBlock"></div>
       </div>

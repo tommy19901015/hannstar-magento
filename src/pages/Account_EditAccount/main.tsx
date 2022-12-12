@@ -25,8 +25,8 @@ const AccountEditAccount: React.FC = () => {
     surname,
     name,
     changePass,
-    oldPassword,
-    newPassword,
+    oldPasswordTitle,
+    newPasswordTitle,
     requiredCharacters,
     passwordAgain,
     required,
@@ -150,14 +150,6 @@ const AccountEditAccount: React.FC = () => {
       setConfirmNewPasswordPass(compare(confirmNewPassword, newPassword));
       setOldPasswordPass(validatePassword(oldPassword));
 
-      console.log({
-        firstName,
-        lastName,
-        oldPassword,
-        newPassword,
-        confirmNewPassword,
-      });
-
       const allValidateColumn = [
         isNotEmpty(firstName),
         isNotEmpty(lastName),
@@ -255,7 +247,7 @@ const AccountEditAccount: React.FC = () => {
           <div className="rightBlock">
             <div className="accountTitle">{changePass}</div>
             <div className="columnBlock">
-              <div className="title required">{oldPassword}</div>
+              <div className="title required">{oldPasswordTitle}</div>
               <div className="bodyBlock input">
                 <input
                   type="password"
@@ -269,7 +261,7 @@ const AccountEditAccount: React.FC = () => {
               )}
             </div>
             <div className="columnBlock">
-              <div className="title required">{newPassword}</div>
+              <div className="title required">{newPasswordTitle}</div>
               <div className="bodyBlock input">
                 <input
                   type="password"

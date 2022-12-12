@@ -55,29 +55,11 @@ export const Account_Partner = {
         option4: "手機",
         option5: "消費類",
         option6: "其他",
-    },
+      },
     HannstarYN: {
-        title: "是否已使用HannStar產品",
-        option1: "是(請在協助以下資訊)",
+        title: "是否為 HannStar 供應商",
+        option1: "是",
         option2: "否/不確定",
-      },
-      Buy1: {
-        title: "購買渠道-1",
-        option1: "瀚宇彩晶",
-        option2: "代理商",
-        option3: "其他",
-    },
-    Buy2: {
-        title: "購買渠道-2",
-        option1: "瀚宇彩晶",
-        option2: "代理商", 
-        option3: "其他",
-      },
-   Buy3: {
-        title: "購買渠道-3",
-        option1: "瀚宇彩晶", 
-        option2: "代理商", 
-        option3: "其他", 
       },
    JobTitle: {
         title: "職稱",
@@ -105,7 +87,7 @@ export const Account_Partner = {
         option3:"30-100",
         option4:">100", 
       },
-      HannstarCode: "請在提供HannStar供應商代碼(6碼)",
+      HannstarCode: "請再提供HannStar供應商代碼(6碼)",
     CompanyMA2:"公司產品主要銷售地區-1",
     CompanyMA3:"公司產品主要銷售地區-2",
     CompanyMA4:"公司產品主要銷售地區-3",
@@ -113,7 +95,7 @@ export const Account_Partner = {
     TOP2:"主要出貨客戶-2",
     TOP3:"主要出貨客戶-3",
     CompanyRemark: "備註說明",
-    TaxNo: "企業編號(統編/稅號)",
+    TaxNo: "企業統編或稅號",
     Weblink: "公司網址",
     Country: "地區",
     AreaCity: "城市",
@@ -129,9 +111,9 @@ export const Account_Partner = {
     Step1: "步驟 1. 請選擇您的身份",
     Step2: "步驟 2. 申請人資訊",
     Step3: "步驟 3. 企業資料",
-    Step4: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
+    Step4: "步驟 4. 為能提供更完整服務，請問貴司是否為 HannStar 供應商?",
     Goback: "回上一頁",
     Notes: "備註說明",
     Application: "確認申請",
-    Required: "必填欄位，請重新輸入"
+    Required: "必填欄位。請重新輸入。"
 };

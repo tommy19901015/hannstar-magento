@@ -61,7 +61,7 @@ export const Account_Personal = {
         option6: "其他",
     },
     HannstarYN: {
-        title: "是否已使用HannStar產品",
+        title: "是否已使用HannStar產品?",
         option1: "是(請在協助以下資訊)",
         option2: "否/不確定",
       },
@@ -120,9 +120,9 @@ export const Account_Personal = {
     Step1: "步驟 1. 請選擇您的身份",
     Step2: "步驟 2. 申請人資訊",
     Step3: "步驟 3. 企業資料",
-    Step4: "為能提供更完整的服務，請問貴司是否已使用HannStar產品",
+    Step4: "為能提供更完整的服務，請問貴司是否已使用HannStar產品?",
     Goback: "回上一頁",
     Notes: "備註說明",
     Application: "確認申請",
-    Required: "必填欄位，請重新輸入"
+    Required: "必填欄位。請重新輸入。"
 };

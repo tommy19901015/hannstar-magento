@@ -1,9 +1,9 @@
 export const Account_Personal_Template = {
 
-    breadcrumbsLinkAccountInfo: "帳戶資訊",
-    breadcrumbsLinkPersonal: "個人專區",
-    breadcrumbsLinkAuthority:"權限管理",
-    breadcrumbsLinkEnterprise:"企業專區",
-    breadcrumbsLinkMember:"成員資訊",
+    breadcrumbsLinkAccountInfo: "帐户资讯",
+    breadcrumbsLinkPersonal: "个人专区",
+    breadcrumbsLinkAuthority:"权限管理",
+    breadcrumbsLinkEnterprise:"企业专区",
+    breadcrumbsLinkMember:"成员资讯",
     breadcrumbsLinkKanban:"看板",
 }

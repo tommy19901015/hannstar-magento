@@ -1,8 +1,8 @@
 export const MFA = {
-    formTitle: "請輸入身份驗證應用程式上的代碼",
-    errorMessage: "必填欄位；輸入格式有誤，請重新輸入",
-    placeholder: "請輸入代碼",
+    formTitle: "请输入身份验证应用程式上的代码",
+    errorMessage: "必填栏位。输入格式有误，请重新输入。",
+    placeholder: "请输入代码",
     sendBtn: "登入",
-    otherMessage: "如果您雙重身份驗證(2FA)的裝置遺失或出現問題 可使用原註冊郵箱進行身份驗證，",
-    linkText: "發送驗證郵件"
+    otherMessage: "如果您双重身份验证(2FA)的装置遗失或出现问题 可使用原注册邮箱进行身份验证，",
+    linkText: "发送验证邮件"
   };

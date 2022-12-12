@@ -3,6 +3,7 @@ import { TextAlign, BannerType } from "../../component/banner/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { urlConfig } from "../../config/urlSetting";
+
 const {
   hannstar,
   partner,
@@ -11,7 +12,7 @@ const {
   paperdisplay,
   solution,
   hannspree,
-  s3Url
+  s3Url,
 } = urlConfig();
 
 function usePageData() {
@@ -34,32 +35,44 @@ function usePageData() {
         type: "MessageCenterPlatform",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/index/icon_index_menu_blue_tft.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannstar/index/icon_index_menu_blue_tft.png`,
             title: "TFT Display",
             href: tftdisplay.index.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/index/icon_index_menu_blue_paperdisplay.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannstar/index/icon_index_menu_blue_paperdisplay.png`,
             title: "Paper Display",
             href: paperdisplay.index.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/index/icon_index_menu_blue_service.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannstar/index/icon_index_menu_blue_service.png`,
             title: "客戶服務",
             href: service.index.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/index/icon_index_menu_blue_siass.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannstar/index/icon_index_menu_blue_siass.png`,
             title: "方案整合及系統服務",
             href: solution.index.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/index/icon_index_menu_blue_sc.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannstar/index/icon_index_menu_blue_sc.png`,
             title: "供應商協同合作",
             href: partner.index.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/index/icon_index_menu_blue_hsp.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannstar/index/icon_index_menu_blue_hsp.png`,
             title: "瀚斯寶麗",
             href: hannspree.index.href,
           },

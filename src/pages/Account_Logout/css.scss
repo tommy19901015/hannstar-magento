@@ -1,22 +1,15 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'AccountLogout';
+$pageName: "AccountLogout";
 
 .#{$pageName}Content {
-    padding: 0 60px;
-    margin-bottom: 100px;
-    .mainTitle {
-        @include hannstarH2Title;
-        margin-bottom: 20px;
-    }
-    .content{
-        @include hannstarContent2; 
-    }
-}
-
-@media screen and (max-width: $breakpoint) {
-    .#{$pageName}Content {
-        padding: 0;
-        margin-bottom: 30px;
-    }
+  margin: 150px 0;
+  text-align: center;
+  .mainTitle {
+    @include hannstarH2Title;
+    margin-bottom: 20px;
+  }
+  .content {
+    @include hannstarContent1;
+  }
 }

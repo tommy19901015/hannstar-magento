@@ -13,6 +13,6 @@ export const MFAQRCODE = {
       "Scan the QR code or enter a secret key to bind identity with your authenticator app.",
     bindNote: "show secret key",
     verifyBtn: "Complete 2FA ",
-    errorMessage: "Required field; Wrong format, please retype field",
+    errorMessage: "Required field. Wrong format, please enter again.",
     placeholder: "Please enter a code",
   };
