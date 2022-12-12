@@ -11,7 +11,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: "https://e-service-test.hannstar.com/Content/images/img/banner/green-service.jpg",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/img_strategy_top_banner.jpg`,
             title: "品質管理與策略",
             text: "",
             textAlign: TextAlign.BottomLeft,

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign, BannerType } from "../../../component/banner/interface";
-import { GraphicsTheme } from "../../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
+import { urlConfig } from "../../../config/urlSetting";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: "https://e-service-test.hannstar.com/Content/images/img/banner/green-service.jpg",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/img_strategy_top_banner.jpg`,
             title: "品質管理與策略",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -65,7 +65,7 @@ function usePageData() {
         type: "BannerBlock",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/img_strategy_content_banner01.jpg`,
             title: "",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -106,7 +106,7 @@ function usePageData() {
         type: "BannerBlock",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/chart_strategy_target_tc.png`,
             title: "",
             text: " ",
             textAlign: TextAlign.BottomLeft,
@@ -117,7 +117,7 @@ function usePageData() {
         type: "SustainabilityGraphics3",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/chart_strategy_controllist_tc.png`,
             title: "有害物質管控清單",
             content:
               "依據國際法規及客戶規範訂【瀚宇彩晶環保規範】，除定期依需求更新外，並要求所屬供應商符合，達到上、下游一致性整合。目前禁用管制物質合計約近177項(2021年166項)",

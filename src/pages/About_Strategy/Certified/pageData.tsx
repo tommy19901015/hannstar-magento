@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign, BannerType } from "../../../component/banner/interface";
-import { GraphicsTheme } from "../../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../../templates/TemplateLayout/interface";
+import { urlConfig } from "../../../config/urlSetting";
 
 function usePageData() {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: "https://e-service-test.hannstar.com/Content/images/img/banner/green-service.jpg",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/img_strategy_top_banner.jpg`,
             title: "品質管理與策略",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -89,7 +89,7 @@ function usePageData() {
         type: "BannerBlock",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/chart_strategy_mnc_tc.png`,
             title: "",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -111,7 +111,7 @@ function usePageData() {
         type: "BannerBlock",
         data: [
           {
-            src: "https://fakeimg.pl/1000x700/?text=Image",
+            src: `${urlConfig().s3Url}/Image/hannstar/about/strategy/chart_strategy_qc_tc.png`,
             title: "",
             text: " ",
             textAlign: TextAlign.BottomLeft,

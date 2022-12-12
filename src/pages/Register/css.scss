@@ -59,6 +59,7 @@ $pageName: 'HannstarRegister';
             input[type='text'],
             input[type='password'] {
                 @include hannstarInput;
+                width: 100%;
                 &.error {
                     border-color: $hannstar-orange1;
                 }
