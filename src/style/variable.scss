@@ -158,7 +158,6 @@ $font-base: 16px;
 
 @mixin hannstarRadio {
     display: flex;
-    padding-bottom: 8px;
     align-items: center;
     input[type='radio']:checked,
     input[type='radio']:not(:checked) {
