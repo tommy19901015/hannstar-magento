@@ -34,7 +34,7 @@ const AboutStrategy: React.FC = () => {
         <TemplateLayout {...ManageData} handleAboutTab={handleAboutTab} />
         <D360Templates
           {...{
-            site: "a844d0f9-4d43-403b-89b8-cc52f8f289fd",
+            site: "6d7c349b-3c01-446c-945f-ebd9693a4148",
             method: "GetArticle",
           }}
         />
@@ -57,7 +57,7 @@ const AboutStrategy: React.FC = () => {
         />
         <D360Templates
           {...{
-            site: "9f8b5cd6-4341-4737-a9d0-8ebb7de94359",
+            site: "5df4bcd6-b2fc-4395-a182-5e26f5fc4623",
             method: "GetArticle",
           }}
         />
@@ -81,7 +81,7 @@ const AboutStrategy: React.FC = () => {
         <TemplateLayout {...EventData} handleAboutTab={handleAboutTab} />
         <D360Templates
           {...{
-            site: "9f8b5cd6-4341-4737-a9d0-8ebb7de94359",
+            site: "2337cb8b-5845-469d-bcdd-e8232aafe120",
             method: "GetArticle",
           }}
         />

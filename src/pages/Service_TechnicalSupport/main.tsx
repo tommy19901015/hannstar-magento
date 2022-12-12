@@ -18,7 +18,6 @@ const ServiceTechnicalSupport: React.FC = () => {
 
   useEffect(() => {
     const postData = {
-      "functionName": "Magento",
       "method": "GetAllArticles",
       "language": mappingD360I18n(window.hannstar?.language),
       "site": articleType
@@ -34,7 +33,6 @@ const ServiceTechnicalSupport: React.FC = () => {
   const handlerOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setArticleType(e.target.value)
     const postData = {
-      "functionName": "Magento",
       "method": "GetAllArticles",
       "language": mappingD360I18n(window.hannstar?.language),
       "site": e.target.value

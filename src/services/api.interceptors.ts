@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 
 const service = axios.create({
-  baseURL: "https://magentodev.hannstar.com/", //這邊要替換公司API url
+  baseURL: "https://magentodev.hannstar.com/",
   headers: {
     "Content-Type": "application/json;charset=UTF-8",
     "Access-Control-Allow-Origin": "*",

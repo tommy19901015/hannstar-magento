@@ -2,22 +2,21 @@ import { ResponseType, PriceFormParams, UserParams } from "../types/api";
 import service from "./api.interceptors";
 
 export const apiMethods = {
-  fetchAppEnterPrice: "/rest/V1/AppEnterPrice/", //申請企業權限
-  fetchAppVendor: "/rest/V1/AppVendor", //申請供應商權限
   fetchPost: "posts",
-  fetchTodoData: (id: number) => `/todos/${id}`,
+  fetchAppEnterPrice: "/rest/V1/AppEnterPrice/", //申請企業權限
+  fetchAppVendor: "/rest/V1/AppVendor", //申請供應商權限  
   fetchAccountInfo: "/rest/V1/getAccountInfo",
   fetchMemberGroupList: "/rest/V1/MemberGroupList",
   fetchJoinMemberGroup: "/rest/V1/JoinMemberGroup",
-  fetchGetD360Art: "/rest/V1/getArt",
+  fetchGetD360Art: "/rest/V1/getCMS",
 };
 
 export const postEnterPrice = (params: PriceFormParams) =>
   service.post(apiMethods.fetchAppEnterPrice, { ...params });
 export const postAppVendor = (params: PriceFormParams) =>
   service.post(apiMethods.fetchAppVendor, { ...params });
-export const getTodoData = (id: number) =>
-  service.get(apiMethods.fetchTodoData(id));
+// export const getTodoData = (id: number) =>
+//   service.get(apiMethods.fetchTodoData(id));
 export const postUserData = (params: UserParams) =>
   service.post(apiMethods.fetchPost, { ...params });
 export const postAccountInfo = (params: any) =>

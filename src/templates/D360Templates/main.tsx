@@ -25,7 +25,6 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
 
   useEffect(() => {
     const postData = {
-      "functionName": "Magento",
       "method": method,
       "language": mappingD360I18n(window.hannstar?.language),
       "site": site

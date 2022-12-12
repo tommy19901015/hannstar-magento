@@ -73,6 +73,43 @@ const Header: React.FC = () => {
 
   const menuList: I_MenuType = useMenu();
 
+  const LangSelectBlock = () => {
+    return (<select
+      className="languageSelect"
+      value={language}
+      onChange={handleSelectLanguage}
+    >
+      <option value="zh_Hant_TW">繁中</option>
+      <option value="zh_Hans_CN">简中</option>
+      <option value="en_US">EN</option>
+    </select>)
+  }
+
+  const AccountStateBlock = () => {
+    if (window.hannstar.islogin) {
+      return (<div className="accountBlock">
+        <a className="toolBarText" href={account.MyAccount.href}>
+          會員中心
+        </a>
+        <a
+          className="toolBarText"
+          href={account.AccountMagentoLogoutUrl.href}
+        >
+          登出
+        </a>
+      </div>)
+    } else {
+      return (<div className="accountBlock">
+        <a className="toolBarText" href={account.login.href}>
+          登入
+        </a>
+        <a className="toolBarText" href={account.register.href}>
+          註冊
+        </a>
+      </div>)
+    }
+  }
+
   const TopHeaderBlock = () => {
     return (
       <div className="hannstarTopBlock">
@@ -80,37 +117,8 @@ const Header: React.FC = () => {
           <input className="algoliaInput" type="text" />
           <div className="searchIcon"></div>
         </div>
-        <select
-          className="languageSelect"
-          value={language}
-          onChange={handleSelectLanguage}
-        >
-          <option value="zh_Hant_TW">繁中</option>
-          <option value="zh_Hans_CN">简中</option>
-          <option value="en_US">EN</option>
-        </select>
-        {window.hannstar.islogin ? (
-          <div className="accountBlock">
-            <a className="toolBarText" href={account.MyAccount.href}>
-              會員中心
-            </a>
-            <a
-              className="toolBarText"
-              href={account.AccountMagentoLogoutUrl.href}
-            >
-              登出
-            </a>
-          </div>
-        ) : (
-          <div className="accountBlock">
-            <a className="toolBarText" href={account.login.href}>
-              登入
-            </a>
-            <a className="toolBarText" href={account.register.href}>
-              註冊
-            </a>
-          </div>
-        )}
+        <LangSelectBlock />
+        <AccountStateBlock />
       </div>
     );
   };
@@ -141,9 +149,8 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${
-                item.type === "member" && "base-box-shadow"
-              }`}
+              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
+                }`}
             >
               {item.content &&
                 item.content.length > 0 &&
@@ -197,6 +204,8 @@ const Header: React.FC = () => {
           <span></span>
         </div>
         <div className={`phoneMenuBlock ${openPhoneMenu ? "open" : "close"}`}>
+          <LangSelectBlock />
+          <AccountStateBlock />
           {menuMData && <CollapseLi data={menuMData} />}
         </div>
       </div>

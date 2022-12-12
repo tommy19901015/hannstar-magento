@@ -17,7 +17,6 @@ const AboutFamily: React.FC = () => {
 
   useEffect(() => {
     //   const postData = {
-    //     "functionName": "Magento",
     //     "method": "GetArticle",
     //     "language": "zh-hant",
     //     "site": "f59b73a6-4a2f-463f-a328-c6b10bfa598a"
@@ -69,7 +68,7 @@ const AboutFamily: React.FC = () => {
   return (
     <Layout>
 
-<div className={`${pageName}MainContainer`}>
+      <div className={`${pageName}MainContainer`}>
         <TemplateLayout {...pageData} />
       </div>
     </Layout>

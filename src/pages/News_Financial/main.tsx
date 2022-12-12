@@ -22,7 +22,6 @@ const NewsFinancial: React.FC = () => {
 
   useEffect(() => {
     const postData = {
-      "functionName": "Magento",
       "method": "GetAllArticles",
       "language": mappingD360I18n(window.hannstar?.language),
       "site": "/news/investors"
