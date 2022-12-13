@@ -12,7 +12,7 @@ const Index: React.FC = () => {
     <Layout>
       <div className={`${pageName}MainContainer`}>
         <TemplateLayout {...pageData} />
-        <SlickComponent imgs={[]} />
+        {/* <SlickComponent imgs={[]} /> */}
       </div>
     </Layout>
   );

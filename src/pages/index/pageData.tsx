@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { TextAlign, BannerType } from "../../component/banner/interface";
-import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
+import { I_TemplateLayout, I_BlockLayout } from "../../templates/TemplateLayout/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { urlConfig } from "../../config/urlSetting";
 
@@ -123,12 +123,14 @@ function usePageData() {
       },
       {
         type: "SustainabilityGraphics3",
+        layoytBgColor:'#f6f6f6',
         data: [
           {
             src: `${s3Url}/Image/hannstar/index/img_hsd_index_pd_banner_application.jpg`,
             title: "探索顯示紙多元應用",
             content:
               "顯示紙低功耗、戶外可視、寬溫顯示、支援動態播放、動態顯示、全彩顯示、貼近紙感體驗等特性，提供智慧零售、交通運輸、智慧育樂、智能製造、健康關懷、智能建築六大智慧應用更環保節能的顯示解決方案。",
+            bgColor:"none"
           },
         ],
       },
@@ -155,18 +157,15 @@ function usePageData() {
         ],
       },
       {
-        type: "TitleContentBlock",
-        data: [
-          {
-            title: "關係企業",
-            content: "",
-          },
-        ],
-      },
-      {
         type: "TitleContentImgGrid",
         data: [
           {
+            titleContent: {
+              title: "關係企業",
+              content: "",
+              bgColor:"none",
+            },
+            layout : I_BlockLayout.FullLayout,
             rowCount: 5,
             imgGrids: [
               {

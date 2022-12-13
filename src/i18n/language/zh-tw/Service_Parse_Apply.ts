@@ -1,4 +1,7 @@
 export const ParseApply = {
+  home:"首頁",
+  breadcrumb:"客戶通",
+  breadcrumbItem:"解析申請",
   customer:"客戶",
   basicInfo:"基本資料",
   application:"解析申請",
