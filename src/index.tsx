@@ -56,6 +56,7 @@ import TFTPreferredProduct from "./pages/TFT_PreferredProduct/main";
 import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
 import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
 import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
+import PaperDisplayTraffic from "./pages/PaperDisplay_Traffic/main";
 //Hannspree
 import HannspreeIndex from "./pages/Hannspree_Iindex/main";
 import HannspreeSolve from "./pages/Hannspree_Solve/main";
@@ -319,6 +320,7 @@ ReactDOM.render(
       <Route path={"/MagentoProductCompare"} element={<MagentoProductCompare />} />
       <Route path={service.technicalSupport.href} element={<ServiceTechnicalSupport />} />
       <Route path={service.article.href} element={<ServiceArticle />} />
+      <Route path={"/paperdisplay/traffic"} element={<PaperDisplayTraffic />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

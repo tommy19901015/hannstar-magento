@@ -1,0 +1,103 @@
+@import '../../style/variable.scss';
+
+$pageName: 'paperDisplayTab';
+
+.#{$pageName}ContentBlock {
+    .#{$pageName}TabBlock {
+        display: flex;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $hannstar-border-color;
+        .tab {
+            @include hannstarH4Title;
+            color: $hannstar-border-color;
+            width: 33.33%;
+            text-align: center;
+            cursor: pointer;
+            &.active {
+                color: $hannstar-blue2;
+            }
+        }
+    }
+    .tabContent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        padding: 20px 0;
+        .imgBlock {
+            cursor: pointer;
+            img {
+                width: 100%;
+            }
+            .title {
+                @include hannstarContent1;
+                text-align: center;
+            }
+        }
+    }
+    .secTabContent {
+        .blueBlock {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+            padding: 20px 0;
+            .blueTextBlock {
+                padding: 20px;
+                background-color: $hannstar-blue0;
+                .blueTitle {
+                    @include hannstarH4Title;
+                    color: $hannstar-blue2;
+                    margin-bottom: 20px;
+                }
+                .blueContent {
+                    @include hannstarContent1;
+                }
+            }
+        }
+        .recommend1Block,
+        .recommend2Block {
+            .title {
+                @include hannstarH3Title;
+                text-align: center;
+            }
+            .productContent {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 30px;
+                padding: 20px 0;
+                .productBlock {
+                    .imgBlock {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .titleBlock {
+                        display: flex;
+                        padding: 10px 0;
+                        .title {
+                            @include hannstarH4Title;
+                            margin-right: 10px;
+                        }
+                        img {
+                            width: 30px;
+                        }
+                    }
+                    .contentBlock {
+                        li {
+                            padding: 5px 0;
+                        }
+                    }
+                    .btnBlock {
+                        margin-top: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        .btn {
+                            @include hannstarBtn;
+                            width: 100px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

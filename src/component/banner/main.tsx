@@ -13,15 +13,15 @@ const Banner: React.FC<I_Banner> = ({ src, title, text, textAlign, btnText, btnH
                     <div className="text">{text}</div>
                 </div>
             </BGBannerStyle> */}
-            <img src={src} alt={title} className={`${type === BannerType.Main ? "min-h-400": ""}`} />
-             { (text||title) &&(
-               <div className={`textBlock ${textAlign} ${type === BannerType.Main ? "main-banner-text":""}`}>
-                <h2 className="title">{title}</h2>
-                <div className="text">
-                    {btnText && <a href={btnHref}>{btnText}</a>}
-                    {text}
+            <img src={src} alt={title} className={`${type === BannerType.Main ? "min-h-400" : ""}`} />
+            {(text || title) && (
+                <div className={`textBlock ${textAlign} ${type === BannerType.Main ? "main-banner-text" : ""}`}>
+                    <h2 className="title">{title}</h2>
+                    <div className="text">
+                        {btnText && <a href={btnHref}>{btnText}</a>}
+                        {text}
+                    </div>
                 </div>
-            </div>
             )}
         </div>
     )
