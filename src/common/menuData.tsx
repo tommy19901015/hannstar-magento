@@ -206,12 +206,44 @@ function useMenu() {
     ],
     paperdisplay: [
       {
-        title: "paperDisplay",
+        title: "顯示紙技術",
+        href: "",
+        // content: [
+        //   { title: "交通運輸", href: "" },
+
+        // ],
+      },
+      {
+        title: "顯示紙應用",
         href: "",
         content: [
-          { title: "顯示紙技術1", href: paperdisplay.technology.href },
-          { title: "顯示紙技術2", href: paperdisplay.introduce.href },
+          { title: "交通運輸", href: paperdisplay.traffic.href },
+
         ],
+      },
+      {
+        title: "綠色供應鏈",
+        href: "",
+        // content: [
+        //   { title: "交通運輸", href: "" },
+
+        // ],
+      },
+      {
+        title: "產品與詢價",
+        href: "",
+        // content: [
+        //   { title: "交通運輸", href: "" },
+
+        // ],
+      },
+      {
+        title: "訊息中心",
+        href: "",
+        // content: [
+        //   { title: "交通運輸", href: "" },
+
+        // ],
       }
     ],
     solution: [

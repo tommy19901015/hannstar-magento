@@ -320,7 +320,7 @@ ReactDOM.render(
       <Route path={"/MagentoProductCompare"} element={<MagentoProductCompare />} />
       <Route path={service.technicalSupport.href} element={<ServiceTechnicalSupport />} />
       <Route path={service.article.href} element={<ServiceArticle />} />
-      <Route path={"/paperdisplay/traffic"} element={<PaperDisplayTraffic />} />
+      <Route path={paperdisplay.traffic.href} element={<PaperDisplayTraffic />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

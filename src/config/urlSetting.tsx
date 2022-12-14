@@ -304,6 +304,10 @@ export const urlConfig = () => {
         "title": "首頁",
         "href": mappingD360I18n() + "/paperdisplay/index/view"
       },
+      "traffic": {
+        "title": "交通運輸",
+        "href": mappingD360I18n() + "/paperdisplay/traffic/view"
+      },
       "technology": {
         "title": "顯示紙技術1",
         "href": mappingD360I18n() + "/paperdisplay/technology/view"
