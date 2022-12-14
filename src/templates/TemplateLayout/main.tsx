@@ -95,12 +95,14 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
   };
 
   const TitleContentImgGrid: Function = ({ data }: any): JSX.Element => {
-    const { titleContent, rowCount, imgGrids , layout} = data[0];
-    const color = layout === I_BlockLayout.FullLayout ? '#f6f6f6' : '#FFF'
+    const { titleContent, rowCount, imgGrids , layout, isFixed = false} = data[0];
+    const isfullLayout = layout === I_BlockLayout.FullLayout;
+    const color = isfullLayout? '#f6f6f6' : '#FFF'
     return (
       <Columns
         type={ColType.OneCol}
         bgColor={color}
+        fixClass={`${isFixed&&'fixed'}`}
         content={
           <div className={`${pageName}ModuleBlock py-40`}>
             <div className="mb-30">

@@ -12,6 +12,7 @@ export enum TopMType {
 
 export interface I_Style {
   bgColor?: string
+  fixClass?: string
   widthL?: number
   widthR?: number
   minWidthR?: string
