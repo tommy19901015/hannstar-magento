@@ -14,17 +14,17 @@ const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
           </div>
           <div className={`contentWrap ${theme}`}>
             <div className="textBlock">
-              <div className={`title ${theme}`}>{item.title}</div>
+              {item.title && <div className={`title ${theme}`}>{item.title}</div>}
               {
-                Array.isArray(item.text)?
-                <>{item.text.map(childcontent => <ul className="content"><li>{childcontent}</li></ul>)}</>
-                :<div className="content">{item.text}</div>
+                Array.isArray(item.text) ?
+                  <>{item.text.map(childcontent => <ul className="content"><li>{childcontent}</li></ul>)}</>
+                  : <div className="content">{item.text}</div>
               }
             </div>
-            {item.href  && (
+            {item.href && (
               <a className="btnBlock" href={item.href}>{item.btnText}</a>
             )}
-            {item.hrefSec  && (
+            {item.hrefSec && (
               <a className="btnBlock" href={item.hrefSec}>{item.btnTextSec}</a>
             )}
           </div>
