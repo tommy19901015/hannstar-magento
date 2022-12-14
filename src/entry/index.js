@@ -91,6 +91,7 @@ import SolutionLabel from "../pages/Solution_Label/main";
 import PaperDisplayIndex from "../pages/PaperDisplay_Index/main";
 import PaperDisplayIntroduce from "../pages/PaperDisplay_Introduce/main";
 import PaperDisplayTechnology from "../pages/PaperDisplay_Technology/main";
+import PaperDisplayTraffic from "../pages/PaperDisplay_Traffic/main";
 //Tftdisplay
 import TFTIndex from "../pages/TFT_Index/main";
 import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
@@ -177,6 +178,7 @@ const pageMappingObj = {
   root_PaperDisplayIndex: <PaperDisplayIndex />,
   root_PaperDisplayIntroduce: <PaperDisplayIntroduce />,
   root_PaperDisplayTechnology: <PaperDisplayTechnology />,
+  root_PaperDisplayTraffic: <PaperDisplayTraffic />,
   root_TFTIndex: <TFTIndex />,
   root_TFTPreferredProduct:<TFTPreferredProduct />,
   root_MagentoProductDetails:<MagentoProductDetails />,
