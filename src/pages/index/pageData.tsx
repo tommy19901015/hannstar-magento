@@ -166,6 +166,7 @@ function usePageData() {
               bgColor:"none",
             },
             layout : I_BlockLayout.FullLayout,
+            isFixed:true,
             rowCount: 5,
             imgGrids: [
               {

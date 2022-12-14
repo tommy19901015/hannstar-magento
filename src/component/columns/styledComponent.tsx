@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { I_Style, TopMType } from "./interface";
 
 export const OneColFullStyle: React.FC<I_Style> = styled.div`
-  margin-bottom:40px;
+margin-bottom:40px;
   &:first-child{
     margin: 0px auto;  
   }
@@ -25,8 +25,9 @@ export const TwoColFullStyle: React.FC<I_Style> = styled.div`
 `;
 
 export const OneColStyle: React.FC<I_Style> = styled.div`    
-    // margin-top: 40px;
-    margin:0 auto;
+
+    margin:${(props: { fixClass: string }) =>
+    props.fixClass === 'fixed' ? "40px auto 0px auto" : "40px auto"};
     padding: 0px 60px;
     max-width:1400px;
     &:first-child{

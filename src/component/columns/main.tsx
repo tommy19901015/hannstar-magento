@@ -14,6 +14,7 @@ import {
 const Main: React.FC<I_Col> = ({
   type,
   bgColor,
+  fixClass,
   widthL,
   widthR,
   content,
@@ -35,7 +36,7 @@ const Main: React.FC<I_Col> = ({
 
   const OneCol = () =>
     <ColBGStyle bgColor={bgColor}>
-      <OneColStyle>{content}</OneColStyle>
+      <OneColStyle fixClass={fixClass}>{content}</OneColStyle>
     </ColBGStyle>;
 
   const TwoCol = () => {

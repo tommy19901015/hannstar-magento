@@ -62,6 +62,7 @@ export interface I_TitleContentVideo {
 export interface I_TitleContentImgGrid {
   rowCount: number;
   layout?:I_BlockLayout;
+  isFixed?:boolean;
   imgGrids: {
     src: string;
     href?: string;
