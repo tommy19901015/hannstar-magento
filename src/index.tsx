@@ -86,7 +86,7 @@ import ServiceRMAList from "./pages/Service_RMAList/main";
 import ServiceParseList from "./pages/Service_ParseList/main";
 import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
-import ServiceParseApply from "./pages/Service_ParseApply/main";
+import ServiceParseApply from "./pages/Service_ParseApply/newMain";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/newMain";
 import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
 import ServiceArticle from "./pages/Service_Article/main"

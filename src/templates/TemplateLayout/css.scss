@@ -4,6 +4,12 @@ $pageName: "TemplateLayout";
 
 .#{$pageName}ModuleBlock {
   //margin-bottom: 120px;
+  .mb-30{
+    margin-bottom: 30px;
+  }
+  &.py-40{
+    padding: 40px 0;
+  }
   @media screen and (max-width: $breakpoint) {
     //margin-bottom: 80px;
   }

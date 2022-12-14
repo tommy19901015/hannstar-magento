@@ -1,5 +1,6 @@
 import { TextAlign, BannerType } from "../component/banner/interface";
 import { GraphicsTheme } from "../component/graphicsCard/interface";
+import { I_BlockLayout } from "../templates/TemplateLayout/interface";
 
 // Banner Type
 export type I_Banner = {
@@ -60,6 +61,7 @@ export interface I_TitleContentVideo {
 
 export interface I_TitleContentImgGrid {
   rowCount: number;
+  layout?:I_BlockLayout;
   imgGrids: {
     src: string;
     href?: string;

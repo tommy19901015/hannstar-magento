@@ -9,7 +9,7 @@ import GraphicsCard from "../../component/graphicsCard/main";
 import Graphics3 from "../../component/graphics3/main";
 import ImgGrid from "../../component/imgGrid/main";
 import ArticleList2 from "../../component/articleList2/main";
-import { I_TemplateLayout, I_DataModel } from "./interface";
+import { I_TemplateLayout, I_DataModel, I_BlockLayout } from "./interface";
 import "./css.scss";
 import SustainabilityBlock from "../../component/sustainabilityBlock/main";
 import AboutBlock from "../../component/aboutBlock/main";
@@ -24,6 +24,7 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
   handleAboutTab,
 }) => {
   const pageName = "TemplateLayout";
+
 
   const FullBanner: Function = ({ data }: any): JSX.Element[] => {
     return data.map((item: any) => (
@@ -52,12 +53,13 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
     ));
   };
 
-  const SustainabilityGraphics3: Function = ({ data }: any): JSX.Element => {
+  const SustainabilityGraphics3: Function = ({ data, layoytBgColor }: any,): JSX.Element => {
     return (
       <Columns
         type={ColType.OneCol}
+        bgColor={layoytBgColor}
         content={
-          <div className={`${pageName}ModuleBlock`}>
+          <div className={`${pageName}ModuleBlock ${layoytBgColor?"py-40":""}`}>
             <Graphics3 groups={data} />
           </div>
         }
@@ -93,14 +95,17 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
   };
 
   const TitleContentImgGrid: Function = ({ data }: any): JSX.Element => {
-    const { titleContent, rowCount, imgGrids } = data[0];
-
+    const { titleContent, rowCount, imgGrids , layout} = data[0];
+    const color = layout === I_BlockLayout.FullLayout ? '#f6f6f6' : '#FFF'
     return (
       <Columns
         type={ColType.OneCol}
+        bgColor={color}
         content={
-          <div className={`${pageName}ModuleBlock`}>
+          <div className={`${pageName}ModuleBlock py-40`}>
+            <div className="mb-30">
             <TitleContent {...titleContent} />
+            </div>
             <ImgGrid rowCount={rowCount} imgs={imgGrids} />
           </div>
         }
@@ -213,12 +218,12 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
     );
   };
 
-  const mappingType = (data: I_DataModel[]) => {
+  const mappingType = (data: I_DataModel[], layoytBgColor:string) => {
     return {
       FullBanner: <FullBanner data={data} />,
       BannerBlock: <BannerBlock data={data} />,
       BreadcrumbsBlock: <BreadcrumbsBlock data={data} />,
-      SustainabilityGraphics3: <SustainabilityGraphics3 data={data} />, //
+      SustainabilityGraphics3: <SustainabilityGraphics3 data={data} layoytBgColor={layoytBgColor}/>, //
       TitleContentBlock: <TitleContentBlock data={data} />,
       TitleContentGraphicsCard: <TitleContentGraphicsCard data={data} />, // 3x3
       TitleContentImgGrid: <TitleContentImgGrid data={data} />, // 4X4    組建  先不用
@@ -234,7 +239,12 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
   };
 
   const pageBuilder = () =>
-    props.map((component) => mappingType(component.data)[component.type]);
+    props.map((component) => {
+      const { data, layoytBgColor, type } = component;
+      const bgColor = layoytBgColor && layoytBgColor.length>0 ? layoytBgColor : "";
+      console.log('bgColor',bgColor,layoytBgColor)
+      return mappingType(data , bgColor)[type]
+    });
 
   return <>{pageBuilder()}</>;
 };

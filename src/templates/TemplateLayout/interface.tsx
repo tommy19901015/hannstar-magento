@@ -15,6 +15,11 @@ import {
   I_MessageCenterPlatform,
 } from "../../types/base";
 
+
+export enum I_BlockLayout {
+  FullLayout,
+  Default
+}
 export type I_DataModel =
   | I_TabsModule
   | I_Banner
@@ -33,6 +38,7 @@ export interface I_TemplateLayout {
   props: {
     type: string;
     data: I_DataModel[];
+    layoytBgColor?:string;
   }[];
   handleSustainabilityTab?: any;
   handleAboutTab?: any;
