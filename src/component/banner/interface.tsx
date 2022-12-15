@@ -16,6 +16,7 @@ export interface I_Banner {
     title: string;
     text: string;
     textAlign: TextAlign;
+    href?: string,
     btnText?: string;
     btnHref?: string;
     type?: BannerType;

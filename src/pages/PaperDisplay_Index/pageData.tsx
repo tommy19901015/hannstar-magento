@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType} from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { TabEnum } from "../../types/Tmeplate1/interface";
@@ -13,7 +13,7 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src:  `${urlConfig().s3Url}/Image/paperdisplay/index/topbanner.jpg`,
+            src: `${urlConfig().s3Url}/Image/paperdisplay/index/topbanner.jpg`,
             title: "顯示紙",
             text: "Paper Display",
             textAlign: TextAlign.BottomLeft,
@@ -76,6 +76,7 @@ function usePageData() {
             title: "交通運輸智慧移動",
             text: `整合顯示紙導入城際公路與都市道路管理系統，即時資訊運輸資料傳遞進而增進運輸系統的安全，效率及舒適性，以顯示科技實踐環境永續與綠色運輸。`,
             textAlign: TextAlign.BottomLeft,
+            href: `${urlConfig().paperdisplay.traffic.href}`
           },
         ],
       },

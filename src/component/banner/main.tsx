@@ -3,10 +3,15 @@ import { BGBannerStyle } from "./styledComponent";
 import { BannerType, I_Banner } from "./interface"
 import "./css.scss";
 
-const Banner: React.FC<I_Banner> = ({ src, title, text, textAlign, btnText, btnHref, type = BannerType.Default }) => {
+const Banner: React.FC<I_Banner> = ({ src, title, href, text, textAlign, btnText, btnHref, type = BannerType.Default }) => {
     const componentName = "Banner";
+
+    const handleBannerLink = () => {
+        href && (window.location.href = href)
+    }
+
     return (
-        <div className={`${componentName}Content`}>
+        <div className={`${componentName}Content ${href && 'hasLink'}`} onClick={handleBannerLink}>
             {/* <BGBannerStyle src={src}>
                 <div className={`textBlock ${textAlign}`}>
                     <h2 className="title">{title}</h2>

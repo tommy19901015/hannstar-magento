@@ -198,11 +198,29 @@ function useMenu() {
     ],
     tftdisplay: [
       {
-        title: "tftdisplay",
-        href: "/",
+        title: "產品應用",
+        href: "",
         content: [
+          { title: "智慧零售", href: "" },
+          { title: "智能建築", href: "" },
+          { title: "交通運輸", href: "" },
+          { title: "智慧育樂", href: "" },
+          { title: "健康關懷", href: "" },
+          { title: "智能製造", href: "" },
         ],
-      }
+      },
+      {
+        title: "產品與詢價",
+        href: "",
+        content: [
+          { title: "優選產品", href: tftdisplay.preferredProduct.href },
+          { title: "客製化服務", href: "" },
+        ],
+      },
+      {
+        title: "訊息中心",
+        href: "",
+      },
     ],
     paperdisplay: [
       {

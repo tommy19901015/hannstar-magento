@@ -297,6 +297,10 @@ export const urlConfig = () => {
       "index": {
         "title": "首頁",
         "href": mappingD360I18n() + "/tftdisplay/index/view"
+      },
+      "preferredProduct": {
+        "title": "優選產品",
+        "href": mappingD360I18n() + "/tftdisplay/PreferredProduct/ProductList"
       }
     },
     "paperdisplay": {

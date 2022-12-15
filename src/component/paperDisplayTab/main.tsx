@@ -26,7 +26,7 @@ const PaperDisplayTab: React.FC = () => {
                   content: "停車收費樁可以自動辨識車牌與停放時間，節省了大量的開單人力，是政府機構或停車業者們的福音。由於裝置建置於戶外的特性，須面對陽光曝曬直射與風吹雨淋之使用情境，配合戶外可視、耐用強固的顯示紙螢幕，提供車主便捷操作，靈敏觸控，多元支付等功能，提升設備友善度，服務即時性、資訊透明化、繳費多元化到整體服務的滿意度，有效提升建置普及率，促進環境永續。"
                 },
                 bannerBlock: {
-                  src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/smart_parking/banner_smart_parking_meter.jpg`,
+                  src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/banner_smart_parking_meter.jpg`,
                   title: "",
                   text: "",
                 },
@@ -62,12 +62,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.46吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5.46 inch" },
-                      { text: "‧解析度 ：720(RGB)x1280" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 5.46 inch" },
+                      { text: "• 解析度 ：720(RGB)x1280" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
                   },
                   {
@@ -75,12 +75,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "7.8吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 7.8 inch" },
-                      { text: "‧解析度 ：768 x1024" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 7.8 inch" },
+                      { text: "• 解析度 ：768 x1024" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -89,12 +89,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10 inch" },
-                      { text: "‧解析度 ：1536(RGB)x2048" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 10 inch" },
+                      { text: "• 解析度 ：1536(RGB)x2048" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -103,26 +103,26 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10.3吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10.3 inch" },
-                      { text: "‧解析度 ：1440x1920" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：65K   " },
+                      { text: "• 面板尺寸: 10.3 inch" },
+                      { text: "• 解析度 ：1440x1920" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：65K   " },
                     ]
 
                   },
                 ],
                 recommend2: [
                   {
-                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/parking_meter/finished_product_parking_meter.png`,
+                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/finished_product_parking_meter.png`,
                     title: "智慧停車收費系統",
                     content: [
-                      { text: "‧特大屏幕：130mm X 86mm " },
-                      { text: "•鋁合金外殼，聚碳酸酯顯示窗口" },
-                      { text: "•高度防水、防塵、防爆" },
-                      { text: "•省電設計、一組電池能支援3個月" },
-                      { text: "•記憶體備份和加密處理" },
+                      { text: "• 特大屏幕：130mm X 86mm " },
+                      { text: "• 鋁合金外殼，聚碳酸酯顯示窗口" },
+                      { text: "• 高度防水、防塵、防爆" },
+                      { text: "• 省電設計、一組電池能支援3個月" },
+                      { text: "• 記憶體備份和加密處理" },
                     ]
                   }
                 ],
@@ -195,12 +195,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.46吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5.46 inch" },
-                      { text: "‧解析度 ：720(RGB)x1280" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 5.46 inch" },
+                      { text: "• 解析度 ：720(RGB)x1280" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
                   },
                   {
@@ -208,12 +208,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "7.8吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 7.8 inch" },
-                      { text: "‧解析度 ：768 x1024" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 7.8 inch" },
+                      { text: "• 解析度 ：768 x1024" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -222,12 +222,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10 inch" },
-                      { text: "‧解析度 ：1536(RGB)x2048" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 10 inch" },
+                      { text: "• 解析度 ：1536(RGB)x2048" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -236,26 +236,26 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10.3吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10.3 inch" },
-                      { text: "‧解析度 ：1440x1920" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：65K   " },
+                      { text: "• 面板尺寸: 10.3 inch" },
+                      { text: "• 解析度 ：1440x1920" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：65K   " },
                     ]
 
                   },
                 ],
                 recommend2: [
                   {
-                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/parking_meter/finished_product_parking_meter.png`,
+                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/finished_product_parking_meter.png`,
                     title: "智慧停車收費系統",
                     content: [
-                      { text: "‧特大屏幕：130mm X 86mm " },
-                      { text: "•鋁合金外殼，聚碳酸酯顯示窗口" },
-                      { text: "•高度防水、防塵、防爆" },
-                      { text: "•省電設計、一組電池能支援3個月" },
-                      { text: "•記憶體備份和加密處理" },
+                      { text: "• 特大屏幕：130mm X 86mm " },
+                      { text: "• 鋁合金外殼，聚碳酸酯顯示窗口" },
+                      { text: "• 高度防水、防塵、防爆" },
+                      { text: "• 省電設計、一組電池能支援3個月" },
+                      { text: "• 記憶體備份和加密處理" },
                     ]
                   }
                 ],
@@ -328,12 +328,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.46吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5.46 inch" },
-                      { text: "‧解析度 ：720(RGB)x1280" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 5.46 inch" },
+                      { text: "• 解析度 ：720(RGB)x1280" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
                   },
                   {
@@ -341,12 +341,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "7.8吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 7.8 inch" },
-                      { text: "‧解析度 ：768 x1024" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 7.8 inch" },
+                      { text: "• 解析度 ：768 x1024" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -355,12 +355,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10 inch" },
-                      { text: "‧解析度 ：1536(RGB)x2048" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 10 inch" },
+                      { text: "• 解析度 ：1536(RGB)x2048" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -369,26 +369,26 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10.3吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10.3 inch" },
-                      { text: "‧解析度 ：1440x1920" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：65K   " },
+                      { text: "• 面板尺寸: 10.3 inch" },
+                      { text: "• 解析度 ：1440x1920" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：65K   " },
                     ]
 
                   },
                 ],
                 recommend2: [
                   {
-                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/parking_meter/finished_product_parking_meter.png`,
+                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/finished_product_parking_meter.png`,
                     title: "智慧停車收費系統",
                     content: [
-                      { text: "‧特大屏幕：130mm X 86mm " },
-                      { text: "•鋁合金外殼，聚碳酸酯顯示窗口" },
-                      { text: "•高度防水、防塵、防爆" },
-                      { text: "•省電設計、一組電池能支援3個月" },
-                      { text: "•記憶體備份和加密處理" },
+                      { text: "• 特大屏幕：130mm X 86mm " },
+                      { text: "• 鋁合金外殼，聚碳酸酯顯示窗口" },
+                      { text: "• 高度防水、防塵、防爆" },
+                      { text: "• 省電設計、一組電池能支援3個月" },
+                      { text: "• 記憶體備份和加密處理" },
                     ]
                   }
                 ],
@@ -461,12 +461,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.46吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5.46 inch" },
-                      { text: "‧解析度 ：720(RGB)x1280" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 5.46 inch" },
+                      { text: "• 解析度 ：720(RGB)x1280" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
                   },
                   {
@@ -474,12 +474,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "7.8吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 7.8 inch" },
-                      { text: "‧解析度 ：768 x1024" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 7.8 inch" },
+                      { text: "• 解析度 ：768 x1024" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -488,12 +488,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10 inch" },
-                      { text: "‧解析度 ：1536(RGB)x2048" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M   " },
+                      { text: "• 面板尺寸: 10 inch" },
+                      { text: "• 解析度 ：1536(RGB)x2048" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M   " },
                     ]
 
                   },
@@ -502,26 +502,26 @@ const PaperDisplayTab: React.FC = () => {
                     title: "10.3吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 10.3 inch" },
-                      { text: "‧解析度 ：1440x1920" },
-                      { text: "‧介面 ：MIPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：65K   " },
+                      { text: "• 面板尺寸: 10.3 inch" },
+                      { text: "• 解析度 ：1440x1920" },
+                      { text: "• 介面 ：MIPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：65K   " },
                     ]
 
                   },
                 ],
                 recommend2: [
                   {
-                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/parking_meter/finished_product_parking_meter.png`,
+                    src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/finished_product_parking_meter.png`,
                     title: "智慧停車收費系統",
                     content: [
-                      { text: "‧特大屏幕：130mm X 86mm " },
-                      { text: "•鋁合金外殼，聚碳酸酯顯示窗口" },
-                      { text: "•高度防水、防塵、防爆" },
-                      { text: "•省電設計、一組電池能支援3個月" },
-                      { text: "•記憶體備份和加密處理" },
+                      { text: "• 特大屏幕：130mm X 86mm " },
+                      { text: "• 鋁合金外殼，聚碳酸酯顯示窗口" },
+                      { text: "• 高度防水、防塵、防爆" },
+                      { text: "• 省電設計、一組電池能支援3個月" },
+                      { text: "• 記憶體備份和加密處理" },
                     ]
                   }
                 ],
@@ -599,12 +599,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -612,12 +612,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -625,12 +625,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -638,12 +638,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -652,22 +652,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -750,12 +750,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -763,12 +763,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -776,12 +776,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -789,12 +789,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -803,22 +803,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -901,12 +901,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -914,12 +914,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -927,12 +927,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -940,12 +940,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -954,22 +954,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1052,12 +1052,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1065,12 +1065,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1078,12 +1078,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1091,12 +1091,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -1105,22 +1105,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1203,12 +1203,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1216,12 +1216,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1229,12 +1229,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1242,12 +1242,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -1256,22 +1256,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1354,12 +1354,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1367,12 +1367,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1380,12 +1380,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1393,12 +1393,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -1407,22 +1407,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1510,12 +1510,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1523,12 +1523,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1536,12 +1536,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1549,12 +1549,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -1563,22 +1563,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1661,12 +1661,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1674,12 +1674,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1687,12 +1687,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1700,12 +1700,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -1714,22 +1714,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1812,12 +1812,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1825,12 +1825,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1838,12 +1838,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1851,12 +1851,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -1865,22 +1865,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -1963,12 +1963,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "2.9吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 2.9 inch" },
-                      { text: "‧解析度 ：168x384" },
-                      { text: "‧介面 ：SPI" },
-                      { text: "‧亮度 ：80" },
-                      { text: "‧自然彩度 ：-" },
-                      { text: "‧可顯示顏色數 ：4 color" },
+                      { text: "• 面板尺寸: 2.9 inch" },
+                      { text: "• 解析度 ：168x384" },
+                      { text: "• 介面 ：SPI" },
+                      { text: "• 亮度 ：80" },
+                      { text: "• 自然彩度 ：-" },
+                      { text: "• 可顯示顏色數 ：4 color" },
                     ]
                   },
                   {
@@ -1976,12 +1976,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "3.5吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 3.5 inch" },
-                      { text: "‧解析度 ：640(RGB)x480" },
-                      { text: "‧介面 ：RGB / LVDS" },
-                      { text: "‧亮度 ：100" },
-                      { text: "‧自然彩度 ：27 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 3.5 inch" },
+                      { text: "• 解析度 ：640(RGB)x480" },
+                      { text: "• 介面 ：RGB / LVDS" },
+                      { text: "• 亮度 ：100" },
+                      { text: "• 自然彩度 ：27 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -1989,12 +1989,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "4.1吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 4.1 inch" },
-                      { text: "‧解析度 ：480(RGB)x360" },
-                      { text: "‧介面 ：MIPI / RGB" },
-                      { text: "‧亮度 ：120" },
-                      { text: "‧自然彩度 ：190 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 4.1 inch" },
+                      { text: "• 解析度 ：480(RGB)x360" },
+                      { text: "• 介面 ：MIPI / RGB" },
+                      { text: "• 亮度 ：120" },
+                      { text: "• 自然彩度 ：190 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                   {
@@ -2002,12 +2002,12 @@ const PaperDisplayTab: React.FC = () => {
                     title: "5.0吋顯示模組",
                     titleSrc: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/eco-friendly.png`,
                     content: [
-                      { text: "‧面板尺寸: 5 inch" },
-                      { text: "‧解析度 ：800x480" },
-                      { text: "‧介面 ：TTL" },
-                      { text: "‧亮度 ：300" },
-                      { text: "‧自然彩度 ：40 %" },
-                      { text: "‧可顯示顏色數 ：16.7M" },
+                      { text: "• 面板尺寸: 5 inch" },
+                      { text: "• 解析度 ：800x480" },
+                      { text: "• 介面 ：TTL" },
+                      { text: "• 亮度 ：300" },
+                      { text: "• 自然彩度 ：40 %" },
+                      { text: "• 可顯示顏色數 ：16.7M" },
                     ]
                   },
                 ],
@@ -2016,22 +2016,22 @@ const PaperDisplayTab: React.FC = () => {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_OKGO.png`,
                     title: "OKGO SmartBar",
                     content: [
-                      { text: "‧5 吋顯示紙" },
-                      { text: "•整合語音音控功能" },
-                      { text: "•指紋辨識功能" },
-                      { text: "•特殊防盜設計" },
-                      { text: "•支援多種訊號串接" },
+                      { text: "• 5 吋顯示紙" },
+                      { text: "• 整合語音音控功能" },
+                      { text: "• 指紋辨識功能" },
+                      { text: "• 特殊防盜設計" },
+                      { text: "• 支援多種訊號串接" },
                     ]
                   },
                   {
                     src: `${urlConfig().s3Url}/Image/paperdisplay/applications/smart_transportation/bicycle_speed_meter/finished_product_microprogram.png`,
                     title: "電動自行車車錶",
                     content: [
-                      { text: "‧1.6 吋顯示紙" },
-                      { text: "•電量、助力、速度、時間即時顯示" },
-                      { text: "•CAN BUS / CANopen 通訊介面" },
-                      { text: "•內建Light sensor可自動控制車燈或點亮" },
-                      { text: "•內建G - senosr可客製開發相關應用" },
+                      { text: "• 1.6 吋顯示紙" },
+                      { text: "• 電量、助力、速度、時間即時顯示" },
+                      { text: "• CAN BUS / CANopen 通訊介面" },
+                      { text: "• 內建Light sensor可自動控制車燈或點亮" },
+                      { text: "• 內建G - senosr可客製開發相關應用" },
                     ]
                   },
                 ],
@@ -2096,7 +2096,7 @@ const PaperDisplayTab: React.FC = () => {
       </ul>
       <div className="btnBlock">
         <div className="btn">詳細規格</div>
-        <div className="btn">詢價</div>
+        <div className="btn ask">詢價</div>
       </div>
     </div>)
   }
