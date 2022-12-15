@@ -46,6 +46,13 @@ const Header: React.FC = () => {
       "hannspree",
     ];
     mappingArr.includes(type) && setServiceType(type);
+
+    const script = document.createElement("script");
+    script.src = "https://static.zdassets.com/ekr/snippet.js?key=25e61c9f-fdf0-4791-8eaa-63e957511f91";
+    script.async = true;
+    document.body.appendChild(script)
+    // debugger
+
   }, []);
 
   const handleOpenPhoneMenu = () => {

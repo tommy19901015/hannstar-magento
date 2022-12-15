@@ -73,6 +73,7 @@ $pageName: 'MagentoProductDetails';
         }
         .magentoProductDetail {
             .product {
+                display: block;
                 .mage-tabs-disabled {
                     .productTabTitle {
                         display: flex;
