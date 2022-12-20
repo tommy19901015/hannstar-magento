@@ -39,18 +39,12 @@ function useMenu() {
         ],
       },
       {
-        title: "產品應用",
+        title: "產品",
         type: "product",
         href: "",
         content: [
-          { title: "智能車載", href: "" },
-          { title: "工控應用", href: "" },
-          { title: "手機應用", href: "" },
-          { title: "穿戴應用", href: "" },
-          { title: "平板應用", href: "" },
-          { title: "觸控應用", href: "" },
-          { title: "資訊科技顯示器", href: "" },
-          { title: "綠色顯示器", href: "" },
+          { title: "TFT Display", href: tftdisplay.index.href },
+          { title: "Paper Display", href: paperdisplay.index.href }
         ],
       },
       {

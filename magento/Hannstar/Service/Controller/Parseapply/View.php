@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hannstar\Service\Controller\Techinicalsupport;
+namespace Hannstar\Service\Controller\Parseapply;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Controller\ResultFactory;

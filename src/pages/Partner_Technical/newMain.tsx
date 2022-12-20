@@ -50,9 +50,9 @@ const PartnerTechnical: React.FC = () => {
     }
 
     const handleFileChange = (e: any) => {
-      if (e.target.files) {
-        setTestFile(e.target.files);
-      }
+      // if (e.target.files) {
+      //   setTestFile(e.target.files);
+      // }
     };
 
     return (
