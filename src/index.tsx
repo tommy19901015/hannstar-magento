@@ -52,6 +52,7 @@ import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
 //TFT
 import TFTIndex from "./pages/TFT_Index/main";
 import TFTPreferredProduct from "./pages/TFT_PreferredProduct/main";
+import TFTCustomized from "./pages/TFT_Customized/main"
 //PaperDisplay
 import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
 import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
@@ -321,6 +322,7 @@ ReactDOM.render(
       <Route path={service.technicalSupport.href} element={<ServiceTechnicalSupport />} />
       <Route path={service.article.href} element={<ServiceArticle />} />
       <Route path={paperdisplay.traffic.href} element={<PaperDisplayTraffic />} />
+      <Route path={"/TFTCustomized"} element={<TFTCustomized />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

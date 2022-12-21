@@ -6,6 +6,9 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useParseApply from "./pageData";
 import "./css.scss";
+//=====================================================
+import fakeDataJson from "../../ServiceFakeData/parseapply.json"
+//=====================================================
 
 const ServiceParseApply: React.FC = () => {
   const pageName = "ServiceParseApply";

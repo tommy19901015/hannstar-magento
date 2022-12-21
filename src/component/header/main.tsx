@@ -18,6 +18,10 @@ type I_MenuContent = {
   href: string;
 };
 
+declare global {
+  interface Window { zESettings: any; }
+}
+
 const Header: React.FC = () => {
   const [openPhoneMenu, setOpenPhoneMenu] = useState<boolean>(false);
   const [serviceType, setServiceType] = useState<string>("hannstar");
@@ -46,14 +50,24 @@ const Header: React.FC = () => {
       "hannspree",
     ];
     mappingArr.includes(type) && setServiceType(type);
-
-    const script = document.createElement("script");
-    script.src = "https://static.zdassets.com/ekr/snippet.js?key=25e61c9f-fdf0-4791-8eaa-63e957511f91";
-    script.async = true;
-    document.body.appendChild(script)
-    // debugger
-
+    // addZdassets();
   }, []);
+
+  const addZdassets = () => {
+    const mappingKey = {
+      "en_US": "fb337541-f8c1-4c71-a422-181f211ce6a8",
+      "zh_Hant_TW": "25e61c9f-fdf0-4791-8eaa-63e957511f91",
+      "zh_Hans_CN": "de1d2c46-0218-4c7e-b2bb-916554f00852",
+    };
+
+    const zdassetsKey = mappingKey[window.hannstar?.language] ? mappingKey[window.hannstar?.language]
+      : mappingKey["zh_Hant_TW"]
+
+    const zdassetsScript = document.createElement("script");
+    zdassetsScript.id = "ze-snippet"
+    zdassetsScript.src = `https://static.zdassets.com/ekr/snippet.js?key=${zdassetsKey}`;
+    document.body.appendChild(zdassetsScript)
+  }
 
   const handleOpenPhoneMenu = () => {
     setOpenPhoneMenu(!openPhoneMenu);
