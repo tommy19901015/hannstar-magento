@@ -32,7 +32,7 @@ const AccountNewsletterContent = () => {
   };
 
   const handleSave = () => {
-    const registerBtn: any = document.getElementById("subscribedBtn");
+    const registerBtn: any = document.getElementsByClassName("action save primary")[0];
     if (registerBtn) registerBtn.click();
   };
 

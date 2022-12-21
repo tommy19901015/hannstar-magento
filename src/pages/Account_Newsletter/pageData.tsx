@@ -13,7 +13,7 @@ function usePageData() {
           text: t('Account_Newsletter.breadcrumbsLinkMemberCentre'),
         },
         {
-          text: t('Account_Newsletter.breadcrumbsLinkDashboard'),
+          text: t('Account_Newsletter.breadcrumbsLinkNewsLetter'),
         },
       ],
     },

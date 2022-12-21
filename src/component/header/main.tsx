@@ -50,7 +50,7 @@ const Header: React.FC = () => {
       "hannspree",
     ];
     mappingArr.includes(type) && setServiceType(type);
-    // addZdassets();
+    addZdassets();
   }, []);
 
   const addZdassets = () => {
