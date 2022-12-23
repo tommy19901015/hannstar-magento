@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hannstar\Partner\Controller\DTest
-;
+namespace Hannstar\Partner\Controller\Manageandadvisory;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Controller\ResultFactory;

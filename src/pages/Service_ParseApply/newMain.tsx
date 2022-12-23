@@ -42,8 +42,8 @@ const ServiceParseApply: React.FC = () => {
     const handlerUpload = () => {
       console.log(testFile);
       const myHeaders = new Headers();
-      myHeaders.append("Content-type", "multipart/form-data; boundary=------------------------ --974767299852498929531610575");
-      myHeaders.append("Cookie", "PHPSESSID=a2oqivsofl3517bgcifcve7r63");
+      // myHeaders.append("Content-type", "multipart/form-data; boundary=------------------------ --974767299852498929531610575");
+      // myHeaders.append("Cookie", "PHPSESSID=a2oqivsofl3517bgcifcve7r63");
 
       const formData = new FormData();
       formData.append("file", testFile[0]);

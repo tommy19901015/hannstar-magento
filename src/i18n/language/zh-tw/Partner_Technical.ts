@@ -1,8 +1,8 @@
 export const PartnerTechnical = {
     legalApplication:"法規申請",
     home:"首頁",
-    breadcrumb:"客戶通",
-    breadcrumbItem:"解析列表",
+    breadcrumb:"供應商",
+    breadcrumbItem:"新技術合作",
     name:"姓名",
     email:"信箱",
     phone:"電話",

@@ -1,6 +1,11 @@
+<?php echo $this->getLayout()
+          ->createBlock("Magento\Framework\View\Element\Template")
+          ->setTemplate('Hannstar_Frontend::main.phtml')
+          ->toHtml();
+?>
 <div class="hannstarRoot" id="root_PartnerAddSolution"></div>
 <script>
-    require(['jquery', 'myscript'], function($, myscript) {
-        myscript();
+    require(['jquery', 'hannstarScript'], function($, hannstarScript) {
+        hannstarScript();
     });
 </script>

@@ -22,7 +22,7 @@ function useMenu() {
       {
         title: "關於瀚宇彩晶",
         type: "about",
-        href: "",
+        href: hannstar.about_index.href,
         content: [
           {
             title: "瀚宇彩晶簡介",
@@ -104,20 +104,20 @@ function useMenu() {
         href: partner.technical.href,
         content: [],
       },
-      {
-        title: "協同製造夥伴",
-        href: "",
-        content: [
-          {
-            title: partner.manageandadvisory.title,
-            href: partner.manageandadvisory.href,
-          },
-          {
-            title: partner.manufacturing.title,
-            href: partner.manufacturing.href,
-          },
-        ],
-      },
+      // {
+      //   title: "協同製造夥伴",
+      //   href: "",
+      //   content: [
+      //     {
+      //       title: partner.manageandadvisory.title,
+      //       href: partner.manageandadvisory.href,
+      //     },
+      //     {
+      //       title: partner.manufacturing.title,
+      //       href: partner.manufacturing.href,
+      //     },
+      //   ],
+      // },
       {
         title: "供應商服務",
         href: "",

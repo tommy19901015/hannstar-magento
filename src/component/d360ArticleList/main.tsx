@@ -28,7 +28,7 @@ const D360ArticleList: React.FC<I_D360ArticleList> = ({ data, articleUrl }) => {
       <a className="articleBlock" href={`${articleUrl}?articleID=${articleId}`}>
         <div className="imgBlock">
           <div className={`tag ${previewImage ? "" : "only"}`}>{tag}</div>
-          <img src={previewImage} alt={title} />
+          {previewImage && <img src={previewImage} alt={title} />}
         </div>
         <div className="contentWrap">
           <div className="dateBlock">

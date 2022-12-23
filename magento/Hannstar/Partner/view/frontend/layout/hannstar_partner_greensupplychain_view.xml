@@ -25,7 +25,7 @@
                    template="Hannstar_Frontend::main.phtml" />
         <block class="Magento\Framework\View\Element\Template"
                 name="hannstar.partner.layout.main"
-                template="Hannstar_Partner::productinventory.phtml" />
+                template="Hannstar_Partner::greensupplychain.phtml" />
         </referenceContainer>
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="authentication-popup" remove="true"/>
