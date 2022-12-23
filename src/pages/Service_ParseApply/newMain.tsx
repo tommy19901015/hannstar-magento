@@ -29,7 +29,27 @@ const ServiceParseApply: React.FC = () => {
 
     const errorMsg = formData.Required;
 
+    const [parseapplyData, setParseapplyData] = useState<any>()
+    const [issueCodeSelect, setIssueCodeSelect] = useState<any>([])
     const [testFile, setTestFile] = useState<any>()
+
+    useEffect(() => {
+      console.log("fakeDataJson", fakeDataJson)
+      const fakeData: any = fakeDataJson
+      setParseapplyData(fakeData)
+      parseapplyData && setInitData()
+
+    }, [parseapplyData])
+
+    const setInitData = () => {
+      setValue("issue_number", parseapplyData.issue_number)//解析申請單號
+      setValue("customer_code", parseapplyData.customer_code)//客戶名稱
+      setValue("hs_id", parseapplyData.hs_id)//cqs窗口
+      setIssueCodeSelect(parseapplyData.IssueType[0].issuecode)
+      setValue("issue_code", parseapplyData.IssueType[0].issuecode[0].id)
+    }
+
+
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
       const result: any = {
         ...data,
@@ -62,8 +82,14 @@ const ServiceParseApply: React.FC = () => {
       setTestFile(e.target.files);
     };
 
+    const handleIssueTypeSelect = (e: any) => {
+      const code = parseapplyData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
+      setIssueCodeSelect(code)
+      setValue("issue_code", code[0].id)
+    }
+
     return (
-      <>
+      parseapplyData ? <>
         <h1 className={`${pageName}H1Title`}>{formData.PageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -71,10 +97,11 @@ const ServiceParseApply: React.FC = () => {
             <div className="classificationBlock">
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.Client}</label>
+                  <label className="">{formData.customer_code}</label>
                   <input
                     type="text"
                     defaultValue=""
+                    {...register("customer_code")}
                     disabled />
                 </div>
                 <div className="col-2">
@@ -82,24 +109,25 @@ const ServiceParseApply: React.FC = () => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("Agent", { required: true })} />
+                    {...register("Agent", { required: false })} />
                   {errors.Agent && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
 
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.TaxNo}</label>
+                  <label className="">{formData.issue_number}</label>
                   <input
                     type="text"
-                    defaultValue=""
+                    {...register("issue_number")}
                     disabled />
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.CQS}</label>
+                  <label className="">{formData.hs_id}</label>
                   <input
                     type="text"
                     defaultValue=""
+                    {...register("hs_id")}
                     disabled />
                 </div>
               </div>
@@ -114,12 +142,12 @@ const ServiceParseApply: React.FC = () => {
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.Model}</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("Model", { required: true })} />
-                  {errors.Model && (<span className="error">{errorMsg}</span>)}
+                  <label className="">{formData.product}</label>
+                  <select {...register("product")}>
+                    {parseapplyData?.product.map((item: string) => (
+                      <option value={item}>{item}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
 
@@ -129,7 +157,7 @@ const ServiceParseApply: React.FC = () => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("Amount", { required: true })} />
+                    {...register("Amount", { required: false })} />
                   {errors.Amount && (<span className="error">{errorMsg}</span>)}
                 </div>
                 <div className="col-2">
@@ -137,7 +165,7 @@ const ServiceParseApply: React.FC = () => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("Defective", { required: true })} />
+                    {...register("Defective", { required: false })} />
                   {errors.Defective && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
@@ -154,25 +182,27 @@ const ServiceParseApply: React.FC = () => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("Stand", { required: true })} />
+                    {...register("Stand", { required: false })} />
                   {errors.Stand && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
 
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.IssueCategory.title}</label>
-                  <select {...register("IssueCategory")}>
-                    {formData.IssueCategory.option.map(({ value, text }) => (
-                      <option value={value}>{text}</option>
+                  <label className="">{formData.issue_type.title}</label>
+                  <select
+                    {...register("issue_type")} onChange={(e) => handleIssueTypeSelect(e)}>
+                    {parseapplyData?.IssueType.map((item: { id: string, text: string }) => (
+                      <option value={item.id}>{item.text}</option>
                     ))}
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.IssueCode.title}</label>
-                  <select {...register("IssueCode")}>
-                    {formData.IssueCode.option.map(({ value, text }) => (
-                      <option value={value}>{text}</option>
+                  <label className="">{formData.issue_code.title}</label>
+                  <select
+                    {...register("issue_code")}>
+                    {issueCodeSelect.map((item: { id: string, text: string }) => (
+                      <option value={item.id}>{item.text}</option>
                     ))}
                   </select>
                 </div>
@@ -203,11 +233,12 @@ const ServiceParseApply: React.FC = () => {
               <div className="uploadBtn" onClick={handlerUpload}>上傳檔案</div>
             </div>
             <div className={`${pageName}BtnBlock`}>
-
+              <input type="submit" defaultValue={"送出"} className="confirm" />
             </div>
           </form>
         </div>
-      </>
+      </> : null
+
     );
   };
 
