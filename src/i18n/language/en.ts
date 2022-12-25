@@ -28,6 +28,15 @@ import { Account_Partner } from "./en-us/Account_Partner";
 import { Account_Personal_Template } from "./en-us/Account_Personal_Template";
 import { MFA } from "./en-us/MFA";
 import { MFAQRCODE } from "./en-us/MFAQRCode";
+import { SustainabilityIndex } from "./en-us/Sustainability_Index";
+import { SustainabilityGovernance } from "./en-us/Sustainability_Governance";
+import { SustainabilityNegotiate } from "./en-us/Sustainability_Negotiate";
+import { SustainabilityRisk } from "./en-us/Sustainability_Risk";
+import { SustainabilityInfoSecurity } from "./en-us/Sustainability_InfoSecurity";
+import { SustainabilityEnvironmentWeather } from "./en-us/Sustainability_Environment_Weather";
+import { SustainabilityEnvironmentGreenProduct } from "./en-us/Sustainability_Environment_GreenProduct";
+import { SustainabilityEnvironmentSupplyChain } from "./en-us/Sustainability_SupplyChain";
+import { SustainabilityEnvironmentProduction } from "./en-us/Sustainability_Environment_Production";
 export const en = {
   common: {
     cancel: "Cancel",
@@ -65,5 +74,14 @@ export const en = {
   Account_Partner,
   Account_Personal_Template,
   MFA,
-  MFAQRCODE
+  MFAQRCODE,
+  SustainabilityIndex,
+  SustainabilityGovernance,
+  SustainabilityNegotiate,
+  SustainabilityRisk,
+  SustainabilityInfoSecurity,
+  SustainabilityEnvironmentWeather,
+  SustainabilityEnvironmentGreenProduct,
+  SustainabilityEnvironmentSupplyChain,
+  SustainabilityEnvironmentProduction
 };
