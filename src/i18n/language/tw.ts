@@ -21,7 +21,7 @@ import { Account_EditAccount } from "./zh-tw/Account_EditAccount"
 import { Account_Logout } from "./zh-tw/Account_Logout"
 import { Account_MemberInfo } from "./zh-tw/Account_MemberInfo"
 import { Account_MyAccount } from "./zh-tw/Account_MyAccount"
-import {Account_Newsletter } from "./zh-tw/Account_Newsletter"
+import { Account_Newsletter } from "./zh-tw/Account_Newsletter"
 import { Account_SendVerifyEmail } from "./zh-tw/Account_SendVerifyEmail"
 import { Account_Personal } from "./zh-tw/Account_Personal";
 import { Account_Partner } from "./zh-tw/Account_Partner";
@@ -32,6 +32,15 @@ import { ServiceGreenApply } from "./zh-tw/Service_Green_Apply";
 import { PartnerTechnical } from "./zh-tw/Partner_Technical";
 import { PartnerQuotation } from "./zh-tw/Partner_Quotation";
 import { PartnerApplication } from "./zh-tw/Partner_Application";
+import { SustainabilityIndex } from "./zh-tw/Sustainability_Index";
+import { SustainabilityGovernance } from "./zh-tw/Sustainability_Governance";
+import { SustainabilityNegotiate } from "./zh-tw/Sustainability_Negotiate";
+import { SustainabilityRisk } from "./zh-tw/Sustainability_Risk";
+import { SustainabilityInfoSecurity } from "./zh-tw/Sustainability_InfoSecurity";
+import { SustainabilityEnvironmentWeather } from "./zh-tw/Sustainability_Environment_Weather";
+import { SustainabilityEnvironmentGreenProduct } from "./zh-tw/Sustainability_Environment_GreenProduct";
+import { SustainabilityEnvironmentSupplyChain } from "./zh-tw/Sustainability_SupplyChain";
+import { SustainabilityEnvironmentProduction } from "./zh-tw/Sustainability_Environment_Production";
 
 export const tw = {
   common: {
@@ -75,5 +84,14 @@ export const tw = {
   ServiceGreenApply,
   PartnerTechnical,
   PartnerQuotation,
-  PartnerApplication
+  PartnerApplication,
+  SustainabilityIndex,
+  SustainabilityGovernance,
+  SustainabilityNegotiate,
+  SustainabilityRisk,
+  SustainabilityInfoSecurity,
+  SustainabilityEnvironmentWeather,
+  SustainabilityEnvironmentGreenProduct,
+  SustainabilityEnvironmentSupplyChain,
+  SustainabilityEnvironmentProduction
 };
