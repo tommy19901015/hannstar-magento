@@ -7,28 +7,32 @@ const D360ArticleList: React.FC<I_D360ArticleList> = ({ data, articleUrl }) => {
   const componentName = "D360ArticleList";
 
   const ArticleBlock: React.FC<any> = (articleData) => {
-    const { title, tag, articleId } = articleData
-    const previewImage = articleData["preview-image"]
-    const date = articleData["published-date"]
-
+    const { title, tag, articleId } = articleData;
+    const previewImage = articleData["preview-image"];
+    const date = articleData["published-date"];
 
     const splitDate = () => {
-      const dateArr = date.split("/")
-      const year = dateArr[0]
-      const month = dateArr[1]
-      const day = dateArr[2]
+      const dateArr = date.replaceAll(".", "/").split("/");
+      console.log("dateArr", dateArr);
+      const year = dateArr[0];
+      const month = dateArr[1];
+      const day = dateArr[2];
       return {
         year,
         month,
-        day
-      }
-    }
+        day,
+      };
+    };
 
     return (
       <a className="articleBlock" href={`${articleUrl}?articleID=${articleId}`}>
         <div className="imgBlock">
-          <div className={`tag ${previewImage ? "" : "only"}`}>{tag}</div>
-          {previewImage && <img src={previewImage} alt={title} />}
+          {previewImage && (
+            <>
+              <div className="tag only">{tag}</div>
+              <img src={previewImage} alt={title} />
+            </>
+          )}
         </div>
         <div className="contentWrap">
           <div className="dateBlock">
@@ -38,7 +42,10 @@ const D360ArticleList: React.FC<I_D360ArticleList> = ({ data, articleUrl }) => {
               <div className="month">{splitDate().month}</div>
             </div>
           </div>
-          <div className="articleTitle">{title}</div>
+          <div className="titleBlock">
+            {previewImage || <div className="tag only">{tag}</div>}
+            <div className="articleTitle">{title}</div>
+          </div>
         </div>
       </a>
     );
@@ -46,7 +53,9 @@ const D360ArticleList: React.FC<I_D360ArticleList> = ({ data, articleUrl }) => {
 
   return (
     <div className={`${componentName}Content`}>
-      {data.map(item => <ArticleBlock {...item} />)}
+      {data.map((item) => (
+        <ArticleBlock {...item} />
+      ))}
     </div>
   );
 };

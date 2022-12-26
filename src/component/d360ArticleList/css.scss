@@ -1,69 +1,81 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$componentName: 'D360ArticleList';
+$componentName: "D360ArticleList";
 
 .#{$componentName}Content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 80px;
+  .articleBlock {
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $hannstar-border-color;
+    .imgBlock {
+      position: relative;
+      padding-bottom: 10px;
+      .tag {
+        position: absolute;
+        @include hannstarContent2;
+        background-color: $hannstar-blue1;
+        color: $hannstar-default-text-color;
+        text-align: center;
+        padding: 3px 5px;
+        border-radius: 10px;
+        &.only {
+          position: initial;
+          display: initial;
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .contentWrap {
+      display: flex;
+      align-items: flex-start;
+      .dateBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 10px 10px 0px;
+        margin-right: 10px;
+        border-right: 1px solid $hannstar-border-color;
+        .day {
+          font-size: 30px;
+          font-weight: bolder;
+          color: $hannstar-default-text-color;
+        }
+        .bottomBlock {
+          display: flex;
+          font-size: 12px;
+          color: $hannstar-default-text-color;
+          .year {
+          }
+          .month {
+          }
+        }
+      }
+      .titleBlock {
+        .tag {
+          &.only {
+            @include hannstarContent2;
+            background-color: $hannstar-blue1;
+            color: $hannstar-default-text-color;
+            text-align: center;
+            padding: 3px 5px;
+            border-radius: 10px;
+            width: 90px;
+          }
+        }
+        .articleTitle {
+          @include hannstarContent1;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 80px;
-    .articleBlock {
-        display: inline-block;
-        padding-bottom: 10px;
-        border-bottom: 1px solid $hannstar-border-color;
-        .imgBlock {
-            position: relative;
-            padding-bottom: 10px;
-            .tag {
-                position: absolute;
-                @include hannstarContent2;
-                background-color: $hannstar-blue1;
-                color: $hannstar-default-text-color;
-                text-align: center;
-                padding: 3px 5px;
-                border-radius: 10px;
-                &.only {
-                    position: initial;
-                    display: initial;
-                }
-            }
-            img {
-                width: 100%;
-            }
-        }
-        .contentWrap {
-            display: flex;
-            align-items: flex-start;
-            .dateBlock {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 10px 10px 10px 0px;
-                margin-right: 10px;
-                border-right: 1px solid $hannstar-border-color;
-                .day {
-                    font-size: 30px;
-                    font-weight: bolder;
-                    color: $hannstar-default-text-color;
-                }
-                .bottomBlock {
-                    display: flex;
-                    font-size: 12px;
-                    color: $hannstar-default-text-color;
-                    .year {
-                    }
-                    .month {
-                    }
-                }
-            }
-            .articleTitle {
-                @include hannstarContent1;
-            }
-        }
-    }
-    @media screen and (max-width: $breakpoint) {
-        .title {
-        }
-        .content {
-        }
-    }
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+  }
 }
