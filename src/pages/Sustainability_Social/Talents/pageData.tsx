@@ -12,8 +12,8 @@ function usePageData() {
         data: [
           {
             src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/Group6339.png`,
-            title: "社會共融",
-            text: "只有永續的人才，才有永續的企業。盼望攜手共創永續共榮的社會。",
+            title: `${t('SustainabilityTalents.bannerTitle')}`,
+            text: `${t('SustainabilityTalents.bannerContent')}`,
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
           },
@@ -26,11 +26,11 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: "企業永續",
+                text:`${t('SustainabilityTalents.breadcrumbsItem1')}`,
                 href: "",
               },
               {
-                text: "人才發展",
+                text:`${t('SustainabilityTalents.breadcrumbsItem2')}`,
                 href: "",
               },
             ],
@@ -66,15 +66,13 @@ function usePageData() {
         data: [
           {
             src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/development/Rectangle2508.png`,
-            title: "人才培力與發展",
-            content:
-              "我們於2021年持續以新進人員訓練、領導管理體系、專業訓練體系、品質能力訓練體系、共通訓練體系等5大體系的專業課程，展開多元人才培力計畫。從新進員工至各職能指定派訓，乃至主管階層以上，依不同職位、專業職能的需求，開設不同類別的課程，讓員工可以學習到專業知識，提昇自我成長。"
+            title:`${t('SustainabilityTalents.graphics1Title')}`,
+            content:`${t('SustainabilityTalents.graphics1SubTitle')}`
           },
           {
             src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/development/Rectangle2508_1.png`,
-            title: "輪調機制",
-            content:
-              "為了活絡內部人才流動，促進員工多元發展，瀚宇彩晶落實輪調機制，並設有導師機制，讓員工在各職務的導師帶領下多元學習，建立全方位能力，有助於未來的職涯發展與規劃。"
+            title:`${t('SustainabilityTalents.graphics2Title')}`,
+            content:`${t('SustainabilityTalents.graphics2SubTitle')}`
           }
         ]
       },

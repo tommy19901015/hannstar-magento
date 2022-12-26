@@ -9,5 +9,7 @@ export const SustainabilityGovernance = {
     graphics1SubTitle:`The Board of Directors is the highest sustainable governance unit, which is responsible for formulating the Company's ESG strategies and monitoring the implementation outcomes.
     The Strategy and Sustainable Center under the Chairman's Office and the chairman's guidance is divided into Sustainable Development Department, Strategic Investment Department, and ESG Department. The goal of the center is to develop the sustainable blueprint, responsible for the planning and implementation of sustainable development, and carry out the planning, promotion, execution and response of relevant businesses based on stakeholders' issues of concern and materiality principle, which are regularly report back to the board of directors.`,
     breadcrumbsItem1:"Sustainability",
-    breadcrumbsItem2:"ESG Management"
+    breadcrumbsItem2:"ESG Management",
+    breadcrumbsItem1_1:"Letter from Chairman",
+    breadcrumbsItem1_3:"Contact Us"
   }

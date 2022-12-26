@@ -12,8 +12,8 @@ function usePageData() {
         data: [
           {
             src: `${urlConfig().s3Url}/Image/hannstar/sustainability/sustainablemanagement/topbanner_1.png`,
-            title: "永續管理",
-            text: "追求成長與創新，深耕企業文化與核心價值，攜手利害關係人，透過價值鏈的延伸，實現永續經營的目標。",
+            title:  t('SustainabilityGovernance.bannerTitle'),
+            text:  t('SustainabilityGovernance.bannerContent'),
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
           },
@@ -26,11 +26,11 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: "企業永續",
+                text: `${t('SustainabilityGovernance.breadcrumbsItem1')}`,
                 href: "",
               },
               {
-                text: "永續管理",
+                text: `${t('SustainabilityGovernance.breadcrumbsItem1_3')}`,
                 href: "",
               },
             ],

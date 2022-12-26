@@ -37,6 +37,11 @@ import { SustainabilityEnvironmentWeather } from "./cn-ch/Sustainability_Environ
 import { SustainabilityEnvironmentGreenProduct } from "./cn-ch/Sustainability_Environment_GreenProduct";
 import { SustainabilityEnvironmentSupplyChain } from "./cn-ch/Sustainability_SupplyChain";
 import { SustainabilityEnvironmentProduction } from "./cn-ch/Sustainability_Environment_Production";
+import { SustainabilityEquality } from "./cn-ch/Sustainability_Equality";
+import { SustainabilityTalents } from "./cn-ch/Sustainability_Talents";
+import { SustainabilitySociety } from "./cn-ch/Sustainability_Society";
+import { SustainabilityProfession } from "./cn-ch/Sustainability_Profession";
+import { SustainabilityCommon } from "./cn-ch/Sustainability_Common";
 
 export const cn = {
   common: {
@@ -85,5 +90,10 @@ export const cn = {
   SustainabilityEnvironmentWeather,
   SustainabilityEnvironmentGreenProduct,
   SustainabilityEnvironmentSupplyChain,
-  SustainabilityEnvironmentProduction
+  SustainabilityEnvironmentProduction,
+  SustainabilityEquality,
+  SustainabilityTalents,
+  SustainabilitySociety,
+  SustainabilityProfession,
+  SustainabilityCommon
 };
