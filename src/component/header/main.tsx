@@ -19,7 +19,9 @@ type I_MenuContent = {
 };
 
 declare global {
-  interface Window { zESettings: any; }
+  interface Window {
+    zESettings: any;
+  }
 }
 
 const Header: React.FC = () => {
@@ -55,19 +57,20 @@ const Header: React.FC = () => {
 
   const addZdassets = () => {
     const mappingKey = {
-      "en_US": "fb337541-f8c1-4c71-a422-181f211ce6a8",
-      "zh_Hant_TW": "25e61c9f-fdf0-4791-8eaa-63e957511f91",
-      "zh_Hans_CN": "de1d2c46-0218-4c7e-b2bb-916554f00852",
+      en_US: "fb337541-f8c1-4c71-a422-181f211ce6a8",
+      zh_Hant_TW: "25e61c9f-fdf0-4791-8eaa-63e957511f91",
+      zh_Hans_CN: "de1d2c46-0218-4c7e-b2bb-916554f00852",
     };
 
-    const zdassetsKey = mappingKey[window.hannstar?.language] ? mappingKey[window.hannstar?.language]
-      : mappingKey["zh_Hant_TW"]
+    const zdassetsKey = mappingKey[window.hannstar?.language]
+      ? mappingKey[window.hannstar?.language]
+      : mappingKey["zh_Hant_TW"];
 
     const zdassetsScript = document.createElement("script");
-    zdassetsScript.id = "ze-snippet"
+    zdassetsScript.id = "ze-snippet";
     zdassetsScript.src = `https://static.zdassets.com/ekr/snippet.js?key=${zdassetsKey}`;
-    document.body.appendChild(zdassetsScript)
-  }
+    document.body.appendChild(zdassetsScript);
+  };
 
   const handleOpenPhoneMenu = () => {
     setOpenPhoneMenu(!openPhoneMenu);
@@ -95,41 +98,47 @@ const Header: React.FC = () => {
   const menuList: I_MenuType = useMenu();
 
   const LangSelectBlock = () => {
-    return (<select
-      className="languageSelect"
-      value={language}
-      onChange={handleSelectLanguage}
-    >
-      <option value="zh_Hant_TW">繁中</option>
-      <option value="zh_Hans_CN">简中</option>
-      <option value="en_US">EN</option>
-    </select>)
-  }
+    return (
+      <select
+        className="languageSelect"
+        value={language}
+        onChange={handleSelectLanguage}
+      >
+        <option value="zh_Hant_TW">繁中</option>
+        <option value="zh_Hans_CN">简中</option>
+        <option value="en_US">EN</option>
+      </select>
+    );
+  };
 
   const AccountStateBlock = () => {
     if (window.hannstar.islogin) {
-      return (<div className="accountBlock">
-        <a className="toolBarText" href={account.MyAccount.href}>
-          會員中心
-        </a>
-        <a
-          className="toolBarText"
-          href={account.AccountMagentoLogoutUrl.href}
-        >
-          登出
-        </a>
-      </div>)
+      return (
+        <div className="accountBlock">
+          <a className="toolBarText" href={account.MyAccount.href}>
+            會員中心
+          </a>
+          <a
+            className="toolBarText"
+            href={account.AccountMagentoLogoutUrl.href}
+          >
+            登出
+          </a>
+        </div>
+      );
     } else {
-      return (<div className="accountBlock">
-        <a className="toolBarText" href={account.login.href}>
-          登入
-        </a>
-        <a className="toolBarText" href={account.register.href}>
-          註冊
-        </a>
-      </div>)
+      return (
+        <div className="accountBlock">
+          <a className="toolBarText" href={account.login.href}>
+            登入
+          </a>
+          <a className="toolBarText" href={account.register.href}>
+            註冊
+          </a>
+        </div>
+      );
     }
-  }
+  };
 
   const TopHeaderBlock = () => {
     return (
@@ -170,8 +179,9 @@ const Header: React.FC = () => {
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
               {item.content &&
                 item.content.length > 0 &&
@@ -209,11 +219,13 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className="header_m">
-        <img
-          className="logo"
-          alt="logo"
-          src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
-        />
+        <a href={hannstar.index.href}>
+          <img
+            className="logo"
+            alt="logo"
+            src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
+          />
+        </a>
         <div className="algoliaInputBlock">
           <input className="algoliaInput" type="text" />
           <div className="searchIcon"></div>
