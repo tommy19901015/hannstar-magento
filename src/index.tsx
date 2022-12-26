@@ -2,15 +2,13 @@ import ReactDOM from "react-dom";
 import "./style/reset.css";
 import "./style/common.scss";
 import Index from "./pages/Index/main";
-import EBiz from "./pages/e-biz/main";
-import Solution from "./pages/solution/main";
 import HannstarLogin from "./pages/Login/main";
 import HannstarRegister from "./pages/Register/main";
 import ForgotPassword from "./pages/ForgotPassword/main";
 import ResetPassword from "./pages/ResetPassword/main";
 import MFA from "./pages/MFA/main";
 import MFAQRCode from "./pages/MFAQRCode/main";
-import AccountPersonal from "./pages/Account_Personal/mainNew";
+import AccountPersonal from "./pages/Account_Personal/main";
 import AccountPartner from "./pages/Account_Partner/mainNew";
 import AccountApplication from "./pages/Account_Application/main";
 import AccountSendVerifyEmail from "./pages/Account_SendVerifyEmail/main";
@@ -52,7 +50,7 @@ import CareersDetailGrowup from "./pages/CareersDetail_Growup/main";
 //TFT
 import TFTIndex from "./pages/TFT_Index/main";
 import TFTPreferredProduct from "./pages/TFT_PreferredProduct/main";
-import TFTCustomized from "./pages/TFT_Customized/main"
+import TFTCustomized from "./pages/TFT_Customized/main";
 //PaperDisplay
 import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
 import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
@@ -90,7 +88,7 @@ import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
 import ServiceParseApply from "./pages/Service_ParseApply/newMain";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/newMain";
 import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
-import ServiceArticle from "./pages/Service_Article/main"
+import ServiceArticle from "./pages/Service_Article/main";
 //Magento 原生頁面
 import MagentoProductCompare from "./pages/Magento_ProductCompare/main";
 import MagentoProductDetails from "./pages/Magento_ProductDetails/main";
@@ -152,8 +150,6 @@ ReactDOM.render(
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />
-      <Route path="/e-biz" element={<EBiz />} />
-      <Route path="/solution" element={<Solution />} />
       <Route
         path={partner.quotationList.href}
         element={<PartnerQuotationList />}
@@ -314,14 +310,35 @@ ReactDOM.render(
 
       <Route path={hannstar.news_financial.href} element={<NewsFinancial />} />
 
-      <Route path={"/news/serviceGreenManagement"} element={<ServiceGreenManagement />} />
-      <Route path={"/news/serviceGreenProductPolicy"} element={<ServiceGreenProductPolicy />} />
-      <Route path={"/tftdisplay/PreferredProduct/ProductList"} element={<TFTPreferredProduct />} />
-      <Route path={"/MagentoProductDetails"} element={<MagentoProductDetails />} />
-      <Route path={"/MagentoProductCompare"} element={<MagentoProductCompare />} />
-      <Route path={service.technicalSupport.href} element={<ServiceTechnicalSupport />} />
+      <Route
+        path={"/news/serviceGreenManagement"}
+        element={<ServiceGreenManagement />}
+      />
+      <Route
+        path={"/news/serviceGreenProductPolicy"}
+        element={<ServiceGreenProductPolicy />}
+      />
+      <Route
+        path={"/tftdisplay/PreferredProduct/ProductList"}
+        element={<TFTPreferredProduct />}
+      />
+      <Route
+        path={"/MagentoProductDetails"}
+        element={<MagentoProductDetails />}
+      />
+      <Route
+        path={"/MagentoProductCompare"}
+        element={<MagentoProductCompare />}
+      />
+      <Route
+        path={service.technicalSupport.href}
+        element={<ServiceTechnicalSupport />}
+      />
       <Route path={service.article.href} element={<ServiceArticle />} />
-      <Route path={paperdisplay.traffic.href} element={<PaperDisplayTraffic />} />
+      <Route
+        path={paperdisplay.traffic.href}
+        element={<PaperDisplayTraffic />}
+      />
       <Route path={"/TFTCustomized"} element={<TFTCustomized />} />
     </Routes>
   </BrowserRouter>,

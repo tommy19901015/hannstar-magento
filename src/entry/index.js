@@ -6,7 +6,7 @@ import Index from "../pages/Index/main";
 //登入註冊相關
 import Login from "../pages/Login/main";
 import HannstarRegister from "../pages/Register/main";
-import AccountPersonal from "../pages/Account_Personal/mainNew";
+import AccountPersonal from "../pages/Account_Personal/main";
 import AccountPartner from "../pages/Account_Partner/mainNew";
 import AccountApplication from "../pages/Account_Application/main";
 import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
@@ -47,7 +47,7 @@ import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
 import ServiceParseApply from "../pages/Service_ParseApply/newMain";
 import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
 import ServiceTechnicalSupport from "../pages/Service_TechnicalSupport/main";
-import ServiceArticle from "../pages/Service_Article/main"
+import ServiceArticle from "../pages/Service_Article/main";
 //關於瀚宇彩晶
 import AboutIndex from "../pages/About_Index/main";
 import AboutStronghold from "../pages/About_Stronghold/main";
@@ -96,7 +96,7 @@ import PaperDisplayTraffic from "../pages/PaperDisplay_Traffic/main";
 import TFTIndex from "../pages/TFT_Index/main";
 import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
 
-import MagentoProductDetails from "../pages/Magento_ProductDetails/main"
+import MagentoProductDetails from "../pages/Magento_ProductDetails/main";
 
 import "../i18n/index";
 
@@ -122,7 +122,7 @@ const pageMappingObj = {
   root_AboutFamily: <AboutFamily />,
   root_AboutTeam: <AboutTeam />,
   root_AboutCertification: <AboutCertification />,
-  root_AboutStrategy:<AboutStrategy/>,
+  root_AboutStrategy: <AboutStrategy />,
   root_EBiz: <EBiz />,
   root_Solution: <Solution />,
   root_InvestorsSummary: <InvestorsSummary />,
@@ -143,7 +143,7 @@ const pageMappingObj = {
   root_SustainabilitySocial: <SustainabilitySocial />,
   root_SustainabilityReport: <SustainabilityReport />,
   root_SustainabilityESG: <SustainabilityESG />,
-  root_SustainabilityArticle:<SustainabilityArticle />,
+  root_SustainabilityArticle: <SustainabilityArticle />,
   root_NewsFinancial: <NewsFinancial />,
   root_NewsArticle: <NewsArticle />,
   root_PartnerIndex: <PartnerIndex />,
@@ -168,8 +168,8 @@ const pageMappingObj = {
   root_ServiceCustomerSupport: <ServiceCustomerSupport />,
   root_ServiceParseApply: <ServiceParseApply />,
   root_ServiceGreenServiceApply: <ServiceGreenServiceApply />,
-  root_ServiceTechnicalSupport:<ServiceTechnicalSupport />,
-  root_ServiceArticle:<ServiceArticle />,
+  root_ServiceTechnicalSupport: <ServiceTechnicalSupport />,
+  root_ServiceArticle: <ServiceArticle />,
   root_HannspreeIndex: <HannspreeIndex />,
   root_HannspreeCustom: <HannspreeCustom />,
   root_HannspreeSolve: <HannspreeSolve />,
@@ -180,8 +180,8 @@ const pageMappingObj = {
   root_PaperDisplayTechnology: <PaperDisplayTechnology />,
   root_PaperDisplayTraffic: <PaperDisplayTraffic />,
   root_TFTIndex: <TFTIndex />,
-  root_TFTPreferredProduct:<TFTPreferredProduct />,
-  root_MagentoProductDetails:<MagentoProductDetails />,
+  root_TFTPreferredProduct: <TFTPreferredProduct />,
+  root_MagentoProductDetails: <MagentoProductDetails />,
   root_Index: <Index />,
 };
 
