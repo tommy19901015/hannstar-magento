@@ -9,6 +9,7 @@ export const apiMethods = {
   fetchMemberGroupList: "/rest/V1/MemberGroupList",
   fetchJoinMemberGroup: "/rest/V1/JoinMemberGroup",
   fetchGetD360Art: "/rest/V1/getCMS",
+  fetchInitParseapply: "/rest/V1/eService/InitIssue",//客服解析申請
 };
 
 export const postEnterPrice = (params: PriceFormParams) =>
@@ -27,3 +28,5 @@ export const postJoinMemberGroup = (params: any) =>
   service.post(apiMethods.fetchJoinMemberGroup, { ...params });
 export const postGetD360Art = (params: any) =>
 service.post(apiMethods.fetchGetD360Art, { ...params });
+export const postInitParseapply = (params: any) =>
+service.post(apiMethods.fetchInitParseapply, { ...params });

@@ -23,24 +23,24 @@ function useGreenServiceApply() {
     PageTitle: t('ParseApply.application'),
     FormTitle: t('ParseApply.basicInfo'),
     customer_code: t('ParseApply.customer'),
-    Agent: t('ParseApply.agent'),
+    agent: t('ParseApply.agent'),
     issue_number: t('ParseApply.singleNumber'),
     hs_id: t('ParseApply.cqs'),
     product: t('ParseApply.module'),
-    FieldClass: {
+    form_type: {
       title: t('ParseApply.fieldClass'),
       option: [
         { text: t('ParseApply.productionStage'), value: t('ParseApply.productionStage') }
       ]
     },
-    Amount: t('ParseApply.amount'),
+    input_amount: t('ParseApply.amount'),
     Slice: t('ParseApply.slice'),
     Required: t('ParseApply.required'),
-    Defective: t('ParseApply.defective'),
-    NonPerforming: t('ParseApply.nonPerforming'),
+    defect_amount: t('ParseApply.defective'),
+    defect_rate: t('ParseApply.nonPerforming'),
     Per: t('ParseApply.per'),
-    Stand: t('ParseApply.stand'),
-    Invoice: t('ParseApply.stand'),
+    site_name: t('ParseApply.stand'),
+    invoce_number: t('ParseApply.invoce_number'),
     issue_type: {
       title: t('ParseApply.issueCategory'),
       // option: [
@@ -56,9 +56,11 @@ function useGreenServiceApply() {
       // ],
     },
     ProvidDefectiveProduct: t('ParseApply.providDefectiveProduct'),
-    Remark: t('ParseApply.note'),
+    remark: t('ParseApply.note'),
+    Upload: t('ParseApply.common.upload'),
     Send: t('ParseApply.common.send'),
     Reset: t('ParseApply.common.reset'),
+    Save: t('ParseApply.common.save'),
   }
 }
 

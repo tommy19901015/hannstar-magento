@@ -48,7 +48,8 @@ $pageName: 'ServiceParseApply';
                         }
                     }
                 }
-                input[type='text'] {
+                input[type='text'],
+                input[type='number'] {
                     @include hannstarInput;
                     &.mb-20 {
                         margin-bottom: 20px;
@@ -108,6 +109,22 @@ $pageName: 'ServiceParseApply';
                 .companyRemark {
                     @include hannstarTextarea;
                 }
+                .fileBlock {
+                    display: flex;
+                    align-items: center;
+                    input[type='file'] {
+                        width: 100%;
+                        height: 40px;
+                        padding: 10px 0;
+                        background-color: #fff;
+                        font-size: 16px;
+                    }
+                    .uploadBtn {
+                        @include hannstarBtn;
+                        display: inline-block;
+                        width: 100px;
+                    }
+                }
             }
 
             .col-1 {
@@ -121,20 +138,12 @@ $pageName: 'ServiceParseApply';
             }
         }
     }
-    .#{$pageName}UploadBlock {
-        display: flex;
-        gap: 50px;
-        .uploadBtn {
-            @include hannstarBtn;
-        }
-    }
 
     .#{$pageName}BtnBlock {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin: 80px auto;
-        max-width: 150px;
-
+        gap: 60px;
         .btn {
             @include hannstarBtn;
             text-align: center;

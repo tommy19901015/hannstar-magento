@@ -5,6 +5,7 @@ import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useParseApply from "./pageData";
+import { postInitParseapply } from "../../services/api.service";
 import "./css.scss";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/parseapply.json"
@@ -23,6 +24,7 @@ const ServiceParseApply: React.FC = () => {
     const {
       register,
       handleSubmit,
+      getValues,
       setValue,
       formState: { errors },
     } = useForm<IFormInputs>();
@@ -31,13 +33,31 @@ const ServiceParseApply: React.FC = () => {
 
     const [parseapplyData, setParseapplyData] = useState<any>()
     const [issueCodeSelect, setIssueCodeSelect] = useState<any>([])
+    // const [inputAmount, setInputAmount] = useState<any>()
+    // const [defectAmount, setDefectAmount] = useState<any>()
+    const [defectRate, setDefectRate] = useState<any>()
     const [testFile, setTestFile] = useState<any>()
+
+    const inputAmountRef: any = useRef(null);
+    const defectAmountRef: any = useRef(null);
 
     useEffect(() => {
       console.log("fakeDataJson", fakeDataJson)
       const fakeData: any = fakeDataJson
       setParseapplyData(fakeData)
       parseapplyData && setInitData()
+
+      // const email = window.hannstar?.email
+      // const postData = {
+      //   type: "post",
+      //   data: {
+      //     cid: email,
+      //     lang: window.hannstar?.language,
+      //   }
+      // }
+      // postInitParseapply(postData).then((response: any) => {
+      // });
+
 
     }, [parseapplyData])
 
@@ -51,13 +71,30 @@ const ServiceParseApply: React.FC = () => {
 
 
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+
       const result: any = {
         ...data,
       };
       console.log("result", result);
     }
 
-    const handlerReset = () => { }
+    const handlerSave = () => {
+      const formData = getValues()
+      const saveData = {
+        type: "save",
+        data: {
+          header: [
+            { ...formData, cid: "email", status: "UNSENT" }
+          ]
+        }
+
+      }
+      console.log('saveData', saveData);
+    }
+
+    const handlerReset = () => {
+      window.location.reload()
+    }
 
     const handlerUpload = () => {
       console.log(testFile);
@@ -82,10 +119,29 @@ const ServiceParseApply: React.FC = () => {
       setTestFile(e.target.files);
     };
 
-    const handleIssueTypeSelect = (e: any) => {
+    const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const code = parseapplyData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
       setIssueCodeSelect(code)
       setValue("issue_code", code[0].id)
+    }
+
+    const setDefect_rate = () => {
+      const defectAmountValue = defectAmountRef.current.value
+      const inputAmountValue = inputAmountRef.current.value
+      if (inputAmountValue && defectAmountValue) {
+        setDefectRate(defectAmountValue / inputAmountValue)
+        setValue("defect_rate", defectAmountValue / inputAmountValue)
+      }
+    }
+
+    const handleInput_amount = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setDefect_rate()
+      setValue("input_amount", e.target.value)
+    }
+
+    const handleDefect_amount = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setDefect_rate()
+      setValue("defect_amount", e.target.value)
     }
 
     return (
@@ -100,17 +156,15 @@ const ServiceParseApply: React.FC = () => {
                   <label className="">{formData.customer_code}</label>
                   <input
                     type="text"
-                    defaultValue=""
                     {...register("customer_code")}
                     disabled />
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.Agent}</label>
+                  <label className="">{formData.agent}</label>
                   <input
                     type="text"
-                    defaultValue=""
-                    {...register("Agent", { required: false })} />
-                  {errors.Agent && (<span className="error">{errorMsg}</span>)}
+                    {...register("agent")} />
+                  {errors.agent && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
 
@@ -126,7 +180,6 @@ const ServiceParseApply: React.FC = () => {
                   <label className="">{formData.hs_id}</label>
                   <input
                     type="text"
-                    defaultValue=""
                     {...register("hs_id")}
                     disabled />
                 </div>
@@ -134,16 +187,18 @@ const ServiceParseApply: React.FC = () => {
 
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.FieldClass.title}</label>
-                  <select>
-                    {formData.FieldClass.option.map(({ value, text }) => (
+                  <label className="required">{formData.form_type.title}</label>
+                  <select
+                    {...register("form_type", { required: false })}
+                  >
+                    {formData.form_type.option.map(({ value, text }) => (
                       <option value={value}>{text}</option>
                     ))}
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.product}</label>
-                  <select {...register("product")}>
+                  <label className="required">{formData.product}</label>
+                  <select {...register("product", { required: false })}>
                     {parseapplyData?.product.map((item: string) => (
                       <option value={item}>{item}</option>
                     ))}
@@ -153,54 +208,59 @@ const ServiceParseApply: React.FC = () => {
 
               <div className="row">
                 <div className="col-2">
-                  <label className="">{`${formData.Amount} ${formData.Slice}`}</label>
+                  <label className="required">{`${formData.input_amount} ${formData.Slice}`}</label>
                   <input
-                    type="text"
-                    defaultValue=""
-                    {...register("Amount", { required: false })} />
-                  {errors.Amount && (<span className="error">{errorMsg}</span>)}
+                    type="number"
+                    {...register("input_amount", { required: true })}
+                    ref={inputAmountRef}
+                    onChange={(e) => handleInput_amount(e)}
+                  />
+                  {errors.input_amount && (<span className="error">{errorMsg}</span>)}
                 </div>
                 <div className="col-2">
-                  <label className="">{`${formData.Defective} ${formData.Slice}`}</label>
+                  <label className="required">{`${formData.defect_amount} ${formData.Slice}`}</label>
                   <input
-                    type="text"
-                    defaultValue=""
-                    {...register("Defective", { required: false })} />
-                  {errors.Defective && (<span className="error">{errorMsg}</span>)}
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-2">
-                  <label className="">{`${formData.NonPerforming} ${formData.Per}`}</label>
-                  <input
-                    type="text"
-                    defaultValue="" />
-                </div>
-                <div className="col-2">
-                  <label className="">{formData.Stand}</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("Stand", { required: false })} />
-                  {errors.Stand && (<span className="error">{errorMsg}</span>)}
+                    type="number"
+                    {...register("defect_amount", { required: true })}
+                    ref={defectAmountRef}
+                    onChange={(e) => handleDefect_amount(e)}
+                  />
+                  {errors.defect_amount && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
 
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.issue_type.title}</label>
+                  <label className="">{`${formData.defect_rate} ${formData.Per}`}</label>
+                  <input
+                    type="text"
+                    value={defectRate}
+                    {...register("defect_rate")}
+                  />
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.site_name}</label>
+                  <input
+                    type="text"
+                    {...register("site_name", { required: true })} />
+                  {errors.site_name && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.issue_type.title}</label>
                   <select
-                    {...register("issue_type")} onChange={(e) => handleIssueTypeSelect(e)}>
+                    {...register("issue_type", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
                     {parseapplyData?.IssueType.map((item: { id: string, text: string }) => (
                       <option value={item.id}>{item.text}</option>
                     ))}
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.issue_code.title}</label>
+                  <label className="required">{formData.issue_code.title}</label>
                   <select
-                    {...register("issue_code")}>
+                    {...register("issue_code", { required: true })}>
                     {issueCodeSelect.map((item: { id: string, text: string }) => (
                       <option value={item.id}>{item.text}</option>
                     ))}
@@ -210,30 +270,34 @@ const ServiceParseApply: React.FC = () => {
 
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.Invoice}</label>
+                  <label className="">{formData.invoce_number}</label>
                   <input
                     type="text"
-                    defaultValue="" />
+                    {...register("invoce_number")}
+                  />
                 </div>
                 <div className="col-2">
-                  <label className="">{`${formData.Remark} ${formData.ProvidDefectiveProduct}`}</label>
+                  <label className="required">{`${formData.remark} ${formData.ProvidDefectiveProduct}`}</label>
                   <input
                     type="text"
-                    defaultValue="" />
+                    defaultValue=""
+                    {...register("remark", { required: true })}
+                  />
                 </div>
               </div>
-
-
-            </div>
-            <div className={`${pageName}UploadBlock`}>
-              <input type="file" onChange={handleFileChange}
-                multiple
-                accept='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, image/png' />
-
-              <div className="uploadBtn" onClick={handlerUpload}>上傳檔案</div>
+              <div className="row">
+                <div className="col-1">
+                  <div className="fileBlock">
+                    <input type="file" onChange={handleFileChange} />
+                    <div className="uploadBtn" onClick={handlerUpload}>{formData.Upload}</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className={`${pageName}BtnBlock`}>
-              <input type="submit" defaultValue={"送出"} className="confirm" />
+              <div className="btn" onClick={handlerSave}>{formData.Save}</div>
+              <input className="btn" type="submit" value={formData.Send} />
+              <div className="btn" onClick={handlerReset}>{formData.Reset}</div>
             </div>
           </form>
         </div>
