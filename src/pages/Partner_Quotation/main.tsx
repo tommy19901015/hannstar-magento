@@ -1,150 +1,141 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import FormComponent from "../../component/form/main";
-import Breadcrumbs from "../../component/breadcrumbs/main";
-import { I_FormProps, FormType } from "../../component/form/interface";
+import 'react-phone-number-input/style.css';
+import { useForm, SubmitHandler } from "react-hook-form";
+import usePartnerQuotation from "./pageData";
 import "./css.scss";
 
 const PartnerQuotation: React.FC = () => {
-  const pageName = "PartnerQuotation";
+    const pageName = "PartnerQuotation";
+    const formData = usePartnerQuotation();
+    
+    type Keys = keyof typeof formData;
 
-  const initData = [
-    {
-      title: "RFQ Number",
-      value: "",
-      columnKey: "RFQNumber",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "序號",
-      value: "",
-      columnKey: "number",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "狀態",
-      value: "",
-      columnKey: "state",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "ALL", value: "all" },
-        { text: "待報價", value: "no" },
-        { text: "已報價", value: "yes" },
-      ],
-    },
-    {
-      title: "PM 擔當",
-      value: "",
-      columnKey: "PM",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "尺寸",
-      value: "",
-      columnKey: "size",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "分辨率(Resolution)",
-      value: "",
-      columnKey: "Resolution",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "顯示技術(IPS/TN)",
-      value: "",
-      columnKey: "isp_tn",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "ALL", value: "all" },
-        { text: "IPS", value: "IPS" },
-        { text: "TN", value: "TN" },
-      ],
-    },
-  ];
+    type IFormInputs = {
+        [key in Keys]: string | number | string[];
+    };
+    
+    const FormBlock = () => {
+      const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+      } = useForm<IFormInputs>();
+      const errorMsg = formData.Required;
+      const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+        const result: any = {
+            ...data,
+          };
+          console.log("result", result);
+      }
 
-  const breadcrumbsData = {
-    title: "",
-    breadcrumbsLink: [
-      {
-        text: "首頁",
-        href: "",
-      },
-      {
-        text: "供應商協同合作",
-        href: "",
-      },
-      {
-        text: "協同製造夥伴",
-        href: "",
-      },
-      {
-        text: "RFQ產品報價",
-        href: "",
-      },
-      {
-        text: "線上報價",
-        href: "",
-      },
-    ],
-  };
+      const handlerReset = () =>{}
+      const handlerUpload =() =>{}
 
-  const formMethods: any = React.useRef(null);
-
-  const FormBlock = () => {
-    return (
-      <div className={`${pageName}FormBlock`}>
-        <div className={`${pageName}Title`}>線上報價</div>
-        <div className={`${pageName}ContentBlock`}>
-          <FormComponent {...formData} />
-        </div>
-        <div className={`${pageName}btnBlock`}>
-          <div className="btn" onClick={handlerBtnClick}>
-            查詢
+      return (
+        <>
+        <div className={`${pageName}FormBlock`}>
+          <div className={`${pageName}TextBlock`}>
+            <div className="title">{formData.Quote}</div>
           </div>
-        </div>
-      </div>
-    );
-  };
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="classificationBlock">
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.RFQNumber}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("RFQNumber", { required: true })} />
+                   {errors.RFQNumber && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.SerialNumber}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("SerialNumber", { required: true })} />
+                   {errors.SerialNumber && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
 
-  const handlerBtnClick = () => {
-    //data.getAllData.current = getValues     get form 所有資料
-    //       get form error
-    //data.getAllData.current = reset         reset form
-    const values = formMethods.current.getValues();
-    console.log("values", values);
-    //get form 所有資料
-    //get form error
-    //reset form
-  };
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Status.title}</label>
+                  <select {...register("Status")}>
+                  {formData.Status.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
+                  ))}
+                  </select>
+                   {errors.Status && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                <label className="required">{formData.PM}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("PM", { required: true })} />
+                   {errors.PM && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
 
-  const formData = {
-    formMethods,
-    formData: initData,
-  };
+              <div className="row">
+                <div className="col-2">
+                <label className="required">{formData.Size}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Size", { required: true })} />
+                   {errors.Size && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                <label className="required">{formData.Resolution}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Resolution", { required: true })} />
+                   {errors.Resolution && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
 
-  return (
-    <Layout>
-      <Breadcrumbs {...breadcrumbsData} />
-      <Columns type={ColType.OneColFullPage} content={<FormBlock />} />
-    </Layout>
-  );
-};
 
-export default PartnerQuotation;
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Technology.title}</label>
+                  <select {...register("Technology")}>
+                  {formData.Technology.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
+                  ))}
+                  </select>
+                   {errors.Technology && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+          </div>
+          
+            <div className="btnBlock">
+              <input type="submit" defaultValue={formData.Search} className="btn" />              
+            </div>
+            </form>
+          </div>
+        </>
+      );
+    };
+    
+      return (
+        <Layout>
+          <Columns type={ColType.OneCol} content={
+            <>
+              <Breadcrumbs {...formData.breadcrumbs} />
+              <FormBlock />
+            </>
+          } />
+        </Layout>
+      );
+    };
+    
+    export default PartnerQuotation;

@@ -9,7 +9,7 @@ import ResetPassword from "./pages/ResetPassword/main";
 import MFA from "./pages/MFA/main";
 import MFAQRCode from "./pages/MFAQRCode/main";
 import AccountPersonal from "./pages/Account_Personal/main";
-import AccountPartner from "./pages/Account_Partner/mainNew";
+import AccountPartner from "./pages/Account_Partner/main";
 import AccountApplication from "./pages/Account_Application/main";
 import AccountSendVerifyEmail from "./pages/Account_SendVerifyEmail/main";
 import AccountMyAccount from "./pages/Account_MyAccount/main";
@@ -66,16 +66,16 @@ import SolutionIndex from "./pages/Solution_Index/main";
 //供應商(Partner)
 import PartnerIndex from "./pages/Partner_Index/main";
 import PartnerQuotationList from "./pages/Partner_QuotationList/main";
-import PartnerQuotation from "./pages/Partner_Quotation/newMain";
+import PartnerQuotation from "./pages/Partner_Quotation/main";
 import PartnerProductList from "./pages/Partner_ProductList/main";
 import PartnerProductInventory from "./pages/Partner_ProductInventory/main";
 import PartnerAddProduct from "./pages/Partner_AddProduct/main";
 import PartnerSolutionList from "./pages/Partner_SolutionList/main";
 import PartnerSolutionInventory from "./pages/Partner_SolutionInventory/main";
 import PartnerAddSolution from "./pages/Partner_AddSolution/main";
-import PartnerApplication from "./pages/Partner_Application/newMain";
+import PartnerApplication from "./pages/Partner_Application/main";
 import PartnerManageandadvisory from "./pages/Partner_Manageandadvisory/main";
-import PartnerTechnical from "./pages/Partner_Technical/newMain";
+import PartnerTechnical from "./pages/Partner_Technical/main";
 import PartnerGreenSupplyChain from "./pages/Partner_GreenSupplyChain/main";
 import PartnerManufacturing from "./pages/Partner_Manufacturing/main";
 //客戶服務(Service)
@@ -85,8 +85,8 @@ import ServiceRMAList from "./pages/Service_RMAList/main";
 import ServiceParseList from "./pages/Service_ParseList/main";
 import ServiceGreenService from "./pages/Service_GreenService/main";
 import ServiceCustomerSupport from "./pages/Service_CustomerSupport/main";
-import ServiceParseApply from "./pages/Service_ParseApply/newMain";
-import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/newMain";
+import ServiceParseApply from "./pages/Service_ParseApply/main";
+import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
 import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
 import ServiceArticle from "./pages/Service_Article/main";
 //Magento 原生頁面
@@ -138,7 +138,10 @@ ReactDOM.render(
         path={account.AccountDashboard.href}
         element={<AccountDashboard />}
       />
-      <Route path={account.AccountLogout.href} element={<AccountLogout />} />
+      <Route
+        path={account.AccountMagentoLogoutUrl.href}
+        element={<AccountLogout />}
+      />
       <Route path={account.MemberInfo.href} element={<AccountMemberInfo />} />
       <Route path={account.EditAccount.href} element={<AccountEditAccount />} />
       <Route path={account.MyAccount.href} element={<AccountMyAccount />} />
@@ -146,7 +149,6 @@ ReactDOM.render(
         path={account.AccountNewsletter.href}
         element={<AccountNewsletter />}
       />
-      {/* <Route path={hannstar.index.href} element={<OddIndex />} /> */}
       <Route path={hannstar.index.href} element={<Index />} />
       <Route path={service.index.href} element={<ServiceIndex />} />
       <Route path={partner.index.href} element={<PartnerIndex />} />

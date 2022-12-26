@@ -3,51 +3,6 @@ import ReactDOM from "react-dom";
 import "../style/reset.css";
 import "../style/common.scss";
 import Index from "../pages/Index/main";
-//登入註冊相關
-import Login from "../pages/Login/main";
-import HannstarRegister from "../pages/Register/main";
-import AccountPersonal from "../pages/Account_Personal/main";
-import AccountPartner from "../pages/Account_Partner/mainNew";
-import AccountApplication from "../pages/Account_Application/main";
-import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
-import AccountMyAccount from "../pages/Account_MyAccount/main";
-import AccountEditAccount from "../pages/Account_EditAccount/main";
-import AccountMemberInfo from "../pages/Account_MemberInfo/main";
-import AccountDashboard from "../pages/Account_Dashboard/main";
-import AccountNewsletter from "../pages/Account_Newsletter/main";
-import AccountLogout from "../pages/Account_Logout/main";
-import MFAQRCode from "../pages/MFAQRCode/main";
-import MFA from "../pages/MFA/main";
-import ForgotPassword from "../pages/ForgotPassword/main";
-import ResetPassword from "../pages/ResetPassword/main";
-//需要再調整
-import EBiz from "../pages/e-biz/main";
-import Solution from "../pages/solution/main";
-import PartnerIndex from "../pages/Partner_Index/main";
-import PartnerQuotationList from "../pages/Partner_QuotationList/main";
-import PartnerQuotation from "../pages/Partner_Quotation/newMain";
-import PartnerProductList from "../pages/Partner_ProductList/main";
-import PartnerProductInventory from "../pages/Partner_ProductInventory/main";
-import PartnerAddProduct from "../pages/Partner_AddProduct/main";
-import PartnerSolutionList from "../pages/Partner_SolutionList/main";
-import PartnerSolutionInventory from "../pages/Partner_SolutionInventory/main";
-import PartnerAddSolution from "../pages/Partner_AddSolution/main";
-import PartnerApplication from "../pages/Partner_Application/newMain";
-import PartnerManageandadvisory from "../pages/Partner_Manageandadvisory/main";
-import PartnerTechnical from "../pages/Partner_Technical/newMain";
-import PartnerGreenSupplyChain from "../pages/Partner_GreenSupplyChain/main";
-import PartnerManufacturing from "../pages/Partner_Manufacturing/main";
-//客戶服務
-import ServiceIndex from "../pages/Service_Index/main";
-import ServiceRMAApply from "../pages/Service_RMAApply/main";
-import ServiceRMAList from "../pages/Service_RMAList/main";
-import ServiceParseList from "../pages/Service_ParseList/main";
-import ServiceGreenService from "../pages/Service_GreenService/main";
-import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
-import ServiceParseApply from "../pages/Service_ParseApply/newMain";
-import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
-import ServiceTechnicalSupport from "../pages/Service_TechnicalSupport/main";
-import ServiceArticle from "../pages/Service_Article/main";
 //關於瀚宇彩晶
 import AboutIndex from "../pages/About_Index/main";
 import AboutStronghold from "../pages/About_Stronghold/main";
@@ -80,6 +35,49 @@ import SustainabilityArticle from "../pages/Sustainability_Article/main";
 //訊息中心
 import NewsFinancial from "../pages/News_Financial/main";
 import NewsArticle from "../pages/News_Article/main";
+//會員相關
+import Login from "../pages/Login/main";
+import HannstarRegister from "../pages/Register/main";
+import AccountPersonal from "../pages/Account_Personal/main";
+import AccountPartner from "../pages/Account_Partner/main";
+import AccountApplication from "../pages/Account_Application/main";
+import AccountSendVerifyEmail from "../pages/Account_SendVerifyEmail/main";
+import AccountMyAccount from "../pages/Account_MyAccount/main";
+import AccountEditAccount from "../pages/Account_EditAccount/main";
+import AccountMemberInfo from "../pages/Account_MemberInfo/main";
+import AccountDashboard from "../pages/Account_Dashboard/main";
+import AccountNewsletter from "../pages/Account_Newsletter/main";
+import AccountLogout from "../pages/Account_Logout/main";
+import MFAQRCode from "../pages/MFAQRCode/main";
+import MFA from "../pages/MFA/main";
+import ForgotPassword from "../pages/ForgotPassword/main";
+import ResetPassword from "../pages/ResetPassword/main";
+//供應商
+import PartnerIndex from "../pages/Partner_Index/main";
+import PartnerQuotationList from "../pages/Partner_QuotationList/main";
+import PartnerQuotation from "../pages/Partner_Quotation/main";
+import PartnerProductList from "../pages/Partner_ProductList/main";
+import PartnerProductInventory from "../pages/Partner_ProductInventory/main";
+import PartnerAddProduct from "../pages/Partner_AddProduct/main";
+import PartnerSolutionList from "../pages/Partner_SolutionList/main";
+import PartnerSolutionInventory from "../pages/Partner_SolutionInventory/main";
+import PartnerAddSolution from "../pages/Partner_AddSolution/main";
+import PartnerApplication from "../pages/Partner_Application/main";
+import PartnerManageandadvisory from "../pages/Partner_Manageandadvisory/main";
+import PartnerTechnical from "../pages/Partner_Technical/main";
+import PartnerGreenSupplyChain from "../pages/Partner_GreenSupplyChain/main";
+import PartnerManufacturing from "../pages/Partner_Manufacturing/main";
+//客戶服務
+import ServiceIndex from "../pages/Service_Index/main";
+import ServiceRMAApply from "../pages/Service_RMAApply/main";
+import ServiceRMAList from "../pages/Service_RMAList/main";
+import ServiceParseList from "../pages/Service_ParseList/main";
+import ServiceGreenService from "../pages/Service_GreenService/main";
+import ServiceCustomerSupport from "../pages/Service_CustomerSupport/main";
+import ServiceParseApply from "../pages/Service_ParseApply/main";
+import ServiceGreenServiceApply from "../pages/Service_GreenServiceApply/main";
+import ServiceTechnicalSupport from "../pages/Service_TechnicalSupport/main";
+import ServiceArticle from "../pages/Service_Article/main";
 //Hannspree
 import HannspreeIndex from "../pages/Hannspree_Iindex/main";
 import HannspreeCustom from "../pages/Hannspree_Custom/main";
@@ -95,9 +93,8 @@ import PaperDisplayTraffic from "../pages/PaperDisplay_Traffic/main";
 //Tftdisplay
 import TFTIndex from "../pages/TFT_Index/main";
 import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
-
 import MagentoProductDetails from "../pages/Magento_ProductDetails/main";
-
+//i18n
 import "../i18n/index";
 
 const pageMappingObj = {
@@ -123,8 +120,6 @@ const pageMappingObj = {
   root_AboutTeam: <AboutTeam />,
   root_AboutCertification: <AboutCertification />,
   root_AboutStrategy: <AboutStrategy />,
-  root_EBiz: <EBiz />,
-  root_Solution: <Solution />,
   root_InvestorsSummary: <InvestorsSummary />,
   root_InvestorsConference: <InvestorsConference />,
   root_InvestorsDividend: <InvestorsDividend />,

@@ -1,213 +1,219 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import FormComponent from "../../component/form/main";
-import Breadcrumbs from "../../component/breadcrumbs/main";
-import { FormType } from "../../component/form/interface";
+import 'react-phone-number-input/style.css';
+import { useForm, SubmitHandler } from "react-hook-form";
+import usePartnerTechnical from "./pageData";
 import "./css.scss";
 
 const PartnerTechnical: React.FC = () => {
   const pageName = "PartnerTechnical";
+  const formData = usePartnerTechnical();
 
-  const formData1 = [
-    {
-      title: "姓名",
-      value: "",
-      columnKey: "1",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "供應商類別",
-      value: "",
-      columnKey: "2",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "材料供應商", value: "材料供應商" },
-        { text: "設備供應商", value: "設備供應商" },
-        { text: "一般類", value: "一般類" },
-      ],
-    },
-    {
-      title: "電子信箱",
-      value: "",
-      columnKey: "3",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "廠別",
-      value: "",
-      columnKey: "4",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "", value: "" },
-      ],
-    },
-    {
-      title: "公司",
-      value: "",
-      columnKey: "5",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "分類",
-      value: "",
-      columnKey: "6",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "", value: "" },
-      ],
-    },
-    {
-      title: "電話",
-      value: "",
-      columnKey: "7",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "提案類別",
-      value: "",
-      columnKey: "8",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "全新產品或技術", value: "全新產品或技術" },
-        { text: "替換方案", value: "替換方案" },
-        { text: "設備", value: "設備" },
-        { text: "其他", value: "其他" },
-      ],
-    },
-    {
-      title: "主題",
-      value: "",
-      columnKey: "9",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "國家",
-      value: "",
-      columnKey: "10",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "", value: "" },
-      ],
-    },
-  ];
+  type Keys = keyof typeof formData;
 
-  const formData2 = [
-    {
-      title: "描述",
-      value: "",
-      columnKey: "11",
-      type: FormType.Textarea,
-      placeholder: "",
-      required: true,
-    },
-  ];
-
-  const breadcrumbsData = {
-    title: "",
-    breadcrumbsLink: [
-      {
-        text: "首頁",
-        href: "",
-      },
-      {
-        text: "新技術合作",
-        href: "",
-      },
-    ],
+  type IFormInputs = {
+    [key in Keys]: string | number | string[];
   };
-
-  const formMethods1: any = React.useRef(null);
-  const formMethods2: any = React.useRef(null);
-
-  const formProp1 = {
-    formMethods: formMethods1,
-    formData: formData1,
-  };
-
-  const formProp2 = {
-    isOneRow: true,
-    formMethods: formMethods2,
-    formData: formData2,
-  };
-
-  const handleSubmit = () => {
-    const values1 = formMethods1.current.getValues();
-    const values2 = formMethods2.current.getValues();
-
-    const submitData = {
-      ...values1,
-      ...values2,
-    };
-    console.log("submitData", submitData);
-  };
-
-  const handleCancel = () => { };
-
-  const handlerUpload = () => { };
 
   const FormBlock = () => {
+    const {
+      register,
+      handleSubmit,
+      setValue,
+      formState: { errors },
+    } = useForm<IFormInputs>();
+    const errorMsg = formData.Required;
+
+    const [testFile, setTestFile] = useState<any>()
+
+    const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+      const result: any = {
+        ...data,
+      };
+      console.log("result", result);
+    }
+
+    const handlerReset = () => { }
+    const handlerUpload = () => {
+      console.log(testFile);
+      fetch('/rest/V1/eService/name', {
+        method: 'POST',
+        body: testFile,
+        // 👇 Set headers manually for single file upload
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.error(err));
+    }
+
+    const handleFileChange = (e: any) => {
+      // if (e.target.files) {
+      //   setTestFile(e.target.files);
+      // }
+    };
+
     return (
-      <div className={`${pageName}ContentBlock`}>
+      <>
         <div className={`${pageName}TextBlock`}>
           <div className="title">新技術合作</div>
           <div className="content">
             瀚宇彩晶秉持著研發與創新是企業成長及永續經營的驅動力，我們非常重視供應商夥伴能齊心共同技術研發在產品應用創新，若貴公司有任何新技術與產品，可改善並優化於材料或設備等規格提升與應用推廣給予瀚宇彩晶，歡迎您進一步提供相關資料給予我們，透過該平台技術交流，共創無限商機。
           </div>
         </div>
+
+
         <div className={`${pageName}FormBlock`}>
-          <FormComponent {...formProp1} />
-          <FormComponent {...formProp2} />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="classificationBlock">
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Name}</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("Name", { required: true })} />
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.SupplierCategory.title}</label>
+                  <select {...register("SupplierCategory")}>
+                    {formData.SupplierCategory.option.map(({ value, text }) => (
+                      <option value={value}>{text}</option>
+                    ))}
+                  </select>
+                  {errors.SupplierCategory && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Email}</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("Email", { required: true })} />
+                  {errors.Email && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.Site.title}</label>
+                  <select {...register("Site")}>
+                    {formData.Site.option.map(({ value, text }) => (
+                      <option value={value}>{text}</option>
+                    ))}
+                  </select>
+                  {errors.Site && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Company}</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("Company", { required: true })} />
+                  {errors.Company && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.Classification.title}</label>
+                  <select {...register("Classification")}>
+                    {formData.Classification.option.map(({ value, text }) => (
+                      <option value={value}>{text}</option>
+                    ))}
+                  </select>
+                  {errors.Classification && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Phone}</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("Phone", { required: true })} />
+                  {errors.Phone && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.ProposalCategory.title}</label>
+                  <select {...register("ProposalCategory")}>
+                    {formData.ProposalCategory.option.map(({ value, text }) => (
+                      <option value={value}>{text}</option>
+                    ))}
+                  </select>
+                  {errors.ProposalCategory && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.Theme}</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("Theme", { required: true })} />
+                  {errors.Theme && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.Nation.title}</label>
+                  <select {...register("Nation")}>
+                    {formData.Nation.option.map(({ value, text }) => (
+                      <option value={value}>{text}</option>
+                    ))}
+                  </select>
+                  {errors.Nation && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-1">
+                  <label className="required">{formData.Describe}</label>
+                  <textarea
+                    className="Describe"
+                    defaultValue=""
+                    {...register("Describe")}
+                  />
+                  {errors.Describe && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                  <input type="file" onChange={handleFileChange}
+                    accept='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, image/png' />
+                </div>
+                <div className="col-2">
+                  <div onClick={handlerUpload} className="btn">
+                    {formData.Upload}
+                  </div>
+                </div>
+              </div>
+              <p>{formData.NoteContent}</p>
+            </div>
+
+            <div className="btnBlock">
+              <input type="submit" defaultValue={formData.Send} className="btn" />
+              <div onClick={handlerReset} className="btn">
+                {formData.Cancel}
+              </div>
+
+            </div>
+          </form>
         </div>
-        <div className={`${pageName}UploadBlock`}>
-          <input
-            className="uploadInput"
-            type="file"
-            name="file"
-            onChange={handlerUpload}
-          />
-          <div className="uploadBtn">上傳</div>
-        </div>
-        <div className={`${pageName}NoteBlock`}>
-          先選取Mac或PC的檔案，並按"上傳"鈕，才能執行附檔作業。
-        </div>
-        <div className={`${pageName}BtnBlock`}>
-          <div className="formBtn" onClick={handleSubmit}>
-            送出
-          </div>
-          <div className="formBtn" onClick={handleCancel}>
-            取消
-          </div>
-        </div>
-      </div>
+      </>
     );
   };
 
   return (
     <Layout>
-      <Breadcrumbs {...breadcrumbsData} />
-      <Columns type={ColType.OneColFullPage} content={<FormBlock />} />
+      <Columns type={ColType.OneCol} content={
+        <>
+          <Breadcrumbs {...formData.breadcrumbs} />
+          <FormBlock />
+        </>
+      } />
     </Layout>
   );
 };

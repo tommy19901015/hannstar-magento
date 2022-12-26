@@ -1,366 +1,345 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Breadcrumbs from "../../component/breadcrumbs/main";
 import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
-import FormComponent from "../../component/form/main";
-import Breadcrumbs from "../../component/breadcrumbs/main";
-import { FormType } from "../../component/form/interface";
+import 'react-phone-number-input/style.css';
+import { useForm, SubmitHandler } from "react-hook-form";
+import usePartnerApplication from "./pageData";
 import "./css.scss";
 
 const PartnerApplication: React.FC = () => {
-  const pageName = "PartnerApplication";
+    const pageName = "PartnerApplication";
+    const formData = usePartnerApplication();
+    
+    type Keys = keyof typeof formData;
 
-  const formData1 = [
-    {
-      title: "需求單時間",
-      value: "",
-      columnKey: "1",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "需求單號",
-      value: "",
-      columnKey: "2",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-  ];
-
-  const formData2 = [
-    {
-      title: "需求單狀態",
-      value: "",
-      columnKey: "3",
-      type: FormType.Select,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "已正式詢價", value: "已正式詢價" },
-        { text: "報價完成", value: "報價完成" },
-        { text: "HSD回覆不報價", value: "HSD回覆不報價" },
-      ],
-    },
-  ];
-
-  const formData3 = [
-    {
-      title: "詢價單單號",
-      value: "",
-      columnKey: "4",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "產品life time(月)",
-      value: "",
-      columnKey: "5",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "需求原因",
-      value: "",
-      columnKey: "6",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "預估每月需求量(k)",
-      value: "",
-      columnKey: "7",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "建立者",
-      value: "",
-      columnKey: "8",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "預估總需求量",
-      value: "",
-      columnKey: "9",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "材料類別",
-      value: "",
-      columnKey: "9",
-      type: FormType.Radio,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "IC", value: "IC" },
-        { text: "BL背光", value: "BL背光" },
-        { text: "FPC/PCB", value: "FPC/PCB" },
-        { text: "蓋板", value: "蓋板" },
-        { text: "其他特殊材料", value: "其他特殊材料" },
-      ],
-    },
-    {
-      title: "使用產品",
-      value: "",
-      columnKey: "10",
-      type: FormType.Radio,
-      placeholder: "",
-      required: true,
-      option: [
-        { text: "顯示屏模組", value: "顯示屏模組" },
-        { text: "終端產品", value: "終端產品" },
-        { text: "其他", value: "其他" },
-      ],
-    },
-    {
-      title: "產品運用",
-      value: "",
-      columnKey: "11",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "客戶資訊",
-      value: "",
-      columnKey: "12",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "代工機種",
-      value: "",
-      columnKey: "13",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "可靠度時間(Hour)",
-      value: "",
-      columnKey: "14",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "此評估使用匯率",
-      value: "",
-      columnKey: "15",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "需求期限",
-      value: "",
-      columnKey: "16",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "建立日期",
-      value: "",
-      columnKey: "17",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-  ];
-
-  const formData4 = [
-    {
-      title: "需求項目名稱",
-      value: "",
-      columnKey: "18",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "項目型號",
-      value: "",
-      columnKey: "19",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "產品規格",
-      value: "",
-      columnKey: "20",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "供應商",
-      value: "",
-      columnKey: "21",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "目標價格",
-      value: "",
-      columnKey: "22",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-    {
-      title: "市場價格",
-      value: "",
-      columnKey: "23",
-      type: FormType.Intput,
-      placeholder: "",
-      required: true,
-    },
-  ];
-
-  const formData5 = [
-    {
-      title: "備註說明",
-      value: "",
-      columnKey: "24",
-      type: FormType.Textarea,
-      placeholder: "",
-      required: true,
-    },
-  ];
-
-  const breadcrumbsData = {
-    title: "",
-    breadcrumbsLink: [
-      {
-        text: "首頁",
-        href: "",
-      },
-      {
-        text: "供應商協同合作",
-        href: "",
-      },
-      {
-        text: "協同製造夥伴",
-        href: "",
-      },
-      {
-        text: "協同採購",
-        href: "",
-      },
-      {
-        text: "需求申請",
-        href: "",
-      },
-    ],
-  };
-
-  const formMethods1: any = React.useRef(null);
-  const formMethods2: any = React.useRef(null);
-  const formMethods3: any = React.useRef(null);
-  const formMethods4: any = React.useRef(null);
-  const formMethods5: any = React.useRef(null);
-
-  const formProp1 = {
-    formMethods: formMethods1,
-    formData: formData1,
-  };
-
-  const formProp2 = {
-    isOneRow: true,
-    formMethods: formMethods2,
-    formData: formData2,
-  };
-
-  const formProp3 = {
-    formMethods: formMethods3,
-    formData: formData3,
-  };
-
-  const formProp4 = {
-    formMethods: formMethods4,
-    formData: formData4,
-  };
-
-  const formProp5 = {
-    isOneRow: true,
-    formMethods: formMethods5,
-    formData: formData5,
-  };
-
-  const handleSave = () => {
-    const values1 = formMethods1.current.getValues();
-    const values2 = formMethods2.current.getValues();
-    const values3 = formMethods3.current.getValues();
-    const values4 = formMethods4.current.getValues();
-    const values5 = formMethods5.current.getValues();
-
-    const stepOneData = {
-      ...values1,
-      ...values2,
-      ...values3,
-      ...values4,
-      ...values5,
+    type IFormInputs = {
+        [key in Keys]: string | number | string[];
     };
-    console.log("saveData", stepOneData);
-  };
+    
+    const FormBlock = () => {
+      const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+      } = useForm<IFormInputs>();
+      const errorMsg = formData.Required;
+      const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+        const result: any = {
+            ...data,
+          };
+          console.log("result", result);
+      }
+      const handlerUpload =() =>{}
 
-  const handlerUpload = () => { };
+      return (
+        <>
+        <div className={`${pageName}FormBlock`}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="classificationBlock">
+          <h5 className="title">{formData.Application}</h5>
+              <div className="row">
+                <div className="col-2">
+                  <label className="required">{formData.OrderTime}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("OrderTime", { required: true })} />
+                   {errors.OrderTime && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                  <label className="required">{formData.RequestNumber}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("RequestNumber", { required: true })} />
+                   {errors.RequestNumber && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
 
-  const FormBlock = () => {
-    return (
-      <div className={`${pageName}FormBlock`}>
-        <div className={`${pageName}ContentBlock`}>
-          <div className={`${pageName}Title`}>需求申請</div>
-          <FormComponent {...formProp1} />
-          <FormComponent {...formProp2} />
-          <FormComponent {...formProp3} />
-        </div>
-        <div className={`${pageName}ContentBlock`}>
-          <div className={`${pageName}Title`}>需求項目規格</div>
-          <FormComponent {...formProp4} />
-          <FormComponent {...formProp5} />
-        </div>
-        <div className={`${pageName}ContentBlock`}>
-          <div className={`${pageName}Title`}>附件</div>
-          <div className={`${pageName}UploadBlock`}>
-            <input
-              className="uploadInput"
-              type="file"
-              name="file"
-              onChange={handlerUpload}
-            />
-            <div className="uploadBtn">上傳</div>
+              <div className="row">
+                <div className="col-1">
+                  <label className="required">{formData.RequisitionOrderStatus.title}</label>
+                  <select {...register("RequisitionOrderStatus")}>
+                  {formData.RequisitionOrderStatus.option.map(({ value, text }) => (
+                    <option value={value}>{text}</option>
+                  ))}
+                  </select>
+                   {errors.RequisitionOrderStatus && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+
+                <div className="col-2">
+                <label className="required">{formData.InquiryNumber}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("InquiryNumber", { required: true })} />
+                   {errors.InquiryNumber && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                <label className="required">{formData.ProductLifeTime}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("ProductLifeTime", { required: true })} />
+                   {errors.ProductLifeTime && (<span className="error">{errorMsg}</span>)}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-2">
+                <label className="required">{formData.Reason}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Reason", { required: true })} />
+                   {errors.Reason && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                <label className="required">{formData.Demand}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Demand", { required: true })} />
+                   {errors.Demand && (<span className="error">{errorMsg}</span>)}
+                </div>
+
+              </div>
+
+
+            <div className="row">
+
+                <div className="col-2">
+                  <label className="required">{formData.Founder}</label>
+                    <input
+                    type="text"
+                    defaultValue=""
+                    {...register("Founder", { required: true })} />
+                    {errors.Founder && (<span className="error">{errorMsg}</span>)}
+                </div>
+                <div className="col-2">
+                <label className="required">{formData.TotalDemand}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("TotalDemand", { required: true })} />
+                   {errors.TotalDemand && (<span className="error">{errorMsg}</span>)}
+                </div>
+            </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.Material.title}</label>
+                <div className="radios">
+                {formData.Material.option.map((item, i) => (
+                    <div className="hannstarRadio" key={i}>
+                      <input
+                        {...register("Material", { required: true })}
+                        id={item.value}
+                        type="radio"
+                        value={item.value}
+                      />
+                      <label htmlFor={item.value}>{item.text}</label>
+                    </div>
+                ))}
+                </div>
+
+                {errors.Material && (<span className="error">{errorMsg}</span>)}
+              </div>
+
+              <div className="col-2">
+                <label className="required">{formData.Product.title}</label>
+                <div className="radios">
+                {formData.Product.option.map((item, i) => (
+                    <div className="hannstarRadio" key={i}>
+                      <input
+                        {...register("Product", { required: true })}
+                        id={item.value}
+                        type="radio"
+                        value={item.value}
+                      />
+                      <label htmlFor={item.value}>{item.text}</label>
+                    </div>
+                ))}
+                </div>
+                {errors.Product && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+              
+
+              {/*  */}
+
+              {/*  */}
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.ProductApplication}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("ProductApplication", { required: true })} />
+                   {errors.ProductApplication && (<span className="error">{errorMsg}</span>)}
+              </div>
+              <div className="col-2">
+                <label className="required">{formData.Customer}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Customer", { required: true })} />
+                   {errors.Customer && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.Model}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Model", { required: true })} />
+                   {errors.Model && (<span className="error">{errorMsg}</span>)}
+              </div>
+              <div className="col-2">
+                <label className="required">{formData.Time}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Time", { required: true })} />
+                   {errors.Time && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.Uses}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Uses", { required: true })} />
+                   {errors.Uses && (<span className="error">{errorMsg}</span>)}
+              </div>
+              <div className="col-2">
+                <label className="required">{formData.Period}</label>
+                  <input
+                  type="text"
+                  defaultValue=""
+                  {...register("Period", { required: true })} />
+                   {errors.Period && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+
           </div>
-        </div>
-        <div className={`${pageName}BtnBlock`}>
-          <div className="formBtn" onClick={handleSave}>
-            儲存
+
+          <div className="classificationBlock">
+          <h5 className="title">{formData.RequiredItem}</h5>
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.ItemName}</label>
+                <input
+                type="text"
+                defaultValue=""
+                {...register("ItemName", { required: true })} />
+                  {errors.ItemName && (<span className="error">{errorMsg}</span>)}
+              </div>
+              <div className="col-2">
+                <label className="required">{formData.ProjectModel}</label>
+                <input
+                type="text"
+                defaultValue=""
+                {...register("ProjectModel", { required: true })} />
+                 {errors.ProjectModel && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.ProductSpecifications}</label>
+                <input
+                type="text"
+                defaultValue=""
+                {...register("ProductSpecifications", { required: true })} />
+                  {errors.ProductSpecifications && (<span className="error">{errorMsg}</span>)}
+              </div>
+              <div className="col-2">
+                <label className="required">{formData.Supplier}</label>
+                <input
+                type="text"
+                defaultValue=""
+                {...register("Supplier", { required: true })} />
+                 {errors.Supplier && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-2">
+                <label className="required">{formData.TargetPrice}</label>
+                <input
+                type="text"
+                defaultValue=""
+                {...register("TargetPrice", { required: true })} />
+                  {errors.TargetPrice && (<span className="error">{errorMsg}</span>)}
+              </div>
+              <div className="col-2">
+                <label className="required">{formData.MarketPrice}</label>
+                <input
+                type="text"
+                defaultValue=""
+                {...register("MarketPrice", { required: true })} />
+                 {errors.MarketPrice && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-1">
+              <label>{formData.Remark}</label>
+                <textarea
+                  className="companyRemark"
+                  defaultValue=""
+                  {...register("Remark")}
+                />
+                  {errors.Remark && (<span className="error">{errorMsg}</span>)}
+              </div>
+            </div>
+            </div>
+          <div className="classificationBlock">
+            <h5 className="title">{formData.Appendix}</h5>
+            <div className="row">
+              
+                <div className="col-2">
+                  <input type="file" />
+                </div>
+                <div className="col-2">
+                  <div onClick={handlerUpload} className="btn">
+                {formData.Upload}
+              </div>
+                </div>
+            </div>
           </div>
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <Layout>
-      <Breadcrumbs {...breadcrumbsData} />
-      <Columns type={ColType.OneColFullPage} content={<FormBlock />} />
-    </Layout>
-  );
-};
-
-export default PartnerApplication;
+          
+            <div className="btnBlock">
+              <input type="submit" defaultValue={formData.Save} className="btn" />              
+            </div>
+            </form>
+          </div>
+        </>
+      );
+    };
+    
+      return (
+        <Layout>
+          <Columns type={ColType.OneCol} content={
+            <>
+              <Breadcrumbs {...formData.breadcrumbs} />
+              <FormBlock />
+            </>
+          } />
+        </Layout>
+      );
+    };
+    
+    export default PartnerApplication;
