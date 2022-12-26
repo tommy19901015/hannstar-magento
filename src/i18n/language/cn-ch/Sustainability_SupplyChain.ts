@@ -40,5 +40,5 @@ export const SustainabilityEnvironmentSupplyChain = {
     graphics5Content3:`Hannstar供应商应根据国家或国际公认的标准或对这些矿产的来源和监管链的指导进行尽职调查（例如经济合作与发展组织关于受冲突影响和高风险地区矿产负责任供应链的尽职调查指南），并根据要求向Hannstar提供尽职调查措施。这些措施应包括完成RMI CMRT冲突矿产报告模板(3TGs/Cobalt)以及RMI RMAP负责任矿产保证过程支持。`,
     graphics5Comment:`Hannstar就其负责任的矿产采购向供应商传达以下期望：`,
     breadcrumbsItem1:"企业可持续",
-    breadcrumbsItem2:"绿色创新"
+    breadcrumbsItem2:"可持续供应链"
   }

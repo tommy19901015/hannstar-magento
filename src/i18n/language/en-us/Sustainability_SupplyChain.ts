@@ -48,5 +48,5 @@ export const SustainabilityEnvironmentSupplyChain = {
     graphics5Content3:`Hannstar suppliers should conduct due diligence in accordance with national or internationally recognized standards or guidance on the source and chain of custody of these minerals (for example, the Organization for Economic Cooperation and Development's due diligence guidelines on responsible supply chains of minerals in conflict-affected and high-risk areas ), and provide Hannstar with due diligence report upon request. These measures should include the completion of the RMI CMRT conflict minerals report template (3TGs/Cobalt) and responsible for minerals assurance support on RMI RMAP basis.`,
     graphics5Comment:`HannStar communicates the following expectations to the suppliers regarding responsible mineral procurement:`,
     breadcrumbsItem1:"Sustainability",
-    breadcrumbsItem2:"Environment"
+    breadcrumbsItem2:"Sustainable Supply Chain"
   }

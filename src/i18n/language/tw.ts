@@ -41,6 +41,11 @@ import { SustainabilityEnvironmentWeather } from "./zh-tw/Sustainability_Environ
 import { SustainabilityEnvironmentGreenProduct } from "./zh-tw/Sustainability_Environment_GreenProduct";
 import { SustainabilityEnvironmentSupplyChain } from "./zh-tw/Sustainability_SupplyChain";
 import { SustainabilityEnvironmentProduction } from "./zh-tw/Sustainability_Environment_Production";
+import { SustainabilityEquality } from "./zh-tw/Sustainability_Equality";
+import { SustainabilityTalents } from "./zh-tw/Sustainability_Talents";
+import { SustainabilitySociety } from "./zh-tw/Sustainability_Society";
+import { SustainabilityProfession } from "./zh-tw/Sustainability_Profession";
+import { SustainabilityCommon } from "./zh-tw/Sustainability_Common";
 
 export const tw = {
   common: {
@@ -93,5 +98,10 @@ export const tw = {
   SustainabilityEnvironmentWeather,
   SustainabilityEnvironmentGreenProduct,
   SustainabilityEnvironmentSupplyChain,
-  SustainabilityEnvironmentProduction
+  SustainabilityEnvironmentProduction,
+  SustainabilityEquality,
+  SustainabilityTalents,
+  SustainabilitySociety,
+  SustainabilityProfession,
+  SustainabilityCommon
 };

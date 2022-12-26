@@ -37,6 +37,11 @@ import { SustainabilityEnvironmentWeather } from "./en-us/Sustainability_Environ
 import { SustainabilityEnvironmentGreenProduct } from "./en-us/Sustainability_Environment_GreenProduct";
 import { SustainabilityEnvironmentSupplyChain } from "./en-us/Sustainability_SupplyChain";
 import { SustainabilityEnvironmentProduction } from "./en-us/Sustainability_Environment_Production";
+import { SustainabilityEquality } from "./en-us/Sustainability_Equality";
+import { SustainabilityTalents } from "./en-us/Sustainability_Talents";
+import { SustainabilitySociety } from "./en-us/Sustainability_Society";
+import { SustainabilityProfession } from "./en-us/Sustainability_Profession";
+import { SustainabilityCommon } from "./en-us/Sustainability_Common";
 export const en = {
   common: {
     cancel: "Cancel",
@@ -83,5 +88,10 @@ export const en = {
   SustainabilityEnvironmentWeather,
   SustainabilityEnvironmentGreenProduct,
   SustainabilityEnvironmentSupplyChain,
-  SustainabilityEnvironmentProduction
+  SustainabilityEnvironmentProduction,
+  SustainabilityEquality,
+  SustainabilityTalents,
+  SustainabilitySociety,
+  SustainabilityProfession,
+  SustainabilityCommon
 };

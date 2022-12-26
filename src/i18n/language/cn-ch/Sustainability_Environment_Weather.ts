@@ -9,7 +9,7 @@ export const SustainabilityEnvironmentWeather = {
   由各项气候风险与机会的对应部门，依据现况与趋势进行重大气候相关风险与机会辨识，完成辨识后共同讨论拟定全公司气候相关治理策略，
   并检视各项因应议题之对应目标执行状况，并由最高管理阶层统筹监督相关事项运作。`,
   breadcrumbsItem1:"企业可持续",
-  breadcrumbsItem2:"绿色创新"
+  breadcrumbsItem2:"气候变迁风险管理"
   }
   
   

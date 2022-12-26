@@ -28,7 +28,7 @@ export const SustainabilityNegotiate = {
     subTitle2:"透過重大性分析，我們鑑別出6項重大議題並呈報內部管理階層確認，由各ESG專案小組評估其完整性、影響範疇與邊界。",
     title3:"利害關係人溝通",
     breadcrumbsItem1:"企業永續",
-    breadcrumbsItem2:"永續管理"
+    breadcrumbsItem2:"利害關係人議合"
   }
   
   

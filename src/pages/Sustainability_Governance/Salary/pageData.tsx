@@ -12,8 +12,8 @@ function usePageData() {
         data: [
           {
             src: `${urlConfig().s3Url}/Image/hannstar/sustainability/governance/topbanner1.png`,
-            title: "公司治理",
-            text: "建立完善的公司治理制度，降低企業的經營風險，提升企業的競爭力，營造公司和股東的長遠利益。",
+            title:`${t('SustainabilityRisk.bannerTitle')}`,
+            text: `${t('SustainabilityRisk.bannerContent')}`,
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
           },
@@ -26,11 +26,11 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: "企業永續",
+                text: `${t('SustainabilityRisk.breadcrumbsItem1')}`,
                 href: "",
               },
               {
-                text: "薪酬委員會",
+                text: `${t('SustainabilityRisk.breadcrumbsItem2_3')}`,
                 href: "",
               },
             ],

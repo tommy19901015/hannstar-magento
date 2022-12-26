@@ -13,8 +13,8 @@ function usePageData() {
         data: [
           {
             src: `${urlConfig().s3Url}/Image/hannstar/sustainability/social/Group6339.png`,
-            title: "社會共融",
-            text: "只有永續的人才，才有永續的企業。盼望攜手共創永續共榮的社會。",
+            title: `${t('SustainabilityTalents.bannerTitle')}`,
+            text: `${t('SustainabilityTalents.bannerContent')}`,
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
           },
@@ -27,11 +27,11 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: "企業永續",
+                text:`${t('SustainabilityTalents.breadcrumbsItem1')}`,
                 href: "",
               },
               {
-                text: "社會共融",
+                text:`${t('SustainabilityTalents.breadcrumbsItem4_1')}`,
                 href: "",
               },
             ],

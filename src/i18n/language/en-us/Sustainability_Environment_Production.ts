@@ -27,5 +27,5 @@ export const SustainabilityEnvironmentProduction = {
   A saving of 36,500 million liters of 
   water per year is estimated`,
   breadcrumbsItem1:"Sustainability",
-  breadcrumbsItem2:"Environment"
+  breadcrumbsItem2:"Sustainable Production"
 }
