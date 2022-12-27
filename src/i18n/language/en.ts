@@ -43,6 +43,8 @@ import { SustainabilitySociety } from "./en-us/Sustainability_Society";
 import { SustainabilityProfession } from "./en-us/Sustainability_Profession";
 import { SustainabilityCommon } from "./en-us/Sustainability_Common";
 import { CareersDetail_Work } from "./en-us/CareersDetail_Work";
+import { CareersDetailJoin } from "./en-us/CareersDetail_Join";
+import { CareersDetailIndex } from "./en-us/CareersDetail_Index";
 export const en = {
   common: {
     cancel: "Cancel",
@@ -95,5 +97,7 @@ export const en = {
   SustainabilitySociety,
   SustainabilityProfession,
   SustainabilityCommon,
-  CareersDetail_Work
+  CareersDetail_Work,
+  CareersDetailJoin,
+  CareersDetailIndex
 };

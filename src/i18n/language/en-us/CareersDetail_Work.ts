@@ -37,6 +37,7 @@ export const CareersDetail_Work = {
   guarantee good retirement life.
   Inviting retired employees to
    pass on the wisdom.`,
-  breadcrumbsItem1:"Recruitment",
-  breadcrumbsItem2:"Work at HannStar",
+   breadcrumbsItem1:"Home",
+  breadcrumbsItem2:"Recruitment",
+  breadcrumbsItem3:"Work at HannStar",
 }

@@ -20,6 +20,7 @@ export const CareersDetail_Work = {
   cardContent2:`免費員工及眷屬團體保險專業醫療駐廠諮詢優於勞基法的預給特休假制度`,
   cardTitle3:`退休安定`,
   cardContent3:`依法提撥6% 個人退休金舊制退休準備金超額提存，確保退休生活邀請退休員工擔任顧問，豐富經驗傳承`,
-  breadcrumbsItem1:"人才招募",
-  breadcrumbsItem2:"工作在彩晶",
+  breadcrumbsItem1:"首頁",
+  breadcrumbsItem2:"人才招募",
+  breadcrumbsItem3:"工作在彩晶",
 }

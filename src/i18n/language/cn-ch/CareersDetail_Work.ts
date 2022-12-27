@@ -31,6 +31,7 @@ export const CareersDetail_Work = {
   cardContent3:`依法提拔6% 个人退休金
   旧制退休准备金超额提存，确保退休生活
   邀请退休员工担任顾问，丰富经验传承`,
-  breadcrumbsItem1:"人才招聘",
-  breadcrumbsItem2:"工作在彩晶",
+  breadcrumbsItem1:"首页",
+  breadcrumbsItem2:"人才招聘",
+  breadcrumbsItem3:"工作在彩晶",
 }

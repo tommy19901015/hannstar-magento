@@ -11,15 +11,15 @@ function usePageData() {
       title: "",
       breadcrumbsLink: [
         {
-          text: "首頁",
+          text: `${t('About_Index.breadcrumbsItem1')}`,
           href: "",
         },
         {
-          text: "關於瀚宇彩晶",
+          text: `${t('About_Index.breadcrumbsItem2')}`,
           href: "",
         },
         {
-          text: "瀚宇彩晶簡介",
+          text: `${t('About_Index.breadcrumbsItem3')}`,
           href: "",
         }
       ]
@@ -27,217 +27,217 @@ function usePageData() {
 
     bannerTextData: {
       src: `${urlConfig().s3Url}/Image/hannstar/about/Profile/HannStarVision.jpg`,
-      title: "瀚宇彩晶願景",
-      text: "讓我們的下一代都能享受新彩麗世界的新希望透過不斷創新的顯示技術，讓視覺可以穿越綠野、越過高山，到達世界的彼端，打開一扇使人類生命更豐富，讓生活更精采的視窗",
+      title: `${t('About_Index.bannerTitle')}`,
+      text: `${t('About_Index.bannerContent')}`,
       textAlign: TextAlign.BottomLeft,
       type: BannerType.Main,
     },
     milestoneData: [
       {
-        date: "2021年12月",
-        title: "穿戴式運用產品出貨數量超過2億片",
+        date:`${t('About_Index.milestoneDate1')}`,
+        title: `${t('About_Index.milestoneTitle1')}`,
         imgSrc: ""
       },
       {
-        date: "2021年11月",
-        title: "榮獲TCSA電子製造業類別之「永續報告」金獎",
+        date:`${t('About_Index.milestoneDate2')}`,
+        title: `${t('About_Index.milestoneTitle2')}`,
         imgSrc: `${urlConfig().s3Url}/Image/hannstar/about/Profile/November2021.jpg`,
       },
       {
-        date: "2021年9月",
-        title: "本公司新開發低功耗反射式全彩LPRD護眼面板",
+        date:`${t('About_Index.milestoneDate3')}`,
+        title: `${t('About_Index.milestoneTitle3')}`,
         imgSrc:
           "",
       },
       {
-        date: "2020年1月",
-        title: "取得ISO 45001:2018職業安全衛生管理系統",
+        date:`${t('About_Index.milestoneDate4')}`,
+        title: `${t('About_Index.milestoneTitle4')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/45001.jpg`
       },
       {
-        date: "2019年12月",
-        title: "取得ISO 50001 能源管理系統",
+        date:`${t('About_Index.milestoneDate5')}`,
+        title: `${t('About_Index.milestoneTitle5')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/50001.jpg`
       },
       {
-        date: "2019年12月",
-        title: "取得ISO 17025：2017實驗室管理",
+        date:`${t('About_Index.milestoneDate6')}`,
+        title: `${t('About_Index.milestoneTitle6')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/17025.jpg`
       },
       {
-        date: "2019年10月",
-        title: "取得ISO 28000:2007供應鏈安全管理系統認證",
+        date:`${t('About_Index.milestoneDate7')}`,
+        title: `${t('About_Index.milestoneTitle7')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/28000.jpg`
       },
       {
-        date: "2019年9月",
-        title: "取得台灣第一家AS 9100D:2016航太品質管理系統",
+        date:`${t('About_Index.milestoneDate8')}`,
+        title: `${t('About_Index.milestoneTitle8')}`,
         imgSrc:
           "",
       },
       {
-        date: "2019年5月",
-        title: "取得RBA責任商業聯盟行為準則",
+        date:`${t('About_Index.milestoneDate9')}`,
+        title: `${t('About_Index.milestoneTitle9')}`,
         imgSrc:
           "",
       },
       {
-        date: "2018年12月",
-        title: "取得ISO 27001:2013資訊安全管理系統",
+        date:`${t('About_Index.milestoneDate10')}`,
+        title: `${t('About_Index.milestoneTitle10')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/27001.jpg`
       },
       {
-        date: "2018年11月",
-        title: "取得ANSI/ESD S20.20 & IEC-61340-5-1靜電防護認證",
+        date:`${t('About_Index.milestoneDate11')}`,
+        title: `${t('About_Index.milestoneTitle11')}`,
         imgSrc:
           "",
       },
       {
-        date: "2018年7月",
-        title: "取得AEO安全認證優質企業",
+        date:`${t('About_Index.milestoneDate12')}`,
+        title: `${t('About_Index.milestoneTitle12')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/TWAEO.jpg`
       },
       {
-        date: "2017年12月",
-        title: "取得IATF 16949:2016 車載供應鏈品質管理系統認證",
+        date:`${t('About_Index.milestoneDate13')}`,
+        title: `${t('About_Index.milestoneTitle13')}`,
         imgSrc:
           "",
       },
       {
-        date: "2014年6月",
-        title: "中小尺寸 On-Cell 整合型觸控 TFT-LCD 開始出貨",
+        date:`${t('About_Index.milestoneDate14')}`,
+        title: `${t('About_Index.milestoneTitle14')}`,
         imgSrc:
           "",
       },
       {
-        date: "2013年12月",
-        title: "整併和鑫光電觸控感應器一廠，投入 OGS、On-Cell產品開發",
+        date:`${t('About_Index.milestoneDate15')}`,
+        title: `${t('About_Index.milestoneTitle15')}`,
         imgSrc:
           "",
       },
       {
-        date: "2013年8月",
-        title: "購入台北市內湖營業辦公大樓",
+        date:`${t('About_Index.milestoneDate16')}`,
+        title: `${t('About_Index.milestoneTitle16')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/office.jpg`
       },
       {
-        date: "2011年12月",
-        title: "跨入HS-IPS中小尺寸面板、整合觸控面板一條龍業務領域",
+        date:`${t('About_Index.milestoneDate17')}`,
+        title: `${t('About_Index.milestoneTitle17')}`,
         imgSrc:
           "",
       },
       {
-        date: "2010年10月",
-        title: "整併南科CF廠與和鑫光電，改造成G5.5 AMOLED觸控廠",
+        date:`${t('About_Index.milestoneDate18')}`,
+        title: `${t('About_Index.milestoneTitle18')}`,
         imgSrc:
           "",
       },
       {
-        date: "2010年3月",
-        title: "取得QC 080000無害物質管理系統",
+        date:`${t('About_Index.milestoneDate19')}`,
+        title: `${t('About_Index.milestoneTitle19')}`,
         imgSrc:
           "",
       },
       {
-        date: "2009年12月",
-        title: "10.1吋Netbook panel年出貨達千萬片",
+        date:`${t('About_Index.milestoneDate20')}`,
+        title: `${t('About_Index.milestoneTitle20')}`,
         imgSrc:
           "",
       },
       {
-        date: "2008年1月",
-        title: "日本SHARP公司簽署專利交互授權合約",
+        date:`${t('About_Index.milestoneDate21')}`,
+        title: `${t('About_Index.milestoneTitle21')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/Sharp.jpg`
       },
       {
-        date: "2007年12月",
-        title: "取得華俐投資100%股權，成為和鑫光電最大股東",
+        date:`${t('About_Index.milestoneDate22')}`,
+        title: `${t('About_Index.milestoneTitle22')}`,
         imgSrc:
           "",
       },
       {
-        date: "2005年3月",
-        title: "取得ISO 9001品質管理系統",
+        date:`${t('About_Index.milestoneDate23')}`,
+        title: `${t('About_Index.milestoneTitle23')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/9001.jpg`
       },
       {
-        date: "2005年1月",
-        title: "南科LCD三廠(5.3代廠)正式量產",
+        date:`${t('About_Index.milestoneDate24')}`,
+        title: `${t('About_Index.milestoneTitle24')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/TainanLCD.jpg`
       },
       {
-        date: "2004年9月",
-        title: "普通股轉上市掛牌",
+        date:`${t('About_Index.milestoneDate25')}`,
+        title: `${t('About_Index.milestoneTitle25')}`,
         imgSrc:
           "",
       },
       {
-        date: "2003年10月",
-        title: "本公司液晶電視產品通過日本IPS協會認證",
+        date:`${t('About_Index.milestoneDate26')}`,
+        title: `${t('About_Index.milestoneTitle26')}`,
         imgSrc:
           "",
       },
       {
-        date: "2003年4月",
-        title: "創立瀚斯寶麗(Hannspree)，發展自有品牌業務",
+        date:`${t('About_Index.milestoneDate27')}`,
+        title: `${t('About_Index.milestoneTitle27')}`,
         imgSrc:
           "",
       },
       {
-        date: "2002年11月",
-        title: "與日本Hitachi Displays簽署AS-IPS等多項技術合作暨授權協議",
+        date:`${t('About_Index.milestoneDate28')}`,
+        title: `${t('About_Index.milestoneTitle28')}`,
         imgSrc:
           "",
       },
       {
-        date: "2001年12月",
-        title: "成立南京瀚宇彩晶LCM模組廠",
+        date:`${t('About_Index.milestoneDate29')}`,
+        title: `${t('About_Index.milestoneTitle29')}`,
         imgSrc:
           "",
       },
       {
-        date: "2001年12月",
-        title: "15吋面板出貨量世界第一",
+        date:`${t('About_Index.milestoneDate30')}`,
+        title: `${t('About_Index.milestoneTitle30')}`,
         imgSrc:
           "",
       },
       {
-        date: "2001年8月",
-        title: "普通股掛牌上櫃",
+        date:`${t('About_Index.milestoneDate31')}`,
+        title: `${t('About_Index.milestoneTitle31')}`,
         imgSrc:
           "",
       },
       {
-        date: "2000年11月",
-        title: "取得ISO14001環境管理系統",
+        date:`${t('About_Index.milestoneDate32')}`,
+        title: `${t('About_Index.milestoneTitle32')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/14001.jpg`
       },
       {
-        date: "1999年7月",
-        title: "高雄LCM模組廠量產",
+        date:`${t('About_Index.milestoneDate33')}`,
+        title: `${t('About_Index.milestoneTitle33')}`,
         imgSrc:
           "",
       },
       {
-        date: "1998年8月",
-        title: "與日本Toshiba簽定技術轉移合約",
+        date:`${t('About_Index.milestoneDate34')}`,
+        title: `${t('About_Index.milestoneTitle34')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/Toshiba.jpg`
       },
       {
-        date: "1998年6月",
-        title: "瀚宇彩晶公司成立",
+        date:`${t('About_Index.milestoneDate35')}`,
+        title: `${t('About_Index.milestoneTitle35')}`,
         imgSrc:
           `${urlConfig().s3Url}/Image/hannstar/about/Profile/HannStarDisplay.png`
       }
@@ -245,15 +245,13 @@ function usePageData() {
     graphics3Data: [
       {
         src: `${urlConfig().s3Url}/Image/hannstar/about/Profile/Managementphilosophy.jpg`,
-        title: "經營理念",
-        content:
-          "為提供人類最健康的視覺環境，致力於低輻射、低耗電、輕薄便利的顯示產品之研發、製造與應用",
+        title: `${t('About_Index.graphicsDataTitle1')}`,
+        content:`${t('About_Index.graphicsDataContent1')}`,
       },
       {
         src: `${urlConfig().s3Url}/Image/hannstar/about/Profile/HannStarMission.jpg`,
-        title: "瀚宇彩晶使命",
-        content:
-          "以卓越的製程技術，穩定的良率，創新的產品研發與服務，協助客戶持續探索新世代應用",
+        title: `${t('About_Index.graphicsDataTitle2')}`,
+        content:`${t('About_Index.graphicsDataContent2')}`,
       },
     ]
   }

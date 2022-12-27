@@ -34,6 +34,10 @@ function usePageData() {
                 text: t("CareersDetail_Work.breadcrumbsItem2"),
                 href: "",
               },
+              {
+                text: t("CareersDetail_Work.breadcrumbsItem3"),
+                href: "",
+              },
             ],
           },
         ],
