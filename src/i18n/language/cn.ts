@@ -1,4 +1,4 @@
-import { RAMapply } from "./cn-ch/Service_RMA_Apply";
+import { RMAApply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
 import { RMAList } from "./cn-ch/Service_RMA_List";
 import { LoginForm } from "./cn-ch/LoginForm";
@@ -52,7 +52,7 @@ export const cn = {
   },
   lang: "简中",
   changeLanguage: "切换语系",
-  RAMapply,
+  RMAApply,
   ParseApply,
   RMAList,
   LoginForm,

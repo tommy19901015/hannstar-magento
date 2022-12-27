@@ -1,4 +1,4 @@
-import { RAMapply } from "./en-us/Service_RMA_Apply";
+import { RMAApply } from "./en-us/Service_RMA_Apply";
 import { ParseApply } from "./en-us/Service_Parse_Apply";
 import { RMAList } from "./en-us/Service_RMA_List";
 import { LoginForm } from "./en-us/LoginForm";
@@ -50,7 +50,7 @@ export const en = {
     humanResource: "Human Resource",
   },
   lang: "EN",
-  RAMapply,
+  RMAApply,
   ParseApply,
   RMAList,
   LoginForm,

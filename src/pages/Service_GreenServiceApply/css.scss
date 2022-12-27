@@ -17,9 +17,9 @@ $pageName: 'ServiceGreenServiceApply';
         margin-bottom: 40px;
         &.required {
             &::after {
-              content: "*";
-              color: $hannstar-orange1;
-              padding-left: 5px;
+                content: '*';
+                color: $hannstar-orange1;
+                padding-left: 5px;
             }
         }
     }
@@ -27,146 +27,136 @@ $pageName: 'ServiceGreenServiceApply';
         margin-bottom: 20px;
         padding: 0 80px;
         .row {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          margin-bottom: 5px;
-          .col-1,
-          .col-2,
-          .col-3 {
-            margin-bottom: 20px;
             display: flex;
-            flex-direction: column;
-            label {
-              margin-bottom: 10px;
-              &.required {
-                &::after {
-                  content: "*";
-                  color: $hannstar-orange1;
-                  padding-left: 5px;
-                }
-              }
-            }
-            input[type="text"] {
-              @include hannstarInput;
-              &.mb-20 {
-                margin-bottom: 20px;
-              }
-              &.country-num-input{
-                @include hannstarInput;
-                width: calc(100% - 75px);
-                border-radius: 0px 3px 3px 0px;
-              }
-            }
-            
-            .error {
-              margin-top: 10px;
-              @include hannstarContent2;
-              color: $hannstar-orange1;
-            }
-            .checkbox-col {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              grid-gap: 20px;
-              .hannstarCheckBox {
-                @include hannstarCheckBox;
-                margin: 5px 0;
-              }
-              .hannstarRadio {
-                @include hannstarRadio;
-                margin: 5px 0;
-              }
-            }
-            .react-tel-input {
-              &:hover {
-                .flag-dropdown {
-                  border: solid 1px $hannstar-default-text-color;
-                }
-              }
-              .form-control {
-                @include hannstarInput;
-                padding-left: 60px;
-                width: 100%;
-                height: 40px;
-              }
-              .flag-dropdown {
-                background-color: #fff;
-                .selected-flag {
-                  width: 50px;
-                  .flag {
-                    transform: scale(1.3);
-                    .arrow {
-                      transform: scale(1);
-                    }
-                  }
-                }
-              }
-            }
-            .companyRemark {
-              @include hannstarTextarea;
-            }
-          }
-    
-          .col-1 {
+            justify-content: space-between;
             width: 100%;
-          }
-          .col-2 {
-            width: 49%;
-          }
-          .col-3 {
-            width: calc((100% / 3) - 10px);
-          }
+            margin-bottom: 5px;
+            .col-1,
+            .col-2,
+            .col-3 {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label {
+                    margin-bottom: 10px;
+                    &.required {
+                        &::after {
+                            content: '*';
+                            color: $hannstar-orange1;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+                input[type='text'] {
+                    @include hannstarInput;
+                    &.mb-20 {
+                        margin-bottom: 20px;
+                    }
+                    &.country-num-input {
+                        @include hannstarInput;
+                        width: calc(100% - 75px);
+                        border-radius: 0px 3px 3px 0px;
+                    }
+                }
+
+                .error {
+                    margin-top: 10px;
+                    @include hannstarContent2;
+                    color: $hannstar-orange1;
+                }
+                .checkbox-col {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-gap: 20px;
+                    .hannstarCheckBox {
+                        @include hannstarCheckBox;
+                        margin: 5px 0;
+                    }
+                    .hannstarRadio {
+                        @include hannstarRadio;
+                        margin: 5px 0;
+                    }
+                }
+                .companyRemark {
+                    @include hannstarTextarea;
+                }
+                .fileBlock {
+                    display: flex;
+                    align-items: center;
+                    input[type='file'] {
+                        width: 100%;
+                        height: 40px;
+                        padding: 10px 0;
+                        background-color: #fff;
+                        font-size: 16px;
+                    }
+                    .uploadBtn {
+                        @include hannstarBtn;
+                        display: inline-block;
+                        width: 100px;
+                    }
+                }
+            }
+
+            .col-1 {
+                width: 100%;
+            }
+            .col-2 {
+                width: 49%;
+            }
+            .col-3 {
+                width: calc((100% / 3) - 10px);
+            }
         }
     }
     .#{$pageName}BtnBlock {
-      display: flex;
-      justify-content: space-between;
-      margin: 80px auto;
-      max-width: 150px;
-  
-      .btn {
-        @include hannstarBtn;
-        text-align: center;
-        border: none;
-      }
+        display: flex;
+        justify-content: space-between;
+        margin: 80px auto;
+        max-width: 150px;
+
+        .btn {
+            @include hannstarBtn;
+            text-align: center;
+            border: none;
+        }
     }
 }
 
-
 @media screen and (max-width: $breakpoint) {
-  .#{$pageName}FormBlock {
-  padding: 0;
-  .classificationBlock {
-    padding: 0 20px;
-    .row {
-      width: 100%;
-      flex-direction: column;
-      .col-1 {
-        width: 100%;
-      }
-      .col-2 {
-        width: 100%;
-      }
-      .col-3 {
-        width: 100%;
-      }
-      .col-1,
-      .col-2,
-      .col-3 {
-        .checkbox-col {
-          display: grid;
-          grid-template-columns: repeat(1, 1fr);
-          grid-gap: 20px;
+    .#{$pageName}FormBlock {
+        padding: 0;
+        .classificationBlock {
+            padding: 0 20px;
+            .row {
+                width: 100%;
+                flex-direction: column;
+                .col-1 {
+                    width: 100%;
+                }
+                .col-2 {
+                    width: 100%;
+                }
+                .col-3 {
+                    width: 100%;
+                }
+                .col-1,
+                .col-2,
+                .col-3 {
+                    .checkbox-col {
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-gap: 20px;
+                    }
+                    input[type='text'] {
+                        @include hannstarInput;
+                        width: 100%;
+                    }
+                }
+            }
         }
-        input[type="text"] {
-          @include hannstarInput;
-          width: 100%;
-          }
-      }
+        .#{$pageName}BtnBlock {
+            margin: 30px auto;
+        }
     }
-  }
-  .#{$pageName}BtnBlock {
-    margin: 30px auto;
-  }
-  }
 }

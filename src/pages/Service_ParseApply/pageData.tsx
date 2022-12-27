@@ -43,18 +43,11 @@ function useGreenServiceApply() {
     invoce_number: t('ParseApply.invoce_number'),
     issue_type: {
       title: t('ParseApply.issueCategory'),
-      // option: [
-      //   { text: t('ParseApply.exceptionClass'), value: t('ParseApply.exceptionClass') },
-      //   { text: t('ParseApply.bumpClass'), value: t('ParseApply.bumpClass') },
-      // ],
     },
     issue_code: {
       title: t('ParseApply.issueCode'),
-      // option: [
-      //   { text: t('ParseApply.exceptionClass'), value: t('ParseApply.exceptionClass') },
-      //   { text: t('ParseApply.bumpClass'), value: t('ParseApply.bumpClass') },
-      // ],
     },
+    FileTitle: t('ParseApply.FileTitle'),
     ProvidDefectiveProduct: t('ParseApply.providDefectiveProduct'),
     remark: t('ParseApply.note'),
     Upload: t('ParseApply.common.upload'),

@@ -93,7 +93,10 @@ const SustainabilityGovernance: React.FC = () => {
           {...CheckData}
           handleSustainabilityTab={handleSustainabilityTab}
         />
-
+        <D360Templates {... {
+          site: "0146fd2a-5af8-46fe-a3fc-e2afd499ea5e",
+          method: "GetArticle"
+        }} />
       </>
     );
   };

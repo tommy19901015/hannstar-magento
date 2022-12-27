@@ -5,8 +5,9 @@ import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useParseApply from "./pageData";
-import { postInitParseapply } from "../../services/api.service";
+import { postInitParseapply, postSendParseapply } from "../../services/api.service";
 import "./css.scss";
+import { urlConfig } from "../../config/urlSetting";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/parseapply.json"
 //=====================================================
@@ -33,32 +34,32 @@ const ServiceParseApply: React.FC = () => {
 
     const [parseapplyData, setParseapplyData] = useState<any>()
     const [issueCodeSelect, setIssueCodeSelect] = useState<any>([])
-    // const [inputAmount, setInputAmount] = useState<any>()
-    // const [defectAmount, setDefectAmount] = useState<any>()
+
     const [defectRate, setDefectRate] = useState<any>()
-    const [testFile, setTestFile] = useState<any>()
+    const [parseapplyFile, setParseapplyFile] = useState<any>()
 
     const inputAmountRef: any = useRef(null);
     const defectAmountRef: any = useRef(null);
 
     useEffect(() => {
-      console.log("fakeDataJson", fakeDataJson)
-      const fakeData: any = fakeDataJson
-      setParseapplyData(fakeData)
+      // console.log("fakeDataJson", fakeDataJson)
+      // const fakeData: any = fakeDataJson
+      // setParseapplyData(fakeData)
+      // parseapplyData && setInitData()
+
+      const email = window.hannstar?.email
+      if (email) window.location.href = urlConfig().account.login.href
+      const postData = {
+        type: "post",
+        data: {
+          cid: email,
+          lang: window.hannstar?.language,
+        }
+      }
+      postInitParseapply(postData).then((response: any) => {
+        setParseapplyData(response)
+      });
       parseapplyData && setInitData()
-
-      // const email = window.hannstar?.email
-      // const postData = {
-      //   type: "post",
-      //   data: {
-      //     cid: email,
-      //     lang: window.hannstar?.language,
-      //   }
-      // }
-      // postInitParseapply(postData).then((response: any) => {
-      // });
-
-
     }, [parseapplyData])
 
     const setInitData = () => {
@@ -79,17 +80,28 @@ const ServiceParseApply: React.FC = () => {
     }
 
     const handlerSave = () => {
-      const formData = getValues()
-      const saveData = {
-        type: "save",
+      postData("save")
+    }
+
+    const postData = (type: string) => {
+      const status = type === "save" ? "UNSENT" : "RUN"
+      const postFormData = new FormData();
+      postFormData.append("data", JSON.stringify({
+        type,
         data: {
           header: [
-            { ...formData, cid: "email", status: "UNSENT" }
-          ]
+            { ...getValues(), cid: window.hannstar?.email, status }
+          ],
+          detail: []
         }
+      }));
+      Object.values(parseapplyFile).map((file: any, idx) => {
+        postFormData.append(idx.toString(), file);
+      })
 
-      }
-      console.log('saveData', saveData);
+      postSendParseapply(postFormData).then((response: any) => {
+        console.log('response', response)
+      });
     }
 
     const handlerReset = () => {
@@ -97,13 +109,13 @@ const ServiceParseApply: React.FC = () => {
     }
 
     const handlerUpload = () => {
-      console.log(testFile);
+      console.log(parseapplyFile);
       const myHeaders = new Headers();
       // myHeaders.append("Content-type", "multipart/form-data; boundary=------------------------ --974767299852498929531610575");
       // myHeaders.append("Cookie", "PHPSESSID=a2oqivsofl3517bgcifcve7r63");
 
       const formData = new FormData();
-      formData.append("file", testFile[0]);
+      formData.append("file", parseapplyFile[0]);
 
       fetch('/rest/V1/eService/Excel2Detail', {
         headers: myHeaders,
@@ -116,7 +128,7 @@ const ServiceParseApply: React.FC = () => {
     }
 
     const handleFileChange = (e: any) => {
-      setTestFile(e.target.files);
+      setParseapplyFile(e.target.files);
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -184,7 +196,6 @@ const ServiceParseApply: React.FC = () => {
                     disabled />
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
                   <label className="required">{formData.form_type.title}</label>
@@ -205,7 +216,6 @@ const ServiceParseApply: React.FC = () => {
                   </select>
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
                   <label className="required">{`${formData.input_amount} ${formData.Slice}`}</label>
@@ -228,7 +238,6 @@ const ServiceParseApply: React.FC = () => {
                   {errors.defect_amount && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
                   <label className="">{`${formData.defect_rate} ${formData.Per}`}</label>
@@ -246,7 +255,6 @@ const ServiceParseApply: React.FC = () => {
                   {errors.site_name && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
                   <label className="required">{formData.issue_type.title}</label>
@@ -267,7 +275,6 @@ const ServiceParseApply: React.FC = () => {
                   </select>
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
                   <label className="">{formData.invoce_number}</label>
@@ -287,9 +294,9 @@ const ServiceParseApply: React.FC = () => {
               </div>
               <div className="row">
                 <div className="col-1">
+                  <label className="">{formData.FileTitle}</label>
                   <div className="fileBlock">
-                    <input type="file" onChange={handleFileChange} />
-                    <div className="uploadBtn" onClick={handlerUpload}>{formData.Upload}</div>
+                    <input type="file" multiple onChange={handleFileChange} />
                   </div>
                 </div>
               </div>

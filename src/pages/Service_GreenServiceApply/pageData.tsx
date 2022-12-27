@@ -22,13 +22,16 @@ function useGreenServiceApply() {
         }
       ],
     },
-    Client: t('ServiceGreenApply.legalApplication'),
-    Agent: t('ServiceGreenApply.agent'),
-    TaxNo: t('ServiceGreenApply.singleNumber'),
+
+    MainTitle: t('ServiceGreenApply.mainTitle'),
+    SubTitle: t('ServiceGreenApply.subTitle'),
+    customer_code: t('ServiceGreenApply.legalApplication'),
+    agent: t('ServiceGreenApply.agent'),
+    doc_no: t('ServiceGreenApply.singleNumber'),
     Date: t('ServiceGreenApply.billingDate'),
-    Model: t('ServiceGreenApply.model'),
+    model_name: t('ServiceGreenApply.model'),
     Required: t('ServiceGreenApply.required'),
-    ApplicationType: {
+    green_code: {
       title: t('ServiceGreenApply.applicationProject.text'),
       option: [
         { text: t('ServiceGreenApply.applicationProject.option1'), value: "G01" },
@@ -43,7 +46,7 @@ function useGreenServiceApply() {
         { text: t('ServiceGreenApply.applicationProject.option10'), value: "G010" },
       ],
     },
-    Remark: t('ServiceGreenApply.note'),
+    remark: t('ServiceGreenApply.note'),
     Send: t('ServiceGreenApply.common.send'),
     Reset: t('ServiceGreenApply.common.reset'),
   }

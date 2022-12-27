@@ -42,85 +42,83 @@ const ServiceGreenServiceApply: React.FC = () => {
 
     return (
       <>
-        <h1 className={`${pageName}H1Title`}>法規申請</h1>
+        <h1 className={`${pageName}H1Title`}>{formData.MainTitle}</h1>
         <div className={`${pageName}FormBlock`}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className={`title`}>基本資料</div>
+            <div className={`title`}>{formData.SubTitle}</div>
             <div className="classificationBlock">
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.Client}</label>
+                  <label className="">{formData.customer_code}</label>
                   <input
                     type="text"
-                    defaultValue=""
-                    disabled />
+                    disabled
+                    {...register("customer_code")}
+                  />
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.Agent}</label>
+                  <label className="required">{formData.agent}</label>
                   <input
                     type="text"
-                    defaultValue=""
-                    {...register("Agent", { required: true })} />
-                  {errors.Agent && (<span className="error">{errorMsg}</span>)}
+                    {...register("agent", { required: true })} />
+                  {errors.agent && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.TaxNo}</label>
+                  <label className="">{formData.doc_no}</label>
                   <input
                     type="text"
-                    defaultValue=""
+                    {...register("doc_no")}
                     disabled />
                 </div>
                 <div className="col-2">
                   <label className="">{formData.Date}</label>
                   <input
                     type="text"
-                    defaultValue=""
                     disabled />
                 </div>
               </div>
-
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.Model}</label>
+                  <label className="required">{formData.model_name}</label>
                   <input
                     type="text"
-                    defaultValue=""
-                    disabled />
+                    {...register("model_name", { required: true })}
+                  />
+                  {errors.model_name && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
               <div className="row">
                 <div className="col-1">
-                  <label className="required">{formData.ApplicationType.title}</label>
+                  <label className="required">{formData.green_code.title}</label>
                   <div className="checkbox-col">
-                    {formData.ApplicationType.option.map((item, i) => (
+                    {formData.green_code.option.map((item, i) => (
                       <div className="hannstarCheckBox" key={i}>
                         <input
                           id={item.value}
                           type="checkbox"
                           value={item.value}
-                          {...register("ApplicationType", { required: true })}
+                          {...register("green_code", { required: true })}
                         />
                         <label htmlFor={item.value}>{item.text}</label>
                       </div>
                     ))}
-                    {errors.ApplicationType && (
-                      <span className="error">{errorMsg}</span>
-                    )}
                   </div>
+                  {errors.green_code && (
+                    <span className="error">{errorMsg}</span>
+                  )}
                 </div>
               </div>
               <div className="row">
                 <div className="col-1">
-                  <label className="">{"備註"}</label>
+                  <label className="required">{formData.remark}</label>
                   <textarea
                     className="companyRemark"
                     defaultValue=""
-                    {...register("Remark")}
+                    {...register("remark", { required: true })}
                   />
-                  {errors.Agent && (<span className="error">{errorMsg}</span>)}
+                  {errors.remark && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
               <div className="row">

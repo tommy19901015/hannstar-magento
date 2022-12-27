@@ -1,4 +1,4 @@
-export const RAMapply = {
+export const RMAApply = {
   customer:"客戶",
   basicInfo:"基本資料",
   application:"解析申請",

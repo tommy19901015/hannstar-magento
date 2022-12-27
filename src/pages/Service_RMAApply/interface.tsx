@@ -1,40 +1,68 @@
-import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
-import { I_FormData } from "../../component/form/interface"
+import { useTranslation } from "react-i18next";
 
-export interface I_Table {
-    action: string
-    index: string
-    hannstarNo: string
-    warranty: string
-    badType: string
-    img: string
+function useGreenServiceApply() {
+    const { t } = useTranslation();
+    return {
+        breadcrumbs: {
+            title: "",
+            breadcrumbsLink: [
+                {
+                    text: t('ParseApply.home'),
+                    href: "",
+                },
+                {
+                    text: t('ParseApply.breadcrumb'),
+                    href: "",
+                },
+                {
+                    text: t('ParseApply.breadcrumbItem'),
+                    href: "",
+                }
+            ],
+        },
+        PageTitle: t('ParseApply.application'),
+        FormTitle: t('ParseApply.basicInfo'),
+        customer_code: t('ParseApply.customer'),
+        agent: t('ParseApply.agent'),
+        issue_number: t('ParseApply.singleNumber'),
+        hs_id: t('ParseApply.cqs'),
+        product: t('ParseApply.module'),
+        form_type: {
+            title: t('ParseApply.fieldClass'),
+            option: [
+                { text: t('ParseApply.productionStage'), value: t('ParseApply.productionStage') }
+            ]
+        },
+        input_amount: t('ParseApply.amount'),
+        Slice: t('ParseApply.slice'),
+        Required: t('ParseApply.required'),
+        defect_amount: t('ParseApply.defective'),
+        defect_rate: t('ParseApply.nonPerforming'),
+        Per: t('ParseApply.per'),
+        site_name: t('ParseApply.stand'),
+        invoce_number: t('ParseApply.invoce_number'),
+        issue_type: {
+            title: t('ParseApply.issueCategory'),
+            // option: [
+            //   { text: t('ParseApply.exceptionClass'), value: t('ParseApply.exceptionClass') },
+            //   { text: t('ParseApply.bumpClass'), value: t('ParseApply.bumpClass') },
+            // ],
+        },
+        issue_code: {
+            title: t('ParseApply.issueCode'),
+            // option: [
+            //   { text: t('ParseApply.exceptionClass'), value: t('ParseApply.exceptionClass') },
+            //   { text: t('ParseApply.bumpClass'), value: t('ParseApply.bumpClass') },
+            // ],
+        },
+        ProvidDefectiveProduct: t('ParseApply.providDefectiveProduct'),
+        remark: t('ParseApply.note'),
+        Upload: t('ParseApply.common.upload'),
+        Send: t('ParseApply.common.send'),
+        Reset: t('ParseApply.common.reset'),
+        Save: t('ParseApply.common.save'),
+    }
 }
 
-export interface I_TabContentObj {
-    [key: string]: React.FC
-}
+export default useGreenServiceApply;
 
-export interface I_PageData {
-    breadcrumbs: I_Breadcrumbs
-    pageTitle: string
-    formTitle: string
-    formData: I_FormData[]
-    badDetailsTitle: string
-    tabNames: string[]
-    tableSelectOption: {
-        text: string
-        value: string
-    }[],
-    addTrBtnText: string
-    tableHead: I_Table
-    batchImportText: {
-        title1: string
-        text1: string
-        title2: string
-        noteText2: string
-        text2: string
-    },
-    saveBtn: string
-    resetBtn: string
-    sendBtn: string
-}

@@ -24,6 +24,7 @@ export const ParseApply = {
   invoce_number:"Invoice",
   productionStage:"量產階段",
   providDefectiveProduct:"(須提供不良品序號或箱號)",
+  FileTitle:"檔案附件",
   common: {
     upload:"上傳檔案",
     send: "送件",

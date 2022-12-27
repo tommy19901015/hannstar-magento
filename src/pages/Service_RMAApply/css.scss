@@ -1,6 +1,7 @@
 @import '../../style/variable.scss';
 
 $pageName: 'ServiceRMAApply';
+
 .#{$pageName}H1Title {
     @include hannstarH1Title;
     text-align: center;
@@ -8,105 +9,154 @@ $pageName: 'ServiceRMAApply';
 }
 .#{$pageName}FormBlock {
     border: 1px solid #e9e9e9;
-    .#{$pageName}Title {
+    .title {
         @include hannstarH3Title;
         text-align: center;
         background-color: $hannstar-blue2;
         color: #fff;
         padding: 10px 0;
         margin-bottom: 40px;
+        &.required {
+            &::after {
+                content: '*';
+                color: $hannstar-orange1;
+                padding-left: 5px;
+            }
+        }
     }
-    .#{$pageName}ContentBlock {
+    .classificationBlock {
+        margin-bottom: 20px;
         padding: 0 80px;
-    }
-    .badDetailsTitle {
-        @include hannstarH3Title;
-        color: $hannstar-blue2;
-    }
-    .#{$pageName}TabBlock {
-        display: flex;
-        width: 100%;
-        @include hannstarContentText;
-        border-bottom: 4px solid $hannstar-blue2;
-        margin: 32px 0 20px;
-        .tab {
-            width: 130px;
-            text-align: center;
-            cursor: pointer;
-            padding: 5px 20px;
-            background-color: $hannstar-bg-color;
-            color: $hannstar-blue2;
-            margin-right: 10px;
-            &.active,
-            &:hover {
-                background-color: $hannstar-blue2;
-                color: #fff;
-            }
-        }
-    }
-    .#{$pageName}SingleImportBlock {
-        .toolBar {
+        .row {
             display: flex;
-            margin-bottom: 32px;
-            select {
-                @include hannstarSelect;
-                width: 80px;
-                margin-right: 20px;
-            }
-            .addBtn {
-                @include hannstarBtn;
-            }
-        }
-        table {
-            @include hannstarContentText;
+            justify-content: space-between;
             width: 100%;
-            td {
-                padding: 10px;
-                border: 1px solid $hannstar-border-color;
-                text-align: start;
+            margin-bottom: 5px;
+            .col-1,
+            .col-2,
+            .col-3 {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                label {
+                    margin-bottom: 10px;
+                    &.required {
+                        &::after {
+                            content: '*';
+                            color: $hannstar-orange1;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+                input[type='text'],
+                input[type='number'] {
+                    @include hannstarInput;
+                    &.mb-20 {
+                        margin-bottom: 20px;
+                    }
+                    &.country-num-input {
+                        @include hannstarInput;
+                        width: calc(100% - 75px);
+                        border-radius: 0px 3px 3px 0px;
+                    }
+                }
                 select {
                     @include hannstarSelect;
                 }
-                input[type='text'] {
-                    @include hannstarInput;
+                .error {
+                    margin-top: 10px;
+                    @include hannstarContent2;
+                    color: $hannstar-orange1;
+                }
+                .radio-col {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-gap: 20px;
+                    .hannstarRadio {
+                        @include hannstarRadio;
+                        margin: 5px 0;
+                    }
+                }
+                .companyRemark {
+                    @include hannstarTextarea;
+                }
+                .fileBlock {
+                    display: flex;
+                    align-items: center;
+                    input[type='file'] {
+                        width: 100%;
+                        height: 40px;
+                        padding: 10px 0;
+                        background-color: #fff;
+                        font-size: 16px;
+                    }
+                    .uploadBtn {
+                        @include hannstarBtn;
+                        display: inline-block;
+                        width: 100px;
+                    }
                 }
             }
-            thead {
-                tr {
-                    background-color: $hannstar-blue2;
-                    color: #fff;
-                }
+
+            .col-1 {
+                width: 100%;
+            }
+            .col-2 {
+                width: 49%;
+            }
+            .col-3 {
+                width: calc((100% / 3) - 10px);
             }
         }
     }
-    .#{$pageName}BatchImportBlock {
-        .stepTitle {
-            @include hannstarH4Title;
-            padding-bottom: 32px;
-        }
-        .text {
-            @include hannstarContent0;
-            display: block;
-            color: $hannstar-blue2;
-            text-decoration: underline;
-            margin-bottom: 10px;
-        }
-        .noteText {
-            @include hannstarContent2;
-        }
-        input[type='file'] {
-            @include hannstarContent0;
-            margin-bottom: 32px;
-        }
-    }
+
     .#{$pageName}BtnBlock {
         display: flex;
         justify-content: center;
-        padding: 40px 0;
+        margin: 80px auto;
+        gap: 60px;
         .btn {
             @include hannstarBtn;
-            font-size: 16px;
-            margin-right: 40px;
+            text-align: center;
+            border: none;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint) {
+    .#{$pageName}FormBlock {
+        padding: 0;
+        .classificationBlock {
+            padding: 0 20px;
+            .row {
+                width: 100%;
+                flex-direction: column;
+                .col-1 {
+                    width: 100%;
+                }
+                .col-2 {
+                    width: 100%;
+                }
+                .col-3 {
+                    width: 100%;
+                }
+                .col-1,
+                .col-2,
+                .col-3 {
+                    .checkbox-col {
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-gap: 20px;
+                    }
+                    input[type='text'] {
+                        @include hannstarInput;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .#{$pageName}BtnBlock {
+            margin: 30px auto;
         }
     }
 }

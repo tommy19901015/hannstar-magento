@@ -1,10 +1,11 @@
 export const ServiceGreenApply = {
-    legalApplication:"法規申請",
+    legalApplication:"客戶",
     home:"首頁",
     breadcrumb:"客戶通",
     breadcrumbItem:"解析列表",
     customer:"客戶",
-    basicInfo:"基本資料",
+    mainTitle:"法規申請",
+    subTitle:"基本資料",
     application:"解析申請",
     agent:"代理商",
     singleNumber:"單號",
