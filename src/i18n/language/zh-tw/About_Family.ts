@@ -1,4 +1,4 @@
 export const About_Family = {
-  breadcrumbsIndex: "首頁",
-  breadcrumbsNowPage: "瀚宇關係企業",
+  breadcrumbsItem1: "首頁",
+  breadcrumbsItem2: "瀚宇關係企業",
 };

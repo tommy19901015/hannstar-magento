@@ -8,7 +8,7 @@ function usePageData() {
       title: "",
       breadcrumbsLink: [
         {
-          text: t("About_Family.breadcrumbsIndex"),
+          text: t("About_Family.breadcrumbsItem1"),
           href: "/",
         },
         {

@@ -8,11 +8,11 @@ function usePageData() {
       title: "",
       breadcrumbsLink: [
         {
-          text: t("About_Certification.breadcrumbsIndex"),
+          text: t("About_Certification.breadcrumbsItem1"),
           href: "/",
         },
         {
-          text: t("About_Certification.breadcrumbsNowPage"),
+          text: t("About_Certification.breadcrumbsItem2"),
           href: "",
         },
       ],

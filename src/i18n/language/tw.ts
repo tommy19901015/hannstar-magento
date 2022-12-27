@@ -46,6 +46,7 @@ import { SustainabilityTalents } from "./zh-tw/Sustainability_Talents";
 import { SustainabilitySociety } from "./zh-tw/Sustainability_Society";
 import { SustainabilityProfession } from "./zh-tw/Sustainability_Profession";
 import { SustainabilityCommon } from "./zh-tw/Sustainability_Common";
+import { CareersDetail_Work } from "./zh-tw/CareersDetail_Work";
 
 export const tw = {
   common: {
@@ -103,5 +104,6 @@ export const tw = {
   SustainabilityTalents,
   SustainabilitySociety,
   SustainabilityProfession,
-  SustainabilityCommon
+  SustainabilityCommon,
+  CareersDetail_Work
 };
