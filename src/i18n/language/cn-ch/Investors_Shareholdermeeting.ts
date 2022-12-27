@@ -1,4 +1,4 @@
 export const Investors_Shareholdermeeting = {
-    breadcrumbsIndex:"首頁",
-    breadcrumbsNowPage: "股東會資訊",
+    breadcrumbsItem1:"首頁",
+    breadcrumbsItem2: "股東會資訊",
 };

@@ -42,6 +42,7 @@ import { SustainabilityTalents } from "./cn-ch/Sustainability_Talents";
 import { SustainabilitySociety } from "./cn-ch/Sustainability_Society";
 import { SustainabilityProfession } from "./cn-ch/Sustainability_Profession";
 import { SustainabilityCommon } from "./cn-ch/Sustainability_Common";
+import { CareersDetail_Work } from "./cn-ch/CareersDetail_Work";
 
 export const cn = {
   common: {
@@ -95,5 +96,6 @@ export const cn = {
   SustainabilityTalents,
   SustainabilitySociety,
   SustainabilityProfession,
-  SustainabilityCommon
+  SustainabilityCommon,
+  CareersDetail_Work
 };

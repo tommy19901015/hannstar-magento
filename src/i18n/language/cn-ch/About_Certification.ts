@@ -1,4 +1,4 @@
 export const About_Certification = {
-  breadcrumbsIndex: "首頁",
-  breadcrumbsNowPage: "認證與獎項",
+  breadcrumbsItem1: "首頁",
+  breadcrumbsItem2: "認證與獎項",
 };

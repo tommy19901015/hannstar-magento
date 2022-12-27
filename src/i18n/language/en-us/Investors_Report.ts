@@ -1,4 +1,4 @@
 export const Investors_Report = {
-    breadcrumbsIndex:"首頁",
-    breadcrumbsNowPage: "財務季報及公司年報",
+    breadcrumbsItem1:"首頁",
+    breadcrumbsItem2: "財務季報及公司年報",
 };

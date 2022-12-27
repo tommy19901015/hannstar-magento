@@ -1,4 +1,4 @@
 export const About_Stronghold = {
-  breadcrumbsIndex: "首頁",
-  breadcrumbsNowPage: "全球據點",
+  breadcrumbsItem1: "首頁",
+  breadcrumbsItem2: "全球據點",
 };

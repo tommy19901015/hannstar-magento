@@ -8,11 +8,11 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
                 {
-                    text: t('Investors_Report.breadcrumbsIndex'),
+                    text: t('Investors_Report.breadcrumbsItem1'),
                     href: "/",
                 },
                 {
-                    text: t('Investors_Report.breadcrumbsNowPage'),
+                    text: t('Investors_Report.breadcrumbsItem2'),
                     href: "",
                 },
             ],

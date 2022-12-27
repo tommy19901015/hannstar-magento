@@ -1,4 +1,4 @@
 export const Investors_Summary = {
-    breadcrumbsIndex:"首頁",
-    breadcrumbsNowPage: "公司概況",
+    breadcrumbsItem1:"首頁",
+    breadcrumbsItem2: "公司概況",
 };
