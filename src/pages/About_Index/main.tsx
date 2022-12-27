@@ -7,15 +7,17 @@ import { ColType } from "../../component/columns/interface";
 import Graphics3 from "../../component/graphics3/main";
 import usePageData from "./pageData";
 import "./css.scss";
+import { useTranslation } from "react-i18next";
 
 const AboutIndex: React.FC = () => {
   const { breadcrumbs, bannerTextData, graphics3Data, milestoneData } =
     usePageData();
 
+  const { t } = useTranslation();
   const Milestone: React.FC = () => {
     return (
       <div className="milestoneBlock">
-        <div className="title">發展里程碑</div>
+        <div className="title">{`${t('About_Index.milestoneTitle')}`}</div>
         <ul className="historyList">
           {milestoneData.map((item) => {
             return (
