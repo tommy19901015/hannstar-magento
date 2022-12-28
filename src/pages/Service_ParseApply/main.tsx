@@ -42,13 +42,13 @@ const ServiceParseApply: React.FC = () => {
     const defectAmountRef: any = useRef(null);
 
     useEffect(() => {
-      // console.log("fakeDataJson", fakeDataJson)
-      // const fakeData: any = fakeDataJson
-      // setParseapplyData(fakeData)
-      // parseapplyData && setInitData()
+      console.log("fakeDataJson", fakeDataJson)
+      const fakeData: any = fakeDataJson
+      setParseapplyData(fakeData)
+      setInitData(fakeData)
 
       const email = window.hannstar?.email
-      if (email) window.location.href = urlConfig().account.login.href
+      if (!email) window.location.href = urlConfig().account.login.href
       const postData = {
         type: "post",
         data: {
@@ -58,21 +58,21 @@ const ServiceParseApply: React.FC = () => {
       }
       postInitParseapply(postData).then((response: any) => {
         setParseapplyData(response)
+        setInitData(response)
       });
-      parseapplyData && setInitData()
-    }, [parseapplyData])
+      // parseapplyData && setInitData()
+    }, [])
 
-    const setInitData = () => {
-      setValue("issue_number", parseapplyData.issue_number)//解析申請單號
-      setValue("customer_code", parseapplyData.customer_code)//客戶名稱
-      setValue("hs_id", parseapplyData.hs_id)//cqs窗口
-      setIssueCodeSelect(parseapplyData.IssueType[0].issuecode)
-      setValue("issue_code", parseapplyData.IssueType[0].issuecode[0].id)
+    const setInitData = (response: any) => {
+      setValue("issue_number", response.issue_number)//解析申請單號
+      setValue("customer_code", response.customer_code)//客戶名稱
+      setValue("hs_id", response.hs_id)//cqs窗口
+      setIssueCodeSelect(response.IssueType[0].issuecode)
+      setValue("issue_code", response.IssueType[0].issuecode[0].id)
     }
 
 
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-
       const result: any = {
         ...data,
       };
@@ -95,9 +95,11 @@ const ServiceParseApply: React.FC = () => {
           detail: []
         }
       }));
-      Object.values(parseapplyFile).map((file: any, idx) => {
+      parseapplyFile && Object.values(parseapplyFile).map((file: any, idx) => {
         postFormData.append(idx.toString(), file);
       })
+
+      console.log("pppostFormData", postFormData);
 
       postSendParseapply(postFormData).then((response: any) => {
         console.log('response', response)

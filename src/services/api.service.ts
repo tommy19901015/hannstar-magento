@@ -31,5 +31,17 @@ export const postGetD360Art = (params: any) =>
 service.post(apiMethods.fetchGetD360Art, { ...params });
 export const postInitParseapply = (params: any) =>
 service.post(apiMethods.fetchInitParseapply, { ...params });
-export const postSendParseapply = (params: any) =>
-service.post(apiMethods.fetchSendParseapply, { ...params });
+export const postSendParseapply = (params: any) => {
+const interceptors = () => {
+  service.interceptors.request.use(config => {
+    config.headers = {
+      "Content-Type": "multipart/form-data",
+      "Access-Control-Allow-Origin": "*",
+    }
+    return config;
+  });
+};
+interceptors();
+return service.post(apiMethods.fetchSendParseapply, params);
+} 
+
