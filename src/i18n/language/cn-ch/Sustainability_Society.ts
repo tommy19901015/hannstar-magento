@@ -11,6 +11,7 @@ export const SustainabilitySociety = {
     graphics2Title:"支持农产品与社会关怀",
     graphics2SubTitle:`为照顾本地农民，响应支持农产品，2021年认购200箱凤梨，提供同仁享用。
     我们也与中山大学(USR大学社会责任实践计划）合作，购买台南本地小农柚子，并赠送给门诺基金会「老人送餐」对象：花莲偏乡独居老人及身障弱势家庭，使其在中秋佳节感受来自社会的关怀。同时，我们也支持门诺基金会辅具银行，让行动不便的长辈得以透过辅具改善生活质量。`,
+    breadcrumbsItem:"首頁",
     breadcrumbsItem1:"企业可持续",
     breadcrumbsItem2:"社会参与"
   }

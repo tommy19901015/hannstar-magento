@@ -13,6 +13,7 @@ export const SustainabilityRisk = {
   countermeasures, and develop relevant internal management and follow-up
   indicators. The division reports any material risks faced by the Company to the
   President Office, Chairman Office and Board of Directors if necessary.`,
+  breadcrumbsItem:"Home",
   breadcrumbsItem1:"Sustainability",
   breadcrumbsItem2:"Risk Management",
   breadcrumbsItem2_1:"Board Members",

@@ -22,6 +22,7 @@ export const SustainabilitySociety = {
     graphics2Title:"Support Taiwan Farming Products and Social Care",
     graphics2SubTitle:`To take care of local farmers in Taiwan and support their produce, we ordered 200 boxes of pineapples in 2021 to share with all colleagues.
     We collaborated with National Sun Yat-Sen University (Project USR) to purchase pomelos from local farmers in Tainan and donated them to the cases in "Deliver To The Elders" by Mennonite Social Wellfare Foundation: elders living alone in remote villages in Hualien and disadvantaged families, so they could also feel the care from the society during the Mid-Autumn Festival. Also, we financilly support the Assistive Device Bank of Mennonite Foundation, so that elders with disabilities can enjoy better life quality.`,
+    breadcrumbsItem:"Home",
     breadcrumbsItem1:"Sustainability",
     breadcrumbsItem2:"Social Engagement"
   }

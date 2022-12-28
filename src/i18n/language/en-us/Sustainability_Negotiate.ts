@@ -34,6 +34,7 @@ export const SustainabilityNegotiate = {
     title2:"4. Confirmation and discussion",
     subTitle2:"We identified six material topics through materiality analysis and submitted them to the internal management for confirmation.",
     title3:"Stakeholder Engagement",
+    breadcrumbsItem:"Home",
     breadcrumbsItem1:"Sustainability",
     breadcrumbsItem2:"ESG Management"
   }

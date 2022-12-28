@@ -12,6 +12,7 @@ export const SustainabilityEnvironmentProduction = {
   cardContent2:`将制程中涂布后多余的光阻液收集，2021年回收再利用65.07公吨光阻液。`,
   cardTitle3:`再生水工程改善`,
   cardContent3:`降低制造再生水后清洗管路的耗水量，预估每年可节省36,500百万升用水。`,
+  breadcrumbsItem:"首頁",
   breadcrumbsItem1:"企业可持续",
   breadcrumbsItem2:"可持续生产",
 }

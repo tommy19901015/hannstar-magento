@@ -95,6 +95,7 @@ export const SustainabilityProfession = {
     The current test results of the inspection are
     normal. The test results are published on the
     bulletin board.`,
+    breadcrumbsItem:"Home",
     breadcrumbsItem1:"Sustainability",
     breadcrumbsItem2:"Health and Safety at HannStar"
   }

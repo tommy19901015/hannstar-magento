@@ -47,6 +47,7 @@ export const SustainabilityProfession = {
     定期实施作业环境测定，目前测定结果报
     告皆为正常。每次测定结果皆公布于公用
     公布栏上。`,
+    breadcrumbsItem:"首頁",
     breadcrumbsItem1:"企业可持续",
     breadcrumbsItem2:"职业安全卫生"
   }

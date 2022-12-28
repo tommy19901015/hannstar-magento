@@ -28,6 +28,10 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
+                text: `${t('SustainabilityEnvironmentProduction.breadcrumbsItem')}`,
+                href: "",
+              },
+              {
                 text: `${t('SustainabilityEnvironmentProduction.breadcrumbsItem1')}`,
                 href: "",
               },

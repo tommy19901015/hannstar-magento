@@ -1,4 +1,20 @@
 export const About_Stronghold = {
-  breadcrumbsItem1: "首頁",
-  breadcrumbsItem2: "全球據點",
+  breadcrumbsItem1: "Home",
+  breadcrumbsItem2: "About us",
+  breadcrumbsItem3: "Global Location",
+  title: "Global Location",
+  company1:`HannStar Display Corp. Taipei Headquarter`,
+  address1:`4F., No.15, Ln.168, Xingshan Rd., Neihu Dist., Taipei City 11469, Taiwan (R.O.C)`,
+  telephone1:`(886)2-55550077 (Shareholder services, please dial 886-2-2790-5885)`,
+  company2:`HannStar Display Corp. Tainan Branch`,
+  address2:`No. 35, Nanke 2nd Road, Xinshi Dist., Tainan City 741, Tainan Science Industrial Park, Taiwan.`,
+  telephone2:`(886)6-5052880`,
+  company3:`HannStar Display (Nanjing) Corporation`,
+  address3:`No.18, Heng Fei Road, Nanjing Economic & Technology Development Zone, Nanjing 210038, China.`,
+  telephone3:`(86)25-85803888`,
+  company4:`Hannstar Technology Services (Shenzhen) Inc`,
+  address4:`A2201, Zhuoyue Meilin Central Plaza (South District), No. 48, Meilin Road, Meidu Community, Meilin Street, Futian District, Shenzhen, China.`,
+  telephone4:`(86)0755-82543396`,
+  telephoneTitle:`Tel`,
+  addressTitle:`Address`
 };

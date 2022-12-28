@@ -31,6 +31,7 @@ export const SustainabilityEquality = {
     This includes migrant workers who we enter a new contract with; their agency fees for job hunting oversea, fees for coming to Taiwan, and domestic agency service fees
     after arriving are fully covered. We believe that, by providing secure working conditions and environment, we are able to reduce the turnover rate of migrant workers,
     benefiting both employer and employee.`,
+    breadcrumbsItem:"Home",
     breadcrumbsItem1:"Sustainability",
     breadcrumbsItem2:"Diversity and Incluion"
   }

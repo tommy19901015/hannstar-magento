@@ -1,4 +1,5 @@
 export const About_Team = {
-  breadcrumbsItem1: "首頁",
-  breadcrumbsItem2: "瀚宇彩晶團隊",
+  breadcrumbsItem1: "Home",
+  breadcrumbsItem2: "About us",
+  breadcrumbsItem3: "Management",
 };

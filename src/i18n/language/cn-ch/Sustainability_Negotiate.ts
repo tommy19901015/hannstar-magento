@@ -27,6 +27,7 @@ export const SustainabilityNegotiate = {
     title2:"4. 确认与讨论",
     subTitle2:"透过重大性分析，我们鉴别出6项重大议题并呈报内部管理阶层确认，由各ESG项目小组评估其完整性、影响范畴与边界。",
     title3:"利害关系人沟通",
+    breadcrumbsItem:"首頁",
     breadcrumbsItem1:"企业可持续",
     breadcrumbsItem2:"利害关系人议合"
   }
