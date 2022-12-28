@@ -21,26 +21,27 @@ const MagentoProductCompare: React.FC = () => {
   const magentoCompareBlock: any = useRef();
 
   useEffect(() => {
-    // const magentoCompareBlockDom: any =
-    //   document.getElementsByClassName("table-wrapper comparison")[0];
+    const magentoCompareBlockDom: any = document.getElementsByClassName(
+      "table-wrapper comparison"
+    )[0];
 
-    // if (magentoCompareBlockDom)
-    //   magentoCompareBlock.current.appendChild(magentoCompareBlockDom);
-
+    if (magentoCompareBlockDom)
+      magentoCompareBlock.current.appendChild(magentoCompareBlockDom);
   }, []);
-
 
   return (
     <Layout>
       <div className={`${pageName}MainContainer`}>
         <Columns
           type={ColType.OneCol}
-          content={<div className={`${pageName}Content`}>
-            <>
-              {/* <div className="magentoCompare" ref={magentoCompareBlock}></div> */}
-              <MagentoCompare />
-            </>
-          </div>}
+          content={
+            <div className={`${pageName}Content`}>
+              <>
+                <div className="magentoCompare" ref={magentoCompareBlock}></div>
+                {/* <MagentoCompare /> */}
+              </>
+            </div>
+          }
         />
       </div>
     </Layout>

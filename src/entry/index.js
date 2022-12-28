@@ -93,6 +93,8 @@ import PaperDisplayTraffic from "../pages/PaperDisplay_Traffic/main";
 //Tftdisplay
 import TFTIndex from "../pages/TFT_Index/main";
 import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
+//magento原生頁
+import MagentoProductCompare from "../pages/Magento_ProductCompare/main";
 import MagentoProductDetails from "../pages/Magento_ProductDetails/main";
 //i18n
 import "../i18n/index";
@@ -177,6 +179,7 @@ const pageMappingObj = {
   root_TFTIndex: <TFTIndex />,
   root_TFTPreferredProduct: <TFTPreferredProduct />,
   root_MagentoProductDetails: <MagentoProductDetails />,
+  root_MagentoProductCompare: <MagentoProductCompare />,
   root_Index: <Index />,
 };
 
