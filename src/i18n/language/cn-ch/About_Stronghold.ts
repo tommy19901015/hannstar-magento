@@ -1,4 +1,20 @@
 export const About_Stronghold = {
   breadcrumbsItem1: "首頁",
-  breadcrumbsItem2: "全球據點",
+  breadcrumbsItem2: "关于瀚宇彩晶",
+  breadcrumbsItem3: "全球据点",
+  title: "全球据点",
+  company1:`瀚宇彩晶股份有限公司 台北总公司`,
+  address1:`台北市内湖区行善路168巷15号4楼`,
+  telephone1:`(886)2-55550077 / 股东权利义务事项请拨 (886)2-2790-5885`,
+  company2:`瀚宇彩晶股份有限公司 台南科学园区分公司`,
+  address2:`台南科学工业园区台南市新市区南科二路35号`,
+  telephone2:`(886)6-5052880`,
+  company3:`南京瀚宇彩欣科技有限责任公司`,
+  address3:`南京经济技术开发区恒飞路18号`,
+  telephone3:`(86)25-85803888`,
+  company4:`彩晶商贸技术服务 (深圳) 有限公司`,
+  address4:`深圳市福田区 默林街道梅都小区默林路48号 卓越默林中心广场(南区) A2201`,
+  telephone4:`(86)0755-82543396`,
+  telephoneTitle:`聯絡電話`,
+  addressTitle:`公司地址`
 };

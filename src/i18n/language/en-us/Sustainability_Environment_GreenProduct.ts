@@ -11,6 +11,7 @@ export const SustainabilityEnvironmentGreenProduct = {
   We integrate with our suppliers via innovative technology to develop new materials and provide high-quality, authentic user experience.`,
   subTitle3:`We use reflective display technology to achieve energy-efficient green products with no backlight.
   The absence of backlight reduces eye damage, is viewable in sunlight, and is power efficient. It can be widely used in digital retail, digital education, transportation, sports, health, or smart manufacturing, providing display choices more friendly to people and the environment. `,
+  breadcrumbsItem:"Home",
   breadcrumbsItem1:"Sustainability",
   breadcrumbsItem2:"Green Products"
   }

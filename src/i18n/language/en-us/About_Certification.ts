@@ -1,4 +1,5 @@
 export const About_Certification = {
-  breadcrumbsItem1: "首頁",
-  breadcrumbsItem2: "認證與獎項",
+  breadcrumbsItem1: "Home",
+  breadcrumbsItem2: "About us",
+  breadcrumbsItem3: "Certification and Affirmation",
 };

@@ -33,6 +33,7 @@ export const SustainabilityEnvironmentSupplyChain = {
     graphics5Content2:`Hannstar供應商應確保他們向Hannstar供應的產品是不含有直接或間接為剛果民主共和國或毗鄰國家的武裝團體提供資金或受益的礦物衍生的金屬。這些礦產物包括鉭，錫，鎢，金和鈷。`,
     graphics5Content3:`Hannstar供應商應根據國家或國際公認的標準或對這些礦產的來源和監管鏈的指導進行盡職調查（例如經濟合作與發展組織關於受衝突影響和高風險地區礦產負責任供應鏈的盡職調查指南），並根據要求向Hannstar提供盡職調查措施。這些措施應包括完成RMI CMRT衝突礦產報告模板(3TGs/Cobalt)以及RMI RMAP負責任礦產保證過程支持。`,
     graphics5Comment:`Hannstar就其負責任的礦產採購向供應商傳達以下期望`,
+    breadcrumbsItem:"首頁",
     breadcrumbsItem1:"企業永續",
     breadcrumbsItem2:"永續供應鏈"
   }

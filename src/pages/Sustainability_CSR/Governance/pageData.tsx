@@ -27,6 +27,10 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
+                text: `${t('SustainabilityGovernance.breadcrumbsItem')}`,
+                href: "",
+              },
+              {
                 text: `${t('SustainabilityGovernance.breadcrumbsItem1')}`,
                 href: "",
               },

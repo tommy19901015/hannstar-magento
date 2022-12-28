@@ -15,6 +15,10 @@ function usePageData() {
           text: t("About_Certification.breadcrumbsItem2"),
           href: "",
         },
+        {
+          text: t("About_Certification.breadcrumbsItem3"),
+          href: "",
+        },
       ],
     },
   };

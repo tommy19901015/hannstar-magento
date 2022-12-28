@@ -45,6 +45,7 @@ import { SustainabilityCommon } from "./en-us/Sustainability_Common";
 import { CareersDetail_Work } from "./en-us/CareersDetail_Work";
 import { CareersDetailJoin } from "./en-us/CareersDetail_Join";
 import { CareersDetailIndex } from "./en-us/CareersDetail_Index";
+import { CareersDetailGrowup } from "./en-us/CareersDetail_Growup";
 export const en = {
   common: {
     cancel: "Cancel",
@@ -99,5 +100,6 @@ export const en = {
   SustainabilityCommon,
   CareersDetail_Work,
   CareersDetailJoin,
-  CareersDetailIndex
+  CareersDetailIndex,
+  CareersDetailGrowup
 };

@@ -10,6 +10,7 @@ export const SustainabilityEnvironmentGreenProduct = {
   subTitle3:`利用反射式面板技术达到无背光、低耗能的绿色概念产品。
   无背光的设计，减少对眼睛的伤害；于阳光下可视、更省电，
   可广泛应用于数字零售、数字教育 、交通运输 、运动健康或智慧制造，提供对人与环境都更友善的显示产品选择。`,
+  breadcrumbsItem:"首頁",
   breadcrumbsItem1:"企业可持续",
   breadcrumbsItem2:"绿色创新"
   }

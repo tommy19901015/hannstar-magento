@@ -15,6 +15,10 @@ function usePageData() {
           text: t("About_Team.breadcrumbsItem2"),
           href: "",
         },
+        {
+          text: t("About_Team.breadcrumbsItem3"),
+          href: "",
+        },
       ],
     },
   };

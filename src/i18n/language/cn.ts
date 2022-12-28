@@ -45,6 +45,7 @@ import { SustainabilityCommon } from "./cn-ch/Sustainability_Common";
 import { CareersDetail_Work } from "./cn-ch/CareersDetail_Work";
 import { CareersDetailJoin } from "./cn-ch/CareersDetail_Join";
 import { CareersDetailIndex } from "./cn-ch/CareersDetail_Index";
+import { CareersDetailGrowup } from "./cn-ch/CareersDetail_Growup";
 
 export const cn = {
   common: {
@@ -101,5 +102,6 @@ export const cn = {
   SustainabilityCommon,
   CareersDetail_Work,
   CareersDetailJoin,
-  CareersDetailIndex
+  CareersDetailIndex,
+  CareersDetailGrowup
 };

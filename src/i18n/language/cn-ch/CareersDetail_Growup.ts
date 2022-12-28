@@ -1,0 +1,60 @@
+export const CareersDetailGrowup = {
+  bannerTitle: "人才，是企业面对激烈竞争环境时，最能展现力量的优势之一 期待创新、热情、勇于突破的你加入我们的团队",
+  bannerContent:``,
+  title1:`应征流程`,
+  title2:`热门职缺`,
+  graphics1Title:"欢迎光电面板制造人才",
+  graphics1SubTitle:`欢迎加入彩晶，前进光电制造最前线 共创精彩价值，为你的职涯增添色彩`,
+  graphics2Title:"校园招募",
+  graphics2SubTitle:`我们致力于招募来自各地大学的优秀人才。
+  加入彩晶工作职涯是最棒的选择 ，欢迎喜欢挑战与热忱学习的您。
+  我们为来自不同背景的学生，提供各种合适的工作机会，
+  打造友善职场，多元共融的组织文化是至关重要的。
+  到职后你将由mentor引导参与工作与学习，实现自己的工作目标并成就未来。`,
+  cardTitle1:`步骤1-工作搜寻`,
+  cardContent1:`依据个人的学历、经历及专业，搜寻有兴趣的职缺`,
+  cardTitle2:`步骤2-履历投递`,
+  cardContent2_1:`履历投递后，主管将根据履历合适程度进行审阅`,
+  cardContent2_2:`同时也会评估你的履历是否适合其他职务`,
+  cardTitle3:`步骤3-电话访谈`,
+  cardContent3_1:`‧合适者人资会进一步与你联系并邀请面谈`,
+  cardContent3_2:`初步访谈了解你的经历，并说明后续面试流程`,
+  cardContent3_3:`透过mail提供面试资讯与确认面试时间`,
+  cardTitle4:`步骤4-填写彩晶人事资料表`,
+  cardContent4:``,
+  cardTitle5:`步骤5-到场或视频参加面谈`,
+  cardContent5:`依据与你约定的面试时间到场或视频进行面谈`,
+  cardTitle6:`步骤6-接获录取通知与报到`,
+  cardContent6:`资历查核后，人资单位将以电话通知并说明报到程序，最后寄发录取通知书`,
+  facebook:`facebook`,
+  jobsite:`瀚宇彩晶104`,
+  carouselTitle1:`台北`,
+  carouselTitle2:`台南`,
+  carouselDataTitle1_1:`全球车载业务`,
+  carouselDataContent1_1:`您会需要负责与全球顶尖的车厂进行显示产品的推广与销售，借此您会了解国际车厂最新的需求与趋势，让自己走在车用电子领域的最前线。`,
+  carouselDataTitle1_2:`全球工控业务`,
+  carouselDataContent1_2:`需要与国内外系统大厂及方案整合公司合作，接触智慧娱乐、智慧医疗、智慧交通等各项引领潮流的新科技产品，一起让显示器增进我们的生活乐趣，并带来更多的便利。`,
+  carouselDataTitle1_3:`工控/车载PM工程师`,
+  carouselDataContent1_3:`您将运用负责工业和汽车产品领域海外品牌客户的整体解决方案产品，共同创造出多元的科技新品，且跨部门与其他伙伴密切合作，以优化产品功能。`,
+  carouselDataTitle1_4:`系统软件工程师`,
+  carouselDataContent1_4:`系统程序开发与建置系统支持企业运营与各项业务推展，需收集各单位对于系统应用的需求，进行系统开发或维护的提供最佳解决方案。`,
+  carouselDataTitle2_1:`面板设计工程师`,
+  carouselDataContent2_1:`研究先进技术面板光罩设计、液晶光学设计开发及布局专利，建立核心专利技术门坎。 
+  我们不满足于现状，鼓励持续创新及突破，正在寻找具备专业知识技术与充满热情的您一同接轨世界。`,
+  carouselDataTitle2_2:`电子设计工程师`,
+  carouselDataContent2_2:`评估产品架构在新产品电子电路设计开发与验证，您还将与其他团队合作并保持有效的合作关系，以共同构建未来需求。
+  我们正在寻找正能量与才思敏捷的您一同在世界的舞台展露光芒。`,
+  carouselDataTitle2_3:`LCD设备工程师`,
+  carouselDataContent2_3:`在生产在线负责黄光、薄膜、蚀刻、检测、配向…等设备的维护保养，改善机台异常以降低生产成本，并提升公司的获利能力。
+  我们正在寻找具有执行力与永不放弃的您，追求卓越及生活的美好。`,
+  carouselDataTitle2_4:`LCD制程工程师`,
+  carouselDataContent2_4:`我们总共分为Array、CF、Cell、模块制程四大区块，进行制程异常分析与良率改善对策。
+  我们邀请喜欢分析思考及具有执行力的您一同在彩晶成为高效时间管理大师。`,
+  viewjob:`查看职缺内容`,
+  viewjobList:`查看104职缺列表`,
+  resume:`投递履历`,
+  breadcrumbsItem1:"首頁",
+  breadcrumbsItem2:"人才招募",
+  breadcrumbsItem3:"成长在彩晶",
+  note:`瀚宇彩晶提供公平的就业机会，致力于推动包容与多元的文化，我们以公正和平等的态度对待所有求职者。`
+}

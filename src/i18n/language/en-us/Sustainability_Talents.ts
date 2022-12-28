@@ -13,6 +13,7 @@ export const SustainabilityTalents = {
     graphics2SubTitle:`HannStar has implemented a rotation mechanism in a bid to revitalize internal talent flow and facilitate the diverse development of employees. We have also established
     a mentorship mechanism so that employees can learn in a diversified manner with the guidance of their mentors. By taking this approach, we are able to build up allround
     capabilities of employees, which will be beneficial to their career development and planning.`,
+    breadcrumbsItem:"Home",
     breadcrumbsItem1:"Sustainability",
     breadcrumbsItem2:"Growth and Development",
     breadcrumbsItem4_1:"HannStar Foundation",
