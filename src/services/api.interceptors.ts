@@ -4,7 +4,6 @@ const service = axios.create({
   baseURL: "https://magentodev.hannstar.com/",
   headers: {
     "Content-Type": "application/json;charset=UTF-8",
-    // "Content-Type": "multipart/form-data",
     "Access-Control-Allow-Origin": "*",
   },
 });

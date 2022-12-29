@@ -34,10 +34,7 @@ service.post(apiMethods.fetchInitParseapply, { ...params });
 export const postSendParseapply = (params: any) => {
 const interceptors = () => {
   service.interceptors.request.use(config => {
-    config.headers = {
-      "Content-Type": "multipart/form-data",
-      "Access-Control-Allow-Origin": "*",
-    }
+    config.headers = { 'Content-Type': 'multipart/form-data' }
     return config;
   });
 };

@@ -26,7 +26,7 @@ function useGreenServiceApply() {
     agent: t('ParseApply.agent'),
     issue_number: t('ParseApply.singleNumber'),
     hs_id: t('ParseApply.cqs'),
-    product: t('ParseApply.module'),
+    product_code: t('ParseApply.module'),
     form_type: {
       title: t('ParseApply.fieldClass'),
       option: [

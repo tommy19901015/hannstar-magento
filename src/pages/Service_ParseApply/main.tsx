@@ -85,6 +85,17 @@ const ServiceParseApply: React.FC = () => {
 
     const postData = (type: string) => {
       const status = type === "save" ? "UNSENT" : "RUN"
+
+      console.log("ddddaaatttaaa", {
+        type,
+        data: {
+          header: [
+            { ...getValues(), cid: window.hannstar?.email, status }
+          ],
+          detail: []
+        }
+      })
+
       const postFormData = new FormData();
       postFormData.append("data", JSON.stringify({
         type,
@@ -210,8 +221,8 @@ const ServiceParseApply: React.FC = () => {
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.product}</label>
-                  <select {...register("product", { required: false })}>
+                  <label className="required">{formData.product_code}</label>
+                  <select {...register("product_code", { required: false })}>
                     {parseapplyData?.product.map((item: string) => (
                       <option value={item}>{item}</option>
                     ))}
