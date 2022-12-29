@@ -6,6 +6,7 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useParseApply from "./pageData";
 import { postInitParseapply, postSendParseapply } from "../../services/api.service";
+import Popup from "../../component/popup/main";
 import "./css.scss";
 import { urlConfig } from "../../config/urlSetting";
 //=====================================================
@@ -37,9 +38,11 @@ const ServiceParseApply: React.FC = () => {
 
     const [defectRate, setDefectRate] = useState<any>()
     const [parseapplyFile, setParseapplyFile] = useState<any>()
+    const [popupMessage, setPopupMessage] = useState<string[]>([])
 
     const inputAmountRef: any = useRef(null);
     const defectAmountRef: any = useRef(null);
+    const showPopUpRef: any = useRef();
 
     useEffect(() => {
       console.log("fakeDataJson", fakeDataJson)
@@ -72,37 +75,14 @@ const ServiceParseApply: React.FC = () => {
     }
 
 
-    const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-      const result: any = {
-        ...data,
-      };
-      postData("send")
-      console.log("result", result);
-    }
-
-    const handlerSave = () => {
-      postData("save")
-    }
-
-    const postData = (type: string) => {
+    const postData = (data: any, type: string) => {
       const status = type === "save" ? "UNSENT" : "RUN"
-
-      console.log("ddddaaatttaaa", {
-        type,
-        data: {
-          header: [
-            { ...getValues(), cid: window.hannstar?.email, status }
-          ],
-          detail: []
-        }
-      })
-
       const postFormData = new FormData();
       postFormData.append("data", JSON.stringify({
         type,
         data: {
           header: [
-            { ...getValues(), cid: window.hannstar?.email, status }
+            { ...data, cid: window.hannstar?.email, status }
           ],
           detail: []
         }
@@ -115,30 +95,13 @@ const ServiceParseApply: React.FC = () => {
 
       postSendParseapply(postFormData).then((response: any) => {
         console.log('response', response)
+        setPopupMessage(response.data.messages)
+        handleShowPopup()
       });
     }
 
     const handlerReset = () => {
       window.location.reload()
-    }
-
-    const handlerUpload = () => {
-      console.log(parseapplyFile);
-      const myHeaders = new Headers();
-      // myHeaders.append("Content-type", "multipart/form-data; boundary=------------------------ --974767299852498929531610575");
-      // myHeaders.append("Cookie", "PHPSESSID=a2oqivsofl3517bgcifcve7r63");
-
-      const formData = new FormData();
-      formData.append("file", parseapplyFile[0]);
-
-      fetch('/rest/V1/eService/Excel2Detail', {
-        headers: myHeaders,
-        method: 'POST',
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.error(err));
     }
 
     const handleFileChange = (e: any) => {
@@ -170,11 +133,38 @@ const ServiceParseApply: React.FC = () => {
       setValue("defect_amount", e.target.value)
     }
 
+    const handleShowPopup = () => {
+      showPopUpRef.current.classList.add("show");
+    };
+
+    const popupProps = {
+      content: (
+        <div className={`${pageName}DeletePop`}>
+          {
+            popupMessage.map(item => <div>{item}</div>)
+          }
+          <div className="btnBlock">
+            <div
+              className="btn"
+              onClick={() => showPopUpRef.current.classList.remove("show")}
+            >
+              取消
+            </div>
+            <div className="btn" >
+              確定
+            </div>
+          </div>
+        </div>
+      ),
+      openFc: showPopUpRef,
+    };
+
     return (
       parseapplyData ? <>
+        <Popup {...popupProps} />
         <h1 className={`${pageName}H1Title`}>{formData.PageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form>
             <div className={`title`}>{formData.FormTitle}</div>
             <div className="classificationBlock">
               <div className="row">
@@ -317,8 +307,8 @@ const ServiceParseApply: React.FC = () => {
               </div>
             </div>
             <div className={`${pageName}BtnBlock`}>
-              <div className="btn" onClick={handlerSave}>{formData.Save}</div>
-              <input className="btn" type="submit" value={formData.Send} />
+              <div className="btn" onClick={handleSubmit((data) => postData(data, 'save'))}>{formData.Save}</div>
+              <div className="btn" onClick={handleSubmit((data) => postData(data, 'send'))}>{formData.Send}</div>
               <div className="btn" onClick={handlerReset}>{formData.Reset}</div>
             </div>
           </form>
