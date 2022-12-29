@@ -25,9 +25,9 @@ const MessageCenter: React.FC = () => {
       }
     });
 
-    const D360Test: any = DD360Test;
-    setD360Data(D360Test.data);
-    console.log("D360Test", D360Test);
+    // const D360Test: any = DD360Test;
+    // setD360Data(D360Test.data);
+    // console.log("D360Test", D360Test);
   }, []);
 
   const sliderRef = useRef<any>(null);

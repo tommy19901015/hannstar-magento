@@ -76,6 +76,7 @@ const ServiceParseApply: React.FC = () => {
       const result: any = {
         ...data,
       };
+      postData("send")
       console.log("result", result);
     }
 
@@ -303,6 +304,7 @@ const ServiceParseApply: React.FC = () => {
                     defaultValue=""
                     {...register("remark", { required: true })}
                   />
+                  {errors.remark && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
               <div className="row">
