@@ -40,10 +40,10 @@ const ServiceGreenServiceApply: React.FC = () => {
     const showPopUpRef: any = useRef();
 
     useEffect(() => {
-      console.log("fakeDataJson", fakeDataJson)
-      const fakeData: any = fakeDataJson
-      setInitDataToForm(fakeData.data)
-      setGreenApplyData(fakeData.data)
+      // console.log("fakeDataJson", fakeDataJson)
+      // const fakeData: any = fakeDataJson
+      // setInitDataToForm(fakeData.data)
+      // setGreenApplyData(fakeData.data)
 
       const email = window.hannstar?.email
       if (!email) window.location.href = urlConfig().account.login.href

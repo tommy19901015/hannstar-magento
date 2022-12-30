@@ -89,6 +89,10 @@ import ServiceParseApply from "./pages/Service_ParseApply/main";
 import ServiceGreenServiceApply from "./pages/Service_GreenServiceApply/main";
 import ServiceTechnicalSupport from "./pages/Service_TechnicalSupport/main";
 import ServiceArticle from "./pages/Service_Article/main";
+//隱私權、法律聲明
+import InformationsPrivacy from "./pages/Informations_Legalnotices/main";
+import InformationsLegalnotices from "./pages/Informations_Privacy/main";
+
 //Magento 原生頁面
 import MagentoProductCompare from "./pages/Magento_ProductCompare/main";
 import MagentoProductDetails from "./pages/Magento_ProductDetails/main";
@@ -283,16 +287,16 @@ ReactDOM.render(
         element={<CareersDetailWork />}
       />
       <Route
-        path={hannstar.careersDetail_Join.href}
-        element={<CareersDetailJoin />}
-      />
-      <Route
         path={hannstar.careersDetail_Index.href}
         element={<CareersDetailIndex />}
       />
       <Route
-        path={hannstar.careersDetail_Growup.href}
+        path={hannstar.careersDetail_Join.href}
         element={<CareersDetailGrowup />}
+      />
+      <Route
+        path={hannstar.careersDetail_Growup.href}
+        element={<CareersDetailJoin />}
       />
       <Route path={solution.label.href} element={<SolutionLabel />} />
       <Route path={solution.index.href} element={<SolutionIndex />} />
@@ -342,6 +346,8 @@ ReactDOM.render(
         element={<PaperDisplayTraffic />}
       />
       <Route path={"/TFTCustomized"} element={<TFTCustomized />} />
+      <Route path={hannstar.privacy.href} element={<InformationsPrivacy />} />
+      <Route path={hannstar.legalnotices.href} element={<InformationsLegalnotices />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

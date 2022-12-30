@@ -166,9 +166,9 @@ function useMenu() {
         href: service.customer.href,
         content: [
           { title: service.RMAApply.title, href: service.RMAApply.href },
-          { title: service.RMAList.title, href: service.RMAList.href },
+          // { title: service.RMAList.title, href: service.RMAList.href },
           { title: service.parseApply.title, href: service.parseApply.href },
-          { title: service.parseList.title, href: service.parseList.href },
+          // { title: service.parseList.title, href: service.parseList.href },
         ],
       },
       {
@@ -180,11 +180,8 @@ function useMenu() {
       },
       {
         title: "技術諮詢",
-        href: "",
-        content: [
-          { title: "技術文件", href: "" },
-          { title: "教育訓練", href: "" },
-        ],
+        href: service.technicalSupport.href,
+        content: [],
       },
       {
         title: "訊息中心",

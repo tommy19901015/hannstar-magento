@@ -45,10 +45,10 @@ const ServiceParseApply: React.FC = () => {
     const showPopUpRef: any = useRef();
 
     useEffect(() => {
-      console.log("fakeDataJson", fakeDataJson)
-      const fakeData: any = fakeDataJson
-      setParseapplyData(fakeData)
-      setInitDataToForm(fakeData)
+      // console.log("fakeDataJson", fakeDataJson)
+      // const fakeData: any = fakeDataJson
+      // setParseapplyData(fakeData)
+      // setInitDataToForm(fakeData)
 
       const email = window.hannstar?.email
       if (!email) window.location.href = urlConfig().account.login.href
@@ -63,7 +63,6 @@ const ServiceParseApply: React.FC = () => {
         setParseapplyData(response)
         setInitDataToForm(response)
       });
-      // parseapplyData && setInitData()
     }, [])
 
     const setInitDataToForm = (response: any) => {

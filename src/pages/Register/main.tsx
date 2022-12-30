@@ -11,6 +11,7 @@ import {
 import "./css.scss";
 import useRegisterForm from "./pageData";
 import AccountTemplate from "../../templates/AccountTemplate/main";
+import { urlConfig } from "../../config/urlSetting";
 
 const HannstarRegister: React.FC = () => {
   const pageName = "HannstarRegister";
@@ -301,7 +302,7 @@ const HannstarRegister: React.FC = () => {
                     onChange={handleAgreePrivacy}
                   />
                   <label htmlFor="agreePrivacy">
-                    {pageData.agreePrivacyText1}<a href="/">{pageData.agreePrivacyText2}</a>
+                    {pageData.agreePrivacyText1}<a href={urlConfig().hannstar.privacy.href}>{pageData.agreePrivacyText2}</a>
                   </label>
                   {!agreePrivacyPass && (
                     <div className="errorMessage">{pageData.errorMessage3} </div>

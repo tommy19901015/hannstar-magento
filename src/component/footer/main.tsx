@@ -73,13 +73,10 @@ const Footer: React.FC = () => {
             />
           </a>
           <div className="footerMenu">
-            <a href="/" className="text">
-              聯絡我們
-            </a>
-            <a href="/" className="text">
+            <a href={urlConfig().hannstar.privacy.href} className="text">
               隱私權聲明
             </a>
-            <a href="/" className="text">
+            <a href={urlConfig().hannstar.legalnotices.href} className="text">
               法律聲明
             </a>
             <a href="/" className="text">

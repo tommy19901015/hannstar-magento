@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType} from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../config/urlSetting";
@@ -46,7 +46,7 @@ function usePageData() {
         type: "TitleContentBlock",
         data: [
           {
-            title:`${t("CareersDetail_Work.title1")}`,
+            title: `${t("CareersDetail_Work.title1")}`,
             content: `${t("CareersDetail_Work.subTitle1")}`,
           },
         ],
@@ -115,22 +115,22 @@ function usePageData() {
             data: [
               {
                 src: `${urlConfig().s3Url}/Image/hannstar/careers/work/image514.png`,
-                title:  `${t("CareersDetail_Work.cardTitle1")}`,
-                text:  `${t("CareersDetail_Work.cardContent1")}`,
+                title: `${t("CareersDetail_Work.cardTitle1")}`,
+                text: `${t("CareersDetail_Work.cardContent1")}`,
                 href: "",
                 btnText: "",
               },
               {
                 src: `${urlConfig().s3Url}/Image/hannstar/careers/work/image515.png`,
-                title:  `${t("CareersDetail_Work.cardTitle2")}`,
-                text:  `${t("CareersDetail_Work.cardContent2")}`,
+                title: `${t("CareersDetail_Work.cardTitle2")}`,
+                text: `${t("CareersDetail_Work.cardContent2")}`,
                 href: "",
                 btnText: "",
               },
               {
                 src: `${urlConfig().s3Url}/Image/hannstar/careers/work/image516.png`,
-                title:  `${t("CareersDetail_Work.cardTitle3")}`,
-                text:  `${t("CareersDetail_Work.cardContent3")}`,
+                title: `${t("CareersDetail_Work.cardTitle3")}`,
+                text: `${t("CareersDetail_Work.cardContent3")}`,
                 href: "",
                 btnText: "",
               }

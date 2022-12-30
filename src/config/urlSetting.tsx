@@ -187,6 +187,14 @@ export const urlConfig = () => {
       "support": {
         "title": "常見問題",
         "href": "https://support.hannstar.com"
+      },
+      "privacy": {
+        "title": "隱私權",
+        "href": mappingD360I18n() + "/informations/privacy/view"
+      },
+      "legalnotices": {
+        "title": "法律聲明",
+        "href": mappingD360I18n() + "/informations/legalnotices/view"
       }
     },
     "partner": {

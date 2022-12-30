@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType} from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
 import { urlConfig } from "../../config/urlSetting";
@@ -12,8 +12,8 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/careers/grow/Group6342.png`,
-            title:`${t('CareersDetailJoin.bannerTitle')}`,
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Group6341.png`,
+            title: t("CareersDetail_Work.bannerTitle"),
             text: "",
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
@@ -27,15 +27,15 @@ function usePageData() {
             title: "",
             breadcrumbsLink: [
               {
-                text: `${t('CareersDetailJoin.breadcrumbsItem1')}`,
+                text: t("CareersDetail_Work.breadcrumbsItem1"),
                 href: "",
               },
               {
-                text: `${t('CareersDetailJoin.breadcrumbsItem2')}`,
+                text: t("CareersDetail_Work.breadcrumbsItem2"),
                 href: "",
               },
               {
-                text: `${t('CareersDetailJoin.breadcrumbsItem3')}`,
+                text: t("CareersDetail_Work.breadcrumbsItem3"),
                 href: "",
               },
             ],
@@ -43,18 +43,56 @@ function usePageData() {
         ],
       },
       {
+        type: "TitleContentBlock",
+        data: [
+          {
+            title: `${t("CareersDetail_Work.title1")}`,
+            content: `${t("CareersDetail_Work.subTitle1")}`,
+          },
+        ],
+      },
+      {
+        type: "ArticleContent",
+        data: [
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1903.png`,
+            title: `${t("CareersDetail_Work.articleContent1")}`,
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1902.png`,
+            title: `${t("CareersDetail_Work.articleContent2")}`,
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1901.png`,
+            title: `${t("CareersDetail_Work.articleContent3")}`,
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1904.png`,
+            title: `${t("CareersDetail_Work.articleContent4")}`,
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1905.png`,
+            title: `${t("CareersDetail_Work.articleContent5")}`,
+          },
+          {
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1906.png`,
+            title: `${t("CareersDetail_Work.articleConten6")}`,
+          }
+        ]
+      },
+      {
         type: "BannerBlock",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/careers/grow/Group6343.png`,
-            title:`${t('CareersDetailJoin.bannerBlockTitle1')}`,
-            text:`${t('CareersDetailJoin.bannerContent1')}`,
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1888.png`,
+            title: `${t("CareersDetail_Work.bannerBlockTitle1")}`,
+            text: `${t("CareersDetail_Work.bannerContent1")}`,
             textAlign: TextAlign.BottomLeft,
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannstar/careers/grow/Rectangle1889.png`,
-            title:`${t('CareersDetailJoin.bannerBlockTitle2')}`,
-            text:`${t('CareersDetailJoin.bannerContent2')}`,
+            src: `${urlConfig().s3Url}/Image/hannstar/careers/work/Rectangle1889.png`,
+            title: `${t("CareersDetail_Work.bannerBlockTitle2")}`,
+            text: `${t("CareersDetail_Work.bannerContent2")}`,
             textAlign: TextAlign.BottomLeft,
           },
         ],
@@ -63,8 +101,8 @@ function usePageData() {
         type: "TitleContentBlock",
         data: [
           {
-            title: `${t('CareersDetailJoin.title1')}`,
-            content:`${t('CareersDetailJoin.subTitle1')}`,
+            title: `${t("CareersDetail_Work.title2")}`,
+            content: "",
           },
         ],
       },
@@ -76,23 +114,23 @@ function usePageData() {
             theme: GraphicsTheme.Theme1,
             data: [
               {
-                src: `${urlConfig().s3Url}/Image/hannstar/careers/grow/image514.png`,
-                title:`${t('CareersDetailJoin.cardTitle1')}`,
-                text:`${t('CareersDetailJoin.cardContent1')}`,
+                src: `${urlConfig().s3Url}/Image/hannstar/careers/work/image514.png`,
+                title: `${t("CareersDetail_Work.cardTitle1")}`,
+                text: `${t("CareersDetail_Work.cardContent1")}`,
                 href: "",
                 btnText: "",
               },
               {
-                src: `${urlConfig().s3Url}/Image/hannstar/careers/grow/image515.png`,
-                title:`${t('CareersDetailJoin.cardTitle2')}`,
-                text:`${t('CareersDetailJoin.cardContent2')}`,
+                src: `${urlConfig().s3Url}/Image/hannstar/careers/work/image515.png`,
+                title: `${t("CareersDetail_Work.cardTitle2")}`,
+                text: `${t("CareersDetail_Work.cardContent2")}`,
                 href: "",
                 btnText: "",
               },
               {
-                src: `${urlConfig().s3Url}/Image/hannstar/careers/grow/image516.png`,
-                title:`${t('CareersDetailJoin.cardTitle3')}`,
-                text:`${t('CareersDetailJoin.cardContent3')}`,
+                src: `${urlConfig().s3Url}/Image/hannstar/careers/work/image516.png`,
+                title: `${t("CareersDetail_Work.cardTitle3")}`,
+                text: `${t("CareersDetail_Work.cardContent3")}`,
                 href: "",
                 btnText: "",
               }

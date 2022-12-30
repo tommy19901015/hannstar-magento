@@ -20,9 +20,9 @@ import InvestorsReport from "../pages/Investors_Report/main";
 import InvestorsContacts from "../pages/Investors_Contacts/main";
 //人才招募
 import CareersDetailWork from "../pages/CareersDetail_Work/main";
-import CareersDetailJoin from "../pages/CareersDetail_Join/main";
 import CareersDetailIndex from "../pages/CareersDetail_Index/main";
-import CareersDetailGrowup from "../pages/CareersDetail_Growup/main";
+import CareersDetailJoin from "../pages/CareersDetail_Growup/main";
+import CareersDetailGrowup from "../pages/CareersDetail_Join/main";
 //企業永續
 import SustainabilityIndex from "../pages/Sustainability_Index/main";
 import SustainabilityCSR from "../pages/Sustainability_CSR/main";
@@ -96,6 +96,9 @@ import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
 //magento原生頁
 import MagentoProductCompare from "../pages/Magento_ProductCompare/main";
 import MagentoProductDetails from "../pages/Magento_ProductDetails/main";
+//隱私權、法律聲明
+import InformationsPrivacy from "../pages/Informations_Legalnotices/main";
+import InformationsLegalnotices from "../pages/Informations_Privacy/main";
 //i18n
 import "../i18n/index";
 
@@ -180,6 +183,8 @@ const pageMappingObj = {
   root_TFTPreferredProduct: <TFTPreferredProduct />,
   root_MagentoProductDetails: <MagentoProductDetails />,
   root_MagentoProductCompare: <MagentoProductCompare />,
+  root_InformationsPrivacy: <InformationsPrivacy />,
+  root_InformationsLegalnotices: <InformationsLegalnotices />,
   root_Index: <Index />,
 };
 
