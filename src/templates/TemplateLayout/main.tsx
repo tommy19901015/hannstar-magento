@@ -244,7 +244,6 @@ const TemplateLayout: React.FC<I_TemplateLayout> = ({
     props.map((component) => {
       const { data, layoytBgColor, type } = component;
       const bgColor = layoytBgColor && layoytBgColor.length>0 ? layoytBgColor : "";
-      console.log('bgColor',bgColor,layoytBgColor)
       return mappingType(data , bgColor)[type]
     });
 

@@ -2,16 +2,35 @@
 
 .messageCenter {
   display: flex;
-  padding: 30px 50px;
+  padding: 30px 80px 60px 80px;
+  flex-direction: column;
   .leftBlock {
     display: flex;
-    flex-direction: column;
-    margin-right: 100px;
-    width: 40px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 16px 0;
     .title {
       @include hannstarH3Title;
       text-align: center;
-      margin-bottom: 50px;
+    }
+    .moreBtn {
+      @include hannstarNoteText;
+      color: $hannstar-blue2;
+      padding: 5px 20px 5px 20px;
+      position: relative;
+      text-align: right;
+      display: block;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        right: 0px;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        transform: rotate(45deg);
+      }
     }
     .btnBlock {
       display: flex;
@@ -33,13 +52,13 @@
     }
   }
   .rightBlock {
-    width: calc(100% - 140px);
     .messageBlock {
       li {
         display: flex;
         align-items: center;
-        padding: 15px 0;
         border-top: 1px solid $hannstar-border-color;
+        height: 46px;
+        padding-right: 30px;
         .tag {
           padding: 5px 15px;
           @include hannstarNoteText;
@@ -61,25 +80,6 @@
           text-overflow: ellipsis;
           letter-spacing: 0.5pt;
         }
-      }
-    }
-    .moreBtn {
-      @include hannstarNoteText;
-      color: $hannstar-blue2;
-      padding: 5px 20px 5px 20px;
-      position: relative;
-      text-align: right;
-      display: block;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 7px;
-        right: 0px;
-        width: 8px;
-        height: 8px;
-        border-top: 1px solid;
-        border-right: 1px solid;
-        transform: rotate(45deg);
       }
     }
   }
