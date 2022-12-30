@@ -1,9 +1,9 @@
 import { I_Breadcrumbs } from "../../component/breadcrumbs/interface";
 import { FormType } from "../../component/form/interface";
 
-type I_OptionType= {
-    text:string,
-    value:string
+type I_OptionType = {
+    text: string,
+    value: string
 }
 
 type I_Table1 = {
@@ -39,6 +39,13 @@ export interface I_Table3 {
 export interface I_PageType {
     breadcrumbs: I_Breadcrumbs
     formProps1: I_Table1[]
-    formProps2:I_Table2[]
-    formProps3:I_Table3[]
+    formProps2: I_Table2[]
+    formProps3: I_Table3[]
 }
+
+export interface I_detailData {
+    doc_no: string
+    green_code: string
+    cid: string
+}
+

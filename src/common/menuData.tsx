@@ -97,6 +97,12 @@ function useMenu() {
           { title: "企業永續", href: hannstar.sustainability_esg.href },
         ],
       },
+      {
+        title: "常見問題",
+        type: "support",
+        href: hannstar.support.href,
+        content: []
+      },
     ],
     partner: [
       {
@@ -149,8 +155,9 @@ function useMenu() {
       },
       {
         title: "常見問題",
-        href: "",
-        content: [],
+        type: "support",
+        href: hannstar.support.href,
+        content: []
       },
     ],
     service: [
@@ -185,9 +192,10 @@ function useMenu() {
         content: [],
       },
       {
-        title: "Q&A",
-        href: "",
-        content: [],
+        title: "常見問題",
+        type: "support",
+        href: hannstar.support.href,
+        content: []
       },
     ],
     tftdisplay: [
@@ -256,7 +264,13 @@ function useMenu() {
         //   { title: "交通運輸", href: "" },
 
         // ],
-      }
+      },
+      {
+        title: "常見問題",
+        type: "support",
+        href: hannstar.support.href,
+        content: []
+      },
     ],
     solution: [
       {
@@ -265,7 +279,13 @@ function useMenu() {
         content: [
           { title: "方案系統及整合服務", href: solution.label.href },
         ],
-      }
+      },
+      {
+        title: "常見問題",
+        type: "support",
+        href: hannstar.support.href,
+        content: []
+      },
     ],
     hannspree: [
       {
@@ -275,44 +295,12 @@ function useMenu() {
           { title: "學習解決方案", href: hannspree.solve.href },
           { title: "客製化服務", href: hannspree.custom.href },
         ],
-      }
-    ],
-    member: [
-      {
-        content: [
-          {
-            title: "產品行銷服務",
-            href: "",
-          },
-          {
-            title: "方案整合及系統服務",
-            href: "",
-          },
-          {
-            title: "客戶服務",
-            href: "",
-          },
-          {
-            title: "供應商協同合作",
-            href: "",
-          },
-          {
-            title: "Hannspree",
-            href: "",
-          },
-        ],
       },
       {
-        content: [
-          {
-            title: "會員中心",
-            href: "",
-          },
-          {
-            title: "其他",
-            href: "",
-          },
-        ],
+        title: "常見問題",
+        type: "support",
+        href: hannstar.support.href,
+        content: []
       },
     ],
     footerlinks: [

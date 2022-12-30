@@ -25,10 +25,11 @@ function useGreenServiceApply() {
 
     MainTitle: t('ServiceGreenApply.mainTitle'),
     SubTitle: t('ServiceGreenApply.subTitle'),
+    FileTitle: t('ServiceGreenApply.fileTitle'),
     customer_code: t('ServiceGreenApply.legalApplication'),
     agent: t('ServiceGreenApply.agent'),
     doc_no: t('ServiceGreenApply.singleNumber'),
-    Date: t('ServiceGreenApply.billingDate'),
+    cdt: t('ServiceGreenApply.billingDate'),
     model_name: t('ServiceGreenApply.model'),
     Required: t('ServiceGreenApply.required'),
     green_code: {

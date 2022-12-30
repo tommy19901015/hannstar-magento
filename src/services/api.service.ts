@@ -11,6 +11,8 @@ export const apiMethods = {
   fetchGetD360Art: "/rest/V1/getCMS",
   fetchInitParseapply: "/rest/V1/eService/InitIssue",//取得客服解析申請
   fetchSendParseapply: "/rest/V1/eService/SetIssue",//送出客服解析申請
+  fetchInitGreenapply: "/rest/V1/eService/InitGreen",//取得法規申請
+  fetchSendGreenapply: "/rest/V1/eService/SetGreen",//送出法規申請
 };
 
 export const postEnterPrice = (params: PriceFormParams) =>
@@ -40,5 +42,17 @@ const interceptors = () => {
 };
 interceptors();
 return service.post(apiMethods.fetchSendParseapply, params);
+} 
+export const postInitGreenapply = (params: any) =>
+service.post(apiMethods.fetchInitGreenapply, { ...params });
+export const postSendGreenapply = (params: any) => {
+const interceptors = () => {
+  service.interceptors.request.use(config => {
+    config.headers = { 'Content-Type': 'multipart/form-data' }
+    return config;
+  });
+};
+interceptors();
+return service.post(apiMethods.fetchSendGreenapply, params);
 } 
 

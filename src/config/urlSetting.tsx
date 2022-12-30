@@ -183,6 +183,10 @@ export const urlConfig = () => {
       "news_article": {
         "title": "投資人關係 文章",
         "href": mappingD360I18n() + "/news/financial/article"
+      },
+      "support": {
+        "title": "常見問題",
+        "href": "https://support.hannstar.com"
       }
     },
     "partner": {

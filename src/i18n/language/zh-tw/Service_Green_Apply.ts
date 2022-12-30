@@ -6,6 +6,7 @@ export const ServiceGreenApply = {
     customer:"客戶",
     mainTitle:"法規申請",
     subTitle:"基本資料",
+    fileTitle:"檔案附件",
     application:"解析申請",
     agent:"代理商",
     singleNumber:"單號",

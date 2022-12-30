@@ -3,7 +3,7 @@ import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import useParseApply from "./pageData";
 import { postInitParseapply, postSendParseapply } from "../../services/api.service";
 import Popup from "../../component/popup/main";
@@ -48,7 +48,7 @@ const ServiceParseApply: React.FC = () => {
       console.log("fakeDataJson", fakeDataJson)
       const fakeData: any = fakeDataJson
       setParseapplyData(fakeData)
-      setInitData(fakeData)
+      setInitDataToForm(fakeData)
 
       const email = window.hannstar?.email
       if (!email) window.location.href = urlConfig().account.login.href
@@ -61,12 +61,12 @@ const ServiceParseApply: React.FC = () => {
       }
       postInitParseapply(postData).then((response: any) => {
         setParseapplyData(response)
-        setInitData(response)
+        setInitDataToForm(response)
       });
       // parseapplyData && setInitData()
     }, [])
 
-    const setInitData = (response: any) => {
+    const setInitDataToForm = (response: any) => {
       setValue("issue_number", response.issue_number)//解析申請單號
       setValue("customer_code", response.customer_code)//客戶名稱
       setValue("hs_id", response.hs_id)//cqs窗口

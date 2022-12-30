@@ -126,6 +126,11 @@
                             transform: rotate(135deg);
                             margin-bottom: 5px;
                         }
+                        &.noSec {
+                            .arrow {
+                                display: none;
+                            }
+                        }
                     }
                     .secMenuUl {
                         position: absolute;
