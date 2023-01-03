@@ -2,7 +2,7 @@ import { RMAApply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
 import { RMAList } from "./cn-ch/Service_RMA_List";
 import { LoginForm } from "./cn-ch/LoginForm";
-import { RegisterForm } from "./cn-ch/RegisterForm"
+import { RegisterForm } from "./cn-ch/RegisterForm";
 import { Investors_Summary } from "./cn-ch/Investors_Summary";
 import { Investors_Revenue } from "./cn-ch/Investors_Revenue";
 import { Investors_Report } from "./cn-ch/Investors_Report";
@@ -16,13 +16,13 @@ import { About_Index } from "./cn-ch/About_Index";
 import { About_Stronghold } from "./cn-ch/About_Stronghold";
 import { About_Team } from "./cn-ch/About_Team";
 import { Account_Application } from "./cn-ch/Account_Application";
-import { Account_Dashboard } from "./cn-ch/Account_Dashboard"
-import { Account_EditAccount } from "./cn-ch/Account_EditAccount"
-import { Account_Logout } from "./cn-ch/Account_Logout"
-import { Account_MemberInfo } from "./cn-ch/Account_MemberInfo"
-import { Account_MyAccount } from "./cn-ch/Account_MyAccount"
-import {Account_Newsletter } from "./cn-ch/Account_Newsletter"
-import { Account_SendVerifyEmail } from "./cn-ch/Account_SendVerifyEmail"
+import { Account_Dashboard } from "./cn-ch/Account_Dashboard";
+import { Account_EditAccount } from "./cn-ch/Account_EditAccount";
+import { Account_Logout } from "./cn-ch/Account_Logout";
+import { Account_MemberInfo } from "./cn-ch/Account_MemberInfo";
+import { Account_MyAccount } from "./cn-ch/Account_MyAccount";
+import { Account_Newsletter } from "./cn-ch/Account_Newsletter";
+import { Account_SendVerifyEmail } from "./cn-ch/Account_SendVerifyEmail";
 import { Account_Personal } from "./cn-ch/Account_Personal";
 import { Account_Partner } from "./cn-ch/Account_Partner";
 import { Account_Personal_Template } from "./cn-ch/Account_Personal_Template";
@@ -46,6 +46,8 @@ import { CareersDetail_Work } from "./cn-ch/CareersDetail_Work";
 import { CareersDetailJoin } from "./cn-ch/CareersDetail_Join";
 import { CareersDetailIndex } from "./cn-ch/CareersDetail_Index";
 import { CareersDetailGrowup } from "./cn-ch/CareersDetail_Growup";
+import { ServiceIndex } from "./cn-ch/Service_Index";
+import { ServiceCustomerSupport } from "./cn-ch/Service_CustomerSupport";
 
 export const cn = {
   common: {
@@ -103,5 +105,7 @@ export const cn = {
   CareersDetail_Work,
   CareersDetailJoin,
   CareersDetailIndex,
-  CareersDetailGrowup
+  CareersDetailGrowup,
+  ServiceIndex,
+  ServiceCustomerSupport,
 };

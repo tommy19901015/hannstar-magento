@@ -12,9 +12,11 @@ function useServiceIndex() {
         type: "FullBanner",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/service/Homepage_CustomerService/Banner_Customersupport.jpg`,
-            title: "創新技術、品質服務",
-            text: "",
+            src: `${
+              urlConfig().s3Url
+            }/Image/service/Homepage_CustomerService/Banner_Customersupport.jpg`,
+            title: t("ServiceIndex.FullBannerTitle"),
+            text: t("ServiceIndex.FullBannerText"),
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
           },
@@ -24,19 +26,25 @@ function useServiceIndex() {
         type: "MessageCenterPlatform",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/service/Homepage_CustomerService/icon1.png`,
-            title: "客戶通",
-            href: "/",
+            src: `${
+              urlConfig().s3Url
+            }/Image/service/Homepage_CustomerService/icon1.png`,
+            title: t("ServiceIndex.platform1"),
+            href: urlConfig().service.customer.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/service/Homepage_CustomerService/icon2.png`,
-            title: "綠色環保申請",
-            href: "/",
+            src: `${
+              urlConfig().s3Url
+            }/Image/service/Homepage_CustomerService/icon2.png`,
+            title: t("ServiceIndex.platform2"),
+            href: urlConfig().service.greenLawApply.href,
           },
           {
-            src: `${urlConfig().s3Url}/Image/service/Homepage_CustomerService/icon3.png`,
-            title: "技術諮詢",
-            href: "/",
+            src: `${
+              urlConfig().s3Url
+            }/Image/service/Homepage_CustomerService/icon3.png`,
+            title: t("ServiceIndex.platform3"),
+            href: urlConfig().service.technicalSupport.href,
           },
         ],
       },
@@ -44,9 +52,8 @@ function useServiceIndex() {
         type: "TitleContentBlock",
         data: [
           {
-            title: "關於客戶服務平台",
-            content:
-              "以顧客為中心的客戶服務平台，用多元化服務協助不同消費階段遇到的問題，以及後勤人員即時協助客戶，提高您的滿意度，共同創造雙贏的未來。",
+            title: `${t("ServiceIndex.title")}`,
+            content: `${t("ServiceIndex.content")}`,
           },
         ],
       },
@@ -59,26 +66,24 @@ function useServiceIndex() {
             data: [
               {
                 src: "https://e-service.hannstar.com/Content/images/img/home1.jpg",
-                title: "客戶通",
-                text:
-                  "透過平台簡易、便利的服務，讓客戶享受更快速的各項專業諮詢交流，由全方位的售後服務團隊為您效勞。",
-                href: "",
-                btnText: "了解更多",
+                title: `${t("ServiceIndex.GraphicsCardTitle1")}`,
+                text: `${t("ServiceIndex.GraphicsCardText1")}`,
+                href: urlConfig().service.customer.href,
+                btnText: `${t("ServiceIndex.BtnText")}`,
               },
               {
                 src: "https://e-service.hannstar.com/Content/images/img/home3.jpg",
-                title: "綠色環保申請",
-                text:
-                  "「可回收、低污染、省資源」致力推動綠色產品發展，並取得環保標章，符合永續發展。",
-                href: "",
-                btnText: "了解更多",
+                title: `${t("ServiceIndex.GraphicsCardTitle2")}`,
+                text: `${t("ServiceIndex.GraphicsCardText2")}`,
+                href: urlConfig().service.greenLawApply.href,
+                btnText: `${t("ServiceIndex.BtnText")}`,
               },
               {
                 src: "https://e-service.hannstar.com/Content/images/img/home2.jpg",
-                title: "技術諮詢",
-                text: "多年的技術經驗及教育訓練透過雲端共享，",
-                href: "",
-                btnText: "了解更多",
+                title: `${t("ServiceIndex.GraphicsCardTitle3")}`,
+                text: `${t("ServiceIndex.GraphicsCardText3")}`,
+                href: urlConfig().service.technicalSupport.href,
+                btnText: `${t("ServiceIndex.BtnText")}`,
               },
             ],
           },
@@ -88,15 +93,16 @@ function useServiceIndex() {
         type: "ArticleListContent",
         data: [
           {
-            title: "最新文章列表",
+            title: `${t("ServiceIndex.ArticleListContentTitle1")}`,
             data: [
               {
-                catalog: "技術文件",
+                catalog: `${t("ServiceIndex.catalog1")}`,
                 articleDatas: [
                   {
                     src: "https://e-service.hannstar.com/Content/images/img/professional-accurately-unscrewing-case-metallic-slim-laptop-his-electric-service-lab-near-tool-bag-clean-repair-it-front-view.jpg",
                     title: "LCM 偏光板製程",
-                    description: "LCM模組生產站點POL站，針對整個偏光板貼附作業的技術介紹",
+                    description:
+                      "LCM模組生產站點POL站，針對整個偏光板貼附作業的技術介紹",
                     href: "",
                     subTitle: "2022/09/01",
                     // views: "5",
@@ -104,7 +110,8 @@ function useServiceIndex() {
                   {
                     src: "https://e-service.hannstar.com/Content/images/img/close-up-reparation-laptop.jpg",
                     title: "LCM 切割製程簡介",
-                    description: "LCM模組生產站點切割站，針對切割Cell玻璃的技術介紹",
+                    description:
+                      "LCM模組生產站點切割站，針對切割Cell玻璃的技術介紹",
                     href: "",
                     subTitle: "2022/08/22",
                     // views: "8",
@@ -112,7 +119,7 @@ function useServiceIndex() {
                 ],
               },
               {
-                catalog: "教育訓練",
+                catalog: `${t("ServiceIndex.catalog2")}`,
                 articleDatas: [
                   {
                     src: "https://e-service.hannstar.com/Content/images/img/iStock-962459768.jpg",
@@ -134,9 +141,9 @@ function useServiceIndex() {
                   },
                 ],
               },
-            ]
+            ],
           },
-        ]
+        ],
       },
     ],
   };
@@ -145,4 +152,3 @@ function useServiceIndex() {
 }
 
 export default useServiceIndex;
-

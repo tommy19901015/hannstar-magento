@@ -52,7 +52,7 @@ const Header: React.FC = () => {
       "hannspree",
     ];
     mappingArr.includes(type) && setServiceType(type);
-    addZdassets();
+    // addZdassets();
   }, []);
 
   const addZdassets = () => {
@@ -174,14 +174,18 @@ const Header: React.FC = () => {
       <ul className="menuUl">
         {menuList[serviceType].map((item, index) => (
           <li className="menuLi" key={index}>
-            <div className={`menuText ${item.content &&
-              item.content.length === 0 && 'noSec'}`}>
+            <div
+              className={`menuText ${
+                item.content && item.content.length === 0 && "noSec"
+              }`}
+            >
               <a href={item.href}>{item.title}</a>
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
               {item.content &&
                 item.content.length > 0 &&
@@ -199,7 +203,6 @@ const Header: React.FC = () => {
 
   return (
     <div className="hannstarHeader">
-      
       <div className="header_pc">
         <a href={hannstar.index.href}>
           <img
@@ -209,12 +212,12 @@ const Header: React.FC = () => {
           />
         </a>
         <div className="menuBlock">
-        <div ref={magentoHeaderRef} className="magentoHeader">
-          <TopHeaderBlock />
-          {/* <MagentoInputHeader /> */}
-          {/* <MagentoLoginHeader /> */}
-          {/* <MagentoNotLoginHeader /> */}
-          {/* <MagentoLanguageHeader /> */}
+          <div ref={magentoHeaderRef} className="magentoHeader">
+            <TopHeaderBlock />
+            {/* <MagentoInputHeader /> */}
+            {/* <MagentoLoginHeader /> */}
+            {/* <MagentoNotLoginHeader /> */}
+            {/* <MagentoLanguageHeader /> */}
           </div>
           <MenuBlock />
         </div>

@@ -2,7 +2,7 @@ import { RMAApply } from "./zh-tw/Service_RMA_Apply";
 import { ParseApply } from "./zh-tw/Service_Parse_Apply";
 import { RMAList } from "./zh-tw/Service_RMA_List";
 import { LoginForm } from "./zh-tw/LoginForm";
-import { RegisterForm } from "./zh-tw/RegisterForm"
+import { RegisterForm } from "./zh-tw/RegisterForm";
 import { Investors_Summary } from "./zh-tw/Investors_Summary";
 import { Investors_Revenue } from "./zh-tw/Investors_Revenue";
 import { Investors_Report } from "./zh-tw/Investors_Report";
@@ -16,13 +16,13 @@ import { About_Index } from "./zh-tw/About_Index";
 import { About_Stronghold } from "./zh-tw/About_Stronghold";
 import { About_Team } from "./zh-tw/About_Team";
 import { Account_Application } from "./zh-tw/Account_Application";
-import { Account_Dashboard } from "./zh-tw/Account_Dashboard"
-import { Account_EditAccount } from "./zh-tw/Account_EditAccount"
-import { Account_Logout } from "./zh-tw/Account_Logout"
-import { Account_MemberInfo } from "./zh-tw/Account_MemberInfo"
-import { Account_MyAccount } from "./zh-tw/Account_MyAccount"
-import { Account_Newsletter } from "./zh-tw/Account_Newsletter"
-import { Account_SendVerifyEmail } from "./zh-tw/Account_SendVerifyEmail"
+import { Account_Dashboard } from "./zh-tw/Account_Dashboard";
+import { Account_EditAccount } from "./zh-tw/Account_EditAccount";
+import { Account_Logout } from "./zh-tw/Account_Logout";
+import { Account_MemberInfo } from "./zh-tw/Account_MemberInfo";
+import { Account_MyAccount } from "./zh-tw/Account_MyAccount";
+import { Account_Newsletter } from "./zh-tw/Account_Newsletter";
+import { Account_SendVerifyEmail } from "./zh-tw/Account_SendVerifyEmail";
 import { Account_Personal } from "./zh-tw/Account_Personal";
 import { Account_Partner } from "./zh-tw/Account_Partner";
 import { Account_Personal_Template } from "./zh-tw/Account_Personal_Template";
@@ -50,6 +50,9 @@ import { CareersDetail_Work } from "./zh-tw/CareersDetail_Work";
 import { CareersDetailJoin } from "./zh-tw/CareersDetail_Join";
 import { CareersDetailIndex } from "./zh-tw/CareersDetail_Index";
 import { CareersDetailGrowup } from "./zh-tw/CareersDetail_Growup";
+import { ServiceIndex } from "./zh-tw/Service_Index";
+import { ServiceCustomerSupport } from "./zh-tw/Service_CustomerSupport";
+import { ServiceGreenService } from "./zh-tw/Service_GreenService";
 
 export const tw = {
   common: {
@@ -111,5 +114,8 @@ export const tw = {
   CareersDetail_Work,
   CareersDetailJoin,
   CareersDetailIndex,
-  CareersDetailGrowup
+  CareersDetailGrowup,
+  ServiceIndex,
+  ServiceCustomerSupport,
+  ServiceGreenService,
 };

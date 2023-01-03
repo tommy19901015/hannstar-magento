@@ -10,8 +10,16 @@ const Footer: React.FC = () => {
   const [serviceType, setServiceType] = useState<string>("hannstar");
 
   useEffect(() => {
-    const type = window.location.pathname.split("/")[1];
-    const mappingArr = ["hannstar", "partner", "service"];
+    const type = window.location.pathname.split("/")[2];
+    const mappingArr = [
+      "hannstar",
+      "partner",
+      "service",
+      "paperdisplay",
+      "tftdisplay",
+      "solution",
+      "hannspree",
+    ];
     mappingArr.includes(type) && setServiceType(type);
   }, []);
 
