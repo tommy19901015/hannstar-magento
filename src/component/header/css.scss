@@ -9,13 +9,16 @@
     box-sizing: border-box;
     background: linear-gradient(280deg, $hannstar-blue2 0%, $hannstar-blue3 60%, $hannstar-blue4 100%);
     width: 100%;
-    height: 80px;
+    height: 100px;
     z-index: 99;
     .magentoHeader {
-        height: 20px;
-        position: absolute;
-        right: 80px;
-        padding-top: 8px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        justify-content: end;
+        // position: absolute;
+        // right: 80px;
+        // padding-top: 8px;
         .hannstarTopBlock {
             display: flex;
             align-self: center;
@@ -79,13 +82,14 @@
         }
         .menuBlock {
             display: flex;
-            flex-grow: 1;
-            height: calc(100% - 20px);
-            padding-top: 20px;
+            flex-direction: column;
+            // flex-grow: 1;
+            // height: calc(100% - 20px);
+            // padding-top: 20px;
             .menuUl {
                 display: flex;
                 align-items: center;
-                height: 100%;
+                height: 50px;
                 width: 100%;
                 justify-content: flex-end;
                 .menuLi {
@@ -100,11 +104,11 @@
                         content: '';
                         position: absolute;
                         left: 0;
-                        bottom: -10px;
+                        bottom: 0;
                         z-index: 1;
                         width: 100%;
                         height: 0;
-                        background-color: $hannstar-blue2;
+                        background-color: $hannstar-blue0;
                     }
                     .menuText {
                         display: flex;

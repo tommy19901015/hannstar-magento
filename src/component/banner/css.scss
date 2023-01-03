@@ -13,7 +13,7 @@ $componentName: 'Banner';
     .textBlock {
         position: absolute;
         width: 700px;
-        padding: 40px 60px;
+        padding: 40px 80px;
         .title {
             @include hannstarH2Title;
             color: #fff;

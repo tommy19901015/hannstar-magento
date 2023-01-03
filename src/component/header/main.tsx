@@ -199,13 +199,7 @@ const Header: React.FC = () => {
 
   return (
     <div className="hannstarHeader">
-      <div ref={magentoHeaderRef} className="magentoHeader">
-        <TopHeaderBlock />
-        {/* <MagentoInputHeader /> */}
-        {/* <MagentoLoginHeader /> */}
-        {/* <MagentoNotLoginHeader /> */}
-        {/* <MagentoLanguageHeader /> */}
-      </div>
+      
       <div className="header_pc">
         <a href={hannstar.index.href}>
           <img
@@ -215,6 +209,13 @@ const Header: React.FC = () => {
           />
         </a>
         <div className="menuBlock">
+        <div ref={magentoHeaderRef} className="magentoHeader">
+          <TopHeaderBlock />
+          {/* <MagentoInputHeader /> */}
+          {/* <MagentoLoginHeader /> */}
+          {/* <MagentoNotLoginHeader /> */}
+          {/* <MagentoLanguageHeader /> */}
+          </div>
           <MenuBlock />
         </div>
       </div>

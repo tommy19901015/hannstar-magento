@@ -13,7 +13,6 @@ margin-bottom:40px;
 
 export const TwoColFullStyle: React.FC<I_Style> = styled.div`
   display: flex;
-  margin-bottom:40px;
   &:first-child{
     margin: 0px auto; 
   }
@@ -27,8 +26,7 @@ export const TwoColFullStyle: React.FC<I_Style> = styled.div`
 export const OneColStyle: React.FC<I_Style> = styled.div`    
 
     margin:${(props: { fixClass: string }) =>
-    props.fixClass === 'fixed' ? "40px auto 0px auto" : "40px auto"};
-    padding: 0px 60px;
+    props.fixClass === 'fixed' ? "60px auto 0px auto" : "0px auto"};
     max-width:1400px;
     &:first-child{
     }
