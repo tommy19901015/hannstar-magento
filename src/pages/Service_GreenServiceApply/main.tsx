@@ -103,31 +103,47 @@ const ServiceGreenServiceApply: React.FC = () => {
         postFormData.append(idx.toString(), file);
       })
 
-      postSendGreenapply(postFormData).then((response: any) => {
-        console.log('response', response)
-        // setPopupMessage(response.data.messages)
-        // handleShowPopup()
-      });
+      // postSendGreenapply(postFormData).then((response: any) => {
+      //   console.log('response', response)
+      //   setPopupMessage(response.data.messages)
+      //   handleShowPopup()
+      // });
+      fetch('/rest/V1/eService/SetGreen', {
+        method: 'POST',
+        body: postFormData,
+      })
+        .then((response) => response.json())
+        .then((res) => {
+          setPopupMessage(res.data.message)
+        }).then(() => {
+          console.log('popupMessage', popupMessage);
+          handleShowPopup()
+        })
+
+
     }
+
+    const handleShowPopup = () => {
+      showPopUpRef.current.classList.add("show");
+    };
 
     const handleFileChange = (e: any) => {
       setGerrnApplyFile(e.target.files);
+    };
+
+    const handleConfirmPopUp = () => {
+      showPopUpRef.current.classList.remove("show")
+      handlerReset()
     };
 
     const popupProps = {
       content: (
         <div className={`${pageName}DeletePop`}>
           {
-            popupMessage.map(item => <div>{item}</div>)
+            popupMessage?.map(item => <div>{item}</div>)
           }
           <div className="btnBlock">
-            <div
-              className="btn"
-              onClick={() => showPopUpRef.current.classList.remove("show")}
-            >
-              取消
-            </div>
-            <div className="btn" >
+            <div className="btn" onClick={() => handleConfirmPopUp()}>
               確定
             </div>
           </div>

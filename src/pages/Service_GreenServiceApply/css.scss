@@ -122,7 +122,17 @@ $pageName: 'ServiceGreenServiceApply';
         }
     }
 }
-
+.#{$pageName}DeletePop {
+    .btnBlock {
+        margin: 30px auto 0;
+        display: flex;
+        justify-content: center;
+        .btn {
+            @include hannstarBtn;
+            margin: 0 20px;
+        }
+    }
+}
 @media screen and (max-width: $breakpoint) {
     .#{$pageName}FormBlock {
         padding: 0;

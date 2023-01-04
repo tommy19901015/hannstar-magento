@@ -52,7 +52,7 @@ const Header: React.FC = () => {
       "hannspree",
     ];
     mappingArr.includes(type) && setServiceType(type);
-    // addZdassets();
+    addZdassets();
   }, []);
 
   const addZdassets = () => {
@@ -175,17 +175,15 @@ const Header: React.FC = () => {
         {menuList[serviceType].map((item, index) => (
           <li className="menuLi" key={index}>
             <div
-              className={`menuText ${
-                item.content && item.content.length === 0 && "noSec"
-              }`}
+              className={`menuText ${item.content && item.content.length === 0 && "noSec"
+                }`}
             >
               <a href={item.href}>{item.title}</a>
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${
-                item.type === "member" && "base-box-shadow"
-              }`}
+              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
+                }`}
             >
               {item.content &&
                 item.content.length > 0 &&

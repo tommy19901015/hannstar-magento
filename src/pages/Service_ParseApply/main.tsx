@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import useParseApply from "./pageData";
 import { postInitParseapply, postSendParseapply } from "../../services/api.service";
 import Popup from "../../component/popup/main";
+import Loading from "../../component/loading/main";
 import "./css.scss";
 import { urlConfig } from "../../config/urlSetting";
 //=====================================================
@@ -92,11 +93,24 @@ const ServiceParseApply: React.FC = () => {
 
       console.log("pppostFormData", postFormData);
 
-      postSendParseapply(postFormData).then((response: any) => {
-        console.log('response', response)
-        setPopupMessage(response.data.messages)
-        handleShowPopup()
-      });
+      // postSendParseapply(postFormData).then((response: any) => {
+      //   console.log('response', response)
+      //   setPopupMessage(response.data.messages)
+      //   handleShowPopup()
+      // });
+
+      fetch('/rest/V1/eService/SetIssue', {
+        method: 'POST',
+        body: postFormData,
+      })
+        .then((response) => response.json())
+        .then((res) => {
+          console.log("test", res)
+          setPopupMessage(res.data.message)
+        }).then(() => {
+          console.log('popupMessage', popupMessage);
+          handleShowPopup()
+        })
     }
 
     const handlerReset = () => {
@@ -105,6 +119,11 @@ const ServiceParseApply: React.FC = () => {
 
     const handleFileChange = (e: any) => {
       setParseapplyFile(e.target.files);
+    };
+
+    const handleConfirmPopUp = () => {
+      showPopUpRef.current.classList.remove("show")
+      handlerReset()
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -140,16 +159,10 @@ const ServiceParseApply: React.FC = () => {
       content: (
         <div className={`${pageName}DeletePop`}>
           {
-            popupMessage.map(item => <div>{item}</div>)
+            popupMessage?.map(item => <div>{item}</div>)
           }
           <div className="btnBlock">
-            <div
-              className="btn"
-              onClick={() => showPopUpRef.current.classList.remove("show")}
-            >
-              取消
-            </div>
-            <div className="btn" >
+            <div className="btn" onClick={() => handleConfirmPopUp()}>
               確定
             </div>
           </div>
@@ -312,7 +325,7 @@ const ServiceParseApply: React.FC = () => {
             </div>
           </form>
         </div>
-      </> : null
+      </> : <Loading />
 
     );
   };
