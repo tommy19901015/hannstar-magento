@@ -1,0 +1,23 @@
+export const SolutionSmartCity = {
+  bannerTitle: `Smart City, Convenience Life`,
+  bannerContent:`Hannstar uses advanced information, electronics, sensing, communication, control and management technologies to improve or strengthen the interactive relationship between people, vehicles and roads.
+  Improve the quality and performance of transportation services, improve transportation safety, efficiency and comfort, and reduce the impact on the traffic environment.`,
+  title1:"Smart Parking/Charging Management System and Equipment",
+  subTitle1:`停車充電樁正夯，海拔2000公尺以上的便利商店都有安裝，隨時隨地充電，綠能商機無限`,
+  title2:"Bicycle Sharing System and Equipment",
+  subTitle2:`The design with no backlight display makes the device clearly visible in outdoor situations, and the cloud background system integrates member information and other operational data for easy management.`,
+  title3:"＊精選方案＊",
+  cardTitle_1:"Smart Charging System Solution",
+  cardContent_1:`Smart charging system that is visible under strong light, low power consumption and good weather resistance, no matter in cold regions, hot tropical regions or outdoor parking lots, it can allow electric vehicle owners to recharge and recharge. `,
+  cardTitle_2:"Bike Sharing Solution",
+  cardContent_2:`In the era of national bicycles, through shared bicycle solutions, integrated data management, to create a convenient city`,
+  cardTitle_3:"Smart Parking Management Solution",
+  cardContent_3:`Fully automated and unmanned construction not only reduces operating costs, but also facilitates management`,
+  cardTitle_4:"Solution Consulting",
+  cardContent_4:`In addition to the existing solutions, it also provides solution consultation for other smart retail related fields`,
+  cardBtn_1:`more`,
+  cardBtn_2:`contact us`,
+  breadcrumbsItem:"Home",
+  breadcrumbsItem1:"方案整合及系統服務",
+  breadcrumbsItem2:"智慧城市",
+}

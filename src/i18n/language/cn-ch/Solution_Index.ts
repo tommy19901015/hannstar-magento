@@ -1,0 +1,26 @@
+export const SolutionIndex = {
+  bannerTitle: "",
+  bannerContent:"",
+  title1:"我们为各场域的数位化提供AIoT智慧解决方案",
+  subTitle1:`随着科技进步，智慧生活的当下，瀚宇彩晶以平台的观念，整合业界资源来提供智慧化解决方案。
+  也随着地球环暖化，环保意识抬头，瀚宇彩晶亦积极研发低功耗、户外可视的显示纸装置，来提各场域显示应用上的节能减碳方案，
+  期开创智慧绿能生活新契机， 实现智慧绿色科技产业价值，为客户提供环境友善的产品。`,
+  title2:"解决方案规划咨询服务",
+  subTitle2:`依据客户需求提供系统整合方案的咨询与规划，并搭配产品齐全、经验丰富的生态圈伙伴，满足客户在零售与交通领域的产品需求，为客户提供完整的AIoT系统解决方案。`,
+  title3:"＊與我聯繫＊",
+  bannerBlockTitle_1:"智慧城市",
+  bannerBlockContent_1:`使用先进之电子、通信、电脑、控制及感测技术于运输系统上，透过即时资讯传输，以增进安全、效率与服务。`,
+  bannerBlockTitle_2:"智慧零售",
+  bannerBlockContent_2:`以智慧、节能、永续为根本，运用科技帮助品牌打造线上、门市的销售环境，优化消费者体验和流程。`,
+  bannerBlockTitle_3:"智慧育乐",
+  bannerBlockContent_3:`应用智慧绿色显示器技术， 打造更环保节能的产品，一同提升生活品质，创造永续未来。`,
+  cardTitle_1:"硬体咨询",
+  cardContent_1:`相關顯示模組、裝置、產品諮詢`,
+  cardTitle_2:"系统咨询",
+  cardContent_2:`针对整机产品提供对应的韧体与软件服务。`,
+  cardTitle_3:"场域方案咨询",
+  cardContent_3:`傳統 TFT 顯示面板顯示主要是借重背光源穿透面板來呈現顯示的效果。`,
+  breadcrumbsItem:"首頁",
+  breadcrumbsItem1:"方案整合及系統服務",
+  breadcrumbsItem2:"智慧解決方案",
+}

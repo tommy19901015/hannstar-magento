@@ -49,6 +49,10 @@ import { CareersDetailGrowup } from "./en-us/CareersDetail_Growup";
 import { ServiceIndex } from "./en-us/Service_Index";
 import { ServiceCustomerSupport } from "./en-us/Service_CustomerSupport";
 import { ServiceGreenService } from "./en-us/Service_GreenService";
+import { SolutionSmartRetailing } from "./en-us/Solution_SmartRetailing";
+import { SolutionSmartCity } from "./en-us/Solution_SmartCity";
+import { SolutionIndex } from "./en-us/Solution_Index";
+import { SolutionSmartRecreation } from "./en-us/Solution_SmartRecreation";
 
 export const en = {
   common: {
@@ -109,4 +113,8 @@ export const en = {
   ServiceIndex,
   ServiceCustomerSupport,
   ServiceGreenService,
+  SolutionSmartRetailing,
+  SolutionSmartCity,
+  SolutionIndex,
+  SolutionSmartRecreation,
 };

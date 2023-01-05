@@ -1,0 +1,22 @@
+export const SolutionSmartRecreation = {
+  bannerTitle: `Smart Edutainment, Happy Life`,
+  bannerContent:`Hannstar combines display panels and network technologies to create more energy-saving devices, and aims at intelligent interaction and immersive experience.
+  Create friendlier learning, entertainment and healthy life.`,
+  title1:"Smart Learning System and Equipment",
+  subTitle1:`The Internet of Things connects the two ends of teachers and students, combined with big data analysis, it is easy to track students' learning outcomes.`,
+  title2:"Outdoor Sports System and Equipment",
+  subTitle2:`A robust device that can adapt to any environment. With an APP, users can record various data and analyze exercise results.`,
+  cardTitle_1:"Elderly Care Solution",
+  cardContent_1:`Hannstar provides elderly care solutions and cares for every elderly person; regardless of laptops, tablets or handheld devices, they all have high-resolution and clear images, creating a convenient and comfortable communication protection network`,
+  cardTitle_2:"Smart Learning Solution",
+  cardContent_2:`With the advent of the technology era, learning methods are becoming more and more diverse, and smart learning solutions provide more diverse learning experiences`,
+  cardTitle_3:"Outdoor Sport Solution",
+  cardContent_3:`Users integrate various analysis data through outdoor sports programs to improve sports performance`,
+  cardTitle_4:"Solution Consulting",
+  cardContent_4:`In addition to the existing solutions, it also provides solution consultation for other smart retail related fields`,
+  cardBtn_1:`more`,
+  cardBtn_2:`contact us`,
+  breadcrumbsItem:"Home",
+  breadcrumbsItem1:"方案整合及系統服務",
+  breadcrumbsItem2:"智慧育樂",
+}
