@@ -8,7 +8,8 @@ import useServiceRMAApply from "./pageData";
 import { postInitParseapply } from "../../services/api.service";
 import "./css.scss";
 //=====================================================
-import fakeDataJson from "../../ServiceFakeData/parseapply.json"
+import fakeDataJson from "../../ServiceFakeData/initRMA.json"
+import fakeUploadDataJson from "../../ServiceFakeData/uploadFileParseapply.json"
 //=====================================================
 
 const ServiceRMAApply: React.FC = () => {
@@ -31,11 +32,15 @@ const ServiceRMAApply: React.FC = () => {
 
     const errorMsg = formData.Required;
 
-    const [parseapplyData, setParseapplyData] = useState<any>()
+    const [RMAData, setRMAData] = useState<any>()
     const [issueCodeSelect, setIssueCodeSelect] = useState<any>([])
-    // const [inputAmount, setInputAmount] = useState<any>()
-    // const [defectAmount, setDefectAmount] = useState<any>()
     const [defectRate, setDefectRate] = useState<any>()
+    const [isQuickReview, setIsQuickReview] = useState<string>("Y")
+    const [stepOneFile, setStepOneFile] = useState<any>()
+    const [stepTwoFile, setStepTwoFile] = useState<any>()
+    const [uploadTableData, setUploadTableData] = useState<any>()
+
+
     const [testFile, setTestFile] = useState<any>()
 
     const inputAmountRef: any = useRef(null);
@@ -44,8 +49,8 @@ const ServiceRMAApply: React.FC = () => {
     useEffect(() => {
       console.log("fakeDataJson", fakeDataJson)
       const fakeData: any = fakeDataJson
-      setParseapplyData(fakeData)
-      parseapplyData && setInitData()
+      setRMAData(fakeData.data)
+      RMAData && setInitData()
 
       // const email = window.hannstar?.email
       // const postData = {
@@ -59,14 +64,12 @@ const ServiceRMAApply: React.FC = () => {
       // });
 
 
-    }, [parseapplyData])
+    }, [RMAData])
 
     const setInitData = () => {
-      setValue("issue_number", parseapplyData.issue_number)//解析申請單號
-      setValue("customer_code", parseapplyData.customer_code)//客戶名稱
-      setValue("hs_id", parseapplyData.hs_id)//cqs窗口
-      setIssueCodeSelect(parseapplyData.IssueType[0].issuecode)
-      // setValue("issue_code", parseapplyData.IssueType[0].issuecode[0].id)
+      setValue("issue_number", RMAData.issue_number)//解析申請單號
+      setValue("customer_code", RMAData.customer_code)//客戶名稱
+      setValue("hs_id", RMAData.hs_id)//cqs窗口
     }
 
 
@@ -120,7 +123,7 @@ const ServiceRMAApply: React.FC = () => {
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const code = parseapplyData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
+      const code = RMAData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
       setIssueCodeSelect(code)
       // setValue("issue_code", code[0].id)
     }
@@ -134,6 +137,15 @@ const ServiceRMAApply: React.FC = () => {
       }
     }
 
+    const isseuYearData = () => {
+      const year = new Date().getFullYear()
+      return [year, year - 1, year - 2]
+    }
+
+    const isseuMonthData = () => {
+      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    }
+
     const handleInput_amount = (e: React.ChangeEvent<HTMLInputElement>) => {
       setDefect_rate()
       setValue("input_amount", e.target.value)
@@ -144,8 +156,83 @@ const ServiceRMAApply: React.FC = () => {
       setValue("defect_amount", e.target.value)
     }
 
+    const handleQuickReview = (e: React.ChangeEvent<HTMLInputElement>) => {
+      console.log("handleQuickReview", e);
+      setIsQuickReview(e.target.value)
+    }
+
+    const handleStepOneFileChange = (e: any) => {
+      setStepOneFile(e.target.files[0]);
+    };
+
+    const handleStepTwoFileChange = (e: any) => {
+      setStepTwoFile(e.target.files);
+    };
+
+    const handleQuickReviewUpload = () => {
+      const postFormData = new FormData();
+      stepTwoFile && Object.values(stepTwoFile).map((file: any, idx) => {
+        postFormData.append((idx + 1).toString(), file);
+      })
+      const issueNumber: any = getValues("issue_number")
+      postFormData.append("file", stepOneFile);
+      postFormData.append("issue_number", issueNumber);
+
+      console.log('postFormData', postFormData);
+
+      fetch('/rest/V1/eService/Excel2Detail', {
+        method: 'POST',
+        body: postFormData,
+      })
+        .then((response) => response.json())
+        .then((res) => {
+          console.log("test", res)
+          setUploadTableData(res)
+        })
+
+      setUploadTableData(fakeUploadDataJson)
+    }
+
+    const UploadTableBlock = () => {
+      return (
+        uploadTableData ? <table>
+          <thead>
+            <tr>
+              <td>Action</td>
+              <td>項次</td>
+              <td>Hannstar序號</td>
+              <td>保固</td>
+              <td>不良名稱</td>
+              <td>圖片</td>
+            </tr>
+          </thead>
+          <tbody>
+            {uploadTableData.map((item: any) => {
+              return (<tr>
+                <td>Action</td>
+                <td>{item.item_no}</td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <select>
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
+                </td>
+                <td>{item.defect_name}</td>
+                <td>
+                  <a href={item.show_url}>{item.file_name}</a>
+                </td>
+              </tr>)
+            })}
+          </tbody>
+        </table> : null
+      )
+    }
+
     return (
-      parseapplyData ? <>
+      RMAData ? <>
         <h1 className={`${pageName}H1Title`}>{formData.PageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -160,10 +247,10 @@ const ServiceRMAApply: React.FC = () => {
                     disabled />
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.agent}</label>
+                  <label className="required">{formData.agent}</label>
                   <input
                     type="text"
-                    {...register("agent")} />
+                    {...register("agent", { required: true })} />
                   {errors.agent && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
@@ -185,40 +272,40 @@ const ServiceRMAApply: React.FC = () => {
               </div>
               <div className="row">
                 <div className="col-2">
-                  <label className="required">{formData.product}</label>
-                  <select {...register("product", { required: false })}>
-                    {parseapplyData?.product.map((item: string) => (
+                  <label className="required">{formData.model_no}</label>
+                  <select {...register("model_no", { required: false })}>
+                    {RMAData?.product.map((item: string) => (
                       <option value={item}>{item}</option>
                     ))}
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.form_type.title}</label>
+                  <label className="required">{formData.product_type.title}</label>
                   <select
-                    {...register("form_type", { required: false })}
+                    {...register("product_type", { required: false })}
                   >
-                    {formData.form_type.option.map(({ value, text }) => (
-                      <option value={value}>{text}</option>
+                    {RMAData?.product_type.map(({ id, text }: { id: string, text: string }) => (
+                      <option value={id}>{text}</option>
                     ))}
                   </select>
                 </div>
               </div>
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.monthEndYear}</label>
+                  <label className="required">{formData.isseu_year}</label>
                   <select
-                    {...register("monthEndYear", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
-                    {parseapplyData?.IssueType.map((item: { id: string, text: string }) => (
-                      <option value={item.id}>{item.text}</option>
+                    {...register("isseu_year", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
+                    {isseuYearData().map(year => (
+                      <option value={year}>{year}</option>
                     ))}
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="">{formData.monthEndMonth}</label>
+                  <label className="required">{formData.isseu_month}</label>
                   <select
-                    {...register("monthEndMonth", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
-                    {parseapplyData?.IssueType.map((item: { id: string, text: string }) => (
-                      <option value={item.id}>{item.text}</option>
+                    {...register("isseu_month", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
+                    {isseuMonthData().map(month => (
+                      <option value={month}>{month}</option>
                     ))}
                   </select>
                 </div>
@@ -255,28 +342,28 @@ const ServiceRMAApply: React.FC = () => {
                   />
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.Invoice}</label>
+                  <label className="required">{formData.invoce_number}</label>
                   <input
                     type="text"
-                    {...register("Invoice", { required: true })} />
-                  {errors.Invoice && (<span className="error">{errorMsg}</span>)}
+                    {...register("invoce_number", { required: true })} />
+                  {errors.invoce_number && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
               <div className="row">
                 <div className="col-2">
-                  <label className="">{formData.paula}</label>
+                  <label className="required">{formData.yield} {formData.Per}</label>
                   <input
                     type="text"
-                    value={defectRate}
-                    {...register("paula")}
+                    {...register("yield", { required: true })}
                   />
+                  {errors.yield && (<span className="error">{errorMsg}</span>)}
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.caseNumber}</label>
+                  <label className="required">{formData.box_no}</label>
                   <input
                     type="text"
-                    {...register("caseNumber", { required: true })} />
-                  {errors.caseNumber && (<span className="error">{errorMsg}</span>)}
+                    {...register("box_no", { required: true })} />
+                  {errors.box_no && (<span className="error">{errorMsg}</span>)}
                 </div>
               </div>
               <div className="row">
@@ -288,8 +375,10 @@ const ServiceRMAApply: React.FC = () => {
                         <input
                           id={item.value}
                           type="radio"
-                          value={item.value}
                           {...register("quickReview", { required: true })}
+                          value={item.value}
+                          checked={item.value === isQuickReview}
+                          onChange={(e) => handleQuickReview(e)}
                         />
                         <label htmlFor={item.value}>{item.text}</label>
                       </div>
@@ -300,14 +389,31 @@ const ServiceRMAApply: React.FC = () => {
                   )}
                 </div>
               </div>
-              <div className="row">
-                <div className="col-1">
-                  <div className="fileBlock">
-                    <input type="file" onChange={handleFileChange} />
-                    <div className="uploadBtn" onClick={handlerUpload}>{formData.Upload}</div>
+              {
+                isQuickReview === "Y" ?
+                  <div className="upLoadFileBlock">
+                    <div className="upLoadTitle">{formData.title1}</div>
+                    <a className="downloadLink" href="/">{formData.text1}</a>
+                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" onChange={handleStepOneFileChange} />
+                    <div className="stepTwoBlock">
+                      <div className="upLoadTitle">{formData.title2}</div>
+                      <div className="upLoadNote">{formData.noteText2}</div>
+                    </div>
+                    <input type="file" multiple accept=".jpg,.png" onChange={handleStepTwoFileChange} />
+                    <div className="uploadBtn" onClick={handleQuickReviewUpload}>上傳</div>
+                    <div>
+                      <UploadTableBlock />
+                    </div>
                   </div>
-                </div>
-              </div>
+                  :
+                  <div className="row">
+                    <div className="col-1">
+                      <div className="fileBlock">
+                        <input type="file" onChange={handleFileChange} />
+                      </div>
+                    </div>
+                  </div>
+              }
             </div>
             <div className={`${pageName}BtnBlock`}>
               <div className="btn" onClick={handlerSave}>{formData.Save}</div>

@@ -108,6 +108,72 @@ $pageName: 'ServiceRMAApply';
                 width: calc((100% / 3) - 10px);
             }
         }
+        .upLoadFileBlock {
+            .upLoadTitle {
+                @include hannstarH4Title;
+                margin-bottom: 10px;
+            }
+            .downloadLink {
+                display: block;
+                color: $hannstar-blue2;
+                margin-bottom: 10px;
+            }
+            input[type='file'] {
+                width: 100%;
+                height: 40px;
+                background-color: #fff;
+                font-size: 16px;
+            }
+            .stepTwoBlock {
+                display: flex;
+                align-items: center;
+                .upLoadNote {
+                    font-size: 14px;
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+            .uploadBtn {
+                margin-top: 30px;
+                @include hannstarBtn;
+            }
+        }
+        table {
+            margin-top: 50px;
+            width: 100%;
+            tr {
+                td {
+                    padding: 15px;
+                    border: 1px solid #fff;
+                }
+            }
+            thead {
+                background-color: $hannstar-blue2;
+                color: #fff;
+                tr {
+                    td {
+                        word-break: keep-all;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        background-color: $hannstar-bg-color;
+                        input {
+                            @include hannstarInput;
+                        }
+                        select {
+                            @include hannstarSelect;
+                            width: 60px;
+                        }
+                        a {
+                            color: $hannstar-blue2;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .#{$pageName}BtnBlock {

@@ -1,0 +1,22 @@
+RMA申請
+
+當切換出貨類別 下面table區塊要清空
+
+上傳檔案要多傳一個參數(出貨類別)到後端，判斷是否為中板
+取得的參數為
+
+{
+    isplate :true/false,
+    data:[
+        {
+            "issue_number": "A230105111934",
+            "item_no": 1,
+            "defect_qty": "30",
+            "station": "S\\/B",
+            "defect_name": "點不良",
+            "show_url": "https://digitalplatform.s3.us-west-2.amazonaws.com/OCQS/TEMP/A230105111934/icon1.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYKFJOMXWRBZ4ITM4%2F20230105%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230105T082420Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1800&X-Amz-Signature=f1561e6821bd7b72d4ca963cc0d63960d9ef1c6bf87cf3e77805570974fdb6b8",
+            "file_name": "icon1.png",
+            "file_path": "OCQS/TEMP/A230105111934/icon1.png"
+        },
+    ]
+}

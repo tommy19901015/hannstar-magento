@@ -26,15 +26,12 @@ function useServiceRMAApply() {
         agent: t('RMAApply.agent'),
         issue_number: t('RMAApply.singleNumber'),
         hs_id: t('RMAApply.cqs'),
-        product: t('RMAApply.modelNo'),
-        form_type: {
+        model_no: t('RMAApply.modelNo'),
+        product_type: {
             title: t('RMAApply.shipment'),
-            option: [
-                { text: t('RMAApply.productionStage'), value: t('RMAApply.productionStage') }
-            ]
         },
-        monthEndYear: t('RMAApply.monthEndYear'),
-        monthEndMonth: t('RMAApply.monthEndMonth'),
+        isseu_year: t('RMAApply.monthEndYear'),
+        isseu_month: t('RMAApply.monthEndMonth'),
 
         input_amount: t('RMAApply.amount'),
         Slice: t('RMAApply.slice'),
@@ -42,16 +39,20 @@ function useServiceRMAApply() {
         defect_amount: t('RMAApply.defective'),
         defect_rate: t('RMAApply.nonPerforming'),
         Per: t('RMAApply.per'),
-        Invoice: t('RMAApply.Invoice'),
-        paula: t('RMAApply.paula'),
-        caseNumber: t('RMAApply.caseNumber'),
+        invoce_number: t('RMAApply.Invoice'),
+        yield: t('RMAApply.paula'),
+        box_no: t('RMAApply.caseNumber'),
         quickReview: {
             title: t('RMAApply.quickReview'),
             option: [
-                { text: t('RMAApply.yes'), value: t('RMAApply.yes') },
-                { text: t('RMAApply.no'), value: t('RMAApply.no') }
+                { text: t('RMAApply.yes'), value: "Y" },
+                { text: t('RMAApply.no'), value: "N" }
             ]
         },
+        title1: t('RMAApply.title1'),
+        text1: t('RMAApply.text1'),
+        title2: t('RMAApply.title2'),
+        noteText2: t('RMAApply.noteText2'),
         Upload: t('RMAApply.common.upload'),
         Send: t('RMAApply.common.send'),
         Reset: t('RMAApply.common.reset'),

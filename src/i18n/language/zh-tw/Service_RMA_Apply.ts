@@ -41,6 +41,7 @@ export const RMAApply = {
     mediumPlate:"中版",
     plate:"版",
     invoice:"發票",
+    required:"星號字段為必填項！",
     common: {
       send: "送件",
       save: "儲存",

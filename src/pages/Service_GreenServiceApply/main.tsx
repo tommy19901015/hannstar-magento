@@ -10,6 +10,7 @@ import "./css.scss";
 import { urlConfig } from "../../config/urlSetting";
 import { I_detailData } from "./interface"
 import Popup from "../../component/popup/main";
+import Loading from "../../component/loading/main";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/initGreen.json"
 //=====================================================
@@ -153,7 +154,7 @@ const ServiceGreenServiceApply: React.FC = () => {
     };
 
     return (
-      <>
+      greenApplyData ? <>
         <Popup {...popupProps} />
         <h1 className={`${pageName}H1Title`}>{formData.MainTitle}</h1>
         <div className={`${pageName}FormBlock`}>
@@ -250,7 +251,7 @@ const ServiceGreenServiceApply: React.FC = () => {
             </div>
           </form>
         </div>
-      </>
+      </> : <Loading />
     );
   };
 

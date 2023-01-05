@@ -1,14 +1,14 @@
-@import "../../style/variable.scss";
+@import '../../style/variable.scss';
 
 .hannstarRoot {
-  font-family: "Noto Sans TC", 'Noto Sans SC', 'Noto Sans', '微軟正黑體', sans-serif;
-  .hannstarMain {
-    margin: 0 auto;
-    font-size: 16px;
-    margin-top: 100px;
-    min-height: calc(100vh - 539px);
-    @media screen and (max-width: $breakpoint) {
-      margin-top: 60px;
+    font-family: 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans', '微軟正黑體', sans-serif;
+    .hannstarMain {
+        margin: 0 auto;
+        font-size: 16px;
+        margin-top: 100px;
+        min-height: calc(100vh - 408px);
+        @media screen and (max-width: $breakpoint) {
+            margin-top: 60px;
+        }
     }
-  }
 }

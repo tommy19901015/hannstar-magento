@@ -88,7 +88,7 @@ const ServiceParseApply: React.FC = () => {
         }
       }));
       parseapplyFile && Object.values(parseapplyFile).map((file: any, idx) => {
-        postFormData.append(idx.toString(), file);
+        postFormData.append((idx + 1).toString(), file);
       })
 
       console.log("pppostFormData", postFormData);
@@ -218,8 +218,8 @@ const ServiceParseApply: React.FC = () => {
                   <select
                     {...register("form_type", { required: false })}
                   >
-                    {formData.form_type.option.map(({ value, text }) => (
-                      <option value={value}>{text}</option>
+                    {parseapplyData?.form_type.map(({ id, text }: { id: string, text: string }) => (
+                      <option value={id}>{text}</option>
                     ))}
                   </select>
                 </div>
@@ -326,7 +326,6 @@ const ServiceParseApply: React.FC = () => {
           </form>
         </div>
       </> : <Loading />
-
     );
   };
 
