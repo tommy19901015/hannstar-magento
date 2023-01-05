@@ -53,6 +53,10 @@ import { CareersDetailGrowup } from "./zh-tw/CareersDetail_Growup";
 import { ServiceIndex } from "./zh-tw/Service_Index";
 import { ServiceCustomerSupport } from "./zh-tw/Service_CustomerSupport";
 import { ServiceGreenService } from "./zh-tw/Service_GreenService";
+import { SolutionSmartRetailing } from "./zh-tw/Solution_SmartreTailing";
+import { SolutionSmartCity } from "./zh-tw/Solution_SmartCity";
+import { SolutionIndex } from "./zh-tw/Solution_Index";
+import { SolutionSmartRecreation } from "./zh-tw/Solution_SmartRecreation";
 
 export const tw = {
   common: {
@@ -118,4 +122,8 @@ export const tw = {
   ServiceIndex,
   ServiceCustomerSupport,
   ServiceGreenService,
+  SolutionSmartRetailing,
+  SolutionSmartCity,
+  SolutionIndex,
+  SolutionSmartRecreation,
 };

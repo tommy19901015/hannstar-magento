@@ -48,6 +48,10 @@ import { CareersDetailIndex } from "./cn-ch/CareersDetail_Index";
 import { CareersDetailGrowup } from "./cn-ch/CareersDetail_Growup";
 import { ServiceIndex } from "./cn-ch/Service_Index";
 import { ServiceCustomerSupport } from "./cn-ch/Service_CustomerSupport";
+import { SolutionSmartRetailing } from "./cn-ch/Solution_SmartreTailing";
+import { SolutionSmartCity } from "./cn-ch/Solution_SmartCity";
+import { SolutionIndex } from "./cn-ch/Solution_Index";
+import { SolutionSmartRecreation } from "./cn-ch/Solution_SmartRecreation";
 
 export const cn = {
   common: {
@@ -108,4 +112,8 @@ export const cn = {
   CareersDetailGrowup,
   ServiceIndex,
   ServiceCustomerSupport,
+  SolutionSmartRetailing,
+  SolutionSmartCity,
+  SolutionIndex,
+  SolutionSmartRecreation,
 };

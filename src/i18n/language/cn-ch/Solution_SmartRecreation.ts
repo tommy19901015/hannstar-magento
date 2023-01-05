@@ -1,0 +1,22 @@
+export const SolutionSmartRecreation = {
+  bannerTitle: `智慧育乐 快乐生活`,
+  bannerContent:`瀚宇彩晶结合显示面板、网络科技，打造更节能之装置，并以智能互动、沉浸式体验为目标，
+  创造更友善之学习、娱乐、健康生活。`,
+  title1:"智能学习系统、设备",
+  subTitle1:`物联网串联起老师与学生两端，结合大数据分析，可轻松追踪学生学习成果。`,
+  title2:"户外运动系统、设备",
+  subTitle2:`物联网串联起老师与学生两端，结合大数据分析，可轻松追踪学生学习成果。`,
+  cardTitle_1:"乐龄保健方案",
+  cardContent_1:`瀚宇彩晶提供乐龄保健方案，关心每一位长者；无论笔记本电脑、平板或手持式装置，皆具备高分辨率的清晰画面，打造便捷舒适的沟通防护网络`,
+  cardTitle_2:"智慧学习方案",
+  cardContent_2:`随着科技时代来临，学习方式也越来越多元，智能学习方案提供更多元的学习体验`,
+  cardTitle_3:"户外运动方案",
+  cardContent_3:`使用者透过户外运动方案，整合各种分析数据，提升运动表现`,
+  cardTitle_4:"解决方案咨询",
+  cardContent_4:`除既有解决方案外，亦提供其他智能零售相关场域之方案咨询`,
+  cardBtn_1:`了解更多资讯`,
+  cardBtn_2:`与我们联系`,
+  breadcrumbsItem:"首頁",
+  breadcrumbsItem1:"方案整合及系統服務",
+  breadcrumbsItem2:"智慧育樂",
+}
