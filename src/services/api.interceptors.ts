@@ -1,7 +1,9 @@
 import axios, { AxiosError } from "axios";
 
+const host = window.location.host;
+
 const service = axios.create({
-  baseURL: "https://magentodev.hannstar.com/",
+  baseURL: host,
   headers: {
     "Content-Type": "application/json;charset=UTF-8",
     "Access-Control-Allow-Origin": "*",
