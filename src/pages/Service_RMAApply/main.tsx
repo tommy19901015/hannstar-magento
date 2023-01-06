@@ -9,7 +9,8 @@ import { postInitParseapply } from "../../services/api.service";
 import "./css.scss";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/initRMA.json"
-import fakeUploadDataJson from "../../ServiceFakeData/uploadFileParseapply.json"
+import fakePlateParseapply from "../../ServiceFakeData/plateParseapply.json"
+import fakeNotPlateParseapply from "../../ServiceFakeData/notPlateParseapply.json"
 //=====================================================
 
 const ServiceRMAApply: React.FC = () => {
@@ -99,23 +100,54 @@ const ServiceRMAApply: React.FC = () => {
       window.location.reload()
     }
 
-    const handlerUpload = () => {
-      console.log(testFile);
-      const myHeaders = new Headers();
-      // myHeaders.append("Content-type", "multipart/form-data; boundary=------------------------ --974767299852498929531610575");
-      // myHeaders.append("Cookie", "PHPSESSID=a2oqivsofl3517bgcifcve7r63");
+    const postData = (data: any, type: string) => {
+      const status = type === "save" ? "UNSENT" : "RUN"
+      const resultData = {
+        type,
+        data: {
+          header: [
+            { ...data, cid: window.hannstar?.email, status }
+          ],
+          detail: []
+        }
+      }
+      const postFormData = new FormData();
+      postFormData.append("data", JSON.stringify(resultData));
+      // console.log('resultData', resultData);
+      // console.log("uploadTableData", uploadTableData);
+      if (isQuickReview === "Y") {
+        if (uploadTableData) {
 
-      const formData = new FormData();
-      formData.append("file", testFile[0]);
+        }
+        resultData.data.detail = uploadTableData.data
+      } else {
 
-      fetch('/rest/V1/eService/Excel2Detail', {
-        headers: myHeaders,
-        method: 'POST',
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.error(err));
+      }
+      console.log('resultData', resultData);
+      // parseapplyFile && Object.values(parseapplyFile).map((file: any, idx) => {
+      //   postFormData.append((idx + 1).toString(), file);
+      // })
+
+      // console.log("pppostFormData", postFormData);
+
+      // postSendParseapply(postFormData).then((response: any) => {
+      //   console.log('response', response)
+      //   setPopupMessage(response.data.messages)
+      //   handleShowPopup()
+      // });
+
+      // fetch('/rest/V1/eService/SetIssue', {
+      //   method: 'POST',
+      //   body: postFormData,
+      // })
+      //   .then((response) => response.json())
+      //   .then((res) => {
+      //     console.log("test", res)
+      //     setPopupMessage(res.data.message)
+      //   }).then(() => {
+      //     console.log('popupMessage', popupMessage);
+      //     handleShowPopup()
+      //   })
     }
 
     const handleFileChange = (e: any) => {
@@ -125,15 +157,15 @@ const ServiceRMAApply: React.FC = () => {
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const code = RMAData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
       setIssueCodeSelect(code)
-      // setValue("issue_code", code[0].id)
     }
 
     const setDefect_rate = () => {
       const defectAmountValue = defectAmountRef.current.value
       const inputAmountValue = inputAmountRef.current.value
       if (inputAmountValue && defectAmountValue) {
-        setDefectRate(defectAmountValue / inputAmountValue)
-        setValue("defect_rate", defectAmountValue / inputAmountValue)
+        const result = Math.round((defectAmountValue / inputAmountValue) * 1000) / 1000
+        setDefectRate(result)
+        setValue("defect_rate", result)
       }
     }
 
@@ -169,14 +201,22 @@ const ServiceRMAApply: React.FC = () => {
       setStepTwoFile(e.target.files);
     };
 
+    const handleProductTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      console.log("handleProductTypeChange", e.target.value);
+      setUploadTableData("")
+    }
+
     const handleQuickReviewUpload = () => {
       const postFormData = new FormData();
       stepTwoFile && Object.values(stepTwoFile).map((file: any, idx) => {
         postFormData.append((idx + 1).toString(), file);
       })
       const issueNumber: any = getValues("issue_number")
+      const productType: any = getValues("product_type")
+
       postFormData.append("file", stepOneFile);
       postFormData.append("issue_number", issueNumber);
+      postFormData.append("product_type", productType);
 
       console.log('postFormData', postFormData);
 
@@ -190,15 +230,15 @@ const ServiceRMAApply: React.FC = () => {
           setUploadTableData(res)
         })
 
-      setUploadTableData(fakeUploadDataJson)
+      setUploadTableData(fakePlateParseapply)
+      // setUploadTableData(fakeNotPlateParseapply)
     }
 
-    const UploadTableBlock = () => {
+    const NotPlateTableBlock = () => {
       return (
         uploadTableData ? <table>
           <thead>
             <tr>
-              <td>Action</td>
               <td>項次</td>
               <td>Hannstar序號</td>
               <td>保固</td>
@@ -207,20 +247,41 @@ const ServiceRMAApply: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {uploadTableData.map((item: any) => {
+            {uploadTableData.data.map((item: any) => {
               return (<tr>
-                <td>Action</td>
                 <td>{item.item_no}</td>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <select>
-                    <option>是</option>
-                    <option>否</option>
-                  </select>
-                </td>
+                <td>{item.hannstar_no}</td>
+                <td>{item.warranty}</td>
                 <td>{item.defect_name}</td>
+                <td>
+                  <a href={item.show_url}>{item.file_name}</a>
+                </td>
+              </tr>)
+            })}
+          </tbody>
+        </table> : null
+      )
+    }
+
+    const PlateTableBlock = () => {
+      return (
+        uploadTableData ? <table>
+          <thead>
+            <tr>
+              <td>項次</td>
+              <td>站點</td>
+              <td>不良名稱</td>
+              <td>不良數量</td>
+              <td>圖片</td>
+            </tr>
+          </thead>
+          <tbody>
+            {uploadTableData.data.map((item: any) => {
+              return (<tr>
+                <td>{item.item_no}</td>
+                <td>{item.station}</td>
+                <td>{item.defect_name}</td>
+                <td>{item.defect_qty}</td>
                 <td>
                   <a href={item.show_url}>{item.file_name}</a>
                 </td>
@@ -235,7 +296,7 @@ const ServiceRMAApply: React.FC = () => {
       RMAData ? <>
         <h1 className={`${pageName}H1Title`}>{formData.PageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form>
             <div className={`title`}>{formData.FormTitle}</div>
             <div className="classificationBlock">
               <div className="row">
@@ -283,6 +344,7 @@ const ServiceRMAApply: React.FC = () => {
                   <label className="required">{formData.product_type.title}</label>
                   <select
                     {...register("product_type", { required: false })}
+                    onChange={(e) => handleProductTypeChange(e)}
                   >
                     {RMAData?.product_type.map(({ id, text }: { id: string, text: string }) => (
                       <option value={id}>{text}</option>
@@ -402,7 +464,7 @@ const ServiceRMAApply: React.FC = () => {
                     <input type="file" multiple accept=".jpg,.png" onChange={handleStepTwoFileChange} />
                     <div className="uploadBtn" onClick={handleQuickReviewUpload}>上傳</div>
                     <div>
-                      <UploadTableBlock />
+                      {uploadTableData && uploadTableData.isplate ? <PlateTableBlock /> : <NotPlateTableBlock />}
                     </div>
                   </div>
                   :
@@ -416,8 +478,8 @@ const ServiceRMAApply: React.FC = () => {
               }
             </div>
             <div className={`${pageName}BtnBlock`}>
-              <div className="btn" onClick={handlerSave}>{formData.Save}</div>
-              <input className="btn" type="submit" value={formData.Send} />
+              <div className="btn" onClick={handleSubmit((data) => postData(data, 'save'))}>{formData.Save}</div>
+              <div className="btn" onClick={handleSubmit((data) => postData(data, 'send'))}>{formData.Send}</div>
               <div className="btn" onClick={handlerReset}>{formData.Reset}</div>
             </div>
           </form>

@@ -1,3 +1,4 @@
+import { Menu } from "./zh-tw/Menu";
 import { RMAApply } from "./zh-tw/Service_RMA_Apply";
 import { ParseApply } from "./zh-tw/Service_Parse_Apply";
 import { RMAList } from "./zh-tw/Service_RMA_List";
@@ -57,7 +58,7 @@ import { SolutionSmartRetailing } from "./zh-tw/Solution_SmartreTailing";
 import { SolutionSmartCity } from "./zh-tw/Solution_SmartCity";
 import { SolutionIndex } from "./zh-tw/Solution_Index";
 import { SolutionSmartRecreation } from "./zh-tw/Solution_SmartRecreation";
-
+import { Footer } from "./zh-tw/Footer";
 export const tw = {
   common: {
     cancel: "取消",
@@ -67,6 +68,7 @@ export const tw = {
   },
   lang: "繁中",
   changeLanguage: "切換語系",
+  Menu,
   RMAApply,
   ParseApply,
   RMAList,
@@ -126,4 +128,5 @@ export const tw = {
   SolutionSmartCity,
   SolutionIndex,
   SolutionSmartRecreation,
+  Footer
 };

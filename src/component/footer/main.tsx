@@ -35,13 +35,22 @@ const Footer: React.FC = () => {
               <ul className="linkBlock">
                 <li className="title">
                   <h3>
-                    <a href={item.href}>{item.title}</a>
+                    <a
+                      href={item.href}
+                      target={item.isBlank ? "_blank" : ""}
+                      rel="noreferrer"
+                    >
+                      {item.title}
+                    </a>
                   </h3>
                 </li>
                 {item.content &&
                   item.content.map((data) => (
                     <li className="text">
-                      <a href={data.href}>{data.title}</a>
+                      <a
+                        href={data.href}
+                        target={data.isBlank ? "_blank" : ""}
+                        rel="noreferrer">{data.title}</a>
                     </li>
                   ))}
               </ul>
@@ -55,9 +64,15 @@ const Footer: React.FC = () => {
   const TopBlock_M: React.FC = () => {
     const collapseLiData: any = menuList[serviceType].map((item: any) => {
       return {
-        title: <h3 className="footerH3">{item.title}</h3>,
+        title: item.href ?
+          <a className="footerH3" href={item.href} target={item.isBlank ? "_blank" : ""}
+            rel="noreferrer">{item.title}</a> : <h3 className="footerH3">{item.title}</h3>,
         content: item.content.map((obj: any) => (
-          <a className="footerLink" href={obj.href}>
+          <a
+            className="footerLink"
+            href={obj.href}
+            target={obj.isBlank ? "_blank" : ""}
+            rel="noreferrer">
             {obj.title}
           </a>
         )),
@@ -82,13 +97,13 @@ const Footer: React.FC = () => {
           </a>
           <div className="footerMenu">
             <a href={urlConfig().hannstar.privacy.href} className="text">
-              隱私權聲明
+              {t('Footer.privacy')}
             </a>
             <a href={urlConfig().hannstar.legalnotices.href} className="text">
-              法律聲明
+              {t('Footer.legalnotices')}
             </a>
             <a href="/" className="text">
-              網站地圖
+              {t('Footer.siteMap')}
             </a>
           </div>
         </div>

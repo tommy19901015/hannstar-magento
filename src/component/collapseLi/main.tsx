@@ -8,10 +8,10 @@ const CollapseLi: React.FC<I_Porps> = ({ data }) => {
     const [currIndex, setCurrIndex] = useState<number>(0);
     const [show, setShowDown] = useState<boolean>(false);
     const handleOpenList = (idx: number) => {
-        if(idx !== currIndex){
+        if (idx !== currIndex) {
             setShowDown(true);
             setCurrIndex(idx);
-        } else{
+        } else {
             setShowDown(false);
             setCurrIndex(0);
         }
@@ -27,9 +27,9 @@ const CollapseLi: React.FC<I_Porps> = ({ data }) => {
         <div className="collapseBlock">
             <ul className="itemList">
                 {data.map((item, idx) => {
-                    return <li className={`itemLi ${currIndex === idx+1 && show ? "open" : "close"}`}
-                        key={idx+1}
-                        onClick={() => handleOpenList(idx+1)}>
+                    return <li className={`itemLi ${currIndex === idx + 1 && show ? "open" : "close"}`}
+                        key={idx + 1}
+                        onClick={() => handleOpenList(idx + 1)}>
                         <div className="liContent">
                             {handleContentType(item.title)}
                         </div>

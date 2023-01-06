@@ -4,7 +4,6 @@ import CollapseLi from "../collapseLi/main";
 import { urlConfig } from "../../config/urlSetting";
 import { useTranslation } from "react-i18next";
 import { I_MenuType } from "../../common/menuData";
-import mappingUrlI18n from "../../common/mappingUrlI18n";
 import {
   MagentoNotLoginHeader,
   MagentoLoginHeader,
@@ -16,6 +15,7 @@ import "./css.scss";
 type I_MenuContent = {
   title: string;
   href: string;
+  isBlank?: boolean
 };
 
 declare global {
@@ -154,14 +154,19 @@ const Header: React.FC = () => {
   };
 
   const menuMData = menuList[serviceType].map((item) => {
-    const { title, content } = item;
+    const { title, content, href, isBlank } = item;
     return {
-      title: <div className="menuTitle">{title}</div>,
+      title: href ? <a className="menuTitle" href={href} target={isBlank ? "_blank" : ""}
+        rel="noreferrer">{title}</a> :
+        <div className="menuTitle">{title}</div>,
       content:
         content &&
         content.map((obj) => (
           <li>
-            <a className="menuContrnt" href={obj.href}>
+            <a
+              className="menuContrnt"
+              href={obj.href} target={obj.isBlank ? "_blank" : ""}
+              rel="noreferrer">
               {obj.title}
             </a>
           </li>
@@ -178,7 +183,8 @@ const Header: React.FC = () => {
               className={`menuText ${item.content && item.content.length === 0 && "noSec"
                 }`}
             >
-              <a href={item.href}>{item.title}</a>
+              <a href={item.href} target={item.isBlank ? "_blank" : ""}
+                rel="noreferrer">{item.title}</a>
               <div className="arrow"></div>
             </div>
             <ul
@@ -189,7 +195,8 @@ const Header: React.FC = () => {
                 item.content.length > 0 &&
                 item.content?.map((subMenu: I_MenuContent, index: number) => (
                   <li key={index}>
-                    <a href={subMenu.href}>{subMenu.title}</a>
+                    <a href={subMenu.href} target={subMenu.isBlank ? "_blank" : ""}
+                      rel="noreferrer">{subMenu.title}</a>
                   </li>
                 ))}
             </ul>

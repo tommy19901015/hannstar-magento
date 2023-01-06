@@ -1,3 +1,4 @@
+import { Menu } from "./cn-ch/Menu";
 import { RMAApply } from "./cn-ch/Service_RMA_Apply";
 import { ParseApply } from "./cn-ch/Service_Parse_Apply";
 import { RMAList } from "./cn-ch/Service_RMA_List";
@@ -52,7 +53,7 @@ import { SolutionSmartRetailing } from "./cn-ch/Solution_SmartreTailing";
 import { SolutionSmartCity } from "./cn-ch/Solution_SmartCity";
 import { SolutionIndex } from "./cn-ch/Solution_Index";
 import { SolutionSmartRecreation } from "./cn-ch/Solution_SmartRecreation";
-
+import { Footer } from "./cn-ch/Footer";
 export const cn = {
   common: {
     cancel: "取消",
@@ -116,4 +117,6 @@ export const cn = {
   SolutionSmartCity,
   SolutionIndex,
   SolutionSmartRecreation,
+  Menu,
+  Footer
 };

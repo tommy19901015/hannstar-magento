@@ -136,8 +136,9 @@ const ServiceParseApply: React.FC = () => {
       const defectAmountValue = defectAmountRef.current.value
       const inputAmountValue = inputAmountRef.current.value
       if (inputAmountValue && defectAmountValue) {
-        setDefectRate(defectAmountValue / inputAmountValue)
-        setValue("defect_rate", defectAmountValue / inputAmountValue)
+        const result = Math.round((defectAmountValue / inputAmountValue) * 1000) / 1000
+        setDefectRate(result)
+        setValue("defect_rate", result)
       }
     }
 

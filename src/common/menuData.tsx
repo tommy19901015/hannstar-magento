@@ -5,8 +5,9 @@ export type I_MenuItemType = {
   title?: string;
   type?: string;
   href?: string;
+  isBlank?: boolean;
   icon?: string;
-  content?: { title: string; href: string }[];
+  content?: { title: string; href: string, isBlank?: boolean }[];
 };
 
 export interface I_MenuType {
@@ -20,26 +21,26 @@ function useMenu() {
   const PageType: I_MenuType = {
     hannstar: [
       {
-        title: "關於瀚宇彩晶",
+        title: t('Menu.about'),
         type: "about",
         href: hannstar.about_index.href,
         content: [
           {
-            title: "瀚宇彩晶簡介",
+            title: t('Menu.about_index'),
             href: hannstar.about_index.href,
           },
-          { title: "瀚宇彩晶團隊", href: hannstar.about_team.href },
-          { title: "瀚宇關係企業", href: hannstar.about_family.href },
-          { title: "品質管理與策略", href: hannstar.about_strategy.href },
+          { title: t('Menu.about_team'), href: hannstar.about_team.href },
+          { title: t('Menu.about_family'), href: hannstar.about_family.href },
+          { title: t('Menu.about_strategy'), href: hannstar.about_strategy.href },
           {
-            title: "認證與獎項",
+            title: t('Menu.about_certification'),
             href: hannstar.about_certification.href,
           },
-          { title: "全球據點", href: hannstar.about_stronghold.href },
+          { title: t('Menu.about_stronghold'), href: hannstar.about_stronghold.href },
         ],
       },
       {
-        title: "產品",
+        title: t('Menu.product'),
         type: "product",
         href: "",
         content: [
@@ -48,59 +49,60 @@ function useMenu() {
         ],
       },
       {
-        title: "企業永續",
+        title: t('Menu.company'),
         type: "company",
         href: hannstar.sustainability_index.href,
         content: [
-          { title: "永續管理", href: hannstar.sustainability_csr.href },
-          { title: "公司治理", href: hannstar.sustainability_governance.href },
-          { title: "綠色創新", href: hannstar.sustainability_environment.href },
-          { title: "社會共融", href: hannstar.sustainability_social.href },
-          { title: "報告書下載", href: hannstar.sustainability_report.href },
-          { title: "永續訊息", href: hannstar.sustainability_esg.href },
+          { title: t('Menu.sustainability_csr'), href: hannstar.sustainability_csr.href },
+          { title: t('Menu.sustainability_governance'), href: hannstar.sustainability_governance.href },
+          { title: t('Menu.sustainability_environment'), href: hannstar.sustainability_environment.href },
+          { title: t('Menu.sustainability_social'), href: hannstar.sustainability_social.href },
+          { title: t('Menu.sustainability_report'), href: hannstar.sustainability_report.href },
+          { title: t('Menu.sustainability_esg'), href: hannstar.sustainability_esg.href },
         ],
       },
       {
-        title: "投資人關係",
+        title: t('Menu.invest'),
         type: "invest",
         href: "",
         content: [
-          { title: "公司概況", href: hannstar.investors_Summary.href },
-          { title: "每月營收", href: hannstar.investors_Revenue.href },
-          { title: "財務季報及公司年報", href: hannstar.investors_Report.href },
-          { title: "法人說明會", href: hannstar.investors_Conference.href },
+          { title: t('Menu.investors_Summary'), href: hannstar.investors_Summary.href },
+          { title: t('Menu.investors_Revenue'), href: hannstar.investors_Revenue.href },
+          { title: t('Menu.investors_Report'), href: hannstar.investors_Report.href },
+          { title: t('Menu.investors_Conference'), href: hannstar.investors_Conference.href },
           {
-            title: "股東會資訊",
+            title: t('Menu.investors_Shareholdermeeting'),
             href: hannstar.investors_Shareholdermeeting.href,
           },
-          { title: "股利分派", href: hannstar.investors_Dividend.href },
-          { title: "股價查詢", href: hannstar.investors_Quote.href },
-          { title: "投資人相關洽詢", href: hannstar.investors_Contacts.href },
+          { title: t('Menu.investors_Dividend'), href: hannstar.investors_Dividend.href },
+          { title: t('Menu.investors_Quote'), href: hannstar.investors_Quote.href },
+          { title: t('Menu.investors_Contacts'), href: hannstar.investors_Contacts.href },
         ],
       },
       {
-        title: "人才招募",
+        title: t('Menu.resources'),
         type: "resources",
         href: hannstar.careersDetail_Index.href,
         content: [
-          { title: "工作在彩晶", href: hannstar.careersDetail_Work.href },
-          { title: "成長在彩晶", href: hannstar.careersDetail_Growup.href },
-          { title: "加入彩晶", href: hannstar.careersDetail_Join.href },
+          { title: t('Menu.careersDetail_Work'), href: hannstar.careersDetail_Work.href },
+          { title: t('Menu.careersDetail_Growup'), href: hannstar.careersDetail_Growup.href },
+          { title: t('Menu.careersDetail_Join'), href: hannstar.careersDetail_Join.href },
         ],
       },
       {
-        title: "訊息中心",
+        title: t('Menu.message'),
         type: "message",
         href: "",
         content: [
-          { title: "投資人關係", href: hannstar.news_financial.href },
-          { title: "企業永續", href: hannstar.sustainability_esg.href },
+          { title: t('Menu.news_financial'), href: hannstar.news_financial.href },
+          { title: t('Menu.sustainability_esg'), href: hannstar.sustainability_esg.href },
         ],
       },
       {
-        title: "常見問題",
+        title: t('Menu.support'),
         type: "support",
         href: hannstar.support.href,
+        isBlank: true,
         content: []
       },
     ],
