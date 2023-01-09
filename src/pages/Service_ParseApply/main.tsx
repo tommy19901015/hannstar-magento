@@ -139,7 +139,7 @@ const ServiceParseApply: React.FC = () => {
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const code = parseapplyData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
+      const code = parseapplyData.data.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
       setIssueCodeSelect(code)
       setValue("issue_code", code[0].id)
     }
@@ -231,7 +231,7 @@ const ServiceParseApply: React.FC = () => {
                   <select
                     {...register("form_type", { required: false })}
                   >
-                    {parseapplyData?.form_type.map(({ id, text }: { id: string, text: string }) => (
+                    {parseapplyData?.data.form_type.map(({ id, text }: { id: string, text: string }) => (
                       <option value={id}>{text}</option>
                     ))}
                   </select>
@@ -239,7 +239,7 @@ const ServiceParseApply: React.FC = () => {
                 <div className="col-2">
                   <label className="required">{formData.product_code}</label>
                   <select {...register("product_code", { required: false })}>
-                    {parseapplyData?.product.map((item: string) => (
+                    {parseapplyData?.data.product.map((item: string) => (
                       <option value={item}>{item}</option>
                     ))}
                   </select>
@@ -289,7 +289,7 @@ const ServiceParseApply: React.FC = () => {
                   <label className="required">{formData.issue_type.title}</label>
                   <select
                     {...register("issue_type", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
-                    {parseapplyData?.IssueType.map((item: { id: string, text: string }) => (
+                    {parseapplyData?.data.IssueType.map((item: { id: string, text: string }) => (
                       <option value={item.id}>{item.text}</option>
                     ))}
                   </select>

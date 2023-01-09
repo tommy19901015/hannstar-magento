@@ -42,7 +42,7 @@ function useServiceRMAApply() {
         invoce_number: t('RMAApply.Invoice'),
         yield: t('RMAApply.paula'),
         box_no: t('RMAApply.caseNumber'),
-        quickReview: {
+        quick_review: {
             title: t('RMAApply.quickReview'),
             option: [
                 { text: t('RMAApply.yes'), value: "Y" },

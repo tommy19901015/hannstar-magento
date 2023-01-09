@@ -6,6 +6,8 @@ import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useServiceRMAApply from "./pageData";
 import { postInitRMA } from "../../services/api.service";
+import { urlConfig } from "../../config/urlSetting";
+import Popup from "../../component/popup/main";
 import Loading from "../../component/loading/main";
 import "./css.scss";
 //=====================================================
@@ -41,6 +43,9 @@ const ServiceRMAApply: React.FC = () => {
     const [stepOneFile, setStepOneFile] = useState<any>()
     const [stepTwoFile, setStepTwoFile] = useState<any>()
     const [uploadTableData, setUploadTableData] = useState<any>()
+    const [popupMessage, setPopupMessage] = useState<string[]>([])
+    const [isInitError, setIsInitError] = useState<boolean>(false)
+    const showPopUpRef: any = useRef();
 
 
     const [notQuickReviewFile, setNotQuickReviewFile] = useState<any>()
@@ -63,7 +68,7 @@ const ServiceRMAApply: React.FC = () => {
         }
       }
       postInitRMA(postData).then((response: any) => {
-        setRMAData(response.data)
+        setRMAData(response)
         setInitDataToForm(response.data)
       });
 
@@ -122,38 +127,40 @@ const ServiceRMAApply: React.FC = () => {
         })
       }
       console.log('resultData', resultData);
-      // parseapplyFile && Object.values(parseapplyFile).map((file: any, idx) => {
-      //   postFormData.append((idx + 1).toString(), file);
-      // })
 
-      // console.log("pppostFormData", postFormData);
-
-      // postSendParseapply(postFormData).then((response: any) => {
-      //   console.log('response', response)
-      //   setPopupMessage(response.data.messages)
-      //   handleShowPopup()
-      // });
-
-      // fetch('/rest/V1/eService/SetIssue', {
-      //   method: 'POST',
-      //   body: postFormData,
-      // })
-      //   .then((response) => response.json())
-      //   .then((res) => {
-      //     console.log("test", res)
-      //     setPopupMessage(res.data.message)
-      //   }).then(() => {
-      //     console.log('popupMessage', popupMessage);
-      //     handleShowPopup()
-      //   })
+      fetch('/rest/V1/eService/SetRMA', {
+        method: 'POST',
+        body: postFormData,
+      })
+        .then((response) => response.json())
+        .then((res) => {
+          console.log("test", res)
+          setPopupMessage(res.data.message)
+        }).then(() => {
+          console.log('popupMessage', popupMessage);
+          handleShowPopup()
+        })
     }
+
+    const handleShowPopup = () => {
+      showPopUpRef.current.classList.add("show");
+    };
+
+    const handleConfirmPopUp = () => {
+      showPopUpRef.current.classList.remove("show")
+      if (isInitError) {
+        window.location.href = urlConfig().hannstar.index.href
+      } else {
+        handlerReset()
+      }
+    };
 
     const handleFileChange = (e: any) => {
       setNotQuickReviewFile(e.target.files);
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const code = RMAData.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
+      const code = RMAData.data.IssueType.find(({ id }: { id: string }) => id === e.target.value).issuecode
       setIssueCodeSelect(code)
     }
 
@@ -290,8 +297,25 @@ const ServiceRMAApply: React.FC = () => {
       )
     }
 
+    const popupProps = {
+      content: (
+        <div className={`${pageName}DeletePop`}>
+          {
+            popupMessage?.map(item => <div>{item}</div>)
+          }
+          <div className="btnBlock">
+            <div className="btn" onClick={() => handleConfirmPopUp()}>
+              確定
+            </div>
+          </div>
+        </div>
+      ),
+      openFc: showPopUpRef,
+    };
+
     return (
-      RMAData ? <>
+      RMAData && RMAData.code === "0" ? <>
+        <Popup {...popupProps} />
         <h1 className={`${pageName}H1Title`}>{formData.PageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
           <form>
@@ -333,7 +357,7 @@ const ServiceRMAApply: React.FC = () => {
                 <div className="col-2">
                   <label className="required">{formData.model_no}</label>
                   <select {...register("model_no", { required: false })}>
-                    {RMAData?.product.map((item: string) => (
+                    {RMAData?.data.product.map((item: string) => (
                       <option value={item}>{item}</option>
                     ))}
                   </select>
@@ -344,7 +368,7 @@ const ServiceRMAApply: React.FC = () => {
                     {...register("product_type", { required: false })}
                     onChange={(e) => handleProductTypeChange(e)}
                   >
-                    {RMAData?.product_type.map(({ id, text }: { id: string, text: string }) => (
+                    {RMAData?.data.product_type.map(({ id, text }: { id: string, text: string }) => (
                       <option value={id}>{text}</option>
                     ))}
                   </select>
@@ -428,14 +452,14 @@ const ServiceRMAApply: React.FC = () => {
               </div>
               <div className="row">
                 <div className="col-1">
-                  <label className="required">{formData.quickReview.title}</label>
+                  <label className="required">{formData.quick_review.title}</label>
                   <div className="radio-col">
-                    {formData.quickReview.option.map((item, i) => (
+                    {formData.quick_review.option.map((item, i) => (
                       <div className="hannstarRadio" key={i}>
                         <input
                           id={item.value}
                           type="radio"
-                          {...register("quickReview", { required: true })}
+                          {...register("quick_review", { required: true })}
                           value={item.value}
                           checked={item.value === isQuickReview}
                           onChange={(e) => handleQuickReview(e)}
@@ -444,7 +468,7 @@ const ServiceRMAApply: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                  {errors.quickReview && (
+                  {errors.quick_review && (
                     <span className="error">{errorMsg}</span>
                   )}
                 </div>
@@ -482,7 +506,12 @@ const ServiceRMAApply: React.FC = () => {
             </div>
           </form>
         </div>
-      </> : <Loading />
+      </>
+        :
+        <>
+          <Loading />
+          <Popup {...popupProps} />
+        </>
 
     );
   };
