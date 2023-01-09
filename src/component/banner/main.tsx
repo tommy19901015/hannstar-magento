@@ -23,8 +23,9 @@ const Banner: React.FC<I_Banner> = ({ src, title, href, text, textAlign, btnText
                 <div className={`textBlock ${textAlign} ${type === BannerType.Main ? "main-banner-text" : ""}`}>
                     <h2 className="title">{title}</h2>
                     <div className="text">
-                        {btnText && <a href={btnHref}>{btnText}</a>}
-                        {text}
+                        <p>{text}</p>
+                        {btnText && <a className="moreBtn" href={btnHref}>{btnText}</a>}
+                        
                     </div>
                 </div>
             )}

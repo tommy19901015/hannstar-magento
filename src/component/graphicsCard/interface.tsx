@@ -1,6 +1,7 @@
 export enum GraphicsTheme {
   Theme1 = "Theme1",
-  Theme2 = "Theme2"
+  Theme2 = "Theme2",
+  Theme3 = "Theme3"
 }
 
 export interface I_GraphicsCard {
