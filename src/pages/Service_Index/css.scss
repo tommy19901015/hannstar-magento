@@ -1,27 +1,21 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'ServiceIndex';
+$pageName: "ServiceIndex";
 
-.#{$pageName}TextBlock {
-    background-color: $hannstar-bg-color;
-    padding: 80px 0px;
-    .title {
-        @include hannstarH2Title;
+.#{$pageName}MainContainer {
+  .#{$pageName}ArticleListBlock {
+    .mainTitle {
+      @include hannstarH2Title;
+      text-align: center;
+      margin-bottom: 30px;
     }
-    .content {
-        @include hannstarContentText;
+    .articleBlock {
+      .title {
+        @include hannstarH3Title;
         text-align: center;
+      }
+      .content {
+      }
     }
-}
-
-.#{$pageName}ServiceBlock {
-    .title {
-        @include hannstarH2Title;
-    }
-}
-
-.#{$pageName}ArticleListBlock {
-    .title {
-        @include hannstarH2Title;
-    }
+  }
 }

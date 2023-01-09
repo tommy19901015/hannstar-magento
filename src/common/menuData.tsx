@@ -7,103 +7,172 @@ export type I_MenuItemType = {
   href?: string;
   isBlank?: boolean;
   icon?: string;
-  content?: { title: string; href: string, isBlank?: boolean }[];
+  content?: { title: string; href: string; isBlank?: boolean }[];
 };
 
 export interface I_MenuType {
   [key: string]: I_MenuItemType[];
 }
 
-const { hannstar, partner, service, footerlinks, paperdisplay, tftdisplay, solution, hannspree } = urlConfig();
+const {
+  hannstar,
+  partner,
+  service,
+  footerlinks,
+  paperdisplay,
+  tftdisplay,
+  solution,
+  hannspree,
+} = urlConfig();
 
 function useMenu() {
   const { t } = useTranslation();
   const PageType: I_MenuType = {
     hannstar: [
       {
-        title: t('Menu.about'),
+        title: t("Menu.about"),
         type: "about",
         href: hannstar.about_index.href,
         content: [
           {
-            title: t('Menu.about_index'),
+            title: t("Menu.about_index"),
             href: hannstar.about_index.href,
           },
-          { title: t('Menu.about_team'), href: hannstar.about_team.href },
-          { title: t('Menu.about_family'), href: hannstar.about_family.href },
-          { title: t('Menu.about_strategy'), href: hannstar.about_strategy.href },
+          { title: t("Menu.about_team"), href: hannstar.about_team.href },
+          { title: t("Menu.about_family"), href: hannstar.about_family.href },
           {
-            title: t('Menu.about_certification'),
+            title: t("Menu.about_strategy"),
+            href: hannstar.about_strategy.href,
+          },
+          {
+            title: t("Menu.about_certification"),
             href: hannstar.about_certification.href,
           },
-          { title: t('Menu.about_stronghold'), href: hannstar.about_stronghold.href },
+          {
+            title: t("Menu.about_stronghold"),
+            href: hannstar.about_stronghold.href,
+          },
         ],
       },
       {
-        title: t('Menu.product'),
+        title: t("Menu.product"),
         type: "product",
         href: "",
         content: [
           { title: "TFT Display", href: tftdisplay.index.href },
-          { title: "Paper Display", href: paperdisplay.index.href }
+          { title: "Paper Display", href: paperdisplay.index.href },
         ],
       },
       {
-        title: t('Menu.company'),
+        title: t("Menu.company"),
         type: "company",
         href: hannstar.sustainability_index.href,
         content: [
-          { title: t('Menu.sustainability_csr'), href: hannstar.sustainability_csr.href },
-          { title: t('Menu.sustainability_governance'), href: hannstar.sustainability_governance.href },
-          { title: t('Menu.sustainability_environment'), href: hannstar.sustainability_environment.href },
-          { title: t('Menu.sustainability_social'), href: hannstar.sustainability_social.href },
-          { title: t('Menu.sustainability_report'), href: hannstar.sustainability_report.href },
-          { title: t('Menu.sustainability_esg'), href: hannstar.sustainability_esg.href },
+          {
+            title: t("Menu.sustainability_csr"),
+            href: hannstar.sustainability_csr.href,
+          },
+          {
+            title: t("Menu.sustainability_governance"),
+            href: hannstar.sustainability_governance.href,
+          },
+          {
+            title: t("Menu.sustainability_environment"),
+            href: hannstar.sustainability_environment.href,
+          },
+          {
+            title: t("Menu.sustainability_social"),
+            href: hannstar.sustainability_social.href,
+          },
+          {
+            title: t("Menu.sustainability_report"),
+            href: hannstar.sustainability_report.href,
+          },
+          {
+            title: t("Menu.sustainability_esg"),
+            href: hannstar.sustainability_esg.href,
+          },
         ],
       },
       {
-        title: t('Menu.invest'),
+        title: t("Menu.invest"),
         type: "invest",
         href: "",
         content: [
-          { title: t('Menu.investors_Summary'), href: hannstar.investors_Summary.href },
-          { title: t('Menu.investors_Revenue'), href: hannstar.investors_Revenue.href },
-          { title: t('Menu.investors_Report'), href: hannstar.investors_Report.href },
-          { title: t('Menu.investors_Conference'), href: hannstar.investors_Conference.href },
           {
-            title: t('Menu.investors_Shareholdermeeting'),
+            title: t("Menu.investors_Summary"),
+            href: hannstar.investors_Summary.href,
+          },
+          {
+            title: t("Menu.investors_Revenue"),
+            href: hannstar.investors_Revenue.href,
+          },
+          {
+            title: t("Menu.investors_Report"),
+            href: hannstar.investors_Report.href,
+          },
+          {
+            title: t("Menu.investors_Conference"),
+            href: hannstar.investors_Conference.href,
+          },
+          {
+            title: t("Menu.investors_Shareholdermeeting"),
             href: hannstar.investors_Shareholdermeeting.href,
           },
-          { title: t('Menu.investors_Dividend'), href: hannstar.investors_Dividend.href },
-          { title: t('Menu.investors_Quote'), href: hannstar.investors_Quote.href },
-          { title: t('Menu.investors_Contacts'), href: hannstar.investors_Contacts.href },
+          {
+            title: t("Menu.investors_Dividend"),
+            href: hannstar.investors_Dividend.href,
+          },
+          {
+            title: t("Menu.investors_Quote"),
+            href: hannstar.investors_Quote.href,
+          },
+          {
+            title: t("Menu.investors_Contacts"),
+            href: hannstar.investors_Contacts.href,
+          },
         ],
       },
       {
-        title: t('Menu.resources'),
+        title: t("Menu.resources"),
         type: "resources",
         href: hannstar.careersDetail_Index.href,
         content: [
-          { title: t('Menu.careersDetail_Work'), href: hannstar.careersDetail_Work.href },
-          { title: t('Menu.careersDetail_Growup'), href: hannstar.careersDetail_Growup.href },
-          { title: t('Menu.careersDetail_Join'), href: hannstar.careersDetail_Join.href },
+          {
+            title: t("Menu.careersDetail_Work"),
+            href: hannstar.careersDetail_Work.href,
+          },
+          {
+            title: t("Menu.careersDetail_Growup"),
+            href: hannstar.careersDetail_Growup.href,
+          },
+          {
+            title: t("Menu.careersDetail_Join"),
+            href: hannstar.careersDetail_Join.href,
+          },
         ],
       },
       {
-        title: t('Menu.message'),
+        title: t("Menu.message"),
         type: "message",
         href: "",
         content: [
-          { title: t('Menu.news_financial'), href: hannstar.news_financial.href },
-          { title: t('Menu.sustainability_esg'), href: hannstar.sustainability_esg.href },
+          {
+            title: t("Menu.news_financial"),
+            href: hannstar.news_financial.href,
+          },
+          {
+            title: t("Menu.sustainability_esg"),
+            href: hannstar.sustainability_esg.href,
+          },
         ],
       },
       {
-        title: t('Menu.support'),
+        title: t("Menu.support"),
         type: "support",
         href: hannstar.support.href,
         isBlank: true,
-        content: []
+        content: [],
       },
     ],
     partner: [
@@ -159,7 +228,7 @@ function useMenu() {
         title: "常見問題",
         type: "support",
         href: hannstar.support.href,
-        content: []
+        content: [],
       },
     ],
     service: [
@@ -194,7 +263,7 @@ function useMenu() {
         title: "常見問題",
         type: "support",
         href: hannstar.support.href,
-        content: []
+        content: [],
       },
     ],
     tftdisplay: [
@@ -235,10 +304,7 @@ function useMenu() {
       {
         title: "顯示紙應用",
         href: "",
-        content: [
-          { title: "交通運輸", href: paperdisplay.traffic.href },
-
-        ],
+        content: [{ title: "交通運輸", href: paperdisplay.traffic.href }],
       },
       {
         title: "綠色供應鏈",
@@ -268,38 +334,44 @@ function useMenu() {
         title: "常見問題",
         type: "support",
         href: hannstar.support.href,
-        content: []
+        content: [],
       },
     ],
     solution: [
       {
         title: "方案系統及整合服務",
         href: "",
-        content: [
-          { title: "方案系統及整合服務", href: solution.label.href },
-        ],
+        content: [{ title: "方案系統及整合服務", href: solution.label.href }],
       },
       {
         title: "常見問題",
         type: "support",
         href: hannstar.support.href,
-        content: []
+        content: [],
       },
     ],
     hannspree: [
       {
-        title: "hannspree",
+        title: "關於我們",
         href: "",
-        content: [
-          { title: "學習解決方案", href: hannspree.solve.href },
-          { title: "客製化服務", href: hannspree.custom.href },
-        ],
+      },
+      {
+        title: "整機產品",
+        href: "",
+      },
+      {
+        title: "解決方案",
+        href: hannspree.solve.href,
+      },
+      {
+        title: "最新消息",
+        href: "",
       },
       {
         title: "常見問題",
         type: "support",
         href: hannstar.support.href,
-        content: []
+        content: [],
       },
     ],
     footerlinks: [

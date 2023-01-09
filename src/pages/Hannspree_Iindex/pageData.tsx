@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { TextAlign , BannerType} from "../../component/banner/interface";
+import { TextAlign, BannerType } from "../../component/banner/interface";
 import { GraphicsTheme } from "../../component/graphicsCard/interface";
 import { urlConfig } from "../../config/urlSetting";
 import { I_TemplateLayout } from "../../templates/TemplateLayout/interface";
@@ -13,7 +13,9 @@ function usePageData() {
         type: "FullBanner",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannspree/index/img_main_banner.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannspree/index/img_main_banner.png`,
             title: "",
             text: "",
             textAlign: TextAlign.BottomLeft,
@@ -25,18 +27,17 @@ function usePageData() {
         type: "MessageCenterPlatform",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannspree/index/icon_menu_product.png`,
-            title: "Product",
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannspree/index/icon_menu_product.png`,
+            title: "整機產品",
             href: "/",
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannspree/index/icon_menu_solution.png`,
-            title: "Solutions",
-            href: "/",
-          },
-          {
-            src:`${urlConfig().s3Url}/Image/hannspree/index/icon_menu_customization.png`,
-            title: "Customization Design",
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannspree/index/icon_menu_solution.png`,
+            title: "解決方案",
             href: "/",
           },
         ],
@@ -55,16 +56,20 @@ function usePageData() {
         type: "SustainabilityGraphics3",
         data: [
           {
-            src: `${urlConfig().s3Url}/Image/hannspree/index/img_intro_product.png`,
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannspree/index/img_intro_product.png`,
             title: "顯示紙整機產品",
             content:
               "以Paper Display顯示紙為面板技術核心，設計手錶、平板與筆記型電腦等系列產品。強調陽光下可視、護眼、低功耗、多媒體播放等特色，讓你不論在戶外運動、教學場域都可以盡情使用。",
           },
           {
-            src: `${urlConfig().s3Url}/Image/hannspree/index/img_intro_customization.png`,
-            title: "客製化服務",
+            src: `${
+              urlConfig().s3Url
+            }/Image/hannspree/index/img_intro_customization.png`,
+            title: "解決方案",
             content:
-              "不只品牌產品，更依照客戶需求，進行產品客製化服務。我們擁有完整的設計、研發與專案管理團隊，從概念到成品，打造您的客製化整機產品。",
+              "除了顯示紙整機產品，更結合不同領域軟體服務，提供教育、照護、零售等不同解決方案。整合後續數據分析，提供政府部門、教育單位、醫療機構等單位，都能實現更智慧環保的生活。",
           },
         ],
       },
@@ -85,21 +90,18 @@ function usePageData() {
             theme: GraphicsTheme.Theme1,
             data: [
               {
-                src: `${urlConfig().s3Url}/Image/hannspree/index/img_service_product.png`,
+                src: `${
+                  urlConfig().s3Url
+                }/Image/hannspree/index/img_service_product.png`,
                 title: "整機產品",
                 text: "顯示紙整機產品系列，包含：穿戴式裝置、平板、筆電與顯示器。",
                 href: "/",
                 btnText: "了解更多",
               },
               {
-                src: `${urlConfig().s3Url}/Image/hannspree/index/img_service_customization.png`,
-                title: "客製化服務",
-                text: "針對客戶需求，提供多種方案，進行產品客製。",
-                href: "/",
-                btnText: "了解更多",
-              },
-              {
-                src: `${urlConfig().s3Url}/Image/hannspree/index/img_service_solution.png`,
+                src: `${
+                  urlConfig().s3Url
+                }/Image/hannspree/index/img_service_solution.png`,
                 title: "解決方案",
                 text: "搭配顯示紙產品推出教育與健康照護的解決方案。",
                 href: "/",
