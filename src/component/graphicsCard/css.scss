@@ -23,7 +23,7 @@ $componentName: 'GraphicsCard';
         justify-content: space-between;
         width: 100%;
         box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
-        &.Theme2 {
+        &.Theme2, &.Theme3 {
             box-shadow: none;
         }
         .imgBlock {
@@ -49,6 +49,39 @@ $componentName: 'GraphicsCard';
                     text-align: left;
                 }
             }
+            &.Theme3 {
+                padding: 40px 0;
+                .textBlock {
+                    text-align: left;
+                }
+                .btnBlock{
+                    display: flex;
+                    justify-content: flex-start;;
+                    width: 100%;
+                    margin-top: 15px;
+                    .btn {
+                        text-align: left;
+                        padding: 0;
+                        background: none;
+                        color: $hannstar-blue2;
+                        display: inline-block;
+                        width: 40%;
+                &::after {
+                  content: "";
+                  margin-left: 5px;
+                  border: solid $hannstar-blue2;
+                  border-width: 0 1px 1px 0;
+                  display: inline-block;
+                  padding: 3px;
+                  margin-bottom: 1px;
+                  transform: rotate(-45deg);
+                  -webkit-transform: rotate(-45deg);
+                }
+
+                    }
+                }
+
+            }
             .textBlock {
                 text-align: center;
                 .title {
@@ -63,12 +96,15 @@ $componentName: 'GraphicsCard';
                     padding-top: 10px;
                 }
             }
-            .btnBlock {
-                @include hannstarBtn;
+            .btnBlock{
                 margin-top: 15px;
-                width: 100%;
-                text-align: center;
+                .btn {
+                    @include hannstarBtn;
+                    width: 100%;
+                    text-align: center;
+                }
             }
+
         }
     }
     @media screen and (max-width: $breakpoint) {

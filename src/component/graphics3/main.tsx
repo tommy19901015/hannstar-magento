@@ -10,6 +10,7 @@ import { getSyntheticLeadingComments } from "typescript";
 const Graphics3: React.FC<I_Graphics3> = ({groups}:I_Graphics3) => {
 
   const componentName = "Graphics3";
+
   return (
     <div className={`${componentName}Content`}>
       {groups.map((item, index) => (
@@ -37,6 +38,15 @@ const Graphics3: React.FC<I_Graphics3> = ({groups}:I_Graphics3) => {
                 }
               </div>
             )}
+            {
+              item.information && (
+                <div className="information">
+                  {item.information.map((el)=>(
+                    <div className="inforBtn"><a href={el.link}>{el.title}</a></div>)
+                  )}
+                </div>
+              )
+            }
             {item.btnText && (
               <a className="linkBtn" href={item.btnHref}>
                 {item.btnText}

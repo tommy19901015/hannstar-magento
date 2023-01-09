@@ -62,6 +62,10 @@ const MessageCenter: React.FC = () => {
     <div className="messageCenter">
       <div className="leftBlock">
         <div className="title">訊息中心</div>
+        <div className="btnBlock">
+          <div className="sliderBtn next" onClick={next}></div>
+          <div className="sliderBtn previous" onClick={previous}></div>
+        </div>
         <a className="moreBtn" href="/">
           MORE
         </a>

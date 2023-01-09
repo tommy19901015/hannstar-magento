@@ -45,6 +45,10 @@ export type I_GraphicsModel = {
   paragraphs?: boolean;
   imgSizePercent?: number;
   theme?: number;
+  information?: {
+    title:string;
+    link:string;
+  }[];
   moreHref: "/";
 };
 export interface I_TitleContentBanner {

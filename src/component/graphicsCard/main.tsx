@@ -21,12 +21,17 @@ const GraphicsCard: React.FC<I_GraphicsCard> = ({ data, rowCount, theme }) => {
                   : <div className="content">{item.text}</div>
               }
             </div>
-            {item.href && (
-              <a className="btnBlock" href={item.href}>{item.btnText}</a>
+            {(item.href || item.hrefSec) && (
+              <div className="btnBlock">
+                {item.href && (
+              <a className="btn" href={item.href}>{item.btnText}</a>
+                )}
+                {item.hrefSec && (
+                  <a className="btn" href={item.hrefSec}>{item.btnTextSec}</a>
+                )}
+              </div>
             )}
-            {item.hrefSec && (
-              <a className="btnBlock" href={item.hrefSec}>{item.btnTextSec}</a>
-            )}
+           
           </div>
         </a>
       ))}

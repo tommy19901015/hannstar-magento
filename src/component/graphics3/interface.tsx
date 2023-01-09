@@ -19,6 +19,10 @@ export interface I_GrapModel {
   bgColor?: string;
   image?:string;
   paragraphs?: boolean;
+  information?: {
+    title:string;
+    link:string;
+  }[];
   imgSizePercent?: number;
   theme?: number;
   moreHref?:string;

@@ -24,7 +24,7 @@ function usePageData() {
         data: [
           {
             src: `${s3Url}/Image/hannstar/index/banner1.jpg`,
-            title: "創新技術、品質服務",
+            title: `${t('Index.bannerTitle')}`,
             text: "",
             textAlign: TextAlign.BottomLeft,
             type: BannerType.Main,
@@ -38,42 +38,42 @@ function usePageData() {
             src: `${
               urlConfig().s3Url
             }/Image/hannstar/index/icon_index_menu_blue_tft.png`,
-            title: "TFT Display",
+            title:`${t('Index.platform_1')}`,
             href: tftdisplay.index.href,
           },
           {
             src: `${
               urlConfig().s3Url
             }/Image/hannstar/index/icon_index_menu_blue_paperdisplay.png`,
-            title: "Paper Display",
+            title: `${t('Index.platform_2')}`,
             href: paperdisplay.index.href,
           },
           {
             src: `${
               urlConfig().s3Url
             }/Image/hannstar/index/icon_index_menu_blue_service.png`,
-            title: "客戶服務",
+            title: `${t('Index.platform_3')}`,
             href: service.index.href,
           },
           {
             src: `${
               urlConfig().s3Url
             }/Image/hannstar/index/icon_index_menu_blue_siass.png`,
-            title: "方案整合及系統服務",
+            title: `${t('Index.platform_4')}`,
             href: solution.index.href,
           },
           {
             src: `${
               urlConfig().s3Url
             }/Image/hannstar/index/icon_index_menu_blue_sc.png`,
-            title: "供應商協同合作",
+            title:`${t('Index.platform_5')}`,
             href: partner.index.href,
           },
           {
             src: `${
               urlConfig().s3Url
             }/Image/hannstar/index/icon_index_menu_blue_hsp.png`,
-            title: "瀚斯寶麗",
+            title: `${t('Index.platform_6')}`,
             href: hannspree.index.href,
           },
         ],
@@ -83,9 +83,11 @@ function usePageData() {
         data: [
           {
             src: `${s3Url}/Image/hannstar/index/img_hsd_index_pd_banner_main.jpg`,
-            title: "顯示紙",
-            text: "低碳、環保永續顯示紙，協助實現永續未來",
+            title: `${t('Index.bannerBlockTitle1')}`,
+            text: `${t('Index.bannerContent1')}`,
             textAlign: TextAlign.BottomLeft,
+            btnText:`${t('Index.moreBtn')}`,
+            btnHref: "/",
           },
         ],
       },
@@ -94,28 +96,32 @@ function usePageData() {
         data: [
           {
             rowCount: 3,
-            theme: GraphicsTheme.Theme1,
+            theme: GraphicsTheme.Theme3,
             data: [
               {
                 src: `${s3Url}/Image/hannstar/index/img_hsd_index_pd_banner_skill.jpg`,
-                title: "顯示紙技術",
-                text: "優運用先進技術打造的顯示紙，具備超長續航力、強光下可視、真實紙感體驗等特性，顛覆傳統顯示器視覺與書寫體驗，並且更省電節能、友善環境。",
-                href: "",
-                btnText: "",
+                title:`${t('Index.cardTitle1')}`,
+                text:`${t('Index.cardContent1')}`,
+                href: "/",
+                btnText:`${t('Index.cardBtn1_1')}`,
+                hrefSec:"/",
+                btnTextSec:`${t('Index.cardBtn1_2')}`,
               },
               {
                 src: `${s3Url}/Image/hannstar/index/img_hsd_index_pd_banner_buy.jpg`,
-                title: "顯示紙產品選購",
-                text: "提供多種規格之精選產品和客製化服務，滿足您各種顯示應用需求。",
-                href: "",
-                btnText: "",
+                title:`${t('Index.cardTitle2')}`,
+                text:`${t('Index.cardContent2')}`,
+                href: "/",
+                btnText:`${t('Index.cardBtn2_1')}`,
+                hrefSec:"/",
+                btnTextSec:`${t('Index.cardBtn2_2')}`,
               },
               {
                 src: `${s3Url}/Image/hannstar/index/img_hsd_index_pd_banner_ef.jpg`,
-                title: "綠色永續設計",
-                text: "從材料設備供應商、產品設計、製程到物流和包材，皆致力降低產品碳足跡，為永續未來而努力。",
-                href: "",
-                btnText: "",
+                title:`${t('Index.cardTitle3')}`,
+                text:`${t('Index.cardContent3')}`,
+                href: "/",
+                btnText:`${t('Index.cardBtn3_1')}`,
               },
             ],
           },
@@ -127,10 +133,17 @@ function usePageData() {
         data: [
           {
             src: `${s3Url}/Image/hannstar/index/img_hsd_index_pd_banner_application.jpg`,
-            title: "探索顯示紙多元應用",
-            content:
-              "顯示紙低功耗、戶外可視、寬溫顯示、支援動態播放、動態顯示、全彩顯示、貼近紙感體驗等特性，提供智慧零售、交通運輸、智慧育樂、智能製造、健康關懷、智能建築六大智慧應用更環保節能的顯示解決方案。",
-            bgColor:"none"
+            title: `${t('Index.informationTitle')}`,
+            content:`${t('Index.informationContent')}`,
+            bgColor:"none",
+            information:[
+              { title:`${t('Index.information_1')}`, link:"/" },
+              { title:`${t('Index.information_2')}`, link:"/" },
+              { title:`${t('Index.information_3')}`, link:"/" },
+              { title:`${t('Index.information_4')}`, link:"/" },
+              { title:`${t('Index.information_5')}`, link:"/" },
+              { title:`${t('Index.information_6')}`, link:"/" }
+            ]
           },
         ],
       },
@@ -139,9 +152,11 @@ function usePageData() {
         data: [
           {
             src: `${s3Url}/Image/hannstar/index/career_banner.jpg`,
-            title: "瀚宇彩晶人才招募",
-            text: "歡迎加入彩晶，與我們共創精彩價值，為世界增添光彩",
+            title: `${t('Index.bannerBlockTitle2')}`,
+            text: `${t('Index.bannerContent2')}`,
             textAlign: TextAlign.BottomLeft,
+            btnText:`${t('Index.moreBtn')}`,
+            btnHref: "/",
           },
         ],
       },
@@ -150,9 +165,11 @@ function usePageData() {
         data: [
           {
             src: `${s3Url}/Image/hannstar/index/esg_banner.jpg`,
-            title: "綠色創新 低碳轉型成就更美好的生活",
-            text: "了解我們為永續所做的努力",
+            title: `${t('Index.bannerBlockTitle3')}`,
+            text: `${t('Index.bannerContent3')}`,
             textAlign: TextAlign.BottomLeft,
+            btnText:`${t('Index.moreBtn')}`,
+            btnHref: "/",
           },
         ],
       },
@@ -161,7 +178,7 @@ function usePageData() {
         data: [
           {
             titleContent: {
-              title: "關係企業",
+              title: `${t('Index.gridTitle')}`,
               content: "",
               bgColor:"none",
             },
@@ -170,23 +187,23 @@ function usePageData() {
             rowCount: 5,
             imgGrids: [
               {
-                text: "瀚宇彩晶",
+                text: `${t('Index.imgGridTitle_1')}`,
                 src: `${s3Url}/Image/hannstar/index/btn_hsd_index_rc_hss.png`,
               },
               {
-                text: "和鑫光電",
+                text: `${t('Index.imgGridTitle_2')}`,
                 src: `${s3Url}/Image/hannstar/index/btn_hsd_index_rc_hst.png`,
               },
               {
-                text: "瀚斯寶麗",
+                text: `${t('Index.imgGridTitle_3')}`,
                 src: `${s3Url}/Image/hannstar/index/btn_hsd_index_rc_hsp.png`,
               },
               {
-                text: "瀚寓酒店",
+                text: `${t('Index.imgGridTitle_4')}`,
                 src: `${s3Url}/Image/hannstar/index/btn_hsd_index_rc_hsh.png`,
               },
               {
-                text: "彩晶文教基金會",
+                text: `${t('Index.imgGridTitle_5')}`,
                 src: `${s3Url}/Image/hannstar/index/btn_hsd_index_rc_hsf.png`,
               },
             ],
