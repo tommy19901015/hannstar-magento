@@ -1,36 +1,36 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$componentName: 'Breadcrumbs';
+$componentName: "Breadcrumbs";
 
 .#{$componentName}Content {
-    padding-top: 20px;
-    .linkBlock {
-        .link {
-            @include hannstarContent0;
-            &::after {
-                content: '/';
-                padding: 0 10px;
-            }
-            &:last-child {
-                color: $hannstar-blue2;
-                &::after {
-                    display: none;
-                }
-            }
+  padding-top: 20px;
+  .linkBlock {
+    .link {
+      @include hannstarContent0;
+      &::after {
+        content: "/";
+        padding: 0 10px;
+      }
+      &:last-child {
+        color: $hannstar-blue2;
+        &::after {
+          display: none;
         }
+      }
+    }
+  }
+  .mainTitle {
+    @include hannstarH1Title;
+    font-weight: $font-weighr-bold;
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    padding-top: 15px;
+    .linkBlock {
+      padding: 0;
     }
     .mainTitle {
-        @include hannstarH1Title;
-        font-weight: $font-weighr-bold;
-        padding: 0 40px;
     }
-
-    @media screen and (max-width: $breakpoint) {
-        padding-top: 0px;
-        .linkBlock {
-            padding: 0;
-        }
-        .mainTitle {
-        }
-    }
+  }
 }

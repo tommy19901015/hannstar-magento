@@ -9,10 +9,34 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 30px 16px 0;
-    .title {
-      @include hannstarH3Title;
-      text-align: center;
+    .toolBar {
+      display: flex;
+      align-items: center;
+      .title {
+        @include hannstarH3Title;
+        text-align: center;
+        margin-right: 30px;
+      }
+      .btnBlock {
+        display: flex;
+        .sliderBtn {
+          width: 10px;
+          height: 10px;
+          border-top: 3px solid $hannstar-border-color;
+          border-right: 3px solid $hannstar-border-color;
+          cursor: pointer;
+          &.next {
+            transform: rotate(225deg);
+            margin-right: 5px;
+          }
+          &.previous {
+            transform: rotate(45deg);
+            margin-left: 5px;
+          }
+        }
+      }
     }
+
     .moreBtn {
       @include hannstarNoteText;
       color: $hannstar-blue2;
@@ -30,24 +54,6 @@
         border-top: 1px solid;
         border-right: 1px solid;
         transform: rotate(45deg);
-      }
-    }
-    .btnBlock {
-      display: flex;
-      .sliderBtn {
-        width: 10px;
-        height: 10px;
-        border-top: 3px solid $hannstar-border-color;
-        border-right: 3px solid $hannstar-border-color;
-        cursor: pointer;
-        &.next {
-          transform: rotate(225deg);
-          margin-right: 5px;
-        }
-        &.previous {
-          transform: rotate(45deg);
-          margin-left: 5px;
-        }
       }
     }
   }

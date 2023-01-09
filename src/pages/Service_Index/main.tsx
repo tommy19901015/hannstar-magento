@@ -8,8 +8,9 @@ import D360ArticleList2 from "../../component/d360ArticleList2/main";
 import mappingD360I18n from "../../common/mappingD360I18n";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
+import Loading from "../../component/loading/main";
 //-------------------------------------------
-import fakeData from "../../D360fakeData/D360_EducationData.json";
+// import fakeData from "../../D360fakeData/D360_EducationData.json";
 //-------------------------------------------
 
 const ServiceIndex: React.FC = () => {
@@ -43,15 +44,14 @@ const ServiceIndex: React.FC = () => {
       }
     });
 
-    setShowTechnicalData(fakeData.data);
-    setShowEducationData(fakeData.data);
+    // setShowTechnicalData(fakeData.data);
+    // setShowEducationData(fakeData.data);
   }, []);
 
   return (
     <Layout>
       <div className={`${pageName}MainContainer`}>
         <TemplateLayout {...pageData} />
-
         <Columns
           type={ColType.OneCol}
           content={
@@ -60,16 +60,26 @@ const ServiceIndex: React.FC = () => {
               <div className="articleBlock">
                 <div className="title">技術文件</div>
                 <div className="content">
-                  {showTechnicalData && (
-                    <D360ArticleList2 data={showTechnicalData} />
+                  {showTechnicalData ? (
+                    <D360ArticleList2
+                      data={showTechnicalData}
+                      showQuantity={3}
+                    />
+                  ) : (
+                    <Loading height="150px" />
                   )}
                 </div>
               </div>
               <div className="articleBlock">
                 <div className="title">教育訓練</div>
                 <div className="content">
-                  {showEducationData && (
-                    <D360ArticleList2 data={showEducationData} />
+                  {showEducationData ? (
+                    <D360ArticleList2
+                      data={showEducationData}
+                      showQuantity={3}
+                    />
+                  ) : (
+                    <Loading height="150px" />
                   )}
                 </div>
               </div>

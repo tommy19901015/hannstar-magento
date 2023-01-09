@@ -5,6 +5,7 @@ import { I_D360Templates } from "./interface";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import mappingD360I18n from "../../common/mappingD360I18n";
+import Loading from "../../component/loading/main";
 import "./css.scss";
 //---------------------------------
 // import DD360Test from "../../D360fakeData/D360_summary.json";
@@ -25,20 +26,18 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
 
   useEffect(() => {
     const postData = {
-      "method": method,
-      "language": mappingD360I18n(window.hannstar?.language),
-      "site": site
-    }
+      method: method,
+      language: mappingD360I18n(window.hannstar?.language),
+      site: site,
+    };
 
     postGetD360Art(postData).then((response: any) => {
       if (response.result === "success") {
-        checkD360Data(response) ? setD360Data(response.data) : setD360Data({ dataError: "資料錯誤" })
-      } else {
-        setD360Data({ dataError: "資料錯誤" })
+        checkD360Data(response) && setD360Data(response.data);
       }
     });
 
-    // checkD360Data(DD360Test) ? setD360Data(DD360Test.data) : setD360Data({ dataError: "資料錯誤" })
+    // setD360Data(DD360Test.data);
   }, []);
 
   const handleClickTab = (index: any) => {
@@ -46,24 +45,21 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
   };
 
   const checkD360Data = (checkData: any) => {
-    console.log('checkData', checkData);
+    console.log("checkData", checkData);
     if (
       checkData &&
-      checkData.hasOwnProperty('data') &&
+      checkData.hasOwnProperty("data") &&
       Array.isArray(checkData.data) &&
       checkData.data.length !== 0
     ) {
-      const checkArr = checkData.data.map((item: any) =>
-        item.hasOwnProperty('block') && Array.isArray(item.block))
-      return !checkArr.includes(false)
+      const checkArr = checkData.data.map(
+        (item: any) => item.hasOwnProperty("block") && Array.isArray(item.block)
+      );
+      return !checkArr.includes(false);
     } else {
-      return false
+      return false;
     }
-  }
-  const ErrorBlock = () => {
-    console.log("D360 資料錯誤");
-    return null
-  }
+  };
 
   const D360Block = () => {
     const getRWDTable = (document360Data: any) => {
@@ -83,12 +79,14 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
     const multipleBlock = (blockData: any) => {
       return blockData.block.map((item: any) => (
         <>
-          {type === "ServiceArticle" &&
+          {type === "ServiceArticle" && (
             <div className="serviceArticleBlock">
               <div className="serviceArticleTitle">{blockData.title}</div>
-              <div className="serviceArticleDate">{blockData["published-date"]}</div>
+              <div className="serviceArticleDate">
+                {blockData["published-date"]}
+              </div>
             </div>
-          }
+          )}
           {item.content && (
             <div
               className="d360HTML content"
@@ -123,8 +121,9 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
                 <ul className="d360Ul">
                   {d360Data.map((item: any, index: number) => (
                     <li
-                      className={`d360Li ${activeTabIdx === index ? "active" : ""
-                        }`}
+                      className={`d360Li ${
+                        activeTabIdx === index ? "active" : ""
+                      }`}
                       onClick={() => handleClickTab(index)}
                     >
                       {item.tab}
@@ -146,7 +145,9 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
               {multipleBlock(d360Data[activeTabIdx])}
             </div>
           </>
-        ) : <ErrorBlock />}
+        ) : (
+          <Loading />
+        )}
       </div>
     );
   };

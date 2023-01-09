@@ -8,5 +8,6 @@ export interface I_D360Article2 {
 }
 
 export interface I_D360ArticleList2 {
-  data: I_D360Article2[]
+  data: I_D360Article2[];
+  showQuantity?: number;
 }

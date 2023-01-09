@@ -7,6 +7,7 @@ import TemplateLayout from "../../templates/TemplateLayout/main";
 import { ColType } from "../../component/columns/interface";
 import D360ArticleList from "../../component/d360ArticleList/main";
 import mappingD360I18n from "../../common/mappingD360I18n";
+import Loading from "../../component/loading/main";
 import "./css.scss";
 
 // import DD360Test from "../../D360fakeData/D360_financial.json";
@@ -80,11 +81,13 @@ const NewsFinancial: React.FC = () => {
                   <option value={item.value}>{item.text}</option>
                 ))}
               </select>
-              {showData && (
+              {showData ? (
                 <D360ArticleList
                   data={showData}
                   articleUrl={urlConfig().hannstar.news_article.href}
                 />
+              ) : (
+                <Loading />
               )}
             </div>
           </>

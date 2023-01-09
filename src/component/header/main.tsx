@@ -15,7 +15,7 @@ import "./css.scss";
 type I_MenuContent = {
   title: string;
   href: string;
-  isBlank?: boolean
+  isBlank?: boolean;
 };
 
 declare global {
@@ -54,6 +54,16 @@ const Header: React.FC = () => {
     mappingArr.includes(type) && setServiceType(type);
     addZdassets();
   }, []);
+
+  const mappingLogoObj = {
+    hannstar: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+    partner: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+    service: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+    paperdisplay: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+    tftdisplay: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+    solution: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+    hannspree: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+  };
 
   const addZdassets = () => {
     const mappingKey = {
@@ -156,17 +166,28 @@ const Header: React.FC = () => {
   const menuMData = menuList[serviceType].map((item) => {
     const { title, content, href, isBlank } = item;
     return {
-      title: href ? <a className="menuTitle" href={href} target={isBlank ? "_blank" : ""}
-        rel="noreferrer">{title}</a> :
-        <div className="menuTitle">{title}</div>,
+      title: href ? (
+        <a
+          className="menuTitle"
+          href={href}
+          target={isBlank ? "_blank" : ""}
+          rel="noreferrer"
+        >
+          {title}
+        </a>
+      ) : (
+        <div className="menuTitle">{title}</div>
+      ),
       content:
         content &&
         content.map((obj) => (
           <li>
             <a
               className="menuContrnt"
-              href={obj.href} target={obj.isBlank ? "_blank" : ""}
-              rel="noreferrer">
+              href={obj.href}
+              target={obj.isBlank ? "_blank" : ""}
+              rel="noreferrer"
+            >
               {obj.title}
             </a>
           </li>
@@ -180,23 +201,35 @@ const Header: React.FC = () => {
         {menuList[serviceType].map((item, index) => (
           <li className="menuLi" key={index}>
             <div
-              className={`menuText ${item.content && item.content.length === 0 && "noSec"
-                }`}
+              className={`menuText ${
+                item.content && item.content.length === 0 && "noSec"
+              }`}
             >
-              <a href={item.href} target={item.isBlank ? "_blank" : ""}
-                rel="noreferrer">{item.title}</a>
+              <a
+                href={item.href}
+                target={item.isBlank ? "_blank" : ""}
+                rel="noreferrer"
+              >
+                {item.title}
+              </a>
               <div className="arrow"></div>
             </div>
             <ul
-              className={`secMenuUl ${item.type === "member" && "base-box-shadow"
-                }`}
+              className={`secMenuUl ${
+                item.type === "member" && "base-box-shadow"
+              }`}
             >
               {item.content &&
                 item.content.length > 0 &&
                 item.content?.map((subMenu: I_MenuContent, index: number) => (
                   <li key={index}>
-                    <a href={subMenu.href} target={subMenu.isBlank ? "_blank" : ""}
-                      rel="noreferrer">{subMenu.title}</a>
+                    <a
+                      href={subMenu.href}
+                      target={subMenu.isBlank ? "_blank" : ""}
+                      rel="noreferrer"
+                    >
+                      {subMenu.title}
+                    </a>
                   </li>
                 ))}
             </ul>
@@ -210,11 +243,7 @@ const Header: React.FC = () => {
     <div className="hannstarHeader">
       <div className="header_pc">
         <a href={hannstar.index.href}>
-          <img
-            className="logo"
-            alt="logo"
-            src={`${urlConfig().s3Url}/Image/hannstar/header/logo.png`}
-          />
+          <img className="logo" alt="logo" src={mappingLogoObj[serviceType]} />
         </a>
         <div className="menuBlock">
           <div ref={magentoHeaderRef} className="magentoHeader">

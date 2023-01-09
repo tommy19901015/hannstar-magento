@@ -1,11 +1,12 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'NewsFinancial';
+$pageName: "NewsFinancial";
 
 .#{$pageName}ContentBlock {
-    .articleSelect {
-        @include hannstarSelect;
-        width: 120px;
-        margin-bottom: 30px;
-    }
+  margin: 60px 0;
+  .articleSelect {
+    @include hannstarSelect;
+    width: 120px;
+    margin-bottom: 30px;
+  }
 }
