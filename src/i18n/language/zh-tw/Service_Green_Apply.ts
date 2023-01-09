@@ -1,8 +1,8 @@
 export const ServiceGreenApply = {
     legalApplication:"客戶",
     home:"首頁",
-    breadcrumb:"客戶通",
-    breadcrumbItem:"解析列表",
+    breadcrumb:"綠色環保申請",
+    breadcrumbItem:"法規申請",
     customer:"客戶",
     mainTitle:"法規申請",
     subTitle:"基本資料",

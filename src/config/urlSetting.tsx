@@ -1,9 +1,22 @@
 import mappingD360I18n from "../common/mappingUrlI18n"
 
 export const urlConfig = () => {
+  const switchDomain = () => {
+    const domain = window.location.host;
+    switch (domain) {
+      case 'magentoprd.hannstar.com':
+        return "prd"
+      case 'magentoqas.hannstar.com':
+        return "qas"
+      case 'magentodev.hannstar.com':
+        return "dev"
+      default:
+        return "dev"
+    }
+  }
+
   return {
-    "s3Url": "https://s3magentodev.hannstar.com",
-    "s3Url_magentodev": "https://s3magentodev.s3.us-west-2.amazonaws.com/",
+    "s3Url": `https://s3magento${switchDomain()}.hannstar.com`,
     "account": {
       "login": {
         "title": "登入",

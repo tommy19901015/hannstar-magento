@@ -5,7 +5,8 @@ import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useServiceRMAApply from "./pageData";
-import { postInitParseapply } from "../../services/api.service";
+import { postInitRMA } from "../../services/api.service";
+import Loading from "../../component/loading/main";
 import "./css.scss";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/initRMA.json"
@@ -42,58 +43,37 @@ const ServiceRMAApply: React.FC = () => {
     const [uploadTableData, setUploadTableData] = useState<any>()
 
 
-    const [testFile, setTestFile] = useState<any>()
+    const [notQuickReviewFile, setNotQuickReviewFile] = useState<any>()
 
     const inputAmountRef: any = useRef(null);
     const defectAmountRef: any = useRef(null);
 
     useEffect(() => {
-      console.log("fakeDataJson", fakeDataJson)
-      const fakeData: any = fakeDataJson
-      setRMAData(fakeData.data)
-      RMAData && setInitData()
+      // console.log("fakeDataJson", fakeDataJson)
+      // const fakeData: any = fakeDataJson
+      // setRMAData(fakeData.data)
+      // RMAData && setInitDataToForm(fakeData.data)
 
-      // const email = window.hannstar?.email
-      // const postData = {
-      //   type: "post",
-      //   data: {
-      //     cid: email,
-      //     lang: window.hannstar?.language,
-      //   }
-      // }
-      // postInitParseapply(postData).then((response: any) => {
-      // });
-
-
-    }, [RMAData])
-
-    const setInitData = () => {
-      setValue("issue_number", RMAData.issue_number)//解析申請單號
-      setValue("customer_code", RMAData.customer_code)//客戶名稱
-      setValue("hs_id", RMAData.hs_id)//cqs窗口
-    }
-
-
-    const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-
-      const result: any = {
-        ...data,
-      };
-      console.log("result", result);
-    }
-
-    const handlerSave = () => {
-      const formData = getValues()
-      const saveData = {
-        type: "save",
+      const email = window.hannstar?.email
+      const postData = {
+        type: "post",
         data: {
-          header: [
-            { ...formData, cid: "email", status: "UNSENT" }
-          ]
+          cid: email,
+          lang: window.hannstar?.language,
         }
-
       }
-      console.log('saveData', saveData);
+      postInitRMA(postData).then((response: any) => {
+        setRMAData(response.data)
+        setInitDataToForm(response.data)
+      });
+
+
+    }, [])
+
+    const setInitDataToForm = (response: any) => {
+      setValue("issue_number", response.issue_number)//解析申請單號
+      setValue("customer_code", response.customer_code)//客戶名稱
+      setValue("hs_id", response.hs_id)//cqs窗口
     }
 
     const handlerReset = () => {
@@ -116,12 +96,30 @@ const ServiceRMAApply: React.FC = () => {
       // console.log('resultData', resultData);
       // console.log("uploadTableData", uploadTableData);
       if (isQuickReview === "Y") {
-        if (uploadTableData) {
-
+        if (!uploadTableData) {
+          alert("請上傳檔案")
+        } else {
+          resultData.data.detail = uploadTableData.data
+          if (uploadTableData.isplate) {
+            resultData.data.detail.map((item: any) => {
+              item.hannstar_no = ""
+              item.warranty = ""
+              item.show_url = ""
+            })
+          } else {
+            resultData.data.detail.map((item: any) => {
+              item.station = ""
+              item.defect_qty = ""
+              item.show_url = ""
+            })
+          }
+          // console.log(object);
         }
-        resultData.data.detail = uploadTableData.data
+        // resultData.data.detail = uploadTableData.data
       } else {
-
+        notQuickReviewFile && Object.values(notQuickReviewFile).map((file: any, idx) => {
+          postFormData.append((idx + 1).toString(), file);
+        })
       }
       console.log('resultData', resultData);
       // parseapplyFile && Object.values(parseapplyFile).map((file: any, idx) => {
@@ -151,7 +149,7 @@ const ServiceRMAApply: React.FC = () => {
     }
 
     const handleFileChange = (e: any) => {
-      setTestFile(e.target.files);
+      setNotQuickReviewFile(e.target.files);
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -163,7 +161,7 @@ const ServiceRMAApply: React.FC = () => {
       const defectAmountValue = defectAmountRef.current.value
       const inputAmountValue = inputAmountRef.current.value
       if (inputAmountValue && defectAmountValue) {
-        const result = Math.round((defectAmountValue / inputAmountValue) * 1000) / 1000
+        const result = Math.round((defectAmountValue / inputAmountValue) * 100) / 100
         setDefectRate(result)
         setValue("defect_rate", result)
       }
@@ -230,7 +228,7 @@ const ServiceRMAApply: React.FC = () => {
           setUploadTableData(res)
         })
 
-      setUploadTableData(fakePlateParseapply)
+      // setUploadTableData(fakePlateParseapply)
       // setUploadTableData(fakeNotPlateParseapply)
     }
 
@@ -484,7 +482,7 @@ const ServiceRMAApply: React.FC = () => {
             </div>
           </form>
         </div>
-      </> : null
+      </> : <Loading />
 
     );
   };

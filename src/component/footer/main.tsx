@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         title: item.href ?
           <a className="footerH3" href={item.href} target={item.isBlank ? "_blank" : ""}
             rel="noreferrer">{item.title}</a> : <h3 className="footerH3">{item.title}</h3>,
-        content: item.content.map((obj: any) => (
+        content: item.content?.map((obj: any) => (
           <a
             className="footerLink"
             href={obj.href}

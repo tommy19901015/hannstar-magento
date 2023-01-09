@@ -13,6 +13,7 @@ export const apiMethods = {
   fetchSendParseapply: "/rest/V1/eService/SetIssue",//送出客服解析申請
   fetchInitGreenapply: "/rest/V1/eService/InitGreen",//取得法規申請
   fetchSendGreenapply: "/rest/V1/eService/SetGreen",//送出法規申請
+  fetchInitRMA: "/rest/V1/eService/InitRMA",//取得RMA析申請
 };
 
 export const postEnterPrice = (params: PriceFormParams) =>
@@ -55,4 +56,6 @@ const interceptors = () => {
 interceptors();
 return service.post(apiMethods.fetchSendGreenapply, params);
 } 
+export const postInitRMA = (params: any) =>
+service.post(apiMethods.fetchInitRMA, { ...params });
 

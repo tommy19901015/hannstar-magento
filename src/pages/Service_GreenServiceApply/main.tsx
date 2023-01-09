@@ -4,7 +4,7 @@ import Layout from "../../component/layout/main";
 import Columns from "../../component/columns/main";
 import { ColType } from "../../component/columns/interface";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { postInitGreenapply, postSendGreenapply } from "../../services/api.service";
+import { postInitGreenapply } from "../../services/api.service";
 import useGreenServiceApply from "./pageData";
 import "./css.scss";
 import { urlConfig } from "../../config/urlSetting";
@@ -13,6 +13,7 @@ import Popup from "../../component/popup/main";
 import Loading from "../../component/loading/main";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/initGreen.json"
+import errorFakeDataJson from "../../ServiceFakeData/errorInitGreen.json"
 //=====================================================
 
 const ServiceGreenServiceApply: React.FC = () => {
@@ -38,13 +39,23 @@ const ServiceGreenServiceApply: React.FC = () => {
     const [greenApplyData, setGreenApplyData] = useState<any>()
     const [gerrnApplyFile, setGerrnApplyFile] = useState<any>()
     const [popupMessage, setPopupMessage] = useState<string[]>([])
+    const [isInitError, setIsInitError] = useState<boolean>(false)
     const showPopUpRef: any = useRef();
 
     useEffect(() => {
-      // console.log("fakeDataJson", fakeDataJson)
       // const fakeData: any = fakeDataJson
-      // setInitDataToForm(fakeData.data)
-      // setGreenApplyData(fakeData.data)
+      // // const fakeData: any = errorFakeDataJson
+      // setInitDataToForm(fakeData)
+      // setGreenApplyData(fakeData)
+      // if (fakeData.code === "1") {
+      //   setPopupMessage(fakeData.data?.message)
+      //   setIsInitError(true)
+      //   handleShowPopup()
+      // } else {
+      //   setGreenApplyData(fakeData)
+      //   setInitDataToForm(fakeData.data)
+      // }
+
 
       const email = window.hannstar?.email
       if (!email) window.location.href = urlConfig().account.login.href
@@ -56,8 +67,14 @@ const ServiceGreenServiceApply: React.FC = () => {
         }
       }
       postInitGreenapply(postData).then((response: any) => {
-        setGreenApplyData(response.data)
-        setInitDataToForm(response.data)
+        if (response.code === "1") {
+          setPopupMessage(response.data?.message)
+          setIsInitError(true)
+          handleShowPopup()
+        } else {
+          setGreenApplyData(response)
+          setInitDataToForm(response.data)
+        }
       });
     }, [])
 
@@ -104,11 +121,6 @@ const ServiceGreenServiceApply: React.FC = () => {
         postFormData.append(idx.toString(), file);
       })
 
-      // postSendGreenapply(postFormData).then((response: any) => {
-      //   console.log('response', response)
-      //   setPopupMessage(response.data.messages)
-      //   handleShowPopup()
-      // });
       fetch('/rest/V1/eService/SetGreen', {
         method: 'POST',
         body: postFormData,
@@ -134,7 +146,11 @@ const ServiceGreenServiceApply: React.FC = () => {
 
     const handleConfirmPopUp = () => {
       showPopUpRef.current.classList.remove("show")
-      handlerReset()
+      if (isInitError) {
+        window.location.href = urlConfig().hannstar.index.href
+      } else {
+        handlerReset()
+      }
     };
 
     const popupProps = {
@@ -154,7 +170,7 @@ const ServiceGreenServiceApply: React.FC = () => {
     };
 
     return (
-      greenApplyData ? <>
+      greenApplyData && greenApplyData.code === "0" ? <>
         <Popup {...popupProps} />
         <h1 className={`${pageName}H1Title`}>{formData.MainTitle}</h1>
         <div className={`${pageName}FormBlock`}>
@@ -251,7 +267,12 @@ const ServiceGreenServiceApply: React.FC = () => {
             </div>
           </form>
         </div>
-      </> : <Loading />
+      </>
+        :
+        <>
+          <Loading />
+          <Popup {...popupProps} />
+        </>
     );
   };
 

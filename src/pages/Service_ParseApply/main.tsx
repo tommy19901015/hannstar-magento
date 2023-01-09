@@ -12,6 +12,7 @@ import "./css.scss";
 import { urlConfig } from "../../config/urlSetting";
 //=====================================================
 import fakeDataJson from "../../ServiceFakeData/parseapply.json"
+import errorFakeDataJson from "../../ServiceFakeData/errorParseapply.json"
 //=====================================================
 
 const ServiceParseApply: React.FC = () => {
@@ -40,16 +41,25 @@ const ServiceParseApply: React.FC = () => {
     const [defectRate, setDefectRate] = useState<any>()
     const [parseapplyFile, setParseapplyFile] = useState<any>()
     const [popupMessage, setPopupMessage] = useState<string[]>([])
+    const [isInitError, setIsInitError] = useState<boolean>(false)
 
     const inputAmountRef: any = useRef(null);
     const defectAmountRef: any = useRef(null);
     const showPopUpRef: any = useRef();
 
     useEffect(() => {
-      // console.log("fakeDataJson", fakeDataJson)
       // const fakeData: any = fakeDataJson
-      // setParseapplyData(fakeData)
       // setInitDataToForm(fakeData)
+      // setParseapplyData(fakeData)
+      // if (fakeData.code === "1") {
+      //   setPopupMessage(fakeData.data?.message)
+      //   setIsInitError(true)
+      //   handleShowPopup()
+      // } else {
+      //   setParseapplyData(fakeData)
+      //   setInitDataToForm(fakeData.data)
+      // }
+
 
       const email = window.hannstar?.email
       if (!email) window.location.href = urlConfig().account.login.href
@@ -61,8 +71,14 @@ const ServiceParseApply: React.FC = () => {
         }
       }
       postInitParseapply(postData).then((response: any) => {
-        setParseapplyData(response)
-        setInitDataToForm(response)
+        if (response.code === "1") {
+          setPopupMessage(response.data?.message)
+          setIsInitError(true)
+          handleShowPopup()
+        } else {
+          setParseapplyData(response)
+          setInitDataToForm(response.data)
+        }
       });
     }, [])
 
@@ -91,14 +107,6 @@ const ServiceParseApply: React.FC = () => {
         postFormData.append((idx + 1).toString(), file);
       })
 
-      console.log("pppostFormData", postFormData);
-
-      // postSendParseapply(postFormData).then((response: any) => {
-      //   console.log('response', response)
-      //   setPopupMessage(response.data.messages)
-      //   handleShowPopup()
-      // });
-
       fetch('/rest/V1/eService/SetIssue', {
         method: 'POST',
         body: postFormData,
@@ -123,7 +131,11 @@ const ServiceParseApply: React.FC = () => {
 
     const handleConfirmPopUp = () => {
       showPopUpRef.current.classList.remove("show")
-      handlerReset()
+      if (isInitError) {
+        window.location.href = urlConfig().hannstar.index.href
+      } else {
+        handlerReset()
+      }
     };
 
     const handleIssueTypeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -136,7 +148,7 @@ const ServiceParseApply: React.FC = () => {
       const defectAmountValue = defectAmountRef.current.value
       const inputAmountValue = inputAmountRef.current.value
       if (inputAmountValue && defectAmountValue) {
-        const result = Math.round((defectAmountValue / inputAmountValue) * 1000) / 1000
+        const result = Math.round((defectAmountValue / inputAmountValue) * 100) / 100
         setDefectRate(result)
         setValue("defect_rate", result)
       }
@@ -173,7 +185,7 @@ const ServiceParseApply: React.FC = () => {
     };
 
     return (
-      parseapplyData ? <>
+      parseapplyData && parseapplyData.code === "0" ? <>
         <Popup {...popupProps} />
         <h1 className={`${pageName}H1Title`}>{formData.PageTitle}</h1>
         <div className={`${pageName}FormBlock`}>
@@ -326,7 +338,12 @@ const ServiceParseApply: React.FC = () => {
             </div>
           </form>
         </div>
-      </> : <Loading />
+      </>
+        :
+        <>
+          <Loading />
+          <Popup {...popupProps} />
+        </>
     );
   };
 
