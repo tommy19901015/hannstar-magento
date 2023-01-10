@@ -56,6 +56,7 @@ import { SolutionIndex } from "./en-us/Solution_Index";
 import { SolutionSmartRecreation } from "./en-us/Solution_SmartRecreation";
 import { Footer } from "./en-us/Footer";
 import { Index } from "./en-us/Index";
+import { TFTCustomizedForm } from "./en-us/TFTCustomizedForm";
 export const en = {
   common: {
     cancel: "Cancel",
@@ -121,5 +122,6 @@ export const en = {
   SolutionSmartRecreation,
   Menu,
   Footer,
-  Index
+  Index,
+  TFTCustomizedForm
 };
