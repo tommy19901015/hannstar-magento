@@ -14,6 +14,7 @@ export const apiMethods = {
   fetchInitGreenapply: "/rest/V1/eService/InitGreen",//取得法規申請
   fetchSendGreenapply: "/rest/V1/eService/SetGreen",//送出法規申請
   fetchInitRMA: "/rest/V1/eService/InitRMA",//取得RMA析申請
+  fetchDownloadExcel: "/rest/V1/eService/GetFileUrl",//取得RMA析下在excel範本
 };
 
 export const postEnterPrice = (params: PriceFormParams) =>
@@ -58,4 +59,7 @@ return service.post(apiMethods.fetchSendGreenapply, params);
 } 
 export const postInitRMA = (params: any) =>
 service.post(apiMethods.fetchInitRMA, { ...params });
+
+export const postDownloadExcel = (params: any) =>
+service.post(apiMethods.fetchDownloadExcel, { ...params });
 

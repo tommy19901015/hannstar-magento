@@ -344,6 +344,10 @@ export const urlConfig = () => {
       "introduce": {
         "title": "顯示紙技術2",
         "href": mappingD360I18n() + "/paperdisplay/introduce/view"
+      },
+      "applications": {
+        "title": "顯示紙技術",
+        "href": mappingD360I18n() + "/paperdisplay/applications/view"
       }
     },
     "hannspree": {

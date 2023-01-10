@@ -56,6 +56,7 @@ import PaperDisplayIndex from "./pages/PaperDisplay_Index/main";
 import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
 import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
 import PaperDisplayTraffic from "./pages/PaperDisplay_Traffic/main";
+import PaperDisplayApplications from "./pages/PaperDisplay_Applications/main";
 //Hannspree
 import HannspreeIndex from "./pages/Hannspree_Iindex/main";
 import HannspreeSolve from "./pages/Hannspree_Solve/main";
@@ -355,10 +356,11 @@ ReactDOM.render(
       <Route path={hannstar.privacy.href} element={<InformationsPrivacy />} />
       <Route path={hannstar.legalnotices.href} element={<InformationsLegalnotices />} />
 
-      <Route path={"/SmartSolutionIndex"}element={<SmartSolutionIndex />} />
-      <Route path={"/SolutionSmartCity"}element={<SolutionSmartCity />} />
-      <Route path={"/SolutionSmartRetailing"}element={<SolutionSmartRetailing />} />
-      <Route path={"/SolutionSmartRecreation"}element={<SolutionSmartRecreation />} />
+      <Route path={"/SmartSolutionIndex"} element={<SmartSolutionIndex />} />
+      <Route path={"/SolutionSmartCity"} element={<SolutionSmartCity />} />
+      <Route path={"/SolutionSmartRetailing"} element={<SolutionSmartRetailing />} />
+      <Route path={"/SolutionSmartRecreation"} element={<SolutionSmartRecreation />} />
+      <Route path={paperdisplay.applications.href} element={<PaperDisplayApplications />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

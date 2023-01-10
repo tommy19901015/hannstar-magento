@@ -295,11 +295,8 @@ function useMenu() {
     paperdisplay: [
       {
         title: "顯示紙技術",
-        href: "",
-        // content: [
-        //   { title: "交通運輸", href: "" },
-
-        // ],
+        href: paperdisplay.applications.href,
+        content: [],
       },
       {
         title: "顯示紙應用",

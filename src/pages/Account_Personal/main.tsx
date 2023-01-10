@@ -161,7 +161,6 @@ const AccountPersonal: React.FC = () => {
                     onChange={event => setValue("PhoneNumber1", event.target.value)}
                   />
                 </div>
-
                 {errors.PhoneNumber1 && (<span className="error">{errorMsg}</span>)}
               </div>
               <div className="col-2">

@@ -5,7 +5,7 @@ import { ColType } from "../../component/columns/interface";
 import Breadcrumbs from "../../component/breadcrumbs/main";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useServiceRMAApply from "./pageData";
-import { postInitRMA } from "../../services/api.service";
+import { postInitRMA, postDownloadExcel } from "../../services/api.service";
 import { urlConfig } from "../../config/urlSetting";
 import Popup from "../../component/popup/main";
 import Loading from "../../component/loading/main";
@@ -14,6 +14,7 @@ import "./css.scss";
 import fakeDataJson from "../../ServiceFakeData/initRMA.json"
 import fakePlateParseapply from "../../ServiceFakeData/plateParseapply.json"
 import fakeNotPlateParseapply from "../../ServiceFakeData/notPlateParseapply.json"
+import getDemoUrl from "../../ServiceFakeData/getDemoUrl.json"
 //=====================================================
 
 const ServiceRMAApply: React.FC = () => {
@@ -45,6 +46,11 @@ const ServiceRMAApply: React.FC = () => {
     const [uploadTableData, setUploadTableData] = useState<any>()
     const [popupMessage, setPopupMessage] = useState<string[]>([])
     const [isInitError, setIsInitError] = useState<boolean>(false)
+    const [isPlate, setIsPlate] = useState<boolean>(true)
+
+    const [plateExcelUrl, setPlateExcelUrl] = useState<string>("")
+    const [notPlateExcelUrl, setNotPlateExcelUrl] = useState<string>("")
+
     const showPopUpRef: any = useRef();
 
 
@@ -56,7 +62,7 @@ const ServiceRMAApply: React.FC = () => {
     useEffect(() => {
       // console.log("fakeDataJson", fakeDataJson)
       // const fakeData: any = fakeDataJson
-      // setRMAData(fakeData.data)
+      // setRMAData(fakeData)
       // RMAData && setInitDataToForm(fakeData.data)
 
       const email = window.hannstar?.email
@@ -72,9 +78,31 @@ const ServiceRMAApply: React.FC = () => {
         setRMAData(response)
         setInitDataToForm(response.data)
       });
-
-
+      getNotPlateExcel()
+      getPlateExcel()
     }, [])
+
+    const getPlateExcel = () => {
+      const postData = {
+        "issue_number": "OCQS/TEMPLATE/平台智慧貼入範本(中版).xlsx"
+      }
+      postDownloadExcel(postData).then((response: any) => {
+        response.code === "0" && setPlateExcelUrl(response.data.url)
+      });
+      // const testUrl: any = getDemoUrl
+      // setPlateExcelUrl(testUrl.data.url)
+    }
+
+    const getNotPlateExcel = () => {
+      const postData = {
+        "issue_number": "OCQS/TEMPLATE/平台智慧貼入範本(非中版).xlsx"
+      }
+      postDownloadExcel(postData).then((response: any) => {
+        response.code === "0" && setNotPlateExcelUrl(response.data.url)
+      });
+      // const testUrl: any = getDemoUrl
+      // setPlateExcelUrl(testUrl.data.url)
+    }
 
     const setInitDataToForm = (response: any) => {
       setValue("issue_number", response.issue_number)//解析申請單號
@@ -135,10 +163,8 @@ const ServiceRMAApply: React.FC = () => {
       })
         .then((response) => response.json())
         .then((res) => {
-          console.log("test", res)
           setPopupMessage(res.data.message)
         }).then(() => {
-          console.log('popupMessage', popupMessage);
           handleShowPopup()
         })
     }
@@ -195,7 +221,6 @@ const ServiceRMAApply: React.FC = () => {
     }
 
     const handleQuickReview = (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log("handleQuickReview", e);
       setIsQuickReview(e.target.value)
     }
 
@@ -208,8 +233,9 @@ const ServiceRMAApply: React.FC = () => {
     };
 
     const handleProductTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      console.log("handleProductTypeChange", e.target.value);
+      e.target.value === "中板" ? setIsPlate(true) : setIsPlate(false)
       setUploadTableData("")
+
     }
 
     const handleQuickReviewUpload = () => {
@@ -232,8 +258,10 @@ const ServiceRMAApply: React.FC = () => {
       })
         .then((response) => response.json())
         .then((res) => {
-          console.log("test", res)
-          setUploadTableData(res)
+          res.code === "0" ? setUploadTableData(res) : setPopupMessage(res.data.message)
+          return res
+        }).then((res) => {
+          res.code === "1" && handleShowPopup()
         })
 
       // setUploadTableData(fakePlateParseapply)
@@ -478,7 +506,7 @@ const ServiceRMAApply: React.FC = () => {
                 isQuickReview === "Y" ?
                   <div className="upLoadFileBlock">
                     <div className="upLoadTitle">{formData.title1}</div>
-                    <a className="downloadLink" href="/">{formData.text1}</a>
+                    <a className="downloadLink" href={isPlate ? plateExcelUrl : notPlateExcelUrl}>{formData.text1}</a>
                     <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" onChange={handleStepOneFileChange} />
                     <div className="stepTwoBlock">
                       <div className="upLoadTitle">{formData.title2}</div>
