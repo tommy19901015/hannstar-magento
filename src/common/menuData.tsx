@@ -305,11 +305,8 @@ function useMenu() {
       },
       {
         title: "綠色供應鏈",
-        href: "",
-        // content: [
-        //   { title: "交通運輸", href: "" },
-
-        // ],
+        href: paperdisplay.greenSupplyChain.href,
+        content: [],
       },
       {
         title: "產品與詢價",

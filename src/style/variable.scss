@@ -33,10 +33,6 @@ $font-weighr-bold: 800;
 
 $font-base: 16px;
 
-
-
-
-
 @mixin hannstarH1Title {
   color: $hannstar-default-text-color;
   font-size: 40px;
@@ -467,6 +463,25 @@ $font-base: 16px;
       &.active {
         color: #fff;
         background: $hannstar-blue2;
+      }
+    }
+    &.paperDisplay {
+      justify-content: center;
+      .d360Li {
+        text-align: center;
+        padding: 8px 30px;
+        cursor: pointer;
+        float: left;
+        display: inline-flex;
+        color: $hannstar-border-color;
+        background-color: transparent;
+        border-bottom: 2px solid $hannstar-border-color;
+        font-weight: $font-weighr-medium;
+        &.active {
+          color: $hannstar-blue2;
+          background: transparent;
+          border-bottom: 2px solid $hannstar-blue2;
+        }
       }
     }
   }

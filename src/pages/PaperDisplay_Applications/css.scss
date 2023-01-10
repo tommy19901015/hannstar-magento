@@ -1,6 +1,24 @@
-@import '../../style/variable.scss';
+@import "../../style/variable.scss";
 
-$pageName: 'PaperDisplayApplications';
+$pageName: "PaperDisplayApplications";
 
-.#{$pageName}ContentBlock {
+.#{$pageName}IconBlock {
+  .#{$pageName}Title {
+    @include hannstarH2Title;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .#{$pageName}IconContent {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    .block {
+      img {
+      }
+      .text {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
 }

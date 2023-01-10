@@ -1,0 +1,28 @@
+@import "../../style/variable.scss";
+
+$pageName: "D360Application";
+
+.#{$pageName}MainContainer {
+  .#{$pageName}Container {
+    .row {
+      display: flex;
+      .leftBlock {
+        width: 30%;
+      }
+      .rightBlock {
+        width: 70%;
+        .topBlock {
+          margin-bottom: 30px;
+        }
+        .bottomBlock {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 30px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 export interface I_D360Templates {
-  method: string
-  site: string
-  type?: string
+  method: string;
+  site: string;
+  type?: string;
+  theme?: string;
 }

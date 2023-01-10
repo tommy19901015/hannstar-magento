@@ -154,7 +154,6 @@ function usePageData() {
           },
         ],
       },
-
       {
         type: "TitleContentBlock",
         data: [

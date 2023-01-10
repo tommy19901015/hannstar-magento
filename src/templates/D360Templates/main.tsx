@@ -8,7 +8,7 @@ import mappingD360I18n from "../../common/mappingD360I18n";
 import Loading from "../../component/loading/main";
 import "./css.scss";
 //---------------------------------
-// import DD360Test from "../../D360fakeData/D360_summary.json";
+import DD360Test from "../../D360fakeData/D360_summary.json";
 // import DD360Test from "../../D360fakeData/D360_Communicate.json";
 // import DD360Test from "../../D360fakeData/D3603.json"
 // import DD360Test from "../../D360fakeData/D360_PDF.json"
@@ -19,7 +19,12 @@ import "./css.scss";
 // import DD360Test from "../../D360fakeData/D360Error2.json"
 //---------------------------------
 
-const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
+const D360Templates: React.FC<I_D360Templates> = ({
+  site,
+  method,
+  type,
+  theme,
+}) => {
   const pageName = "D360Templates";
   const [d360Data, setD360Data] = useState<any>();
   const [activeTabIdx, setActiveTabIdx] = useState<number>(0);
@@ -31,13 +36,13 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
       site: site,
     };
 
-    postGetD360Art(postData).then((response: any) => {
-      if (response.result === "success") {
-        checkD360Data(response) && setD360Data(response.data);
-      }
-    });
+    // postGetD360Art(postData).then((response: any) => {
+    //   if (response.result === "success") {
+    //     checkD360Data(response) && setD360Data(response.data);
+    //   }
+    // });
 
-    // setD360Data(DD360Test.data);
+    setD360Data(DD360Test.data);
   }, []);
 
   const handleClickTab = (index: any) => {
@@ -118,7 +123,7 @@ const D360Templates: React.FC<I_D360Templates> = ({ site, method, type }) => {
           <>
             {d360Data.length > 1 && (
               <>
-                <ul className="d360Ul">
+                <ul className={`d360Ul ${theme}`}>
                   {d360Data.map((item: any, index: number) => (
                     <li
                       className={`d360Li ${

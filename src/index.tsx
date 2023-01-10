@@ -57,6 +57,7 @@ import PaperDisplayTechnology from "./pages/PaperDisplay_Technology/main";
 import PaperDisplayIntroduce from "./pages/PaperDisplay_Introduce/main";
 import PaperDisplayTraffic from "./pages/PaperDisplay_Traffic/main";
 import PaperDisplayApplications from "./pages/PaperDisplay_Applications/main";
+import PaperDisplayGreenSupplyChain from "./pages/PaperDisplay_GreenSupplyChain/main";
 //Hannspree
 import HannspreeIndex from "./pages/Hannspree_Iindex/main";
 import HannspreeSolve from "./pages/Hannspree_Solve/main";
@@ -106,12 +107,12 @@ import NewsFinancial from "./pages/News_Financial/main";
 import ServiceGreenManagement from "./pages/Service_GreenManagement/main";
 import ServiceGreenProductPolicy from "./pages/Service_GreenProductPolicy/main";
 
-
 import SmartSolutionIndex from "./pages/Solution_SmartSolution/main";
 import SolutionSmartCity from "./pages/Solution_SmartCity/main";
 import SolutionSmartRetailing from "./pages/Solution_SmartRetailing/main";
 import SolutionSmartRecreation from "./pages/Solution_SmartRecreation/main";
-import PaperDisplayGreenSupplyChain from "./pages/PaperDisplay_GreenSupplyChain/main";
+
+import D360Application from "./pages/D360_Application/main";
 
 const {
   hannstar,
@@ -288,7 +289,6 @@ ReactDOM.render(
         path={hannstar.investors_Contacts.href}
         element={<InvestorsContacts />}
       />
-
       {/* 人資專區 */}
       <Route
         path={hannstar.careersDetail_Work.href}
@@ -321,9 +321,7 @@ ReactDOM.render(
       <Route path={hannspree.index.href} element={<HannspreeIndex />} />
       <Route path={hannspree.solve.href} element={<HannspreeSolve />} />
       <Route path={hannspree.custom.href} element={<HannspreeCustom />} />
-
       <Route path={hannstar.news_financial.href} element={<NewsFinancial />} />
-
       <Route
         path={"/news/serviceGreenManagement"}
         element={<ServiceGreenManagement />}
@@ -355,13 +353,29 @@ ReactDOM.render(
       />
       <Route path={"/TFTCustomized"} element={<TFTCustomized />} />
       <Route path={hannstar.privacy.href} element={<InformationsPrivacy />} />
-      <Route path={hannstar.legalnotices.href} element={<InformationsLegalnotices />} />
-
+      <Route
+        path={hannstar.legalnotices.href}
+        element={<InformationsLegalnotices />}
+      />
       <Route path={"/SmartSolutionIndex"} element={<SmartSolutionIndex />} />
       <Route path={"/SolutionSmartCity"} element={<SolutionSmartCity />} />
-      <Route path={"/SolutionSmartRetailing"} element={<SolutionSmartRetailing />} />
-      <Route path={"/SolutionSmartRecreation"} element={<SolutionSmartRecreation />} />
-      <Route path={paperdisplay.applications.href} element={<PaperDisplayApplications />} />
+      <Route
+        path={"/SolutionSmartRetailing"}
+        element={<SolutionSmartRetailing />}
+      />
+      <Route
+        path={"/SolutionSmartRecreation"}
+        element={<SolutionSmartRecreation />}
+      />
+      <Route
+        path={paperdisplay.applications.href}
+        element={<PaperDisplayApplications />}
+      />
+      <Route
+        path={paperdisplay.greenSupplyChain.href}
+        element={<PaperDisplayGreenSupplyChain />}
+      />
+      <Route path={"/D360Application"} element={<D360Application />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
