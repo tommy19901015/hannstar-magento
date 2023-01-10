@@ -7,7 +7,6 @@ $componentName: "GraphicsCard";
   grid-gap: 60px;
   &.row2 {
     grid-template-columns: repeat(2, 1fr);
-    display: flex;
     justify-content: center;
   }
   &.row3 {

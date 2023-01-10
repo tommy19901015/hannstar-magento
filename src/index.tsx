@@ -111,6 +111,7 @@ import SmartSolutionIndex from "./pages/Solution_SmartSolution/main";
 import SolutionSmartCity from "./pages/Solution_SmartCity/main";
 import SolutionSmartRetailing from "./pages/Solution_SmartRetailing/main";
 import SolutionSmartRecreation from "./pages/Solution_SmartRecreation/main";
+import PaperDisplayGreenSupplyChain from "./pages/PaperDisplay_GreenSupplyChain/main";
 
 const {
   hannstar,
