@@ -16,7 +16,7 @@ import D360_5Application from "../../D360fakeData/D360_5Application.json";
 const D360Application: React.FC = () => {
   const pageName = "D360Application";
 
-  const [D360Data, setD360Data] = useState<any>();
+  const [D360Data, setD360Data] = useState<any>(D360_5Application.data[0]);
 
   useEffect(() => {
     console.log("D360_5Application", D360_5Application);
@@ -105,13 +105,15 @@ const D360Application: React.FC = () => {
     );
   };
 
-  const ProductBlock = () => {};
+  const ProductBlock = () => {
+    return <div className="productBlock">product</div>;
+  };
 
   const PantnerBlock = () => {
     return (
-      <div>
-        <div>合作夥伴</div>
-        <div>
+      <div className="pantnerBlock">
+        <div className="pantnerTitle">合作夥伴</div>
+        <div className="logoBlock">
           {D360Data.partner.map((item: string) => (
             <img src={item} alt={item} />
           ))}
@@ -132,6 +134,7 @@ const D360Application: React.FC = () => {
                 <LeftBlock />
                 <RightBlock />
               </div>
+              <ProductBlock />
               <PantnerBlock />
             </div>
           }
