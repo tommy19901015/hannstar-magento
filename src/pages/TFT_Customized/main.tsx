@@ -7,13 +7,11 @@ import usePageData from "./pageData";
 import { useForm, SubmitHandler } from "react-hook-form";
 import "./css.scss";
 
-
 const TFTCustomized: React.FC = () => {
 
   const pageName = "TFTCustomized";
   const formData = usePageData();
   type Keys = keyof typeof formData;
-
   type IFormInputs = {
     [key in Keys]: string | number | string[];
   };
