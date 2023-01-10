@@ -60,6 +60,7 @@ import { SolutionIndex } from "./zh-tw/Solution_Index";
 import { SolutionSmartRecreation } from "./zh-tw/Solution_SmartRecreation";
 import { Footer } from "./zh-tw/Footer";
 import { Index } from "./zh-tw/Index";
+import { TFTCustomizedForm } from "./zh-tw/TFTCustomizedForm";
 export const tw = {
   common: {
     cancel: "取消",
@@ -130,5 +131,6 @@ export const tw = {
   SolutionIndex,
   SolutionSmartRecreation,
   Footer,
-  Index
+  Index,
+  TFTCustomizedForm
 };

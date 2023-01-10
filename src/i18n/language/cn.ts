@@ -55,6 +55,7 @@ import { SolutionIndex } from "./cn-ch/Solution_Index";
 import { SolutionSmartRecreation } from "./cn-ch/Solution_SmartRecreation";
 import { Footer } from "./cn-ch/Footer";
 import { Index } from "./cn-ch/Index";
+import { TFTCustomizedForm } from "./cn-ch/TFTCustomizedForm";
 export const cn = {
   common: {
     cancel: "取消",
@@ -120,5 +121,6 @@ export const cn = {
   SolutionSmartRecreation,
   Menu,
   Footer,
-  Index
+  Index,
+  TFTCustomizedForm
 };
