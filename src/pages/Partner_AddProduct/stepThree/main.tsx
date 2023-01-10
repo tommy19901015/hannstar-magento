@@ -13,7 +13,7 @@ const StepThree: React.FC<any> = forwardRef((props, ref) => {
   }));
 
   const ProductImgBlock = () => {
-    const handlerUploadImg = () => {};
+    const handlerUploadImg = () => { };
 
     const productImgData = [
       {
@@ -100,7 +100,7 @@ const StepThree: React.FC<any> = forwardRef((props, ref) => {
   };
 
   const ShapeImgBlock = () => {
-    const handlerUploadImg = () => {};
+    const handlerUploadImg = () => { };
 
     const shapeImgData = [
       {

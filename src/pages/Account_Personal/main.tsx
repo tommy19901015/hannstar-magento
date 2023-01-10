@@ -64,9 +64,9 @@ const AccountPersonal: React.FC = () => {
     } = useForm<IFormInputs>();
 
     const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-      const selectDom: any = document.getElementById("country");
-      const Country = selectDom.value;
-      const CountryCode = selectDom.selectedOptions[0].text;
+      // const selectDom: any = document.getElementById("country");
+      // const Country = selectDom.value;
+      // const CountryCode = selectDom.selectedOptions[0].text;
 
       const UserName = window.hannstar?.userName;
       const Email = window.hannstar?.email;
@@ -75,8 +75,8 @@ const AccountPersonal: React.FC = () => {
       const result: any = {
         ...data,
         Lang,
-        Country,
-        CountryCode,
+        // Country,
+        // CountryCode,
         UserName,
         Email,
         GroupName,
@@ -97,6 +97,10 @@ const AccountPersonal: React.FC = () => {
       setValue("CellPhoneNumber0", data.dialCode);
       setValue("CellPhoneNumber1", value);
     };
+
+    const tetstets = () => {
+      console.log('fff');
+    }
 
     return (
       <div className={`${pageName}FormBlock`}>

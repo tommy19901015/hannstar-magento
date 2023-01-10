@@ -30,9 +30,8 @@ function useServiceRMAApply() {
         product_type: {
             title: t('RMAApply.shipment'),
         },
-        isseu_year: t('RMAApply.monthEndYear'),
-        isseu_month: t('RMAApply.monthEndMonth'),
-
+        issue_year: t('RMAApply.monthEndYear'),
+        issue_month: t('RMAApply.monthEndMonth'),
         input_amount: t('RMAApply.amount'),
         Slice: t('RMAApply.slice'),
         Required: t('RMAApply.required'),

@@ -60,6 +60,7 @@ const ServiceRMAApply: React.FC = () => {
       // RMAData && setInitDataToForm(fakeData.data)
 
       const email = window.hannstar?.email
+      if (!email) window.location.href = urlConfig().account.login.href
       const postData = {
         type: "post",
         data: {
@@ -376,18 +377,18 @@ const ServiceRMAApply: React.FC = () => {
               </div>
               <div className="row">
                 <div className="col-2">
-                  <label className="required">{formData.isseu_year}</label>
+                  <label className="required">{formData.issue_year}</label>
                   <select
-                    {...register("isseu_year", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
+                    {...register("issue_year", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
                     {isseuYearData().map(year => (
                       <option value={year}>{year}</option>
                     ))}
                   </select>
                 </div>
                 <div className="col-2">
-                  <label className="required">{formData.isseu_month}</label>
+                  <label className="required">{formData.issue_month}</label>
                   <select
-                    {...register("isseu_month", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
+                    {...register("issue_month", { required: true })} onChange={(e) => handleIssueTypeSelect(e)}>
                     {isseuMonthData().map(month => (
                       <option value={month}>{month}</option>
                     ))}
