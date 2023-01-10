@@ -110,6 +110,7 @@ import SmartSolutionIndex from "./pages/Solution_SmartSolution/main";
 import SolutionSmartCity from "./pages/Solution_SmartCity/main";
 import SolutionSmartRetailing from "./pages/Solution_SmartRetailing/main";
 import SolutionSmartRecreation from "./pages/Solution_SmartRecreation/main";
+import PaperDisplayGreenSupplyChain from "./pages/PaperDisplay_GreenSupplyChain/main";
 
 const {
   hannstar,
@@ -359,6 +360,8 @@ ReactDOM.render(
       <Route path={"/SolutionSmartCity"}element={<SolutionSmartCity />} />
       <Route path={"/SolutionSmartRetailing"}element={<SolutionSmartRetailing />} />
       <Route path={"/SolutionSmartRecreation"}element={<SolutionSmartRecreation />} />
+
+      <Route path={"/PaperDisplayGreenSupplyChain"}element={<PaperDisplayGreenSupplyChain />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

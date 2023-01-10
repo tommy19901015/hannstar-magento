@@ -1,0 +1,179 @@
+@import "../../style/variable.scss";
+
+$pageName: "PartnerTechnical";
+
+.#{$pageName}TextBlock {
+    text-align: center;
+    margin-bottom: 80px;
+    .title {
+        @include hannstarH3Title;
+        padding-bottom: 40px;
+    }
+    .content {
+        @include hannstarContentText;
+    }
+}
+.#{$pageName}FormBlock {
+  padding: 0 80px;
+  .formTitle {
+    @include hannstarH2Title;
+    border-bottom: 1px solid $hannstar-border-color;
+    padding-bottom: 10px;
+  }
+  .classificationBlock {
+    margin-bottom: 20px;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 5px;
+      .col-1,
+      .col-2,
+      .col-3 {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        label {
+          margin-bottom: 10px;
+          &.required {
+            &::after {
+              content: "*";
+              color: $hannstar-orange1;
+              padding-left: 5px;
+            }
+          }
+        }
+        input[type="text"] {
+          @include hannstarInput;
+          &.mb-20 {
+            margin-bottom: 20px;
+          }
+        }
+        .countryBlock{
+          display: flex;
+          align-content: end;
+          .country-select{
+            width: 75px;
+            border-radius: 3px 0 0 3px;
+          }
+          .country-code{
+            width: 75px;
+          }
+        }
+        select {
+          @include hannstarSelect;
+        }
+        .error {
+          margin-top: 10px;
+          @include hannstarContent2;
+          color: $hannstar-orange1;
+        }
+        .checkbox-col {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 20px;
+          .hannstarCheckBox {
+            @include hannstarCheckBox;
+            margin: 5px 0;
+          }
+          .hannstarRadio {
+            @include hannstarRadio;
+            margin: 5px 0;
+          }
+        }
+        .react-tel-input {
+          &:hover {
+            .flag-dropdown {
+              border: solid 1px $hannstar-default-text-color;
+            }
+          }
+          .form-control {
+            @include hannstarInput;
+            padding-left: 60px;
+            width: 100%;
+            height: 40px;
+          }
+          .flag-dropdown {
+            background-color: #fff;
+            .selected-flag {
+              width: 50px;
+              .flag {
+                transform: scale(1.3);
+                .arrow {
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+        }
+        .describe {
+          @include hannstarTextarea;
+        }
+        .btn {
+          @include hannstarBtn;
+          text-align: center;
+          max-width: 80px;
+          border: none;
+        }
+      }
+
+      .col-1 {
+        width: 100%;
+      }
+      .col-2 {
+        width: 49%;
+      }
+      .col-3 {
+        width: calc((100% / 3) - 10px);
+      }
+     
+    }
+    &.flex {
+      display: flex;
+    }
+  }
+  .btnBlock {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px auto;
+    max-width: 150px;
+
+    .btn {
+      @include hannstarBtn;
+      text-align: center;
+      border: none;
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
+    padding: 0;
+    .classificationBlock {
+      .row {
+        width: 100%;
+        flex-direction: column;
+        .col-1 {
+          width: 100%;
+        }
+        .col-2 {
+          width: 100%;
+        }
+        .col-3 {
+          width: 100%;
+        }
+        .col-1,
+        .col-2,
+        .col-3 {
+          .checkbox-col {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 20px;
+          }
+          input[type="text"] {
+            @include hannstarInput;
+            width: 100%;
+            }
+        }
+      }
+    }
+
+  }
+}
