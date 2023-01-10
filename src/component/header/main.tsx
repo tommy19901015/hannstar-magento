@@ -55,14 +55,42 @@ const Header: React.FC = () => {
     addZdassets();
   }, []);
 
-  const mappingLogoObj = {
-    hannstar: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
-    partner: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
-    service: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
-    paperdisplay: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
-    tftdisplay: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
-    solution: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
-    hannspree: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+  const mappingLogo = () => {
+    const langMappingObj = {
+      en_US: "en",
+      zh_Hant_TW: "tc",
+      zh_Hans_CN: "sc",
+    };
+
+    return {
+      hannstar: `${urlConfig().s3Url}/Image/hannstar/header/logo.png`,
+      partner: `${
+        urlConfig().s3Url
+      }/Image/hannstar/header/img_logo_platformname_supplier_${
+        langMappingObj[language]
+      }.png`,
+      service: `${
+        urlConfig().s3Url
+      }/Image/hannstar/header/img_logo_platformname_customer_${
+        langMappingObj[language]
+      }.png`,
+      paperdisplay: `${
+        urlConfig().s3Url
+      }/Image/hannstar/header/img_logo_platformname_paper_en.png`,
+      tftdisplay: `${
+        urlConfig().s3Url
+      }/Image/hannstar/header/img_logo_platformname_tft_en.png`,
+      solution: `${
+        urlConfig().s3Url
+      }/Image/hannstar/header/img_logo_platformname_siss_${
+        langMappingObj[language]
+      }.png`,
+      hannspree: `${
+        urlConfig().s3Url
+      }/Image/hannstar/header/img_logo_platformname_hannspree_${
+        langMappingObj[language]
+      }.png`,
+    };
   };
 
   const addZdassets = () => {
@@ -243,7 +271,7 @@ const Header: React.FC = () => {
     <div className="hannstarHeader">
       <div className="header_pc">
         <a href={hannstar.index.href}>
-          <img className="logo" alt="logo" src={mappingLogoObj[serviceType]} />
+          <img className="logo" alt="logo" src={mappingLogo()[serviceType]} />
         </a>
         <div className="menuBlock">
           <div ref={magentoHeaderRef} className="magentoHeader">
