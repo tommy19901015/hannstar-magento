@@ -90,6 +90,10 @@ import PaperDisplayIndex from "../pages/PaperDisplay_Index/main";
 import PaperDisplayIntroduce from "../pages/PaperDisplay_Introduce/main";
 import PaperDisplayTechnology from "../pages/PaperDisplay_Technology/main";
 import PaperDisplayTraffic from "../pages/PaperDisplay_Traffic/main";
+import PaperDisplayApplications from "../pages/PaperDisplay_Applications/main";
+import PaperDisplayGreenSupplyChain from "../pages/PaperDisplay_GreenSupplyChain/main";
+
+import PaperDisplaySmartCity from "../pages/PaperDisplay_SmartCity/main";
 //Tftdisplay
 import TFTIndex from "../pages/TFT_Index/main";
 import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
@@ -97,8 +101,8 @@ import TFTPreferredProduct from "../pages/TFT_PreferredProduct/main";
 import MagentoProductCompare from "../pages/Magento_ProductCompare/main";
 import MagentoProductDetails from "../pages/Magento_ProductDetails/main";
 //隱私權、法律聲明
-import InformationsPrivacy from "../pages/Informations_Legalnotices/main";
-import InformationsLegalnotices from "../pages/Informations_Privacy/main";
+import InformationsPrivacy from "../pages/Informations_Privacy/main";
+import InformationsLegalnotices from "../pages/Informations_Legalnotices/main";
 //i18n
 import "../i18n/index";
 
@@ -179,12 +183,15 @@ const pageMappingObj = {
   root_PaperDisplayIntroduce: <PaperDisplayIntroduce />,
   root_PaperDisplayTechnology: <PaperDisplayTechnology />,
   root_PaperDisplayTraffic: <PaperDisplayTraffic />,
+  root_PaperDisplayApplications:<PaperDisplayApplications />,
+  root_PaperDisplayGreenSupplyChain:<PaperDisplayGreenSupplyChain />,
   root_TFTIndex: <TFTIndex />,
   root_TFTPreferredProduct: <TFTPreferredProduct />,
   root_MagentoProductDetails: <MagentoProductDetails />,
   root_MagentoProductCompare: <MagentoProductCompare />,
   root_InformationsPrivacy: <InformationsPrivacy />,
   root_InformationsLegalnotices: <InformationsLegalnotices />,
+  root_PaperDisplaySmartCity: <PaperDisplaySmartCity />,
   root_Index: <Index />,
 };
 

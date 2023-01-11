@@ -351,7 +351,11 @@ export const urlConfig = () => {
       },
       greenSupplyChain: {
         title: "綠色供應鏈",
-        href: mappingD360I18n() + "/paperdisplay/greenSupplychain/view",
+        href: mappingD360I18n() + "/paperdisplay/greensupplychain/view",
+      },
+      smartCity: {
+        title: "智慧城市",
+        href: mappingD360I18n() + "/paperdisplay/applications/smartcity",
       },
     },
     hannspree: {

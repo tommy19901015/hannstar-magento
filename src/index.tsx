@@ -112,7 +112,7 @@ import SolutionSmartCity from "./pages/Solution_SmartCity/main";
 import SolutionSmartRetailing from "./pages/Solution_SmartRetailing/main";
 import SolutionSmartRecreation from "./pages/Solution_SmartRecreation/main";
 
-import D360Application from "./pages/D360_Application/main";
+import PaperDisplaySmartCity from "./pages/PaperDisplay_SmartCity/main";
 
 const {
   hannstar,
@@ -375,7 +375,7 @@ ReactDOM.render(
         path={paperdisplay.greenSupplyChain.href}
         element={<PaperDisplayGreenSupplyChain />}
       />
-      <Route path={"/D360Application"} element={<D360Application />} />
+      <Route path={paperdisplay.smartCity.href} element={<PaperDisplaySmartCity />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

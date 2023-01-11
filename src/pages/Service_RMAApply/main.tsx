@@ -134,7 +134,7 @@ const ServiceRMAApply: React.FC = () => {
           alert("請上傳檔案")
         } else {
           resultData.data.detail = uploadTableData.data
-          if (uploadTableData.isplate) {
+          if (uploadTableData.isplate === "Y") {
             resultData.data.detail.map((item: any) => {
               item.hannstar_no = ""
               item.warranty = ""
